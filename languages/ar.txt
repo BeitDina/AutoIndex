@@ -1,0 +1,91 @@
+// Arabic langauge file
+
+index of	ÕİÍÉ ãä
+parent directory	ÇáãÌáÏ ÇáÃÕáí
+thumbnail of	ÕæÑÉ ãÕÛÑÉ ãä
+continue	ÅÓÊãÑøú
+
+file	ãáİ
+files	ãáİ
+folder	ãÌáÏ
+folders	ãÌáÏ
+size	ÇáÍÌã
+total size	ÇáÍÌã Çáßáí
+total downloads	ãÌãæÚ ÇáÊÍãíá
+total	ÇáãÌãæÚ
+date	ÊÇÑíÎ ÇáÊÚÏíá
+description	ÇáæÕİ
+downloads	ÊÍãíá
+type	äæÚå
+sort by	ÑÊÈ ÈÜ
+
+search	ÈÍË
+both	ßáÇåãÇ
+search results for	äÊÇÆÌ ÇáÈÍË áÜ
+and its subdirectories	æ ÇáãÌáÏÇÊ ÇáİÑÚíÉ
+
+account	User Account
+login	ÏÎæá
+logout	ÎÑæÌ
+username	ÇÓã ÇáãÓÊÎÏã
+password	ßáãÉ ÇáÓÑ
+select user to remove	ÇÎÊÑ ÚÖæ áÍĞİå
+are you sure you want to remove the user	åá ÇäÊ ãÊÃßÏ ãä ÍĞİ åĞÇ ÇáÚÖæ
+delete this user	ÇÍĞİ åĞÇ ÇáÚÖæ
+add user	ÇÖİ ÚÖæ
+
+guest	ÒÇÆÑ
+user	ÚÖæ
+mod	Moderator
+admin	ãÏíÑ
+level	ÕáÇÍíÇÊ ÇáÚÖæ
+
+rename	ÛíÑ ÇáÅÓã/ÇäŞá
+renaming	ÛíÑ ÇáÅÓã
+new filename	ÃÖİ ãáİ
+you can also move the file by specifying a path	you can also move the file by specifying a path  íãßäß ãä ÊÍÑíß Çáãáİ áãÓÇÑ ÇÎÑ Ãæ ßÊÇÈÉ åĞÇ ÇáãÓÇÑ
+delete	ÍĞİ
+are you sure you want to delete the file	åá ÃäÊ ãÊÃßÏ ãä ÍĞİ Çáãáİ¿
+edit description	ÊÍÑíÑ ÇáæÕİ
+yes, delete	äÚã ÇÍĞİå
+
+upload	ÊÍãíá
+files to this folder	ÊÍãíá Çáãáİ áåĞÇ ÇáãÌáÏ
+uploaded files	Íãá ÇáãáİÇÊ
+failed files	ãáİÇÊ ÎÇØÆÉ
+none	áÇ ÔíÁ
+file already exists	Çáãáİ ãæÌæÏ ãÓÈŞÇ
+filename is listed as a hidden file	ÇáãáİÇÊ ÊÚÑÖ Úáì åíÆÉ ãáİÇÊ ãÎİíÉ
+
+reconfigure script	ÅÚÏÇÏÇÊ ÇáÓßÑíÈÊ
+create new directory in this folder	ÃäÔíÁ ãÌáÏ ÌÏíÏ ÏÇÎá åĞÇ ÇáãÌáÏ
+edit list of hidden files	ÊÍÑíÑ ÇáãáİÇÊ ÇáãÎİíÉ
+add new user	ÃÖİ ÚÖæ ÌÏíÏ
+delete user	ÍĞİ ÚÖæ
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	ÃÖİ æÕİ ÌÏíÏ áåĞÇ Çáãáİ
+change	ÚÏøá
+enter the new name	ÃÏÎá ÇáÅÓã ÇáÌÏíÏ
+create	ÃäÔíÁ
+
+add	ÃÖİ
+remove	ÇãÓÍ
+remove a hidden file	ÇãÓÍ ÇáãáİÇÊ ÇáãÎİíÉ
+add a new hidden file	ÃÖİ ãáİÇÊ ãÎİíÉ ÌÏíÏÉ
+
+edit ban list	 ÊÍÑíÑ ŞÇÆãÉ ÇáÇíÈí æ ÇáÈÑæßÓí ÇáããäæÚÉ ÇáÎÇÕÉ ÈÇáÃÚÖÇÁ
+remove a ban	ÇÍĞİ ÔÎÕ ããäæÚ
+add a new ban	ÇÖİ ÂíÈí ÊÑíÏ ãäÚå (IP address or hostname, you can use wildcards)
+the administrator has blocked your ip address or hostname	ÚİæÇ ÇáãÏíÑ ãäÚß ãä ÏÎæá åĞå ÇáÕİÍÉ
+
+view entries from log file	ãÔÇåÏ ÇáãÏÎáÇÊ ãä ãáİ ÇáÇÍÕÇÆíÇÊ
+view statistics from log file	ãÔÇåÏÉ ÇáÅÍÕÇÆíÇÊ
+how many entries would you like to view	ßã ãÏÎá ÊÑíÏ ãÔÇåÏÊå
+view	ãÔÇåÏÉ
+page	Page
+of	of
+
+calculate md5sum	ÃÍÓÈ ÇáãÌãæÚ
+download directory as tar.gz archive	ãáİ ÇÑÔíİ tar.gz Íãá Çáãáİ Úáì åÆíÉ

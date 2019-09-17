@@ -1,0 +1,91 @@
+// Italian language file by Dalilha <dalilha@users.sourceforge.net>
+
+index of	Indice del
+parent directory	Directory padre
+thumbnail of	Thumbnail di
+continue	Continua
+
+file	File
+files	Files
+folder	Cartella
+folders	Cartelle
+size	Dimensione
+total size	Dimensione totale
+total downloads	Downloads totali
+total	Totale
+date	Modificato
+description	Descrizione
+downloads	Downloads
+type	Tipo
+sort by	Ordina per
+
+search	Ricerca
+both	Entrambi
+search results for	risultati della ricerca per
+and its subdirectories	e le sue subdirectories
+
+account	Account utente
+login	Autenticazione
+logout	Logout
+username	Nome utente
+password	Password
+select user to remove	Seleziona l'utente da rimuovere
+are you sure you want to remove the user	Sei sicuro che vuoi rimuovere l'utente
+delete this user	Cancella questo utente
+add user	Aggiungi Utente
+
+guest	Ospite
+user	Utente
+mod	Moderator
+admin	Admin
+level	Livello utente
+
+rename	rinomina/sposta
+renaming	Sto Rinominando
+new filename	Nuovo nome del file
+you can also move the file by specifying a path	puoi anche spostare il file specificando un percorso
+delete	cancella
+are you sure you want to delete the file	Sicuro di voler cancellare il file
+edit description	Modifica la descrizione
+yes, delete	Si, cancella
+
+upload	Caricamento
+files to this folder	file(s) da questa cartella
+uploaded files	File caricati
+failed files	Files falliti
+none	Niente
+file already exists	file gi&agrave; esistente
+filename is listed as a hidden file	Il nome di file &egrave; in lista come file nascosto
+
+reconfigure script	Riconfigura lo script
+create new directory in this folder	Crea una nuova directory in questa cartella
+edit list of hidden files	Modfica la lista dei file nascosti
+add new user	Aggiungi un nuovo utente
+delete user	Cancella utente
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Inserisci la nuova descrizione per il file
+change	Cambia
+enter the new name	Inserisci il nuovo nome
+create	Crea
+
+add	Aggiungi
+remove	Rimuovi
+remove a hidden file	Rimuovi un file nascosto
+add a new hidden file	Aggiungi un nuovo file nascosto
+
+edit ban list	Modifica la lista degli IP e degli hostname bloccati
+remove a ban	Rimuovi un blocco
+add a new ban	Aggiungi un nuovo blocco (indirizzo IP o l'hostname, puoi usare anche i wildcards)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Guarda le entries dal fiel di log
+view statistics from log file	Guarda le statistiche dal file di log
+how many entries would you like to view	Quante entries vuoi vedere
+view	Guarda
+page	Page
+of	of
+
+calculate md5sum	calcola md5sum
+download directory as tar.gz archive	Scarica la directory come un archivio tar.gz

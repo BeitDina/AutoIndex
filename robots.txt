@@ -1,0 +1,19 @@
+User-agent: msnbot
+User-agent: googlebot
+User-agent: yahoo! slurp
+User-agent: Slurp
+User-agent: lycosbot
+Disallow: /admin
+Disallow: /cache
+Disallow: /config
+Disallow: /include
+Disallow: /install
+Disallow: /modules
+
+User-agent: *
+Disallow: /admin
+Disallow: /cache
+Disallow: /config
+Disallow: /include
+Disallow: /install
+Disallow: /modules

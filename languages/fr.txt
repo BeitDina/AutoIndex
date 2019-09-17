@@ -1,0 +1,91 @@
+// French language file by NSV <nsv@fr.st>
+
+index of	Index de
+parent directory	Dossier parent
+thumbnail of	Vignette de
+continue	Continuer
+
+file	Fichier
+files	Fichiers
+folder	Dossier
+folders	Dossiers
+size	Taille
+total size	Taille total
+total downloads	T&eacute;l&eacute;chargements totaux
+total	Total
+date	Modifi&eacute;
+description	Description
+downloads	T&eacute;l&eacute;chargements
+type	Type
+sort by	Class&eacute; par
+
+search	Recherche
+both	Ensemble
+search results for	R&eacute;sultat de recherche pour
+and its subdirectories	et ses sous-dossiers
+
+account	Compte utilisateur
+login	Connexion
+logout	D&eacute;connexion
+username	Nom d'utilisateur
+password	Mot de passe
+select user to remove	Selectionner un utilisateur &agrave; supprimer
+are you sure you want to remove the user	Etes vous s&ucirc;r de vouloir supprimer cet utilisateur
+delete this user	Supprimer cet utilisateur
+add user	Ajouter un utilisateur
+
+guest	Invit&eacute;
+user	Utilisateur
+mod	Moderator
+admin	Administrateur
+level	Niveau d'utilisateur
+
+rename	renommer/d&eacute;placer
+renaming	Renommage
+new filename	Nouveau nom de fichier
+you can also move the file by specifying a path	Vous pouvez d&eacute;placer le fichier en sp&eacute;cifiant la direction
+delete	supprimer
+are you sure you want to delete the file	Etes vous s&ucirc;r de vouloir supprimer ce fichier
+edit description	editer la description
+yes, delete	Oui, je le supprime
+
+upload	Envoie
+files to this folder	fichier(s) vers ce dossier
+uploaded files	Fichiers envoy&eacute;s
+failed files	Fichiers rat&eacute;s
+none	Aucun
+file already exists	fichier d&eacute;j&agrave; existant
+filename is listed as a hidden file	le fichier est list&eacute; comme un fichier cach&eacute;
+
+reconfigure script	Reconfigurer le script
+create new directory in this folder	Cr&eacute;er un nouveau sous-dossier dans ce dossier
+edit list of hidden files	Editer la liste des fichiers cach&eacute;s
+add new user	Ajouter un nouvel utilisateur
+delete user	Supprimer un utilisateur
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Entrer une nouvelle description pour ce fichier
+change	Changer
+enter the new name	Entrer un nouveau nom
+create	Cr&eacute;er
+
+add	Ajouter
+remove	Supprimer
+remove a hidden file	Supprimer un fichier cach&eacute;
+add a new hidden file	Ajouter un fichier cach&eacute;
+
+edit ban list	Editer la liste des IPs et des noms de h&ocirc;te bannis
+remove a ban	Supprimer un bannissement
+add a new ban	Ajouter un nouveau bannissement (adresse IP ou noms de h&ocirc;te, vous pouvez utiliser des wildcards)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Voir les entr&eacute;es du fichier log
+view statistics from log file	Voir les statistiques du fichier log
+how many entries would you like to view	Combien d'entr&eacute;es voulez vous voir
+view	Voir
+page	Page
+of	of
+
+calculate md5sum	calculer le md5sum
+download directory as tar.gz archive	T&eacute;l&eacute;charger le dossier en tant qu'archive tar.gz

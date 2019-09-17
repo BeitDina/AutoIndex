@@ -1,0 +1,92 @@
+// Danish langauge file
+// Translated by Morten Gregersen (Mobleman.dk), Denmark
+
+index of	Index af
+parent directory	Ovenstående mappe
+thumbnail of	Thumbnail af
+continue Fortsæt
+
+file	Fil
+files	Filer
+folder	Mappe
+folders	Mapper
+size	Størrelse
+total size	Total størrelse
+total downloads	Total downloads
+total	Total
+date	Ændret
+description	Beskrivelse
+downloads	Downloads
+type	Type
+sort by	Sorter efter
+
+search	Søg
+both    Begge
+search results for	søgeresultater for
+and its subdirectories	og dens undermapper
+
+account	Brugerkonto
+login	Log ind
+logout	Log ud
+username	Brugernavn
+password	Kodeord
+select user to remove	Vælg bruger der skal fjernes
+are you sure you want to remove the user	Er du sikker på at du vil fjerne brugeren
+delete this user    Slet denne bruger
+add user    Tilføj bruger
+
+guest	Gæst
+user	Almindelig bruger
+mod	Moderator
+admin	Administrator
+level	Brugerlevel
+
+rename	omdøb/flyt
+renaming Omdøber
+new filename	Nyt filnavn
+you can also move the file by specifying a path	du kan også flytte filen ved at specificere en sti
+delete  slet
+are you sure you want to delete the file	Er du sikker på at du vil slette filen
+edit description    redigér beskrivelse
+yes, delete Ja, slet den
+
+upload	Upload
+files to this folder	fil(er) til denne mappe
+uploaded files	Uploadede filer
+failed files	Filer der fejlede
+none    Ingen
+file already exists	filnavnet eksisterer allerede
+filename is listed as a hidden file	filenavnet er listet som en skjult fil
+
+reconfigure script	Genkonfigurer script
+create new directory in this folder	Opret en ny mappe (i denne mappe)
+edit list of hidden files	Redigér listen med skjulte filer
+add new user	Tilføj ny bruger
+delete user	Slet bruger
+copy url	Kopier en online fil (til denne mappe)
+upload to ftp	upload fil til FTP server
+
+enter the new description for the file	Indtast den nye beskrivelse til filen
+change	Skift
+enter the new name	Indtast the nye navn
+create	Opret
+
+add	Tilføj
+remove	Fjern
+remove a hidden file	Fjern en skjult fil
+add a new hidden file	Tilføj en skjult fil
+
+edit ban list	Redigér listen med bannede IP'er og hostnavne
+remove a ban	Fjern et ban
+add a new ban	Tilføj et nyt ban (IP-adresse eller hostnavn, du kan bruge wildcards)
+the administrator has blocked your ip address or hostname	Desværre, administratoren har blokeret din IP-adresse eller hostnavn
+
+view entries from log file	Vis indlæg fra log-fil
+view statistics from log file	Vis statestikker fra log-fil
+how many entries would you like to view	Hvor mange indlæg vil du have vist
+view	Vis
+page	Side
+of	af
+
+calculate md5sum	udregnet md5sum
+download directory as tar.gz archive	Download mappe som tar.gz arkiv

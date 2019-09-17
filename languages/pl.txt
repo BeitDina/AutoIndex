@@ -1,0 +1,91 @@
+// Polish langauge file by Krzysztof Kopeć <kkrzys67@wp.pl>
+
+index of	Index of
+parent directory	Katalog macierzysty
+thumbnail of	Thumbnail z
+continue	Kontynuuj
+
+file	Plik
+files	Pliki
+folder	Folder
+folders	Foldery
+size	Rozmiar 
+total size	Całkowity rozmiar 
+total downloads	Suma pobrań
+total	Całkowity
+date	Zmodyfikowany
+description	Opis 
+downloads	Pobierz
+type	Typ 
+sort by	Sortuj po 
+
+search	Wyszukaj 
+both	Obaj 
+search results for	Rezultat wyszukiwania
+and its subdirectories	i jego podkatalogi 
+
+account	Konto użytkownika 
+login	Zaloguj
+logout	Wyloguj
+username	Nazwa użytkownika
+password	Hasło
+select user to remove	Wybierz uzytkownika do przeniesienia
+are you sure you want to remove the user	Czy jesteś pewien że chcesz przenieść użytkownika
+delete this user	Skasuj tego użytkownika 
+add user	Dodaj użytkownika
+
+guest	Gość
+user	Użytkownik
+mod	Moderator
+admin	Administrator
+level	Poziom użytkownika 
+
+rename	zmień nazwę / przenieś
+renaming	Zmieniając nazwę 
+new filename	Nowa nazwa filmu
+you can also move the file by specifying a path	możesz też przenieść plik przez wyszczególnianie ścieżki dostępu 
+delete	Skasuj
+are you sure you want to delete the file	Czy jesteś pewien że chcesz usunąć plik
+edit description	Edytuj opis 
+yes, delete	Yes, delete it
+
+upload	Załaduj
+files to this folder	Plik(i) do tego folderu
+uploaded files	Załadowane pliki 
+failed files	Nie zdołane pliki 
+none	Żaden 
+file already exists	Plik już istnieje
+filename is listed as a hidden file	nazwa zbioru jest opisana jako zbiór ukryty
+
+reconfigure script	Rekonfiguracja skryptu
+create new directory in this folder	Utwórz nowy katalog w tym folderze
+edit list of hidden files	Edytuj listę plików/folderów ukrytych 
+add new user	Dodaj nowego użytkownika
+delete user	Usuń użytkownika
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Wprowadź nowy opis do pliku 
+change	Zmień 
+enter the new name	Wprowadź nową nazwę
+create	Utwórz
+
+add	Dodaj
+remove	Przenieś
+remove a hidden file	Przenieś zbiór ukryty 
+add a new hidden file	Dodaj nowy zbiór ukryty
+
+edit ban list	Edytuj listę zakazanych IPs i hostnames 
+remove a ban	Usuń zakaz
+add a new ban	Dodaj nowy zakaz (adres IP albo hostname, możesz użyć znaków uniwersalnych)
+the administrator has blocked your ip address or hostname	Przepraszam, administrator zablokował twój adres IP albo hostname
+
+view entries from log file	Zapis widoku z pliku rejestru
+view statistics from log file	Statystyki widoku z pliku rejestru
+how many entries would you like to view	Jak wiele zapisów chciałbyś oglądnąć
+view	Widok
+page	Page
+of	of
+
+calculate md5sum	oblicza md5sum 
+download directory as tar.gz archive	Pobierz katalog jak plik archiwum <b>tar.gz</b>

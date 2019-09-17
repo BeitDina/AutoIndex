@@ -1,0 +1,91 @@
+// Norwegian langauge file by tg90nor <tg90nor@hotmail.com>
+
+index of	Indeks for
+parent directory	Modermappe
+thumbnail of	Forh&aring;ndsvisning av
+continue	Fortsett
+
+file	Fil
+files	Filer
+folder	Mappe
+folders	Mapper
+size	St&oslash;rrelse
+total size	Total st&oslash;rrelse
+total downloads	Nedlastninger totalt
+total	Total
+date	Modifisert
+description	Beskrivelse
+downloads	Nedlastninger
+type	Type
+sort by	Sorter etter
+
+search	S&oslash;k
+both	Begge
+search results for	s&oslash;keresultater for
+and its subdirectories	og undermappene
+
+account	Brukerkonto
+login	Logg inn
+logout	Logg ut
+username	Brukernavn
+password	Passord
+select user to remove	Velg bruker for fjerning
+are you sure you want to remove the user	Er du sikker p&aring; at du vil fjerne brukeren
+delete this user	Slett denne brukeren
+add user	Legg til bruker
+
+guest	Gjest
+user	Bruker
+mod	Moderator
+admin	Admin
+level	brukerens level
+
+rename	gi nytt navn/flytt
+renaming	Gir nytt navn
+new filename	Nytt filnavn
+you can also move the file by specifying a path	du kan ogs&aring; flytte filen ved &aring; spesifisere en sti
+delete	slett
+are you sure you want to delete the file	Er du sikker p&aring; at du vil slette filen
+edit description	endre beskrivelse
+yes, delete	Ja, slett den
+
+upload	Opplast
+files to this folder	fil(er) til denne mappen
+uploaded files	Opplastede filer
+failed files	Mislykkede filer
+none	Ingen
+file already exists	filen eksisterer allerede
+filename is listed as a hidden file	filnavnet er oppf&oslash;rt som en skjult fil
+
+reconfigure script	Rekonfigurer skript
+create new directory in this folder	Opprett en ny mappe i denne mappen
+edit list of hidden files	Rediger liste over skjulte filer
+add new user	Legg til ny bruker
+delete user	Slett bruker
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Skriv inn den nye beskrivelsen for filen
+change	Endre
+enter the new name	Skriv inn det nye navnet
+create	Opprett
+
+add	Legg til
+remove	Fjern
+remove a hidden file	Fjern en skjult fil
+add a new hidden file	Legg til en ny skjult fil
+
+edit ban list	Rediger liste over blokkerte IP-er og vertsnavn
+remove a ban	Fjern en blokkering
+add a new ban	Legg til en ny blokkering (IP-adresse eller vertsnavn, du kan bruke wildcards)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Vis oppf&oslash;ringer fra logfil
+view statistics from log file	Vis statistikk fra logfil
+how many entries would you like to view	Hvor mange oppf&oslash;ringer vil du vise
+view	Vis
+page	Page
+of	of
+
+calculate md5sum	kalkuler md5sum
+download directory as tar.gz archive	Last ned mappe som tar.gz-arkiv

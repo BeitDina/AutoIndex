@@ -1,0 +1,92 @@
+// German langauge file by thefake <fake@sprossenwanne.at>
+// Updated by tagdancer <info@dirk-boedeker.de>
+
+index of	Index von
+parent directory	Uebergeordnetes Verzeichnis
+thumbnail of	Thumbnail von
+continue	Weiter
+
+file	Datei
+files	Dateien
+folder	Ordner
+folders	Ordner
+size	Gr&ouml;&szlig;e
+total size	Gesamt Gr&ouml;&szlig;e
+total downloads	Gesamte Downloads
+total	Gesamt
+date	Modifiziert
+description	Beschreibung
+downloads	Downloads
+type	Typ
+sort by	Sortiert nach
+
+search	Suche
+both	Beide
+search results for	Suchergebnisse f&uuml;r
+and its subdirectories	und seinen Subverzeichnissen
+
+account	User Account
+login	Login
+logout	Log out
+username	Username
+password	Passwort
+select user to remove	W&auml;hle User zum entfernen
+are you sure you want to remove the user	Sind Sie sicher dass sie diesen User entfernen wollen
+delete this user	Diesen User l&ouml;schen
+add user	User hinzuf&uuml;gen
+
+guest	Gast
+user	User
+mod	Moderator
+admin	Admin
+level	User's Level
+
+rename	Umbenennen/Verschieben
+renaming	Umbenennen
+new filename	Neuer Dateiname
+you can also move the file by specifying a path	Sie koennen die Datei auch verschieben indem Sie den neuen Pfad angeben
+delete	L&ouml;schen
+are you sure you want to delete the file	Sind Sie sicher dass Sie diese Datei l&ouml;schen wollen
+edit description	beschreibung editieren
+yes, delete	Ja, l&ouml;schen
+
+upload	Upload
+files to this folder	Datei(en) in diesem Verzeichnis
+uploaded files	Hochgeladene Dateien
+failed files	Fehlgeschlagene Dateien
+none	Keine
+file already exists	Datei existiert bereits
+filename is listed as a hidden file	Dateiname ist als versteckte Datei aufgelistet
+
+reconfigure script	Rekonfiguriere Script
+create new directory in this folder	Neues Verzeichnis in diesem Ordner erzeugen
+edit list of hidden files	Liste der versteckten Dateien editieren
+add new user	Neuen User hinzuf&uuml;gen
+delete user	User l&ouml;schen
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Geben Sie die neue Beschreibung f&uuml;r die Datei ein
+change	&Auml;ndern
+enter the new name	Geben Sie den neuen Namen ein
+create	Anlegen
+
+add	Hinzuf&uuml;gen
+remove	Entfernen
+remove a hidden file	Eine versteckte Datei entfernen
+add a new hidden file	Eine versteckte Datei hinzuf&uuml;gen
+
+edit ban list	Editiere Liste von gebannten IPs und Hostnamen
+remove a ban	Entferne einen Bann
+add a new ban	F&uuml;ge einen neuen Bann hinzu (IP Addresse oder Hostname, Sie koennen Wildcards benutzen)
+the administrator has blocked your ip address or hostname	Der Administrator hat Ihre IP Adresse oder Hostnamen gesperrt
+
+view entries from log file	Eintr&auml;ge aus der Log Datei ansehen
+view statistics from log file	Statistik aus der Log Datei ansehen
+how many entries would you like to view	Wieviele Eintraege wollen Sie sehen
+view	Ansicht
+page	Page
+of	of
+
+calculate md5sum	kalkuliere md5sum
+download directory as tar.gz archive	Lade das gesamte Verzeichnis als tar.gz Archiv herunter

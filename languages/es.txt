@@ -1,0 +1,91 @@
+// Spanish langauge file by Jesús Espino <jespino@imap.cc>
+
+index of	&Iacute;ndice de
+parent directory	Directorio Padre
+thumbnail of	Miniatura de
+continue	Continuar
+
+file	Archivo
+files	Archivos
+folder	Carpeta
+folders	Carpetas
+size	Tama&ntilde;o
+total size	Tama&ntilde;o total
+total downloads	Total de descargas
+total	Total
+date	Modificado
+description	Descripci&oacute;n
+downloads	Descargas
+type	Tipo
+sort by	Ordenar por
+
+search	Buscar
+both	Ambos
+search results for	buscar resultados de
+and its subdirectories	y estos son subdirectorios
+
+account	Cuenta de usuario
+login	Usuario
+logout	Desconectarse
+username	Usuario
+password	Contrase&ntilde;a
+select user to remove	Seleccione el usuario a eliminar
+are you sure you want to remove the user	&iquest;Est&aacute; seguro de que desea eliminar al usuario
+delete this user	Eliminar este usuario
+add user	A&ntilde;adir usuario
+
+guest	Invitado
+user	Usuario
+mod	Moderator
+admin	Administrador
+level	Nivel del usuario
+
+rename	renombrar/mover
+renaming	Renombrando
+new filename	Nuevo nombre de archivo
+you can also move the file by specifying a path	Usted tambi&eacute;n puede mover el archivo especificando un destino
+delete	eliminar
+are you sure you want to delete the file	&iquest;Est&aacute; seguro que desea eliminar el archivo
+edit description	editar descripcion
+yes, delete	S&itilde;, borrarlo
+
+upload	Enviar
+files to this folder	archivo(s) a esta carpeta
+uploaded files	Archivos enviados
+failed files	Archivos no enviados
+none	Ninguno
+file already exists	el archivo ya existe
+filename is listed as a hidden file	el nombre del archivo es listado como un archivo oculto
+
+reconfigure script	Reconfigurar el script
+create new directory in this folder	Crear nuevo directorio en esta carpeta
+edit list of hidden files	Editar lista de ficheros ocultos
+add new user	A&ntilde;adir nuevo usuario
+delete user	Eliminar usuario
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Introduzca la nueva descripci&oacute;n para este archivo
+change	Cambiar
+enter the new name	Introduzca el nuevo nombre
+create	Crear
+
+add	A&ntilde;adir
+remove	Eliminar
+remove a hidden file	Eliminar un archivo oculto
+add a new hidden file	A&ntilde;adir un nuevo archivo oculto
+
+edit ban list	Editar la lista de IPs y hosts baneados
+remove a ban	Eliminar un ban
+add a new ban	A&ntilde;adir nuevo ban (direcci&oacute;n IP o nombre del host, pude usar metacaracteres)
+the administrator has blocked your ip address or hostname	el administrador ha bloqueado su IP o nombre de m&aacute;quina
+
+view entries from log file	Ver las entradas del archivo log
+view statistics from log file	Ver las estad&iacute;sticas del archivo log
+how many entries would you like to view	&iquest;Cu&aacute;ntas entradas desear&iacute;a usted ver
+view	Ver
+page	P&aacute;gina
+of	de
+
+calculate md5sum	calcular md5sum
+download directory as tar.gz archive	Descargar directorio como un archivo tar.gz

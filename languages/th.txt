@@ -1,0 +1,91 @@
+//Thai langauge file by maxzerker@hotmail.com
+
+index of	ดัชนีของ
+parent directory	ไดเร็กโทรี่ก่อนหน้า
+thumbnail of	กรอบรูปของ
+continue	ต่อไป
+
+file	ไฟล์
+files	ไฟล์
+folder		โฟลเดอร์
+folders	โฟลเดอร์
+size	ขนาด
+total size	ขนาดรวม
+total downloads	ดาวน์โหลดรวม
+total	รวม
+date	แก้ใข
+description	รายระเอียด
+downloads	ดาวน์โหลด
+type	ชนิด
+sort by	เรียงโดย
+
+search	ค้นหา
+both	ทั้งคู้
+search results	ผลการค้นหาสำหรับ
+and its subdirectories	รวมทั้งซับไดเร็กโทรี่
+
+account	บัญชีผู้ใช้
+login	เข้าสู่ระบบ
+logout	ออกจากระบบ
+username	ชื่อผู้ใช้
+password	รหัสผ่าน
+select user to remove	เลือกชื่อผู้ใช้เพื่อลบออก
+are you sure you want to remove the user	คุณแน่ใจหรือว่าต้องการลบชื่อผู้ใช้นี้
+delete this user	ลบชื่อผู้ใช้นี้
+add user	เพิ่มชื่อผู้ใช้
+
+guest	แขก
+user	ผู้ใช้
+mod	Moderator
+admin	ผู้ดูแลระบบ
+level	ระดับของผู้ใช้
+
+rename	เปลี่ยนชื่อ/เคลื่อนย้าย
+renaming	กำลังเปลี่ยนชื่อ
+new filename	ชื่อไฟล์ใหม่
+you can also move the file by specifying a path	คุณสามารถเคลื่อนย้ายไฟล์ได้โดยการระบุที่อยู่
+delete	ลบ
+are you sure you want to delete the file	คุณแน่ใจหรือที่จะลบไฟล์นี้
+edit description	แก้ใขรายระเอียด
+yes, delete	ใช่ลบมันทิ้ง(สิว่ะ)
+
+upload	อั๊บโหลด
+files to this folder	ไฟล์เข้าในโฟลเดอร์นี้
+uploaded files	อั๊ปโหลดไฟล์
+failed files	ไฟล์ที่ลมเหลว
+none	ไม่มี
+file already exists	ไฟล์นี้มีอยู่แล้ว
+filename is listed as a hidden file	ชื่อไฟล์ถูกจัดเป็นไฟล์ที่ถูกซ้อน
+
+reconfigure script	ตั่งค่าสคริปต์ใหม่
+create new directory in this folder	สร้างไดเร็กโทรี่ใหม่ในโฟล์เดอร์นี้
+edit list of hidden files	แก้ใขรายการของไฟล์ที่ถูกซ้อน
+add new user	เพิ่มผู้ใช้ใหม่
+delete user	ลบผู้ใช้
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	ระบุรายระเอียดของไฟล์ใหม่
+change	เปลี่ยน
+enter the new name	ระบุชื่อใหม่
+create	สร้าง
+
+add	เพิ่ม
+remove	เอาออก
+remove a hidden file	นำไฟล์ที่ถูกซ้อนออก
+add a new hidden file	เพิ่มไฟลที่ถูกซ้อน
+
+edit ban list	แก้ไขรายการแบนไอพีและชื่อโฮสท์
+remove a ban	นำแบนออก
+add a new ban	เพิ่มรายการแบนใหม่ (ระบุ ไอพี หรือ ชื่อโฮสท์,คุณสามารถใช้ไวลด์คาร์ดได้)
+the administrator has blocked your ip address or hostname	ขออภัยผู้ดูแลระบบได้ทำการบล๊อก ไอพี หรือ ชื่อโฮสท์ ของคุณ
+
+view entries from log file	แสดงรายการจากล็อกไฟล์
+view statistics from log file	แสดงสถิติจากล็อกไฟล์
+how many entries would you like to view	จำนวนของรายการที่คุณต้องการที่จะแสดง
+view	แสดง
+page	Page
+of	of
+
+calculate md5sum	คำนวณ MD5
+download directory as tar.gz archive	ดาวน์โหลดไดเร็กโทรี่เป็นไฟล์ tar.gz

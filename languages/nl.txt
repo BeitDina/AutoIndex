@@ -1,0 +1,91 @@
+// Dutch langauge file by Raymond <rayz@emailt.nl>
+
+index of	Index van
+parent directory	Bovenliggende map
+thumbnail of	Thumbnail van
+continue	Doorgaan
+
+file	Bestand
+files	Bestanden
+folder	Map
+folders	Mappen
+size	Grootte
+total size	Totale Grootte
+total downloads	Totaal aantal downloads
+total	Totaal
+date	Datum
+description	Beschrijving
+downloads	Downloads
+type	Type
+sort by	Gesorteerd op
+
+search	Zoeken
+both	Beide
+search results for	Zoek resultaten van
+and its subdirectories	en de onderliggende mappen
+
+account	Gebruikers Account
+login	Login
+logout	Log out
+username	Gebruikersnaam
+password	Wachtwoord
+select user to remove	Selecteer gebruir om te verwijderen
+are you sure you want to remove the user	Weet u zeker dat u de gebruiker wil verwijderen
+delete this user	Verwijder deze gebruiker
+add user	Voeg gebruiker toe
+
+guest	Gast
+user	Gebruiker
+mod	Moderator
+admin	Admin
+level	Gebruiker's niveau
+
+rename	hernoem/verplaats
+renaming	Hernoemen
+new filename	Nieuwe Bestandsnaam
+you can also move the file by specifying a path	U kan ook de map verplaatsen door een specifieke pad te specificeren
+delete	verwijder
+are you sure you want to delete the file	Weet u zeker dat u dit bestand wilt verwijderen
+edit description	bewerk beschrijving
+yes, delete	Ja, verwijderen
+
+upload	Upload
+files to this folder	Bestand(en) naar deze map
+uploaded files	Geuploade bestanden
+failed files	Mislukte bestanden
+none	Geen
+file already exists	Bestand bestaat al
+filename is listed as a hidden file	Bestandsnaam is opgeslagen als verborgen bestand
+
+reconfigure script	Herconfigureer script
+create new directory in this folder	Maak een nieuwe map in deze map
+edit list of hidden files	Bewerk lijst van verborgen bestanden
+add new user	Voeg een nieuwe gebruiker toe
+delete user	Verwijder gebruiker
+copy url	Kopieer een bestand van een URL
+upload to ftp	Upload een bestand naar een FTP server
+
+enter the new description for the file	Geef een nieuwe beschrijving voor het bestand
+change	Verander
+enter the new name	Geef een nieuwe naam
+create	Maak
+
+add	Toevoegen
+remove	Verwijder
+remove a hidden file	Verwijder verborgen bestand
+add a new hidden file	Nieuw verborgen Bestand toevoegen
+
+edit ban list	Bewerk lijst van gebande IP's en hostnames
+remove a ban	Verwijder een ban
+add a new ban	Nieuwe ban toevoegen (IP adres of hostname, u kunt wildcards gebruiken)
+the administrator has blocked your ip address or hostname	Sorry, uw IP-adres of hostname is geblokkeerd door de administrator
+
+view entries from log file	Bekijk notities in het log bestand
+view statistics from log file	 Bekijk de statistieken in het log bestand
+how many entries would you like to view	Hoeveel notities wilt u bekijken
+view	Bekijken
+page	Pagina
+of	van de
+
+calculate md5sum	Bereken md5sum
+download directory as tar.gz archive	Download map als tar.gz archief

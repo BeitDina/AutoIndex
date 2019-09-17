@@ -1,0 +1,91 @@
+// English langauge file
+
+index of	Index of
+parent directory	Parent Directory
+thumbnail of	Thumbnail of
+continue	Continue
+
+file	File
+files	Files
+folder	Folder
+folders	Folders
+size	Size
+total size	Total size
+total downloads	Total downloads
+total	Total
+date	Modified
+description	Description
+downloads	Downloads
+type	Type
+sort by	Sort by
+
+search	Search
+both	Both
+search results for	search results for
+and its subdirectories	and its subdirectories
+
+account	User Account
+login	Login
+logout	Log out
+username	Username
+password	Password
+select user to remove	Select user to remove
+are you sure you want to remove the user	Are you sure you want to remove the user
+delete this user	Delete this user
+add user	Add User
+
+guest	Guest
+user	Regular User
+mod	Moderator
+admin	Administrator
+level	User's level
+
+rename	rename/move
+renaming	Renaming
+new filename	New Filename
+you can also move the file by specifying a path	you can also move the file by specifying a path
+delete	delete
+are you sure you want to delete the file	Are you sure you want to delete the file
+edit description	edit description
+yes, delete	Yes, delete it
+
+upload	Upload
+files to this folder	file(s) to this folder
+uploaded files	Uploaded files
+failed files	Failed files
+none	None
+file already exists	file already exists
+filename is listed as a hidden file	filename is listed as a hidden file
+
+reconfigure script	Reconfigure script
+create new directory in this folder	Create new directory (in this folder)
+edit list of hidden files	Edit list of hidden files
+add new user	Add new user
+delete user	Delete user
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Enter the new description for the file
+change	Change
+enter the new name	Enter the new name
+create	Create
+
+add	Add
+remove	Remove
+remove a hidden file	Remove a hidden file
+add a new hidden file	Add a new hidden file
+
+edit ban list	Edit list of banned IPs and hostnames
+remove a ban	Remove a ban
+add a new ban	Add a new ban (IP address or hostname, you can use wildcards)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	View entries from log file
+view statistics from log file	View statistics from log file
+how many entries would you like to view	How many entries would you like to view
+view	View
+page	Page
+of	of
+
+calculate md5sum	calculate md5sum
+download directory as tar.gz archive	Download directory as tar.gz archive

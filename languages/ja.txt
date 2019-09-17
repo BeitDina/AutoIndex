@@ -1,0 +1,92 @@
+// Japanese langauge file
+//  Tadashi Jokagi <elf2000@users.sourceforge.net>
+
+index of	æ¬¡ã?®ä¸€è¦§:
+parent directory	è¦ªãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+thumbnail of	æ¬¡ã?®ã‚µãƒ ãƒ?ã‚¤ãƒ«:
+continue	ç¶šã?‘ã‚‹
+
+file	ãƒ•ã‚¡ã‚¤ãƒ«
+files	ãƒ•ã‚¡ã‚¤ãƒ«
+folder	ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼
+folders	ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼
+size	å®¹é‡?
+total size	ç·?å®¹é‡?
+total downloads	ç·?ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰æ•°
+total	å?ˆè¨ˆ
+date	ä¿®æ­£æ—¥æ™‚
+description	èª¬æ˜Ž
+downloads	ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰æ•°
+type	ç¨®é¡ž
+sort by	ã‚½ãƒ¼ãƒˆåŸºæº–
+
+search	æ¤œç´¢
+both	Both
+search results for	æ¬¡ã?®æ¤œç´¢çµ?æžœ:
+and its subdirectories	ã?¾ã?Ÿã??ã?®ã‚µãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+
+account	ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ
+login	ãƒ­ã‚°ã‚¤ãƒ³
+logout	ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ
+username	ãƒ¦ãƒ¼ã‚¶ãƒ¼å??
+password	ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+select user to remove	é?¸æŠžãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’å‰Šé™¤ã?™ã‚‹
+are you sure you want to remove the user	æœ¬å½“ã?«ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’å‰Šé™¤ã?—ã?¾ã?™ã?‹?
+delete this user	ã?“ã?®ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’å‰Šé™¤ã?™ã‚‹
+add user	æ–°è¦?ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’è¿½åŠ ã?™ã‚‹
+
+guest	ã‚²ã‚¹ãƒˆ
+user	ä¸€èˆ¬ãƒ¦ãƒ¼ã‚¶ãƒ¼
+mod	ãƒ¢ãƒ‡ãƒ¬ãƒ¼ã‚¿
+admin	ç®¡ç?†è€…
+level	ãƒ¦ãƒ¼ã‚¶ãƒ¼ã?®ãƒ¬ãƒ™ãƒ«
+
+rename	å??ç§°å¤‰æ›´/ç§»å‹•
+renaming	Renaming
+new filename	æ–°è¦?ãƒ•ã‚¡ã‚¤ãƒ«å??
+you can also move the file by specifying a path	å?Œæ§˜ã?«ã€?ãƒ‘ã‚¹ã?®æŒ‡å®šã?«ã‚ˆã‚Šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç§»å‹•ã?•ã?›ã‚‹ã?“ã?¨ã?Œã?§ã??ã?¾ã?™
+delete	å‰Šé™¤ã?™ã‚‹
+are you sure you want to delete the file	æœ¬å½“ã?«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã?—ã?¾ã?™ã?‹?
+edit description	èª¬æ˜Žã‚’ç·¨é›†ã?™ã‚‹
+yes, delete	ã?¯ã?„ã€?ã??ã‚Œã‚’å‰Šé™¤ã?—ã?¾ã?™
+
+upload	ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã?™ã‚‹
+files to this folder	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã?“ã?®ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã?«
+uploaded files	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã?—ã?¾ã?—ã?Ÿã€‚
+failed files	ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å¤±æ•—ã?—ã?¾ã?—ã?Ÿã€‚
+none	ã?ªã?—
+file already exists	ãƒ•ã‚¡ã‚¤ãƒ«ã?¯æ—¢ã?«å­˜åœ¨ã?—ã?¾ã?™ã€‚
+filename is listed as a hidden file	ãƒ•ã‚¡ã‚¤ãƒ«ã?¯éš ã?—ãƒ•ã‚¡ã‚¤ãƒ«ã?¨ã?—ã?¦ä¸€è¦§è¡¨ç¤ºã?•ã‚Œã?¾ã?™
+
+reconfigure script	ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å†?è¨­å®šã?™ã‚‹
+create new directory in this folder	ã?“ã?®ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã?«æ–°è¦?ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ä½œæˆ?ã?™ã‚‹
+edit list of hidden files	éš ã?—ãƒ•ã‚¡ã‚¤ãƒ«ã?®ä¸€è¦§ã‚’ç·¨é›†ã?™ã‚‹
+add new user	æ–°è¦?ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’è¿½åŠ ã?™ã‚‹
+delete user	ãƒ¦ãƒ¼ã‚¶ãƒ¼ã‚’å‰Šé™¤ã?™ã‚‹
+copy url	ãƒªãƒ¢ãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã?“ã?®ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã?«ã‚³ãƒ”ãƒ¼ã?™ã‚‹
+upload to ftp	FTP ã‚µãƒ¼ãƒ?ãƒ¼ã?«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¢ãƒƒãƒ—ãƒ­ãƒ¼ãƒ‰ã?™ã‚‹
+
+enter the new description for the file	ãƒ•ã‚¡ã‚¤ãƒ«ã?®æ–°ã?—ã?„èª¬æ˜Žã‚’å…¥åŠ›ã?—ã?¦ã??ã? ã?•ã?„ã€‚
+change	å¤‰æ›´ã?™ã‚‹
+enter the new name	æ–°ã?—ã?„å??å‰?ã‚’å…¥åŠ›ã?—ã?¦ã??ã? ã?•ã?„ã€‚
+create	ä½œæˆ?ã?™ã‚‹
+
+add	è¿½åŠ ã?™ã‚‹
+remove	å‰Šé™¤ã?™ã‚‹
+remove a hidden file	éš ã?—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã?™ã‚‹
+add a new hidden file	éš ã?—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¿½åŠ ã?™ã‚‹
+
+edit ban list	ç¦?æ­¢ã?•ã‚Œã?Ÿ IP ã‚¢ãƒ‰ãƒ¬ã‚¹ã?¨ãƒ›ã‚¹ãƒˆå??ã?®ä¸€è¦§ã‚’ç·¨é›†ã?™ã‚‹
+remove a ban	ç¦?æ­¢æƒ…å ±ã‚’å‰Šé™¤ã?™ã‚‹
+add a new ban	ç¦?æ­¢æƒ…å ±ã‚’è¿½åŠ ã?™ã‚‹ (IP ã‚¢ãƒ‰ãƒ¬ã‚¹åŒ–ãƒ›ã‚¹ãƒˆå??ã?§ãƒ¯ã‚¤ãƒ«ãƒ‰ã‚«ãƒ¼ãƒ‰ã?Œä½¿ç”¨ã?§ã??ã?¾ã?™)
+the administrator has blocked your ip address or hostname	ã?™ã?¿ã?¾ã?›ã‚“ã€‚ã?‚ã?ªã?Ÿã?® IP ã‚¢ãƒ‰ãƒ¬ã‚¹ã€?ã‚‚ã?—ã??ã?¯ãƒ›ã‚¹ãƒˆå??ã?¯ç®¡ç?†è€…ã?«ã‚ˆã‚Šãƒ–ãƒ­ãƒƒã‚¯ã?•ã‚Œã?¦ã?„ã?¾ã?™ã€‚
+
+view entries from log file	ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã?‹ã‚‰ã‚¨ãƒ³ãƒˆãƒªã‚’é–²è¦§ã?™ã‚‹
+view statistics from log file	ãƒ­ã‚°ãƒ•ã‚¡ã‚¤ãƒ«ã?‹ã‚‰çµ±è¨ˆã‚’é–²è¦§ã?™ã‚‹
+how many entries would you like to view	ã?©ã‚Œã??ã‚‰ã?„ã?®ã‚¨ãƒ³ãƒˆãƒªã‚’é–²è¦§ã?—ã?Ÿã?„ã?§ã?™ã?‹?
+view	é–²è¦§ã?™ã‚‹
+page	Page
+of	of
+
+calculate md5sum	md5sum ã‚’è¨ˆç®—ã?™ã‚‹
+download directory as tar.gz archive	ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚’ tar.gz ã‚¢ãƒ¼ã‚«ã‚¤ãƒ–ã?¨ã?—ã?¦ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã?™ã‚‹

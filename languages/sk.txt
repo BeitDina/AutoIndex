@@ -1,0 +1,91 @@
+﻿// Slovenský preklad, vytvoril keeper7
+
+index of	Výpis z
+parent directory	Nadradený adresár
+thumbnail of	Miniatúra 
+continue	Pokračovať
+
+file	Súbor
+files	Súbory
+folder	Zložka
+folders	Zložky
+size	Veľkost
+total size	Celková veľkost
+total downloads	Celkom stiahnuté
+total	Celkovov
+date	Upravené
+description	Popis
+downloads	Stiahnuté
+type	Typ
+sort by	Triediť podľa
+
+search	Vyhľedať
+both	Všetko
+search results for	výsledky vyhľadávania pre
+and its subdirectories	a jeho podzložky
+
+account	Užívatelský účet
+login	Prihlásiť
+logout	Odhlásiť
+username	Užívateľské meno
+password	Heslo
+select user to remove	vyberte uživateľa na zmazanie
+are you sure you want to remove the user	Ste si istý, že chcete zmazat užívateľa
+delete this user	Zmazať užívateľa
+add user	Pridať užívateľa
+
+guest	Hosť
+user	Užívateľ
+mod	Moderátor
+admin	Administrátor
+level	Užívateľská úroveň
+
+rename	premenovať/presunúť
+renaming	Premenovanie
+new filename	Nové meno súboru
+you can also move the file by specifying a path	môžete tiež presunúť súbor určením cesty
+delete	zmazať
+are you sure you want to delete the file	Ste si istý, že chcete zmazať súbor
+edit description	upraviť popis
+yes, delete	Áno, zmazať
+
+upload	Nahrať
+files to this folder	súbor(y) do tejto zložky
+uploaded files	Nahraté súbory
+failed files	Nahrávanie zlyhalo
+none	Žiadne
+file already exists	súbor už existuje
+filename is listed as a hidden file	meno súboru je v zozname skrytých súborov
+
+reconfigure script	Prekonfigurovať skript
+create new directory in this folder	Vytvoriť nový adresár (v tejto zložke)
+edit list of hidden files	Upraviť zoznam skrytých súborov
+add new user	Pridať nového užívateľa
+delete user	Zmazať užívateľa
+copy url	Kopírovať vzdialený súbor (do tejto zložky)
+upload to ftp	nahrať súbor na FTP server
+
+enter the new description for the file	Vložiť nový popis k súboru
+change	Zmeniť
+enter the new name	Vložiť nové meno
+create	Vytvoriť
+
+add	Pridať
+remove	Odobrať
+remove a hidden file	Odobrar skrytý súbor
+add a new hidden file	Pridať skrytý súbor
+
+edit ban list	Upravit zoznam zakázaných IP adries a hostnames
+remove a ban	Odobrať zákaz
+add a new ban	Pridať nový zákaz (IP addresa alebo hostname, môžete použiť značky napr *.host.sk)
+the administrator has blocked your ip address or hostname	Prepáčte, ale správca zablokoval vašu IP adresu alebo hostname
+
+view entries from log file	Zobraziť návštevy z logu
+view statistics from log file	Zobraziť štatistiky z logu
+how many entries would you like to view	Koľko položiek chcete zobraziť
+view	Zobraziť
+page	Page
+of	of
+
+calculate md5sum	spočítať md5sum
+download directory as tar.gz archive	Stiahnúť zložku ako tar.gz archív

@@ -1,0 +1,91 @@
+// Catalan language file (David Gimeno i Ayuso info@sima-pc.com)
+
+index of	&Iacute;ndex de
+parent directory	Directori anterior
+thumbnail of	Miniatura de
+continue	Continuar
+
+file	Fitxer
+files	Fitxers
+folder	Carpeta
+folders	Carpetes
+size	Tamany
+total size	Tamany total
+total downloads	Total desc&agrave;rregues
+total	Total
+date	Modificat
+description	Descripci&oacute;
+downloads	Desc&agrave;rregues
+type	Tipus
+sort by	Ordenar per
+
+search	Cercar
+both	Ambd&oacute;s
+search results for	Resultats cerca de
+and its subdirectories	i els seus subdirectoris
+
+account	Compte d'usuari
+login	Entrar
+logout	Sortir
+username	Nom d'usuari
+password	Contrasenya
+select user to remove	Seleccioneu l'usuari a suprimir
+are you sure you want to remove the user	Segur que voleu suprimir aquest usuari
+delete this user	Suprimir aquest usuari
+add user	Afegir usuari
+
+guest	Visitant
+user	Usuari
+mod	Moderator
+admin	Administrador
+level	Nivell d'usuari
+
+rename	redenominar/moure
+renaming	Redenominant
+new filename	Nom nou del fitxer
+you can also move the file by specifying a path	tamb&eacute podeu moure el fitxer si n'especifiqueu un cam&iacute;
+delete	suprimir
+are you sure you want to delete the file	Segur que voleu suprimir aquest fitxer
+edit description	editar la descripci&oacute;
+yes, delete	S&iacute;, suprimir-lo
+
+upload	Carregar
+files to this folder	fitxers a aquesta carpeta
+uploaded files	Fitxers carregats
+failed files	Fitxers fallits
+none	Cap
+file already exists	ja existeix aquest fitxer
+filename is listed as a hidden file	aquest fitxer consta com a ocult
+
+reconfigure script	Reconfigurar seq&uuml;&egrave;ncia
+create new directory in this folder	Crear un nou directori a aquesta carpeta
+edit list of hidden files	Editar la llista de fitxers ocults
+add new user	Afegir un usuari nou
+delete user	Suprimir un usuari
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Introdu&iuml;u la descripci&oacute; nova del fitxer
+change	Canviar
+enter the new name	Introdu&iuml;u el nom nou
+create	Crear
+
+add	Afegir
+remove	Suprimir
+remove a hidden file	Suprimir un fitxer ocult
+add a new hidden file	Afegir un fitxer ocult nou
+
+edit ban list	Editar llista d'IP i noms d'ordinador prohibits
+remove a ban	Suprimir una prohibici&oacute;
+add a new ban	Afegir una prohibici&oacute; nova (adre&ccedil;a IP o nom d'ordinador, podeu usar-hi comodins)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Veure entrades del fitxer de registre
+view statistics from log file	Veure estad&iacute;stiques del fitxer de registre
+how many entries would you like to view	Quantes entrades voleu veure
+view	Veure
+page	Page
+of	of
+
+calculate md5sum	calcular md5sum
+download directory as tar.gz archive	Descarregar directori com arxiu tar.gz

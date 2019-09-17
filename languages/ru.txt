@@ -1,0 +1,91 @@
+﻿// Russian langauge file by Andrey Olischuk <nw@webdevel.ru>
+
+index of	Индекс
+parent directory	Родительская директория
+thumbnail of	Пиктограмма
+continue	Продолжить
+
+file	Файл
+files	Файлы
+folder	Папка
+folders	Папки
+size	Размер
+total size	Общий размер
+total downloads	Всего скачано
+total	Всего
+date	Изменено
+description	Описание
+downloads	Загрузка
+type	Тип
+sort by	Сортировать по
+
+search	Поиск
+both	Оба
+search results for	Результаты поиска для
+and its subdirectories	и подкаталоги
+
+account	Аккаунт
+login	Вход в систему
+logout	Выход из системы
+username	Имя пользователя
+password	Пароль
+select user to remove	Выберите пользователя для удаления
+are you sure you want to remove the user	Вы уверены, что хотите удалить этого пользователя
+delete this user	Удалить этого пользователя
+add user	Добавить пользователя
+
+guest	Гость
+user	Пользователь
+mod	Moderator
+admin	Администратор
+level	Уровень
+
+rename	Переименовать
+renaming	Переименование
+new filename	Новое имя файла
+you can also move the file by specifying a path Вы так же можете переместить файл, указав путь	
+delete	Удалить
+are you sure you want to delete the file	Вы уверены, что хотите удалить этот файл
+edit description	Редактировать описание
+yes, delete	 Да, удалить
+
+upload	Закачать
+files to this folder	Файлы в данную папку
+uploaded files	Закачаные файлы
+failed files	Не закачанные файлы
+none	Нет
+file already exists	Файл уже существует
+filename is listed as a hidden Файл помечен как скрытый
+
+reconfigure script	Переконфигурировать скрипт
+create new directory in this folder	 Создать новую директорию в данной
+edit list of hidden files	Редактировать список скрытых файлов
+add new user	Добавить нового пользователя
+delete user	Удалить пользователя
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Введите новое описание файла
+change	Изменить
+enter the new name	Введите новое имя
+create	Создать
+
+add	Добавить
+remove	Удалить
+remove a hidden file	Удалить скрытый файл
+add a new hidden file	Добавить новый скрытый файл
+
+edit ban list	Редактировать список забаненых
+remove a ban	Снять бан
+add a new ban	Добавить в список забаненых
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Просмотреть лог-файл
+view statistics from log file	Просмотреть статистику из лог-файла
+how many entries would you like to view	Сколько записей вы хотите просмотреть
+view	Просмотреть
+page	Page
+of	of
+
+calculate md5sum	Рассчитать md5sum
+download directory as tar.gz archive	Скачать директорию в виде tar.gz архива

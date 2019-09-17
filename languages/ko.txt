@@ -1,0 +1,91 @@
+﻿// 한국어 (Korean) Translation by pandix <chung621@dreamwiz.com> 
+
+index of	Index of
+parent directory	상위 디렉토리
+thumbnail of	미리보기
+continue	계속
+
+file	파일
+files	파일
+folder	폴더
+folders	폴더
+size	크기
+total size	전체 크기
+total downloads	전체 다운로드수
+total	전체
+date	수정
+description	설명
+downloads	다운로드
+type	형식
+sort by	정렬방식
+
+search	검색
+both	모두
+search results for	다음에 대한 검색결과
+and its subdirectories	하위디렉토리 포함
+
+account	사용자 계정
+login	로그인
+logout	로그아웃
+username	사용자
+password	비밀번호
+select user to remove	삭제할 사용자를 선택학세요
+are you sure you want to remove the user	사용자를 정말로 삭제하시겠습니까
+delete this user	이 사용자 삭제
+add user	사용자 추가
+
+guest	손님
+user	사용자
+mod	Moderator
+admin	관리자
+level	사용자 레벨
+
+rename	이름변경/이동
+renaming	이름변경중
+new filename	새 파일이름
+you can also move the file by specifying a path	특정 경로로 파일을 이동할 수 있습니다
+delete	삭제
+are you sure you want to delete the file	이 파일을 정말로 삭제하시겠습니까
+edit description	설명 편집
+yes, delete	네, 삭제합니다
+
+upload	업로드
+files to this folder	개의 파일을 이 폴더에
+uploaded files	업로드한 파일
+failed files	실패한 파일
+none	없음
+file already exists	파일이 이미 있습니다
+filename is listed as a hidden file	숨겨진 파일에 같은 이름이 있습니다
+
+reconfigure script	스크립트 재설정
+create new directory in this folder	이 폴더내에 새로운 디렉토리를 만듦니다
+edit list of hidden files	숨김 파일의 목록을 설정합니다
+add new user	새로운 사용자 추가
+delete user	사용자 지우기
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	파일의 새로운 설명을 입력하세요
+change	바꾸기
+enter the new name	새 이름을 입력하세요
+create	만들기
+
+add	추가
+remove	삭제
+remove a hidden file	숨김파일 삭제
+add a new hidden file	새로운 숨김파일 추가
+
+edit ban list	거부 목록의 IP 주소와 호스트네임 편집
+remove a ban	거부 목록에서 제외하기
+add a new ban	거부 목록 추가하기 (IP 주소나 호스트네임, 와일드 카드 사용가능)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	로그 파일 내용 보기
+view statistics from log file	로그 파일 통계 보기
+how many entries would you like to view	얼마나 많은 내용을 표시할까요
+view	보기
+page	Page
+of	of
+
+calculate md5sum	md5sum 계산
+download directory as tar.gz archive	디렉토리를 tar.gz 압축으로 다운받기

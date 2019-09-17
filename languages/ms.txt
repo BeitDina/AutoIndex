@@ -1,0 +1,91 @@
+// Fail Bahasa Melayu oleh Ir.Haji Keropok <keropok_at_linux.net>
+
+index of	Indeks tentang
+parent directory	Direktori Utama
+thumbnail of	Thumbnail of
+continue	Bersambung
+
+file	Fail
+files	Fail-fail
+folder	Direktori
+folders	Direktori
+size	Saiz
+total size	Jumlah saiz
+total downloads	Jumlah muatturun
+total	Jumlah
+date	Modifait
+description	Huraian
+downloads	Muatturun
+type	Jenis
+sort by	Asingkan mengikut
+
+search	Cari
+both	Kedua-duanya
+search results for	keputusan carian untuk
+and its subdirectories	dan di bawah direktori
+
+account	Akaun Pengguna
+login	Log masuk
+logout	Log keluar
+username	Namaahli
+password	Katalaluan
+select user to remove	Pilih pengguna untuk dibuang
+are you sure you want to remove the user	Adakah anda pasti untuk membuang pengguna tersebut
+delete this user	Buang pengguna ini
+add user	Tambah pengguna
+
+guest	Tetamu
+user	Pengguna
+mod	Moderator
+admin	Pentadbir
+level	Tahap Pengguna
+
+rename	menamakan/pindah
+renaming	Menamakankembali
+new filename	Nama Failbaru
+you can also move the file by specifying a path	anda boleh pindahkan fail dengan mengkhususkan path
+delete	buang
+are you sure you want to delete the file	Adakah anda pasti untuk membuang fail tersebut
+edit description	ubah huraian
+yes, delete	Ya, buangkannya
+
+upload	Muatnaik
+files to this folder	fail ke direktori ini
+uploaded files	Muatnaik fail
+failed files	Fail gagal
+none	Tiada
+file already exists	fail sudah ada
+filename is listed as a hidden file	Nama fail sudah tersenarai sebagai fail sembunyi
+
+reconfigure script	Skrip konfigurasi semula
+create new directory in this folder	Buat direktori baru di dalam folder ini
+edit list of hidden files	Ubah senarai fail sembunyi
+add new user	Tambah pengguna baru
+delete user	Buang pengguna
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Masukkan huraian baru untuk fail tersebut
+change	Tukar
+enter the new name	Masukkan nama baru
+create	Buat
+
+add	Tambah
+remove	Buang
+remove a hidden file	Buang fail sembunyi
+add a new hidden file	Tambah fail sembunyi baru
+
+edit ban list	Ubah senarai halangan IP dan hostname
+remove a ban	Buang halangan
+add a new ban	Tambah halangan baru (Alamat IP atau hostname, anda boleh juga menggunakan wildcard)
+the administrator has blocked your ip address or hostname	Maaf, pentadbir telah menghalang alamat IP atau hostname anda
+
+view entries from log file	Lihat masukkan dari catatan fail
+view statistics from log file	Lihat statistik dari catatan fail
+how many entries would you like to view	Berapa banyakkah masukkan hendak anda lihat
+view	Lihat
+page	Page
+of	of
+
+calculate md5sum	kira md5sum
+download directory as tar.gz archive	Muatturun direktori sebagai arkib tar.gz

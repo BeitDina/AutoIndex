@@ -1,0 +1,91 @@
+// Turkish language file by Sinan Keskýn <sinan@gelistir.com>
+
+index of	Ýçindekiler
+parent directory	Ana Dizin
+thumbnail of	Küçük Resmi
+continue	Devam
+
+file	Dosya
+files	Dosyalar
+folder	Klasör
+folders	Klasörler
+size	Boyut
+total size	Toplam boyut
+total downloads	Toplam indirilme
+total	Toplam
+date	Deðiþtirilme
+description	Tanýmlama
+downloads	Ýndirilmeler
+type	Tip
+sort by	Sýralama
+
+search	Arama
+both	Her Ýkiside
+search results for	Arama sonuçlarý
+and its subdirectories	ve altdizinleri
+
+account	Kullanýcý Hesabý
+login	Giriþ
+logout	Çýkýþ
+username	Kullanýcý Adý
+password	Þifre
+select user to remove	Silinecek kullanýcýyý seçin
+are you sure you want to remove the user	Kullanýcý silmek istediðinizden emin misiniz
+delete this user	Bu kullanýcýyý sil
+add user	Kullanýcý Ekle
+
+guest	Misafir
+user	Kullanýcý
+mod	Moderator
+admin	Yönetici
+level	Kullanýcý Seviyeleri
+
+rename	Yeniden adlandýr/Taþý
+renaming	Yeniden adlandýrma
+new filename	Yeni Dosya Ýsmi
+you can also move the file by specifying a path	belirtilen yol ile bu dosyayý taþýyabilirsiniz
+delete	sil
+are you sure you want to delete the file	Bu dosyayý silmek istediðinizden emin misiniz
+edit description	tanýmlama düzenle
+yes, delete	Evet, sil
+
+upload	Karþýya gönder
+files to this folder	dosyalar bu klasöre
+uploaded files	Karþýya gönderilmiþ dosyalar
+failed files	Baþarýsýz dosyalar
+none	Yok
+file already exists	dosya zaten var
+filename is listed as a hidden file	dosya ismi gizli dosya olarak listeleniyor
+
+reconfigure script	Scripti yeniden konfigüre et
+create new directory in this folder	Bu klasörde yeni bir dizin oluþtur
+edit list of hidden files	Gizli dosyalarýn listesini düzenle
+add new user	Yeni kullanýcý ekle
+delete user	Kullanýcý sil
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Dosya için yeni bir tanýmlama girin
+change	Deðiþtir
+enter the new name	Yeni isim girin
+create	Oluþtur
+
+add	Ekle
+remove	Sil
+remove a hidden file	Gizli bir dosya sil
+add a new hidden file	Gizli bir dosya ekle
+
+edit ban list	Banlý IP ve adreslerin listesini düzenle
+remove a ban	Baný sil
+add a new ban	Yeni ban ekle (Ip ya da adres)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Logtan girdileri göster
+view statistics from log file	Logtan istatistikleri göster
+how many entries would you like to view	Kaç girdi görmek istiyorsunuz
+view	Göster
+page	Page
+of	of
+
+calculate md5sum	md5sum hesapla
+download directory as tar.gz archive	Dizini tar.gz arþiv olarak indir

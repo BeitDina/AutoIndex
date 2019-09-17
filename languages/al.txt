@@ -1,0 +1,91 @@
+// Albanian language file by Laurent Dhima <laurenti@alblinux.net>
+
+index of	Treguesi i
+parent directory	Directory Prind
+thumbnail of	Minjatura e
+continue	Vazhdo
+
+file	File
+files	Files
+folder	Kartel&euml;
+folders	Kartela
+size	Madh&euml;sia
+total size	Madh&euml;sia gjithsej
+total downloads	Gjithsej shkarkime
+total	Gjithsej
+date	Ndryshuar
+description	P&euml;rshkrimi
+downloads	Shkarkime
+type	Lloji
+sort by	Renditur sipas
+
+search	K&euml;rko
+both	T&euml; dy llojet
+search results for	k&euml;rko rezultate p&euml;r
+and its subdirectories	dhe n&euml;n-directories e tij
+
+account	Llogaria e P&euml;rdoruesit
+login	Identifikohu
+logout	Shk&euml;putu
+username	Emri i p&euml;rdoruesit
+password	Fjal&euml;kalimi
+select user to remove	Zgjidh p&euml;rdoruesin q&euml; duhet hequr
+are you sure you want to remove the user	Jeni i sigurt q&euml; d&euml;shironi t&euml; hiqni p&euml;rdoruesin
+delete this user	Hiqe k&euml;t&euml; p&euml;rdorues
+add user	Shto p&euml;rdorues
+
+guest	Vizitues
+user	P&euml;rdorues
+mod	Moderator
+admin	Admin
+level	Niveli i p&euml;rdoruesit
+
+rename	riem&euml;rto/l&euml;viz
+renaming	Duke riem&euml;rtuar
+new filename	Em&euml;r i Ri File
+you can also move the file by specifying a path	mund t&euml; l&euml;vizni gjithashtu nj&euml; file duke p&euml;rcaktuar nj&euml; pozicion
+delete	elemino
+are you sure you want to delete the file	Jeni i sigurt q&euml; d&euml;shironi t&euml; eleminoni k&euml;t&euml; file
+edit description	ndrysho p&euml;rshkrimin
+yes, delete	Po, eleminoje
+
+upload	Ngarko
+files to this folder	file(s) tek kjo kartel&euml;
+uploaded files	Ngarko files
+failed files	Files e d&euml;shtuar
+none	Asnj&euml;
+file already exists	file ekziston
+filename is listed as a hidden file	emri i file rezulton si file i paduksh&euml;m
+
+reconfigure script	Rikonfiguro skriptin
+create new directory in this folder	Krijo nj&euml; directory t&euml; re n&euml; k&euml;t&euml; kartel&euml;
+edit list of hidden files	Ndrysho list&euml;n e files s&euml; paduksh&euml;m
+add new user	Shto p&euml;rdorues t&euml; ri
+delete user	Hiq p&euml;rdoruesin
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Shto p&euml;rshkrimin e ri p&euml;r file
+change	Ndrysho
+enter the new name	Shkruaj emrin e ri
+create	Krijo
+
+add	Shto
+remove	Hiq
+remove a hidden file	Hiq nj&euml; file t&euml; paduksh&euml;m
+add a new hidden file	Shto nj&euml; file t&euml; ri t&euml; paduksh&euml;m
+
+edit ban list	Shkruaj list&euml;n e IPve t&euml; bllokuara dhe emrat e host
+remove a ban	Hiq nj&euml; bllokim
+add a new ban	Shto nj&euml; bllokim t&euml; ri (adresa IP ose emri i host, mund t&euml; p&euml;rdor&euml;sh wildcards)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Shiko regjistrimet nga file i log
+view statistics from log file	Shiko statistikat nga file i log
+how many entries would you like to view	Sa regjistrime d&euml;shironi t&euml; shikoni
+view	Shiko
+page	Page
+of	of
+
+calculate md5sum	llogarit md5sum
+download directory as tar.gz archive	Shkarko directory si arkiv tar.gz

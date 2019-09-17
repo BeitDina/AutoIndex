@@ -1,0 +1,92 @@
+// Brazilian style Portuguese translation
+// by Marcelo Pelagio Pontes Morais at pontesmorais@yahoo.com
+
+index of	&Iacute;ndice de
+parent directory	Diret&oacute;rio Pai
+thumbnail of	Miniatura de
+continue	Continuar
+
+file	Arquivo
+files	Arquivos
+folder	Diret&oacute;rio
+folders	Diret&oacute;rios
+size	Tamanho
+total size	Tamanho total
+total downloads	Total de downloads
+total	Total
+date	Modificado
+description	Descri&ccedil;&atilde;o
+downloads	Downloads
+type	Tipo
+sort by	Ordenar por
+
+search	Procurar
+both	Ambos
+search results for	Resultados da busca para
+and its subdirectories	e seus subdiret&oacute;rios
+
+account	 Conta do Usu&aacute;rio
+login	Conectar
+logout	Desconectar
+username	Nome de Usu&aacute;rio
+password	Senha
+select user to remove	Selecione qual usu&aacute;rio remover
+are you sure you want to remove the user	Tem certeza que deseja remover este usu&aacute;rio
+delete this user	Remover este usu&aacute;rio
+add user	Adicionar Usu&aacute;rio
+
+guest	Convidado
+user	Usu&aacute;rio
+mod	Moderator
+admin	Administrador
+level	N&iacute;vel do usu&aacute;rio
+
+rename	renomear/mover
+renaming	Renomeando
+new filename	Novo nome de arquivo
+you can also move the file by specifying a path	Voc&ecirc; tamb&eacute;m pode mover o arquivo especificando um caminho
+delete	apagar
+are you sure you want to delete the file	T&ecirc;m certeza que deseja apagar o arquivo
+edit description	editar descri&ccedil;&atilde;o
+yes, delete	Sim, apagar
+
+upload	Enviar
+files to this folder	arquivos para este diret&oacute;rio
+uploaded files	Arquivos enviados
+failed files	Arquivos n&atilde;o enviados
+none	Nenhum
+file already exists	Arquivo j&aacute; existe
+filename is listed as a hidden file	o nome do arquivo &eacute; listado como um arquivo oculto
+
+reconfigure script	Reconfigurar script
+create new directory in this folder	Criar um novo subdiret&oacute;rio neste diret&oacute;rio
+edit list of hidden files	Editar lista dos arquivos ocultos
+add new user	Adicionar novo usu&aacute;rio
+delete user	Remover usu&aacute;rio
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	Entre a nova descri&ccedil;&atilde;o para o arquivo
+change	Modificar
+enter the new name	Entre o novo nome
+create	Criar
+
+add	Adicionar
+remove	Remover
+remove a hidden file	Remover um arquivo escondido
+add a new hidden file	Adicionar um novo arquivo escondido
+
+edit ban list	Editar a lista de IPs e hosts com banners
+remove a ban	Remover um banner
+add a new ban	Adicionar um novo banner (endere&ccedil;o IP ou  hostname. Voc&ecirc; pode usar caracteres curinga)
+the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+
+view entries from log file	Ver entradas no arquivo de Log
+view statistics from log file	Ver estat&iacute;sticas do arquivo de Log
+how many entries would you like to view	Quantas entradas voc&ecirc; deseja ver
+view	Ver
+page	Page
+of	of
+
+calculate md5sum	calcular md5sum
+download directory as tar.gz archive	Fazer Download do diret&oacute;rio como um arquivo 'tar.gz'
