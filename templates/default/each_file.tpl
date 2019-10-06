@@ -1,3 +1,5 @@
+<thead> </thead>
+</tbody>
 
  <tr class="{file:tr_class}">
   <td class="autoindex_td">
@@ -22,4 +24,5 @@
   {file:description}
   </td>
   {end if:description_file}
- </tr>
+ 
+</tr>

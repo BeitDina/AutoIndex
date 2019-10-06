@@ -21,7 +21,10 @@
   {end if:description_file}
  </tr>
 </table>
-<div class="autoindex_small" style="text-align: right;">Powered by <a class="autoindex_a" href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a></div>
+<div class="autoindex_small" style="text-align: right;">
+Powered by <a class="autoindex_a" href="http://autoindex.sourceforge.net/">Original AutoIndex PHP Script</a>
+and  <a class="autoindex_a" href="http://github.com/BeitDina/AutoIndex/">AutoIndex @ Beit Dina</a>
+</div>
 		/* We request that you do not remove the link to the AutoIndex website.
 		   This not only gives respect to the large amount of time given freely by the
 		   developer, but also helps build interest, traffic, and use of AutoIndex. */

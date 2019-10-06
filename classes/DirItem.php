@@ -763,7 +763,11 @@ class DirItem extends Item
 					$lang_name = 'DREHU';
 					$country_name = 'NEW_CALEDONIA';
 				break;
-				
+				case 'pdc':
+				//Pennsilfaanisch-Deitsche
+					$lang_name = 'PENNSYLVANIA_DUTCH';
+					$country_name = 'PENNSYLVANIA';
+				break;				
 				case 'dk':
 					$lang_name = 'DANISH';
 					$country_name = 'DENMARK';
@@ -1065,6 +1069,18 @@ class DirItem extends Item
 					$lang_name = 'SPANISH_COLOMBIAN';
 					$country_name = 'COLOMBIA';
 				break;
+				// Variety of es-419 Spanish Latin America and the Caribbean
+				// Spanish language as spoken in 
+				// the Caribbean islands of Cuba, 
+				// Puerto Rico, and the Dominican Republic 
+				// as well as in Panama, Venezuela, 
+				// and the Caribbean coast of Colombia.
+				case 'es-CU':	
+				case 'es-cu':	
+				//	Spanish (Cuba) (es-CU)
+					$lang_name = 'CUBAN_SPANISH';
+					$country_name = 'CUBA';
+				break;
 				case 'es_CR':
 				case 'es_cr':
 					$lang_name = 'SPANISH_COSTA_RICA';
@@ -1157,10 +1173,17 @@ class DirItem extends Item
 					$lang_name = 'SPANISH_UNITED_STATES';
 					$country_name = 'UNITED_STATES';
 				break;
+				//This dialect is often spoken with an intonation resembling that of the Neapolitan language of Southern Italy, but there are exceptions.
+				case 'es_AR':	
+				case 'es_ar':
+				//Spanish (Argentina) (es-AR)
+					$lang_name = 'RIOPLATENSE_SPANISH_ARGENTINA';
+					$country_name = 'ARGENTINA';
+				break;	
 				case 'es_UY':	
 				case 'es_uy':
 				//Spanish (Uruguay) (es-UY)
-					$lang_name = 'SPANISH_URUGUAY';
+					$lang_name = 'RIOPLATENSE_SPANISH_URUGUAY';
 					$country_name = 'URUGUAY';
 				break;	
 				case 'es_ve':	
@@ -2456,7 +2479,36 @@ class DirItem extends Item
 					$country_name = 'SYRIA';
 				break;
 				
-
+				//sw –Swahili, also known as Kiswahili 
+				case 'sw':
+				case 'swa':
+					$lang_name = 'SWAHILI';
+					$country_name = 'AFRICAN_GREAT_LAKES';
+				break;			
+				//swa – inclusive code
+				//
+				//Individual codes:
+				//swc – Congo Swahili
+				case 'swc':
+					$lang_name = 'CONGO_SWAHILI';
+					$country_name = 'CONGO';
+				break;
+				//swh – Coastal Swahili
+				case 'swh':
+					$lang_name = 'COASTAL_SWAHILI';
+					$country_name = 'AFRIKA_EAST_COAST';
+				break;	
+				//ymk – Makwe
+				case 'ymk':
+					$lang_name = 'MAKWE';
+					$country_name = 'CABO_DELGADO_PROVINCE_OF_MOZAMBIQUE';
+				break;
+				//wmw – Mwani
+				case 'wmw':
+					$lang_name = 'MWANI';
+					$country_name = 'COAST_OF_CABO_DELGADO_PROVINCE_OF_MOZAMBIQUE';
+				break;
+				
 				case 'tc':
 					$lang_name = 'Turks &amp; Caicos Is';
 					$country_name = 'TURKS_&AMP;_CAICOS_IS';
