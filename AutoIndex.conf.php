@@ -6,9 +6,9 @@ base_dir	./
 icon_path	index_icons/winvista/
 flag_path	flags/language/
 language	en
-template	./templates/SwiftBlue/
+template	./templates/default/
 log_file	access.log
-description_file	meta.inc
+description_file	description_file
 user_list	.htpasswd.autoindex
 download_count	false
 hidden_files	hidden_files

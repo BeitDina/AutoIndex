@@ -1,13 +1,14 @@
+cache
 classes
 flags
 index_icons
 languages
 templates
 hidden_files
+description_file
 AutoIndex.conf.php
 config.php
 access.log
-license.html
 meta.inc
 robots.txt
 favicon.gif

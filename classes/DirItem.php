@@ -1167,8 +1167,8 @@ class DirItem extends Item
 					$lang_name = 'SPANISH_EL_SALVADOR';
 					$country_name = 'EL_SALVADOR';
 				break;	
-				case 'es_US':	
-				case 'es_us':	
+				case 'es-US':	
+				case 'es-us':	
 				//	Spanish (United States) (es-US)
 					$lang_name = 'SPANISH_UNITED_STATES';
 					$country_name = 'UNITED_STATES';
@@ -1183,7 +1183,7 @@ class DirItem extends Item
 				case 'es_UY':	
 				case 'es_uy':
 				//Spanish (Uruguay) (es-UY)
-					$lang_name = 'RIOPLATENSE_SPANISH_URUGUAY';
+					$lang_name = 'SPANISH_URUGUAY';
 					$country_name = 'URUGUAY';
 				break;	
 				case 'es_ve':	
@@ -1826,7 +1826,7 @@ class DirItem extends Item
 				break;
 				
 				case 'ke':
-					$lang_name = 'Kenya';
+					$lang_name = 'SWAHILI';
 					$country_name = 'KENYA';
 				break;
 				
@@ -2262,8 +2262,14 @@ class DirItem extends Item
 				break;
 				
 				case 'pt':
-					$lang_name = 'Portugal';
+				case 'pt_pt':
+					$lang_name = 'PORTUGAL';
 					$country_name = 'PORTUGAL';
+				break;
+				
+					case 'pt_br':
+					$lang_name = 'PORTUGAL';
+					$country_name = 'BRAZIL'; //pt
 				break;
 				
 				case 'pk':
@@ -2479,12 +2485,26 @@ class DirItem extends Item
 					$country_name = 'SYRIA';
 				break;
 				
-				//sw –Swahili, also known as Kiswahili 
+				//ISO 639-2	swa
+				//ISO 639-3	swa – inclusive code
+				
+				//Individual codes:
+				//swc – Congo Swahili
+				//swh – Coastal Swahili
+				//ymk – Makwe
+				//wmw – Mwani
+				
+				//Person	Mswahili
+				//People	Waswahili
+				//Language	Kiswahili				
 				case 'sw':
+					$lang_name = 'SWAHILI';
+					$country_name = 'KENYA';
+				break;
 				case 'swa':
 					$lang_name = 'SWAHILI';
 					$country_name = 'AFRICAN_GREAT_LAKES';
-				break;			
+				break;
 				//swa – inclusive code
 				//
 				//Individual codes:

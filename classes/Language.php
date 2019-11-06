@@ -95,10 +95,11 @@ class Language
 		//e.g. "en-us,en;q=0.5"
 		{
 			$available_langs = self::get_all_langs(PATH_TO_LANGUAGES);
+			$accept_lang_ary = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);	
 			if ($available_langs !== false)
 			{
 				$pref = array(); //user's preferred languages
-				foreach (explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']) as $lang)
+				foreach ($accept_lang_ary as $lang)
 				{
 					$lang_array = explode(';q=', trim($lang));
 					$q = (isset($lang_array[1]) ? trim($lang_array[1]) : 1); //preference value
@@ -107,12 +108,14 @@ class Language
 				arsort($pref);
 				//find the first match that is available:
 				foreach ($pref as $lang => $q)
-				{
-					if (in_array($lang, $available_langs))
+				{				
+					//replace line string to language file downscroll
+					$lang = str_replace('-', '_', $lang);			
+					if (file_exists(@realpath(PATH_TO_LANGUAGES . $lang . LANGUAGE_FILE_EXT)))
 					{
 						return $lang;
 					}
-					elseif (file_exists(@realpath(PATH_TO_LANGUAGES . $lang . LANGUAGE_FILE_EXT)))
+					elseif (in_array($lang, $available_langs))
 					{
 						return $lang;
 					}
