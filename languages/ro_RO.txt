@@ -1,8 +1,8 @@
 // Romanian language file by FlorinCB <orynider@users.sourceforge.net>
 
-index of	Indice la
+index of	Index la
 parent directory	Director Superior
-thumbnail of	Thumbnail director
+thumbnail of	Director Thumbnail
 continue	Continuă
 
 file	Fisier
@@ -10,21 +10,21 @@ files	Fisiere
 folder	Folder
 folders	Foldere
 size	Marime
-total size	Dimensiune totala
-total files	Fisiere totale
-total downloads	Descărcări totale
+total size	Dimensiune totală
+total files	Fişiere total
+total downloads	Descărcări total
 total	Total
 
 date	Modificat
-description	Descripţie
+description	Descriere
 downloads	Descărcări
 type	Tip
 sort by	Ordinat după
 
 search	Caută
 both	Ambele
-search results	Rezultatele cautari
-no results	CAUTARE FARA REZULTATE
+search results	Rezultatele căutari
+no results	CĂUTARE FĂRĂ REZULTATE
 
 account	Count utilizator
 login	Autentificare
@@ -57,39 +57,39 @@ uploaded files	Fişiere urcate
 failed files	Fişiere neurcate
 none	Niciuna
 file already exists	fişier dej&a; există
-filename is listed as a hidden file	Il nome di file &egrave; in lista come file nascosto
+filename is listed as a hidden file	numele de fişier &engravat; în listă ca fişier ascuns
 
-reconfigure script	Riconfigura lo script
-create new directory in this folder	Crea una nuova directory in questa cartella
-edit list of hidden files	Modfica la lista dei file nascosti
-add new user	Aggiungi un nuovo utente
-delete user	Cancella utente
-copy url	Copy a remote file (to this folder)
-upload to ftp	upload file to FTP server
+reconfigure script	Reconfigură scriptul
+create new directory in this folder	Crează un nou director în acest director
+edit list of hidden files	Modifică lista de fişiere ascuse
+add new user	Adaugă un nou utilizator
+delete user	Anulează utilizator
+copy url	Copie un fişier remote (în acest folder)
+upload to ftp	urcă fişier prin FTP server
 
-enter the new description for the file	Inserisci la nuova descrizione per il file
-change	Cambia
-enter the new name	Inserisci il nuovo nome
-create	Crea
+enter the new description for the file	Inserează noua descripţiune pt fişier
+change	Schimbă
+enter the new name	Introdu nume nou
+create	Crează
 
-add	Aggiungi
-remove	Rimuovi
-remove a hidden file	Rimuovi un file nascosto
-add a new hidden file	Aggiungi un nuovo file nascosto
+add	Adaugă
+remove	Ştergi
+remove a hidden file	Ştergi un fişier ascuns
+add a new hidden file	Adaugă un nou fişier ascuns
 
-edit ban list	Modifica la lista degli IP e degli hostname bloccati
-remove a ban	Rimuovi un blocco
-add a new ban	Aggiungi un nuovo blocco (indirizzo IP o l'hostname, puoi usare anche i wildcards)
+edit ban list	Modifică lista de IP-uri de nume hostname blocate
+remove a ban	Ştergi un blocat
+add a new ban	Adaugă un nou blocat (indidă IP ori hostname, poţi utiliza chiar wildcards)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
-view entries from log file	Guarda le entries dal fiel di log
-view statistics from log file	Guarda le statistiche dal file di log
-how many entries would you like to view	Quante entries vuoi vedere
-view	Guarda
-page	Page
-of	of
+view entries from log file	Vezi intrările din fişierul de log
+view statistics from log file	Vezi statisticile din fişierul de log
+how many entries would you like to view	Câte intrări vrei să vezi
+view	Vezi
+page	Pagină
+of	de
 
-calculate md5sum	calcola md5sum
+calculate md5sum	calculează md5sum
 download directory as tar.gz archive	Descarcă directorul ca o arhivă tar.gz
 
 MAT_01	MATEI CAP 01
