@@ -175,8 +175,9 @@ abstract class Item
 		$this -> m_time = filemtime($full_name);
 		$this -> a_time = fileatime($full_name);
 		$this -> icon = $this -> new_icon = $this -> md5_link = $this -> thumb_link = '';
-		global $descriptions;
-		$this -> description = ((DESCRIPTION_FILE && $descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : '&nbsp;');
+		global $descriptions, $words;
+		$description = ((DESCRIPTION_FILE && $descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : '&nbsp;');
+		$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
 		$this -> parent_dir = $parent_dir;
 		if (DAYS_NEW)
 		{

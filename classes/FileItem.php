@@ -82,7 +82,7 @@ class FileItem extends Item
 		$this -> downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
 		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
 		. '&amp;file=' . Url::translate_uri($filename);
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'gif')))
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'gif', 'bmp')))
 		{
 			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename)

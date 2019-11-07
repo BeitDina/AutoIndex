@@ -150,7 +150,7 @@ class Language
 	 */
 	public function is_set($name)
 	{
-		return $translation_data -> is_set($name);
+		return $this -> translation_data -> is_set($name);
 	}	
 	
 	/**

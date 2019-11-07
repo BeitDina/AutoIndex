@@ -151,8 +151,9 @@ class DirItem extends Item
 				{
 					$this -> icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
 				}	
-				global $descriptions;
-				$this -> description = $decoded_lang_name;
+				global $descriptions, $words;
+				$description = $decoded_lang_name;
+				$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
 			}			
 			$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename);
 		

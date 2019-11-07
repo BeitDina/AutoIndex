@@ -90,4 +90,18 @@ page	Page
 of	of
 
 calculate md5sum	calcola md5sum
-download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
+download directory as tar.gz archive	Descarcă directorul ca o arhivă tar.gz
+
+MAT_01	MATEI CAP 01
+MAT_02	MATEI CAP 02
+JOH_01	IOAN CAP 01
+JOH_02	IOAN CAP 02
+JOH_03	IOAN CAP 03
+JOH_04	IOAN CAP 04
+JOH_05	IOAN CAP 05
+JOH_06	IOAN CAP 06
+JOH_07	IOAN CAP 07
+JOH_08	IOAN CAP 08
+JOH_09	IOAN CAP 09
+JOH_10	IOAN CAP 10
+JOH_11	IOAN CAP 11
