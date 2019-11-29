@@ -209,17 +209,17 @@ class DirItem extends Item
 					$lang_name = 'ENGLISH-CREOLE';
 					$country_name = 'ANTIGUA_&AMP;_BARBUDA';
 				break;
-				
+
 				case 'ai':
 					$lang_name = 'Anguilla';
 					$country_name = 'ANGUILLA';
 				break;
-				
+
 				case 'aj':
 					$lang_name = 'AROMANIAN';
 					$country_name = 'Aromaya';
 				break;
-				
+
 				case 'ak':
 					$lang_name = 'AKAN';
 					$country_name = '';
@@ -263,11 +263,16 @@ class DirItem extends Item
 					$country_name = 'ALGERIA';
 				break;
 
+				case 'arc':
+					$country_name = 'ASHURIA';
+					$lang_name = 'ARAMEIC';
+				break;
+
 				case 'ary':
 					$lang_name = 'MOROCCAN_ARABIC'; //known as Moroccan Arabic or Moroccan Darija or Algerian Saharan Arabic
 					$country_name = 'MOROCCO';
 				break;
-				
+
 				//jrb – Judeo-Arabic
 				//yhd – Judeo-Iraqi Arabic
 				//aju – Judeo-Moroccan Arabic
@@ -278,7 +283,7 @@ class DirItem extends Item
 					$lang_name = 'JUDEO-ARABIC';
 					$country_name = 'JUDEA';
 				break;
-				
+
 				case 'kab':
 					$lang_name = 'KABYLE'; //known as Kabyle (Tamazight)
 					$country_name = 'ALGERIA';
