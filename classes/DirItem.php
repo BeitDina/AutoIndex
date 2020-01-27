@@ -159,7 +159,7 @@ class DirItem extends Item
 				}
 				else
 				{
-					$description = $filename;
+					$description = strtoupper(substr($filename, 0, strrpos($filename, '.')));
 				}
 				
 				$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
