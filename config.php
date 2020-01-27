@@ -328,7 +328,7 @@ Icon Path: <input type="text" name="icon_path" value="<?php if ($settings['icon_
 
 <p />
 <table width="650" cellpadding="8"><tr><td>
-Flag Path: <input type="text" name="icon_path" value="<?php if ($settings['flag_path'] != 'false') echo $settings['flag_path']; ?>" />
+Flag Path: <input type="text" name="flag_path" value="<?php if ($settings['flag_path'] != 'false') echo $settings['flag_path']; ?>" />
 <p class="small">
 	This is the path to the flag image files (the path web browsers will access them from).
 	<br />The included icon sets are <em>country</em>, <em>language</em>.
