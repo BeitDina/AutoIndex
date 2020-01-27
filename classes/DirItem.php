@@ -138,11 +138,11 @@ class DirItem extends Item
 			if (!@is_dir($file))
 			{
 				throw new ExceptionDisplay('Directory <em>'	. Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
-			}			
+			}
 			
 			$this -> filename = $filename = substr($filename, 0, -1); //str_replace('', '/', $filename);	
 			$mb_strlen = mb_strlen($filename);
-			$this -> icon = $config -> __get('icon_path') . 'dir.png';			
+			$this -> icon = $config -> __get('icon_path') . 'dir.png';
 			
 			if (($mb_strlen > 0) && ($mb_strlen < 6)) 
 			{
@@ -150,11 +150,20 @@ class DirItem extends Item
 				if (!empty($decoded_lang_name))
 				{
 					$this -> icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
-				}	
+				}
+
 				global $descriptions, $words;
-				$description = $decoded_lang_name;
+				if (!empty($decoded_lang_name))
+				{
+					$description = $decoded_lang_name;
+				}
+				else
+				{
+					$description = $filename;
+				}
+				
 				$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
-			}			
+			}
 			$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename);
 		
 		}
@@ -204,22 +213,23 @@ class DirItem extends Item
 					$country_name = 'AFGHANISTAN'; // langs: pashto and dari
 					$lang_name = 'AFRIKAANS'; // speakers: 6,855,082 - 13,4%
 				break;
-
+				
+				
 				case 'ag':
 					$lang_name = 'ENGLISH-CREOLE';
 					$country_name = 'ANTIGUA_&AMP;_BARBUDA';
 				break;
-
+				
 				case 'ai':
 					$lang_name = 'Anguilla';
 					$country_name = 'ANGUILLA';
 				break;
-
+				
 				case 'aj':
 					$lang_name = 'AROMANIAN';
 					$country_name = 'Aromaya';
 				break;
-
+				
 				case 'ak':
 					$lang_name = 'AKAN';
 					$country_name = '';
@@ -257,22 +267,22 @@ class DirItem extends Item
 					$lang_name = 'ARABIC';
 					$country_name = 'ARGENTINA';
 				break;
-
+				
 				case 'arq':
 					$lang_name = 'ALGERIAN_ARABIC'; //known as Darja or Dziria in Algeria
 					$country_name = 'ALGERIA';
 				break;
-
+				
 				case 'arc':
 					$country_name = 'ASHURIA';
 					$lang_name = 'ARAMEIC';
 				break;
-
+				
 				case 'ary':
 					$lang_name = 'MOROCCAN_ARABIC'; //known as Moroccan Arabic or Moroccan Darija or Algerian Saharan Arabic
 					$country_name = 'MOROCCO';
 				break;
-
+				
 				//jrb – Judeo-Arabic
 				//yhd – Judeo-Iraqi Arabic
 				//aju – Judeo-Moroccan Arabic
@@ -283,7 +293,7 @@ class DirItem extends Item
 					$lang_name = 'JUDEO-ARABIC';
 					$country_name = 'JUDEA';
 				break;
-
+				
 				case 'kab':
 					$lang_name = 'KABYLE'; //known as Kabyle (Tamazight)
 					$country_name = 'ALGERIA';
@@ -2733,7 +2743,7 @@ class DirItem extends Item
 			}
 			$return = ($lang_country == 'country') ? $country_name : $lang_name;
 			$return = ($langs_countries == true) ? $lang_name[$country_name] : $return;
-			return $return ;	
+			return $return ;
 	}
 	
 	/**
