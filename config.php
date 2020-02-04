@@ -5,8 +5,8 @@
  * automatically included to create a new one.
  *
  * @package AutoIndex
- * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.2.0 (January 01, 2006)
+ * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
+ * @version 2.4.5 (January 01, 2019)
  *
  * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
