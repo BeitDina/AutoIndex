@@ -7,7 +7,7 @@
 	
 	<meta name="title"       content="Directory Index" />
 	<meta name="author"      content="Beit Dina Bible Arheology and Translation Institute @ beitdina.net" />
-	<meta name="copyright"   content="default template © Beit Dina 2019 based on subSilver style © 2005 phpBB Group." />
+	<meta name="copyright"   content="default template Â© Beit Dina 2019 based on subSilver style Â© 2005 phpBB Group." />
 	<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 	<meta name="description" lang="{config:language}" content="Directory Index. This is the description search engines show when listing your site." />
 	<meta name="category"    content="general" />
@@ -39,26 +39,6 @@ function changeImages() {
 			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
 		}
 	}
-}
-
-function set_mx_cookie(in_listID, status)
-{
-    var expDate = new Date();
-    // expires in 1 year
-    expDate.setTime(expDate.getTime() + 31536000000);
-    document.cookie = in_listID + "=" + escape(status) + "; expires=" + expDate.toGMTString();
-}
-
-function set_phpbb_cookie(cookieName, cookieValue, lifeTime, path, domain, isSecure)
-{
-    var expDate = new Date();
-    // expires in 1 year
-    expDate.setTime(expDate.getTime() + 31536000000);
-
-	document.cookie = escape( cookieName ) + "=" + escape( cookieValue ) +
-		";expires=" + expDate.toGMTString() +
-		( path ? ";path=" + path : "") + ( domain ? ";domain=" + domain : "") +
-		( isSecure == 1 ? ";secure" : "");
 }
 
 function checkSearch()
