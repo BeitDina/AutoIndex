@@ -252,26 +252,6 @@ function changeImages() {
 	}
 }
 
-function set_mx_cookie(in_listID, status)
-{
-    var expDate = new Date();
-    // expires in 1 year
-    expDate.setTime(expDate.getTime() + 31536000000);
-    document.cookie = in_listID + "=" + escape(status) + "; expires=" + expDate.toGMTString();
-}
-
-function set_phpbb_cookie(cookieName, cookieValue, lifeTime, path, domain, isSecure)
-{
-    var expDate = new Date();
-    // expires in 1 year
-    expDate.setTime(expDate.getTime() + 31536000000);
-
-	document.cookie = escape( cookieName ) + "=" + escape( cookieValue ) +
-		";expires=" + expDate.toGMTString() +
-		( path ? ";path=" + path : "") + ( domain ? ";domain=" + domain : "") +
-		( isSecure == 1 ? ";secure" : "");
-}
-
 function checkSearch()
 {
 	if (document.search_block.search_engine.value == 'google')
