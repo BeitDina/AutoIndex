@@ -14,9 +14,9 @@
                     <img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;<span class="pagetitle">{words:index of} {info:dir} @ #Bibliuta</span><hr class="hrtop"></td>
 					<td class="row2" width="25%" align="right" valign="top"><span class="sitetitle"><b>beitdina.net</b></span><br /><span class="sitetitle_desc">Portalul canalului #Bibliuta de pe Undernet&nbsp; </span></td>
 				</tr>
-				<!--
 				<tr>
 					<td class="row1" align="center" valign="middle" colspan="3">
+					<!--
 						<table cellspacing="6" cellpadding="2" border="0">
 							<tr>
 								<td height="15" align="center" valign="top" nowrap><span class="mainmenu"><a href="http://beitdina.net/forum/index.php" class="mainmenu">
@@ -53,11 +53,41 @@
 								<td height="15" align="center" valign="top" nowrap><a href="http://beitdina.net/forum/profile.php?mode=register" class="mainmenu">Înregistrare</a></span></td>
 							</tr>
 						</table>
-					</td>
-				</tr>
-				-->
-
-			</table>
+						-->
+					<table id="nav-main" class="tablebg stat-block online-list responsive-show nav-main linklist" role="menubar" style="background-color: rgb(255, 204, 255); width: 90%; page-break-before: always;" border="1" bordercolor="#314004" cellspacing="6" cellpadding="2" border="0" rules="groups">
+						<tbody class="table2 responsive-show navbar-top" role="navigation">
+						<tr>
+							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+									<a href="#" role="menuitem">
+										<i class="icon fa-file-o fa-fw icon-gray" align="center"></i>
+									</a><span>{words:LENINGRAD}</span>
+							</td>
+							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+											
+											<a href="../aleppo/" role="menuitem">
+													<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:ALEPPO}</span>
+											</a>
+							</td>
+							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+										
+										<a href="../peshitta/" rel=" co-worker neighbor" role="menuitem">
+											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:PESHITTA}</span>
+										</a>
+							</td>
+							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+												
+												<a href="#" role="menuitem">
+												<i class="icon fa-file-o fa-fw icon-gray" align="center"></i>
+												</a><span>{words:SINAITICUS}</span>
+							</td>
+							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+													<a href="../qumran/" role="menuitem">
+													<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:QUMRAN}</span>
+													</a>
+							</td>
+						</tr>
+						</tbody>
+				</table>
 			
 			<table width="100%" cellspacing="0" cellpadding="2" border="0" align="center">
 				<tr>
