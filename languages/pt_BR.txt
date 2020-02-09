@@ -90,3 +90,8 @@ of	of
 
 calculate md5sum	calcular md5sum
 download directory as tar.gz archive	Fazer Download do diret&oacute;rio como um arquivo 'tar.gz'
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
