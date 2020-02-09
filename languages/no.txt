@@ -89,3 +89,7 @@ of	of
 
 calculate md5sum	kalkuler md5sum
 download directory as tar.gz archive	Last ned mappe som tar.gz-arkiv
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
