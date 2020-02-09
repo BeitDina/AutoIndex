@@ -89,3 +89,7 @@ of	of
 
 calculate md5sum	kira md5sum
 download directory as tar.gz archive	Muatturun direktori sebagai arkib tar.gz
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
