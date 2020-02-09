@@ -89,3 +89,7 @@ of	of
 
 calculate md5sum	spočítať md5sum
 download directory as tar.gz archive	Stiahnúť zložku ako tar.gz archív
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
