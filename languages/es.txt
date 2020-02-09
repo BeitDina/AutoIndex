@@ -1,4 +1,4 @@
-// Spanish language file by Jes?s Espino <jespino@imap.cc>
+// Spanish langauge file by Jesús Espino <jespino@imap.cc>
 // Bible book names taken by FlorinCB back then from 
 // https://github.com/openscriptures/BibleOrgSys/blob/master/DataFiles/BookNames/BibleBooksNames_spa_traditional.xmlDataFiles/BookNames/BibleBooksNames_spa_traditional.xml
 index of	Índice de
