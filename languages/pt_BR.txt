@@ -1,21 +1,22 @@
-// Brazilian style Portuguese translation
+// Portuguese-Brazilian language translation
 // by Marcelo Pelagio Pontes Morais at pontesmorais@yahoo.com
 
-index of	&Iacute;ndice de
-parent directory	Diret&oacute;rio Pai
+index of	Índice de
+parent directory	Diretório Parental
 thumbnail of	Miniatura de
 continue	Continuar
 
 file	Arquivo
 files	Arquivos
-folder	Diret&oacute;rio
-folders	Diret&oacute;rios
+folder	Diretório
+folders	Diretórios
 size	Tamanho
 total size	Tamanho total
+total files	Arquivos total
 total downloads	Total de downloads
 total	Total
 date	Modificado
-description	Descri&ccedil;&atilde;o
+description	Descrição
 downloads	Downloads
 type	Tipo
 sort by	Ordenar por
@@ -23,50 +24,50 @@ sort by	Ordenar por
 search	Procurar
 both	Ambos
 search results for	Resultados da busca para
-and its subdirectories	e seus subdiret&oacute;rios
+and its subdirectories	e seus subdiretórios
 
-account	 Conta do Usu&aacute;rio
+account	 Conta do Usuário
 login	Conectar
 logout	Desconectar
-username	Nome de Usu&aacute;rio
+username	Nome de Usuário
 password	Senha
-select user to remove	Selecione qual usu&aacute;rio remover
-are you sure you want to remove the user	Tem certeza que deseja remover este usu&aacute;rio
-delete this user	Remover este usu&aacute;rio
-add user	Adicionar Usu&aacute;rio
+select user to remove	Selecione qual usuário remover
+are you sure you want to remove the user	Tem certeza que deseja remover este usuário
+delete this user	Remover este usuário
+add user	Adicionar Usuário
 
 guest	Convidado
-user	Usu&aacute;rio
+user	Usuário
 mod	Moderator
 admin	Administrador
-level	N&iacute;vel do usu&aacute;rio
+level	Nível do usuário
 
 rename	renomear/mover
 renaming	Renomeando
 new filename	Novo nome de arquivo
-you can also move the file by specifying a path	Voc&ecirc; tamb&eacute;m pode mover o arquivo especificando um caminho
+you can also move the file by specifying a path	Você também pode mover o arquivo especificando um caminho
 delete	apagar
-are you sure you want to delete the file	T&ecirc;m certeza que deseja apagar o arquivo
-edit description	editar descri&ccedil;&atilde;o
+are you sure you want to delete the file	Têm certeza que deseja apagar o arquivo
+edit description	editar descrição
 yes, delete	Sim, apagar
 
 upload	Enviar
-files to this folder	arquivos para este diret&oacute;rio
+files to this folder	arquivos para este diretório
 uploaded files	Arquivos enviados
-failed files	Arquivos n&atilde;o enviados
+failed files	Arquivos não enviados
 none	Nenhum
-file already exists	Arquivo j&aacute; existe
-filename is listed as a hidden file	o nome do arquivo &eacute; listado como um arquivo oculto
+file already exists	Arquivo já existe
+filename is listed as a hidden file	o nome do arquivo é listado como um arquivo oculto
 
 reconfigure script	Reconfigurar script
-create new directory in this folder	Criar um novo subdiret&oacute;rio neste diret&oacute;rio
+create new directory in this folder	Criar um novo subdiretório neste diretório
 edit list of hidden files	Editar lista dos arquivos ocultos
-add new user	Adicionar novo usu&aacute;rio
-delete user	Remover usu&aacute;rio
+add new user	Adicionar novo usuário
+delete user	Remover usuário
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	Entre a nova descri&ccedil;&atilde;o para o arquivo
+enter the new description for the file	Entre a nova descrição para o arquivo
 change	Modificar
 enter the new name	Entre o novo nome
 create	Criar
@@ -78,20 +79,110 @@ add a new hidden file	Adicionar um novo arquivo escondido
 
 edit ban list	Editar a lista de IPs e hosts com banners
 remove a ban	Remover um banner
-add a new ban	Adicionar um novo banner (endere&ccedil;o IP ou  hostname. Voc&ecirc; pode usar caracteres curinga)
+add a new ban	Adicionar um novo banner (endereço IP ou  hostname. Você pode usar caracteres curinga)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
 view entries from log file	Ver entradas no arquivo de Log
-view statistics from log file	Ver estat&iacute;sticas do arquivo de Log
-how many entries would you like to view	Quantas entradas voc&ecirc; deseja ver
+view statistics from log file	Ver estatísticas do arquivo de Log
+how many entries would you like to view	Quantas entradas você deseja ver
 view	Ver
 page	Page
 of	of
 
 calculate md5sum	calcular md5sum
-download directory as tar.gz archive	Fazer Download do diret&oacute;rio como um arquivo 'tar.gz'
+download directory as tar.gz archive	Fazer Download do diretório como um arquivo 'tar.gz'
 leningrad	Leningrad
 aleppo	Aleppo
 peshitta	Peshitta
 sinaiticus	Sinaiticus
 qumran	Qumran
+CHAP	Capitolo
+GEN		Gênesis
+EXO		Êxodo
+LEV		Levítico
+NUM		Números
+DEU		Deuteronômio
+JOS		Josué
+JDG		Juízes
+RUT		Rute
+SA1		1 Samuel
+SA2		2 Samuel
+KI1		1 Reis
+KI2		2 Reis
+CH1		1 Crônicas
+CH2		2 Crônicas
+EZR		Esdras 
+NEH		Neemias
+EST		Ester
+JOB		Jó
+PSA		Salmos
+PSA_VOL1	Salmos Vol 1
+PSA_VOL2	Salmos Vol 2
+PSA_VOL3	Salmos Vol 3
+PSA_VOL4	Salmos Vol 4
+PSA_VOL5	Salmos Vol 5
+PRO		Provérbios
+ECC		Eclesiastes
+SNG		Cânticos
+ISA		Isaías
+JER		Jeremias
+LAM		Lamentações
+EZE		Ezequiel
+DAN		Daniel
+HOS		Oséias
+JOL		Joel
+AMO		Amós
+OBA		Obadias
+JNA		Jonas
+MIC		Miquéias
+NAH		Naum
+ENO		1 Enoh
+HAB		Habacuque
+ZEP		Sofonias
+HAG		Ageu
+ZEC		Zacarias
+MAL		Malaquias
+GES		GES
+LES		LES
+TOB		TOBITA
+JDT		IUDITA
+ESA		ESA
+WIS		Sabedoria
+SIR		Siraque 
+BAR		Baruch
+PAZ		Oração de Azarias
+SUS		SAZANNA
+BEL		Bel e o dragão
+MAN		Manassés
+MA1		1 Macabeus
+MA2		2 Macabeus
+MA3		3 Macabeus
+MA4		4 Macabeus
+MAT		Mateus
+MRK		Marcos
+LUK		Lucas
+JOH		João 
+JHN		João
+ACT		Atos dos Apóstolos
+ROM		Romanos
+CO1		1 Coríntios
+CO2		2 Coríntios
+GAL		Gálatas
+EPH		Efésios
+PHP		Filipenses
+COL		Colossenses
+TH1		1 Tessalonicenses
+TH2		2 Tessalonicenses
+TI1		1 Timóteo
+TI2		2 Timóteo
+TIT		Tito
+PHM		Filemom
+HEB		Hebreus
+JAM		Tiago
+PE1		1 Pedro
+PE2		2 Pedro
+JN1		1 João
+JN2		2 João
+JN3		3 João
+JDE		Judas
+REV		Apocalipse
