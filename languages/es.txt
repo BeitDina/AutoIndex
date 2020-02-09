@@ -1,5 +1,6 @@
-// Spanish langauge file by Jes�s Espino <jespino@imap.cc>
-
+// Spanish language file by Jes?s Espino <jespino@imap.cc>
+// Bible book names taken by FlorinCB back then from 
+// https://github.com/openscriptures/BibleOrgSys/blob/master/DataFiles/BookNames/BibleBooksNames_spa_traditional.xmlDataFiles/BookNames/BibleBooksNames_spa_traditional.xml
 index of	&Iacute;ndice de
 parent directory	Directorio Padre
 thumbnail of	Miniatura de
@@ -11,6 +12,7 @@ folder	Carpeta
 folders	Carpetas
 size	Tama&ntilde;o
 total size	Tama&ntilde;o total
+total files	Archivos total
 total downloads	Total de descargas
 total	Total
 date	Modificado
@@ -89,3 +91,93 @@ of	de
 
 calculate md5sum	calcular md5sum
 download directory as tar.gz archive	Descargar directorio como un archivo tar.gz
+LENINGRAD	Leningrad
+ALEPPO		Aleppo
+PESHITTA	Peshitta
+SINAITICUS	Sinaiticus
+QUMRAN	Qumran
+CHAP	Capitolo
+GEN		Génesis
+EXO		Éxodo
+LEV		Levítico
+NUM		Números
+DEU		Deuteronomio
+JOS		Josué
+JDG		Jueces
+RUT		Rut
+SA1		1 Samuel
+SA2		2 Samuel
+KI1		1 Reyes
+KI2		2 Reyes
+CH1		1 Crónicas
+CH2		2 Crónicas
+EZR		Esdras 
+NEH		Nehemías
+EST		Ester
+JOB		Job
+PSA		Salmos
+PRO		Proverbios
+ECC		Ecclesiaste
+SNG		Cantares
+ISA		Isaías
+JER		Jeremías
+LAM		Lamentaciones
+EZE		Ezequiel
+DAN		Daniel
+HOS		Oseas
+JOL		Joel
+AMO		Amós
+OBA		Abdías
+JNA		Jonás
+MIC		Miqueas
+NAH		Nahum
+ENO		1 Enoj
+HAB		Habacuc
+ZEP		Sofonías
+HAG		Hageo
+ZEC		Zacarías
+MAL		Malaquías
+GES		GES
+LES		LES
+TOB		TOBITA
+JDT		IUDITA
+ESA		Esdras
+WIS		WIS
+SIR		SHIRAC 
+BAR		Baruch
+PAZ		PAZ
+SUS		SUZANNA
+BEL		BEEL Y DRAGONO
+MAN		MANASHE
+MA1		1 MACABEI
+MA2		2 MACABEI
+MA3		3 MACABEI
+MA4		4 MACABEI
+MAT		Mateo
+MRK		Marcos
+LUK		Lucas
+JOH		Juan 
+JHN		Juan
+ACT		Hechos
+ROM		Romanos
+CO1		1 Corintios
+CO2		2 Corintios
+GAL		Gálatas
+EPH		Efesios
+PHP		Filipenses
+COL		Colosenses
+TH1		1 Tesalonicenses
+TH2		2 Tesalonicenses
+TI1		1 Timoteo
+TI2		2 Timoteo
+TIT		Tito
+PHM		Filemón
+HEB		Hebreos
+JAM		Santiago
+PE1		1 Pedro
+PE2		2 Pedro
+JN1		1 Juan
+JN2		2 Juan
+JN3		3 Juan
+JDE		Judas
+REV		Apocalipsis
