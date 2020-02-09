@@ -89,3 +89,8 @@ of	of
 
 calculate md5sum	llogarit md5sum
 download directory as tar.gz archive	Shkarko directory si arkiv tar.gz
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
