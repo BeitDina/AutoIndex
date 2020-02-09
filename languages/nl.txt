@@ -89,3 +89,7 @@ of	van de
 
 calculate md5sum	Bereken md5sum
 download directory as tar.gz archive	Download map als tar.gz archief
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
