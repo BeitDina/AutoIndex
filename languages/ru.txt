@@ -90,11 +90,11 @@ of	of
 
 calculate md5sum	Рассчитать md5sum
 download directory as tar.gz archive	Скачать директорию в виде tar.gz архива
-LENINGRAD	Ленинград
-ALEPPO	Алеппо
-PESHITTA	Пешитта
-SINAITICUS	Синайтик
-QUMRAN	Кумран
+leningrad	Ленинград
+aleppo	Алеппо
+peshitta	Пешитта
+sinaiticus	Синайтик
+qumran	Кумран
 CHAP	ГЛАВА
 GEN		Бытие
 EXO		Исход
@@ -115,6 +115,11 @@ NEH		Неемия
 EST		Есфирь
 JOB		Иов
 PSA		Псалтирь
+PSA_VOL1	Псалтирь объем 1
+PSA_VOL2	Псалтирь объем 2
+PSA_VOL3	Псалтирь объем 3
+PSA_VOL4	Псалтирь объем 4
+PSA_VOL5	Псалтирь объем 5
 PRO		Притчи
 ECC		Екклесиаст
 SNG		Песня Песней
