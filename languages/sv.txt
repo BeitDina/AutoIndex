@@ -1,9 +1,9 @@
 // Swedish langauge file by -=FrItZ=-
 
 index of	Indexering av
-parent directory	Upp en nivå
+parent directory	Upp en nivÃ¥
 thumbnail of	Miniatyrbild av
-continue	Fortsätt
+continue	FortsÃ¤tt
 
 file	Fil
 files	Filer
@@ -13,40 +13,40 @@ size	Storlek
 total size	Total storlek
 total downloads	Totalt nedladdat
 total	Totalt
-date	Ändrad
-description	Förklaring
+date	Ã„ndrad
+description	FÃ¶rklaring
 downloads	Nedladdningar
 type	Typ
 sort by	Sorta efter
 
-search	Sök
-both	Både
-search results for	sök resultat av
+search	SÃ¶k
+both	BÃ¥de
+search results for	sÃ¶k resultat av
 and its subdirectories	och dess undermappar
 
-account	Användarkonto
+account	AnvÃ¤ndarkonto
 login	Logga in
 logout	Logga ut
-username	Användarnamn
-password	Lösenord
-select user to remove	Välj användare att ta bort
-are you sure you want to remove the user	Är du säker på att du vill ta bort användaren
-delete this user	Radera denna användare
-add user	Skapa användare
+username	AnvÃ¤ndarnamn
+password	LÃ¶senord
+select user to remove	VÃ¤lj anvÃ¤ndare att ta bort
+are you sure you want to remove the user	Ã„r du sÃ¤ker pÃ¥ att du vill ta bort anvÃ¤ndaren
+delete this user	Radera denna anvÃ¤ndare
+add user	Skapa anvÃ¤ndare
 
-guest	Gäst
-user	Vanlig användare
+guest	GÃ¤st
+user	Vanlig anvÃ¤ndare
 mod	Moderator
-admin	Administratör
-level	Användarnivå
+admin	AdministratÃ¶r
+level	AnvÃ¤ndarnivÃ¥
 
-rename	Döp om/flytta
-renaming	Döper om
+rename	DÃ¶p om/flytta
+renaming	DÃ¶per om
 new filename	Nytt filnamn
-you can also move the file by specifying a path	Du kan flytta en fil genom att ange en sökväg
+you can also move the file by specifying a path	Du kan flytta en fil genom att ange en sÃ¶kvÃ¤g
 delete	Radera
-are you sure you want to delete the file	Är du säker på att du vill radera filen
-edit description	Ändra förklaring
+are you sure you want to delete the file	Ã„r du sÃ¤ker pÃ¥ att du vill radera filen
+edit description	Ã„ndra fÃ¶rklaring
 yes, delete	Ja, radera den
 
 upload	Ladda upp
@@ -59,33 +59,37 @@ filename is listed as a hidden file	filnamnet finns som dold fil
 
 reconfigure script	Konfigurera om scriptet
 create new directory in this folder	Skapa ny mapp (i denna mapp)
-edit list of hidden files	Ändra listan av dolda filer
-add new user	Lägg till användare
-delete user	Radera användare
+edit list of hidden files	Ã„ndra listan av dolda filer
+add new user	LÃ¤gg till anvÃ¤ndare
+delete user	Radera anvÃ¤ndare
 copy url	Kopiera en remote fil (till denna mapp)
 upload to ftp	Ladda upp fil till FTP server
 
-enter the new description for the file	Skriv ny förklaring till filen
-change	Ändra
+enter the new description for the file	Skriv ny fÃ¶rklaring till filen
+change	Ã„ndra
 enter the new name	Skriv nytt namn
 create	Skapa
 
-add	Lägg till
+add	LÃ¤gg till
 remove	Ta bort
 remove a hidden file	Ta bort en dold fil
-add a new hidden file	Lägg till en dold fil
+add a new hidden file	LÃ¤gg till en dold fil
 
-edit ban list	Ändra listan med bannade IPs och värdnamn
+edit ban list	Ã„ndra listan med bannade IPs och vÃ¤rdnamn
 remove a ban	Ta bort en ban
-add a new ban	Lägg till en ban (IP adress eller värdnamn, du kan använda wildcards)
-the administrator has blocked your ip address or hostname	Fuck U, Administratören har blockerat dig
+add a new ban	LÃ¤gg till en ban (IP adress eller vÃ¤rdnamn, du kan anvÃ¤nda wildcards)
+the administrator has blocked your ip address or hostname	Fuck U, AdministratÃ¶ren har blockerat dig
 
-view entries from log file	Se anslutningar från loggfil
-view statistics from log file	Se statistik från loggfil
-how many entries would you like to view	Hur många anslutningar vill du se
+view entries from log file	Se anslutningar frÃ¥n loggfil
+view statistics from log file	Se statistik frÃ¥n loggfil
+how many entries would you like to view	Hur mÃ¥nga anslutningar vill du se
 view	Se
 page	Page
 of	of
 
 calculate md5sum	Kalkylera md5sum
 download directory as tar.gz archive	Ladda ner mapp som tar.gz arkiv
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
