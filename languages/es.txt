@@ -13,7 +13,7 @@ folders	Carpetas
 size	Tamaño
 total size	Tamaño total
 total files	Archivos total
-total downloads	Total de descargas
+total downloads	Descargas totales
 total	Total
 date	Modificado
 description	Descripción
