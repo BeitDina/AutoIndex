@@ -1,7 +1,7 @@
 // Bulgarian language file by error_404@abv.bg
 
-index of	Индек�? на
-parent directory	Главна директори�?
+index of	Индекѿ на
+parent directory	Главна директориѿ
 thumbnail of	Миниатюра на
 continue	Продължи
 
@@ -10,82 +10,87 @@ files	Файлове
 folder	Папка
 folders	Папки
 size	Големина
-total size	В�?ичко големина
-total downloads	В�?ичко теглени�?
-total	В�?ичко
+total size	Вѿичко големина
+total downloads	Вѿичко теглениѿ
+total	Вѿичко
 date	Дата
-description	Опи�?ание
-downloads	Теглени�?
+description	Опиѿание
+downloads	Теглениѿ
 type	Вид
 sort by	Сортирай по
 
-search	Тър�?и
-both	В�?ички
+search	Търѿи
+both	Вѿички
 search results for	намерени резултати за
 and its subdirectories	и техните подпапки
 
-account	Потребител�?ки профил
+account	Потребителѿки профил
 login	Вход
 logout	Изход
-username	Потребител�?ко име
+username	Потребителѿко име
 password	Парола
 select user to remove	Изберете потребител за премахване
-are you sure you want to remove the user	Сигурен ли �?те, че желаете да премахнете потребител
+are you sure you want to remove the user	Сигурен ли ѿте, че желаете да премахнете потребител
 delete this user	Изтрийте този потребител
 add user	Добавете потребител
 
-guest	Го�?т
+guest	Гоѿт
 user	Потребител
 mod	Moderator
-admin	�?дмини�?тратор
-level	Потребител�?ко ниво
+admin	пдминиѿтратор
+level	Потребителѿко ниво
 
-rename	преименувай/преме�?ти
+rename	преименувай/премеѿти
 renaming	Преименува
-new filename	�?ов файл
-you can also move the file by specifying a path	вие може да преме�?тите файл като отбележите път�?
+new filename	пов файл
+you can also move the file by specifying a path	вие може да премеѿтите файл като отбележите пътѿ
 delete	изтрий
-are you sure you want to delete the file	Сигурен ли �?те, че желаете да изтриете файла
-edit description	пром�?на на опи�?ание
+are you sure you want to delete the file	Сигурен ли ѿте, че желаете да изтриете файла
+edit description	промѿна на опиѿание
 yes, delete	Да, изтрий го
 
 upload	Качи
 files to this folder	файл(ове) за тази папка
 uploaded files	Качени файлове
-failed files	�?еу�?пешни файлове
-none	�?ищо
-file already exists	файлът вече �?ъще�?твува
-filename is listed as a hidden file	файлът е �?ъ�? �?крити атрибути
+failed files	пеуѿпешни файлове
+none	пищо
+file already exists	файлът вече ѿъщеѿтвува
+filename is listed as a hidden file	файлът е ѿъѿ ѿкрити атрибути
 
-reconfigure script	Реконфигурирай �?крипта
-create new directory in this folder	Създай нова директори�? в тази папка
-edit list of hidden files	Промени �?пи�?ъка на �?критите файлове
+reconfigure script	Реконфигурирай ѿкрипта
+create new directory in this folder	Създай нова директориѿ в тази папка
+edit list of hidden files	Промени ѿпиѿъка на ѿкритите файлове
 add new user	Добави нов потребител
 delete user	Изтрий потребител
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	Добави ново опи�?ание за този файл
+enter the new description for the file	Добави ново опиѿание за този файл
 change	Промени
 enter the new name	Добави ново име
 create	Създай
 
 add	Добави
 remove	Премахни
-remove a hidden file	Премахни �?крити�? файл
-add a new hidden file	Добави нов �?крит файл
+remove a hidden file	Премахни ѿкритиѿ файл
+add a new hidden file	Добави нов ѿкрит файл
 
-edit ban list	Промени ли�?та на баннатите IP-та или хо�?тове
+edit ban list	Промени лиѿта на баннатите IP-та или хоѿтове
 remove a ban	Премахни бан
-add a new ban	Добави нов бан (IP адре�? или хо�?т, може да използвате �?пи�?ък по подразбиране)
+add a new ban	Добави нов бан (IP адреѿ или хоѿт, може да използвате ѿпиѿък по подразбиране)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
 view entries from log file	Прегледайте добавките в лог файла
-view statistics from log file	Прегкледайте �?тати�?тиките от лог файла
+view statistics from log file	Прегкледайте ѿтатиѿтиките от лог файла
 how many entries would you like to view	Колко добавки желаете да прегледате
 view	Виж
 page	Page
 of	of
 
-calculate md5sum	Калкулирай md5 �?умата
-download directory as tar.gz archive	Свали директори�?та като tar.gz архив
+calculate md5sum	Калкулирай md5 ѿумата
+download directory as tar.gz archive	Свали директориѿта като tar.gz архив
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
