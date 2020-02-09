@@ -91,11 +91,11 @@ of	of
 
 calculate md5sum	calcola md5sum
 download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
-LENINGRAD	Leningrad
-ALEPPO		Aleppo
-PESHITTA	Peshitta
-SINAITICUS	Sinaiticus
-QUMRAN	Qumran
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
 CHAP	CAPITOL
 GEN		GENEZA
 EXO		IEŞIREA
@@ -115,7 +115,12 @@ EZR		EZRA
 NEH		NEEMIA
 EST		ESTERA
 JOB		IOV
-PSA		PSALMS
+PSA		PSALMI
+PSA_VOL1	PSALTIRE VOL I
+PSA_VOL2	PSALTIRE VOL II
+PSA_VOL3	PSALTIRE VOL III
+PSA_VOL4	PSALTIRE VOL IV
+PSA_VOL5	PSALTIRE VOL V
 PRO		PROVERBS
 ECC		ECCLESIAST
 SNG		CÂNTATEA
