@@ -1,4 +1,4 @@
-// Spanish language file by Jes?s Espino <jespino@imap.cc>
+// Spanish langauge file by JesЗs Espino <jespino@imap.cc>
 // Bible book names taken by FlorinCB back then from 
 // https://github.com/openscriptures/BibleOrgSys/blob/master/DataFiles/BookNames/BibleBooksNames_spa_traditional.xmlDataFiles/BookNames/BibleBooksNames_spa_traditional.xml
 index of	&Iacute;ndice de
@@ -91,11 +91,11 @@ of	de
 
 calculate md5sum	calcular md5sum
 download directory as tar.gz archive	Descargar directorio como un archivo tar.gz
-LENINGRAD	Leningrad
-ALEPPO		Aleppo
-PESHITTA	Peshitta
-SINAITICUS	Sinaiticus
-QUMRAN	Qumran
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
 CHAP	Capitolo
 GEN		Génesis
 EXO		Éxodo
@@ -116,6 +116,11 @@ NEH		Nehemías
 EST		Ester
 JOB		Job
 PSA		Salmos
+PSA_VOL1	Salmos Vol 1
+PSA_VOL2	Salmos Vol 2
+PSA_VOL3	Salmos Vol 3
+PSA_VOL4	Salmos Vol 4
+PSA_VOL5	Salmos Vol 5
 PRO		Proverbios
 ECC		Ecclesiaste
 SNG		Cantares
