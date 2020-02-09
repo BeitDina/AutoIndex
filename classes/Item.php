@@ -177,7 +177,8 @@ abstract class Item
 		$this -> icon = $this -> new_icon = $this -> md5_link = $this -> thumb_link = '';
 		global $descriptions, $words;
 		$description = ((DESCRIPTION_FILE && $descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : strtoupper(substr($filename, 0, strrpos($filename, '.'))));
-		$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
+		$extend_description = (($words -> is_set('CHAP') && $words -> is_set(strtoupper(substr($description, 0, strrpos($description, '_'))))) ? $words -> __get(strtoupper(substr($description, 0, strrpos($description, '_')))) . ' ' . $words -> __get('CHAP') . ' ' . substr(strrchr($description, '_'), 1) : $description);
+		$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $extend_description );
 		$this -> parent_dir = $parent_dir;
 		if (DAYS_NEW)
 		{
