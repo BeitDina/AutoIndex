@@ -1,4 +1,4 @@
-// Russian langauge file by Andrey Olischuk <nw@webdevel.ru>
+// Russian language file by Andrey Olischuk <nw@webdevel.ru>
 
 index of	Индекс
 parent directory	Родительская директория
