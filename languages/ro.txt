@@ -44,7 +44,7 @@ level	Nivel utilizator
 
 rename	redenumeşte/mută
 renaming	Redenumire
-new filename	Noul nume de fişier
+new filename	Noul nume de fişier 
 you can also move the file by specifying a path	poţi totodată sămuţi fişierul specificând o cale
 delete	şterge
 are you sure you want to delete the file	Sigur doreşti ştergerea fişierului
@@ -91,3 +91,93 @@ of	of
 
 calculate md5sum	calcola md5sum
 download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
+LENINGRAD	Leningrad
+ALEPPO		Aleppo
+PESHITTA	Peshitta
+SINAITICUS	Sinaiticus
+QUMRAN	Qumran
+CHAP	CAPITOL
+GEN		GENEZA
+EXO		IEŞIREA
+LEV		LEVITIC
+NUM		NUMERI
+DEU		DEUTERONOM
+JOS		IOSUA
+JDG		JUDECĂTORI
+RUT		RUT
+SA1		1 SAMUEL
+SA2		2 SAMUEL
+KI1		1 ÎMPĂRAŢI
+KI2		2 ÎMPĂRAŢI
+CH1		1 CRONICI
+CH2		2 CRONICI
+EZR		EZRA 
+NEH		NEEMIA
+EST		ESTERA
+JOB		IOV
+PSA		PSALMS
+PRO		PROVERBS
+ECC		ECCLESIAST
+SNG		CÂNTATEA
+ISA		ISAIA
+JER		IEREMIA
+LAM		PLÂNGERI
+EZE		EZECHIEL
+DAN		DANIEL
+HOS		OSEA
+JOL		JOL
+AMO		AMOS
+OBA		OBADIA
+JNA		JNA
+MIC		MICA
+NAH		NAH
+ENO		1 ENOH
+HAB		AVACUM
+ZEP		ŢEFANIA
+HAG		AGAI
+ZEC		ZAHARIA
+MAL		MALEAHI
+GES		GES
+LES		LES
+TOB		TOBITA
+JDT		IUDITA
+ESA		ESA
+WIS		ÎNŢELEPCIUNEA
+SIR		IISUS ŞIRAC 
+BAR		BAR
+PAZ		PAZ
+SUS		SAZANA
+BEL		BEEL ŞI DRAGONUL
+MAN		MANAŞE
+MA1		1 MACABEI
+MA2		2 MACABEI
+MA3		3 MACABEI
+MA4		4 MACABEI
+MAT		MATEI
+MRK		MARCU
+LUK		LUCA
+JOH		IOAN 
+JHN		IOAN
+ACT		FAPTE
+ROM		ROMANI
+CO1		1 CORINTENI
+CO2		2 CORINTENI
+GAL		GALATENI
+EPH		EFESENI
+PHP		FILIPENI
+COL		COLOSENI
+TH1		1 TESALONICENI
+TH2		2 TESALONICENI
+TI1		1 TIMOTEI
+TI2		2 TIMOTEI
+TIT		TIT
+PHM		FILIMON
+HEB		EVREI
+JAM		IACOV
+PE1		1 PETRU
+PE2		2 PETRU
+JN1		1 IOAN
+JN2		2 IOAN
+JN3		3 IOAN
+JDE		IUDA
+REV		APOCALIPSA
