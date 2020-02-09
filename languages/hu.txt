@@ -1,92 +1,96 @@
 // Hungarian (Magyar) translation by crash <crash2@freemail.hu>
-// last update: 2005.02.14. 14:15
+// last update: 2020.02.09. 14:15 by FlorinCB
 
-index of	K&ouml;nyvt&aacute;r
+index of	Kőnyvtár
 parent directory	Feljebb
 thumbnail of	Thumbnail of
-continue	Tov&aacute;bb
+continue	Tovább
 
-file	F&aacute;jl
-files	F&aacute;jl
-folder	K&ouml;nyvt&aacute;r
-folders	K&ouml;nyvt&aacute;r
-size	M&eacute;ret
-total size	&Ouml;sszes m&eacute;ret
-total downloads	&Ouml;sszes let&ouml;lt&eacute;s
-total	&Ouml;sszes
-date	D&aacute;tum
-description	Le&iacute;r&aacute;s
-downloads	Let&ouml;lt&eacute;s
-type	T&iacute;pus
-sort by	Rendez&eacute;s
+file	Fájl
+files	Fájl
+folder	Kőnyvtár
+folders	Kőnyvtár
+size	Méret
+total size	ősszes méret
+total downloads	ősszes letőltés
+total	ősszes
+date	Dátum
+description	Leírás
+downloads	Letőltés
+type	Típus
+sort by	Rendezés
 
-search	Keres&eacute;s
+search	Keresés
 both	Mind
-search results for	keres&eacute;s eredm&eacute;nye
-and its subdirectories	&eacute;s az alk&ouml;nyvt&aacute;rai
+search results for	keresés eredménye
+and its subdirectories	és az alkőnyvtárai
 
-account	Felhaszn&aacute;l&oacute;i Men&uuml;
-login	Bel&eacute;p&eacute;s
-logout	Kil&eacute;p&eacute;s
-username	Felhaszn&aacute;l&oacute; n&eacute;v
-password	Jelsz&oacute;
-select user to remove	V&aacute;laszd ki a t&ouml;rlend&#337; felhaszn&aacute;l&oacute;t
-are you sure you want to remove the user	Biztos t&ouml;r&ouml;lni akarod a felhaszn&aacute;l&oacute;t
-delete this user	Felhaszn&aacute;l&oacute; t&ouml;rl&eacute;se
-add user	&Uacute;j felhaszn&aacute;l&oacute;
+account	Felhasználöi Men&uuml;
+login	Belépés
+logout	Kilépés
+username	Felhasználö név
+password	Jelszö
+select user to remove	Válaszd ki a tőrlendó felhasználöt
+are you sure you want to remove the user	Biztos tőrőlni akarod a felhasználöt
+delete this user	Felhasználö tőrlése
+add user	Új felhasználö
 
-guest	Vend&eacute;g
-user	Felhaszn&aacute;l&oacute;
-mod	Moder&aacute;tor
-admin	Adminisztr&aacute;tor
-level	Felhaszn&aacute;l&oacute; szintje
+guest	Vendég
+user	Felhasználö
+mod	Moderátor
+admin	Adminisztrátor
+level	Felhasználö szintje
 
-rename	&aacute;tnevez
-renaming	&Eacute;tnevez&eacute;s
-new filename	&Uacute;j f&aacute;jln&eacute;v
-you can also move the file by specifying a path	a f&aacute;jl mozgat&aacute;s&aacute;hoz adj meg k&ouml;nyvt&aacute;rat
-delete	t&ouml;r&ouml;l
-are you sure you want to delete the file	Biztos t&ouml;r&ouml;lni akarod a f&aacute;jlt
-edit description	le&iacute;r&aacute;s szerkeszt&eacute;se
-yes, delete	Igen, t&ouml;r&ouml;lni akarom
+rename	átnevez
+renaming	étnevezés
+new filename	Új fájlnév
+you can also move the file by specifying a path	a fájl mozgatásához adj meg kőnyvtárat
+delete	tőről
+are you sure you want to delete the file	Biztos tőrőlni akarod a fájlt
+edit description	leírás szerkesztése
+yes, delete	Igen, tőrőlni akarom
 
-upload	Felt&ouml;lt&eacute;s
-files to this folder	f&aacute;jl(ok) ebbe a k&ouml;nyvt&aacute;rba
-uploaded files	Felt&ouml;lt&ouml;tt f&aacute;jlok
-failed files	Sikertelen felt&ouml;lt&eacute;s
+upload	Feltőltés
+files to this folder	fájl(ok) ebbe a kőnyvtárba
+uploaded files	Feltőltőtt fájlok
+failed files	Sikertelen feltőltés
 none	Nincs
-file already exists	a f&aacute;jl m&aacute;r l&eacute;tezik
-filename is listed as a hidden file	a f&aacute;jl neve rejtettnek van be&aacute;l&iacute;ltva
+file already exists	a fájl már létezik
+filename is listed as a hidden file	a fájl neve rejtettnek van beálíltva
 
-reconfigure script	Script &Uacute;jrakonfigur&aacute;l&aacute;sa
-create new directory in this folder	&Uacute;j k&ouml;nyvt&aacute;r ebbe a k&ouml;nyvt&aacute;rba
-edit list of hidden files	Rejtett f&aacute;jlok list&aacute;j&aacute;nak szerkeszt&eacute;se
-add new user	&Uacute;j felhaszn&aacute;l&oacute;
-delete user	Felhaszn&aacute;l&oacute; t&ouml;rl&eacute;se
-copy url	t&aacute;voli f&aacute;jl m&aacute;sol&aacute;sa (ebbe a k&ouml;nyvt&aacute;rba)
-upload to ftp	f&aacute;jl felt&ouml;lt&eacute;se az FTP szerverre
+reconfigure script	Script Újrakonfigurálása
+create new directory in this folder	Új kőnyvtár ebbe a kőnyvtárba
+edit list of hidden files	Rejtett fájlok listájának szerkesztése
+add new user	Új felhasználö
+delete user	Felhasználö tőrlése
+copy url	távoli fájl másolása (ebbe a kőnyvtárba)
+upload to ftp	fájl feltőltése az FTP szerverre
 
-enter the new description for the file	Add meg a f&aacute;jl &uacute;j le&iacute;r&aacute;s&aacute;t
-change	V&aacute;ltoztat
-enter the new name	Add meg az &uacute;j nev&eacute;t
-create	L&eacute;trehoz
+enter the new description for the file	Add meg a fájl Új leírását
+change	Változtat
+enter the new name	Add meg az Új nevét
+create	Létrehoz
 
-add	Hozz&aacute;ad
-remove	T&ouml;r&ouml;l
-remove a hidden file	Rejtett f&aacute;jl t&ouml;rl&eacute;se
-add a new hidden file	Rejtett f&aacute;jl l&eacute;trehoz&aacute;sa
+add	Hozzáad
+remove	Tőről
+remove a hidden file	Rejtett fájl tőrlése
+add a new hidden file	Rejtett fájl létrehozása
 
-edit ban list	Kitiltott IP-k &eacute;s hostok list&aacute;j&aacute;nak szerkeszt&eacute;se
-remove a ban	Kitilt&aacute;s t&ouml;rl&eacute;se
-add a new ban	&Uacute;j kitilt&aacute;s (IP c&iacute;m vagy hostn&eacute;v, wildcards haszn&aacute;lhat&oacute;)
-the administrator has blocked your ip address or hostname	Az adminisztr&aacute;tor kitiltotta az IP c&iacute;med vagy a hostneved
+edit ban list	Kitiltott IP-k és hostok listájának szerkesztése
+remove a ban	Kitiltás tőrlése
+add a new ban	Új kitiltás (IP cím vagy hostnév, wildcards használhatö)
+the administrator has blocked your ip address or hostname	Az adminisztrátor kitiltotta az IP címed vagy a hostneved
 
-view entries from log file	Logf&aacute;jl megtekint&eacute;se
-view statistics from log file	Statisztika a logf&aacute;jlb&oacute;l
-how many entries would you like to view	H&aacute;ny darabot szeretn&eacute;l l&aacute;tni
-view	Megn&eacute;z
+view entries from log file	Logfájl megtekintése
+view statistics from log file	Statisztika a logfájlböl
+how many entries would you like to view	Hány darabot szeretnél látni
+view	Megnéz
 page	Page
 of	of
 
-calculate md5sum	md5 sz&aacute;mol&aacute;s
-download directory as tar.gz archive	K&ouml;nyvt&aacute;r let&ouml;lt&eacute;se tar.gz form&aacute;tumban
+calculate md5sum	md5 számolás
+download directory as tar.gz archive	Kőnyvtár letőltése tar.gz formátumban
+leningrad	 Leningrád
+aleppo	Aleppo
+peshitta	Szír Pesitta
+sinaiticus	Sinaiticus
