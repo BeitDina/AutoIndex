@@ -1,91 +1,95 @@
-// Turkish language file by Sinan Keskın <sinan@gelistir.com>
+// Turkish language file by Sinan KeskÄ±n <sinan@gelistir.com>
 
-index of	İçindekiler
+index of	Ä°Ã§indekiler
 parent directory	Ana Dizin
-thumbnail of	Küçük Resmi
+thumbnail of	KÃ¼Ã§Ã¼k Resmi
 continue	Devam
 
 file	Dosya
 files	Dosyalar
-folder	Klasör
-folders	Klasörler
+folder	KlasÃ¶r
+folders	KlasÃ¶rler
 size	Boyut
 total size	Toplam boyut
 total downloads	Toplam indirilme
 total	Toplam
-date	Değiştirilme
-description	Tanımlama
-downloads	İndirilmeler
+date	DeÄŸiÅŸtirilme
+description	TanÄ±mlama
+downloads	Ä°ndirilmeler
 type	Tip
-sort by	Sıralama
+sort by	SÄ±ralama
 
 search	Arama
-both	Her İkiside
-search results for	Arama sonuçları
+both	Her Ä°kiside
+search results for	Arama sonuÃ§larÄ±
 and its subdirectories	ve altdizinleri
 
-account	Kullanıcı Hesabı
-login	Giriş
-logout	Çıkış
-username	Kullanıcı Adı
-password	Şifre
-select user to remove	Silinecek kullanıcıyı seçin
-are you sure you want to remove the user	Kullanıcı silmek istediğinizden emin misiniz
-delete this user	Bu kullanıcıyı sil
-add user	Kullanıcı Ekle
+account	KullanÄ±cÄ± HesabÄ±
+login	GiriÅŸ
+logout	Ã‡Ä±kÄ±ÅŸ
+username	KullanÄ±cÄ± AdÄ±
+password	Åifre
+select user to remove	Silinecek kullanÄ±cÄ±yÄ± seÃ§in
+are you sure you want to remove the user	KullanÄ±cÄ± silmek istediÄŸinizden emin misiniz
+delete this user	Bu kullanÄ±cÄ±yÄ± sil
+add user	KullanÄ±cÄ± Ekle
 
 guest	Misafir
-user	Kullanıcı
+user	KullanÄ±cÄ±
 mod	Moderator
-admin	Yönetici
-level	Kullanıcı Seviyeleri
+admin	YÃ¶netici
+level	KullanÄ±cÄ± Seviyeleri
 
-rename	Yeniden adlandır/Taşı
-renaming	Yeniden adlandırma
-new filename	Yeni Dosya İsmi
-you can also move the file by specifying a path	belirtilen yol ile bu dosyayı taşıyabilirsiniz
+rename	Yeniden adlandÄ±r/TaÅŸÄ±
+renaming	Yeniden adlandÄ±rma
+new filename	Yeni Dosya Ä°smi
+you can also move the file by specifying a path	belirtilen yol ile bu dosyayÄ± taÅŸÄ±yabilirsiniz
 delete	sil
-are you sure you want to delete the file	Bu dosyayı silmek istediğinizden emin misiniz
-edit description	tanımlama düzenle
+are you sure you want to delete the file	Bu dosyayÄ± silmek istediÄŸinizden emin misiniz
+edit description	tanÄ±mlama dÃ¼zenle
 yes, delete	Evet, sil
 
-upload	Karşıya gönder
-files to this folder	dosyalar bu klasöre
-uploaded files	Karşıya gönderilmiş dosyalar
-failed files	Başarısız dosyalar
+upload	KarÅŸÄ±ya gÃ¶nder
+files to this folder	dosyalar bu klasÃ¶re
+uploaded files	KarÅŸÄ±ya gÃ¶nderilmiÅŸ dosyalar
+failed files	BaÅŸarÄ±sÄ±z dosyalar
 none	Yok
 file already exists	dosya zaten var
 filename is listed as a hidden file	dosya ismi gizli dosya olarak listeleniyor
 
-reconfigure script	Scripti yeniden konfigüre et
-create new directory in this folder	Bu klasörde yeni bir dizin oluştur
-edit list of hidden files	Gizli dosyaların listesini düzenle
-add new user	Yeni kullanıcı ekle
-delete user	Kullanıcı sil
+reconfigure script	Scripti yeniden konfigÃ¼re et
+create new directory in this folder	Bu klasÃ¶rde yeni bir dizin oluÅŸtur
+edit list of hidden files	Gizli dosyalarÄ±n listesini dÃ¼zenle
+add new user	Yeni kullanÄ±cÄ± ekle
+delete user	KullanÄ±cÄ± sil
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	Dosya için yeni bir tanımlama girin
-change	Değiştir
+enter the new description for the file	Dosya iÃ§in yeni bir tanÄ±mlama girin
+change	DeÄŸiÅŸtir
 enter the new name	Yeni isim girin
-create	Oluştur
+create	OluÅŸtur
 
 add	Ekle
 remove	Sil
 remove a hidden file	Gizli bir dosya sil
 add a new hidden file	Gizli bir dosya ekle
 
-edit ban list	Banlı IP ve adreslerin listesini düzenle
-remove a ban	Banı sil
+edit ban list	BanlÄ± IP ve adreslerin listesini dÃ¼zenle
+remove a ban	BanÄ± sil
 add a new ban	Yeni ban ekle (Ip ya da adres)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
-view entries from log file	Logtan girdileri göster
-view statistics from log file	Logtan istatistikleri göster
-how many entries would you like to view	Kaç girdi görmek istiyorsunuz
-view	Göster
+view entries from log file	Logtan girdileri gÃ¶ster
+view statistics from log file	Logtan istatistikleri gÃ¶ster
+how many entries would you like to view	KaÃ§ girdi gÃ¶rmek istiyorsunuz
+view	GÃ¶ster
 page	Page
 of	of
 
 calculate md5sum	md5sum hesapla
-download directory as tar.gz archive	Dizini tar.gz arşiv olarak indir
+download directory as tar.gz archive	Dizini tar.gz arÅŸiv olarak indir
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
