@@ -90,11 +90,11 @@ of	of
 
 calculate md5sum	calculate md5sum
 download directory as tar.gz archive	Download directory as tar.gz archive
-LENINGRAD	Leningrad
-ALEPPO		Aleppo
-PESHITTA	Peshitta
-SINAITICUS	Sinaiticus
-QUMRAN	Qumran
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
 CHAP	CHAPTER
 GEN		Genesis
 EXO		Exodus
@@ -115,6 +115,11 @@ NEH		Nehemiah
 EST		Esther
 JOB		Job
 PSA		Psalms
+PSA_VOL1	Psalms Vol 1
+PSA_VOL2	Psalms Vol 2
+PSA_VOL3	Psalms Vol 3
+PSA_VOL4	Psalms Vol 4
+PSA_VOL5	Psalms Vol 5
 PRO		Proverbs
 ECC		Ecclesiastes
 SNG		Song of Solomon
