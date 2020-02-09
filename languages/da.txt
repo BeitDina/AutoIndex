@@ -1,4 +1,4 @@
-// Danish langauge file
+// Danish language file
 // Translated by Morten Gregersen (Mobleman.dk), Denmark
 
 index of	Index af
