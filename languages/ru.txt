@@ -1,4 +1,4 @@
-﻿// Russian langauge file by Andrey Olischuk <nw@webdevel.ru>
+// Russian langauge file by Andrey Olischuk <nw@webdevel.ru>
 
 index of	Индекс
 parent directory	Родительская директория
@@ -11,6 +11,7 @@ folder	Папка
 folders	Папки
 size	Размер
 total size	Общий размер
+total files	Общий Файлы
 total downloads	Всего скачано
 total	Всего
 date	Изменено
@@ -43,7 +44,7 @@ level	Уровень
 rename	Переименовать
 renaming	Переименование
 new filename	Новое имя файла
-you can also move the file by specifying a path Вы так же можете переместить файл, указав путь	
+you can also move the file by specifying a path	Вы так же можете переместить файл, указав путь	
 delete	Удалить
 are you sure you want to delete the file	Вы уверены, что хотите удалить этот файл
 edit description	Редактировать описание
@@ -55,7 +56,7 @@ uploaded files	Закачаные файлы
 failed files	Не закачанные файлы
 none	Нет
 file already exists	Файл уже существует
-filename is listed as a hidden Файл помечен как скрытый
+filename is listed as a hidden	Файл помечен как скрытый
 
 reconfigure script	Переконфигурировать скрипт
 create new directory in this folder	 Создать новую директорию в данной
@@ -89,3 +90,93 @@ of	of
 
 calculate md5sum	Рассчитать md5sum
 download directory as tar.gz archive	Скачать директорию в виде tar.gz архива
+LENINGRAD	Ленинград
+ALEPPO	Алеппо
+PESHITTA	Пешитта
+SINAITICUS	Синайтик
+QUMRAN	Кумран
+CHAP	ГЛАВА
+GEN		Бытие
+EXO		Исход
+LEV		Левит
+NUM	Числа
+DEU		Второзаконие
+JOS		Иисус Навин
+JDG		Судьи
+RUT		Руфь
+SA1		1-я Царств
+SA2		2-я Царств
+KI1		3-я Царств
+KI2		4-я Царств
+CH1		1-я Паралипоменон
+CH2		2-я Паралипоменон
+EZR		Ездра 
+NEH		Неемия
+EST		Есфирь
+JOB		Иов
+PSA		Псалтирь
+PRO		Притчи
+ECC		Екклесиаст
+SNG		Песня Песней
+ISA		Исаия
+JER		Иеремия
+LAM		Плач Иеремии
+EZE		Иезекииль
+DAN		Даниил
+HOS		Осия
+JOL		Иоиль
+AMO	Амос
+OBA		Авдий
+JNA		Иона
+MIC		Михей
+NAH		Наум
+ENO		1 Енох
+HAB		Аввакум
+ZEP		Софония
+HAG		Аггей
+ZEC		Захария
+MAL		Малахия
+GES		GES
+LES		LES
+TOB		Товит
+JDT		Иудифь
+ESA		Ездры
+WIS		Премудрость Соломона
+SIR		Сирах
+BAR		Варух
+PAZ		das Gebet of Azariah
+SUS		Susanna
+BEL		Bel und der Drago
+MAN	Молитва Манассии
+MA1		1-я Маккавейская
+MA2		2-я Маккавейскаяn
+MA3		3-я Маккавейская
+MA4		4-я Маккавейская
+MAT		От Матфея
+MRK		От Марк
+LUK		От Луки
+JOH		Иоанна
+JHN		От Иоанна
+ACT		Деяния
+ROM	К Римлянам
+CO1		1-е Коринфянам
+CO2		2-е Коринфянам
+GAL		К Галатам
+EPH		К Ефесянам
+PHP		К Филиппийцам
+COL		К Колоссянам
+TH1		1-е Фессалоникийцам
+TH2		2-е Фессалоникийцам
+TI1		1-е Тимофею
+TI2		2-е Тимофеюs
+TIT		К Титу
+PHM		К Филимону
+HEB		К Евреям
+JAM		Иакова
+PE1		1-е Петра
+PE2		2-е Петра
+JN1		1-е Иоанна
+JN2		2-е Иоанна
+JN3		3-е Иоанна
+JDE		Иуды
+REV		Откровение
