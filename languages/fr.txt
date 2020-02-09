@@ -89,3 +89,93 @@ of	of
 
 calculate md5sum	calculer le md5sum
 download directory as tar.gz archive	T&eacute;l&eacute;charger le dossier en tant qu'archive tar.gz
+LENINGRAD	Leningrad
+ALEPPO		Aleppo
+PESHITTA	Peshitta
+SINAITICUS	Sinaiticus
+QUMRAN	Qumran
+CHAP	Chapitre 
+GEN	Genèse
+EXO	Exode
+LEV	Lévitique
+NUM	Numbres
+DEU	Deutéronome
+JOS	Josué
+JDG	Juges 
+RUT	Ruth
+SA1	1 Samuel
+SA2	2 Samuel
+KI1	1 Rois
+KI2	2 Rois
+CH1	1 Chroniques
+CH2	2 Chroniques
+EZR	Esdras
+NEH	Néhémie
+EST	Ester
+JOB	Job
+PSA	Psaumes 
+PRO	Proverbes
+ECC	Ecclésiaste
+SNG	Cantique de Salomon
+ISA	Ésaie
+JER	Jérémie
+LAM	Lamentations
+EZE	Ézéchiel
+DAN	Daniel
+HOS	Osée
+JOL	Joël
+AMO	Amos
+OBA	Abdias
+JNA	Jonas
+MIC	Michée
+NAH	Nahum
+ENO	1 Enoch
+HAB	Habacuc
+ZEP	Sophonie
+HAG	Aggée
+ZEC	Zacharie
+MAL	Malachie
+GES	GES
+LES	LES
+TOB	TOBITA
+JDT	JUDITA
+ESA	Ezra
+WIS	Sagesse de Salomon
+SIR	Sirac
+BAR	Baruch
+PAZ	PAZ
+SUS	Susanne
+BEL	Beel et Dragon
+MAN	Manashe
+MA1	1 Maccabées
+MA2	2 Maccabées
+MA3	3 Maccabées
+MA4	4 Maccabées
+MAT	Saint Matthieu
+MRK	Saint Marc
+LUK	Saint Luc
+JOH	Saint Jean
+JHN	Saint Jean
+ACT	Actes 
+ROM	Romains
+CO1	1 Corinthiens
+CO2	2 Corinthians
+GAL	Galates
+EPH	Éphésiens
+PHP	Philippiens
+COL	Colossiens
+TH1	1 Thessaloniciens
+TH2	2 Thessaloniciens
+TI1	1 Timothée
+TI2	2 Timothée
+TIT	Tite
+PHM	Philémon
+HEB	Hébreux
+JAM	Jacques
+PE1	1 Pierre
+PE2	2 Pierre
+JN1	1 Jean
+JN2	2 Jean
+JN3	3 Jean
+JDE	Jude
+REV	Apocalypse
