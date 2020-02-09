@@ -1,91 +1,96 @@
 // Arabic langauge file
 
-index of	ÕİÍÉ ãä
-parent directory	ÇáãÌáÏ ÇáÃÕáí
-thumbnail of	ÕæÑÉ ãÕÛÑÉ ãä
-continue	ÅÓÊãÑøú
+index of	ØµÙØ­Ø© Ù…Ù†
+parent directory	Ø§Ù„Ù…Ø¬Ù„Ø¯ Ø§Ù„Ø£ØµÙ„ÙŠ
+thumbnail of	ØµÙˆØ±Ø© Ù…ØµØºØ±Ø© Ù…Ù†
+continue	Ø¥Ø³ØªÙ…Ø±Ù‘Ù’
 
-file	ãáİ
-files	ãáİ
-folder	ãÌáÏ
-folders	ãÌáÏ
-size	ÇáÍÌã
-total size	ÇáÍÌã Çáßáí
-total downloads	ãÌãæÚ ÇáÊÍãíá
-total	ÇáãÌãæÚ
-date	ÊÇÑíÎ ÇáÊÚÏíá
-description	ÇáæÕİ
-downloads	ÊÍãíá
-type	äæÚå
-sort by	ÑÊÈ ÈÜ
+file	Ù…Ù„Ù
+files	Ù…Ù„Ù
+folder	Ù…Ø¬Ù„Ø¯
+folders	Ù…Ø¬Ù„Ø¯
+size	Ø§Ù„Ø­Ø¬Ù…
+total size	Ø§Ù„Ø­Ø¬Ù… Ø§Ù„ÙƒÙ„ÙŠ
+total downloads	Ù…Ø¬Ù…ÙˆØ¹ Ø§Ù„ØªØ­Ù…ÙŠÙ„
+total	Ø§Ù„Ù…Ø¬Ù…ÙˆØ¹
+date	ØªØ§Ø±ÙŠØ® Ø§Ù„ØªØ¹Ø¯ÙŠÙ„
+description	Ø§Ù„ÙˆØµÙ
+downloads	ØªØ­Ù…ÙŠÙ„
+type	Ù†ÙˆØ¹Ù‡
+sort by	Ø±ØªØ¨ Ø¨Ù€
 
-search	ÈÍË
-both	ßáÇåãÇ
-search results for	äÊÇÆÌ ÇáÈÍË áÜ
-and its subdirectories	æ ÇáãÌáÏÇÊ ÇáİÑÚíÉ
+search	Ø¨Ø­Ø«
+both	ÙƒÙ„Ø§Ù‡Ù…Ø§
+search results for	Ù†ØªØ§Ø¦Ø¬ Ø§Ù„Ø¨Ø­Ø« Ù„Ù€
+and its subdirectories	Ùˆ Ø§Ù„Ù…Ø¬Ù„Ø¯Ø§Øª Ø§Ù„ÙØ±Ø¹ÙŠØ©
 
 account	User Account
-login	ÏÎæá
-logout	ÎÑæÌ
-username	ÇÓã ÇáãÓÊÎÏã
-password	ßáãÉ ÇáÓÑ
-select user to remove	ÇÎÊÑ ÚÖæ áÍĞİå
-are you sure you want to remove the user	åá ÇäÊ ãÊÃßÏ ãä ÍĞİ åĞÇ ÇáÚÖæ
-delete this user	ÇÍĞİ åĞÇ ÇáÚÖæ
-add user	ÇÖİ ÚÖæ
+login	Ø¯Ø®ÙˆÙ„
+logout	Ø®Ø±ÙˆØ¬
+username	Ø§Ø³Ù… Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…
+password	ÙƒÙ„Ù…Ø© Ø§Ù„Ø³Ø±
+select user to remove	Ø§Ø®ØªØ± Ø¹Ø¶Ùˆ Ù„Ø­Ø°ÙÙ‡
+are you sure you want to remove the user	Ù‡Ù„ Ø§Ù†Øª Ù…ØªØ£ÙƒØ¯ Ù…Ù† Ø­Ø°Ù Ù‡Ø°Ø§ Ø§Ù„Ø¹Ø¶Ùˆ
+delete this user	Ø§Ø­Ø°Ù Ù‡Ø°Ø§ Ø§Ù„Ø¹Ø¶Ùˆ
+add user	Ø§Ø¶Ù Ø¹Ø¶Ùˆ
 
-guest	ÒÇÆÑ
-user	ÚÖæ
+guest	Ø²Ø§Ø¦Ø±
+user	Ø¹Ø¶Ùˆ
 mod	Moderator
-admin	ãÏíÑ
-level	ÕáÇÍíÇÊ ÇáÚÖæ
+admin	Ù…Ø¯ÙŠØ±
+level	ØµÙ„Ø§Ø­ÙŠØ§Øª Ø§Ù„Ø¹Ø¶Ùˆ
 
-rename	ÛíÑ ÇáÅÓã/ÇäŞá
-renaming	ÛíÑ ÇáÅÓã
-new filename	ÃÖİ ãáİ
-you can also move the file by specifying a path	you can also move the file by specifying a path  íãßäß ãä ÊÍÑíß Çáãáİ áãÓÇÑ ÇÎÑ Ãæ ßÊÇÈÉ åĞÇ ÇáãÓÇÑ
-delete	ÍĞİ
-are you sure you want to delete the file	åá ÃäÊ ãÊÃßÏ ãä ÍĞİ Çáãáİ¿
-edit description	ÊÍÑíÑ ÇáæÕİ
-yes, delete	äÚã ÇÍĞİå
+rename	ØºÙŠØ± Ø§Ù„Ø¥Ø³Ù…/Ø§Ù†Ù‚Ù„
+renaming	ØºÙŠØ± Ø§Ù„Ø¥Ø³Ù…
+new filename	Ø£Ø¶Ù Ù…Ù„Ù
+you can also move the file by specifying a path	you can also move the file by specifying a path  ÙŠÙ…ÙƒÙ†Ùƒ Ù…Ù† ØªØ­Ø±ÙŠÙƒ Ø§Ù„Ù…Ù„Ù Ù„Ù…Ø³Ø§Ø± Ø§Ø®Ø± Ø£Ùˆ ÙƒØªØ§Ø¨Ø© Ù‡Ø°Ø§ Ø§Ù„Ù…Ø³Ø§Ø±
+delete	Ø­Ø°Ù
+are you sure you want to delete the file	Ù‡Ù„ Ø£Ù†Øª Ù…ØªØ£ÙƒØ¯ Ù…Ù† Ø­Ø°Ù Ø§Ù„Ù…Ù„ÙØŸ
+edit description	ØªØ­Ø±ÙŠØ± Ø§Ù„ÙˆØµÙ
+yes, delete	Ù†Ø¹Ù… Ø§Ø­Ø°ÙÙ‡
 
-upload	ÊÍãíá
-files to this folder	ÊÍãíá Çáãáİ áåĞÇ ÇáãÌáÏ
-uploaded files	Íãá ÇáãáİÇÊ
-failed files	ãáİÇÊ ÎÇØÆÉ
-none	áÇ ÔíÁ
-file already exists	Çáãáİ ãæÌæÏ ãÓÈŞÇ
-filename is listed as a hidden file	ÇáãáİÇÊ ÊÚÑÖ Úáì åíÆÉ ãáİÇÊ ãÎİíÉ
+upload	ØªØ­Ù…ÙŠÙ„
+files to this folder	ØªØ­Ù…ÙŠÙ„ Ø§Ù„Ù…Ù„Ù Ù„Ù‡Ø°Ø§ Ø§Ù„Ù…Ø¬Ù„Ø¯
+uploaded files	Ø­Ù…Ù„ Ø§Ù„Ù…Ù„ÙØ§Øª
+failed files	Ù…Ù„ÙØ§Øª Ø®Ø§Ø·Ø¦Ø©
+none	Ù„Ø§ Ø´ÙŠØ¡
+file already exists	Ø§Ù„Ù…Ù„Ù Ù…ÙˆØ¬ÙˆØ¯ Ù…Ø³Ø¨Ù‚Ø§
+filename is listed as a hidden file	Ø§Ù„Ù…Ù„ÙØ§Øª ØªØ¹Ø±Ø¶ Ø¹Ù„Ù‰ Ù‡ÙŠØ¦Ø© Ù…Ù„ÙØ§Øª Ù…Ø®ÙÙŠØ©
 
-reconfigure script	ÅÚÏÇÏÇÊ ÇáÓßÑíÈÊ
-create new directory in this folder	ÃäÔíÁ ãÌáÏ ÌÏíÏ ÏÇÎá åĞÇ ÇáãÌáÏ
-edit list of hidden files	ÊÍÑíÑ ÇáãáİÇÊ ÇáãÎİíÉ
-add new user	ÃÖİ ÚÖæ ÌÏíÏ
-delete user	ÍĞİ ÚÖæ
+reconfigure script	Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª Ø§Ù„Ø³ÙƒØ±ÙŠØ¨Øª
+create new directory in this folder	Ø£Ù†Ø´ÙŠØ¡ Ù…Ø¬Ù„Ø¯ Ø¬Ø¯ÙŠØ¯ Ø¯Ø§Ø®Ù„ Ù‡Ø°Ø§ Ø§Ù„Ù…Ø¬Ù„Ø¯
+edit list of hidden files	ØªØ­Ø±ÙŠØ± Ø§Ù„Ù…Ù„ÙØ§Øª Ø§Ù„Ù…Ø®ÙÙŠØ©
+add new user	Ø£Ø¶Ù Ø¹Ø¶Ùˆ Ø¬Ø¯ÙŠØ¯
+delete user	Ø­Ø°Ù Ø¹Ø¶Ùˆ
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	ÃÖİ æÕİ ÌÏíÏ áåĞÇ Çáãáİ
-change	ÚÏøá
-enter the new name	ÃÏÎá ÇáÅÓã ÇáÌÏíÏ
-create	ÃäÔíÁ
+enter the new description for the file	Ø£Ø¶Ù ÙˆØµÙ Ø¬Ø¯ÙŠØ¯ Ù„Ù‡Ø°Ø§ Ø§Ù„Ù…Ù„Ù
+change	Ø¹Ø¯Ù‘Ù„
+enter the new name	Ø£Ø¯Ø®Ù„ Ø§Ù„Ø¥Ø³Ù… Ø§Ù„Ø¬Ø¯ÙŠØ¯
+create	Ø£Ù†Ø´ÙŠØ¡
 
-add	ÃÖİ
-remove	ÇãÓÍ
-remove a hidden file	ÇãÓÍ ÇáãáİÇÊ ÇáãÎİíÉ
-add a new hidden file	ÃÖİ ãáİÇÊ ãÎİíÉ ÌÏíÏÉ
+add	Ø£Ø¶Ù
+remove	Ø§Ù…Ø³Ø­
+remove a hidden file	Ø§Ù…Ø³Ø­ Ø§Ù„Ù…Ù„ÙØ§Øª Ø§Ù„Ù…Ø®ÙÙŠØ©
+add a new hidden file	Ø£Ø¶Ù Ù…Ù„ÙØ§Øª Ù…Ø®ÙÙŠØ© Ø¬Ø¯ÙŠØ¯Ø©
 
-edit ban list	 ÊÍÑíÑ ŞÇÆãÉ ÇáÇíÈí æ ÇáÈÑæßÓí ÇáããäæÚÉ ÇáÎÇÕÉ ÈÇáÃÚÖÇÁ
-remove a ban	ÇÍĞİ ÔÎÕ ããäæÚ
-add a new ban	ÇÖİ ÂíÈí ÊÑíÏ ãäÚå (IP address or hostname, you can use wildcards)
-the administrator has blocked your ip address or hostname	ÚİæÇ ÇáãÏíÑ ãäÚß ãä ÏÎæá åĞå ÇáÕİÍÉ
+edit ban list	 ØªØ­Ø±ÙŠØ± Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø§ÙŠØ¨ÙŠ Ùˆ Ø§Ù„Ø¨Ø±ÙˆÙƒØ³ÙŠ Ø§Ù„Ù…Ù…Ù†ÙˆØ¹Ø© Ø§Ù„Ø®Ø§ØµØ© Ø¨Ø§Ù„Ø£Ø¹Ø¶Ø§Ø¡
+remove a ban	Ø§Ø­Ø°Ù Ø´Ø®Øµ Ù…Ù…Ù†ÙˆØ¹
+add a new ban	Ø§Ø¶Ù Ø¢ÙŠØ¨ÙŠ ØªØ±ÙŠØ¯ Ù…Ù†Ø¹Ù‡ (IP address or hostname, you can use wildcards)
+the administrator has blocked your ip address or hostname	Ø¹ÙÙˆØ§ Ø§Ù„Ù…Ø¯ÙŠØ± Ù…Ù†Ø¹Ùƒ Ù…Ù† Ø¯Ø®ÙˆÙ„ Ù‡Ø°Ù‡ Ø§Ù„ØµÙØ­Ø©
 
-view entries from log file	ãÔÇåÏ ÇáãÏÎáÇÊ ãä ãáİ ÇáÇÍÕÇÆíÇÊ
-view statistics from log file	ãÔÇåÏÉ ÇáÅÍÕÇÆíÇÊ
-how many entries would you like to view	ßã ãÏÎá ÊÑíÏ ãÔÇåÏÊå
-view	ãÔÇåÏÉ
+view entries from log file	Ù…Ø´Ø§Ù‡Ø¯ Ø§Ù„Ù…Ø¯Ø®Ù„Ø§Øª Ù…Ù† Ù…Ù„Ù Ø§Ù„Ø§Ø­ØµØ§Ø¦ÙŠØ§Øª
+view statistics from log file	Ù…Ø´Ø§Ù‡Ø¯Ø© Ø§Ù„Ø¥Ø­ØµØ§Ø¦ÙŠØ§Øª
+how many entries would you like to view	ÙƒÙ… Ù…Ø¯Ø®Ù„ ØªØ±ÙŠØ¯ Ù…Ø´Ø§Ù‡Ø¯ØªÙ‡
+view	Ù…Ø´Ø§Ù‡Ø¯Ø©
 page	Page
 of	of
 
-calculate md5sum	ÃÍÓÈ ÇáãÌãæÚ
-download directory as tar.gz archive	ãáİ ÇÑÔíİ tar.gz Íãá Çáãáİ Úáì åÆíÉ
+calculate md5sum	Ø£Ø­Ø³Ø¨ Ø§Ù„Ù…Ø¬Ù…ÙˆØ¹
+download directory as tar.gz archive	Ù…Ù„Ù Ø§Ø±Ø´ÙŠÙ tar.gz Ø­Ù…Ù„ Ø§Ù„Ù…Ù„Ù Ø¹Ù„Ù‰ Ù‡Ø¦ÙŠØ© 
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
