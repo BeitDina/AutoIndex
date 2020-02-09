@@ -91,11 +91,11 @@ of	of
 
 calculate md5sum	kalkuliere md5sum
 download directory as tar.gz archive	Lade das gesamte Verzeichnis als tar.gz Archiv herunter
-LENINGRAD	Leningrad
-ALEPPO		Aleppo
-PESHITTA	Peshitta
-SINAITICUS	Sinaiticus
-QUMRAN	Qumran
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
 CHAP	CHAPTER
 GEN		1 Moses
 EXO		2 Moses
@@ -116,6 +116,11 @@ NEH		Nehemia
 EST		Ester
 JOB		Hiob
 PSA		Psalter
+PSA_VOL1	Psalter Vol 1
+PSA_VOL2	Psalter Vol 2
+PSA_VOL3	Psalter Vol 3
+PSA_VOL4	Psalter Vol 4
+PSA_VOL5	Psalter Vol 5
 PRO		Sprüche
 ECC		Prediger
 SNG		Hohelied Salomos
