@@ -1,91 +1,95 @@
 //Thai langauge file by maxzerker@hotmail.com
 
-index of	ดัชนีของ
-parent directory	ไดเร็กโทรี่ก่อนหน้า
-thumbnail of	กรอบรูปของ
-continue	ต่อไป
+index of	เธ”เธฑเธเธเธตเธเธญเธ
+parent directory	เนเธ”เน€เธฃเนเธเนเธ—เธฃเธตเนเธเนเธญเธเธซเธเนเธฒ
+thumbnail of	เธเธฃเธญเธเธฃเธนเธเธเธญเธ
+continue	เธ•เนเธญเนเธ
 
-file	ไฟล์
-files	ไฟล์
-folder		โฟลเดอร์
-folders	โฟลเดอร์
-size	ขนาด
-total size	ขนาดรวม
-total downloads	ดาวน์โหลดรวม
-total	รวม
-date	แก้ใข
-description	รายระเอียด
-downloads	ดาวน์โหลด
-type	ชนิด
-sort by	เรียงโดย
+file	เนเธเธฅเน
+files	เนเธเธฅเน
+folder		เนเธเธฅเน€เธ”เธญเธฃเน
+folders	เนเธเธฅเน€เธ”เธญเธฃเน
+size	เธเธเธฒเธ”
+total size	เธเธเธฒเธ”เธฃเธงเธก
+total downloads	เธ”เธฒเธงเธเนเนเธซเธฅเธ”เธฃเธงเธก
+total	เธฃเธงเธก
+date	เนเธเนเนเธ
+description	เธฃเธฒเธขเธฃเธฐเน€เธญเธตเธขเธ”
+downloads	เธ”เธฒเธงเธเนเนเธซเธฅเธ”
+type	เธเธเธดเธ”
+sort by	เน€เธฃเธตเธขเธเนเธ”เธข
 
-search	ค้นหา
-both	ทั้งคู้
-search results	ผลการค้นหาสำหรับ
-and its subdirectories	รวมทั้งซับไดเร็กโทรี่
+search	เธเนเธเธซเธฒ
+both	เธ—เธฑเนเธเธเธนเน
+search results	เธเธฅเธเธฒเธฃเธเนเธเธซเธฒเธชเธณเธซเธฃเธฑเธ
+and its subdirectories	เธฃเธงเธกเธ—เธฑเนเธเธเธฑเธเนเธ”เน€เธฃเนเธเนเธ—เธฃเธตเน
 
-account	บัญชีผู้ใช้
-login	เข้าสู่ระบบ
-logout	ออกจากระบบ
-username	ชื่อผู้ใช้
-password	รหัสผ่าน
-select user to remove	เลือกชื่อผู้ใช้เพื่อลบออก
-are you sure you want to remove the user	คุณแน่ใจหรือว่าต้องการลบชื่อผู้ใช้นี้
-delete this user	ลบชื่อผู้ใช้นี้
-add user	เพิ่มชื่อผู้ใช้
+account	เธเธฑเธเธเธตเธเธนเนเนเธเน
+login	เน€เธเนเธฒเธชเธนเนเธฃเธฐเธเธ
+logout	เธญเธญเธเธเธฒเธเธฃเธฐเธเธ
+username	เธเธทเนเธญเธเธนเนเนเธเน
+password	เธฃเธซเธฑเธชเธเนเธฒเธ
+select user to remove	เน€เธฅเธทเธญเธเธเธทเนเธญเธเธนเนเนเธเนเน€เธเธทเนเธญเธฅเธเธญเธญเธ
+are you sure you want to remove the user	เธเธธเธ“เนเธเนเนเธเธซเธฃเธทเธญเธงเนเธฒเธ•เนเธญเธเธเธฒเธฃเธฅเธเธเธทเนเธญเธเธนเนเนเธเนเธเธตเน
+delete this user	เธฅเธเธเธทเนเธญเธเธนเนเนเธเนเธเธตเน
+add user	เน€เธเธดเนเธกเธเธทเนเธญเธเธนเนเนเธเน
 
-guest	แขก
-user	ผู้ใช้
+guest	เนเธเธ
+user	เธเธนเนเนเธเน
 mod	Moderator
-admin	ผู้ดูแลระบบ
-level	ระดับของผู้ใช้
+admin	เธเธนเนเธ”เธนเนเธฅเธฃเธฐเธเธ
+level	เธฃเธฐเธ”เธฑเธเธเธญเธเธเธนเนเนเธเน
 
-rename	เปลี่ยนชื่อ/เคลื่อนย้าย
-renaming	กำลังเปลี่ยนชื่อ
-new filename	ชื่อไฟล์ใหม่
-you can also move the file by specifying a path	คุณสามารถเคลื่อนย้ายไฟล์ได้โดยการระบุที่อยู่
-delete	ลบ
-are you sure you want to delete the file	คุณแน่ใจหรือที่จะลบไฟล์นี้
-edit description	แก้ใขรายระเอียด
-yes, delete	ใช่ลบมันทิ้ง(สิว่ะ)
+rename	เน€เธเธฅเธตเนเธขเธเธเธทเนเธญ/เน€เธเธฅเธทเนเธญเธเธขเนเธฒเธข
+renaming	เธเธณเธฅเธฑเธเน€เธเธฅเธตเนเธขเธเธเธทเนเธญ
+new filename	เธเธทเนเธญเนเธเธฅเนเนเธซเธกเน
+you can also move the file by specifying a path	เธเธธเธ“เธชเธฒเธกเธฒเธฃเธ–เน€เธเธฅเธทเนเธญเธเธขเนเธฒเธขเนเธเธฅเนเนเธ”เนเนเธ”เธขเธเธฒเธฃเธฃเธฐเธเธธเธ—เธตเนเธญเธขเธนเน
+delete	เธฅเธ
+are you sure you want to delete the file	เธเธธเธ“เนเธเนเนเธเธซเธฃเธทเธญเธ—เธตเนเธเธฐเธฅเธเนเธเธฅเนเธเธตเน
+edit description	เนเธเนเนเธเธฃเธฒเธขเธฃเธฐเน€เธญเธตเธขเธ”
+yes, delete	เนเธเนเธฅเธเธกเธฑเธเธ—เธดเนเธ(เธชเธดเธงเนเธฐ)
 
-upload	อั๊บโหลด
-files to this folder	ไฟล์เข้าในโฟลเดอร์นี้
-uploaded files	อั๊ปโหลดไฟล์
-failed files	ไฟล์ที่ลมเหลว
-none	ไม่มี
-file already exists	ไฟล์นี้มีอยู่แล้ว
-filename is listed as a hidden file	ชื่อไฟล์ถูกจัดเป็นไฟล์ที่ถูกซ้อน
+upload	เธญเธฑเนเธเนเธซเธฅเธ”
+files to this folder	เนเธเธฅเนเน€เธเนเธฒเนเธเนเธเธฅเน€เธ”เธญเธฃเนเธเธตเน
+uploaded files	เธญเธฑเนเธเนเธซเธฅเธ”เนเธเธฅเน
+failed files	เนเธเธฅเนเธ—เธตเนเธฅเธกเน€เธซเธฅเธง
+none	เนเธกเนเธกเธต
+file already exists	เนเธเธฅเนเธเธตเนเธกเธตเธญเธขเธนเนเนเธฅเนเธง
+filename is listed as a hidden file	เธเธทเนเธญเนเธเธฅเนเธ–เธนเธเธเธฑเธ”เน€เธเนเธเนเธเธฅเนเธ—เธตเนเธ–เธนเธเธเนเธญเธ
 
-reconfigure script	ตั่งค่าสคริปต์ใหม่
-create new directory in this folder	สร้างไดเร็กโทรี่ใหม่ในโฟล์เดอร์นี้
-edit list of hidden files	แก้ใขรายการของไฟล์ที่ถูกซ้อน
-add new user	เพิ่มผู้ใช้ใหม่
-delete user	ลบผู้ใช้
+reconfigure script	เธ•เธฑเนเธเธเนเธฒเธชเธเธฃเธดเธเธ•เนเนเธซเธกเน
+create new directory in this folder	เธชเธฃเนเธฒเธเนเธ”เน€เธฃเนเธเนเธ—เธฃเธตเนเนเธซเธกเนเนเธเนเธเธฅเนเน€เธ”เธญเธฃเนเธเธตเน
+edit list of hidden files	เนเธเนเนเธเธฃเธฒเธขเธเธฒเธฃเธเธญเธเนเธเธฅเนเธ—เธตเนเธ–เธนเธเธเนเธญเธ
+add new user	เน€เธเธดเนเธกเธเธนเนเนเธเนเนเธซเธกเน
+delete user	เธฅเธเธเธนเนเนเธเน
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	ระบุรายระเอียดของไฟล์ใหม่
-change	เปลี่ยน
-enter the new name	ระบุชื่อใหม่
-create	สร้าง
+enter the new description for the file	เธฃเธฐเธเธธเธฃเธฒเธขเธฃเธฐเน€เธญเธตเธขเธ”เธเธญเธเนเธเธฅเนเนเธซเธกเน
+change	เน€เธเธฅเธตเนเธขเธ
+enter the new name	เธฃเธฐเธเธธเธเธทเนเธญเนเธซเธกเน
+create	เธชเธฃเนเธฒเธ
 
-add	เพิ่ม
-remove	เอาออก
-remove a hidden file	นำไฟล์ที่ถูกซ้อนออก
-add a new hidden file	เพิ่มไฟลที่ถูกซ้อน
+add	เน€เธเธดเนเธก
+remove	เน€เธญเธฒเธญเธญเธ
+remove a hidden file	เธเธณเนเธเธฅเนเธ—เธตเนเธ–เธนเธเธเนเธญเธเธญเธญเธ
+add a new hidden file	เน€เธเธดเนเธกเนเธเธฅเธ—เธตเนเธ–เธนเธเธเนเธญเธ
 
-edit ban list	แก้ไขรายการแบนไอพีและชื่อโฮสท์
-remove a ban	นำแบนออก
-add a new ban	เพิ่มรายการแบนใหม่ (ระบุ ไอพี หรือ ชื่อโฮสท์,คุณสามารถใช้ไวลด์คาร์ดได้)
-the administrator has blocked your ip address or hostname	ขออภัยผู้ดูแลระบบได้ทำการบล๊อก ไอพี หรือ ชื่อโฮสท์ ของคุณ
+edit ban list	เนเธเนเนเธเธฃเธฒเธขเธเธฒเธฃเนเธเธเนเธญเธเธตเนเธฅเธฐเธเธทเนเธญเนเธฎเธชเธ—เน
+remove a ban	เธเธณเนเธเธเธญเธญเธ
+add a new ban	เน€เธเธดเนเธกเธฃเธฒเธขเธเธฒเธฃเนเธเธเนเธซเธกเน (เธฃเธฐเธเธธ เนเธญเธเธต เธซเธฃเธทเธญ เธเธทเนเธญเนเธฎเธชเธ—เน,เธเธธเธ“เธชเธฒเธกเธฒเธฃเธ–เนเธเนเนเธงเธฅเธ”เนเธเธฒเธฃเนเธ”เนเธ”เน)
+the administrator has blocked your ip address or hostname	เธเธญเธญเธ เธฑเธขเธเธนเนเธ”เธนเนเธฅเธฃเธฐเธเธเนเธ”เนเธ—เธณเธเธฒเธฃเธเธฅเนเธญเธ เนเธญเธเธต เธซเธฃเธทเธญ เธเธทเนเธญเนเธฎเธชเธ—เน เธเธญเธเธเธธเธ“
 
-view entries from log file	แสดงรายการจากล็อกไฟล์
-view statistics from log file	แสดงสถิติจากล็อกไฟล์
-how many entries would you like to view	จำนวนของรายการที่คุณต้องการที่จะแสดง
-view	แสดง
+view entries from log file	เนเธชเธ”เธเธฃเธฒเธขเธเธฒเธฃเธเธฒเธเธฅเนเธญเธเนเธเธฅเน
+view statistics from log file	เนเธชเธ”เธเธชเธ–เธดเธ•เธดเธเธฒเธเธฅเนเธญเธเนเธเธฅเน
+how many entries would you like to view	เธเธณเธเธงเธเธเธญเธเธฃเธฒเธขเธเธฒเธฃเธ—เธตเนเธเธธเธ“เธ•เนเธญเธเธเธฒเธฃเธ—เธตเนเธเธฐเนเธชเธ”เธ
+view	เนเธชเธ”เธ
 page	Page
 of	of
 
-calculate md5sum	คำนวณ MD5
-download directory as tar.gz archive	ดาวน์โหลดไดเร็กโทรี่เป็นไฟล์ tar.gz
+calculate md5sum	เธเธณเธเธงเธ“ MD5
+download directory as tar.gz archive	เธ”เธฒเธงเธเนเนเธซเธฅเธ”เนเธ”เน€เธฃเนเธเนเธ—เธฃเธตเนเน€เธเนเธเนเธเธฅเน tar.gz
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
