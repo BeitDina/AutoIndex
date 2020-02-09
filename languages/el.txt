@@ -1,91 +1,97 @@
-// Greek language file for AutoIndex version 2.1.2, no independent copyright claims by NSK, Translated from English by NSK, The English original is under the GPL therefore this Greek translation is also under the GPL, http://nsk.wikinerds.org/
+// Greek language file for AutoIndex version 2.1.2, no independent copyright claims by NSK, 
+//Translated from English by NSK, The English original is under the GPL therefore this Greek translation is also under the GPL, http://nsk.wikinerds.org/
 
 index of	Λίστα
 parent directory	Πάνω κατάλογος
-thumbnail of	Σμίνκ�?υνση του
+thumbnail of	Σμίνκρυνση του
 continue	Συνέχεια
 
-file	Α�?χείο
-files	Α�?χεία
+file	Αρχείο
+files	Αρχεία
 folder	Κατάλογος
 folders	Κατάλογοι
 size	Μέγεθος
 total size	Συνολικό μέγεθος
-total downloads	Συνολικές μεταφο�?ές
-total	Σ�?νολο
+total downloads	Συνολικές μεταφορές
+total	Σρνολο
 date	Αλλαγή
-description	Πε�?ιγ�?αφή
-downloads	Μεταφο�?ές
-type	Τ�?πος
+description	Περιγραφή
+downloads	Μεταφορές
+type	Τρπος
 sort by	Ταξινόμιση ανά
 
-search	Ε�?�?εση
+search	Ερρεση
 both	Και τα δυο
-search results for	Αποτελέσματα ε�?�?εσης για
+search results for	Αποτελέσματα ερρεσης για
 and its subdirectories	και τους υποκαταλόγους του
 
-account	Λογα�?ιασμός χ�?ήστη
-login	Αναγνώ�?ιση
-logout	Απεγνώ�?ιση
-username	Όνομα χ�?ήστη
+account	Λογαριασμός χρήστη
+login	Αναγνώριση
+logout	Απεγνώριση
+username	Όνομα χρήστη
 password	Συνθηματικό
-select user to remove	Επέλεξε χ�?ήστη για να αφαι�?έσεις
-are you sure you want to remove the user	Είσαι σίγου�?ος ότι θέλεις να αφαι�?έσεις το χ�?ήστη
-delete this user	Διαγ�?αφή αυτο�? του χ�?ήστη
-add user	Π�?οσθήκη χ�?ήστη
+select user to remove	Επέλεξε χρήστη για να αφαιρέσεις
+are you sure you want to remove the user	Είσαι σίγουρος ότι θέλεις να αφαιρέσεις το χρήστη
+delete this user	Διαγραφή αυτορ του χρήστη
+add user	Προσθήκη χρήστη
 
 guest	Καλεσμένος
-user	Κανονικός χ�?ήστης
+user	Κανονικός χρήστης
 mod	Κατευναστής
-admin	Διαχει�?ηστής
-level	Επίπεδο χ�?ήστη
+admin	Διαχειρηστής
+level	Επίπεδο χρήστη
 
 rename	αλλαγή ονόματος/μετακίνηση
 renaming	Αλλαγή ονόματος
-new filename	�?έο όνομα α�?χείου
-you can also move the file by specifying a path	μπο�?είς επίσης να μετακινήσεις ένα α�?χείο με το να γ�?άψεις μία διαδ�?ομή
-delete	διαγ�?αφή
-are you sure you want to delete the file	Είσαι σίγου�?ος ότι θέλεις να σβήσεις το α�?χείο
-edit description	διό�?θωση πε�?ιγ�?αφής
-yes, delete	�?αι, σβήσε το
+new filename	ρέο όνομα αρχείου
+you can also move the file by specifying a path	μπορείς επίσης να μετακινήσεις ένα αρχείο με το να γράψεις μία διαδρομή
+delete	διαγραφή
+are you sure you want to delete the file	Είσαι σίγουρος ότι θέλεις να σβήσεις το αρχείο
+edit description	διόρθωση περιγραφής
+yes, delete	ραι, σβήσε το
 
-upload	Μετακίνηση π�?ος διακομιστή
-files to this folder	α�?χεία σε αυτό το κατάλογο
-uploaded files	Α�?χεία που έχουν μετακινηθεί στον διακομιστή
-failed files	Αποτυχημένα α�?χεία
+upload	Μετακίνηση προς διακομιστή
+files to this folder	αχεία σε αυτό το κατάλογο
+uploaded files	Αρχεία που έχουν μετακινηθεί στον διακομιστή
+failed files	Αποτυχημένα αρχεία
 none	Κανένα
-file already exists	το α�?χείο ήδη υπάχ�?ει
-filename is listed as a hidden file	το όνομα α�?χείου είναι κ�?υφό
+file already exists	το αρχείο ήδη υπάχρει
+filename is listed as a hidden file	το όνομα αρχείου είναι κρυφό
 
-reconfigure script	Αλλαγή πα�?αμέτ�?ων
-create new directory in this folder	Δημιου�?γία νέου καταλόγου (σε αυτό τον κατάλογο)
-edit list of hidden files	Επεξε�?γασία λίστας κ�?υφών α�?χείων
-add new user	Π�?οσθήκη νέου χ�?ήστη
-delete user	Διαγ�?αφή χ�?ήστη
-copy url	Αντιγ�?αφή ενός απομακ�?υσμένου α�?χείου (σε αυτό το κατάλογο)
-upload to ftp	Μετακίνηση του α�?χείου σε διακομιστή FTP
+reconfigure script	Αλλαγή παραμέτρων
+create new directory in this folder	Δημιουργία νέου καταλόγου (σε αυτό τον κατάλογο)
+edit list of hidden files	Επεξεργασία λίστας κρυφών αρχείων
+add new user	Προσθήκη νέου χρήστη
+delete user	Διαγραφή χρήστη
+copy url	Αντιγραφή ενός απομακρυσμένου αρχείου (σε αυτό το κατάλογο)
+upload to ftp	Μετακίνηση του αρχείου σε διακομιστή FTP
 
-enter the new description for the file	Εισήγαγε νέα πε�?ιγ�?αφή για το α�?χείο
+enter the new description for the file	Εισήγαγε νέα περιγραφή για το αρχείο
 change	Αλλαγή
 enter the new name	Εισηγαγε το νέο όνομα
-create	Δημιου�?γία
+create	Δημιουργία
 
-add	Π�?οσθήκη
-remove	Αφαί�?εση
-remove a hidden file	Αφαί�?εση κ�?υφο�? α�?χείου
-add a new hidden file	Π�?οσθήκη κ�?υφο�? α�?χείου
+add	Προσθήκη
+remove	Αφαίρεση
+remove a hidden file	Αφαίρεση κρυφορ αρχείου
+add a new hidden file	Προσθήκη κρυφορ αρχείου
 
-edit ban list	Επεξε�?γασία λίστας απαγο�?ευμένων διευθ�?νσεων δικτ�?ου IP και ονομάτων hostname
-remove a ban	Αφαί�?εση απαγό�?ευσης
-add a new ban	Π�?οσθήκη απαγό�?ευσης (διε�?θυνση δικτίου IP ή όνομα hostname, μπο�?εις να χ�?ησιμοποιήσεις χα�?ακτή�?ες μπαλαντέ�?)
-the administrator has blocked your ip address or hostname	Συγνώμη, ο διαχει�?ιστής έχει απαγο�?έψει την διε�?θυνση δικτ�?ου IP σας ή το όνομα hostname σας
+edit ban list	Επεξεργασία λίστας απαγορευμένων διευθρνσεων δικτρου IP και ονομάτων hostname
+remove a ban	Αφαίρεση απαγόρευσης
+add a new ban	Προσθήκη απαγόρευσης (διερθυνση δικτίου IP ή όνομα hostname, μπορεις να χρησιμοποιήσεις χαρακτήρες μπαλαντέρ)
+the administrator has blocked your ip address or hostname	Συγνώμη, ο διαχειριστής έχει απαγορέψει την διερθυνση δικτρου IP σας ή το όνομα hostname σας
 
-view entries from log file	Δες εγγ�?αφές από το α�?χείο κατεγ�?αφών
-view statistics from log file	Δες στατιστικά απο το α�?χείο κατεγ�?αφών
-how many entries would you like to view	Πόσες πολλές εγγ�?αφές θα ήθελες να δεις
+view entries from log file	Δες εγγραφές από το αρχείο κατεγραφών
+view statistics from log file	Δες στατιστικά απο το αρχείο κατεγραφών
+how many entries would you like to view	Πόσες πολλές εγγραφές θα ήθελες να δεις
 view	Δες
 page	Page
 of	of
 
 calculate md5sum	υπολόγησε md5sum
-download directory as tar.gz archive	Μετακίνηση του καταλόγου στον υπολογιστή μου ως συμπιεσμένο tar.gz α�?χείο
+download directory as tar.gz archive	Μετακίνηση του καταλόγου στον υπολογιστή μου ως συμπιεσμένο tar.gz αρχείο
+leningrad	Λένινγκραντ
+aleppo	Αλέππο
+peshitta	Πεσίττα
+sinaiticus	Σινάιτίκ
+qumran	Κουμράν
