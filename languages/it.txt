@@ -89,3 +89,93 @@ of	of
 
 calculate md5sum	calcola md5sum
 download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
+LENINGRAD	Leningrad
+ALEPPO		Aleppo
+PESHITTA	Peshitta
+SINAITICUS	Sinaiticus
+QUMRAN	Qumran
+CHAP	Capitolo
+GEN	Genesi
+EXO	Esodo
+LEV	Levitico 
+NUM	Numeri
+DEU	Deuteronomio
+JOS	Joshua
+JDG	Giudici
+RUT	Ruth
+SA1	1 Samuel
+SA2	2 Samuel
+KI1	1 Reyes
+KI2	2 Reyes
+CH1	1 Cronache
+CH2	2 Cronache
+EZR	Ezra
+NEH	Neemia
+EST	Ester
+JOB	Job
+PSA	Salmi 
+PRO	Proverbi 
+ECC	Ecclesiaste
+SNG	Canzone di Salomone
+ISA	Isaia
+JER	Jeremia
+LAM	Lamentazioni
+EZE	Ezechiele
+DAN	Daniel
+HOS	Osea
+JOL	Joel
+AMO	Amos
+OBA	Abdia
+JNA	Giona
+MIC	Michea
+NAH	Nahum
+ENO	1 Enoch
+HAB	Abacuc
+ZEP	Sofonia 
+HAG	Haggai 
+ZEC	Zaccaria
+MAL	Malachia
+GES	GES
+LES	LES
+TOB	Tobit
+JDT	Judith
+ESA	Ezra
+WIS	Saggezza di Salomone
+SIR	Sirach
+BAR	Baruch
+PAZ	Preghiera di Azariah
+SUS	Susanna
+BEL	Bel e il Drago
+MAN	Preghiera di Manasses
+MA1	1 Maccabei
+MA2	2 Maccabei
+MA3	3 Maccabei
+MA4	4 Maccabei
+MAT	Mateo
+MRK	Marchio 
+LUK	Luca
+JOH	Giovanni
+JHN	Giovanni
+ACT	ATTO
+ROM	Romani
+CO1	1 Corinzi
+CO2	2 Corinzi
+GAL	Galati
+EPH	Efesini 
+PHP	Filippesi
+COL	Colossesi
+TH1	1 Tessalonicesi
+TH2	2 Tessalonicesi
+TI1	1 Timoteo
+TI2	2 Timoteo
+TIT	Titus
+PHM	Filemone
+HEB	Ebrei
+JAM	James
+PE1	1 Pietro
+PE2	2 Pietro
+JN1	1 Giovanni
+JN2	2 Giovanni
+JN3	3 Giovanni
+JDE	Jude
+REV	Apocalisse
