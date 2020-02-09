@@ -12,6 +12,7 @@ folder	Ordner
 folders	Ordner
 size	Gr&ouml;&szlig;e
 total size	Gesamt Gr&ouml;&szlig;e
+total files	Gesamte Dateien
 total downloads	Gesamte Downloads
 total	Gesamt
 date	Modifiziert
@@ -90,3 +91,93 @@ of	of
 
 calculate md5sum	kalkuliere md5sum
 download directory as tar.gz archive	Lade das gesamte Verzeichnis als tar.gz Archiv herunter
+LENINGRAD	Leningrad
+ALEPPO		Aleppo
+PESHITTA	Peshitta
+SINAITICUS	Sinaiticus
+QUMRAN	Qumran
+CHAP	CHAPTER
+GEN		1 Moses
+EXO		2 Moses
+LEV		3 Moses
+NUM		4 Moses
+DEU		5 Moses
+JOS		Josua
+JDG		Richter
+RUT		Ruth
+SA1		1 Samuel
+SA2		2 Samuel
+KI1		1 Könige
+KI2		2 Könige
+CH1		1 Chronik
+CH2		2 Chronik
+EZR		Esra 
+NEH		Nehemia
+EST		Ester
+JOB		Hiob
+PSA		Psalter
+PRO		Sprüche
+ECC		Prediger
+SNG		Hohelied Salomos
+ISA		Jesaja
+JER		Jeremia
+LAM		Klagelieder
+EZE		Hesekiel
+DAN		Daniel
+HOS		Hosea
+JOL		Joel
+AMO		Amos
+OBA		Obadja
+JNA		Jona
+MIC		Micha
+NAH		Nahum
+ENO		1 Enoch
+HAB		Habakuk
+ZEP		Zefanja
+HAG		Haggai
+ZEC		Sacharja
+MAL		Maleachi
+GES		GES
+LES		LES
+TOB		Tobit
+JDT		Judith
+ESA		Esdras
+WIS		Weisheit Salomos
+SIR		Sirach
+BAR		Baruch
+PAZ		das Gebet of Azariah
+SUS		Susanna
+BEL		Bel und der Drago
+MAN		das Gebet der Manasche
+MA1		1 Meqabyan
+MA2		2 Meqabyan
+MA3		3 Meqabyan
+MA4		4 Meqabyan
+MAT		Matthäus
+MRK		Markus
+LUK		Lukas
+JOH		Johannes
+JHN		Johannes
+ACT		Apostelgeschichte
+ROM		Römer
+CO1		1 Korinther
+CO2		2 Korinther
+GAL		Galater
+EPH		Epheser
+PHP		Philipper
+COL		Kolosser
+TH1		1 Thessalonicher
+TH2		2 Thessalonicher
+TI1		1 Timotheus
+TI2		2 Timotheus
+TIT		Titus
+PHM		Philemon
+HEB		Hebräer
+JAM		Jakobus
+PE1		1 Petrus
+PE2		2 Petrus
+JN1		1 Johannes
+JN2		2 Johannes
+JN3		3 Johannes
+JDE		Judas
+REV		Offenbarung
