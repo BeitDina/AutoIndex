@@ -89,11 +89,11 @@ of	of
 
 calculate md5sum	calcola md5sum
 download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
-LENINGRAD	Leningrad
-ALEPPO		Aleppo
-PESHITTA	Peshitta
-SINAITICUS	Sinaiticus
-QUMRAN	Qumran
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
+qumran	Qumran
 CHAP	Capitolo
 GEN	Genesi
 EXO	Esodo
