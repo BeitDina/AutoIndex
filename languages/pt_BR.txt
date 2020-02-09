@@ -1,4 +1,4 @@
-// Portuguese-Brazilian language translation
+// Portuguese language translation
 // by Marcelo Pelagio Pontes Morais at pontesmorais@yahoo.com
 
 index of	Índice de
