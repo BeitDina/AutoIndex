@@ -16,7 +16,7 @@ total files	Archivos total
 total downloads	Total de descargas
 total	Total
 date	Modificado
-description	Descripci&oacute;n
+description	Descripción
 downloads	Descargas
 type	Tipo
 sort by	Ordenar por
