@@ -89,3 +89,7 @@ of	of
 
 calculate md5sum	md5sum 계산
 download directory as tar.gz archive	디렉토리를 tar.gz 압축으로 다운받기
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	Peshitta
+sinaiticus	Sinaiticus
