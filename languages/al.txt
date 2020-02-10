@@ -7,82 +7,82 @@ continue	Vazhdo
 
 file	File
 files	Files
-folder	Kartel&euml;
+folder	Kartelë
 folders	Kartela
-size	Madh&euml;sia
-total size	Madh&euml;sia gjithsej
+size	Madhësia
+total size	Madhësia gjithsej
 total downloads	Gjithsej shkarkime
 total	Gjithsej
 date	Ndryshuar
-description	P&euml;rshkrimi
+description	Përshkrimi
 downloads	Shkarkime
 type	Lloji
 sort by	Renditur sipas
 
-search	K&euml;rko
-both	T&euml; dy llojet
-search results for	k&euml;rko rezultate p&euml;r
-and its subdirectories	dhe n&euml;n-directories e tij
+search	Kërko
+both	Të dy llojet
+search results for	kërko rezultate për
+and its subdirectories	dhe nën-directories e tij
 
-account	Llogaria e P&euml;rdoruesit
+account	Llogaria e Përdoruesit
 login	Identifikohu
-logout	Shk&euml;putu
-username	Emri i p&euml;rdoruesit
-password	Fjal&euml;kalimi
-select user to remove	Zgjidh p&euml;rdoruesin q&euml; duhet hequr
-are you sure you want to remove the user	Jeni i sigurt q&euml; d&euml;shironi t&euml; hiqni p&euml;rdoruesin
-delete this user	Hiqe k&euml;t&euml; p&euml;rdorues
-add user	Shto p&euml;rdorues
+logout	Shkëputu
+username	Emri i përdoruesit
+password	Fjalëkalimi
+select user to remove	Zgjidh përdoruesin që duhet hequr
+are you sure you want to remove the user	Jeni i sigurt që dëshironi të hiqni përdoruesin
+delete this user	Hiqe këtë përdorues
+add user	Shto përdorues
 
 guest	Vizitues
-user	P&euml;rdorues
+user	Përdorues
 mod	Moderator
 admin	Admin
-level	Niveli i p&euml;rdoruesit
+level	Niveli i përdoruesit
 
-rename	riem&euml;rto/l&euml;viz
-renaming	Duke riem&euml;rtuar
-new filename	Em&euml;r i Ri File
-you can also move the file by specifying a path	mund t&euml; l&euml;vizni gjithashtu nj&euml; file duke p&euml;rcaktuar nj&euml; pozicion
+rename	riemërto/lëviz
+renaming	Duke riemërtuar
+new filename	Emër i Ri File
+you can also move the file by specifying a path	mund të lëvizni gjithashtu një file duke përcaktuar një pozicion
 delete	elemino
-are you sure you want to delete the file	Jeni i sigurt q&euml; d&euml;shironi t&euml; eleminoni k&euml;t&euml; file
-edit description	ndrysho p&euml;rshkrimin
+are you sure you want to delete the file	Jeni i sigurt që dëshironi të eleminoni këtë file
+edit description	ndrysho përshkrimin
 yes, delete	Po, eleminoje
 
 upload	Ngarko
-files to this folder	file(s) tek kjo kartel&euml;
+files to this folder	file(s) tek kjo kartelë
 uploaded files	Ngarko files
-failed files	Files e d&euml;shtuar
-none	Asnj&euml;
+failed files	Files e dështuar
+none	Asnjë
 file already exists	file ekziston
-filename is listed as a hidden file	emri i file rezulton si file i paduksh&euml;m
+filename is listed as a hidden file	emri i file rezulton si file i padukshëm
 
 reconfigure script	Rikonfiguro skriptin
-create new directory in this folder	Krijo nj&euml; directory t&euml; re n&euml; k&euml;t&euml; kartel&euml;
-edit list of hidden files	Ndrysho list&euml;n e files s&euml; paduksh&euml;m
-add new user	Shto p&euml;rdorues t&euml; ri
-delete user	Hiq p&euml;rdoruesin
+create new directory in this folder	Krijo një directory të re në këtë kartelë
+edit list of hidden files	Ndrysho listën e files së padukshëm
+add new user	Shto përdorues të ri
+delete user	Hiq përdoruesin
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	Shto p&euml;rshkrimin e ri p&euml;r file
+enter the new description for the file	Shto përshkrimin e ri për file
 change	Ndrysho
 enter the new name	Shkruaj emrin e ri
 create	Krijo
 
 add	Shto
 remove	Hiq
-remove a hidden file	Hiq nj&euml; file t&euml; paduksh&euml;m
-add a new hidden file	Shto nj&euml; file t&euml; ri t&euml; paduksh&euml;m
+remove a hidden file	Hiq një file të padukshëm
+add a new hidden file	Shto një file të ri të padukshëm
 
-edit ban list	Shkruaj list&euml;n e IPve t&euml; bllokuara dhe emrat e host
-remove a ban	Hiq nj&euml; bllokim
-add a new ban	Shto nj&euml; bllokim t&euml; ri (adresa IP ose emri i host, mund t&euml; p&euml;rdor&euml;sh wildcards)
+edit ban list	Shkruaj listën e IPve të bllokuara dhe emrat e host
+remove a ban	Hiq një bllokim
+add a new ban	Shto një bllokim të ri (adresa IP ose emri i host, mund të përdorësh wildcards)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
 view entries from log file	Shiko regjistrimet nga file i log
 view statistics from log file	Shiko statistikat nga file i log
-how many entries would you like to view	Sa regjistrime d&euml;shironi t&euml; shikoni
+how many entries would you like to view	Sa regjistrime dëshironi të shikoni
 view	Shiko
 page	Page
 of	of
@@ -94,3 +94,93 @@ aleppo	Aleppo
 peshitta	Peshitta
 sinaiticus	Sinaiticus
 qumran	Qumran
+CHAP	Chapter
+GEN		Genesis
+EXO		Exodus
+LEV		Leviticus
+NUM		Numbers
+DEU		Deuteronomy
+JOS		Joshua
+JDG		Judges
+RUT		Ruth
+SA1		1 Samuel
+SA2		2 Samuel
+KI1		1 Kings
+KI2		2 Kings
+CH1		1 Chronicles
+CH2		2 Chronicles
+EZR		Ezra 
+NEH		Nehemiah
+EST		Esther
+JOB		Job
+PSA		Psalms
+PSA_VOL1	Psalms Vol 1
+PSA_VOL2	Psalms Vol 2
+PSA_VOL3	Psalms Vol 3
+PSA_VOL4	Psalms Vol 4
+PSA_VOL5	Psalms Vol 5
+PRO		Proverbs
+ECC		Ecclesiastes
+SNG		Song of Solomon
+ISA		Isaiah
+JER		Jeremiah
+LAM		Lamentations
+EZE		Ezekiel
+DAN		Daniel
+HOS		Hosea
+JOL		Joel
+AMO		Amos
+OBA		Obadiah
+JNA		Jonah
+MIC		Micah
+NAH		Nahum
+ENO		1 Enoch
+HAB		Habakkuk
+ZEP		Zephaniah
+HAG		Haggai
+ZEC		Zechariah
+MAL		Malachi
+GES		GES
+LES		LES
+TOB		Tobit
+JDT		Judith
+ESA		Esdras
+WIS		Wisdom of Solomon
+SIR		Sirach
+BAR		Baruch
+PAZ		Prayer of Azariah
+SUS		Susanna
+BEL		Bel and the Drago
+MAN		Prayer of Manasses
+MA1		1 Maccabees
+MA2		2 Maccabees
+MA3		3 Maccabees
+MA4		4 Maccabees
+MAT		Matthew
+MRK		Mark
+LUK		Luke
+JOH		John
+JHN		John
+ACT		Acts
+ROM		Romans
+CO1		1 Corinthians
+CO2		2 Corinthians
+GAL		Galatians
+EPH		Ephesians
+PHP		Philippians
+COL		Colossians
+TH1		1 Thessalonians
+TH2		2 Thessalonians
+TI1		1 Timothy
+TI2		2 Timothy
+TIT		Titus
+PHM		Philemon
+HEB		Hebrews
+JAM		James
+PE1		1 Peter
+PE2		2 Peter
+JN1		1 John
+JN2		2 John
+JN3		3 John
+JDE		Jude
+REV		Revelation
