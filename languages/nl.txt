@@ -93,3 +93,4 @@ leningrad	Leningrad
 aleppo	Aleppo
 peshitta	Peshitta
 sinaiticus	Sinaiticus
+qumran	Qumran
