@@ -1,4 +1,4 @@
-﻿// 한국어 (Korean) Translation by pandix <chung621@dreamwiz.com> 
+// 한국어 (Korean) Translation by pandix <chung621@dreamwiz.com> 
 
 index of	Index of
 parent directory	상위 디렉토리
@@ -11,6 +11,7 @@ folder	폴더
 folders	폴더
 size	크기
 total size	전체 크기
+total files	전체 파일
 total downloads	전체 다운로드수
 total	전체
 date	수정
@@ -20,7 +21,7 @@ type	형식
 sort by	정렬방식
 
 search	검색
-both	모두
+both		모두
 search results for	다음에 대한 검색결과
 and its subdirectories	하위디렉토리 포함
 
@@ -65,14 +66,14 @@ delete user	사용자 지우기
 copy url	Copy a remote file (to this folder)
 upload to ftp	upload file to FTP server
 
-enter the new description for the file	파일의 새로운 설명을 입력하세요
-change	바꾸기
-enter the new name	새 이름을 입력하세요
-create	만들기
+enter the new description for the file		파일의 새로운 설명을 입력하세요
+change		바꾸기
+enter the new name		새 이름을 입력하세요
+create		만들기
 
-add	추가
-remove	삭제
-remove a hidden file	숨김파일 삭제
+add		추가
+remove		삭제
+remove a hidden file		숨김파일 삭제
 add a new hidden file	새로운 숨김파일 추가
 
 edit ban list	거부 목록의 IP 주소와 호스트네임 편집
@@ -93,3 +94,4 @@ leningrad	Leningrad
 aleppo	Aleppo
 peshitta	Peshitta
 sinaiticus	Sinaiticus
+qumran	Qumran
