@@ -78,7 +78,7 @@ add a new hidden file	Lägg till en dold fil
 edit ban list	Ändra listan med bannade IPs och värdnamn
 remove a ban	Ta bort en ban
 add a new ban	Lägg till en ban (IP adress eller värdnamn, du kan använda wildcards)
-the administrator has blocked your ip address or hostname	Fuck U, Administratören har blockerat dig
+the administrator has blocked your ip address or hostname	administratören har blockerat din ip-adress eller värdnamn
 
 view entries from log file	Se anslutningar från loggfil
 view statistics from log file	Se statistik från loggfil
