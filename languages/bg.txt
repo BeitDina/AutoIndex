@@ -1,5 +1,5 @@
 // Bulgarian language file by error_404@abv.bg
-
+//Book names borrowed from the Russian language file by FlorinCB for now
 index of	Индекѿ на
 parent directory	Главна директориѿ
 thumbnail of	Миниатюра на
@@ -89,8 +89,98 @@ of	of
 
 calculate md5sum	Калкулирай md5 ѿумата
 download directory as tar.gz archive	Свали директориѿта като tar.gz архив
-leningrad	Leningrad
-aleppo	Aleppo
-peshitta	Peshitta
-sinaiticus	Sinaiticus
-qumran	Qumran
+leningrad	Ленинград
+aleppo	Алеппо
+peshitta	Пешитта
+sinaiticus	Синайтик
+qumran	Кумран
+CHAP	ГЛАВА
+GEN		Бытие
+EXO		Исход
+LEV		Левит
+NUM	Числа
+DEU		Второзаконие
+JOS		Иисус Навин
+JDG		Судьи
+RUT		Руфь
+SA1		1-я Царств
+SA2		2-я Царств
+KI1		3-я Царств
+KI2		4-я Царств
+CH1		1-я Паралипоменон
+CH2		2-я Паралипоменон
+EZR		Ездра 
+NEH		Неемия
+EST		Есфирь
+JOB		Иов
+PSA		Псалтирь
+PSA_VOL1	Псалтирь объем 1
+PSA_VOL2	Псалтирь объем 2
+PSA_VOL3	Псалтирь объем 3
+PSA_VOL4	Псалтирь объем 4
+PSA_VOL5	Псалтирь объем 5
+PRO		Притчи
+ECC		Екклесиаст
+SNG		Песня Песней
+ISA		Исаия
+JER		Иеремия
+LAM		Плач Иеремии
+EZE		Иезекииль
+DAN		Даниил
+HOS		Осия
+JOL		Иоиль
+AMO	Амос
+OBA		Авдий
+JNA		Иона
+MIC		Михей
+NAH		Наум
+ENO		1 Енох
+HAB		Аввакум
+ZEP		Софония
+HAG		Аггей
+ZEC		Захария
+MAL		Малахия
+GES		GES
+LES		LES
+TOB		Товит
+JDT		Иудифь
+ESA		Ездры
+WIS		Премудрость Соломона
+SIR		Сирах
+BAR		Варух
+PAZ		das Gebet of Azariah
+SUS		Susanna
+BEL		Bel und der Drago
+MAN	Молитва Манассии
+MA1		1-я Маккавейская
+MA2		2-я Маккавейскаяn
+MA3		3-я Маккавейская
+MA4		4-я Маккавейская
+MAT		От Матфея
+MRK		От Марк
+LUK		От Луки
+JOH		Иоанна
+JHN		От Иоанна
+ACT		Деяния
+ROM	К Римлянам
+CO1		1-е Коринфянам
+CO2		2-е Коринфянам
+GAL		К Галатам
+EPH		К Ефесянам
+PHP		К Филиппийцам
+COL		К Колоссянам
+TH1		1-е Фессалоникийцам
+TH2		2-е Фессалоникийцам
+TI1		1-е Тимофею
+TI2		2-е Тимофеюs
+TIT		К Титу
+PHM		К Филимону
+HEB		К Евреям
+JAM		Иакова
+PE1		1-е Петра
+PE2		2-е Петра
+JN1		1-е Иоанна
+JN2		2-е Иоанна
+JN3		3-е Иоанна
+JDE		Иуды
+REV		Откровение
