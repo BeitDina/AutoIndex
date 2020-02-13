@@ -2,7 +2,7 @@
 // last update: 2020.02.09. 14:15 by FlorinCB
 
 index of	Kőnyvtár
-parent directory	Feljebb
+parent directory	Feljebb könyvtár
 thumbnail of	Thumbnail of
 continue	Tovább
 
@@ -12,6 +12,7 @@ folder	Kőnyvtár
 folders	Kőnyvtár
 size	Méret
 total size	ősszes méret
+total files	ősszes Fájl
 total downloads	ősszes letőltés
 total	ősszes
 date	Dátum
@@ -21,7 +22,7 @@ type	Típus
 sort by	Rendezés
 
 search	Keresés
-both	Mind
+both	Mindkét
 search results for	keresés eredménye
 and its subdirectories	és az alkőnyvtárai
 
@@ -66,14 +67,14 @@ delete user	Felhasználö tőrlése
 copy url	távoli fájl másolása (ebbe a kőnyvtárba)
 upload to ftp	fájl feltőltése az FTP szerverre
 
-enter the new description for the file	Add meg a fájl Új leírását
+enter the new description for the file		adja meg az új leírást a fájl
 change	Változtat
 enter the new name	Add meg az Új nevét
 create	Létrehoz
 
 add	Hozzáad
-remove	Tőről
-remove a hidden file	Rejtett fájl tőrlése
+remove		Tőről
+remove a hidden file		Rejtett fájl tőrlése
 add a new hidden file	Rejtett fájl létrehozása
 
 edit ban list	Kitiltott IP-k és hostok listájának szerkesztése
@@ -89,8 +90,100 @@ page	Page
 of	of
 
 calculate md5sum	md5 számolás
-download directory as tar.gz archive	Kőnyvtár letőltése tar.gz formátumban
-leningrad	 Leningrád
+download directory as tar.gz archive		Kőnyvtár letőltése tar.gz formátumban
+
+leningrad	Leningrád
 aleppo	Aleppo
 peshitta	Szír Pesitta
 sinaiticus	Sinaiticus
+qumran	Qumran
+CHAP	Fejezet
+GEN		Teremtes
+EXO		Kivonulas
+LEV		Leviticus
+NUM	Leviták
+DEU		Masodik törvénykönyv
+JOS		Józsue
+JDG		Bírók
+RUT		Rut
+SA1		Első Sámuel
+SA2		Második Sámuel
+KI1		Első Kiralyok
+KI2		Második Kiralyok
+CH1		Első Kronika
+CH2		Második Kronika
+EZR		Ezsdrás 
+NEH		Nehemiás
+EST		Esther
+JOB		Jób
+PSA		Zsoltárok
+PSA_VOL1	Zsoltárok Vol 1
+PSA_VOL2	Zsoltárok Vol 2
+PSA_VOL3	Zsoltárok Vol 3
+PSA_VOL4	Zsoltárok Vol 4
+PSA_VOL5	Zsoltárok Vol 5
+PRO		Példabeszédek
+ECC		Predikátor
+SNG		Salamon éneke
+ISA		Ézsaiás
+JER		Jeremiás
+LAM		Jeremiás siralmai
+EZE		Ezékiel
+DAN		Dániel
+HOS		Hóseás
+JOL		Jóél
+AMO	Ámosz
+OBA		Abdiás
+JNA		Jónás
+MIC		Mikeás
+NAH		Náhum
+ENO		1 Énok
+HAB		Habakkuk
+ZEP		Szefanias
+HAG		Aggeus
+ZEC		Zakariás
+MAL		Malakiás
+GES		GES
+LES		LES
+TOB		Tóbiás
+JDT		Judit
+ESA		Ezdrás
+WIS		Salamon bölcsessége
+SIR		Sirák bölcsessége
+BAR		Báruk
+PAZ		Azariás imádsaga
+SUS		Zsuzsanna és a vének
+BEL		Bél es a sárkány
+MAN	Manassé imádsaga
+MA1		Első Makkabeusok
+MA2		Második Makkabeusok
+MA3		Harmadik Makkabeusok
+MA4		Negyedik Makkabeusok
+MAT		Máté
+MRK		Márk
+LUK		Lukács
+JOH		János
+JHN		János
+ACT		Apostolok cselekedetei
+ROM	Rómaiakhoz
+CO1		Első Corinthians
+CO2		Második Corinthians
+GAL		Galatians
+EPH		Ephesians
+PHP		Philippians
+COL		Colossians
+TH1		Első Thesszalonikaiakhoz
+TH2		Második Thesszalonikaiakhoz
+TI1		Első Timóteushoz
+TI2		Második Timóteushoz
+TIT		Titusz
+PHM		Philemonhoz
+HEB		Hébereknek írt levél
+JAM		Jákób
+PE1		Első Péter
+PE2		Második Péter
+JN1		Első János
+JN2		Második János
+JN3		Harmadik János
+JDE		Júdás
+REV		Apokalipszis
