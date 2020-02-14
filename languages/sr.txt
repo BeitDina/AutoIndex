@@ -1,0 +1,187 @@
+// Based on Bulgarian language file by error_404@abv.bg
+//Book names borrowed from the Russian language file by FlorinCB for now
+index of	индекс од
+parent directory	надређени директориј
+thumbnail of	сличица од
+continue	наставити
+
+file	фајл
+files	фајлови
+folder	директоријума
+folders	директоријумаи
+size	укупна
+total size	укупна величина
+total files	тоталан фајлови
+total downloads	тоталан преузимањеи
+total	тоталан
+date	Датум
+description	дескрипција
+downloads	преузимањеи
+type	Тип
+sort by	Сортирај по
+
+search	Претрага
+both	Оба
+search results for	Резултати претраге за
+and its subdirectories	и његове поддиректоријума
+
+account	Налог
+login	Вход се у систем
+logout	Изход се у систем
+username	Корисничко име
+password	Лозинка
+select user to remove	Одаберите корисника за уклањање
+are you sure you want to remove the user	Јесте ли сигурни да желите да уклоните корисника
+delete this user	Избриши овог корисника
+add user	Додајте корисника
+
+guest	Гост
+user	Корисник
+mod	Модератор
+admin	Администратор
+level	Ниво
+
+rename	Преименовање/Премештање
+renaming	Преименува
+new filename	Ново име фајла
+you can also move the file by specifying a path	Ви можете преместити датотеку обележавањем путање
+delete	избрисати
+are you sure you want to delete the file	Јесте ли сигурни да желите да обришете датотеку
+edit description	Уреди дескрипција
+yes, delete	Да, избриши
+
+upload	Отпремити
+files to this folder	фајл(ови) у овом директоријуму
+uploaded files	Отпремљене фајлови
+failed files	није успело фајлови
+none	ниједна
+file already exists	фајл већ постоји
+filename is listed as a hidden file	фајлназив датотеке је наведен као скривена фајл
+
+reconfigure script	Реконфигурише скрипту
+create new directory in this folder	Створи ново директоријум в овом фолдеру
+edit list of hidden files	Уреди листа скривених фајлова
+add new user	Додај новог корисника
+delete user	Избрисати корисника
+copy url	Копирање даљинског фајл (у овом фолдеру)
+upload to ftp	Отпремити фајл на ФТП-сервер
+
+enter the new description for the file	Унесите нови дескрипција за фајл
+change	Промјене
+enter the new name	Унесите ново име
+create	Креирај
+
+add	Додати
+remove	Уклони
+remove a hidden file	Уклони скривени фајл
+add a new hidden file	Додати нов скривени фајл
+
+edit ban list	Уреди листа на забрањен ИП-та или хотове
+remove a ban	Уклони бан
+add a new ban	Додај нов бан (ИП адресу или хоткеи, можете користити подразумевану лозинку)
+the administrator has blocked your ip address or hostname	Нажалост, администратор је блокирао вашу ИП-адресу или име хоста
+
+view entries from log file	Поглед уноса из лог фајл
+view statistics from log file	Приказ статистика од лог фајл
+how many entries would you like to view	Колико уноса желите да погледате
+view	Приказ
+page	Паж
+of	де
+
+calculate md5sum	Израчунајте МД5 сума
+download directory as tar.gz archive	преузимање директоријума като tar.gz архив
+leningrad	Ленинград
+aleppo	Алеппо
+peshitta	Пешита
+sinaiticus	Синайтик
+qumran	Кумран
+CHAP	поглавље
+GEN		Бытие
+EXO		Исход
+LEV		Левит
+NUM	Числа
+DEU		Второзаконие
+JOS		Иисус Навин
+JDG		Судьи
+RUT		Руфь
+SA1		1-я Царств
+SA2		2-я Царств
+KI1		3-я Царств
+KI2		4-я Царств
+CH1		1-я Паралипоменон
+CH2		2-я Паралипоменон
+EZR		Ездра 
+NEH		Неемия
+EST		Есфирь
+JOB		Иов
+PSA		Псалтирь
+PSA_VOL1	Псалтирь объем 1
+PSA_VOL2	Псалтирь объем 2
+PSA_VOL3	Псалтирь объем 3
+PSA_VOL4	Псалтирь объем 4
+PSA_VOL5	Псалтирь объем 5
+PRO		Притчи
+ECC		Екклесиаст
+SNG		Песня Песней
+ISA		Исаия
+JER		Иеремия
+LAM		Плач Иеремии
+EZE		Иезекииль
+DAN		Даниил
+HOS		Осия
+JOL		Иоиль
+AMO	Амос
+OBA		Авдий
+JNA		Иона
+MIC		Михей
+NAH		Наум
+ENO		1 Енох
+HAB		Аввакум
+ZEP		Софония
+HAG		Аггей
+ZEC		Захария
+MAL		Малахия
+GES		GES
+LES		LES
+TOB		Товит
+JDT		Иудифь
+ESA		Ездры
+WIS		Премудрость Соломона
+SIR		Сирах
+BAR		Варух
+PAZ		das Gebet of Azariah
+SUS		Susanna
+BEL		Bel und der Drago
+MAN	Молитва Манассии
+MA1		1-я Маккавейская
+MA2		2-я Маккавейскаяn
+MA3		3-я Маккавейская
+MA4		4-я Маккавейская
+MAT		От Матфея
+MRK		От Марк
+LUK		От Луки
+JOH		Иоанна
+JHN		От Иоанна
+ACT		Деяния
+ROM	К Римлянам
+CO1		1-е Коринфянам
+CO2		2-е Коринфянам
+GAL		К Галатам
+EPH		К Ефесянам
+PHP		К Филиппийцам
+COL		К Колоссянам
+TH1		1-е Фессалоникийцам
+TH2		2-е Фессалоникийцам
+TI1		1-е Тимофею
+TI2		2-е Тимофеюs
+TIT		К Титу
+PHM		К Филимону
+HEB		К Евреям
+JAM		Иакова
+PE1		1-е Петра
+PE2		2-е Петра
+JN1		1-е Иоанна
+JN2		2-е Иоанна
+JN3		3-е Иоанна
+JDE		Иуды
+REV		Откровение
