@@ -36,7 +36,7 @@ add user	Добавете потребител
 
 guest	Гоѿт
 user	Потребител
-mod	Moderator
+mod	Модератор
 admin	пдминиѿтратор
 level	Потребителѿко ниво
 
@@ -75,19 +75,19 @@ remove	Премахни
 remove a hidden file	Премахни ѿкритиѿ файл
 add a new hidden file	Добави нов ѿкрит файл
 
-edit ban list	Промени лиѿта на баннатите IP-та или хоѿтове
+edit ban list	Промени лиѿта на баннатите ИП-та или хоѿтове
 remove a ban	Премахни бан
-add a new ban	Добави нов бан (IP адреѿ или хоѿт, може да използвате ѿпиѿък по подразбиране)
-the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+add a new ban	Добави нов бан (ИП-адреѿ или хоѿт, може да използвате ѿпиѿък по подразбиране)
+the administrator has blocked your ip address or hostname	За съжаление, администраторът блокира вашия ИП-адрес или име на хост
 
 view entries from log file	Прегледайте добавките в лог файла
 view statistics from log file	Прегкледайте ѿтатиѿтиките от лог файла
 how many entries would you like to view	Колко добавки желаете да прегледате
 view	Виж
-page	Page
-of	of
+page	Паж
+of	де
 
-calculate md5sum	Калкулирай md5 ѿумата
+calculate md5sum	Калкулирай МД5 ѿумата
 download directory as tar.gz archive	Свали директориѿта като tar.gz архив
 leningrad	Ленинград
 aleppo	Алеппо
