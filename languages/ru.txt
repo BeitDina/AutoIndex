@@ -37,7 +37,7 @@ add user	Добавить пользователя
 
 guest	Гость
 user	Пользователь
-mod	Moderator
+mod	Модератор
 admin	Администратор
 level	Уровень
 
@@ -51,22 +51,22 @@ edit description	Редактировать описание
 yes, delete	 Да, удалить
 
 upload	Закачать
-files to this folder	Файлы в данную папку
+files to this folder	файл (ы) в этом данную
 uploaded files	Закачаные файлы
 failed files	Не закачанные файлы
-none	Нет
+none	Не один
 file already exists	Файл уже существует
-filename is listed as a hidden	Файл помечен как скрытый
+filename is listed as a hidden	имя файла помечен как скрытый файл
 
 reconfigure script	Переконфигурировать скрипт
 create new directory in this folder	 Создать новую директорию в данной
 edit list of hidden files	Редактировать список скрытых файлов
 add new user	Добавить нового пользователя
 delete user	Удалить пользователя
-copy url	Copy a remote file (to this folder)
-upload to ftp	upload file to FTP server
+copy url	Скопируйте удаленный файл (на эту папку)
+upload to ftp	Загрузить файл на ФТП-сервер
 
-enter the new description for the file	Введите новое описание файла
+enter the new description for the file	Введите новое описание для файла
 change	Изменить
 enter the new name	Введите новое имя
 create	Создать
@@ -78,21 +78,21 @@ add a new hidden file	Добавить новый скрытый файл
 
 edit ban list	Редактировать список забаненых
 remove a ban	Снять бан
-add a new ban	Добавить в список забаненых
-the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
+add a new ban	Добавить новый бан (ИП-адрес или горячие клавиши, вы можете использовать пароль по умолчанию)
+the administrator has blocked your ip address or hostname	Извините, администратор заблокировал ваш ИП-адрес или имя хоста
 
-view entries from log file	Просмотреть лог-файл
+view entries from log file	Записи вид из лог-файла
 view statistics from log file	Просмотреть статистику из лог-файла
 how many entries would you like to view	Сколько записей вы хотите просмотреть
 view	Просмотреть
-page	Page
-of	of
+page	Паж
+of	де
 
-calculate md5sum	Рассчитать md5sum
+calculate md5sum	Рассчитать МД5 сумму
 download directory as tar.gz archive	Скачать директорию в виде tar.gz архива
 leningrad	Ленинград
 aleppo	Алеппо
-peshitta	Пешитта
+peshitta	Пеши́тта
 sinaiticus	Синайтик
 qumran	Кумран
 CHAP	ГЛАВА
