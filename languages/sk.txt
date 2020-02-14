@@ -1,4 +1,4 @@
-﻿// Slovenský preklad, vytvoril keeper7
+// Slovenský preklad, vytvoril keeper7
 
 index of	Výpis z
 parent directory	Nadradený adresár
@@ -11,6 +11,7 @@ folder	Zložka
 folders	Zložky
 size	Veľkost
 total size	Celková veľkost
+total files	Celková Súbory
 total downloads	Celkom stiahnuté
 total	Celkovov
 date	Upravené
@@ -93,3 +94,4 @@ leningrad	Leningrad
 aleppo	Aleppo
 peshitta	Peshitta
 sinaiticus	Sinaiticus
+qumran	Cymran
