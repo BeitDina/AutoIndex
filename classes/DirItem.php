@@ -49,6 +49,11 @@ class DirItem extends Item
 	private $temp_list;
 	
 	/**
+	 * @var string
+	 */
+	protected $description;
+	
+	/**
 	 * @return string Always returns 'dir', since this is a directory, not a file
 	 */
 	public function file_ext()
@@ -134,36 +139,50 @@ class DirItem extends Item
 		{
 			//regular folder
 			$file = $this -> parent_dir . $filename;
-						
+			
 			if (!@is_dir($file))
 			{
 				throw new ExceptionDisplay('Directory <em>'	. Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
 			}
 			
-			$this -> filename = $filename = substr($filename, 0, -1); //str_replace('', '/', $filename);	
+			$this -> filename = $filename = substr($filename, 0, -1); 
 			$mb_strlen = mb_strlen($filename);
 			$this -> icon = $config -> __get('icon_path') . 'dir.png';
 			
-			if (($mb_strlen > 0) && ($mb_strlen < 6)) 
+			if (($mb_strlen > 1) && ($mb_strlen < 6)) 
 			{
 				$decoded_lang_name = self::decode_country_name($filename, 'language');
 				if (!empty($decoded_lang_name))
 				{
 					$this -> icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
 				}
-
+				
+			}
+			
+			if (($mb_strlen > 1) && ($mb_strlen < 25)) 
+			{
+				$decoded_lang_name = self::decode_country_name($filename, 'language');
+			
+				$file_name = substr($filename, 0, strrpos($filename, '.'));
+				
 				global $descriptions, $words;
-				if (!empty($decoded_lang_name))
+				
+				if ($words -> is_set($file_name))
 				{
-					$description = $decoded_lang_name;
+					$description = ($words -> is_set($file_name) ? $words -> __get($file_name) : $file_name);
+				}
+				elseif (!empty($decoded_lang_name))
+				{
+					$description = ($words -> is_set($decoded_lang_name) ? $words -> __get($decoded_lang_name) : $decoded_lang_name);
 				}
 				else
 				{
-					$description = strtoupper(substr($filename, 0, strrpos($filename, '.')));
+					$description = ($words -> is_set($file_name) ? $words -> __get($file_name) : $file_name);
 				}
 				
 				$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
 			}
+			
 			$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename);
 		
 		}
@@ -529,11 +548,11 @@ class DirItem extends Item
 				case 'zho': //639-2/T and 639-3: zho
 					$lang_name = 'CHINESE';
 					$country_name = 'CHINA';
-				break;		
+				break;
 				//Chinese Individual Languages 
-			    //	中文			
+			    //	中文
 				// Fujian Province, Republic of China
-				case 'cn-fj':		
+				case 'cn-fj':
 				//	閩東話
 				case 'cdo': 	//Chinese Min Dong  
 					$lang_name = 'CHINESE_DONG';
@@ -605,12 +624,12 @@ class DirItem extends Item
 				case 'czo': 	//Chinese Min Zhong 閩中語 |  闽中语  http://zx.cq.gov.cn/ | Zhong-Xian | Zhong  忠县
 					$lang_name = 'CHINESE_ZHONG';
 					$country_name = 'CHINA';
-				break;				
+				break;
 				// 東干話 SanMing: http://www.sm.gov.cn/ | Sha River (沙溪)
 				case 'dng': 	//Ding  Chinese 
 					$lang_name = 'DING_CHINESE';
 					$country_name = 'CHINA';
-				break;				
+				break;
 				//	贛語
 				case 'gan': 	//Gan Chinese  
 					$lang_name = 'GAN_CHINESE';
@@ -625,7 +644,7 @@ class DirItem extends Item
 				case 'hsn': 	//Xiang Chinese 湘語/湘语	
 					$lang_name = 'XIANG_CHINESE';
 					$country_name = 'CHINA';
-				break;				
+				break;
 				//	文言
 				case 'lzh': 	//Literary Chinese 	
 					$lang_name = 'LITERARY_CHINESE';
@@ -736,44 +755,44 @@ class DirItem extends Item
 				case 'deu':
 					$lang_name = 'GERMAN';
 					$country_name = 'GERMANY';
-				break;				
+				break;
 				//Belgium 	11,420,163 	73,000 (0.6%) 	2,472,746 (22%) 	De jure official language in the German speaking community
 				case 'de_be':
 				case 'de-BE':
 					$lang_name = 'BELGIUM_GERMAN';
 					$country_name = 'BELGIUM';
-				break;				 
+				break;
 				 //Austria 	8,838,171 	8,040,960 (93%) 	516,000 (6%) 	De jure sole nationwide official language
 				case 'de_at':
 				case 'de-AT':
 					$lang_name = 'AUSTRIAN_GERMAN';
 					$country_name = 'AUSTRIA';
-				break;						 
+				break;
 				 // Switzerland 	8,508,904 	5,329,393 (64.6%) 	395,000 (5%) 	Co-official language at federal level; de jure sole official language in 17, co-official in 4 cantons (out of 26)
 				case 'de_sw':
 				case 'de-SW':
 					$lang_name = 'SWISS_GERMAN';
 					$country_name = 'SWITZERLAND';
-				break;	
-						
+				break;
+				
 				 //Luxembourg 	602,000 	11,000 (2%) 	380,000 (67.5%) 	De jure nationwide co-official language
 				case 'de_lu':
 				case 'de-LU':
 				case 'ltz':
 					$lang_name = 'LUXEMBOURG_GERMAN';
 					$country_name = 'LUXEMBOURG';
-				break;					 
+				break;
 				 //Liechtenstein 	37,370 	32,075 (85.8%) 	5,200 (13.9%) 	De jure sole nationwide official language	
 				//Alemannic, or rarely Alemmanish
 				case 'de_li':
 				case 'de-LI':
 					$lang_name = 'LIECHTENSTEIN_GERMAN';
 					$country_name = 'LIECHTENSTEIN';
-				break;	
+				break;
 				case 'gsw':
 					$lang_name = 'Alemannic_German';
 					$country_name = 'SWITZERLAND';
-				break;						
+				break;
 				//mostly spoken on Lifou Island, Loyalty Islands, New Caledonia. 
 				case 'dhv':
 					$lang_name = 'DREHU';
@@ -873,34 +892,34 @@ class DirItem extends Item
 				//gmy – Mycenaean Greek
 				//pnt – Pontic
 				//tsd – Tsakonian
-				//yej – Yevanic				
+				//yej – Yevanic
 				
 				case 'el':
 					$lang_name = 'GREEK'; 
 					$country_name = 'GREECE';
-				break;				
+				break;
 				
 				case 'cpg':
 					$lang_name = 'CAPPADOCIAN_GREEK';
-					$country_name = 'GREECE';					
+					$country_name = 'GREECE';
 				break;	
 				case 'gmy':
 					$lang_name = 'MYCENAEAN_GREEK';
-					$country_name = 'GREECE';					
+					$country_name = 'GREECE';
 				break;	
 				case 'pnt':
 					$lang_name = 'PONTIC';
-					$country_name = 'GREECE';					
+					$country_name = 'GREECE';
 				break;	
 				case 'tsd':
 					$lang_name = 'TSAKONIAN';
-					$country_name = 'GREECE';					
+					$country_name = 'GREECE';
 				break;	
 				//Albanian: Janina or Janinë, Aromanian: Ianina, Enina, Turkish: Yanya;
 				case 'yej':
 					$lang_name = 'YEVANIC';	
-					$country_name = 'GREECE';					
-				break;					
+					$country_name = 'GREECE';
+				break;
 				
 				case 'en_uk':
 				case 'en-UK':
@@ -908,14 +927,14 @@ class DirItem extends Item
 					$lang_name = 'BRITISH_ENGLISH'; //used in United Kingdom
 					$country_name = 'GREAT_BRITAIN';
 				break;
-						
+				
 				case 'en_fj':
 				case 'en-FJ':
 					$lang_name = 'FIJIAN_ENGLISH';
 					$country_name = 'FIJI';
 				break;
 				
-				case 'GibE':			
+				case 'GibE':
 				case 'en_gb':
 				case 'en-GB':
 				case 'gb':
