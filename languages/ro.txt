@@ -1,34 +1,33 @@
 // Romanian language file by FlorinCB <orynider@users.sourceforge.net>
 
-index of	Indice la
+index of	Index la
 parent directory	Director Superior
-thumbnail of	Thumbnail director
+thumbnail of	Director Thumbnail
 continue	Continuă
 
-file	Fisier
-files	Fisiere
+file	Fişier
+files	Fişiere
 folder	Folder
 folders	Foldere
 size	Marime
-total size	Dimensiune totala
-total files	Fisiere totale
-total downloads	Descărcări totale
+total size	Dimensiune totală
+total files	Fişiere total
+total downloads	Descărcări total
 total	Total
-
 date	Modificat
-description	Descripţie
+description	Descriere
 downloads	Descărcări
 type	Tip
 sort by	Ordinat după
 
 search	Caută
 both	Ambele
-search results	Rezultatele cautari
-no results	CAUTARE FARA REZULTATE
+search results	Rezultatele căutari
+no results	CĂUTARE FĂRĂ REZULTATE
 
 account	Count utilizator
 login	Autentificare
-logout	Logout
+logout	Delogare
 username	Nume utilizator
 password	Parolă
 select user to remove	Selectează utilizatorul pentru ştergere
@@ -44,7 +43,7 @@ level	Nivel utilizator
 
 rename	redenumeşte/mută
 renaming	Redenumire
-new filename	Noul nume de fişier 
+new filename	Noul nume de fişier
 you can also move the file by specifying a path	poţi totodată sămuţi fişierul specificând o cale
 delete	şterge
 are you sure you want to delete the file	Sigur doreşti ştergerea fişierului
@@ -57,43 +56,43 @@ uploaded files	Fişiere urcate
 failed files	Fişiere neurcate
 none	Niciuna
 file already exists	fişier dej&a; există
-filename is listed as a hidden file	Il nome di file &egrave; in lista come file nascosto
+filename is listed as a hidden file	numele de fişier &engravat; în listă ca fişier ascuns
 
-reconfigure script	Riconfigura lo script
-create new directory in this folder	Crea una nuova directory in questa cartella
-edit list of hidden files	Modfica la lista dei file nascosti
-add new user	Aggiungi un nuovo utente
-delete user	Cancella utente
-copy url	Copy a remote file (to this folder)
-upload to ftp	upload file to FTP server
+reconfigure script	Reconfigură scriptul
+create new directory in this folder	Crează un nou director în acest director
+edit list of hidden files	Modifică lista de fişiere ascuse
+add new user	Adaugă un nou utilizator
+delete user	Anulează utilizator
+copy url	Copie un fişier remote (în acest folder)
+upload to ftp	urcă fişier prin FTP server
 
-enter the new description for the file	Inserisci la nuova descrizione per il file
-change	Cambia
-enter the new name	Inserisci il nuovo nome
-create	Crea
+enter the new description for the file	Inserează noua descripţiune pt fişier
+change	Schimbă
+enter the new name	Introdu nume nou
+create	Crează
 
-add	Aggiungi
-remove	Rimuovi
-remove a hidden file	Rimuovi un file nascosto
-add a new hidden file	Aggiungi un nuovo file nascosto
+add	Adaugă
+remove	Ştergi
+remove a hidden file	Ştergi un fişier ascuns
+add a new hidden file	Adaugă un nou fişier ascuns
 
-edit ban list	Modifica la lista degli IP e degli hostname bloccati
-remove a ban	Rimuovi un blocco
-add a new ban	Aggiungi un nuovo blocco (indirizzo IP o l'hostname, puoi usare anche i wildcards)
+edit ban list	Modifică lista de IP-uri de nume hostname blocate
+remove a ban	Ştergi un blocat
+add a new ban	Adaugă un nou blocat (indidă IP ori hostname, poţi utiliza chiar wildcards)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
-view entries from log file	Guarda le entries dal fiel di log
-view statistics from log file	Guarda le statistiche dal file di log
-how many entries would you like to view	Quante entries vuoi vedere
-view	Guarda
-page	Page
-of	of
+view entries from log file	Vezi intrările din fişierul de log
+view statistics from log file	Vezi statisticile din fişierul de log
+how many entries would you like to view	Câte intrări vrei să vezi
+view	Vezi
+page	Pagină
+of	de
 
-calculate md5sum	calcola md5sum
-download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
+calculate md5sum	calculează md5sum
+download directory as tar.gz archive	Descarcă directorul ca o arhivă tar.gz
 leningrad	Leningrad
 aleppo	Aleppo
-peshitta	Peshitta
+peshitta	Peşiţta
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	CAPITOL
@@ -186,3 +185,432 @@ JN2		2 IOAN
 JN3		3 IOAN
 JDE		IUDA
 REV		APOCALIPSA
+
+
+AFAR	Afară
+AFRICAN-AMERICAN_ENGLISH	Enleză Afro-Americană
+UNITED_STATES		Statele Unite
+ABKHAZIAN	Abkhaziană
+AVESTAN	Avestană
+AFRIKAANS	Africană
+ENGLISH-CREOLE	Creolă Engleză
+ANGUILLA	Anguillană
+AROMANIAN	Aromână
+AKAN	Akană
+ALBANIAN	Albaniană
+AMHARIC	Amharică
+ARMENIAN		Armeniană
+ARAGONESE	Aragonesă
+ANGOLIAN		Angoliană
+ANGIKA		Angika
+ARABIC	Arabă
+ALGERIAN_ARABIC		Arabă Algeriană
+MOROCCAN_ARABIC	Arabă Marocană
+MOROCCO	Maroc
+JUDEO-ARABIC	Iudeo-Arabă 
+KABYLE	Kabile
+ALGERIA	Algeriană
+ASSAMESE		Assameză
+GERMAN_AUSTRI	Germană Austriacă
+AVARIC	Avarică
+AVARIAN_KHANATE	Daghestaneză
+AYMARA	Aymara
+AUSTRALIA	Australia
+AZERBAIJANI	Azerbaijană
+FINNISH	Finlandeză
+BASHKIR	Başkir
+BOSNIAN	Bosniană 
+CROATIAN		Croată 
+SERBIAN	Sârbă
+BAVARIAN	Bavareză
+BARBADOS	Barbados
+BELARUSIAN	Belarusă
+BULGARIAN	Bulgară
+BIHARI	Bihară
+BHOJPURI	Bhojpuri
+BAHRAIN	Bahrain
+BISLAMA	Bislama
+BURUNDI	Burundi
+BENIN	Benin
+BONAIRE	Bonaire
+BAMBARA	Bambara
+BENGALI	Bengali
+BRUNEI	Brunei
+TIBETAN	Tibetană
+BRETON	Breton
+BHUTAN	Bhutan
+BOTSWANA	Botswană
+CAMEROONIAN_PIDGIN_ENGLISH		Engleză Cameroniană Pidgin 
+CAMEROONIAN	Cameroniană
+CATALAN	Catalană
+COA_A_COCOS	Coa de Cocos
+CHECHEN	Cecenă
+CHAMORRO	Chamoro
+CHINESE	Chineză
+CHINESE_FUJIA	Chineză Fujian
+CHINESE_DONG	Chineză Dong 
+CHINA_JINYU		Chineză Jinyu
+CHINESE_MANDARIN	Chineză Mandarină
+CHINESE_PU-XIAN		Chineză Pu-Xian
+CHINESE_HUIZHOU		Chineză Huizhou
+CHINESE_ZHONG	Chineză Zhong
+DING_CHINESE	Chineză Ding
+GAN_CHINESE	Chineză Gan
+CHINESE_HAKKA	Chineză Hakka
+XIANG_CHINESE		Chineză Xiang
+LITERARY_CHINESE	Chineză Literară
+MIN_BEI_CHINESE	Chineză Min Bei
+MIN_NAN_CHINESE		Chineză Min Nan
+WU_CHINESE	Chineză Wu
+YUE_CHINESE	Chineză Yue
+CORSICAN		Corsicană
+CREE	Cree
+CZECH	Cehă
+SLAVONIC	Slavonă
+CHUVASH	Chuvaş
+WELSH_CYMRAEG	Welsh Cymraeg
+MALAYSIAN_CHINESE	Chineză Malaysiană
+PAPIAMENTU	Papiamentu
+CURAǁO	Curaşao
+DANISH	Daneză
+GERMAN	Germană
+GERMAN_GERMANY	Germană Germania
+DEUTSCH	Deutsch
+BELGIUM_GERMAN	Germană Belgiană
+AUSTRIAN_GERMAN	Germană Austriacă
+SWISS_GERMAN	Germană Swiss
+LUXEMBOURG_GERMAN	Germană Luxembourg
+LUXEMBOURGIAN	Luxembourgiană
+LIECHTENSTEIN_GERMAN	Germană Liechtenstein
+ALEMANNIC_GERMAN		Germană Alemannic
+DREHU	Drehu
+DOMINICAN_CREOLE_FRENCH	Franceză Dominicană Creolă
+ROSEAU	Roseau 
+DOMINICA_ENGLISH	Engleză Dominicană
+SANTO_DOMINGO_SPANISH	Spaniolă Santo Domingo
+SANTO_DOMINGO_ENGLISH	Engleză Santo Domingo
+DJIBOUTI	Djibouti
+AFAR_DJIBOUTI	Afară Djibouti
+DIVEHI	Divehi
+MALDIVIAN	Maldiviană
+SHAWIYA_BERBER	Şawiya Berberă
+DZONGKHA	Dzongkha
+COPTIC	Coptă
+EWE	Ewe
+GREEK	Greacă
+CAPPADOCIAN_GREEK	Greacă Capadochiană
+MYCENAEAN_GREEK	Greacă Micenaeană
+PONTIC	Pontică
+TSAKONIAN	Ţakoniană
+YEVANIC	Ievanică
+BRITISH_ENGLISH	Engleză Britaică
+BRITISH		Britaică
+FIJIAN_ENGLISH	Engleză Fijian
+GIBRALTARIAN	Gibraltariană
+GIBRALTARIAN _ENGLISH	Engleză Gibraltariană
+ENGLISH	Engleză
+AMERICAN_ENGLISH	Engleză Americană
+HIBERNO_ENGLISH		Hiberno Engleză
+US_ENGLISH	Engleză SUA
+ENGLISH_ISRAEL	Engleză Israel
+ISRAELY_ENGLISH	Engleză Israeliană 
+HEBLISH	Hebliş
+ENGBREW	Engbrew
+ENGLISH_CANADA	Engleză Canada
+CANADIAN_ENGLISH	Engleză Canadiană
+COOK_ISLANDS_ENGLISH	Engleză Insulele Cook
+INDIAN_ENGLISH	Engleză Indian
+ANGUILLAN_ENGLISH	Engleză Anguillană
+AUSTRALIAN_ENGLISH	Engleză Australiană
+ENGLISH_NEW_ZEALAND	Engleză Nou Zealandeză
+NEW_ZEALAND_ENGLISH	Engleză NOUA Zoealandă 
+NEW_ENGLAND_ENGLISH	Engleză NOUA Anglie
+BERMUDIAN ENGLISH	Engleză Bermudiană
+NIUEAN_ENGLISH	Engleză Niueană
+MONTSERRAT_ENGLISH	Engleză Montserrat
+PITCAIRN_ISLAND_ENGLISH	Engleză Insula Pitcairn
+ST_HELENA_ENGLISH	Engleză ST Elena
+ENGLISH_TURKS_CAICOS	Engleză Turks Caicos
+VIRGIN_ISLANDS_ENGLISH	Engleză Insulele Virgine
+ESPERANTO	Esperanţo
+ERITREA	Eritrea
+SPANISH	Spaniolă
+SPANISH_MEXICO	Spaniolă Mexico
+SPANISH_UNITED_STATES	Spaniolă Statele Unite
+SPANISH_CARIBBEAN	Spaniolă Caribbeană
+SPANISH_ARGENTINIAN	Spaniolă Argentiniană
+SPANISH_BOLIVIAN	Spaniolă Boliviană
+SPANISH_BRAZILIAN	Spaniolă Braziliană
+SPANISH_CHILEAN	Spaniolă Chileană
+SPANISH_COLOMBIAN	Spaniolă Columbiană
+SPANISH_COSTA_RICA	Spaniolă Costa Rica
+SPANISH_DOMINICAN_REPUBLIC	Spaniolă Republica Dominicană
+SPANISH_ECUADOR	Spaniolă Ecuador
+SPANISH_SPAIN		Spaniolă Spania
+SPANISH_NL	Spaniolă NL
+SPANISH_EUROPE	Spaniolă Europa
+SPANISH_GUATEMALA	Spaniolă Guatemala
+SPANISH_HONDURAS	Spaniolă Honduras
+SPANISH_LAO	Spaniolă Lao
+SPANISH_NICARAGUA	Spaniolă Nicaragua
+SPANISH_PANAMIAN	Spaniolă Panamian
+SPANISH_PERU	Spaniolă Peru
+SPANISH_PUERTO_RICO	Spaniolă Puerto Rico
+SPANISH_PARAGUAYS	Paniş Paraguay
+SPANISH_EL_SALVADOR	Spaniolă EL Salvador
+SPANISH_URUGUAY	Spaniolă Uruguay
+SPANISH_VENEZUELA	Spaniolă Venezuela
+SPANISH_LATIN_AMERICA	Spaniolă Latin Americană
+ESTONIAN	Estonian
+BASQUE	Bască
+PERSIAN	Persiană
+ADAMAWA_FULFULDE	Adamawa Fulfuldă
+BAGIRMI_FULFULDE	Bagirmi Fulfuldă
+BORGU_FULFULDE	Borgu Fulfuldă
+NIGER_FULFULDE	Niger Fulfuldă
+MAASINA_FULFULDE	Maasina Fulfuldă
+NIGERIAN_FULFULDE	Nigeriană Fulfuldă
+PULAAR	Pulaară
+WESTERN_NIGER_FULFULDE	Fulfuldă Vest Nigeriană 
+KVEN	Kven
+NORWEGIAN	Norwegiană
+FIJIAN	FIJian
+FALKLANDIAN	FalkLandian
+FAROESE	Faroese
+FRENCH	Franceză
+METROPOLITAN_FRENCH	Franceză Metropolitană
+ACADIAN_FRENCH	Franceză Acadiană
+DOMINICA_FRENCH	Franceză Dominicană
+ALGERIAN_FRENCH	Franceză Algeriană
+AOSTAN_FRENCH	Franceză Aostană
+BELGIAN_FRENCH	Franceză Belgiană
+CAMBODIAN_FRENCH	Franceză Cambodiană
+CAJUN_FRENCH	Franceză CAJUN
+CANADIAN_FRENCH	Franceză Canadiană
+GUIANESE_FRENCH	Franceză Guianesă
+FRENCH_GUIANA	Franceză Guiana
+GUYANESE_CREOLE	Creolă Guianesă
+ENGLISH_GUIANA	Engleză Guianesă
+GUIANESE_ENGLISH	Guianesă Engleză
+HAITIAN_FRENCH	Haitian French
+HAITIAN_CREOLE	Creolă Haitiană
+INDIAN_FRENCH		Franceză Indiană
+ANGLO_NORMAN_FRENCH	Franceză Anglo Normană
+JERSEY_LEGAL_FRENCH	Franceză Jersey Legală
+LAO_FRENCH		Franceză Lao
+FRENCH_CREOLE	Franceză Creolă
+LOUISIANIAN_FRENCH	Franceză Louisianiană
+LOUISIANA_CREOLE	Creolă Louisiana
+MERIDIONAL_FRENCH		Franceză Meridională
+MISSOURI_FRENCH		Franceză Missouri
+NEW_CALEDONIAN_FRENCH	Franceză NOUA Caledonie
+NEWFOUNDLAND_FRENCH	Franceză NEW Foundland
+NEW_ENGLAND_FRENCH	Franceză NOUA Anglie
+QUEBEC_FRENCH	Franceză Quebec
+SWISS_FRENCH	Franceză Swiss
+VIETNAMESE_FRENCH	Franceză Vietnameză
+WEST_INDIAN_FRENCH	Franceză Vest Indiană
+WALLISIAN_FRENCH	Franceză Wallisiană
+WESTERN_FRISIAN	Frisiană Vestică
+FRYSK	Frisc
+IRISH_GABON	Irlandeză Gabonă
+GENERAL_AMERICAN	Generală Americană
+GUADELOUPEAN_CREOLE_FRENCH	Franceză Guadeloupeană Creolă
+SCOTTISH_GRENADA	Scoţiană Grenada
+GEORGIAN		Georgiană
+LLANITO	Llanito
+GUERNESIAIS		Guernesiais
+GHANA	Ghana
+MODERN_GREEK	Greacă Modernă
+ANCIENT_GREEK	Greacă Antică
+GALICIAN	Galiciană
+GAMBIA		Gambia
+GUARANI	Guarani
+CHIRIPA	Chiripa
+EASTERN_BOLIVIAN_GUARAN	Guarani Est Boliviană
+MBYA_GUARANI	Guarani Mbya
+PARAGUAYAN_GUARANI	Guarani Paraguaian
+WESTERN_BOLIVIAN_GUARANI	Guarani Vest Boliviană
+SOUTH_GEORGIA_ENGLISH	Engleză Sud Georgiană
+GUATEMALA	Guatemala
+EQUATORIAL_GUINEAN	Guineană Ecuatorială
+GUJARATI	Gujarati
+MANX	Manx
+GUYAN	Aguiana
+HEBREW	Ebraică
+MODERN_HEBREW	Ebraică Modernă
+CLASSICAL_HEBREW	Ebraică Clasică
+SAMARITAN_ARAMEIC	Arameică Samariteană
+SAMARITAN_HEBREW	Ebraică Samariteană
+MOABITE_HEBREW	Ebraică Moabită
+EDOMITE_HEBREW	Ebraică Edomită
+IBRIT		Ibrit
+HIRI_MOTU	Hiri Motu
+HAITIAN	Haitiană
+HUNGARIAN	Maghiară
+ARMENIAN_ARTSAKH	Armeniană Artsakh
+HERERO	Herero
+INTERLINGUA	Interlingua
+INDONESIAN	Indoneziană
+INTERLINGUE	Interlingue
+IRISH	Irlandeză
+IGBO	Igbo
+SICHUAN_YI	Sichuan YI
+INUPIAQ	Inupiaq
+IAAI	Iaai
+IRANIAN	Iraniană
+IDO	Ido
+ICELANDIC	Icelandică
+ITALIAN		Italiană
+INUKTITUT	Inuktitut
+IRAQIAN	Irachiană
+JERRIAIS	Jerriais
+JORDAN	Iordaniană
+JAPANESE	Japoneză
+CAMBODIAN	Cambodiană
+KENYAN	Keniană
+KIKUYU		Kikuyu
+KWANYAMA	Kwaniama
+KAZAKH	Cazacă
+KALAALLISUT	Kalaallisut
+NGAZIDJA_COMORIAN	Comoriană Ngazidja
+COMOROS	Comoriană
+NDZWANI_COMORIAN	Comoriană Ndzwani
+MAORE_COMORIAN	Comoriană Maore
+MWALI_COMORIAN	Comoriană Mwali
+KHMER	Khmer
+KANNADA	Cannada
+KOREAN	Coreană
+KANURI	Canuri
+ST_KITTS_NEVIS	ST Kitts Nevis
+KASHMIRI	Caşmiri
+KAZAKHSTAN	Cazacstan
+CORNISH	Corniş
+KYRGYZSTAN	Chirghizstan
+SRI_LANKA	Sri Lanka
+LATVIAN	Latviană
+LUXEMBOURGISH	Luxemborghiană
+LESOTHO	Lesoto
+LAO	LAO
+LIBERIA	Liberia
+LIBYA	Libia
+LIMBURGISH	Limburgiş
+LINGALA	Lingala
+LITHUANIAN	Lituaniană
+LUBA_KATANGA	Luba Catanga
+MOLDOVIAN	Moldoviană
+MOLDAVIAN	Moldaviană
+MONTENEGRIN	Montenegrină
+SAINT_MARTIN_FRENCH	Franceză Sfânt Martin
+MALAGASY	Malagasia
+MARSHALLESE	Marşallese
+MAORI	Maori
+MIKMAQ	Micmac
+MACEDONIAN	Macedoniană
+MALAYALAM	Malaialam
+MAURITANIAN	Mauritaniană
+MAURITIUS	Mauritiu
+MONGOLIAN	Mongoliană
+CAROLINIAN	Caroliniană
+MALTESE	Malteză
+BURMESE	Burmeză
+ANTILLEAN-CREOL	Creolă Antilleană
+NENGONE	Nengonă
+NEW_LANGUAGE	Limbă Nouă
+DUTCH	Nederlandeză
+PENNSYLVANIA_DUTCH	Dutch Pennsilvanian
+NORWAY	Norvegiană
+NAURU	Nauru
+NIUEAN	Niueană
+NU	Niueană
+CHEWA	Eva
+OCCITAN	Occitană
+ORIYA	Oriya
+OSSETIAN	Oseţiană
+PUNJABI	Punjabă
+PANJABI	Panjabă
+GURMIKI	Gurmiki
+PHILIPPINESE	Filipineză
+TAHITIAN	Tahitiană
+PAPUA_GUINEA	Papua Guineză
+POLISH	Poloneză
+PASHTO	Paştă
+PORTUGUESE	Portugheză
+PORTUGUESE_BRASIL	Portugheză Brazilială
+QATAR	Qatar
+QUECHUA	Quechua
+ROMANSH	Romanş
+ROMANI	Romani
+KIRUNDI	Chirundi
+ROMANIAN	Română
+ROMANIAN_ANSI	Română ANSI
+ROMANIAN_NO_DIACRITIC	Română Fără Diacritice
+ROMANIAN_MOLDAVIA	Română Moldova
+ROMANIAN_ROMANIA	Română Romania
+RUSSIAN	Rusă
+KINYARWANDA	Kinia Ruanda
+SANSKRIT	Sanscrită
+SARDINIAN	Sardiniană
+SAN_MIGUEL_CREOLE_FRENCH	Creolă Franceză San Miguel 
+SINDHI	Sindhi
+SANGO	Sango
+SERBO_CROATIAN	Sârbo-Croată
+SINHALA	Sinhala
+SLOVAK	Slovacă
+SLOVENIAN	Slovenă
+SAMOAN	Samoan
+SHONA	Şona
+SOMAL	Somalia
+SOMALI	Somaliană
+SURINAME	Suriname
+SWATI	Swati
+STANDARD_SCOTTISH_ENGLISH	Engleză Standard Scoţiană
+SOTHO	Soto
+SUNDANESE	Sundaneză
+SINT_MAARTEN_DUTCH	Dutch Sint Maarten 
+SWEDISH	Suedeză
+SYRIAC	Siriacă
+SWAHILI	Swahili
+TURKS_CAICO	Turci Caicos
+CHAD	Ciad
+TAMIL	Tamil
+TELUGU	Telugu
+TAJIK	Tajik
+THAI	Thai
+TIGRINYA	Tigrinia
+TURKMEN	Turkmenă
+TOKELAUAN	Tokelauan
+TAGALOG	Tagalog
+TSWANA	Ţvana
+TONGA	Tonga
+TURKISH	Turcă
+TSONGA	Ţonga
+TUVALU	Tuvalu
+TATAR	Tătară
+TAIWANESE_HOKKIEN		Taivaneză Hokkien
+UIGHUR	Uigur
+UKRAINEAN	Ucraineană
+URDU	Urdu
+UZBEK	Uzbecă
+LATIN	Latină
+VENDA	Venda
+VINCENTIAN-CREO	Creolă Vincenţiană
+VIETNAMESE	Vietnameză
+VOLAPUK	Volapuc
+FRENCH_VIETNAM	Franceză Vietnam
+WALLISIAN	Valisiană
+MALAYO-POLYNESIAN	Malaio-Polinesiană
+SHIMAORE	Şimaore
+WALLOON	Valoon
+WOLOF	Volof
+XHOSA	Xhosa
+YIDDISH	Iidiş
+YORUBA	Ioruba
+ZHUANG	Zhuang
+CHINESE_SIMPLIFIED	Chineză Simplificată
+CHINESE_HONG_KONG	Chineză Hong Kong
+CHINESE_TRADITIONAL	Chineză Traditională
+CHINESE_TRADITIONAL_TAIWAN	Chineză Traditională Taiwan
+ZAMBIAN	Zambiană
+ZIMBABWE	Zimbabve
+ZULU	Zulu
