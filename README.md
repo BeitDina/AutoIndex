@@ -2,7 +2,7 @@
 <tbody><tr class="paragraph"><td class="default_td">
 
 <p>
-	<strong>AutoIndex PHP Script (version 2.4.5) - Help File
+	<strong>AutoIndex PHP Script (version 2.4.6) - Help File
 	<br>by Justin Hagstrom</strong>
 	<br><span class="small">AutoIndex is provided under the terms of
 	the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU General Public License (GPL)</a>.</span>
