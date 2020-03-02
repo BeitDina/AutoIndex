@@ -2298,7 +2298,7 @@ class DirItem extends Item
 				
 				case 'pt':
 				case 'pt_pt':
-					$lang_name = 'PORTUGAL';
+					$lang_name = 'PORTUGUESE';
 					$country_name = 'PORTUGAL';
 				break;
 				
@@ -2673,8 +2673,9 @@ class DirItem extends Item
 				break;
 				
 				case 'va':
+				case 'lat':
 					$country_name = 'VATICAN_CITY'; //Holy See
-					$lang_name = 'latin';
+					$lang_name = 'LATIN';
 				break;
 				
 				case 'vc':
