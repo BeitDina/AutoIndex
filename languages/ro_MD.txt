@@ -204,6 +204,7 @@ ARAGONESE	Aragonesă
 ANGOLIAN		Angoliană
 ANGIKA		Angika
 ARABIC	Arabă
+ARAMEIC		Arameică
 ALGERIAN_ARABIC		Arabă Algeriană
 MOROCCAN_ARABIC	Arabă Marocană
 MOROCCO	Maroc
@@ -271,7 +272,7 @@ CHUVASH	Chuvaş
 WELSH_CYMRAEG	Welsh Cymraeg
 MALAYSIAN_CHINESE	Chineză Malaysiană
 PAPIAMENTU	Papiamentu
-CURAǁO	Curaşao
+CURAÇAO	Curaçao
 DANISH	Daneză
 GERMAN	Germană
 GERMAN_GERMANY	Germană Germania
