@@ -204,6 +204,7 @@ ARAGONESE	Aragonese
 ANGOLIAN		Angolian
 ANGIKA		Angika
 ARABIC	Arabic
+ARAMEIC		Aramaic
 ALGERIAN_ARABIC		Algerian Arabic
 MOROCCAN_ARABIC	Moroccan Arabic
 MOROCCO	Morocco
@@ -271,7 +272,7 @@ CHUVASH	Chuvash
 WELSH_CYMRAEG	Welsh Cymraeg
 MALAYSIAN_CHINESE	Malaysian Chinese
 PAPIAMENTU	Papiamentu
-CURAǁO	Cura硯
+CURAÇAO	Curaçao
 DANISH	Danish
 GERMAN	German
 GERMAN_GERMANY	German Germany
@@ -443,7 +444,7 @@ CLASSICAL_HEBREW	Classical Hebrew
 SAMARITAN_ARAMEIC	Samaritan Arameic
 SAMARITAN_HEBREW	Samaritan Hebrew
 MOABITE_HEBREW	Moabite Hebrew
-EDOMITE_HEBREW	Ebraică Edomită
+EDOMITE_HEBREW	Edomit Hebrew
 IBRIT		Ibrit
 HIRI_MOTU	Hiri Motu
 HAITIAN	Haitian
