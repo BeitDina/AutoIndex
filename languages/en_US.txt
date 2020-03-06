@@ -204,6 +204,7 @@ ARAGONESE	Aragonese
 ANGOLIAN		Angolian
 ANGIKA		Angika
 ARABIC	Arabic
+ARAMEIC		Aramaic
 ALGERIAN_ARABIC		Algerian Arabic
 MOROCCAN_ARABIC	Moroccan Arabic
 MOROCCO	Morocco
@@ -443,7 +444,7 @@ CLASSICAL_HEBREW	Classical Hebrew
 SAMARITAN_ARAMEIC	Samaritan Arameic
 SAMARITAN_HEBREW	Samaritan Hebrew
 MOABITE_HEBREW	Moabite Hebrew
-EDOMITE_HEBREW	Moabite Hebrew
+EDOMITE_HEBREW	Edomit Hebrew
 IBRIT		Ibrit
 HIRI_MOTU	Hiri Motu
 HAITIAN	Haitian
@@ -529,7 +530,7 @@ ORIYA	Oriya
 OSSETIAN	Ossetian
 PUNJABI	Punjabi
 PANJABI	Panjabi
-GURMIK	Gurmiki
+GURMIKI	Gurmiki
 PHILIPPINESE	Philippinese
 TAHITIAN	Tahitian
 PAPUA_GUINEA	Papua Guinea
