@@ -24,7 +24,7 @@
   <td class="row2 table1 topicdetails autoindex_td_right responsive-hide">
    {file:size}
   </td>
-
+	
   <td class="row2 table1 topicdetails autoindex_td_right responsive-show">
    {file:date}
   </td>
