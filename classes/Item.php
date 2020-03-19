@@ -2312,12 +2312,12 @@ abstract class Item
 				
 				case 'pt':
 				case 'pt_pt':
-					$lang_name = 'PORTUGAL';
+					$lang_name = 'PORTUGUESE';
 					$country_name = 'PORTUGAL';
 				break;
 				
 					case 'pt_br':
-					$lang_name = 'PORTUGAL';
+					$lang_name = 'PORTUGUESE_BRASIL';
 					$country_name = 'BRAZIL'; //pt
 				break;
 				
