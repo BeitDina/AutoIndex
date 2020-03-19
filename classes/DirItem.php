@@ -2303,7 +2303,7 @@ class DirItem extends Item
 				break;
 				
 					case 'pt_br':
-					$lang_name = 'PORTUGAL';
+					$lang_name = 'PORTUGUESE_BRASIL';
 					$country_name = 'BRAZIL'; //pt
 				break;
 				
