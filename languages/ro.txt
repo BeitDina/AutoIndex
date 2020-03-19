@@ -272,7 +272,7 @@ CHUVASH	Chuvaş
 WELSH_CYMRAEG	Welsh Cymraeg
 MALAYSIAN_CHINESE	Chineză Malaysiană
 PAPIAMENTU	Papiamentu
-CURAǁO	Curaşao
+CURAÇAO	Curaşao
 DANISH	Daneză
 GERMAN	Germană
 GERMAN_GERMANY	Germană Germania
