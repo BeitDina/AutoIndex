@@ -272,7 +272,7 @@ CHUVASH	Chuvaş
 WELSH_CYMRAEG	Welsh Cymraeg
 MALAYSIAN_CHINESE	Chineză Malaysiană
 PAPIAMENTU	Papiamentu
-CURAÇAO	Curaçao
+CURAÇAO	Curaşao
 DANISH	Daneză
 GERMAN	Germană
 GERMAN_GERMANY	Germană Germania
@@ -537,7 +537,7 @@ PAPUA_GUINEA	Papua Guineză
 POLISH	Poloneză
 PASHTO	Paştă
 PORTUGUESE	Portugheză
-PORTUGUESE_BRASIL	Portugheză Brazilială
+PORTUGUESE_BRASIL	Portugheză Braziliană
 QATAR	Qatar
 QUECHUA	Quechua
 ROMANSH	Romanş
