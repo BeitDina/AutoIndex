@@ -30,6 +30,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 	die();
 }
 
+
 /**
  * Generates a thumbnail of an image file.
  *
@@ -48,6 +49,181 @@ class Image
 	 * @var int The height of the thumbnail to create (width is automatically determined)
 	 */
 	private $height;
+	
+	/**
+	 * Massage the SVG image data for converters which don't understand some path data syntax.
+	 *
+	 * This is necessary for rsvg and ImageMagick when compiled with rsvg support.
+	 * Upstream bug is https://bugzilla.gnome.org/show_bug.cgi?id=620923, fixed 2014-11-10, so
+	 * this will be needed for a while. (T76852)
+	 *
+	 * @param string $svg SVG image data
+	 * @return string Massaged SVG image data
+	 */
+	protected function massageSvgPathdata($svg) 
+	{
+		// load XML into simplexml
+		$xml = simplexml_load_file($svg);
+
+		// if the XML is valid
+		if ( $xml instanceof SimpleXMLElement ) 
+		{
+			$dom = new DOMDocument( '1.0', 'utf-8' );
+			$dom->preserveWhiteSpace = false;
+			$dom->formatOutput = true;
+
+			// use it as a source
+			$dom->loadXML( $xml->asXML() );
+			
+			foreach ($dom->getElementsByTagName('path') as $node)
+			{
+				$pathData = $node->getAttribute('d');
+				// Make sure there is at least one space between numbers, and that leading zero is not omitted.
+				// rsvg has issues with syntax like "M-1-2" and "M.445.483" and especially "M-.445-.483".
+				$pathData = preg_replace('/(-?)(\d*\.\d+|\d+)/', ' ${1}0$2 ', $pathData);
+				// Strip unnecessary leading zeroes for prettiness, not strictly necessary
+				$pathData = preg_replace('/([ -])0(\d)/', '$1$2', $pathData);
+				$node->setAttribute('d', $pathData);
+			}
+			return $dom->saveXML();
+		}
+	}
+	
+	/**
+	 * Convert passed image data, which is assumed to be SVG, to PNG.
+	 *
+	 * @param string $file SVG image data
+	 * @return string|bool PNG image data, or false on failure
+	 */
+	protected function imagecreatefromsvg($file) 
+	{
+		/**
+		 * This code should be factored out to a separate method on SvgHandler, or perhaps a separate
+		 * class, with a separate set of configuration settings.
+		 *
+		 * This is a distinct use case from regular SVG rasterization:
+		 * * We can skip many sanity and security checks (as the images come from a trusted source,
+		 *   rather than from the user).
+		 * * We need to provide extra options to some converters to achieve acceptable quality for very
+		 *   small images, which might cause performance issues in the general case.
+		 * * We want to directly pass image data to the converter, rather than a file path.
+		 *
+		 * See https://phabricator.wikimedia.org/T76473#801446 for examples of what happens with the
+		 * default settings.
+		 *
+		 * For now, we special-case rsvg (used in WMF production) and do a messy workaround for other
+		 * converters.
+		 */
+		 
+		$src = file_get_contents($file);
+		$svg = $this->massageSvgPathdata($file);
+		
+		// Sometimes this might be 'rsvg-secure'. Long as it's rsvg.
+		if ( strpos( CACHE_STORAGE_DIR, 'rsvg' ) === 0 ) 
+		{
+			$command = 'rsvg-convert';
+			if ( CACHE_STORAGE_DIR )
+			{
+				$command = Shell::escape(CACHE_STORAGE_DIR) . $command;
+			}
+
+			$process = proc_open(
+				$command,
+				[ 0 => [ 'pipe', 'r' ], 1 => [ 'pipe', 'w' ] ],
+				$pipes
+			);
+
+			if ( is_resource( $process ) ) 
+			{
+				fwrite( $pipes[0], $svg );
+				fclose( $pipes[0] );
+				$png = stream_get_contents( $pipes[1] );
+				fclose( $pipes[1] );
+				proc_close( $process );
+
+				return $png ?: false;
+			}
+			return false;
+
+		} 
+		else 
+		{
+			
+			// Write input to and read output from a temporary file  
+			$tempFilenameSvg = CACHE_STORAGE_DIR . 'ResourceLoaderImage.svg';
+			$tempFilenamePng = CACHE_STORAGE_DIR . 'ResourceLoaderImage.png';
+			
+			@copy($file, $tempFilenameSvg);
+			@file_put_contents( $tempFilenameSvg, $src );
+			
+			$typeString = "image/png";
+			$command =  'cd ~' . CACHE_STORAGE_DIR . ' && java -jar batik-rasterizer.jar ' . $tempFilenameSvg . ' -m ' .$typeString;
+			//$command = "java -jar ". CACHE_STORAGE_DIR . "batik-rasterizer.jar -m " . $typeString ." -d ". $tempFilenamePng . " -q " . THUMBNAIL_HEIGHT . " " . $tempFilenameSvg . " 2>&1"; 
+			
+			$process = proc_open(
+				$command,
+				[ 0 => [ 'pipe', 'r' ], 1 => [ 'pipe', 'w' ] ],
+				$pipes
+			);
+			
+			if ( is_resource( $process ) ) 
+			{
+				proc_close( $process );
+			}
+			else
+			{
+				$output = shell_exec($command);
+				echo "Command: $command <br>";
+				echo "Output: $output";
+			}
+			//$svgReader = new SVGReader($file);
+			//$metadata = $svgReader->getMetadata();
+			//if ( !isset( $metadata['width'] ) || !isset( $metadata['height'] ) ) 
+			//{
+				$metadata['width'] = $metadata['height'] = THUMBNAIL_HEIGHT;
+			//}
+			
+			//loop to color each state as needed, something like
+			$idColorArray = array(
+				  "AL" => "339966",
+				  "AK" => "0099FF",
+				 "WI" => "FF4B00",
+				 "WY" => "A3609B"
+			);
+
+			foreach($idColorArray as $state => $color)
+			{
+				//Where $color is a RRGGBB hex value
+				$svg = preg_replace('/id="'.$state.'" style="fill: #([0-9a-f]{6})/', 
+					   'id="'.$state.'" style="fill: #'.$color, $svg
+				);
+			}
+			
+				$im = @ImageCreateFromPNG($svg);
+			
+				//$im->readImageBlob($svg);
+
+				// png settings
+				//$im->setImageFormat(function_exists('imagecreatefrompng') ? 'png24' : 'jpeg');
+				//$im->resizeImage($metadata['width'], $metadata['height'], (function_exists('imagecreatefrompng') ? imagick::FILTER_LANCZOS : ''), 1);  // Optional, if you need to resize
+
+				// jpeg
+				//$im->adaptiveResizeImage($metadata['width'], $metadata['height']); //Optional, if you need to resize
+
+				//$im->writeImage($tempFilenamePng); // (or .jpg)
+				
+				//unlink( $tempFilenameSvg );
+			
+			//$png = null;
+			//if ( $res === true ) 
+			//{
+			//	$png = file_get_contents( $tempFilenamePng );
+			//	unlink( $tempFilenamePng );
+			//}
+			//return $png ?: false;
+		}
+		die($svg);
+	}
 	
 	/**
 	 * Outputs the jpeg image along with the correct headers so the
@@ -73,13 +249,34 @@ class Image
 			case 'jpeg':
 			case 'jpg':
 			case 'jpe':
+			case 'jfif' :
 			{
 				$src = @imagecreatefromjpeg($file);
+				break;
+			}
+			case 'svg' :
+			{
+				$src = $this->imagecreatefromsvg($file);
 				break;
 			}
 			case 'png':
 			{
 				$src = @imagecreatefrompng($file);
+				break;
+			}
+			case 'bmp' :
+			{
+				$src = imagecreatefrombmp($file);
+				break;
+			}
+			case 'xbm' :
+			{
+				$src= imagecreatefromxbm($file);
+				break;
+			}
+			case 'xpm' :
+			{
+				$src = imagecreatefromxpm($file);
 				break;
 			}
 			case 'php':
