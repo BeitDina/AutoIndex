@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
-<meta name="title"       content="Beit Dina Directory Index" />
+<meta name="title"  content="Beit Dina Directory Index" />
 <meta name="author"      content="Beit Dina Bible Arheology and Translation Institute" />
 <meta name="copyright"   content="(c) Beit Dina 2019" />
 <meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
@@ -20,11 +20,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
 <link rel="top" href="http://beitdina.net/forum/index.php" title="Pagina de start a forumului beitdina.net" />
-<link rel="search" href="http://beitdina.net/forum/search.php" title="Căutare" />
+<link rel="search" href="http://beitdina.net/forum/search.php" title="CΔƒutare" />
 <link rel="help" href="http://beitdina.net/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://beitdina.net/forum/memberlist.php" title="Membri" />
 
-<title>{words:index of} {info:dir} @ #Bibliuta</title>
+<title>{words:index of} {info:dir} @ Beit Dina Bible Arheology and Translation Institute</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
 <link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" >
 <!-- Then load addon template *.css definition for mx, located in the the portal template folder -->
@@ -50,7 +50,7 @@ body {
 	scrollbar-arrow-color:  #072978;
 	scrollbar-track-color: #DAECFA;
 	scrollbar-darkshadow-color: #4B8DF1;
-	BACKGROUND: url('{config:template}images/images/backgroundbluelight.gif');
+	BACKGROUND: url('{config:template}images/backgroundbluelight.gif');
 	COLOR: #000000;
 	font-style:normal; font-variant:normal; font-weight:normal; font-size:10pt; font-family:Fixedsys, geneva, lucida, lucida grande, arial, helvetica, sans-serif; margin-left:10px; margin-right:10px; margin-top:5px; margin-bottom:10px
 }
@@ -229,6 +229,10 @@ input.liteoption {
 */
 .helpline { background-color: #BADBF5; border-style: none; }
 
+@media screen and (min-width:435px){
+  #desktoptitle{width:300px;height:auto;}
+}
+
 /* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
 @import url("{config:template}formIE.css");
 -->
@@ -290,6 +294,7 @@ function full_img(url) {
 <script language="javascript" type="text/javascript" src="{config:template}rollout.js"></script>
 <script language="javascript" type="text/javascript" src="{config:template}rollout_main.js"></script>
 <script language="javascript" type="text/javascript" src="{config:template}dynifs.js"></script>
+
 </head>
 
-<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978">
+<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978"> 
