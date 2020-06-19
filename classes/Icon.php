@@ -75,7 +75,7 @@ class Icon
 			'vor', 'wk4', 'wkb', 'wpd', 'wps', 'wpw', 'wri', 'wsd'),
 		'image' => array('adc', 'art', 'bmp', 'cgm', 'dib', 'gif', 'ico',
 			'ief', 'jfif', 'jif', 'jp2', 'jpc', 'jpe', 'jpeg', 'jpg', 'jpx',
-			'mng', 'pcx', 'png', 'psd', 'psp', 'swc', 'sxd', 'tga',
+			'mng', 'pcx', 'png', 'psd', 'psp', 'swc', 'sxd', 'svg', 'tga',
 			'tif', 'tiff', 'wmf', 'wpg', 'xcf', 'xif', 'yuv'),
 		'java' => array('class', 'jar', 'jav', 'java', 'jtk'),
 		'js' => array('ebs', 'js', 'jse', 'vbe', 'vbs', 'wsc', 'wsf',
