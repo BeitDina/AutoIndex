@@ -82,13 +82,29 @@ class FileItem extends Item
 		$this -> downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
 		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
 		. '&amp;file=' . Url::translate_uri($filename);
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'gif', 'bmp')))
+		
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'jfif', 'gif', 'bmp')))
 		{
 			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
-			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename)
-			. '" alt="' . $words -> __get('thumbnail of') . ' ' . $filename
-			. '" />';
+			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"'
+			. ' />';
 		}
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
+		{
+			$icon_svg = ICON_PATH ? Url::translate_uri($config -> __get('icon_path') . 'svg.png') : Url::translate_uri($this -> parent_dir . $filename);
+			$heightwidth = in_array(self::ext($filename), array('svg', 'xml')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
+			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thumbnail='. Url::translate_uri($icon_svg) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"'
+			. ' />';
+			//. ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
+			//. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '" srcset="' . Url::html_output($_SERVER['PHP_SELF'])
+			//. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"'  
+			//. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"'
+			//. $heightwidth . ' />';
+		}
+		
 		$size = $this -> size -> __get('bytes');
 		if (MD5_SHOW && $size > 0 && $size / 1048576 <= $config -> __get('md5_show'))
 		{
