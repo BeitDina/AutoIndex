@@ -20,7 +20,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
 <link rel="top" href="http://beitdina.net/forum/index.php" title="Pagina de start a forumului beitdina.net" />
-<link rel="search" href="http://beitdina.net/forum/search.php" title="CΔƒutare" />
+<link rel="search" href="http://beitdina.net/forum/search.php" title="Search/Căutare" />
 <link rel="help" href="http://beitdina.net/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://beitdina.net/forum/memberlist.php" title="Membri" />
 
