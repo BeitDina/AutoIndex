@@ -1,17 +1,21 @@
 
-<a name="top"></a>
 
+<a name="top"></a>
+<a href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a>
 <table width="100%" cellspacing="0" cellpadding="5" border="0" align="center" class="mx_main_table">
 <thead>	
 	<tr>
 		<td class="bodyline">
-
 			<table width="100%" cellspacing="0" cellpadding="5" border="0" class="mx_header_table">
-				<tr>    <span style="letter-spacing: -1pt"><a href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a></span>
-					<td class="row2" width="25%" align="left" valign="top"><a href="http://beitdina.net/forum/index.php">
-                    <img src="{config:template}images/logo_mxBB.gif" border="0" alt="beitdina.net" vspace="1" width="88" height="31"/></a></td>
-					<td class="row2" width="50%" align="center" valign="middle">
-                    <img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;<span class="pagetitle">{words:index of} {info:dir} @ #Bibliuta</span><hr class="hrtop"></td>
+				<tr>
+					<td class="row2" width="25%" align="left" valign="top">
+					<a href="http://beitdina.net/forum/index.php">
+					<img src="{config:template}images/logo_mxBB.gif" border="0" alt="beitdina.net" vspace="1" width="88" height="31" />
+					</a>
+					</td>
+					<td class="row2" width="50%" align="center" valign="middle"><img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;
+					<span class="pagetitle">{words:index of} {info:dir} @ #Bibliuta</span><hr class="hrtop">
+					</td>
 					<td class="row2" width="25%" align="right" valign="top"><span class="sitetitle"><b>beitdina.net</b></span><br /><span class="sitetitle_desc">Portalul canalului #Bibliuta de pe Undernet&nbsp; </span></td>
 				</tr>
 				<tr>
@@ -116,11 +120,12 @@
 		</td>
 	</tr>
 </thead>
-<tbody>
+<tbody width="100%" cellspacing="0" cellpadding="5" border="0" class="mx_header_table">
 	<tr>
-		<td class="bodyline">			
-		<table class="tablebg2" border="0" cellspacing="10" cellpadding="0" width="100%" class="mx_body_table">
-		<div>{words:index of} {info:path_nav}</div>
+		<td class="bodyline">
+		<table class="tablebg2" cellspacing="10" cellpadding="0" width="100%" class="mx_body_table">
+		<tr>
+		<th class="autoindex_th">{words:index of} {info:path_nav}</th> 
 		<table class="tablebg2 autoindex_table" cellspacing="1" width="100%">
 		<thead>
 		<tr>
