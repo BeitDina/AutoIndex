@@ -1,5 +1,5 @@
 </tr></table>
-</div>
+
 
 <div class="autoindex_small" style="text-align: right;">
 Powered by <a class="autoindex_a" href="http://autoindex.sourceforge.net/">Original AutoIndex PHP Script</a>
@@ -26,7 +26,7 @@ and  <a class="autoindex_a" href="http://github.com/BeitDina/AutoIndex/">AutoInd
 {end if:archive}
 
 
-<p />
+<p></p>
 <table class="autoindex_table">
  <tr style="vertical-align: top;">
   {if:search_enabled}
@@ -46,4 +46,4 @@ and  <a class="autoindex_a" href="http://github.com/BeitDina/AutoIndex/">AutoInd
   </td>
   {end if:use_login_system}
  </tr>
-</table>
+</table></td></tr></table>
