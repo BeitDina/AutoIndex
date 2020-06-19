@@ -1132,8 +1132,8 @@ class DirItem extends Item
 					$lang_name = 'SPANISH';
 					$country_name = 'SPAIN';
 				break;
-				case 'es_es':	
-				case 'es_ES':				
+				case 'es_es':
+				case 'es_ES':
 				//		Spanish	Spain
 					$lang_name = 'SPANISH';
 					$country_name = 'SPAIN';
@@ -1149,7 +1149,7 @@ class DirItem extends Item
 					$country_name = 'EUROPE';
 				break;	
 				case 'es_gt':
-				case 'es_GT':				
+				case 'es_GT':
 				//	Spanish (Guatemala) (es-GT)
 					$lang_name = 'SPANISH';
 					$country_name = 'SPAIN';
@@ -1220,16 +1220,16 @@ class DirItem extends Item
 				//Spanish (Uruguay) (es-UY)
 					$lang_name = 'SPANISH_URUGUAY';
 					$country_name = 'URUGUAY';
-				break;	
-				case 'es_ve':	
-				case 'es_VE':	
+				break;
+				case 'es_ve':
+				case 'es_VE':
 				//	Spanish (Venezuela) (es-VE)
 					$lang_name = 'SPANISH_VENEZUELA';
 					$country_name = 'BOLIVARIAN_REPUBLIC_OF_VENEZUELA';
 				break;
 				case 'es_xl':
-				case 'es_XL':					
-				//	Spanish	Latin America	
+				case 'es_XL':
+				//	Spanish	Latin America
 					$lang_name = 'SPANISH_LATIN_AMERICA';
 					$country_name = 'LATIN_AMERICA';
 				break;
