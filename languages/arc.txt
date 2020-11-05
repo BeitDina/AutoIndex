@@ -1,0 +1,97 @@
+// Arabic langauge file
+
+index of	صفحة من
+parent directory	المجلد الأصلي
+thumbnail of	صورة مصغرة من
+continue	إستمرّْ
+
+file	ملف
+files	ملف
+folder	مجلد
+folders	مجلد
+size	الحجم
+total size	الحجم الكلي
+total downloads	مجموع التحميل
+total	المجموع
+date	تاريخ التعديل
+description	الوصف
+downloads	تحميل
+type	نوعه
+sort by	رتب بـ
+
+search	بحث
+both	كلاهما
+search results for	نتائج البحث لـ
+and its subdirectories	و المجلدات الفرعية
+
+account	User Account
+login	دخول
+logout	خروج
+username	اسم المستخدم
+password	كلمة السر
+select user to remove	اختر عضو لحذفه
+are you sure you want to remove the user	هل انت متأكد من حذف هذا العضو
+delete this user	احذف هذا العضو
+add user	اضف عضو
+
+guest	زائر
+user	عضو
+mod	Moderator
+admin	مدير
+level	صلاحيات العضو
+
+rename	غير الإسم/انقل
+renaming	غير الإسم
+new filename	أضف ملف
+you can also move the file by specifying a path	you can also move the file by specifying a path  يمكنك من تحريك الملف لمسار اخر أو كتابة هذا المسار
+delete	حذف
+are you sure you want to delete the file	هل أنت متأكد من حذف الملف؟
+edit description	تحرير الوصف
+yes, delete	نعم احذفه
+
+upload	تحميل
+files to this folder	تحميل الملف لهذا المجلد
+uploaded files	حمل الملفات
+failed files	ملفات خاطئة
+none	لا شيء
+file already exists	الملف موجود مسبقا
+filename is listed as a hidden file	الملفات تعرض على هيئة ملفات مخفية
+
+reconfigure script	إعدادات السكريبت
+create new directory in this folder	أنشيء مجلد جديد داخل هذا المجلد
+edit list of hidden files	تحرير الملفات المخفية
+add new user	أضف عضو جديد
+delete user	حذف عضو
+copy url	Copy a remote file (to this folder)
+upload to ftp	upload file to FTP server
+
+enter the new description for the file	أضف وصف جديد لهذا الملف
+change	عدّل
+enter the new name	أدخل الإسم الجديد
+create	أنشيء
+
+add	أضف
+remove	امسح
+remove a hidden file	امسح الملفات المخفية
+add a new hidden file	أضف ملفات مخفية جديدة
+
+edit ban list	 تحرير قائمة الايبي و البروكسي الممنوعة الخاصة بالأعضاء
+remove a ban	احذف شخص ممنوع
+add a new ban	اضف آيبي تريد منعه (IP address or hostname, you can use wildcards)
+the administrator has blocked your ip address or hostname	عفوا المدير منعك من دخول هذه الصفحة
+
+view entries from log file	مشاهد المدخلات من ملف الاحصائيات
+view statistics from log file	مشاهدة الإحصائيات
+how many entries would you like to view	كم مدخل تريد مشاهدته
+view	مشاهدة
+page	Page
+of	of
+
+calculate md5sum	أحسب المجموع
+download directory as tar.gz archive	ملف ارشيف tar.gz حمل الملف على هئية 
+leningrad	Leningrad
+aleppo	Aleppo
+peshitta	ܦܫܝܼܛܬܵܐ
+khabouris	Khabouris 
+sinaiticus	Sinaiticus
+qumran	Qumran

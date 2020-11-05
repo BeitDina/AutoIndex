@@ -1,5 +1,4 @@
 
-
 <a name="top"></a>
 <a href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a>
 <table width="100%" cellspacing="0" cellpadding="5" border="0" align="center" class="mx_main_table">
@@ -76,6 +75,12 @@
 										
 										<a href="../peshitta/" rel=" co-worker neighbor" role="menuitem">
 											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:PESHITTA}</span>
+										</a>
+							</td>
+							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+										
+										<a href="../khabouris/" rel=" co-worker neighbor" role="menuitem">
+											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:KHABOURIS}</span>
 										</a>
 							</td>
 							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">

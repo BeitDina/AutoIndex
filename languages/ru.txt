@@ -93,6 +93,7 @@ download directory as tar.gz archive	Скачать директорию в ви
 leningrad	Ленинград
 aleppo	Алеппо
 peshitta	Пеши́тта
+khabouris	Khabouris
 sinaiticus	Синайтик
 qumran	Кумран
 CHAP	ГЛАВА

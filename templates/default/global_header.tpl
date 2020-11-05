@@ -7,7 +7,7 @@
 	
 	<meta name="title"       content="Directory Index" />
 	<meta name="author"      content="Beit Dina Bible Arheology and Translation Institute @ beitdina.net" />
-	<meta name="copyright"   content="default template Â© Beit Dina 2019 based on subSilver style Â© 2005 phpBB Group." />
+	<meta name="copyright"   content="default template © Beit Dina 2019 based on subSilver style © 2005 phpBB Group." />
 	<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 	<meta name="description" lang="{config:language}" content="Directory Index. This is the description search engines show when listing your site." />
 	<meta name="category"    content="general" />

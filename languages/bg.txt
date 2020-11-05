@@ -92,6 +92,7 @@ download directory as tar.gz archive	Свали директориѿта кат�
 leningrad	Ленинград
 aleppo	Алеппо
 peshitta	Пешитта
+khabouris	Khabouris
 sinaiticus	Синайтик
 qumran	Кумран
 CHAP	ГЛАВА

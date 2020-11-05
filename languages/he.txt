@@ -8,19 +8,19 @@ thumbnail of	תְמוּנָה ממזערת
 continue	הַמשִׁיך
 
 file	קוֹבֶץ
-files	Files
+files	קוֹבֶצים  
 folder	תַיֵק
-folders	תַיֵקיות
-size	Size
-total size	Total size
-total files	Total files
-total downloads	Total downloads
+folders		תַיֵקיות
+size	מידה
+total size	הורדות סך גודל מוחלט
+total files		Total files
+total downloads		Total downloads
 total	Total
-date	Modified
-description	Description
-downloads	Downloads
-type	Type
-sort by	Sort by
+date	תאריך
+description		תיאור
+downloads	הורדות
+type	הקלד טיפו
+sort by		אורדינה לפי
 
 search	Search
 both	Both
@@ -95,6 +95,7 @@ download directory as tar.gz archive	Download directory as tar.gz archive
 leningrad	Leningrad
 aleppo	Aleppo
 peshitta	פשיטתא 
+khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	CHAPTER

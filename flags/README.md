@@ -125,16 +125,11 @@ To Do:
 					$country_name = 'ALGERIA';
 				break;
 
-				case 'arc':
-					$country_name = 'ASHURIA';
-					$lang_name = 'ARAMEIC';
-				break;
-
 				case 'ary':
 					$lang_name = 'MOROCCAN_ARABIC'; //known as Moroccan Arabic or Moroccan Darija or Algerian Saharan Arabic
 					$country_name = 'MOROCCO';
 				break;
-
+				
 				//jrb – Judeo-Arabic
 				//yhd – Judeo-Iraqi Arabic
 				//aju – Judeo-Moroccan Arabic

@@ -93,6 +93,7 @@ download directory as tar.gz archive	Download directory as tar.gz archive
 leningrad	Leningrad
 aleppo	Aleppo
 peshitta	Peshitta
+khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	CHAPTER
@@ -272,7 +273,7 @@ CHUVASH	Chuvash
 WELSH_CYMRAEG	Welsh Cymraeg
 MALAYSIAN_CHINESE	Malaysian Chinese
 PAPIAMENTU	Papiamentu
-CURAÇAO	Curaçao
+CURAǁO	Cura硯
 DANISH	Danish
 GERMAN	German
 GERMAN_GERMANY	German Germany

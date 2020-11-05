@@ -1,0 +1,313 @@
+1Chr	1 Kronieke
+1Chr	1 Kron
+1Chr	1Chr
+1Cor	1. Korinthiers
+1Cor	1. Korinthiërs
+1Cor	I. Korinthiers
+1Cor	I. Korinthiërs
+1Cor	1 Korinthiers
+1Cor	1 Korinthiërs
+1Cor	1. Korintiers
+1Cor	1. Korintiërs
+1Cor	I Korinthiers
+1Cor	I Korinthiërs
+1Cor	I. Korintiers
+1Cor	I. Korintiërs
+1Cor	1 Korintiers
+1Cor	1 Korintiërs
+1Cor	I Korintiers
+1Cor	I Korintiërs
+1Cor	1. Kor
+1Cor	I. Kor
+1Cor	1 Kor
+1Cor	I Kor
+1Cor	1Cor
+1Esd	1Esd
+1John	1. Johannes
+1John	I. Johannes
+1John	1 Johannes
+1John	I Johannes
+1John	1. Joh
+1John	I. Joh
+1John	1 Joh
+1John	1John
+1John	I Joh
+1Kgs	1 Konings
+1Kgs	1 Kon
+1Kgs	1Kgs
+1Macc	1Macc
+1Pet	1. Petrus
+1Pet	I. Petrus
+1Pet	1 Petrus
+1Pet	I Petrus
+1Pet	1. Pet
+1Pet	I. Pet
+1Pet	1 Pet
+1Pet	I Pet
+1Pet	1Pet
+1Sam	1 Samuel
+1Sam	1 Sam
+1Sam	1Sam
+1Thess	1. Tessalonisense
+1Thess	I. Tessalonisense
+1Thess	1 Tessalonisense
+1Thess	1. Tessaonicense
+1Thess	I Tessalonisense
+1Thess	I. Tessaonicense
+1Thess	1 Tessaonicense
+1Thess	I Tessaonicense
+1Thess	1. Thess
+1Thess	I. Thess
+1Thess	1 Thess
+1Thess	1. Tess
+1Thess	I Thess
+1Thess	I. Tess
+1Thess	1 Tess
+1Thess	1Thess
+1Thess	I Tess
+1Tim	1. Timoteus
+1Tim	I. Timoteus
+1Tim	1 Timoteus
+1Tim	I Timoteus
+1Tim	1. Tim
+1Tim	I. Tim
+1Tim	1 Tim
+1Tim	I Tim
+1Tim	1Tim
+2Chr	2 Kronieke
+2Chr	2 Kron
+2Chr	2Chr
+2Cor	II. Korinthiers
+2Cor	II. Korinthiërs
+2Cor	2. Korinthiers
+2Cor	2. Korinthiërs
+2Cor	II Korinthiers
+2Cor	II Korinthiërs
+2Cor	II. Korintiers
+2Cor	II. Korintiërs
+2Cor	2 Korinthiers
+2Cor	2 Korinthiërs
+2Cor	2. Korintiers
+2Cor	2. Korintiërs
+2Cor	II Korintiers
+2Cor	II Korintiërs
+2Cor	2 Korintiers
+2Cor	2 Korintiërs
+2Cor	II. Kor
+2Cor	2. Kor
+2Cor	II Kor
+2Cor	2 Kor
+2Cor	2Cor
+2Esd	2Esd
+2John	II. Johannes
+2John	2. Johannes
+2John	II Johannes
+2John	2 Johannes
+2John	II. Joh
+2John	2. Joh
+2John	II Joh
+2John	2 Joh
+2John	2John
+2Kgs	2 Konings
+2Kgs	2 Kon
+2Kgs	2Kgs
+2Macc	2Macc
+2Pet	II. Petrus
+2Pet	2. Petrus
+2Pet	II Petrus
+2Pet	2 Petrus
+2Pet	II. Pet
+2Pet	2. Pet
+2Pet	II Pet
+2Pet	2 Pet
+2Pet	2Pet
+2Sam	2 Samuel
+2Sam	2 Sam
+2Sam	2Sam
+2Thess	II. Tessalonisense
+2Thess	2. Tessalonisense
+2Thess	II Tessalonisense
+2Thess	II. Tessaonicense
+2Thess	2 Tessalonisense
+2Thess	2. Tessaonicense
+2Thess	II Tessaonicense
+2Thess	2 Tessaonicense
+2Thess	II. Thess
+2Thess	2. Thess
+2Thess	II Thess
+2Thess	II. Tess
+2Thess	2 Thess
+2Thess	2. Tess
+2Thess	II Tess
+2Thess	2 Tess
+2Thess	2Thess
+2Tim	II. Timoteus
+2Tim	2. Timoteus
+2Tim	II Timoteus
+2Tim	2 Timoteus
+2Tim	II. Tim
+2Tim	2. Tim
+2Tim	II Tim
+2Tim	2 Tim
+2Tim	2Tim
+3John	III. Johannes
+3John	III Johannes
+3John	3. Johannes
+3John	3 Johannes
+3John	III. Joh
+3John	III Joh
+3John	3. Joh
+3John	3 Joh
+3John	3John
+3Macc	3Macc
+4Macc	4Macc
+Acts	Handelinge
+Acts	Acts
+Acts	Hand
+Amos	Amos
+Amos	Am
+Bar	Bar
+Bel	Bel
+Col	Kolossense
+Col	Col
+Col	Kol
+Dan	Daniel
+Dan	Daniël
+Dan	Dan
+Deut	Deuteronomium
+Deut	Deuteronómium
+Deut	Deut
+Eccl	Prediker
+Eccl	Eccl
+Eccl	Pred
+EpJer	EpJer
+Eph	Efesiers
+Eph	Efesiërs
+Eph	Efésiers
+Eph	Efésiërs
+Eph	Eph
+Eph	Ef
+Esth	Ester
+Esth	Esth
+Esth	Est
+Exod	Eksodus
+Exod	Exodus
+Exod	Exod
+Exod	Eks
+Ezek	Esegiel
+Ezek	Esegiël
+Ezek	Eseg
+Ezek	Ezek
+Ezra	Esra
+Ezra	Ezra
+Gal	Galasiers
+Gal	Galasiërs
+Gal	Galásiers
+Gal	Galásiërs
+Gal	Gal
+Gen	Genesis
+Gen	Gen
+GkEsth	GkEsth
+Hab	Habakuk
+Hab	Hab
+Hag	Haggai
+Hag	Hag
+Heb	Hebreers
+Heb	Hebreërs
+Heb	Heb
+Hos	Hosea
+Hos	Hos
+Isa	Jesaja
+Isa	Isa
+Isa	Jes
+Jas	Jakobus
+Jas	Jak
+Jas	Jas
+Jdt	Jdt
+Jer	Jeremia
+Jer	Jer
+Job	Job
+Joel	Joel
+Joel	Joël
+John	Johannes
+John	John
+John	Joh
+Jonah	Jonah
+Jonah	Jona
+Josh	Josua
+Josh	Josh
+Josh	Jos
+Jude	Judas
+Jude	Jude
+Jude	Jud
+Judg	Rigters
+Judg	Judg
+Judg	Rig
+Lam	Klaagliedere
+Lam	Klaagl
+Lam	Lam
+Lev	Levitikus
+Lev	Levítikus
+Lev	Lev
+Luke	Lukas
+Luke	Luke
+Luke	Luk
+Mal	Maleagi
+Mal	Mal
+Mark	Markus
+Mark	Mark
+Matt	Mattheus
+Matt	Mattheüs
+Matt	Matthéus
+Matt	Matthéüs
+Matt	Matteus
+Matt	Matt
+Mic	Miga
+Mic	Mic
+Nah	Nahum
+Nah	Nah
+Neh	Nehemia
+Neh	Neh
+Num	Numeri
+Num	Númeri
+Num	Num
+Obad	Obadja
+Obad	Obad
+Obad	Ob
+Phil	Filippense
+Phil	Phil
+Phil	Fil
+Phlm	Filemon
+Phlm	Filem
+Phlm	Phlm
+PrAzar	PrAzar
+PrMan	PrMan
+Prov	Spreuke
+Prov	Prov
+Prov	Spr
+Ps	Psalms
+Ps	Psalm
+Ps	Ps
+Rev	Openbaring
+Rev	Rev
+Rev	Op
+Rom	Romeine
+Rom	Rom
+Ruth	Ruth
+Ruth	Rut
+SgThree	SgThree
+Sir	Sir
+Song	Hooglied
+Song	Hoogl
+Song	Song
+Sus	Sus
+Titus	Titus
+Titus	Tit
+Tob	Tob
+Wis	Wis
+Zech	Sagaria
+Zech	Zech
+Zech	Sag
+Zeph	Sefanja
+Zeph	Zeph
+Zeph	Sef

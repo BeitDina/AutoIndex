@@ -95,6 +95,7 @@ download directory as tar.gz archive		Kőnyvtár letőltése tar.gz formátumban
 leningrad	Leningrád
 aleppo	Aleppo
 peshitta	Szír Pesitta
+khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	Fejezet
@@ -166,12 +167,12 @@ JOH		János
 JHN		János
 ACT		Apostolok cselekedetei
 ROM	Rómaiakhoz
-CO1		Első Corinthians
-CO2		Második Corinthians
-GAL		Galatians
-EPH		Ephesians
-PHP		Philippians
-COL		Colossians
+CO1		Első Korinthusiakhoz
+CO2		Második Korinthusiakhoz
+GAL		Galatákhoz
+EPH		Efézusiakhoz
+PHP		Philippibeliekhez
+COL		Kolosséiakhoz
 TH1		Első Thesszalonikaiakhoz
 TH2		Második Thesszalonikaiakhoz
 TI1		Első Timóteushoz

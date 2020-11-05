@@ -93,7 +93,8 @@ calculate md5sum	kalkuliere md5sum
 download directory as tar.gz archive	Lade das gesamte Verzeichnis als tar.gz Archiv herunter
 leningrad	Leningrad
 aleppo	Aleppo
-peshitta	Peshitta
+peshitta	Peschitta
+khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	CHAPTER
@@ -107,8 +108,8 @@ JDG		Richter
 RUT		Ruth
 SA1		1 Samuel
 SA2		2 Samuel
-KI1		1 KÃ¶nige
-KI2		2 KÃ¶nige
+KI1		1 Könige
+KI2		2 Könige
 CH1		1 Chronik
 CH2		2 Chronik
 EZR		Esra 
@@ -121,7 +122,7 @@ PSA_VOL2	Psalter Vol 2
 PSA_VOL3	Psalter Vol 3
 PSA_VOL4	Psalter Vol 4
 PSA_VOL5	Psalter Vol 5
-PRO		SprÃ¼che
+PRO		Sprüche
 ECC		Prediger
 SNG		Hohelied Salomos
 ISA		Jesaja
@@ -158,13 +159,13 @@ MA1		1 Meqabyan
 MA2		2 Meqabyan
 MA3		3 Meqabyan
 MA4		4 Meqabyan
-MAT		MatthÃ¤us
+MAT		Matthäus
 MRK		Markus
 LUK		Lukas
 JOH		Johannes
 JHN		Johannes
 ACT		Apostelgeschichte
-ROM		RÃ¶mer
+ROM		Römer
 CO1		1 Korinther
 CO2		2 Korinther
 GAL		Galater
@@ -177,7 +178,7 @@ TI1		1 Timotheus
 TI2		2 Timotheus
 TIT		Titus
 PHM		Philemon
-HEB		HebrÃ¤er
+HEB		Hebräer
 JAM		Jakobus
 PE1		1 Petrus
 PE2		2 Petrus

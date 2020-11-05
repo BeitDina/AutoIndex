@@ -92,6 +92,7 @@ calculate md5sum	υπολόγησε md5sum
 download directory as tar.gz archive	Μετακίνηση του καταλόγου στον υπολογιστή μου ως συμπιεσμένο tar.gz αρχείο
 leningrad	Λένινγκραντ
 aleppo	Αλέππο
-peshitta	Πεσίττα
+peshitta	Πεσίτα
+khabouris	Khabouris
 sinaiticus	Σινάιτίκ
 qumran	Κουμράν

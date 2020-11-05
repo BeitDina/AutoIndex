@@ -20,7 +20,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
 <link rel="top" href="http://beitdina.net/forum/index.php" title="Pagina de start a forumului beitdina.net" />
-<link rel="search" href="http://beitdina.net/forum/search.php" title="Search/Căutare" />
+<link rel="search" href="http://beitdina.net/forum/search.php" title="Căutare" />
 <link rel="help" href="http://beitdina.net/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://beitdina.net/forum/memberlist.php" title="Membri" />
 
@@ -297,4 +297,4 @@ function full_img(url) {
 
 </head>
 
-<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978"> 
+<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978">

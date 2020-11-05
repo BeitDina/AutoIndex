@@ -1,0 +1,13 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "EstrangeloEdessa";
+  src: url("SyrCOMEdessa.eot"); /* IE9 Compat Modes */
+  src: url("SyrCOMEdessa.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("SyrCOMEdessa.otf") format("opentype"), /* Open Type Font */
+    url("SyrCOMEdessa.svg") format("svg"), /* Legacy iOS */
+    url("SyrCOMEdessa.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("SyrCOMEdessa.woff") format("woff"), /* Modern Browsers */
+    url("SyrCOMEdessa.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

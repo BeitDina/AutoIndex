@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'East Syriac Adiabene';
+    src: url('EastSyriacAdiabene.eot');
+    src: url('EastSyriacAdiabene.eot?#iefix') format('embedded-opentype'),
+        url('EastSyriacAdiabene.woff2') format('woff2'),
+        url('EastSyriacAdiabene.woff') format('woff'),
+        url('EastSyriacAdiabene.ttf') format('truetype'),
+        url('EastSyriacAdiabene.svg#EastSyriacAdiabene') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

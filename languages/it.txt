@@ -1,5 +1,6 @@
 // Italian language file by Dalilha <dalilha@users.sourceforge.net>
 
+
 index of	Indice del
 parent directory	Directory padre
 thumbnail of	Thumbnail di
@@ -10,6 +11,7 @@ files	Files
 folder	Cartella
 folders	Cartelle
 size	Dimensione
+total files	Cartelle total
 total size	Dimensione totale
 total downloads	Downloads totali
 total	Totale
@@ -91,7 +93,8 @@ calculate md5sum	calcola md5sum
 download directory as tar.gz archive	Scarica la directory come un archivio tar.gz
 leningrad	Leningrad
 aleppo	Aleppo
-peshitta	Peshitta
+peshitta	Pescittae
+khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
 CHAP	Capitolo
@@ -113,8 +116,13 @@ EZR	Ezra
 NEH	Neemia
 EST	Ester
 JOB	Job
-PSA	Salmi 
-PRO	Proverbi 
+PSA	Salmi
+PSA_VOL1	Salmi Vol 1
+PSA_VOL2	Salmi Vol 2
+PSA_VOL3	Salmi Vol 3
+PSA_VOL4	Salmi Vol 4
+PSA_VOL5	Salmi Vol 5
+PRO	Proverbi
 ECC	Ecclesiaste
 SNG	Canzone di Salomone
 ISA	Isaia

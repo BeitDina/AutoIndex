@@ -1,0 +1,165 @@
+/*
+  Addon or redefined css definitions for mx
+*/
+
+/* This is the main table round all portal contents, use with .bodyline */
+.mx_main_table	{
+}
+
+/* This is the outline table round the top page header */
+.mx_header_table	{
+	background-color: #ffffff;
+	border: 1px solid #ffffff;
+}
+
+/* This is the outline table round the columns/blocks */
+.mx_body_table	{
+}
+
+/* This is the outer outline table round the blocks, not used if no border graphics are used */
+.mx_graphborder	{
+}
+
+/* This is the outline table round the block title, placed on top forumline */
+.mx_blockline	{
+	background-color: #FFFFFF;
+	border-top: 1px solid #006699;
+	border-right: 1px solid #006699;
+	border-bottom: 0px solid #006699;
+	border-left: 1px solid #006699;
+}
+
+/* These are the main mx column styles */
+td.leftcol	{
+}
+
+td.middlecol	{
+}
+
+td.rightcol	{
+}
+
+/* This is the style used for the top page title. */
+.pagetitle	{
+	font-weight: bold;
+	font-size: 30px;
+	font-family: "Comic Sans MS", Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	line-height : 120%;
+	color : #000066;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	letter-spacing: 5px;
+	vertical-align: 20%;
+}
+
+/* This is the style used for the top site title. */
+.sitetitle	{
+	font-family: Arial; 
+	letter-spacing: 0.6em; 
+	font-variant: small-caps; 
+	font-weight: bolder; 
+	font-size: 11pt; 
+	color: #000066;
+}
+
+/* This is the style used for the top site title. */
+.sitetitle_desc	{
+	font-size: 7px;
+}
+
+/* This is the block title style */
+th.mxthHead {
+	border: 0px;
+	font-size: 12px;
+	font-variant: small-caps;
+	text-transform: capitalize;
+}
+
+th.mxthHead_none {
+	background-color: #EFEFEF; height: 0px;
+	background-image: url();
+	
+	color: #000066;
+	border: 0px;
+	font-size: 12px;
+	font-variant: small-caps;
+	text-transform: capitalize;
+}
+
+
+/* Newssuite - Never enlarge images */
+img.noenlarge {
+	border: 0px;
+	cursor: hand;
+}
+
+/* Newssuite - Never enlarge images */
+div.imagediv {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	width: 150px;
+}
+
+/* Newssuite - Quote & Code blocks */
+.news_code {
+	font-family: "Courier New", Courier, mono;
+	font-size: 10;
+}
+
+/* Customized hr */
+hr.hrtop	{ height: 1px; border: solid #000066 1px; border-top-width: 1px;}
+
+.shadow {color:#00aa00; filter: DropShadow(Color=#660000, OffX=5, OffY=5, Positive=1)}
+img.shadow {color:#00aa00;  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color='gray', Positive='true')}
+
+/* For all fold/unfold edit buttons */
+.newsbutton {
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+/* Newssuite */
+.newstitle		{ font-variant: small-caps; font-weight: bolder; font-size: 8pt; }
+a.newstitle		{ text-decoration: none; color : #006699;  }
+a.newstitle:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Newssuite */
+.newstype		{ font-weight: lighter; font-size: 5pt; color: #110000; }
+a.newstype		{ text-decoration: none; color : #006699;  }
+a.newstype:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Newssuite */
+.newstype_paper		{ font-weight: lighter; font-size: 5pt; color: #990000; }
+a.newstype_paper		{ text-decoration: none; color : #990000;  }
+a.newstype_paper:hover{ text-decoration: underline; color : #990000; }
+
+/* ...and associated input img style */
+input.editblock {
+border-top-width : 0px; 
+border-right-width : 0px; 
+border-bottom-width : 0px; 
+border-left-width : 0px; 
+   
+margin-bottom:0px;  
+margin-top:0px; 
+} 
+
+/* Form elements */
+form { 
+   margin-bottom:0px; 
+} 
+
+/* Form elements */
+form.mx_editform { 
+   margin-bottom:0px; 
+   margin-top:0px; 
+} 
+
+.mxlink		{ background-color: {T_BODY_BGCOLOR}; border-style: none; font-weight: bold; font-size: {T_FONTSIZE3}px ; letter-spacing: 1px; color : {T_BODY_LINK}}
+
+p, td		{ font-size : 12px; color : #000000; }

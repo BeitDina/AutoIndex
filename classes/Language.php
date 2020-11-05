@@ -108,9 +108,9 @@ class Language
 				arsort($pref);
 				//find the first match that is available:
 				foreach ($pref as $lang => $q)
-				{				
+				{
 					//replace line string to language file downscroll
-					$lang = isset($_GET['lang']) ? str_replace('-', '_', $_GET['lang']) : str_replace('-', '_', $lang);			
+					$lang = isset($_GET['lang']) ? str_replace('-', '_', $_GET['lang']) : str_replace('-', '_', $lang);
 					if (file_exists(@realpath(PATH_TO_LANGUAGES . $lang . LANGUAGE_FILE_EXT)))
 					{
 						return $lang;
