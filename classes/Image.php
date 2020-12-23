@@ -236,8 +236,7 @@ class Image
 		if (!@is_file($file))
 		{
 			header('HTTP/1.0 404 Not Found');
-			throw new ExceptionDisplay('Image file not found: <em>'
-			. Url::html_output($file) . '</em>');
+			throw new ExceptionDisplay('Image file not found: <em>' . Url::html_output($file) . '</em>');
 		}
 		switch (FileItem::ext($file))
 		{
@@ -277,6 +276,24 @@ class Image
 			case 'xpm' :
 			{
 				$src = imagecreatefromxpm($file);
+				break;
+			}
+			case 'wmv' :
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists('imagecreatefromwmv') ? imagecreatefromwmv($file) : imagecreatefromjpeg(str_replace('wmv', 'jpg', $file));
+				break;
+			}
+			case 'avi' :
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists('imagecreatefromavi') ? imagecreatefromavi($file) : imagecreatefromjpeg(str_replace('avi', 'jpg', $file));
+				break;
+			}
+			case '3gp' :
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists('imagecreatefrom3gp') ? imagecreatefrom3gp($file) : imagecreatefromjpeg(str_replace('3gp', 'jpg', $file));
 				break;
 			}
 			case 'php':
@@ -362,8 +379,8 @@ class Image
 		
 		header('Content-Type: image/jpeg');
 		header('Cache-Control: public, max-age=3600, must-revalidate');
-		header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600)
-		. ' GMT');
+		header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
+		
 		$src_height = imagesy($src);
 		if ($src_height <= $thumbnail_height)
 		{
@@ -374,8 +391,7 @@ class Image
 			$src_width = imagesx($src);
 			$thumb_width = $thumbnail_height * ($src_width / $src_height);
 			$thumb = imagecreatetruecolor($thumb_width, $thumbnail_height);
-			imagecopyresampled($thumb, $src, 0, 0, 0, 0, $thumb_width,
-				$thumbnail_height, $src_width, $src_height);
+			imagecopyresampled($thumb, $src, 0, 0, 0, 0, $thumb_width, $thumbnail_height, $src_width, $src_height);
 			imagejpeg($thumb);
 			imagedestroy($thumb);
 		}
@@ -395,6 +411,8 @@ class Image
 		global $config;
 		$this -> height = (int)$config -> __get('thumbnail_height');
 		$this -> filename = $file;
+		//$this -> tn_path = $config -> __get('thumbnail_path');
+		//$this -> tn_quality = $config -> __get('thumbnail_quality');
 	}
 }
 

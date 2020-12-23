@@ -1,6 +1,6 @@
 <?php
-
-/**
+// date_default_timezone_set('Europe/Bucharest'); 
+/** 
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom
@@ -64,13 +64,11 @@ class Logging
 			$h = @fopen($this -> filename, 'ab');
 			if ($h === false)
 			{
-				throw new ExceptionDisplay('Could not open log file for writing.'
-				. ' Make sure PHP has write permission to this file.');
+				throw new ExceptionDisplay('Could not open log file for writing.' . ' Make sure PHP has write permission to this file.');
 			}
 			global $dir, $ip, $host;
-			$referrer = (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'N/A');
-			fwrite($h, date(DATE_FORMAT) . "\t" . date('H:i:s')
-			. "\t$ip\t$host\t$referrer\t$dir\t$extra\n");
+			$referrer = (!empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'N/A');
+			fwrite($h, date(DATE_FORMAT) . "\t" . date('H:i:s') . "\t$ip\t$host\t$referrer\t$dir\t$extra\n");
 			fclose($h);
 		}
 	}
@@ -105,8 +103,7 @@ class Logging
 			$parts = explode("\t", rtrim($file_array[$count_log-$i-1], "\r\n"), 7);
 			if (count($parts) !== 7)
 			{
-				throw new ExceptionDisplay('Incorrect format for log file on line '
-				. ($i + 1));
+				throw new ExceptionDisplay('Incorrect format for log file on line ' . ($i + 1));
 			}
 			for ($j = 0; $j < 7; $j++)
 			{

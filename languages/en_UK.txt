@@ -616,3 +616,71 @@ CHINESE_TRADITIONAL_TAIWAN	Chinese Traditional Taiwan
 ZAMBIAN	Zambian
 ZIMBABWE	Zimbabwe
 ZULU	Zulu
+
+// Mobile device names
+A4TS	Archos 40b Titanium Surround
+AE5HD	Aquaris E5 HD
+ANDROID	Android
+ATOOJ	ASUS T00J
+ATT	Asus Transformer Tablet
+BBCURVE	BlackBerry Curve
+BBP	BlackBerry Porsche
+BBPB	BlackBerry PlayBook
+BBPEARL	BlackBerry Pearl
+BBPEARLF	BlackBerry Pearl Flip
+BBPP	BlackBerry Passport
+BBSTORM	BlackBerry Storm
+BBTOUCH	'BlackBerry Touch
+BLACKBERRY	BlackBerry
+DESKTOP	'Desktop
+HP8	HUAWEI P8
+HPL01	Huawei Honor 7
+HPL09	Huawei P9 EVA-L09
+HPL23	Huawei P9 Lite
+HTCD	HTC Desire
+IPAD	iPad
+IPHONE	 iPhone
+IPOD	iPod
+L640XL	 Lumia 640 XL
+LG	   LG
+LGH850	 LG G5 H850
+LGOL7IT	LG Optimus L7 II
+LGV500	 LG V500
+LK50T5	 Lenovo K50-t5
+MDM	  Motorola Droid Mini
+N1	   Nexus 1
+N4	   Nexus 4
+N5	   Nexus 5
+N7	   Nexus 7
+N9	   Nexus 9
+OPO	  OnePlus One
+ORN	  Orange Nura
+PALM	Palm
+SG2T	Samsung Galaxy2 Tablet
+SGA4	Samsung Galaxy Ace 4
+SGN	  Samsung Galaxy Nexus
+SGN3	Samsung Galaxy Note 3
+SGN3N	Samsung Galaxy Note 3 Neo
+SGN4	Samsung Galaxy Note 4
+SGN5	Samsung Galaxy Note 5
+SGS2	Samsung Galaxy S2
+SGS4	Samsung Galaxy S4
+SGS4A	Samsung Galaxy S4 Active
+SGS5	Samsung Galaxy S5
+SGS5A	Samsung Galaxy S5 Active
+SGS6	Samsung Galaxy S6
+SGS6E	Samsung Galaxy S6 Edge
+SGS7E	Samsung Galaxy S7 Edge
+SGS8	Samsung Galaxy S8
+SGSD2	Samsung Galaxy S Duos 2
+SGT3	Samsung Galaxy Tab 3
+SGT3W	Samsung Galaxy Tab3
+SGT4	Samsung Galaxy Tab 4
+SGTP	Samsung Galaxy TabPRO
+SXED	Sony Xperia E1 Dual
+SXM2	Sony XPERIA M2
+SXZ1	Sony Xperia Z1
+SXZ3	Sony Xperia Z3
+TKT	  Tianyu K-Touch
+VOYAGER	Voyager
+WSP	Windows Smartphone

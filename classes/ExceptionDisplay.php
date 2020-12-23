@@ -46,11 +46,9 @@ class ExceptionDisplay extends ExceptionFatal
 	 */
 	public function __toString()
 	{
-		global $words;
-		$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">'
-		. $this -> message . '<p><a class="autoindex_a" href="'
-		. Url::html_output($_SERVER['PHP_SELF']);
-		if (isset($_GET['dir']))
+		global $words, $_SERVER, $_GET;
+		$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">' . $this -> message . '<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']);
+		if (!empty($_GET['dir']))
 		{
 			$str .= '?dir=' . Url::translate_uri($_GET['dir']);
 		}

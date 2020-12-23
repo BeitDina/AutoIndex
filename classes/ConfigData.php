@@ -125,11 +125,10 @@ class ConfigData implements Iterator
 		}
 		$this -> valid = true;
 		$this -> filename = $file;
-		$contents = @file($file);
+		$contents = file($file);
 		if ($contents === false)
 		{
-			throw new ExceptionFatal('Error reading file <em>'
-			. Url::html_output($file) . '</em>');
+			throw new ExceptionFatal('Error reading file <em>' . Url::html_output($file) . '</em>');
 		}
 		foreach ($contents as $i => $line)
 		{
@@ -141,16 +140,11 @@ class ConfigData implements Iterator
 			$parts = explode("\t", $line, 2);
 			if (count($parts) !== 2 || $parts[0] == '' || $parts[1] == '')
 			{
-				throw new ExceptionFatal('Incorrect format for file <em>'
-				. Url::html_output($file) . '</em> on line ' . ($i + 1)
-				. '.<br />Format is "variable name[tab]value"');
+				throw new ExceptionFatal('Incorrect format for file <em>' . Url::html_output($file) . '</em> on line ' . ($i + 1) . '.<br />Format is "variable name[tab]value"');
 			}
 			if (isset($this -> config[$parts[0]]))
 			{
-				throw new ExceptionFatal('Error in <em>'
-				. Url::html_output($file) . '</em> on line ' . ($i + 1)
-				. '.<br />' . Url::html_output($parts[0])
-				. ' is already defined.');
+				throw new ExceptionFatal('Error in <em>' . Url::html_output($file) . '</em> on line ' . ($i + 1) . '.<br />' . Url::html_output($parts[0]) . ' is already defined.');
 			}
 			$this -> config[$parts[0]] = $parts[1];
 		}
@@ -177,28 +171,22 @@ class ConfigData implements Iterator
 	{
 		if ($this -> is_set($item))
 		{
-			$h = @fopen($this -> filename, 'wb');
+			$h = fopen($this -> filename, 'wb');
 			if ($h === false)
 			{
-				throw new ExceptionFatal('Could not open file <em>'
-				. Url::html_output($this -> filename)
-				. '</em> for writing. Make sure PHP has write permission to this file.');
+				throw new ExceptionFatal('Could not open file <em>' . Url::html_output($this -> filename) . '</em> for writing. Make sure PHP has write permission to this file.');
 			}
 			foreach ($this as $current_item => $count)
 			{
-				fwrite($h, "$current_item\t"
-				. (($current_item == $item) ? ((int)$count + 1) : $count)
-				. "\n");
+				fwrite($h, "$current_item\t" . (($current_item == $item) ? ((int)$count + 1) : $count) . "\n");
 			}
 		}
 		else
 		{
-			$h = @fopen($this -> filename, 'ab');
+			$h = fopen($this -> filename, 'ab');
 			if ($h === false)
 			{
-				throw new ExceptionFatal('Could not open file <em>'
-				. $this -> filename . '</em> for writing.'
-				. ' Make sure PHP has write permission to this file.');
+				throw new ExceptionFatal('Could not open file <em>' . $this -> filename . '</em> for writing.' . ' Make sure PHP has write permission to this file.');
 			}
 			fwrite($h, "$item\t1\n");
 		}
@@ -224,9 +212,7 @@ class ConfigData implements Iterator
 		{
 			return $this -> config[$name];
 		}
-		throw new ExceptionFatal('Setting <em>' . Url::html_output($name)
-		. '</em> is missing in file <em>'
-		. Url::html_output($this -> filename) . '</em>.');
+		throw new ExceptionFatal('Setting <em>' . Url::html_output($name) . '</em> is missing in file <em>' . Url::html_output($this -> filename) . '</em>.');
 	}
 }
 

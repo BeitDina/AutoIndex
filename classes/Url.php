@@ -153,19 +153,16 @@ class Url
 		if (!@is_file($file_dl))
 		{
 			header('HTTP/1.0 404 Not Found');
-			throw new ExceptionDisplay('The file <em>'
-			. self::html_output($file_dl)
-			. '</em> could not be found on this server.');
+			throw new ExceptionDisplay('The file <em>' . self::html_output($file_dl) . '</em> could not be found on this server.');
 		}
-		if (!($fn = @fopen($file_dl, 'rb')))
+		if (!($fn = fopen($file_dl, 'rb')))
 		{
-			throw new ExceptionDisplay('<h3>Error 401: permission denied</h3> you cannot access <em>'
-			. Url::html_output($file_dl) . '</em> on this server.');
+			throw new ExceptionDisplay('<h3>Error 401: permission denied</h3> you cannot access <em>' . Url::html_output($file_dl) . '</em> on this server.');
 		}
 		if ($headers)
 		{
 			$outname = Item::get_basename($file_dl);
-			$size = @filesize($file_dl);
+			$size = filesize($file_dl);
 			if ($size !== false)
 			{
 				header('Content-Length: ' . $size);
@@ -177,7 +174,7 @@ class Url
 		global $speed;
 		while (true)
 		{
-			$temp = @fread($fn, (int)($speed * 1024));
+			$temp = fread($fn, (int)($speed * 1024));
 			if ($temp === '')
 			{
 				break;

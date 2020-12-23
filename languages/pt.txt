@@ -187,3 +187,502 @@ JN2		2 João
 JN3		3 João
 JDE		Judas
 REV		Apocalipse
+
+
+AFAR	Afară
+AFRICAN-AMERICAN_ENGLISH	Enleză Afro-Americană
+UNITED_STATES		Statele Unite
+ABKHAZIAN	Abkhaziană
+AVESTAN	Avestană
+AFRIKAANS	Africană
+ENGLISH-CREOLE	Creolă Engleză
+ANGUILLA	Anguillană
+AROMANIAN	Aromână
+AKAN	Akană
+ALBANIAN	Albaniană
+AMHARIC	Amharică
+ARMENIAN		Armeniană
+ARAGONESE	Aragonesă
+ANGOLIAN		Angoliană
+ANGIKA		Angika
+ARABIC	Arabă
+ARAMEIC		Arameică
+ALGERIAN_ARABIC		Arabă Algeriană
+MOROCCAN_ARABIC	Arabă Marocană
+MOROCCO	Maroc
+JUDEO-ARABIC	Iudeo-Arabă 
+KABYLE	Kabile
+ALGERIA	Algeriană
+ASSAMESE		Assameză
+GERMAN_AUSTRI	Germană Austriacă
+AVARIC	Avarică
+AVARIAN_KHANATE	Daghestaneză
+AYMARA	Aymara
+AUSTRALIA	Australia
+AZERBAIJANI	Azerbaijană
+FINNISH	Finlandeză
+BASHKIR	Başkir
+BOSNIAN	Bosniană 
+CROATIAN		Croată 
+SERBIAN	Sârbă
+BAVARIAN	Bavareză
+BARBADOS	Barbados
+BELARUSIAN	Belarusă
+BULGARIAN	Bulgară
+BIHARI	Bihară
+BHOJPURI	Bhojpuri
+BAHRAIN	Bahrain
+BISLAMA	Bislama
+BURUNDI	Burundi
+BENIN	Benin
+BONAIRE	Bonaire
+BAMBARA	Bambara
+BENGALI	Bengali
+BRUNEI	Brunei
+TIBETAN	Tibetană
+BRETON	Breton
+BHUTAN	Bhutan
+BOTSWANA	Botswană
+CAMEROONIAN_PIDGIN_ENGLISH		Engleză Cameroniană Pidgin 
+CAMEROONIAN	Cameroniană
+CATALAN	Catalană
+COA_A_COCOS	Coa de Cocos
+CHECHEN	Cecenă
+CHAMORRO	Chamoro
+CHINESE	Chineză
+CHINESE_FUJIA	Chineză Fujian
+CHINESE_DONG	Chineză Dong 
+CHINA_JINYU		Chineză Jinyu
+CHINESE_MANDARIN	Chineză Mandarină
+CHINESE_PU-XIAN		Chineză Pu-Xian
+CHINESE_HUIZHOU		Chineză Huizhou
+CHINESE_ZHONG	Chineză Zhong
+DING_CHINESE	Chineză Ding
+GAN_CHINESE	Chineză Gan
+CHINESE_HAKKA	Chineză Hakka
+XIANG_CHINESE		Chineză Xiang
+LITERARY_CHINESE	Chineză Literară
+MIN_BEI_CHINESE	Chineză Min Bei
+MIN_NAN_CHINESE		Chineză Min Nan
+WU_CHINESE	Chineză Wu
+YUE_CHINESE	Chineză Yue
+CORSICAN		Corsicană
+CREE	Cree
+CZECH	Cehă
+SLAVONIC	Slavonă
+CHUVASH	Chuvaş
+WELSH_CYMRAEG	Welsh Cymraeg
+MALAYSIAN_CHINESE	Chineză Malaysiană
+PAPIAMENTU	Papiamentu
+CURAÇAO	Curaşao
+DANISH	Daneză
+GERMAN	Germană
+GERMAN_GERMANY	Germană Germania
+DEUTSCH	Deutsch
+BELGIUM_GERMAN	Germană Belgiană
+AUSTRIAN_GERMAN	Germană Austriacă
+SWISS_GERMAN	Germană Swiss
+LUXEMBOURG_GERMAN	Germană Luxembourg
+LUXEMBOURGIAN	Luxembourgiană
+LIECHTENSTEIN_GERMAN	Germană Liechtenstein
+ALEMANNIC_GERMAN		Germană Alemannic
+DREHU	Drehu
+DOMINICAN_CREOLE_FRENCH	Franceză Dominicană Creolă
+ROSEAU	Roseau 
+DOMINICA_ENGLISH	Engleză Dominicană
+SANTO_DOMINGO_SPANISH	Spaniolă Santo Domingo
+SANTO_DOMINGO_ENGLISH	Engleză Santo Domingo
+DJIBOUTI	Djibouti
+AFAR_DJIBOUTI	Afară Djibouti
+DIVEHI	Divehi
+MALDIVIAN	Maldiviană
+SHAWIYA_BERBER	Şawiya Berberă
+DZONGKHA	Dzongkha
+COPTIC	Coptă
+EWE	Ewe
+GREEK	Greacă
+CAPPADOCIAN_GREEK	Greacă Capadochiană
+MYCENAEAN_GREEK	Greacă Micenaeană
+PONTIC	Pontică
+TSAKONIAN	Ţakoniană
+YEVANIC	Ievanică
+BRITISH_ENGLISH	Engleză Britaică
+BRITISH		Britaică
+FIJIAN_ENGLISH	Engleză Fijian
+GIBRALTARIAN	Gibraltariană
+GIBRALTARIAN _ENGLISH	Engleză Gibraltariană
+ENGLISH	Engleză
+AMERICAN_ENGLISH	Engleză Americană
+HIBERNO_ENGLISH		Hiberno Engleză
+US_ENGLISH	Engleză SUA
+ENGLISH_ISRAEL	Engleză Israel
+ISRAELY_ENGLISH	Engleză Israeliană 
+HEBLISH	Hebliş
+ENGBREW	Engbrew
+ENGLISH_CANADA	Engleză Canada
+CANADIAN_ENGLISH	Engleză Canadiană
+COOK_ISLANDS_ENGLISH	Engleză Insulele Cook
+INDIAN_ENGLISH	Engleză Indian
+ANGUILLAN_ENGLISH	Engleză Anguillană
+AUSTRALIAN_ENGLISH	Engleză Australiană
+ENGLISH_NEW_ZEALAND	Engleză Nou Zealandeză
+NEW_ZEALAND_ENGLISH	Engleză NOUA Zoealandă 
+NEW_ENGLAND_ENGLISH	Engleză NOUA Anglie
+BERMUDIAN ENGLISH	Engleză Bermudiană
+NIUEAN_ENGLISH	Engleză Niueană
+MONTSERRAT_ENGLISH	Engleză Montserrat
+PITCAIRN_ISLAND_ENGLISH	Engleză Insula Pitcairn
+ST_HELENA_ENGLISH	Engleză ST Elena
+ENGLISH_TURKS_CAICOS	Engleză Turks Caicos
+VIRGIN_ISLANDS_ENGLISH	Engleză Insulele Virgine
+ESPERANTO	Esperanţo
+ERITREA	Eritrea
+SPANISH	Spaniolă
+SPANISH_MEXICO	Spaniolă Mexico
+SPANISH_UNITED_STATES	Spaniolă Statele Unite
+SPANISH_CARIBBEAN	Spaniolă Caribbeană
+SPANISH_ARGENTINIAN	Spaniolă Argentiniană
+SPANISH_BOLIVIAN	Spaniolă Boliviană
+SPANISH_BRAZILIAN	Spaniolă Braziliană
+SPANISH_CHILEAN	Spaniolă Chileană
+SPANISH_COLOMBIAN	Spaniolă Columbiană
+SPANISH_COSTA_RICA	Spaniolă Costa Rica
+SPANISH_DOMINICAN_REPUBLIC	Spaniolă Republica Dominicană
+SPANISH_ECUADOR	Spaniolă Ecuador
+SPANISH_SPAIN		Spaniolă Spania
+SPANISH_NL	Spaniolă NL
+SPANISH_EUROPE	Spaniolă Europa
+SPANISH_GUATEMALA	Spaniolă Guatemala
+SPANISH_HONDURAS	Spaniolă Honduras
+SPANISH_LAO	Spaniolă Lao
+SPANISH_NICARAGUA	Spaniolă Nicaragua
+SPANISH_PANAMIAN	Spaniolă Panamian
+SPANISH_PERU	Spaniolă Peru
+SPANISH_PUERTO_RICO	Spaniolă Puerto Rico
+SPANISH_PARAGUAYS	Paniş Paraguay
+SPANISH_EL_SALVADOR	Spaniolă EL Salvador
+SPANISH_URUGUAY	Spaniolă Uruguay
+SPANISH_VENEZUELA	Spaniolă Venezuela
+SPANISH_LATIN_AMERICA	Spaniolă Latin Americană
+ESTONIAN	Estonian
+BASQUE	Bască
+PERSIAN	Persiană
+ADAMAWA_FULFULDE	Adamawa Fulfuldă
+BAGIRMI_FULFULDE	Bagirmi Fulfuldă
+BORGU_FULFULDE	Borgu Fulfuldă
+NIGER_FULFULDE	Niger Fulfuldă
+MAASINA_FULFULDE	Maasina Fulfuldă
+NIGERIAN_FULFULDE	Nigeriană Fulfuldă
+PULAAR	Pulaară
+WESTERN_NIGER_FULFULDE	Fulfuldă Vest Nigeriană 
+KVEN	Kven
+NORWEGIAN	Norwegiană
+FIJIAN	FIJian
+FALKLANDIAN	FalkLandian
+FAROESE	Faroese
+FRENCH	Franceză
+METROPOLITAN_FRENCH	Franceză Metropolitană
+ACADIAN_FRENCH	Franceză Acadiană
+DOMINICA_FRENCH	Franceză Dominicană
+ALGERIAN_FRENCH	Franceză Algeriană
+AOSTAN_FRENCH	Franceză Aostană
+BELGIAN_FRENCH	Franceză Belgiană
+CAMBODIAN_FRENCH	Franceză Cambodiană
+CAJUN_FRENCH	Franceză CAJUN
+CANADIAN_FRENCH	Franceză Canadiană
+GUIANESE_FRENCH	Franceză Guianesă
+FRENCH_GUIANA	Franceză Guiana
+GUYANESE_CREOLE	Creolă Guianesă
+ENGLISH_GUIANA	Engleză Guianesă
+GUIANESE_ENGLISH	Guianesă Engleză
+HAITIAN_FRENCH	Haitian French
+HAITIAN_CREOLE	Creolă Haitiană
+INDIAN_FRENCH		Franceză Indiană
+ANGLO_NORMAN_FRENCH	Franceză Anglo Normană
+JERSEY_LEGAL_FRENCH	Franceză Jersey Legală
+LAO_FRENCH		Franceză Lao
+FRENCH_CREOLE	Franceză Creolă
+LOUISIANIAN_FRENCH	Franceză Louisianiană
+LOUISIANA_CREOLE	Creolă Louisiana
+MERIDIONAL_FRENCH		Franceză Meridională
+MISSOURI_FRENCH		Franceză Missouri
+NEW_CALEDONIAN_FRENCH	Franceză NOUA Caledonie
+NEWFOUNDLAND_FRENCH	Franceză NEW Foundland
+NEW_ENGLAND_FRENCH	Franceză NOUA Anglie
+QUEBEC_FRENCH	Franceză Quebec
+SWISS_FRENCH	Franceză Swiss
+VIETNAMESE_FRENCH	Franceză Vietnameză
+WEST_INDIAN_FRENCH	Franceză Vest Indiană
+WALLISIAN_FRENCH	Franceză Wallisiană
+WESTERN_FRISIAN	Frisiană Vestică
+FRYSK	Frisc
+IRISH_GABON	Irlandeză Gabonă
+GENERAL_AMERICAN	Generală Americană
+GUADELOUPEAN_CREOLE_FRENCH	Franceză Guadeloupeană Creolă
+SCOTTISH_GRENADA	Scoţiană Grenada
+GEORGIAN		Georgiană
+LLANITO	Llanito
+GUERNESIAIS		Guernesiais
+GHANA	Ghana
+MODERN_GREEK	Greacă Modernă
+ANCIENT_GREEK	Greacă Antică
+GALICIAN	Galiciană
+GAMBIA		Gambia
+GUARANI	Guarani
+CHIRIPA	Chiripa
+EASTERN_BOLIVIAN_GUARAN	Guarani Est Boliviană
+MBYA_GUARANI	Guarani Mbya
+PARAGUAYAN_GUARANI	Guarani Paraguaian
+WESTERN_BOLIVIAN_GUARANI	Guarani Vest Boliviană
+SOUTH_GEORGIA_ENGLISH	Engleză Sud Georgiană
+GUATEMALA	Guatemala
+EQUATORIAL_GUINEAN	Guineană Ecuatorială
+GUJARATI	Gujarati
+MANX	Manx
+GUYAN	Aguiana
+HEBREW	Ebraică
+MODERN_HEBREW	Ebraică Modernă
+CLASSICAL_HEBREW	Ebraică Clasică
+SAMARITAN_ARAMEIC	Arameică Samariteană
+SAMARITAN_HEBREW	Ebraică Samariteană
+MOABITE_HEBREW	Ebraică Moabită
+EDOMITE_HEBREW	Ebraică Edomită
+IBRIT		Ibrit
+HIRI_MOTU	Hiri Motu
+HAITIAN	Haitiană
+HUNGARIAN	Maghiară
+ARMENIAN_ARTSAKH	Armeniană Artsakh
+HERERO	Herero
+INTERLINGUA	Interlingua
+INDONESIAN	Indoneziană
+INTERLINGUE	Interlingue
+IRISH	Irlandeză
+IGBO	Igbo
+SICHUAN_YI	Sichuan YI
+INUPIAQ	Inupiaq
+IAAI	Iaai
+IRANIAN	Iraniană
+IDO	Ido
+ICELANDIC	Icelandică
+ITALIAN		Italiană
+INUKTITUT	Inuktitut
+IRAQIAN	Irachiană
+JERRIAIS	Jerriais
+JORDAN	Iordaniană
+JAPANESE	Japoneză
+CAMBODIAN	Cambodiană
+KENYAN	Keniană
+KIKUYU		Kikuyu
+KWANYAMA	Kwaniama
+KAZAKH	Cazacă
+KALAALLISUT	Kalaallisut
+NGAZIDJA_COMORIAN	Comoriană Ngazidja
+COMOROS	Comoriană
+NDZWANI_COMORIAN	Comoriană Ndzwani
+MAORE_COMORIAN	Comoriană Maore
+MWALI_COMORIAN	Comoriană Mwali
+KHMER	Khmer
+KANNADA	Cannada
+KOREAN	Coreană
+KANURI	Canuri
+ST_KITTS_NEVIS	ST Kitts Nevis
+KASHMIRI	Caşmiri
+KAZAKHSTAN	Cazacstan
+CORNISH	Corniş
+KYRGYZSTAN	Chirghizstan
+SRI_LANKA	Sri Lanka
+LATVIAN	Latviană
+LUXEMBOURGISH	Luxemborghiană
+LESOTHO	Lesoto
+LAO	LAO
+LIBERIA	Liberia
+LIBYA	Libia
+LIMBURGISH	Limburgiş
+LINGALA	Lingala
+LITHUANIAN	Lituaniană
+LUBA_KATANGA	Luba Catanga
+MOLDOVIAN	Moldoviană
+MOLDAVIAN	Moldaviană
+MONTENEGRIN	Montenegrină
+SAINT_MARTIN_FRENCH	Franceză Sfânt Martin
+MALAGASY	Malagasia
+MARSHALLESE	Marşallese
+MAORI	Maori
+MIKMAQ	Micmac
+MACEDONIAN	Macedoniană
+MALAYALAM	Malaialam
+MAURITANIAN	Mauritaniană
+MAURITIUS	Mauritiu
+MONGOLIAN	Mongoliană
+CAROLINIAN	Caroliniană
+MALTESE	Malteză
+BURMESE	Burmeză
+ANTILLEAN-CREOL	Creolă Antilleană
+NENGONE	Nengonă
+NEW_LANGUAGE	Limbă Nouă
+DUTCH	Nederlandeză
+PENNSYLVANIA_DUTCH	Dutch Pennsilvanian
+NORWAY	Norvegiană
+NAURU	Nauru
+NIUEAN	Niueană
+NU	Niueană
+CHEWA	Eva
+OCCITAN	Occitană
+ORIYA	Oriya
+OSSETIAN	Oseţiană
+PUNJABI	Punjabă
+PANJABI	Panjabă
+GURMIKI	Gurmiki
+PHILIPPINESE	Filipineză
+TAHITIAN	Tahitiană
+PAPUA_GUINEA	Papua Guineză
+POLISH	Poloneză
+PASHTO	Paştă
+PORTUGUESE	Portugheză
+PORTUGUESE_BRASIL	Portugheză Braziliană
+QATAR	Qatar
+QUECHUA	Quechua
+ROMANSH	Romanş
+ROMANI	Romani
+KIRUNDI	Chirundi
+ROMANIAN	Română
+ROMANIAN_ANSI	Română ANSI
+ROMANIAN_NO_DIACRITIC	Română Fără Diacritice
+ROMANIAN_MOLDAVIA	Română Moldova
+ROMANIAN_ROMANIA	Română Romania
+RUSSIAN	Rusă
+KINYARWANDA	Kinia Ruanda
+SANSKRIT	Sanscrită
+SARDINIAN	Sardiniană
+SAN_MIGUEL_CREOLE_FRENCH	Creolă Franceză San Miguel 
+SINDHI	Sindhi
+SANGO	Sango
+SERBO_CROATIAN	Sârbo-Croată
+SINHALA	Sinhala
+SLOVAK	Slovacă
+SLOVENIAN	Slovenă
+SAMOAN	Samoan
+SHONA	Şona
+SOMAL	Somalia
+SOMALI	Somaliană
+SURINAME	Suriname
+SWATI	Swati
+STANDARD_SCOTTISH_ENGLISH	Engleză Standard Scoţiană
+SOTHO	Soto
+SUNDANESE	Sundaneză
+SINT_MAARTEN_DUTCH	Dutch Sint Maarten 
+SWEDISH	Suedeză
+SYRIAC	Siriacă
+SWAHILI	Swahili
+TURKS_CAICO	Turci Caicos
+CHAD	Ciad
+TAMIL	Tamil
+TELUGU	Telugu
+TAJIK	Tajik
+THAI	Thai
+TIGRINYA	Tigrinia
+TURKMEN	Turkmenă
+TOKELAUAN	Tokelauan
+TAGALOG	Tagalog
+TSWANA	Ţvana
+TONGA	Tonga
+TURKISH	Turcă
+TSONGA	Ţonga
+TUVALU	Tuvalu
+TATAR	Tătară
+TAIWANESE_HOKKIEN		Taivaneză Hokkien
+UIGHUR	Uigur
+UKRAINEAN	Ucraineană
+URDU	Urdu
+UZBEK	Uzbecă
+LATIN	Latină
+VENDA	Venda
+VINCENTIAN-CREO	Creolă Vincenţiană
+VIETNAMESE	Vietnameză
+VOLAPUK	Volapuc
+FRENCH_VIETNAM	Franceză Vietnam
+WALLISIAN	Valisiană
+MALAYO-POLYNESIAN	Malaio-Polinesiană
+SHIMAORE	Şimaore
+WALLOON	Valoon
+WOLOF	Volof
+XHOSA	Xhosa
+YIDDISH	Iidiş
+YORUBA	Ioruba
+ZHUANG	Zhuang
+CHINESE_SIMPLIFIED	Chineză Simplificată
+CHINESE_HONG_KONG	Chineză Hong Kong
+CHINESE_TRADITIONAL	Chineză Traditională
+CHINESE_TRADITIONAL_TAIWAN	Chineză Traditională Taiwan
+ZAMBIAN	Zambiană
+ZIMBABWE	Zimbabve
+ZULU	Zulu
+
+
+// Mobile device names
+A4TS	Archos 40b Titanium Surround
+AE5HD	Aquaris E5 HD
+ANDROID	Android
+ATOOJ	ASUS T00J
+ATT	Asus Transformer Tablet
+BBCURVE	BlackBerry Curve
+BBP	BlackBerry Porsche
+BBPB	BlackBerry PlayBook
+BBPEARL	BlackBerry Pearl
+BBPEARLF	BlackBerry Pearl Flip
+BBPP	BlackBerry Passport
+BBSTORM	BlackBerry Storm
+BBTOUCH	'BlackBerry Touch
+BLACKBERRY	BlackBerry
+DESKTOP	'Desktop
+HP8	HUAWEI P8
+HPL01	Huawei Honor 7
+HPL09	Huawei P9 EVA-L09
+HPL23	Huawei P9 Lite
+HTCD	HTC Desire
+IPAD	iPad
+IPHONE	 iPhone
+IPOD	iPod
+L640XL	 Lumia 640 XL
+LG	   LG
+LGH850	 LG G5 H850
+LGOL7IT	LG Optimus L7 II
+LGV500	 LG V500
+LK50T5	 Lenovo K50-t5
+MDM	  Motorola Droid Mini
+N1	   Nexus 1
+N4	   Nexus 4
+N5	   Nexus 5
+N7	   Nexus 7
+N9	   Nexus 9
+OPO	  OnePlus One
+ORN	  Orange Nura
+PALM	Palm
+SG2T	Samsung Galaxy2 Tablet
+SGA4	Samsung Galaxy Ace 4
+SGN	  Samsung Galaxy Nexus
+SGN3	Samsung Galaxy Note 3
+SGN3N	Samsung Galaxy Note 3 Neo
+SGN4	Samsung Galaxy Note 4
+SGN5	Samsung Galaxy Note 5
+SGS2	Samsung Galaxy S2
+SGS4	Samsung Galaxy S4
+SGS4A	Samsung Galaxy S4 Active
+SGS5	Samsung Galaxy S5
+SGS5A	Samsung Galaxy S5 Active
+SGS6	Samsung Galaxy S6
+SGS6E	Samsung Galaxy S6 Edge
+SGS7E	Samsung Galaxy S7 Edge
+SGS8	Samsung Galaxy S8
+SGSD2	Samsung Galaxy S Duos 2
+SGT3	Samsung Galaxy Tab 3
+SGT3W	Samsung Galaxy Tab3
+SGT4	Samsung Galaxy Tab 4
+SGTP	Samsung Galaxy TabPRO
+SXED	Sony Xperia E1 Dual
+SXM2	Sony XPERIA M2
+SXZ1	Sony Xperia Z1
+SXZ3	Sony Xperia Z3
+TKT	  Tianyu K-Touch
+VOYAGER	Voyager
+WSP	Windows Smartphone

@@ -95,3 +95,592 @@ peshitta	Peshitta
 khabouris	Khabouris
 sinaiticus	Sinaiticus
 qumran	Qumran
+
+CHAP	Chapter
+GEN		Genesis
+EXO		Exodus
+LEV		Leviticus
+NUM		Numbers
+DEU		Deuteronomy
+JOS		Joshua
+JDG		Judges
+RUT		Ruth
+SA1		1 Samuel
+SA2		2 Samuel
+KI1		1 Kings
+KI2		2 Kings
+CH1		1 Chronicles
+CH2		2 Chronicles
+EZR		Ezra 
+NEH		Nehemiah
+EST		Esther
+JOB		Job
+PSA		Psalms
+PSA_VOL1	Psalms Vol 1
+PSA_VOL2	Psalms Vol 2
+PSA_VOL3	Psalms Vol 3
+PSA_VOL4	Psalms Vol 4
+PSA_VOL5	Psalms Vol 5
+PRO		Proverbs
+ECC		Ecclesiastes
+SNG		Song of Solomon
+ISA		Isaiah
+JER		Jeremiah
+LAM		Lamentations
+EZE		Ezekiel
+DAN		Daniel
+HOS		Hosea
+JOL		Joel
+AMO		Amos
+OBA		Obadiah
+JNA		Jonah
+MIC		Micah
+NAH		Nahum
+ENO		1 Enoch
+HAB		Habakkuk
+ZEP		Zephaniah
+HAG		Haggai
+ZEC		Zechariah
+MAL		Malachi
+GES		GES
+LES		LES
+TOB		Tobit
+JDT		Judith
+ESA		Esdras
+WIS		Wisdom of Solomon
+SIR		Sirach
+BAR		Baruch
+PAZ		Prayer of Azariah
+SUS		Susanna
+BEL		Bel and the Drago
+MAN		Prayer of Manasses
+MA1		1 Maccabees
+MA2		2 Maccabees
+MA3		3 Maccabees
+MA4		4 Maccabees
+MAT		Matthew
+MRK		Mark
+LUK		Luke
+JOH		John
+JHN		John
+ACT		Acts
+ROM		Romans
+CO1		1 Corinthians
+CO2		2 Corinthians
+GAL		Galatians
+EPH		Ephesians
+PHP		Philippians
+COL		Colossians
+TH1		1 Thessalonians
+TH2		2 Thessalonians
+TI1		1 Timothy
+TI2		2 Timothy
+TIT		Titus
+PHM		Philemon
+HEB		Hebrews
+JAM		James
+PE1		1 Peter
+PE2		2 Peter
+JN1		1 John
+JN2		2 John
+JN3		3 John
+JDE		Jude
+REV		Revelation
+
+
+AFAR	Afar
+AFRICAN-AMERICAN_ENGLISH	African American English
+UNITED_STATES		United States
+ABKHAZIAN	Abkhazian
+AVESTAN	Avestan
+AFRIKAANS	Afrikaans
+ENGLISH-CREOLE	English Creole
+ANGUILLA	Anguilla
+AROMANIAN	Aromaya
+AKAN	Akan
+ALBANIAN	Albanian
+AMHARIC	Amharic
+ARMENIAN		Armenian
+ARAGONESE	Aragonese
+ANGOLIAN		Angolian
+ANGIKA		Angika
+ARABIC	Arabic
+ARAMEIC		Aramaic
+ALGERIAN_ARABIC		Algerian Arabic
+MOROCCAN_ARABIC	Moroccan Arabic
+MOROCCO	Morocco
+JUDEO-ARABIC	Judeo Arabic
+KABYLE	Kabyle
+ALGERIA	Algeria
+ASSAMESE		Assamese
+GERMAN_AUSTRI	German Austria
+AVARIC	Avaric
+AVARIAN_KHANATE	Daghestanian
+AYMARA	Aymara
+AUSTRALIA	Australia
+AZERBAIJANI	Azerbaijani
+FINNISH	Finnish
+BASHKIR	Bashkir
+BOSNIAN	Bosnian 
+CROATIAN		Croatian 
+SERBIAN	Serbian
+BAVARIAN	Bavarian
+BARBADOS	Barbados
+BELARUSIAN	Belarusian
+BULGARIAN	Bulgarian
+BIHARI	Bihari
+BHOJPURI	Bhojpuri
+BAHRAIN	Bahrain
+BISLAMA	Bislama
+BURUNDI	Burundi
+BENIN	Benin
+BONAIRE	Bonaire
+BAMBARA	Bambara
+BENGALI	Bengali
+BRUNEI		Brunei
+TIBETAN	Tibetan
+BRETON	Breton
+BHUTAN	Bhutan
+BOTSWANA	Botswana
+CAMEROONIAN_PIDGIN_ENGLISH		Cameroonian Pidgin English
+CAMEROONIAN	Cameroonian
+CATALAN	Catalan
+COA_A_COCOS	Coa a Cocos
+CHECHEN	Chechen
+CHAMORRO	Chamorro
+CHINESE	Chinese
+CHINESE_FUJIA	Chinese Fujian
+CHINESE_DONG	Chinese Dong 
+CHINA_JINYU		China Jinyu
+CHINESE_MANDARIN	Chinese Mandarin
+CHINESE_PU-XIAN		Chinese Pu-Xian
+CHINESE_HUIZHOU		Chinese Huizhou
+CHINESE_ZHONG	Chinese Zhong
+DING_CHINESE	Ding Chinese
+GAN_CHINESE	Gan Chinese
+CHINESE_HAKKA	Chinese Hakka
+XIANG_CHINESE		Xiang Chinese
+LITERARY_CHINESE	Literary Chinese
+MIN_BEI_CHINESE	Min Bei Chinese
+MIN_NAN_CHINESE		Min Nan Chinese
+WU_CHINESE	Wu Chinese
+YUE_CHINESE	Yue Chinese
+CORSICAN		Corsican
+CREE	Cree
+CZECH	Czech
+SLAVONIC	Slavonic
+CHUVASH	Chuvash
+WELSH_CYMRAEG	Welsh Cymraeg
+MALAYSIAN_CHINESE	Malaysian Chinese
+PAPIAMENTU	Papiamentu
+CURAǁO	Cura硯
+DANISH	Danish
+GERMAN	German
+GERMAN_GERMANY	German Germany
+DEUTSCH	Deutsch
+BELGIUM_GERMAN	Belgium German
+AUSTRIAN_GERMAN	Austrian German
+SWISS_GERMAN	Swiss German
+LUXEMBOURG_GERMAN	Luxembourg German
+LUXEMBOURGIAN	Luxembourgian
+LIECHTENSTEIN_GERMAN	Liechtenstein German
+ALEMANNIC_GERMAN		Alemannic German
+DREHU	Drehu
+DOMINICAN_CREOLE_FRENCH	Dominican Creole French
+ROSEAU	Roseau 
+DOMINICA_ENGLISH	Dominica English
+SANTO_DOMINGO_SPANISH	Santo Domingo Spanish
+SANTO_DOMINGO_ENGLISH	Santo Domingo English
+DJIBOUTI	Djibouti
+AFAR_DJIBOUTI	Afar Djibouti
+DIVEHI	Divehi
+MALDIVIAN	Maldivian
+SHAWIYA_BERBER	Shawiya Berber
+DZONGKHA	Dzongkha
+COPTIC	Coptic
+EWE	Ewe
+GREEK	Greek
+CAPPADOCIAN_GREEK	Cappadocian Greek
+MYCENAEAN_GREEK	Mycenaean Greek
+PONTIC	Pontic
+TSAKONIAN	Tsakonian
+YEVANIC	Yevanic
+BRITISH_ENGLISH	British English
+BRITISH		British
+FIJIAN_ENGLISH	Fijian English
+GIBRALTARIAN	Gibraltarian
+GIBRALTARIAN _ENGLISH	Gibraltarian English
+ENGLISH	English
+AMERICAN_ENGLISH	American English
+HIBERNO_ENGLISH		Hiberno English
+US_ENGLISH	US English
+ENGLISH_ISRAEL	English Israel
+ISRAELY_ENGLISH	Israely English 
+HEBLISH	Heblish
+ENGBREW	Engbrew
+ENGLISH_CANADA	English Canada
+CANADIAN_ENGLISH	Canadian English
+COOK_ISLANDS_ENGLISH	Cook Islands English
+INDIAN_ENGLISH	Indian English
+ANGUILLAN_ENGLISH	Anguillan English
+AUSTRALIAN_ENGLISH	Australian English
+ENGLISH_NEW_ZEALAND	English New Zealand
+NEW_ZEALAND_ENGLISH	NEW Zealand English 
+NEW_ENGLAND_ENGLISH	NEW England English
+BERMUDIAN ENGLISH		Bermudian English
+NIUEAN_ENGLISH	Niuean English
+MONTSERRAT_ENGLISH	Montserrat English
+PITCAIRN_ISLAND_ENGLISH	Pitcairn Island English
+ST_HELENA_ENGLISH	ST Helena English
+ENGLISH_TURKS_CAICOS	English Turks Caicos
+VIRGIN_ISLANDS_ENGLISH	Virgin Islands English
+ESPERANTO	Esperanto
+ERITREA	Eritrea
+SPANISH	Spanish
+SPANISH_MEXICO	Spanish Mexico
+SPANISH_UNITED_STATES	Spanish United States
+SPANISH_CARIBBEAN	Spanish Caribbean
+SPANISH_ARGENTINIAN	Spanish Argentinian
+SPANISH_BOLIVIAN	Spanish Bolivian
+SPANISH_BRAZILIAN	Spanish Brazilian
+SPANISH_CHILEAN	Spanish Chilean
+SPANISH_COLOMBIAN	Spanish Colombian
+SPANISH_COSTA_RICA	Spanish Costa Rica
+SPANISH_DOMINICAN_REPUBLIC	Spanish Dominican Republic
+SPANISH_ECUADOR	Spanish Ecuador
+SPANISH_SPAIN		Spanish Spain
+SPANISH_NL	Spanish NL
+SPANISH_EUROPE	Spanish Europe
+SPANISH_GUATEMALA	Spanish Guatemala
+SPANISH_HONDURAS	Spanish Honduras
+SPANISH_LAO	Spanish Lao
+SPANISH_NICARAGUA	Spanish Nicaragua
+SPANISH_PANAMIAN	Spanish Panamian
+SPANISH_PERU	Spanish Peru
+SPANISH_PUERTO_RICO	Spanish Puerto Rico
+SPANISH_PARAGUAYS	Panish Paraguay
+SPANISH_EL_SALVADOR	Spanish EL Salvador
+SPANISH_URUGUAY	Spanish Uruguay
+SPANISH_VENEZUELA	Spanish Venezuela
+SPANISH_LATIN_AMERICA	Spanish Latin America
+ESTONIAN	Estonian
+BASQUE	Basque
+PERSIAN	Persian
+ADAMAWA_FULFULDE	Adamawa Fulfulde
+BAGIRMI_FULFULDE	Bagirmi Fulfulde
+BORGU_FULFULDE	Borgu Fulfulde
+NIGER_FULFULDE	Niger Fulfulde
+MAASINA_FULFULDE	Maasina Fulfulde
+NIGERIAN_FULFULDE	Nigerian Fulfulde
+PULAAR	Pulaar
+WESTERN_NIGER_FULFULDE	Western Niger Fulfulde
+KVEN	Kven
+NORWEGIAN	Norwegian
+FIJIAN	FIJian
+FALKLANDIAN	FalkLandian
+FAROESE	Faroese
+FRENCH	French
+METROPOLITAN_FRENCH	Metropolitan French
+ACADIAN_FRENCH	Acadian French
+DOMINICA_FRENCH	Dominica French
+ALGERIAN_FRENCH	Algerian French
+AOSTAN_FRENCH	Aostan French
+BELGIAN_FRENCH	Belgian French
+CAMBODIAN_FRENCH	Cambodian French
+CAJUN_FRENCH	CAJUN  French
+CANADIAN_FRENCH	Canadian French
+GUIANESE_FRENCH	Guianese French
+FRENCH_GUIANA	French Guiana
+GUYANESE_CREOLE	Guyanese Creole
+ENGLISH_GUIANA	English Guiana
+GUIANESE_ENGLISH	Guianese English
+HAITIAN_FRENCH	Haitian French
+HAITIAN_CREOLE	Haitian Creole
+INDIAN_FRENCH		Indian French
+ANGLO_NORMAN_FRENCH	Anglo Norman French
+JERSEY_LEGAL_FRENCH	Jersey Legal French
+LAO_FRENCH		Lao French
+FRENCH_CREOLE	French Creole
+LOUISIANIAN_FRENCH	Louisianian French
+LOUISIANA_CREOLE	Louisiana Creole
+MERIDIONAL_FRENCH		Meridional French
+MISSOURI_FRENCH		Missouri French
+NEW_CALEDONIAN_FRENCH	NEW Caledonian French
+NEWFOUNDLAND_FRENCH	NEW Foundland French
+NEW_ENGLAND_FRENCH	NEW England French
+QUEBEC_FRENCH	Quebec French
+SWISS_FRENCH	Swiss French
+VIETNAMESE_FRENCH	Vietnamese French
+WEST_INDIAN_FRENCH	West Indian French
+WALLISIAN_FRENCH	Wallisian French
+WESTERN_FRISIAN	Western Frisian
+FRYSK	Frysk
+IRISH_GABON	Irish Gabon
+GENERAL_AMERICAN	General American
+GUADELOUPEAN_CREOLE_FRENCH	Guadeloupean Creole French
+SCOTTISH_GRENADA	Scottish Grenada
+GEORGIAN		Georgian
+LLANITO	Llanito
+GUERNESIAIS		Guernesiais
+GHANA	Ghana
+MODERN_GREEK	Modern Greek
+ANCIENT_GREEK	Ancient Greek
+GALICIAN	Galician
+GAMBIA		Gambia
+GUARANI	Guarani
+CHIRIPA	Chiripa
+EASTERN_BOLIVIAN_GUARAN	Eastern Bolivian Guarani
+MBYA_GUARANI	Mbya Guarani
+PARAGUAYAN_GUARANI	Paraguayan Guarani
+WESTERN_BOLIVIAN_GUARANI	Western Bolivian Guarani
+SOUTH_GEORGIA_ENGLISH	South Georgia English
+GUATEMALA	Guatemala
+EQUATORIAL_GUINEAN	Equatorial Guinean
+GUJARATI	Gujarati
+MANX	Manx
+GUYAN	Aguyana
+HEBREW	Hebrew
+MODERN_HEBREW	Modern Hebrew
+CLASSICAL_HEBREW	Classical Hebrew
+SAMARITAN_ARAMEIC	Samaritan Arameic
+SAMARITAN_HEBREW	Samaritan Hebrew
+MOABITE_HEBREW	Moabite Hebrew
+EDOMITE_HEBREW	Edomit Hebrew
+IBRIT		Ibrit
+HIRI_MOTU	Hiri Motu
+HAITIAN	Haitian
+HUNGARIAN	Hungarian
+ARMENIAN_ARTSAKH	Armenian Artsakh
+HERERO	Herero
+INTERLINGUA	Interlingua
+INDONESIAN	Indonesian
+INTERLINGUE	Interlingue
+IRISH	Irish
+IGBO	Igbo
+SICHUAN_YI	Sichuan YI
+INUPIAQ	Inupiaq
+IAAI	Iaai
+IRANIAN	Iranian
+IDO	Ido
+ICELANDIC	Icelandic
+ITALIAN		Italian
+INUKTITUT	Inuktitut
+IRAQIAN	Iraqian
+JERRIAIS	Jerriais
+JORDAN	Jordan
+JAPANESE	Japanese
+CAMBODIAN	Cambodian
+KENYAN	Kenyan
+KIKUYU		Kikuyu
+KWANYAMA	Kwanyama
+KAZAKH	Kazakh
+KALAALLISUT	Kalaallisut
+NGAZIDJA_COMORIAN	Ngazidja Comorian
+COMOROS	Comoros
+NDZWANI_COMORIAN	Ndzwani Comorian
+MAORE_COMORIAN	Maore Comorian
+MWALI_COMORIAN	Mwali Comorian
+KHMER	Khmer
+KANNADA	Kannada
+KOREAN	Korean
+KANURI	Kanuri
+ST_KITTS_NEVIS	ST Kitts Nevis
+KASHMIRI	Kashmiri
+KAZAKHSTAN	Kazakhstan
+CORNISH	Cornish
+KYRGYZSTAN	Kyrgyzstan
+SRI_LANKA	Sri Lanka
+LATVIAN	Latvian
+LUXEMBOURGISH	Luxembourgish
+LESOTHO	Lesotho
+LAO	LAO
+LIBERIA	Liberia
+LIBYA	Libya
+LIMBURGISH	Limburgish
+LINGALA	Lingala
+LITHUANIAN	Lithuanian
+LUBA_KATANGA	Luba Katanga
+MOLDOVIAN	Moldovian
+MOLDAVIAN	Moldavian
+MONTENEGRIN	Montenegrin
+SAINT_MARTIN_FRENCH	Saint Martin French
+MALAGASY	Malagasy
+MARSHALLESE	Marshallese
+MAORI	Maori
+MIKMAQ	Mikmaq
+MACEDONIAN	Macedonian
+MALAYALAM	Malayalam
+MAURITANIAN	Mauritanian
+MAURITIUS	Mauritius
+MONGOLIAN	Mongolian
+CAROLINIAN	Carolinian
+MALTESE	Maltese
+BURMESE	Burmese
+ANTILLEAN-CREOL	Antillean Creole
+NENGONE	Nengone
+NEW_LANGUAGE	New Language
+DUTCH	Dutch
+PENNSYLVANIA_DUTCH	Pennsylvanian Dutch
+NORWAY	Norway
+NAURU	Nauru
+NIUEAN	Niuean
+NU	Niuean
+CHEWA	Chewa
+OCCITAN	Occitan
+ORIYA	Oriya
+OSSETIAN	Ossetian
+PUNJABI	Punjabi
+PANJABI	Panjabi
+GURMIKI	Gurmiki
+PHILIPPINESE	Philippinese
+TAHITIAN	Tahitian
+PAPUA_GUINEA	Papua Guinea
+POLISH	Polish
+PASHTO	Pashto
+PORTUGUESE	Portuguese
+PORTUGUESE_BRASIL	Portuguese Brasil
+QATAR	Qatar
+QUECHUA	Quechua
+ROMANSH	Romansh
+ROMANI	Romani
+KIRUNDI	Kirundi
+ROMANIAN	Romanian
+ROMANIAN_ANSI	Romanian ANSI
+ROMANIAN_NO_DIACRITIC	Romanian NO Diacritics
+ROMANIAN_MOLDAVIA	Romanian Moldavia
+ROMANIAN_ROMANIA	Romanian Romania
+RUSSIAN	Russian
+KINYARWANDA	Kinya Rwanda
+SANSKRIT	Sanskrit
+SARDINIAN	Sardinian
+SAN_MIGUEL_CREOLE_FRENCH	San Miguel Creole French 
+SINDHI	Sindhi
+SANGO	Sango
+SERBO_CROATIAN	Serbo-Croatian
+SINHALA	Sinhala
+SLOVAK	Slovak
+SLOVENIAN	Slovenian
+SAMOAN	Samoan
+SHONA	Shona
+SOMAL	Somal
+SOMALI	Somali
+SURINAME	Suriname
+SWATI	Swati
+STANDARD_SCOTTISH_ENGLISH	Standard Scottish English
+SOTHO	Sotho
+SUNDANESE	Sundanese
+SINT_MAARTEN_DUTCH	Sint Maarten Dutch
+SWEDISH	Swedish
+SYRIAC	Syriac
+SWAHILI	Swahili
+TURKS_CAICO	Turks Caicos
+CHAD	Chad
+TAMIL	Tamil
+TELUGU	Telugu
+TAJIK	Tajik
+THAI	Thai
+TIGRINYA	Tigrinya
+TURKMEN	Turkmen
+TOKELAUAN	Tokelauan
+TAGALOG	Tagalog
+TSWANA	Tswana
+TONGA	Tonga
+TURKISH	Turkish
+TSONGA	Tsonga
+TUVALU	Tuvalu
+TATAR	Tatar
+TAIWANESE_HOKKIEN		Taiwanese Hokkien
+UIGHUR	Uighur
+UKRAINEAN	Ukrainean
+URDU	Urdu
+UZBEK	Uzbek
+LATIN	Latin
+VENDA	Venda
+VINCENTIAN-CREO	Vincentian Creole
+VIETNAMESE	Vietnamese
+VOLAPUK	Volapuk
+FRENCH_VIETNAM	French Vietnam
+WALLISIAN	Wallisian
+MALAYO-POLYNESIAN	Malayo Polynesian
+SHIMAORE	Shimaore
+WALLOON	Walloon
+WOLOF	Wolof
+XHOSA	Xhosa
+YIDDISH	Yiddish
+YORUBA	Yoruba
+ZHUANG	Zhuang
+CHINESE_SIMPLIFIED	Chinese Simplified
+CHINESE_HONG_KONG	Chinese Hong Kong
+CHINESE_TRADITIONAL	Chinese Traditional
+CHINESE_TRADITIONAL_TAIWAN	Chinese Traditional Taiwan
+ZAMBIAN	Zambian
+ZIMBABWE	Zimbabwe
+ZULU	Zulu
+
+// Mobile device names
+A4TS	Archos 40b Titanium Surround
+AE5HD	Aquaris E5 HD
+ANDROID	Android
+ATOOJ	ASUS T00J
+ATT	Asus Transformer Tablet
+BBCURVE	BlackBerry Curve
+BBP	BlackBerry Porsche
+BBPB	BlackBerry PlayBook
+BBPEARL	BlackBerry Pearl
+BBPEARLF	BlackBerry Pearl Flip
+BBPP	BlackBerry Passport
+BBSTORM	BlackBerry Storm
+BBTOUCH	'BlackBerry Touch
+BLACKBERRY	BlackBerry
+DESKTOP	'Desktop
+HP8	HUAWEI P8
+HPL01	Huawei Honor 7
+HPL09	Huawei P9 EVA-L09
+HPL23	Huawei P9 Lite
+HTCD	HTC Desire
+IPAD	iPad
+IPHONE	 iPhone
+IPOD	iPod
+L640XL	 Lumia 640 XL
+LG	   LG
+LGH850	 LG G5 H850
+LGOL7IT	LG Optimus L7 II
+LGV500	 LG V500
+LK50T5	 Lenovo K50-t5
+MDM	  Motorola Droid Mini
+N1	   Nexus 1
+N4	   Nexus 4
+N5	   Nexus 5
+N7	   Nexus 7
+N9	   Nexus 9
+OPO	  OnePlus One
+ORN	  Orange Nura
+PALM	Palm
+SG2T	Samsung Galaxy2 Tablet
+SGA4	Samsung Galaxy Ace 4
+SGN	  Samsung Galaxy Nexus
+SGN3	Samsung Galaxy Note 3
+SGN3N	Samsung Galaxy Note 3 Neo
+SGN4	Samsung Galaxy Note 4
+SGN5	Samsung Galaxy Note 5
+SGS2	Samsung Galaxy S2
+SGS4	Samsung Galaxy S4
+SGS4A	Samsung Galaxy S4 Active
+SGS5	Samsung Galaxy S5
+SGS5A	Samsung Galaxy S5 Active
+SGS6	Samsung Galaxy S6
+SGS6E	Samsung Galaxy S6 Edge
+SGS7E	Samsung Galaxy S7 Edge
+SGS8	Samsung Galaxy S8
+SGSD2	Samsung Galaxy S Duos 2
+SGT3	Samsung Galaxy Tab 3
+SGT3W	Samsung Galaxy Tab3
+SGT4	Samsung Galaxy Tab 4
+SGTP	Samsung Galaxy TabPRO
+SXED	Sony Xperia E1 Dual
+SXM2	Sony XPERIA M2
+SXZ1	Sony Xperia Z1
+SXZ3	Sony Xperia Z3
+TKT	  Tianyu K-Touch
+VOYAGER	Voyager
+WSP	Windows Smartphone

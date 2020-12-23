@@ -168,8 +168,7 @@ class TemplateInfo extends TemplateIndexer
 		$var = strtoupper($m[1]);
 		if (!defined($var))
 		{
-			throw new ExceptionDisplay('<em>$' . Url::html_output($m[1])
-			. '</em> is not a valid variable (check if-statement in template file).');
+			throw new ExceptionDisplay('<em>$' . Url::html_output($m[1]) . '</em> is not a valid variable (check if-statement in template file).');
 		}
 		return (constant($var) ? $m[2] : '');
 	}
@@ -193,12 +192,10 @@ class TemplateInfo extends TemplateIndexer
 		$this -> out = $last_text;
 		
 		//parse sort modes
-		$this -> out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui',
-			array('self', 'callback_sort'), $this -> out);
+		$this -> out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui', array('self', 'callback_sort'), $this -> out);
 			
 		//replace {info} variables
-		$this -> out = preg_replace_callback('/\{\s*info\s*:\s*(\w+)\s*\}/Ui',
-			array($this, 'callback_info'), $this -> out);
+		$this -> out = preg_replace_callback('/\{\s*info\s*:\s*(\w+)\s*\}/Ui', array($this, 'callback_info'), $this -> out);
 	}
 }
 

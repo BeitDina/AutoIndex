@@ -64,8 +64,8 @@ class MimeType
 			'application/mac-compactpro' => array('cpt'),
 			'application/mathml+xml' => array('mathml'),
 			'application/msword' => array('doc'),
-			'application/octet-stream' => array('bin', 'dms', 'lha',
-				'lzh', 'exe', 'class', 'so', 'dll', 'dmg'),
+			'application/msoffice' => array('docx'),
+			'application/octet-stream' => array('bin', 'dms', 'lha', 'lzh', 'exe', 'class', 'so', 'dll', 'dmg'),
 			'application/oda' => array('oda'),
 			'application/ogg' => array('ogg'),
 			'application/pdf' => array('pdf'),
@@ -162,10 +162,16 @@ class MimeType
 			'text/vnd.wap.wmlscript' => array('wmls'),
 			'text/x-setext' => array('etx'),
 			'video/mpeg' => array('mpeg', 'mpg', 'mpe'),
-			'video/quicktime' => array('qt', 'mov'),
+			'video/quicktime' => array('qt', 'mov'), //QuickTime
 			'video/vnd.mpegurl' => array('mxu', 'm4u'),
-			'video/x-msvideo' => array('avi'),
-			'video/x-sgi-movie' => array('movie'),
+			'video/x-msvideo' => array('avi'), //A/V Interleave
+			'video/x-flv' => array('flv'), //Flash Video
+			'video/mp4' => array('mp4'), //MPEG-4
+			'application/x-mpegURL' => array('mpu'), //iPhone Index
+			'video/MP2T' => array('mp2t'), //iPhone Segment
+			'video/3gpp' => array('3gpp'), //3GP Mobile
+			'video/x-ms-wmv' => array('wmv'), //Windows Media
+			'video/x-sgi-movie' => array('sgi'),
 			'x-conference/x-cooltalk' => array('ice')
 		);
 		foreach ($mime_types as $mime_type => $exts)

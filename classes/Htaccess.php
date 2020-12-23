@@ -215,8 +215,7 @@ class Htaccess
 			if ($file === false)
 			{
 				$_GET['dir'] = '';
-				throw new ExceptionDisplay('Cannot open .htpasswd file.
-				<br /><em>' . htmlentities($this -> auth_user_file) . '</em>');
+				throw new ExceptionDisplay('Cannot open .htpasswd file <br /><em>' . htmlentities($this -> auth_user_file) . '</em>');
 			}
 			if ($this -> auth_required_users === array() || DirectoryList::match_in_array($_SERVER['PHP_AUTH_USER'], $this -> auth_required_users))
 			{

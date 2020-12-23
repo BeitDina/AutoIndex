@@ -69,8 +69,7 @@ class User
 	 */
 	public function equals(User $user)
 	{
-		return ((strcasecmp($this -> username, $user -> username) === 0)
-		&& (strcasecmp($this -> sha1_pass, $user -> sha1_pass) === 0));
+		return ((strcasecmp($this -> username, $user -> username) === 0) && (strcasecmp($this -> sha1_pass, $user -> sha1_pass) === 0));
 	}
 	
 	/**
@@ -123,15 +122,11 @@ class User
 		$level = (int)$level;
 		if ($level < BANNED || $level > ADMIN)
 		{
-			throw new ExceptionDisplay('Error in user accounts file:
-			Invalid user level (for username "'
-			. Url::html_output($username) . '").');
+			throw new ExceptionDisplay('Error in user accounts file: Invalid user level (for username "' . Url::html_output($username) . '").');
 		}
 		if ($sha1_pass != '' && strlen($sha1_pass) !== 40)
 		{
-			throw new ExceptionDisplay('Error in user accounts file:
-			Invalid password hash (for username "'
-			. Url::html_output($username) . '").');
+			throw new ExceptionDisplay('Error in user accounts file: Invalid password hash (for username "' . Url::html_output($username) . '").');
 		}
 		$this -> sha1_pass = $sha1_pass;
 		$this -> username = $username;

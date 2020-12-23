@@ -140,11 +140,17 @@ class DirItem extends Item
 			//regular folder
 			$file = $this -> parent_dir . $filename;
 			
-			if (!@is_dir($file))
+			if (!is_dir($file))
 			{
 				throw new ExceptionDisplay('Directory <em>'	. Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
 			}
-			
+			if (!function_exists('mb_strlen'))
+			{
+				function mb_strlen($text)
+				{
+					strlen($text);
+				}
+			}
 			$this -> filename = $filename = substr($filename, 0, -1); 
 			$mb_strlen = mb_strlen($filename);
 			$this -> icon = $config -> __get('icon_path') . 'dir.png';
@@ -2781,8 +2787,7 @@ class DirItem extends Item
 			$this -> size = new Size(SHOW_DIR_SIZE ? $this -> dir_size() : false);
 			return $this -> size;
 		}
-		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var)
-		. '</em> not set in DirItem class.');
+		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in DirItem class.');
 	}
 }
 

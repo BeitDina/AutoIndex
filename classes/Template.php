@@ -101,16 +101,14 @@ class Template
 		$full_filename = $config -> __get('template') . $filename;
 		if (!@is_file($full_filename))
 		{
-			throw new ExceptionFatal('Template file <em>'
-			. Url::html_output($full_filename) . '</em> cannot be found.');
+			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> cannot be found.');
 		}
 		
 		//read raw file contents
-		$contents = @file_get_contents($full_filename);
+		$contents = file_get_contents($full_filename);
 		if ($contents === false)
 		{
-			throw new ExceptionFatal('Template file <em>'
-			. Url::html_output($full_filename) . '</em> could not be opened for reading.');
+			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> could not be opened for reading.');
 		}
 		
 		//remove comments

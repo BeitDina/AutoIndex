@@ -65,11 +65,9 @@ class FileItem extends Item
 	public function __construct($parent_dir, $filename)
 	{
 		parent::__construct($parent_dir, $filename);
-		if (!@is_file($this -> parent_dir . $filename))
-		{	
-			throw new ExceptionDisplay('File <em>'
-			. Url::html_output($this -> parent_dir . $filename)
-			. '</em> does not exist.');
+		if (!is_file($this -> parent_dir . $filename))
+		{
+			throw new ExceptionDisplay('File <em>' . Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
 		}
 		global $config, $words, $downloads;
 		$this -> filename = $filename;
@@ -80,15 +78,43 @@ class FileItem extends Item
 			$this -> icon = $file_icon -> __toString();
 		}
 		$this -> downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
-		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))))
-		. '&amp;file=' . Url::translate_uri($filename);
+		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir')))) . '&amp;file=' . Url::translate_uri($filename);
 		
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'jfif', 'gif', 'bmp')))
 		{
 			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
-			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"'
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
 			. ' />';
+		}
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('avi', 'thm', 'mkv', 'asf', 'mov', 'wmv', '3gp')))
+		{
+			$mime = new MimeType($filename);
+			$finfo = finfo_open(FILEINFO_MIME_TYPE);
+			//Display correct headers for media file
+			$mimetype = finfo_file($finfo, $this -> parent_dir . $filename);
+			$file_size = function_exists('getvideosize') ? getvideosize($this -> parent_dir . $filename) : array();
+			$file_mime = function_exists('getvideosize') ? $file_size['mime'] : $mime -> __toString();
+			$this -> thumb_link = ' <video controls="play" src="' . Url::translate_uri($this -> parent_dir . $filename) . '"'  
+			. ' poster="' . Url::html_output($_SERVER['PHP_SELF'])  . '"' 
+			. ' type="' . $file_mime . '"' 
+			. ' />Your browser does not support the <code>video</code> element.</video> ';
+			
+			if (function_exists('imagecreatefromavi') && in_array(self::ext($filename), array('avi', 'wmv', '3gp')))
+			{
+				$this -> thumb_link .= '</br><img src="' . Url::html_output($_SERVER['PHP_SELF'])
+				. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+				. ' />';
+			}
+			else
+			{
+				$this -> thumb_link = ' <video controls="play" src="' . Url::html_output($_SERVER['PHP_SELF'])
+				. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. ' poster="' . Url::html_output($_SERVER['PHP_SELF'])  . '"' 
+				. ' type="' . $file_mime . ', ' . $mimetype . ', application/octet-stream"' 
+				. ' />Your browser does not support the <code>video</code> element.</video> ';
+			}
 		}
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
 		{
@@ -120,14 +146,13 @@ class FileItem extends Item
 	 * @param string $var The key to look for
 	 * @return mixed The data stored at the key
 	 */
-	public function __get($var)
+	public function __get($var = '')
 	{
 		if (isset($this -> $var))
 		{
 			return $this -> $var;
 		}
-		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var)
-		. '</em> not set in FileItem class.');
+		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in FileItem class.');
 	}
 }
 

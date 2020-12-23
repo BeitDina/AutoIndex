@@ -108,18 +108,17 @@ class Admin
 		}
 		global $dir;
 		$local_file = $dir . Item::get_basename($url);
-		if (@file_exists($local_file))
+		if (file_exists($local_file))
 		{
 			throw new ExceptionDisplay('The file already exists in this directory.');
 		}
 		$remote = $protocol . $url;
-		$r = @fopen($remote, 'rb');
+		$r = fopen($remote, 'rb');
 		if ($r === false)
 		{
-			throw new ExceptionDisplay('Cannot open remote file for reading: <em>'
-			. Url::html_output($remote) . '</em>');
+			throw new ExceptionDisplay('Cannot open remote file for reading: <em>' . Url::html_output($remote) . '</em>');
 		}
-		$l = @fopen($local_file, 'wb');
+		$l = fopen($local_file, 'wb');
 		if ($l === false)
 		{
 			throw new ExceptionDisplay('Cannot open local file for writing.');
@@ -144,25 +143,21 @@ class Admin
 	 */
 	private static function update_file_info($filename, $old_name, $new_name)
 	{
-		if (!@is_file($filename))
+		if (!is_file($filename))
 		{
-			throw new ExceptionDisplay('The file <em>'
-			. Url::html_output($filename) . '</em> does not exist.');
+			throw new ExceptionDisplay('The file <em>' . Url::html_output($filename) . '</em> does not exist.');
 		}
-		$text = @file_get_contents($filename);
+		$text = file_get_contents($filename);
 		if ($text === false)
 		{
-			throw new ExceptionDisplay('Cannot open file <em>'
-			. Url::html_output($filename) . '</em> for reading.');
+			throw new ExceptionDisplay('Cannot open file <em>' . Url::html_output($filename) . '</em> for reading.');
 		}
-		$h = @fopen($filename, 'wb');
+		$h = fopen($filename, 'wb');
 		if ($h === false)
 		{
-			throw new ExceptionDisplay('Cannot open file <em>'
-			. Url::html_output($filename) . '</em> for writing.');
+			throw new ExceptionDisplay('Cannot open file <em>' . Url::html_output($filename) . '</em> for writing.');
 		}
-		fwrite($h, preg_replace('/^' . preg_quote($old_name, '/')
-		. '/m', $new_name, $text));
+		fwrite($h, preg_replace('/^' . preg_quote($old_name, '/') . '/m', $new_name, $text));
 		fclose($h);
 	}
 	
@@ -369,8 +364,7 @@ class Admin
 				/** Include the config generator file. */
 				if (!@include_once(CONFIG_GENERATOR))
 				{
-					throw new ExceptionDisplay('Error including file <em>'
-					. CONFIG_GENERATOR . '</em>');
+					throw new ExceptionDisplay('Error including file <em>' . CONFIG_GENERATOR . '</em>');
 				}
 				die();
 			}
@@ -382,7 +376,7 @@ class Admin
 				}
 				global $dir;
 				$old = $dir . Url::clean_input($_GET['filename']);
-				if (!@file_exists($old))
+				if (!file_exists($old))
 				{
 					header('HTTP/1.0 404 Not Found');
 					throw new ExceptionDisplay('Specified file could not be found.');
@@ -394,11 +388,11 @@ class Admin
 					{
 						throw new ExceptionDisplay('Filename unchanged.');
 					}
-					if (@file_exists($new))
+					if (file_exists($new))
 					{
 						throw new ExceptionDisplay('Cannot overwrite existing file.');
 					}
-					if (@rename($old, $new))
+					if (rename($old, $new))
 					{
 						global $config;
 						if (DOWNLOAD_COUNT)
@@ -439,12 +433,12 @@ class Admin
 				{
 					global $dir;
 					$to_delete = $dir . Url::clean_input($_GET['filename']);
-					if (!@file_exists($to_delete))
+					if (!file_exists($to_delete))
 					{
 						header('HTTP/1.0 404 Not Found');
 						throw new ExceptionDisplay('Specified file could not be found.');
 					}
-					if (@is_dir($to_delete))
+					if (is_dir($to_delete))
 					{
 						if (self::rmdir_recursive($to_delete))
 						{
@@ -452,7 +446,7 @@ class Admin
 						}
 						throw new ExceptionDisplay('Error deleting folder.');
 					}
-					if (@unlink($to_delete))
+					if (unlink($to_delete))
 					{
 						throw new ExceptionDisplay('File successfully deleted.');
 					}
@@ -521,14 +515,11 @@ class Admin
 					$out .= '<option>' . $this_user -> username . '</option>';
 				}
 				global $words;
-				throw new ExceptionDisplay($out
-				. '</select></p><p>Select new level: <select name="level"><option value="' . BANNED . '">
-				Banned</option><option value="' . GUEST . '">'
+				throw new ExceptionDisplay($out . '</select></p><p>Select new level: <select name="level"><option value="' . BANNED . '"> Banned</option><option value="' . GUEST . '">'
 				. $words -> __get('guest') . '</option><option selected="selected" value="' . USER . '">'
 				. $words -> __get('user') . '</option><option value="' . MODERATOR . '">'
 				. $words -> __get('mod') . '</option><option value="' . ADMIN . '">'
-				. $words -> __get('admin') . '</option></select></p>
-				<p><input type="submit" value="Change user\'s level" /></p></form>');
+				. $words -> __get('admin') . '</option></select></p> <p><input type="submit" value="Change user\'s level" /></p></form>');
 			}
 			case 'del_user':
 			{
@@ -556,9 +547,7 @@ class Admin
 				{
 					$out .= '<option>' . $this_user -> username . '</option>';
 				}
-				throw new ExceptionDisplay($out
-				. '</select></p><p><input type="submit" value="'
-				. $words -> __get('delete this user') . '" /></p></form>');
+				throw new ExceptionDisplay($out . '</select></p><p><input type="submit" value="' . $words -> __get('delete this user') . '" /></p></form>');
 			}
 			case 'edit_description':
 			{
@@ -576,8 +565,7 @@ class Admin
 							$h = @fopen($config -> __get('description_file'), 'wb');
 							if ($h === false)
 							{
-								throw new ExceptionDisplay('Could not open description file for writing.'
-								. ' Make sure PHP has write permission to this file.');
+								throw new ExceptionDisplay('Could not open description file for writing.' . ' Make sure PHP has write permission to this file.');
 							}
 							foreach ($descriptions as $file => $info)
 							{
@@ -594,8 +582,7 @@ class Admin
 							$h = @fopen($config -> __get('description_file'), 'ab');
 							if ($h === false)
 							{
-								throw new ExceptionDisplay('Could not open description file for writing.'
-								. ' Make sure PHP has write permission to this file.');
+								throw new ExceptionDisplay('Could not open description file for writing.' . ' Make sure PHP has write permission to this file.');
 							}
 							fwrite($h, "$filename\t" . $_GET['description'] . "\n");
 							fclose($h);

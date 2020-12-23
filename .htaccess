@@ -1,0 +1,221 @@
+# Directory Index
+DirectoryIndex index.php
+
+# Just in case, let's disable viewing of directory indexes.
+Options -Indexes
+Options +FollowSymLinks
+
+# Just in case, let's disable register globals (only valid for php4).
+# Do NOT enable this when running php5, or you may face internal server errors
+
+# PHP 4, Apache 1.
+# <IfModule mod_php4.c>
+#   php_value magic_quotes_gpc             0
+#   php_value session.use_trans_sid          0
+#   php_value register_globals                 0
+#   php_value session.auto_start              0
+# </IfModule>
+
+# PHP 4, Apache 2.
+# <IfModule sapi_apache2.c>
+#   php_value magic_quotes_gpc             0
+#   php_value session.use_trans_sid          0
+#   php_value register_globals                 0
+#   php_value session.auto_start              0
+# </IfModule>
+
+# PHP 5, Apache 1 and 2.
+# <IfModule mod_php5.c>
+#   php_value magic_quotes_gpc             0
+#   php_value session.use_trans_sid          0
+#   php_value register_globals                 0
+#   php_value session.auto_start              0
+# </IfModule>
+
+# Just in case, let's disable register_globals (only valid for PHP4).
+# Do NOT enable this when running PHP5, or you may face internal server errors
+# To disable, remove the prepended # on the next line.
+# php_flag register_globals 0 
+
+# Disable EAccelerator
+# Do this if for some reason or another you have cache problems.
+# php_flag eaccelerator.enable 0
+
+# allow most common 
+<FilesMatch "\.(doc|odt|jpg|html|avi)$">
+    Order allow,deny  
+    allow from all 
+    Satisfy All 
+</FilesMatch> 
+
+# deny most common except .php 
+<FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module|exe)$">
+    Order deny,allow  
+    deny from all 
+    Satisfy All 
+</FilesMatch> 
+
+# Disable .htaccess viewing from browser 
+<Files ~ "^\.ht"> 
+    Order allow,deny 
+    Deny from all 
+    Satisfy All 
+</Files> 
+
+<Files ~ "\config.php$"> 
+deny from all 
+</Files> 
+
+
+<IfModule mod_rewrite.c> 
+	RewriteEngine on 
+	
+	#
+	# Mod_rewrite rules require mod_rewrite is enabled for MX-Publisher (config setting)
+	# Uncomment below, and consult the MX-Publisher mod_rewrite module documentation
+	#
+
+	# 
+	# Site Specific
+	#
+	
+	#RewriteRule ^support/catlink([0-9]*)(.*)$ index.php?page=53&cat_link=$1 [L]
+	#RewriteRule ^support(.*)$ index.php?page=53 [L]
+	#RewriteRule ^index.php$ index.php [L,NE]	
+	
+	#
+	# General
+	#
+	RewriteCond %{REQUEST_URI} ^(.*)/catlink([0-9]*)(.*)$
+	RewriteRule ^page([0-9]*)/catlink([0-9]*)(.*)$ index.php?page=$1&cat_link=$2 [L]
+		
+	RewriteCond %{REQUEST_URI} ^(.*)/sub([0-9]*)(.*)$
+	RewriteRule ^page([0-9]*)/sub([0-9]*)(.*)$ index.php?page=$1&dynamic_block=$2 [L]
+		
+	RewriteCond %{REQUEST_URI} ^/page([0-9]*)(.*)$
+	RewriteRule ^page([0-9]*)(.*)$ index.php?page=$1$2 [L]
+	
+	RewriteCond %{REQUEST_URI} ^/block([0-9]*)(.*)$
+	RewriteRule ^block([0-9]*)(.*)$ index.php?block=$1$2 [L]	
+	
+#
+# Uncomment the statement below if URL rewriting doesn't
+# work properly. If you installed phpBB in a subdirectory
+# of your site, properly set the argument for the statement.
+# e.g.: if your domain is test.com and you installed phpBB
+# in http://www.test.com/phpBB/index.php you have to set
+# the statement RewriteBase /phpBB/
+#
+	# REWRITE BASE
+	# RewriteBase /
+
+	# HERE IS A GOOD PLACE TO FORCE CANONICAL DOMAIN
+	# Define fully qualified ssl aware protocol
+	# RewriteCond %{SERVER_PORT}s ^(443(s)|[0-9]+s)$
+	# RewriteRule ^.*$ - [env=HttpFullProto:http%2://]
+	# RewriteCond %{HTTP_HOST} !^www\.beitdina\.net$ [NC]
+	# RewriteRule ^(.*)$ %{ENV:HttpFullProto}www.beitdina.net/$1 [QSA,L,R=301]
+
+
+#
+# Uncomment the statement below if you want to make use of
+# HTTP authentication and it does not already work.
+# This could be required if you are for example using PHP via Apache CGI.
+#
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+
+#
+# The following 3 lines will rewrite URLs passed through the front controller
+# to not require app.php in the actual URL. In other words, a controller is
+# by default accessed at /app.php/my/controller, but can also be accessed at
+# /my/controller
+#
+
+# FORUM INDEX REWRITERULE WOULD STAND HERE IF USED. &quot;forum&quot; REQUIRES TO BE SET AS FORUM INDEX
+RewriteRule forum.html /forum/index.php
+RewriteRule ucp.php /forum/ucp.php
+RewriteRule memberlist.php /forum/memberlist.php
+
+RewriteRule ^/ext/$1 /forum/ext/$1 [L]
+RewriteRule ^/styles/$1 /forum/styles/$1 [L]
+
+# RewriteRule forum1.html /viewforum.php?f=1
+
+# RewriteRule ^/forum\.html$ index.php [QSA,L,NC]
+# RewriteRule ^/forum(\d+).html$ $1.php?f=$2 [L]
+
+# RewriteRule forum2.html viewforum.php?f=2
+
+RewriteRule forum([^/d]+).html?$ viewforum.php?f=$1 [QSA]
+
+# FORUM ALL MODES
+RewriteRule ^/(forum|[a-z0-9_-]*-f)([0-9]+)(-([0-9]+))?\.html$ viewforum.php?f=$2&start=$4 [QSA,L,NC]
+
+	# TOPIC WITH VIRTUAL FOLDER ALL MODES
+	# RewriteRule ^/(forum|[a-z0-9_-]*-f)([0-9]+)/(topic|[a-z0-9_-]*-t)([0-9]+)(-([0-9]+))?\.html$ /viewtopic.php?f=$2&t=$4&start=$6 [QSA,L,NC]
+	# TOPIC WITHOUT FORUM ID & DELIM ALL MODES
+	# RewriteRule ^/([a-z0-9_-]*)/?(topic|[a-z0-9_-]*-t)([0-9]+)(-([0-9]+))?\.html$ /viewtopic.php?forum_uri=$1&t=$3&start=$5 [QSA,L,NC]
+	RewriteRule topic([^/d]+).html?$ viewtopic.php?t=$1 [QSA]
+	# PROFILES ALL MODES WITH ID
+	RewriteRule ^/(member|[a-z0-9_-]*-u)([0-9]+)\.html$ /memberlist.php?mode=viewprofile&u=$2 [QSA,L,NC]
+	# USER MESSAGES ALL MODES WITH ID
+	RewriteRule member([^/d]+).html?$ memberlist.php?u=$1 [QSA]
+	# RewriteRule ^/(member|[a-z0-9_-]*-u)([0-9]+)-(topics|posts)(-([0-9]+))?\.html$ /search.php?author_id=$2&sr=$3&start=$5 [QSA,L,NC]
+	# GROUPS ALL MODES
+	# RewriteRule ^/(group|[a-z0-9_-]*-g)([0-9]+)(-([0-9]+))?\.html$ /memberlist.php?mode=group&g=$2&start=$4 [QSA,L,NC]
+	# POSTS
+	# RewriteRule ^/post([0-9]+)\.html$ /viewtopic.php?p=$1 [QSA,L,NC]
+	RewriteRule post([^/d]+).html?$ viewtopic.php?p=$1#$1 [QSA]
+	# ACTIVE TOPICS
+	# RewriteRule ^/active-topics(-([0-9]+))?\.html$ /search.php?search_id=active_topics&start=$2&sr=topics [QSA,L,NC]
+	# UNANSWERED TOPICS
+	# RewriteRule ^/unanswered(-([0-9]+))?\.html$ /search.php?search_id=unanswered&start=$2&sr=topics [QSA,L,NC]
+	# NEW POSTS
+	# RewriteRule ^/newposts(-([0-9]+))?\.html$ /search.php?search_id=newposts&start=$2&sr=topics [QSA,L,NC]
+	# UNREAD POSTS
+	# RewriteRule ^/unreadposts(-([0-9]+))?\.html$ /search.php?search_id=unreadposts&start=$2 [QSA,L,NC]
+	# THE TEAM
+	# RewriteRule ^/the-team\.html$ /memberlist.php?mode=team [QSA,L,NC]
+	# HERE IS A GOOD PLACE TO ADD OTHER PHPBB RELATED REWRITERULES
+
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ app.php [QSA,L]
+
+#
+# If symbolic links are not already being followed,
+# uncomment the line below.
+# http://anothersysadmin.wordpress.com/2008/06/10/mod_rewrite-forbidden-403-with-apache-228/
+#
+#Options +FollowSymLinks
+
+</IfModule>
+
+#AddHandler x-httpd-5-3-php5  .php
+#AddHandler x-httpd-5-4-php5  .php
+#AddHandler x-httpd-5-5-php5  .php
+AddHandler x-httpd-5-6-php5  .php
+
+#
+# Error redirects - require the MX-Publisher ErrorDocs module to be installed
+# Uncomment below, and consult the MX-Publisher ErrorDocs module documentation
+# ErrorDocument errno /index.php?page=N&errno=errno&errlog=yes
+#
+ErrorDocument 400 /index.php?page=x&errno=400&errlog=yes
+ErrorDocument 401 /index.php?page=x&errno=401&errlog=yes
+ErrorDocument 402 /index.php?page=x&errno=402&errlog=yes
+ErrorDocument 403 /index.php?page=x&errno=403&errlog=yes
+ErrorDocument 404 /index.php?page=x&errno=404&errlog=yes
+ErrorDocument 405 /index.php?page=x&errno=405&errlog=yes
+ErrorDocument 408 /index.php?page=x&errno=408&errlog=yes
+ErrorDocument 410 /index.php?page=x&errno=410&errlog=yes
+ErrorDocument 411 /index.php?page=x&errno=411&errlog=yes
+ErrorDocument 412 /index.php?page=x&errno=412&errlog=yes
+ErrorDocument 413 /index.php?page=x&errno=413&errlog=yes
+ErrorDocument 414 /index.php?page=x&errno=414&errlog=yes
+ErrorDocument 415 /index.php?page=x&errno=415&errlog=yes
+ErrorDocument 500 /index.php?page=x&errno=500&errlog=yes
+ErrorDocument 501 /index.php?page=x&errno=501&errlog=yes
+ErrorDocument 502 /index.php?page=x&errno=502&errlog=yes
+ErrorDocument 503 /index.php?page=x&errno=503&errlog=yes
+ErrorDocument 506 /index.php?page=x&errno=506&errlog=yes

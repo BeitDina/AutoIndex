@@ -116,8 +116,7 @@ if (count($_POST) >= count($strings) + count($numbers))
 	{
 		if (!@is_dir($_POST[$valid]))
 		{
-			die(simple_display(htmlentities($valid)
-			. ' setting is not a valid directory.'));
+			//die(simple_display(htmlentities($valid) . ' setting is not a valid directory.'));
 		}
 	}
 	

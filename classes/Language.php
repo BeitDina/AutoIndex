@@ -67,8 +67,7 @@ class Language
 		$list = array();
 		while (($file = readdir($hndl)) !== false)
 		{
-			if (@is_file($path . $file) && preg_match('/^[a-z]{2}(_[a-z]{2})?'
-			. preg_quote(LANGUAGE_FILE_EXT, '/') . '$/i', $file))
+			if (@is_file($path . $file) && preg_match('/^[a-z]{2}(_[a-z]{2})?' . preg_quote(LANGUAGE_FILE_EXT, '/') . '$/i', $file))
 			{
 				$list[] = $file;
 			}
@@ -133,12 +132,10 @@ class Language
 	 */
 	public function __construct()
 	{
-		$lang_file = PATH_TO_LANGUAGES . $this -> get_current_lang()
-			. LANGUAGE_FILE_EXT;
+		$lang_file = PATH_TO_LANGUAGES . $this -> get_current_lang() . LANGUAGE_FILE_EXT;
 		if (!@is_readable($lang_file))
 		{
-			throw new ExceptionFatal('Cannot read from language file: <em>' 
-			. Url::html_output($lang_file) . '</em>');
+			throw new ExceptionFatal('Cannot read from language file: <em>'  . Url::html_output($lang_file) . '</em>');
 		}
 		//load the file as a tab-separated object
 		$this -> translation_data = new ConfigData($lang_file);
@@ -151,7 +148,7 @@ class Language
 	public function is_set($name)
 	{
 		return $this -> translation_data -> is_set($name);
-	}	
+	}
 	
 	/**
 	 * @param string $var The key to look for (the keyword)
@@ -163,8 +160,7 @@ class Language
 		{
 			return $this -> translation_data -> __get($var);
 		}
-		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var)
-		. '</em> not set in Language file.');
+		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in Language file.');
 	}
 }
 

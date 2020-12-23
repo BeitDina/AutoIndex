@@ -1,7 +1,10 @@
 cache
 classes
+assets
 flags
 index_icons
+.htpasswd.autoindex
+htpasswd.autoindex
 languages
 templates
 hidden_files

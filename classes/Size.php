@@ -104,8 +104,7 @@ class Size
 		{
 			return $this -> $var;
 		}
-		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var)
-		. '</em> not set in Size class.');
+		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in Size class.');
 	}
 }
 
