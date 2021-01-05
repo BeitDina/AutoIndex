@@ -245,6 +245,13 @@ class Image
 				$src = @imagecreatefromgif($file);
 				break;
 			}
+			/*
+			case 'thm':
+			{
+				$src = @exif_thumbnail($file, THUMBNAIL_HEIGHT, THUMBNAIL_HEIGHT, 'image/jpg');
+				break;
+			}
+			*/
 			case 'jpeg':
 			case 'jpg':
 			case 'jpe':

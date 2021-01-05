@@ -86,8 +86,24 @@ class FileItem extends Item
 			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
 			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
 			. ' />';
+			$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+			. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
 		}
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('avi', 'thm', 'mkv', 'asf', 'mov', 'wmv', '3gp')))
+		elseif (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('thm', 'thm')))
+		{
+			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+			. ' />';
+			$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+			. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
+		}
+		
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('avi', 'mkv', 'asf', 'mov', 'wmv', '3gp')))
 		{
 			$mime = new MimeType($filename);
 			$finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -115,6 +131,10 @@ class FileItem extends Item
 				. ' type="' . $file_mime . ', ' . $mimetype . ', application/octet-stream"' 
 				. ' />Your browser does not support the <code>video</code> element.</video> ';
 			}
+			$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+			. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
 		}
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
 		{
