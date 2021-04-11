@@ -1,0 +1,21 @@
+/* Text style of module a:link */
+A:link {
+	COLOR: #B6C7E5; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #80FFFF; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: green; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.visit {
+	FONT-SIZE: 9px; FONT-FAMILY: Times
+}
+/* Set the background color of the page.*/
+BODY
+{  BACKGROUND-COLOR: #000000; 
+}
+

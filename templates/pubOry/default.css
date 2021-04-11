@@ -1,0 +1,128 @@
+/**
+ * The default CSS stylesheet used for all templates.
+ *
+ * @package AutoIndex
+ * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
+ * @version 1.0.2 (February 05, 2004)
+ *
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ *
+ * @link http://autoindex.sourceforge.net
+ */
+
+/* Body */
+.autoindex_body, html
+{
+	font-family: verdana, lucidia, sans-serif;
+	font-size: 13px;
+	background-color: #F0F0F0;
+}
+
+/* Images */
+.autoindex_body img
+{
+	border: none;
+}
+
+/* Tables */
+.autoindex_table
+{
+	width: 100%;
+	border: none;
+	border-spacing: 2px;
+}
+.light_row
+{
+	background-color: #F2F6FC;
+	font-size: 13px;
+}
+.dark_row
+{
+	background-color: #DADEEE;
+	font-size: 13px;
+}
+.autoindex_td
+{
+	font-size: 13px;
+	font-family: verdana, lucidia, sans-serif;
+	vertical-align: top;
+	border: 1px solid #7F8FA9;
+	padding: 0px;
+	text-align: left;
+	white-space: nowrap;
+}
+.autoindex_td_right
+{
+	font-size: 13px;
+	font-family: verdana, lucidia, sans-serif;
+	vertical-align: top;
+	border: 1px solid #7F8FA9;
+	padding: 0px;
+	text-align: right;
+	white-space: nowrap;
+}
+.autoindex_th
+{
+	font-size: 13px;
+	background-color: #7F8FAD;
+	border: 1px solid #000010;
+	padding: 0px;
+}
+
+/* Links */
+.plain_link
+{
+	color: #000000;
+	text-decoration: none;
+}
+.autoindex_a:visited, .autoindex_a:active
+{
+	color: #00008F;
+	text-decoration: none;
+}
+.autoindex_a:link
+{
+	color: #0000FF;
+	text-decoration: none;
+}
+.autoindex_a:hover
+{
+	color: #0000FF;
+	text-decoration: overline underline;
+}
+
+/* Buttons */
+.button
+{
+	color: #707070;
+	background-color: #F2F6FC;
+	font-family: sans-serif;
+	font-size: 11px;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	padding: 3px 10px 3px 10px;
+}
+
+/* Misc. */
+.paragraph
+{
+	background: #F2F6FC;
+	font-size: 13px;
+	color: #000020;
+}
+.autoindex_hr
+{
+	color: #000020;
+	background-color: #000020;
+	border: none;
+	width: 75%;
+	height: 1px;
+}
+.autoindex_small
+{
+	font-size: 10px;
+}

@@ -1,0 +1,193 @@
+BODY {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+BODY {
+	PADDING-LEFT: 100px; MARGIN: 10px; BACKGROUND-COLOR: #000000; TEXT-ALIGN: left
+}
+#nav {
+	LEFT: 2px; WIDTH: 96px; CURSOR: pointer; LINE-HEIGHT: 12pt; POSITION: absolute; TOP: 0px; TEXT-ALIGN: left
+}
+.left {
+	TEXT-ALIGN: left
+}
+PRE {
+	FONT-SIZE: 8pt
+}
+A {
+	TEXT-DECORATION: none
+}
+.titre2 {
+	PADDING-LEFT: 7px; FONT: bolder x-small Verdana, Verdana, Arial, Helvetica, sans-serif; COLOR: #286fff; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+.titre3 {
+	PADDING-LEFT: 15px; FONT-WEIGHT: bold; FONT-SIZE: x-small; COLOR: #3da3f5; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+A:link {
+	FONT-WEIGHT: bold; COLOR: #00ff00
+}
+A:visited {
+	FONT-WEIGHT: bold; COLOR: #00ff00
+}
+A:hover {
+	COLOR: #ff8c00
+}
+A.down:link {
+	COLOR: #006400; TEXT-DECORATION: line-through
+}
+A.down:visited {
+	COLOR: #006400; TEXT-DECORATION: line-through
+}
+A.down:hover {
+	COLOR: red
+}
+UNKNOWN {
+	BACKGROUND: maroon
+}
+TD:unknown {
+	BACKGROUND: maroon
+}
+.texte {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #000000; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.textedom {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 12px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte1 {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #006600; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte_sitenou {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.texte_beta {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.texte_red {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: red; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte2 {
+	FONT-SIZE: 11px; LEFT: 20px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte3 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.T1 {
+	FONT-WEIGHT: bold; FONT-SIZE: small; COLOR: #004000; FONT-FAMILY: Geneva, Verdana, Arial, Helvetica, sans-serif; HEIGHT: 5px; TEXT-ALIGN: left
+}
+.T2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 3px; MARGIN-LEFT: 20px; COLOR: #cc0000; TEXT-INDENT: 15pt; MARGIN-RIGHT: 35px; PADDING-TOP: 3px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.barre {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; COLOR: white; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #436bb5; TEXT-DECORATION: none
+}
+.textecent {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.textecent2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.lien {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.lien_atentie {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: red; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.liencale {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: #11668e; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.barreclair {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; VERTICAL-ALIGN: middle; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7
+}
+.barreclair2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #d3eafe
+}
+.lienp {
+	FONT-WEIGHT: normal; FONT-SIZE: xx-small; COLOR: #006699; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+INPUT {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; MARGIN: 1px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #b8d6fa; BORDER-RIGHT-WIDTH: 1px; BODER-COLOR: B5C6DE
+}
+TEXTAREA {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-LEFT-COLOR: #c8c8c8; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #c8c8c8; MARGIN: 1px; COLOR: black; BORDER-TOP-COLOR: #c8c8c8; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #c8c8c8
+}
+SELECT {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; MARGIN: 0px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7; BORDER-RIGHT-WIDTH: 1px; BODER-COLOR: B5C6DE
+}
+A {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: #006699; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.test {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: #11668e; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.cadre {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 20px; COLOR: #000000; PADDING-TOP: 20px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.cadress {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-WEIGHT: bolder; FONT-SIZE: x-small; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+FORM {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+HR {
+	BORDER-RIGHT: #c6c7ff 4px solid; BORDER-TOP: #c6c7ff 4px solid; BORDER-LEFT: #c6c7ff 4px solid; BORDER-BOTTOM: #c6c7ff 4px solid
+}
+ /* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #222222;
+	scrollbar-face-color: #C8D1D7;					/* #6C706D		*/
+	scrollbar-highlight-color: #EAF0F7;					/* #000000		*/
+	scrollbar-shadow-color: #95AFC4;					/* #6C706D		*/
+	scrollbar-3dlight-color: #D6DDE2;					/* #2E4460		*/
+	scrollbar-arrow-color: #006699;					/* #FFFFFF		*/
+	scrollbar-track-color: #EFEFEF;					/* #2E4460		*/
+	scrollbar-darkshadow-color: #7294AF;				/* #2E4460		*/
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #FFFFFF; }
+a.gen,a.genmed,a.gensmall { color: #FFFFFF; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #006699; text-decoration: underline; }
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #FFA34F; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(../forum/templates/pubOry/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(../forum/templates/pubOry/images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px; }
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #000000; border: 1px #2E4460 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #000000; border: 2px #6C706D solid; }
+/* .gsc-control div { width: 654px; } */
+.searchcontrol div { width: 654px; }

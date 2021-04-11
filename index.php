@@ -630,6 +630,7 @@ try
 	$log -> add_entry($search_log);
 	$str = $dir_list -> __toString();
 	echo new Display($str);
+	echo $mobile_device_detect->detect()->getInfo();
 }
 catch (ExceptionDisplay $e)
 {

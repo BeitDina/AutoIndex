@@ -1,0 +1,146 @@
+/* Set the background color of the page.*/
+BODY {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+TD {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+TH {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+H1 {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+H2 {
+	FONT-SIZE: 10pt; COLOR: white; FONT-FAMILY: verdana,tahoma,geneva,helvetica; font-size-adjust: 0.54
+}
+BODY {
+	PADDING-LEFT: 100px; BACKGROUND-IMAGE: url(stars.jpg); MARGIN: 10px; BACKGROUND-REPEAT: repeat-y; BACKGROUND-COLOR: #000000; TEXT-ALIGN: center
+}
+#nav {
+	LEFT: 2px; WIDTH: 96px; CURSOR: pointer; LINE-HEIGHT: 12pt; POSITION: absolute; TOP: 0px; TEXT-ALIGN: left
+}
+.left {
+	TEXT-ALIGN: left
+}
+TABLE {
+	BORDER-RIGHT: green 8px double; BORDER-TOP: green 8px double; MARGIN: auto; BORDER-LEFT: green 8px double; BORDER-BOTTOM: green 8px double; BACKGROUND-COLOR: #000000
+}
+TABLE.game TD {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; BACKGROUND-COLOR: #000000
+}
+TABLE.search TD {
+	border-Color: #94b8e4; border-Color-Dark: white; border-Color-Light: black; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; BACKGROUND-COLOR: #61a3cf
+}
+TABLE.search TH {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.doc {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.doc TD {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.doc TH {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.menu TD {
+	border-Color: #94b8e4; border-Color-Dark: white; border-Color-Light: black; VERTICAL-ALIGN: middle; BACKGROUND-COLOR: #61a3cf
+}
+TABLE.menu TH {
+	BACKGROUND-COLOR: #61a3cf
+}
+TABLE.note {
+	BORDER-LEFT-COLOR: #778899; BORDER-BOTTOM-COLOR: #778899; BORDER-TOP-COLOR: #778899; BORDER-RIGHT-COLOR: #778899
+}
+TABLE.note TH {
+	BACKGROUND-COLOR: #778899
+}
+TABLE.roms {
+	WIDTH: 85%
+}
+TABLE.roms TH {
+	TEXT-ALIGN: left
+}
+TABLE H3 {
+	MARGIN-TOP: 0px
+}
+TABLE TABLE {
+	MARGIN-LEFT: 14px; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TABLE TD {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: left
+}
+TD.favorite {
+	COLOR: #00ffff
+}
+TD.favorite:unknown {
+	FONT-WEIGHT: bold; COLOR: #ffd700; content: " Favorite"
+}
+TH {
+	TEXT-ALIGN: center
+}
+TH {
+	FONT-WEIGHT: normal; BACKGROUND-COLOR: green
+}
+TH {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+TD {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+H1 {
+	FONT-SIZE: 22pt
+}
+H1:first-letter {
+	FONT-SIZE: 22pt; COLOR: green
+}
+H2 {
+	FONT-SIZE: 16pt
+}
+H2:first-letter {
+	FONT-SIZE: 16pt; COLOR: green
+}
+H3 {
+	FONT-SIZE: 13.5pt
+}
+HR {
+	BACKGROUND-COLOR: black
+}
+PRE {
+	FONT-SIZE: 8pt
+}
+A {
+	TEXT-DECORATION: none
+}
+/* Text style of module a:link */
+A:link {
+	COLOR: #B6C7E5; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #80FFFF; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: green; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.visit {
+	FONT-SIZE: 9px; FONT-FAMILY: Times
+}
+A.down:link {
+	COLOR: #006400; TEXT-DECORATION: line-through
+}
+A.down:visited {
+	COLOR: #006400; TEXT-DECORATION: line-through
+}
+A.down:hover {
+	COLOR: red
+}
+UNKNOWN {
+	BACKGROUND: maroon
+}
+TD:unknown {
+	BACKGROUND: maroon
+}

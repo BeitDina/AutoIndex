@@ -37,21 +37,34 @@ class MobileDeviceDetect
 	protected $words;
 	protected $request;
 	
+    private $_user_agent;
+    private $_name;
+    private $_version;
+    private $_platform;	
 	
 	/**
 	 * Load sessions
 	 * @access public
 	 *
 	 */
-	function __construct()
+	function __construct($ua = '')
 	{
 		global $cache;
 		global $request, $words;
 		
-		$this->cache				= $cache;
-		$this->request				= $request;
-		$this->language			= $words;
-	
+		$this->cache	= $cache;
+		$this->request	= $request;
+		$this->language	= $words;
+
+        if(empty($ua)) 
+		{
+           $this->_user_agent = $request->server('HTTP_USER_AGENT');
+        }
+        else 
+		{
+           $this->_user_agent = $ua;
+        }
+		//$this->_user_agent	= (!empty($_SERVER['HTTP_USER_AGENT'])) ? htmlspecialchars((string) $_SERVER['HTTP_USER_AGENT']) : '';
 	}
 	
 	/**
@@ -65,15 +78,14 @@ class MobileDeviceDetect
 	public function mobile_device_detect($iphone = true, $ipod = true, $ipad = true, $android = true, $opera = true, $blackberry = true, $palm = true, $windows = true, $lg = true)
 	{
 		$mobile_browser = false;
-		$user_agent = $this->request->server('HTTP_USER_AGENT');
 		
 		switch (true)
 		{		
-			case (preg_match('/x86_64|WOW64|Win64|Iceweasel/i', $user_agent));
+			case (preg_match('/x86_64|WOW64|Win64|Iceweasel/i', $this->_user_agent));
 				$status = $this->language -> __get('DESKTOP');
 				$mobile_browser = true;
 			break;
-			case (preg_match('/Bot|CFNetwork|libwww|Java|Jigsaw|SpreadTrum|httpget/i', $user_agent));
+			case (preg_match('/Bot|CFNetwork|libwww|Java|Jigsaw|SpreadTrum|httpget/i', $this->_user_agent));
 				$mobile_browser = false;
 			break;
 			case (preg_match('/ipad/i',$user_agent));
@@ -84,92 +96,92 @@ class MobileDeviceDetect
 				$status = $this->language -> __get('IPOD');
 				$mobile_browser = $ipod;
 			break;
-			case (preg_match('/iphone/i', $user_agent));
+			case (preg_match('/iphone/i', $this->_user_agent));
 				$status = $this->language -> __get('IPHONE');
 				$mobile_browser = $iphone;
 			break;
-			case (preg_match('/android/i', $user_agent));
-				if (preg_match('/SM-G870A/i', $user_agent))
+			case (preg_match('/android/i', $this->_user_agent));
+				if (preg_match('/SM-G870A/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS5A');
 				}
-				else if (preg_match('/SM-G900A|SM-G900F|SM-G900H|SM-G900M|SM-G900P|SM-G900R4|SM-G900T|SM-G900V|SM-G900W8|SM-G800F/i', $user_agent))
+				else if (preg_match('/SM-G900A|SM-G900F|SM-G900H|SM-G900M|SM-G900P|SM-G900R4|SM-G900T|SM-G900V|SM-G900W8|SM-G800F/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS5');
 				}
-				else if (preg_match('/SM-G920F/i', $user_agent))
+				else if (preg_match('/SM-G920F/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS6');
 				}
-				else if (preg_match('/SGH-I497/i', $user_agent))
+				else if (preg_match('/SGH-I497/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SG2T');
 				}
-				else if (preg_match('/GT-P5210|SM-T110|SM-T310/i', $user_agent))
+				else if (preg_match('/GT-P5210|SM-T110|SM-T310/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGT3');
 				}
-				else if (preg_match('/SM-T210/i', $user_agent))
+				else if (preg_match('/SM-T210/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGT3W');
 				}
-				else if (preg_match('/SM-T335|SM-T530/i', $user_agent))
+				else if (preg_match('/SM-T335|SM-T530/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGT4');
 				}
-				else if (preg_match('/SM-T520/i', $user_agent))
+				else if (preg_match('/SM-T520/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGTP');
 				}
-				else if (preg_match('/SGH-I537/i', $user_agent))
+				else if (preg_match('/SGH-I537/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS4A');
 				}
-				else if (preg_match('/GT-I9505|GT-I9500|SPH-L720T/i', $user_agent))
+				else if (preg_match('/GT-I9505|GT-I9500|SPH-L720T/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS4');
 				}
-				else if (preg_match('/GT-I9100P/i', $user_agent))
+				else if (preg_match('/GT-I9100P/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS2');
 				}
-				else if (preg_match('/SM-N9005|SM-P600/i', $user_agent))
+				else if (preg_match('/SM-N9005|SM-P600/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGN3');
 				}
-				else if (preg_match('/SM-N7505/i', $user_agent))
+				else if (preg_match('/SM-N7505/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGN3N');
 				}
-				else if (preg_match('/SM-N910C|SM-N910F/i', $user_agent))
+				else if (preg_match('/SM-N910C|SM-N910F/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGN4');
 				}
-				else if (preg_match('/SM-N920P/i', $user_agent))
+				else if (preg_match('/SM-N920P/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGN5');
 				}
-				else if (preg_match('/SM-G357FZ/i', $user_agent))
+				else if (preg_match('/SM-G357FZ/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGA4');
 				}
-				else if (preg_match('/SM-G925P/i', $user_agent))
+				else if (preg_match('/SM-G925P/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS6E');
 				}
-				else if (preg_match('/SM-G935F/i', $user_agent))
+				else if (preg_match('/SM-G935F/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS7E');
 				}
-				else if (preg_match('/SM-G950F|SM-G955F/i', $user_agent))
+				else if (preg_match('/SM-G950F|SM-G955F/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS8');
 				}
-				else if (preg_match('/GT-S7582/i', $user_agent))
+				else if (preg_match('/GT-S7582/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGSD2');
 				}
-				else if (preg_match('/GT-I9100P/i', $user_agent))
+				else if (preg_match('/GT-I9100P/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGS2');
 				}
@@ -177,39 +189,39 @@ class MobileDeviceDetect
 				{
 					$status = $this->language -> __get('HPL01');
 				}
-				else if (preg_match('/EVA-L09/i', $user_agent))
+				else if (preg_match('/EVA-L09/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('HPL09');
 				}
-				else if (preg_match('/VNS-L23/i', $user_agent))
+				else if (preg_match('/VNS-L23/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('HPL23');
 				}
-				else if (preg_match('/IMM76B/i', $user_agent))
+				else if (preg_match('/IMM76B/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SGN');
 				}
-				else if (preg_match('/TF101/i', $user_agent))
+				else if (preg_match('/TF101/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('ATT');
 				}
-				else if (preg_match('/Archos 40b/i', $user_agent))
+				else if (preg_match('/Archos 40b/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('A4TS');
 				}
-				else if (preg_match('/A0001/i', $user_agent))
+				else if (preg_match('/A0001/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('OPO');
 				}
-				else if (preg_match('/Orange Nura/i', $user_agent))
+				else if (preg_match('/Orange Nura/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('ORN');
 				}
-				else if (preg_match('/XT1030/i', $user_agent))
+				else if (preg_match('/XT1030/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('MDM');
 				}
-				else if (preg_match('/TIANYU-KTOUCH/i', $user_agent))
+				else if (preg_match('/TIANYU-KTOUCH/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('TKT');
 				}
@@ -217,59 +229,59 @@ class MobileDeviceDetect
 				{
 					$status = $this->language -> __get('SXED');
 				}
-				else if (preg_match('/C2005|D2303/i', $user_agent))
+				else if (preg_match('/C2005|D2303/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SXM2');
 				}
-				else if (preg_match('/C6906/i', $user_agent))
+				else if (preg_match('/C6906/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SXZ1');
 				}
-				else if (preg_match('/D5803/i', $user_agent))
+				else if (preg_match('/D5803/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('SXZ3');
 				}
-				else if (preg_match('/P710/i', $user_agent))
+				else if (preg_match('/P710/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('LGOL7IT');
 				}
-				else if (preg_match('/LG-H850/i', $user_agent))
+				else if (preg_match('/LG-H850/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('LGH850');
 				}
-				else if (preg_match('/LG-V500/i', $user_agent))
+				else if (preg_match('/LG-V500/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('LGV500');
 				}
-				else if (preg_match('/lg/i', $user_agent))
+				else if (preg_match('/lg/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('LG');
 				}
-				else if (preg_match('/ASUS_T00J/i', $user_agent))
+				else if (preg_match('/ASUS_T00J/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('ATOOJ');
 				}
-				else if (preg_match('/Aquaris E5/i', $user_agent))
+				else if (preg_match('/Aquaris E5/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('AE5HD');
 				}
-				else if (preg_match('/HTC Desire|626s/i', $user_agent))
+				else if (preg_match('/HTC Desire|626s/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('HTCD');
 				}
-				else if (preg_match('/Nexus One/i', $user_agent))
+				else if (preg_match('/Nexus One/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('N1');
 				}
-				else if (preg_match('/Nexus 4|LRX22C|LVY48F|LMY47V/i', $user_agent))
+				else if (preg_match('/Nexus 4|LRX22C|LVY48F|LMY47V/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('N4');
 				}
-				else if (preg_match('/Nexus 5|LMY48S/i', $user_agent))
+				else if (preg_match('/Nexus 5|LMY48S/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('N5');
 				}
-				else if (preg_match('/Nexus 7|KTU84P/i', $user_agent))
+				else if (preg_match('/Nexus 7|KTU84P/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('N7');
 				}
@@ -277,7 +289,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language -> __get('N9');
 				}
-				else if (preg_match('/Lenovo_K50_T5/i', $user_agent))
+				else if (preg_match('/Lenovo_K50_T5/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('LK50T5');
 				}
@@ -287,11 +299,11 @@ class MobileDeviceDetect
 				}
 				$mobile_browser = $android;
 			break;
-			case (preg_match('/opera mini/i', $user_agent));
+			case (preg_match('/opera mini/i', $this->_user_agent));
 				$status = $this->language -> __get('MOBILE_DEVICE');
 				$mobile_browser = $opera;
 			break;
-			case (preg_match('/blackberry/i', $user_agent));
+			case (preg_match('/blackberry/i', $this->_user_agent));
 				if (preg_match('/BlackBerry9900|BlackBerry9930|BlackBerry9790|BlackBerry9780|BlackBerry9700|BlackBerry9650|BlackBerry9000|/i',$user_agent))
 				{
 					$status = 'BlackBerry Bold';
@@ -300,27 +312,27 @@ class MobileDeviceDetect
 				{
 					$status = $this->language -> __get('BBCURVE');
 				}
-				else if (preg_match('/BlackBerry9860|BlackBerry9850|BlackBerry9810|BlackBerry9800/i', $user_agent))
+				else if (preg_match('/BlackBerry9860|BlackBerry9850|BlackBerry9810|BlackBerry9800/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBTORCH');
 				}
-				else if (preg_match('/BlackBerry9900/i', $user_agent))
+				else if (preg_match('/BlackBerry9900/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBTOUCH');
 				}
-				else if (preg_match('/BlackBerry9105/i', $user_agent))
+				else if (preg_match('/BlackBerry9105/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBPEARL');
 				}
-				else if (preg_match('/BlackBerry8220/i', $user_agent))
+				else if (preg_match('/BlackBerry8220/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBPEARLF');
 				}
-				else if (preg_match('/BlackBerry Storm|BlackBerry Storm2/i', $user_agent))
+				else if (preg_match('/BlackBerry Storm|BlackBerry Storm2/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBSTORM');
 				}
-				else if (preg_match('/BlackBerry Passport/i', $user_agent))
+				else if (preg_match('/BlackBerry Passport/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBPP');
 				}
@@ -328,7 +340,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language -> __get('BBP');
 				}
-				else if (preg_match('/BlackBerry PlayBook/i', $user_agent))
+				else if (preg_match('/BlackBerry PlayBook/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('BBPB');
 				}
@@ -338,12 +350,12 @@ class MobileDeviceDetect
 				}
 				$mobile_browser = $blackberry;
 			break;
-			case (preg_match('/(pre\/|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine)/i', $user_agent));
+			case (preg_match('/(pre\/|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine)/i', $this->_user_agent));
 				$status = $this->language -> __get('PALM');
 				$mobile_browser = $palm;
 			break;
-			case (preg_match('/(iris|3g_t|windows ce|windows Phone|opera mobi|windows ce; smartphone;|windows ce; iemobile)/i', $user_agent));
-				if (preg_match('/Lumia 640 XL/i', $user_agent))
+			case (preg_match('/(iris|3g_t|windows ce|windows Phone|opera mobi|windows ce; smartphone;|windows ce; iemobile)/i', $this->_user_agent));
+				if (preg_match('/Lumia 640 XL/i', $this->_user_agent))
 				{
 					$status = $this->language -> __get('L640XL');
 				}
@@ -353,11 +365,11 @@ class MobileDeviceDetect
 				}
 				$mobile_browser = $windows;
 			break;
-			case (preg_match('/lge vx10000/i', $user_agent));
+			case (preg_match('/lge vx10000/i', $this->_user_agent));
 				$status = $this->language -> __get('VOYAGER');
 				$mobile_browser = $windows;
 			break;
-			case (preg_match('/(mini 9.5|vx1000|lge |m800|e860|u940|ux840|compal|wireless| mobi|ahong|lg380|lgku|lgu900|lg210|lg47|lg920|lg840|lg370|sam-r|mg50|s55|g83|t66|vx400|mk99|d615|d763|el370|sl900|mp500|samu3|samu4|vx10|xda_|samu5|samu6|samu7|samu9|a615|b832|m881|s920|n210|s700|c-810|_h797|mob-x|sk16d|848b|mowser|s580|r800|471x|v120|rim8|c500foma:|160x|x160|480x|x640|t503|w839|i250|sprint|w398samr810|m5252|c7100|mt126|x225|s5330|s820|htil-g1|fly v71|s302|-x113|novarra|k610i|-three|8325rc|8352rc|sanyo|vx54|c888|nx250|n120|mtk |c5588|s710|t880|c5005|i;458x|p404i|s210|c5100|teleca|s940|c500|s590|foma|samsu|vx8|vx9|a1000|_mms|myx|a700|gu1100|bc831|e300|ems100|me701|me702m-three|sd588|s800|8325rc|ac831|mw200|brew |d88|htc\/|htc_touch|355x|m50|km100|d736|p-9521|telco|sl74|ktouch|m4u\/|me702|8325rc|kddi|phone|lg |sonyericsson|samsung|240x|x320|vx10|nokia|sony cmd|motorola|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|psp|treo)/i', $user_agent));
+			case (preg_match('/(mini 9.5|vx1000|lge |m800|e860|u940|ux840|compal|wireless| mobi|ahong|lg380|lgku|lgu900|lg210|lg47|lg920|lg840|lg370|sam-r|mg50|s55|g83|t66|vx400|mk99|d615|d763|el370|sl900|mp500|samu3|samu4|vx10|xda_|samu5|samu6|samu7|samu9|a615|b832|m881|s920|n210|s700|c-810|_h797|mob-x|sk16d|848b|mowser|s580|r800|471x|v120|rim8|c500foma:|160x|x160|480x|x640|t503|w839|i250|sprint|w398samr810|m5252|c7100|mt126|x225|s5330|s820|htil-g1|fly v71|s302|-x113|novarra|k610i|-three|8325rc|8352rc|sanyo|vx54|c888|nx250|n120|mtk |c5588|s710|t880|c5005|i;458x|p404i|s210|c5100|teleca|s940|c500|s590|foma|samsu|vx8|vx9|a1000|_mms|myx|a700|gu1100|bc831|e300|ems100|me701|me702m-three|sd588|s800|8325rc|ac831|mw200|brew |d88|htc\/|htc_touch|355x|m50|km100|d736|p-9521|telco|sl74|ktouch|m4u\/|me702|8325rc|kddi|phone|lg |sonyericsson|samsung|240x|x320|vx10|nokia|sony cmd|motorola|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|psp|treo)/i', $this->_user_agent));
 				$status = $this->language -> __get('MOBILE_DEVICE');
 				$mobile_browser = true;
 			break;
@@ -374,16 +386,210 @@ class MobileDeviceDetect
 				$mobile_browser = false;
 			break;
 		}
-		header('Cache-Control: no-transform');
-		header('Vary: User-Agent');
 		
-		if ($mobile_browser == '')
+		//@header('Cache-Control: no-transform');
+		//@header('Vary: User-Agent');
+		
+		if ($status == '')
 		{
 			return $mobile_browser;
+		}
+		elseif ($mobile_browser == '')
+		{
+			return $status;
 		}
 		else
 		{
 			return array($mobile_browser, $status);
+		}	
+	}
+
+    private $_basic_browser = array (
+	'Trident\/7.0' => 'Internet Explorer 11',
+    'Beamrise' => 'Beamrise',
+    'Opera' => 'Opera',
+    'OPR' => 'Opera',
+    'Shiira' => 'Shiira',
+    'Chimera' => 'Chimera',
+    'Phoenix' => 'Phoenix',
+    'Firebird' => 'Firebird',
+    'Camino' => 'Camino',
+    'Netscape' => 'Netscape',
+    'OmniWeb' => 'OmniWeb',
+    'Konqueror' => 'Konqueror',
+    'icab' => 'iCab',
+     'Lynx' => 'Lynx',
+    'Links' => 'Links',
+    'hotjava' => 'HotJava',
+    'amaya' => 'Amaya',
+    'IBrowse' => 'IBrowse',
+    'iTunes' => 'iTunes',
+    'Silk' => 'Silk',
+    'Dillo' => 'Dillo', 
+    'Maxthon' => 'Maxthon',
+    'Arora' => 'Arora',
+    'Galeon' => 'Galeon',
+    'Iceape' => 'Iceape',
+    'Iceweasel' => 'Iceweasel',
+    'Midori' => 'Midori',
+    'QupZilla' => 'QupZilla',
+    'Namoroka' => 'Namoroka',
+    'NetSurf' => 'NetSurf',
+    'BOLT' => 'BOLT',
+    'EudoraWeb' => 'EudoraWeb',
+    'shadowfox' => 'ShadowFox',
+    'Swiftfox' => 'Swiftfox',
+    'Uzbl' => 'Uzbl',
+    'UCBrowser' => 'UCBrowser',
+    'Kindle' => 'Kindle',
+    'wOSBrowser' => 'wOSBrowser',
+    'Epiphany' => 'Epiphany', 
+    'SeaMonkey' => 'SeaMonkey',
+    'Avant Browser' => 'Avant Browser',
+    'Firefox' => 'Firefox',
+    'Chrome' => 'Google Chrome',
+    'MSIE' => 'Internet Explorer',
+    'Internet Explorer' => 'Internet Explorer',
+     'Safari' => 'Safari',
+    'Mozilla' => 'Mozilla'  
+    );
+
+	private $_basic_platform = array(
+	'windows' => 'Windows', 
+	'iPad' => 'iPad', 
+	'iPod' => 'iPod', 
+    'iPhone' => 'iPhone',
+	'mac' => 'Apple', 
+    'android' => 'Android', 
+    'linux' => 'Linux',
+    'Nokia' => 'Nokia',
+	'BlackBerry' => 'BlackBerry',
+    'FreeBSD' => 'FreeBSD',
+	'OpenBSD' => 'OpenBSD',
+    'NetBSD' => 'NetBSD',
+	'UNIX' => 'UNIX',
+    'DragonFly' => 'DragonFlyBSD',
+    'OpenSolaris' => 'OpenSolaris',
+    'SunOS' => 'SunOS', 
+    'OS\/2' => 'OS/2',
+    'BeOS' => 'BeOS',
+    'win' => 'Windows',
+    'Dillo' => 'Linux',
+    'PalmOS' => 'PalmOS',
+    'RebelMouse' => 'RebelMouse'   
+	);
+	
+	/**
+	* @package Browser & Platform Detect class/functions
+	* @author https://stackoverflow.com/users/1060394/jay
+	* @ https://stackoverflow.com/questions/2257597/reliable-user-browser-detection-with-php
+	*/
+	function detect() 
+	{
+        $this->detectBrowser();
+        $this->detectPlatform();
+        return $this;
+	}
+	
+	/**
+	* @package Browser & Platform Detect class/functions
+	* @author https://stackoverflow.com/users/1060394/jay
+	* @ https://stackoverflow.com/questions/2257597/reliable-user-browser-detection-with-php
+	*/
+	function detectBrowser()
+	{
+		foreach($this->_basic_browser as $pattern => $name) 
+		{
+			if( preg_match("/".$pattern."/i",$this->_user_agent, $match)) 
+			{
+				$this->_name = $name;
+				 // finally get the correct version number
+				$known = array('Version', $pattern, 'other');
+				$pattern_version = '#(?<browser>' . join('|', $known).')[/ ]+(?<version>[0-9.|a-zA-Z.]*)#';
+				if (!preg_match_all($pattern_version, $this->_user_agent, $matches)) 
+				{
+					// we have no matching number just continue
+				}
+				// see how many we have
+				$i = count($matches['browser']);
+				if ($i != 1) 
+				{
+					//we will have two since we are not using 'other' argument yet
+					//see if version is before or after the name
+					if (strripos($this->_user_agent,"Version") < strripos($this->_user_agent,$pattern))
+					{
+						@$this->_version = $matches['version'][0];
+					}
+					else 
+					{
+						@$this->_version = $matches['version'][1];
+					}
+				}
+				else 
+				{
+					$this->_version = $matches['version'][0];
+				}
+				break;
+			}
 		}
 	}
+   
+	/**
+	* @package Browser & Platform Detect class/functions
+	* @author https://stackoverflow.com/users/1060394/jay
+	* @ https://stackoverflow.com/questions/2257597/reliable-user-browser-detection-with-php
+	*/
+    function detectPlatform() 
+	{
+      foreach($this->_basic_platform as $key => $platform) 
+	  {
+            if (stripos($this->_user_agent, $key) !== false) 
+			{
+                $this->_platform = $platform;
+                break;
+            } 
+      }
+    }
+	
+	/**
+	* @package Browser & Platform Detect class/functions
+	* @author https://stackoverflow.com/users/1060394/jay
+	* @ https://stackoverflow.com/questions/2257597/reliable-user-browser-detection-with-php
+	*/
+	function getBrowser()
+	{
+		if(!empty($this->_name))
+		{
+			return $this->_name;
+		}
+	}
+	
+	function getVersion()
+	{
+		return $this->_version;
+	}
+	
+	function getPlatform() 
+	{
+		if(!empty($this->_platform))
+		{
+			return $this->_platform;
+		}
+	}
+	
+	function getUserAgent()
+	{
+		return $this->_user_agent;
+	}
+	
+	function getInfo()
+	{
+		return "<strong>Browser:</strong> {$this->getBrowser()}" .
+		"<strong> - </strong> {$this->getVersion()}" .
+		//"<strong>Browser User Agent String:</strong> {$this->getUserAgent()}<br/>\n" .
+		" :: <strong>Platform:</strong> {$this->getPlatform()}" .
+		"<strong>-</strong> {$this->mobile_device_detect()}<br/>";
+	}
 }
+
+//end of class

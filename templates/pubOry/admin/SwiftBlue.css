@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+BODY {
+	margin:5px;
+}
+TH, TD {
+	font-size: 68.5%;
+}
+
+.gen {
+	font-size: 1.1em;
+}

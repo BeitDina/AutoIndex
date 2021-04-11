@@ -1,0 +1,163 @@
+.titre2 {
+	PADDING-LEFT: 7px; FONT: bolder x-small Verdana, Verdana, Arial, Helvetica, sans-serif; COLOR: #286fff; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+.titre3 {
+	PADDING-LEFT: 15px; FONT-WEIGHT: bold; FONT-SIZE: x-small; COLOR: #3da3f5; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+/* Text style of module a:link */
+A:link {
+	COLOR: #B6C7E5; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #80FFFF; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: green; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.visit {
+	FONT-SIZE: 9px; FONT-FAMILY: Times
+}
+/* Set the background color of the page.*/
+BODY
+{  BACKGROUND-COLOR: #99CCFF; 
+}
+.texte {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #000000; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.textedom {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 12px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte1 {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #006600; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte_sitenou {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.texte_beta {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: #666666; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.texte_red {
+	BORDER-RIGHT: black; BORDER-TOP: black; FONT-WEIGHT: normal; FONT-SIZE: 11px; LEFT: 20px; BORDER-LEFT: black; COLOR: red; BORDER-BOTTOM: black; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte2 {
+	FONT-SIZE: 11px; LEFT: 20px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.texte3 {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+.T1 {
+	FONT-WEIGHT: bold; FONT-SIZE: small; COLOR: #004000; FONT-FAMILY: Geneva, Verdana, Arial, Helvetica, sans-serif; HEIGHT: 5px; TEXT-ALIGN: left
+}
+.T2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 3px; MARGIN-LEFT: 20px; COLOR: #cc0000; TEXT-INDENT: 15pt; MARGIN-RIGHT: 35px; PADDING-TOP: 3px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.barre {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; COLOR: white; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #436bb5; TEXT-DECORATION: none
+}
+.textecent {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.textecent2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.lien {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.lien_atentie {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; COLOR: red; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.liencale {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: #11668e; FONT-STYLE: normal; FONT-FAMILY: Verdana, Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.barreclair {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; VERTICAL-ALIGN: middle; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7
+}
+.barreclair2 {
+	FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 5px; VERTICAL-ALIGN: middle; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #d3eafe
+}
+.lienp {
+	FONT-WEIGHT: normal; FONT-SIZE: xx-small; COLOR: #006699; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+/* Set the default input values to:"BODER-COLOR: B5C6DE; BACKGROUND-COLOR: #b8d6fa;".*/
+INPUT {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 1px; MARGIN: 1px; COLOR: #B6C7E5; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BORDER-RIGHT-WIDTH: 1px; BODER-COLOR: B5C6DE; BACKGROUND-COLOR: #3366cc
+}
+TEXTAREA {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-LEFT-COLOR: #c8c8c8; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #c8c8c8; MARGIN: 1px; COLOR: black; BORDER-TOP-COLOR: #c8c8c8; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #c8c8c8
+}
+SELECT {
+	BORDER-TOP-WIDTH: 1px; FONT-WEIGHT: normal; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 11px; BORDER-BOTTOM-WIDTH: 1px; MARGIN: 0px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f7f7f7; BORDER-RIGHT-WIDTH: 1px; BODER-COLOR: B5C6DE
+}
+/* Set the A default color to:"COLOR: #006699;".*/
+A {
+	FONT-WEIGHT: normal; FONT-SIZE: x-small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.test {
+	FONT-WEIGHT: bold; FONT-SIZE: xx-small; COLOR: #11668e; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none
+}
+.cadre {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; FONT-WEIGHT: bold; FONT-SIZE: x-small; PADDING-BOTTOM: 20px; COLOR: #000000; PADDING-TOP: 20px; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.cadress {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; FONT-WEIGHT: bolder; FONT-SIZE: x-small; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f9ff; TEXT-DECORATION: none
+}
+/* Set the form default size to:"0px".*/
+FORM {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+/* Set the border default color of the page:"#c6c7ff".*/
+HR {
+	BORDER-RIGHT: #000000 4px solid; BORDER-TOP: #000000 4px solid; BORDER-LEFT: #000000 4px solid; BORDER-BOTTOM: #000000 4px solid
+}
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #FFA34F; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(../images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(../images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px; }
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid; }
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+/* This is the block title style */
+th.mxthHead	{
+	border: 0px;
+	font-size: 12px;
+	font-variant: small-caps;
+	text-transform: capitalize;
+}
+
+th.mxthHead_none	{
+	background-color: #EFEFEF; height: 0px;
+	background-image: url();
+	color: #000066;
+	border: 0px;
+	font-size: 12px;
+	font-variant: small-caps;
+	text-transform: capitalize;
+}

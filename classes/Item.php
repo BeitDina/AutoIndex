@@ -179,6 +179,7 @@ abstract class Item
 	{
 		$parent_dir = self::make_sure_slash($parent_dir);
 		$full_name = $parent_dir . $filename;
+		$descript_ion_file = $parent_dir . 'descript.ion';
 		$this -> is_parent_dir = false;
 		$this -> m_time = filemtime($full_name);
 		$this -> a_time = fileatime($full_name);
@@ -186,15 +187,22 @@ abstract class Item
 		$this ->  last_write_time = date('h:i:s', filemtime($full_name));
 		$this -> icon = $this -> new_icon = $this -> md5_link = $this -> thumb_link = '';
 		
-		global $descriptions, $words;
+		global $config, $descriptions, $words;
 		
-		$description = ((DESCRIPTION_FILE && $descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : strtoupper(substr($filename, 0, strrpos($filename, '.'))));
+		$description = (($descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : strtoupper(substr($filename, 0, strrpos($filename, '.'))));
 		
 		$extend_description = (($words -> is_set('CHAP') && $words -> is_set(strtoupper(substr($description, 0, strrpos($description, '_'))))) ? $words -> __get(strtoupper(substr($description, 0, strrpos($description, '_')))) . ' ' . $words -> __get('CHAP') . ' ' . substr(strrchr($description, '_'), 1) : $description);
 		
 		$extend_description = ($words -> is_set($extend_description) ? $words -> __get($extend_description) : $extend_description);
 		
-		$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $extend_description);
+		if (is_file($descript_ion_file))
+		{
+			$descript_ion =  $config -> dos_description($filename, $descript_ion_file);
+			
+			$descript_ion = !empty($descript_ion) ? $descript_ion . ' ' . $descript_ion : '';
+		}
+		
+		$this -> description = ($words -> is_set($description) ? $words -> __get($description) . $descript_ion : $extend_description . $descript_ion);
 		
 		$this -> parent_dir = $parent_dir;
 		

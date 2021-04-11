@@ -1,0 +1,66 @@
+.s {
+	COLOR: #cb0000; TEXT-DECORATION: none
+}
+.s:hover {
+	TEXT-DECORATION: underline
+}
+.rel {
+	FONT-WEIGHT: bold; FONT-SIZE: 90%; COLOR: #cb0000; TEXT-DECORATION: none
+}
+.rel:hover {
+	TEXT-DECORATION: underline
+}
+.rel:active {
+	COLOR: red
+}
+.rel:visited {
+	COLOR: darkred
+}
+.tiP {
+	MARGIN: 0px 0px 5px
+}
+.ti {
+	FONT-WEIGHT: bold; COLOR: #cb0000; TEXT-DECORATION: underline
+}
+.ti:hover {
+	TEXT-DECORATION: underline
+}
+.ti:active {
+	COLOR: red
+}
+.ti:visited {
+	COLOR: darkred
+}
+.sp {
+	FONT-WEIGHT: bold; FONT-SIZE: 85%; COLOR: #444444
+}
+.ab {
+	COLOR: #333333
+}
+.srcP {
+	FONT-WEIGHT: bold; FONT-SIZE: 85%; MARGIN: 3px 0px 0px; COLOR: #666666; TEXT-DECORATION: none
+}
+.mor {
+	FONT-WEIGHT: bold; COLOR: #666666; TEXT-DECORATION: none
+}
+.mor:hover {
+	TEXT-DECORATION: underline
+}
+.tbl {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: -2px; BORDER-LEFT: 0px; WIDTH: 97%; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+.atl {
+	FONT-WEIGHT: normal; FONT-SIZE: 100%; COLOR: #cb0000; TEXT-DECORATION: none
+}
+.atl:hover {
+	TEXT-DECORATION: underline
+}
+BLOCKQUOTE.ind {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.typ {
+	FONT-WEIGHT: bold; FONT-SIZE: 85%; COLOR: #666666
+}
+.src {
+	FONT-WEIGHT: bold; FONT-SIZE: 85%; COLOR: #666666
+}

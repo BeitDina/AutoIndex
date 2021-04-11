@@ -194,7 +194,7 @@ RewriteRule ^/(forum|[a-z0-9_-]*-f)([0-9]+)(-([0-9]+))?\.html$ viewforum.php?f=$
 #AddHandler x-httpd-5-3-php5  .php
 #AddHandler x-httpd-5-4-php5  .php
 #AddHandler x-httpd-5-5-php5  .php
-AddHandler x-httpd-5-6-php5  .php
+#AddHandler x-httpd-5-6-php5  .php
 
 #
 # Error redirects - require the MX-Publisher ErrorDocs module to be installed

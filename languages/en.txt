@@ -685,3 +685,5 @@ SXZ3	Sony Xperia Z3
 TKT	  Tianyu K-Touch
 VOYAGER	Voyager
 WSP	Windows Smartphone
+MOBILE_DEVICE	Mobile Device
+DESKTOP	Desktop-PC

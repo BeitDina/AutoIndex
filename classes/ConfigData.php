@@ -151,6 +151,51 @@ class ConfigData implements Iterator
 	}
 	
 	/**
+	 * @param string $file we do not use explode() in PHP7+ 
+	 * The filename to read the data from
+	 */
+	public function dos_description($full_name, $file = './descript.ion')
+	{
+		if ($file === false)
+		{
+			return;
+		}
+		$this -> valid = true;
+		//trim path
+		$file_dir = trim(dirname($file));
+		//trim file name
+		$file_name = trim(basename($full_name));
+		if (strpos($full_name, '.') !== false)
+		{
+			// Nested file
+			$filename_ext = substr(strrchr($full_name, '.'), 1);
+		}
+		//rebuild path
+		$file_path = $file_dir . "/{$file_name}";
+		
+		$contents = file($file);
+		if ($contents === false)
+		{
+			throw new ExceptionFatal('Error reading file <em>' . Url::html_output($file) . '</em>');
+		}
+		foreach ($contents as $i => $line)
+		{
+			$line = rtrim($line, "\r\n");
+			if (self::line_is_comment($line))
+			{
+				continue;
+			}
+			$parts = explode($file_name, $line);
+			if (count($parts) > 0)
+			{
+				//throw new ExceptionFatal('Incorrect format for file <em>explode on ' . $full_name . ' line: ' . print_r($line, true) . ' ' . Url::html_output($file) . '</em> on line ' . ($i + 1) . '.<br />Format is "file name[space]value"');
+				return empty($parts[1]) ? $parts[0] : $parts[1];
+			}
+			return false;
+		}
+	}
+	
+	/**
 	 * $config[$key] will be set to $info.
 	 *
 	 * @param string $key

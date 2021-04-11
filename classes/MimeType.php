@@ -117,6 +117,7 @@ class MimeType
 			'application/xml' => array('xml', 'xsl'),
 			'application/xml-dtd' => array('dtd'),
 			'application/zip' => array('zip'),
+			'application/7-Zip' => array('7z'),			
 			'audio/basic' => array('au', 'snd'),
 			'audio/midi' => array('mid', 'midi', 'kar'),
 			'audio/mpeg' => array('mpga', 'mp2', 'mp3'),
