@@ -633,7 +633,6 @@ BBPP	BlackBerry Passport
 BBSTORM	BlackBerry Storm
 BBTOUCH	'BlackBerry Touch
 BLACKBERRY	BlackBerry
-DESKTOP	'Desktop
 HP8	HUAWEI P8
 HPL01	Huawei Honor 7
 HPL09	Huawei P9 EVA-L09

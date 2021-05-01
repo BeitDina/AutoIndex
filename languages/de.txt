@@ -634,7 +634,6 @@ BBPP	BlackBerry Passport
 BBSTORM	BlackBerry Storm
 BBTOUCH	'BlackBerry Touch
 BLACKBERRY	BlackBerry
-DESKTOP	'Desktop
 HP8	HUAWEI P8
 HPL01	Huawei Honor 7
 HPL09	Huawei P9 EVA-L09
@@ -702,7 +701,7 @@ BBPP	BlackBerry Passport
 BBSTORM	BlackBerry Storm
 BBTOUCH	'BlackBerry Touch
 BLACKBERRY	BlackBerry
-DESKTOP	'Desktop
+DESKTOPPC	'Desktop
 HP8	HUAWEI P8
 HPL01	Huawei Honor 7
 HPL09	Huawei P9 EVA-L09
@@ -754,3 +753,5 @@ SXZ3	Sony Xperia Z3
 TKT	  Tianyu K-Touch
 VOYAGER	Voyager
 WSP	Windows Smartphone
+MOBILE_DEVICE	Mobile Device
+DESKTOP	Desktop-PC
