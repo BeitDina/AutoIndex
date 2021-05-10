@@ -153,8 +153,22 @@ class DirItem extends Item
 			}
 			$this -> filename = $filename = substr($filename, 0, -1); 
 			$mb_strlen = mb_strlen($filename);
-			$this -> icon = $config -> __get('icon_path') . 'dir.png';
 			
+			//Special common folders 
+			switch ($filename)
+			{
+				case 'apps':
+				case 'docs':
+				case 'Fonts':
+				case 'fonts':
+					$this -> icon = $config -> __get('icon_path') . $filename . '.png';
+				break;
+				
+				default:
+					$this -> icon = $config -> __get('icon_path') . 'dir.png';
+				break;
+			}
+
 			if (($mb_strlen > 1) && ($mb_strlen < 6)) 
 			{
 				$decoded_lang_name = self::decode_country_name($filename, 'language');
@@ -163,18 +177,6 @@ class DirItem extends Item
 				if (!empty($decoded_lang_name))
 				{
 					$this -> icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
-				}
-				
-				//Special common folders 
-				switch ($filename)
-				{
-					case 'docs':
-					$this -> icon = @file_exists($config -> __get('icon_path') . 'docs.png') ? $config -> __get('icon_path') . 'docs.png' : $this -> icon;
-					break;
-					
-					case 'apps':
-					$this -> icon = $config -> __get('icon_path') . 'dir.png';
-					break;
 				}
 			}
 			
