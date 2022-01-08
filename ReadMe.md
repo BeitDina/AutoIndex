@@ -8,14 +8,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="blue">
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />  
-<style type="text/css" title="AutoIndex Default">
-@import url("stylesheet.css");
-td, th
-{
-border: 1px solid;
-}
-</style>
-  <title>AutoIndex PHP Script: Readme</title>
+<style type="text/css" title="AutoIndex Default">td, th { border: 1px solid; }</style>
+<title>AutoIndex PHP Script: Readme</title>
 </head>
 <body class="autoindex_div">
 <hr class="default_hr">
