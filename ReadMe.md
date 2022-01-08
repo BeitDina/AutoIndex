@@ -7,13 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="blue">
+<link rel="stylesheet" type="text/css" href="stylesheet.css" />  
 <style type="text/css" title="AutoIndex Default">
-@import "stylesheet.css";
+@import url("stylesheet.css");
 td, th
 {
 border: 1px solid;
 }
-</style><title>AutoIndex PHP Script: Readme</title></head>
+</style>
+  <title>AutoIndex PHP Script: Readme</title>
+</head>
 <body class="autoindex_div">
 <hr class="default_hr">
 
