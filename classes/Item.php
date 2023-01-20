@@ -104,14 +104,6 @@ abstract class Item
 	 * @var bool True if this is a link to '../'
 	 */
 	protected $is_parent_dir;
-	/**
-	 * @var bool True if this is a link to '../'
-	 */
-	protected $creation_time;
-	/**
-	 * @var bool True if this is a link to '../'
-	 */
-	protected $last_write_time;
 	
 	/**
 	 * @param int $timestamp Time in UNIX timestamp format
@@ -179,43 +171,31 @@ abstract class Item
 	{
 		$parent_dir = self::make_sure_slash($parent_dir);
 		$full_name = $parent_dir . $filename;
-		$descript_ion_file = $parent_dir . 'descript.ion';
-		$this -> is_parent_dir = false;
-		$this -> m_time = filemtime($full_name);
-		$this -> a_time = fileatime($full_name);
-		$this ->  creation_time = date('y-m-d h:i:s', filectime($full_name));
-		$this ->  last_write_time = date('h:i:s', filemtime($full_name));
-		$this -> icon = $this -> new_icon = $this -> md5_link = $this -> thumb_link = '';
+		$this->is_parent_dir = false;
+		$this->m_time = filemtime($full_name);
+		$this->a_time = fileatime($full_name);
+		//$this->creation_time = date('y-m-d h:i:s', filectime($full_name));
+		$this->last_write_time = date('h:i:s', filemtime($full_name));
+		$this->icon = $this->new_icon = $this->md5_link = $this->thumb_link = '';
 		
-		global $config, $descriptions, $words;
+		global $descriptions, $words;
 		
-		$description = (($descriptions -> is_set($full_name)) ? $descriptions -> __get($full_name) : strtoupper(substr($filename, 0, strrpos($filename, '.'))));
-		
-		$extend_description = (($words -> is_set('CHAP') && $words -> is_set(strtoupper(substr($description, 0, strrpos($description, '_'))))) ? $words -> __get(strtoupper(substr($description, 0, strrpos($description, '_')))) . ' ' . $words -> __get('CHAP') . ' ' . substr(strrchr($description, '_'), 1) : $description);
-		
-		$extend_description = ($words -> is_set($extend_description) ? $words -> __get($extend_description) : $extend_description);
-		
-		if (is_file($descript_ion_file))
-		{
-			$descript_ion =  $config -> dos_description($filename, $descript_ion_file);
-			
-			$descript_ion = !empty($descript_ion) ? $descript_ion . ' ' . $descript_ion : '';
-		}
-		
-		$this -> description = ($words -> is_set($description) ? $words -> __get($description) . $descript_ion : $extend_description . $descript_ion);
-		
-		$this -> parent_dir = $parent_dir;
+		$description = ((DESCRIPTION_FILE && $descriptions->is_set($full_name)) ? $descriptions->__get($full_name) : strtoupper(substr($filename, 0, strrpos($filename, '.'))));
+		$extend_description = (($words->is_set('CHAP') && $words->is_set(strtoupper(substr($description, 0, strrpos($description, '_'))))) ? $words->__get(strtoupper(substr($description, 0, strrpos($description, '_')))) . ' ' . $words -> __get('CHAP') . ' ' . substr(strrchr($description, '_'), 1) : $description);
+		$extend_description = ($words->is_set($extend_description) ? $words->__get($extend_description) : $extend_description);
+		$this->description = ($words->is_set($description) ? $words->__get($description) : $extend_description);
+		$this->parent_dir = $parent_dir;
 		
 		if (DAYS_NEW)
 		{
 			global $config;
-			$days_new = $config -> __get('days_new');
-			$age = (time() - $this -> m_time) / 86400;
+			$days_new = $config->__get('days_new');
+			$age = (time() - $this->m_time) / 86400;
 			$age_r = round($age, 1);
 			$s = (($age_r == 1) ? '' : 's');
-			$this -> description = ($age_r  <= 1) ? $this -> description . ' @ ' . $this ->  last_write_time : '';
-			$this -> new_icon = (($days_new > 0 && $age <= $days_new) ?
-			(ICON_PATH ? ' <img src="' . $config -> __get('icon_path')
+			$this->description = ($age_r <= 1) ? $this->description . ' @ ' . $this->last_write_time : $this->description;			
+			$this->new_icon = (($days_new > 0 && $age <= $days_new) ?
+			(ICON_PATH ? ' <img src="' . $config->__get('icon_path')
 			. 'new.png" alt="' . "$age_r day$s" . ' old" height="14" width="28" />' : ' <span class="autoindex_small" style="color: #FF0000;">[New]</span>') : '');
 		}
 	}
@@ -334,12 +314,12 @@ abstract class Item
 					$country_name = 'MOROCCO';
 				break;
 				
-				//jrb ñ Judeo-Arabic
-				//yhd ñ Judeo-Iraqi Arabic
-				//aju ñ Judeo-Moroccan Arabic
-				//yud ñ Judeo-Tripolitanian Arabic
-				//ajt ñ Judeo-Tunisian Arabic
-				//jye ñ Judeo-Yemeni Arabic	
+				//jrb ‚Äì Judeo-Arabic
+				//yhd ‚Äì Judeo-Iraqi Arabic
+				//aju ‚Äì Judeo-Moroccan Arabic
+				//yud ‚Äì Judeo-Tripolitanian Arabic
+				//ajt ‚Äì Judeo-Tunisian Arabic
+				//jye ‚Äì Judeo-Yemeni Arabic	
 				case 'jrb':
 					$lang_name = 'JUDEO-ARABIC';
 					$country_name = 'JUDEA';
@@ -403,7 +383,7 @@ abstract class Item
 				break;
 				
 				case 'ba':
-					$lang_name = 'BASHKIR'; //Baskortost·n (Rusia)
+					$lang_name = 'BASHKIR'; //Baskortost√°n (Rusia)
 					$country_name = 'BOSNIA_&AMP;_HERZEGOVINA'; //Bosnian, Croatian, Serbian
 				break;
 				
@@ -591,10 +571,10 @@ abstract class Item
 					$country_name = 'CHINA';
 				break;
 				//1. Bingzhou		spoken in central Shanxi (the ancient Bing Province), including Taiyuan.
-				//2. L¸liang		spoken in western Shanxi (including L¸liang) and northern Shaanxi.
+				//2. L√ºliang		spoken in western Shanxi (including L√ºliang) and northern Shaanxi.
 				//3. Shangdang	spoken in the area of Changzhi (ancient Shangdang) in southeastern Shanxi.
 				//4. Wutai			spoken in parts of northern Shanxi (including Wutai County) and central Inner Mongolia.
-				//5. DañBao		spoken in parts of northern Shanxi and central Inner Mongolia, including Baotou.
+				//5. Da‚ÄìBao		spoken in parts of northern Shanxi and central Inner Mongolia, including Baotou.
 				//6. Zhang-Hu	spoken in Zhangjiakou in northwestern Hebei and parts of central Inner Mongolia, including Hohhot.
 				//7. Han-Xin		spoken in southeastern Shanxi, southern Hebei (including Handan) and northern Henan (including Xinxiang).
 				//8. Zhi-Yan		spoken in Zhidan County and Yanchuan County in northern Shaanxi.
@@ -605,7 +585,7 @@ abstract class Item
 				break;
 				// Cantonese is spoken in Hong Kong
 				// ??
-				case 'cmn': 	//Chinese Mandarin ??? (Pu tong hua) literally translates into ìcommon tongue.î 
+				case 'cmn': 	//Chinese Mandarin ??? (Pu tong hua) literally translates into ‚Äúcommon tongue.‚Äù 
 					$lang_name = 'CHINESE_MANDARIN';
 					$country_name = 'CHINA';
 				break;
@@ -613,11 +593,11 @@ abstract class Item
 				// ?? / ??
 				//semantic shift has occurred in Min or the rest of Chinese: 
 			    //*tia?B ? "wok". The Min form preserves the original meaning "cooking pot".
-			    //*dzh?nA "rice field". scholars identify the Min word with chÈng ? (MC zying) "raised path between fields", but Norman argues that it is cognate with cÈng ? (MC dzong) "additional layer or floor".
-			    //*töhioC ? "house". the Min word is cognate with shu ? (MC syuH) "to guard".
+			    //*dzh?nA "rice field". scholars identify the Min word with ch√©ng ? (MC zying) "raised path between fields", but Norman argues that it is cognate with c√©ng ? (MC dzong) "additional layer or floor".
+			    //*t≈°hioC ? "house". the Min word is cognate with shu ? (MC syuH) "to guard".
 			    //*tshyiC ? "mouth". In Min this form has displaced the common Chinese term kou ?. It is believed to be cognate with hui ? (MC xjwojH) "beak, bill, snout; to pant".
 				//Austroasiatic origin for some Min words:
-			    //*-d??A "shaman" compared with Vietnamese ?ng (/?o?2/) "to shamanize, to communicate with spirits" and Mon do? "to dance (as if) under demonic possession".
+			    //*-d??A "shaman" compared with Vietnamese √∞?ng (/?o?2/) "to shamanize, to communicate with spirits" and Mon do? "to dance (as if) under demonic possession".
 			    //*ki?nB ? "son" appears to be related to Vietnamese con (/k?n/) and Mon kon "child".
 				
 				// Southern Min: 
@@ -643,7 +623,7 @@ abstract class Item
 				//Literal meaning:	Min [River]	
 				
 				//???  
-				case 'cpx': 	//Chinese Pu-Xian Min, Sing-i˙-ua / ???, (Xianyou dialect) http://www.putian.gov.cn/
+				case 'cpx': 	//Chinese Pu-Xian Min, Sing-i√∫-ua / ???, (Xianyou dialect) http://www.putian.gov.cn/
 					$lang_name = 'CHINESE_PU-XIAN';
 					$country_name = 'CHINA';
 				break;
@@ -745,7 +725,7 @@ abstract class Item
 				
 				case 'cw':
 					$lang_name = 'PAPIAMENTU';   // Papiamentu (Portuguese-based Creole), Dutch, English
-					$country_name = 'CURA«AO'; // Ilha da CuraÁao (Island of Healing)
+					$country_name = 'CURA√áAO'; // Ilha da Cura√ßao (Island of Healing)
 				break;
 				
 				case 'da':
@@ -754,30 +734,30 @@ abstract class Item
 				break;
 				
 				//Geman (Deutsch)
-				/*	deu ñ German
-					gmh ñ Middle High German
-					goh ñ Old High German
-					gct ñ Colonia Tovar German
-					bar ñ Bavarian
-					cim ñ Cimbrian
-					geh ñ Hutterite German
-					ksh ñ Kˆlsch
-					nds ñ Low German
-					sli ñ Lower Silesian
-					ltz ñ Luxembourgish
-					vmf ñ Mainfr‰nkisch
-					mhn ñ Mocheno
-					pfl ñ Palatinate German
-					pdc ñ Pennsylvania German
-					pdt ñ Plautdietsch
-					swg ñ Swabian German
-					gsw ñ Swiss German
-					uln ñ Unserdeutsch
-					sxu ñ Upper Saxon
-					wae ñ Walser German
-					wep ñ Westphalian
-					hrx ñ Riograndenser Hunsr¸ckisch
-					yec ñ Yenish	*/
+				/*	deu ‚Äì German
+					gmh ‚Äì Middle High German
+					goh ‚Äì Old High German
+					gct ‚Äì Colonia Tovar German
+					bar ‚Äì Bavarian
+					cim ‚Äì Cimbrian
+					geh ‚Äì Hutterite German
+					ksh ‚Äì K√∂lsch
+					nds ‚Äì Low German
+					sli ‚Äì Lower Silesian
+					ltz ‚Äì Luxembourgish
+					vmf ‚Äì Mainfr√§nkisch
+					mhn ‚Äì Mocheno
+					pfl ‚Äì Palatinate German
+					pdc ‚Äì Pennsylvania German
+					pdt ‚Äì Plautdietsch
+					swg ‚Äì Swabian German
+					gsw ‚Äì Swiss German
+					uln ‚Äì Unserdeutsch
+					sxu ‚Äì Upper Saxon
+					wae ‚Äì Walser German
+					wep ‚Äì Westphalian
+					hrx ‚Äì Riograndenser Hunsr√ºckisch
+					yec ‚Äì Yenish	*/
 
 				
 				//Germany 	84,900,000 	75,101,421 (91.8%) 	5,600,000 (6.9%) 	De facto sole nationwide official language
@@ -840,7 +820,7 @@ abstract class Item
 					$country_name = 'DENMARK';
 				break;				
 				
-				//acf ñ Saint Lucian / Dominican Creole French		
+				//acf ‚Äì Saint Lucian / Dominican Creole French		
 				case 'acf':
 					$lang_name = 'DOMINICAN_CREOLE_FRENCH'; //ROSEAU 
 					$country_name = 'DOMINICA';
@@ -863,7 +843,7 @@ abstract class Item
 				case 'aa-DJ':
 				case 'aa_dj':
 					$lang_name = 'DJIBOUTI'; //Yibuti, Afar
-					$country_name = 'REPUBLIC_OF_DJIBOUTI'; //RÈpublique de Djibouti
+					$country_name = 'REPUBLIC_OF_DJIBOUTI'; //R√©publique de Djibouti
 				break;
 
 				case 'dv':
@@ -871,14 +851,14 @@ abstract class Item
 					$country_name = 'MALDIVIA';
 				break;
 				
-				//Berbera Taghelmust„ (limba oamenilor alba?tri), zis„ ?i Tuareg„, este vorbit„ Ón Sahara occidental„.
-				//Berbera Tamazigt„ este vorbit„ Ón masivul Atlas din Maroc, la sud de ora?ul Meknes.
-				//Berbera Zenatic„ zis„ ?i Rifan„, este vorbit„ Ón masivul Rif din Maroc, Ón nord-estul ?„rii.
-				//Berbera ?enuan„ zis„ ?i Telic„, este vorbit„ Ón masivul Tell din Algeria, Ón nordul ?„rii.
-				//Berbera Cabilic„ este vorbit„ Ón jurul masivelor Mitigea ?i Ores din Algeria, Ón nordul ?„rii.
-				//Berbera ?auian„ este vorbit„ Ón jurul ora?ului Batna din Algeria.
-				//Berbera Tahelhit„, zis„ ?i ?l„nuan„ (Ón limba francez„ Chleuh) este vorbit„ Ón jurul masivului Tubkal din Maroc, Ón sud-vestul ?„rii.
-				//Berbera Tama?ek„, zis„ ?i Saharian„, este vorbit„ Ón Sahara de nord, Ón Algeria, Libia ?i Egipt.
+				//Berbera Taghelmust√£ (limba oamenilor alba?tri), zis√£ ?i Tuareg√£, este vorbit√£ √Æn Sahara occidental√£.
+				//Berbera Tamazigt√£ este vorbit√£ √Æn masivul Atlas din Maroc, la sud de ora?ul Meknes.
+				//Berbera Zenatic√£ zis√£ ?i Rifan√£, este vorbit√£ √Æn masivul Rif din Maroc, √Æn nord-estul ?√£rii.
+				//Berbera ?enuan√£ zis√£ ?i Telic√£, este vorbit√£ √Æn masivul Tell din Algeria, √Æn nordul ?√£rii.
+				//Berbera Cabilic√£ este vorbit√£ √Æn jurul masivelor Mitigea ?i Ores din Algeria, √Æn nordul ?√£rii.
+				//Berbera ?auian√£ este vorbit√£ √Æn jurul ora?ului Batna din Algeria.
+				//Berbera Tahelhit√£, zis√£ ?i ?l√£nuan√£ (√Æn limba francez√£ Chleuh) este vorbit√£ √Æn jurul masivului Tubkal din Maroc, √Æn sud-vestul ?√£rii.
+				//Berbera Tama?ek√£, zis√£ ?i Saharian√£, este vorbit√£ √Æn Sahara de nord, √Æn Algeria, Libia ?i Egipt.
 				//Berber: Tacawit (@ city Batna from Chaoui, Algery), Shawiya (Shauian)
 				case 'shy':
 					$lang_name = 'SHAWIYA_BERBER';
@@ -918,13 +898,13 @@ abstract class Item
 				break;
 				
 				//Greek Language:
-				//ell ñ Modern Greek
-				//grc ñ Ancient Greek
-				//cpg ñ Cappadocian Greek
-				//gmy ñ Mycenaean Greek
-				//pnt ñ Pontic
-				//tsd ñ Tsakonian
-				//yej ñ Yevanic
+				//ell ‚Äì Modern Greek
+				//grc ‚Äì Ancient Greek
+				//cpg ‚Äì Cappadocian Greek
+				//gmy ‚Äì Mycenaean Greek
+				//pnt ‚Äì Pontic
+				//tsd ‚Äì Tsakonian
+				//yej ‚Äì Yevanic
 				
 				case 'el':
 					$lang_name = 'GREEK'; 
@@ -947,7 +927,7 @@ abstract class Item
 					$lang_name = 'TSAKONIAN';
 					$country_name = 'GREECE';
 				break;	
-				//Albanian: Janina or JaninÎ, Aromanian: Ianina, Enina, Turkish: Yanya;
+				//Albanian: Janina or Janin√´, Aromanian: Ianina, Enina, Turkish: Yanya;
 				case 'yej':
 					$lang_name = 'YEVANIC';	
 					$country_name = 'GREECE';
@@ -1282,15 +1262,15 @@ abstract class Item
 				break;
 				
 				//for Fulah (also spelled Fula) the ISO 639-1 code is ff.
-			    //fub ñ Adamawa Fulfulde
-			    //fui ñ Bagirmi Fulfulde
-			    //fue ñ Borgu Fulfulde
-			    //fuq ñ Central-Eastern Niger Fulfulde
-			    //ffm ñ Maasina Fulfulde
-			    //fuv ñ Nigerian Fulfulde
-			    //fuc ñ Pulaar
-			    //fuf ñ Pular
-			    //fuh ñ Western Niger Fulfulde			
+			    //fub ‚Äì Adamawa Fulfulde
+			    //fui ‚Äì Bagirmi Fulfulde
+			    //fue ‚Äì Borgu Fulfulde
+			    //fuq ‚Äì Central-Eastern Niger Fulfulde
+			    //ffm ‚Äì Maasina Fulfulde
+			    //fuv ‚Äì Nigerian Fulfulde
+			    //fuc ‚Äì Pulaar
+			    //fuf ‚Äì Pular
+			    //fuh ‚Äì Western Niger Fulfulde			
 			
 				case 'fub':
 					$lang_name = 'ADAMAWA_FULFULDE';
@@ -1378,7 +1358,7 @@ abstract class Item
 					$country_name = 'FAROE_ISLANDS';
 				break;
 				
-				//Metropolitan French (French: France MÈtropolitaine or la MÈtropole)
+				//Metropolitan French (French: France M√©tropolitaine or la M√©tropole)
 				case 'fr':
 				case 'fr_me':
 					$lang_name = 'FRENCH';
@@ -1396,12 +1376,12 @@ abstract class Item
 					$country_name = 'DOMINICA';
 				break;
 				
-				//al-dÓzayir
+				//al-d√Æzayir
 				case 'fr_dz':
 					$lang_name = 'ALGERIAN_FRENCH';
 					$country_name = 'ALGERIA';
 				break;
-				//Aostan French (French: franÁais valdÙtain)
+				//Aostan French (French: fran√ßais vald√¥tain)
 				//Seventy:		septante[a] [s?p.t?~t]
 				//Eighty:		huitante[b] [?i.t?~t]
 				//Ninety:		nonante[c] [n?.n?~t]
@@ -1419,12 +1399,12 @@ abstract class Item
 					$lang_name = 'CAMBODIAN_FRENCH';
 					$country_name = 'CAMBODIA';
 				break;
-				//Cajun French - Le FranÁais Cajun - New Orleans
+				//Cajun French - Le Fran√ßais Cajun - New Orleans
 				case 'fr_cj':
 					$lang_name = 'CAJUN_FRENCH';
 					$country_name = 'UNITED_STATES';
 				break;
-				//Canadian French  (French: FranÁais Canadien)
+				//Canadian French  (French: Fran√ßais Canadien)
 				//Official language in Canada,  New Brunswick, Northwest Territories, Nunavut, Quebec, Yukon, 
 				//Official language in United States, Maine (de facto),  New Hampshire
 				case 'fr_ca':
@@ -1482,7 +1462,7 @@ abstract class Item
 					$lang_name = 'LAO_FRENCH';
 					$country_name = 'LAOS';
 				break;
-				//Louisiana French (French: FranÁais de la Louisiane, Louisiana Creole: FranÁÈ la Lwizyan)
+				//Louisiana French (French: Fran√ßais de la Louisiane, Louisiana Creole: Fran√ß√© la Lwizyan)
 				case 'frc':
 				case 'fr_lu':
 					$lang_name = 'LOUISIANIAN_FRENCH';
@@ -1493,7 +1473,7 @@ abstract class Item
 					$lang_name = 'LOUISIANA_CREOLE';
 					$country_name = 'LOUISIANA'; 
 				break;
-				//Meridional French (French: FranÁais MÈridional, also referred to as Francitan)
+				//Meridional French (French: Fran√ßais M√©ridional, also referred to as Francitan)
 				case 'fr_mr':
 					$lang_name = 'MERIDIONAL_FRENCH'; 
 					$country_name = 'OCCITANIA';
@@ -1508,7 +1488,7 @@ abstract class Item
 					$lang_name = 'NEW_CALEDONIAN_FRENCH';
 					$country_name = 'NEW_CALEDONIA';
 				break;
-				//Newfoundland French (French: FranÁais Terre-Neuvien),
+				//Newfoundland French (French: Fran√ßais Terre-Neuvien),
 				case 'fr_nf':
 					$lang_name = 'NEWFOUNDLAND_FRENCH';
 					$country_name = 'CANADA';
@@ -1518,7 +1498,7 @@ abstract class Item
 					$lang_name = 'NEW_ENGLAND_FRENCH';
 					$country_name = 'NEW_ENGLAND';
 				break;
-				//Quebec French (French: franÁais quÈbÈcois; also known as QuÈbÈcois French or simply QuÈbÈcois)
+				//Quebec French (French: fran√ßais qu√©b√©cois; also known as Qu√©b√©cois French or simply Qu√©b√©cois)
 				case 'fr_qb':
 					$lang_name = 'QUEBEC_FRENCH';
 					$country_name = 'CANADA';
@@ -1532,7 +1512,7 @@ abstract class Item
 				case 'fr_tf':				
 				case 'tf':
 					$lang_name = 'FRENCH_SOUTHERN_TERRITORIES'; //
-					$country_name = 'SOUTHERN_TERRITORIES'; //Terres australes franÁaises
+					$country_name = 'SOUTHERN_TERRITORIES'; //Terres australes fran√ßaises
 				break;
 				//Vietnamese French
 				case 'fr_vt':
@@ -1565,7 +1545,7 @@ abstract class Item
 					$country_name = 'UNITED_STATES';
 				break;
 
-				//gcf ñ Guadeloupean Creole		
+				//gcf ‚Äì Guadeloupean Creole		
 				case 'gcf':
 					$lang_name = 'GUADELOUPEAN_CREOLE_FRENCH'; 
 					$country_name = 'GUADELOUPE';
@@ -1587,7 +1567,7 @@ abstract class Item
 				break;
 				
 				case 'gg':
-					$lang_name = 'GUERNESIAIS'; //English, GuernÈsiais, Sercquiais, Auregnais
+					$lang_name = 'GUERNESIAIS'; //English, Guern√©siais, Sercquiais, Auregnais
 					$country_name = 'GUERNSEY';
 				break;
 				
@@ -1625,18 +1605,18 @@ abstract class Item
 				break;
 				 
 				//grn is the ISO 639-3 language code for Guarani. Its ISO 639-1 code is gn. 
-				//    nhd ñ Chirip·
-				//    gui ñ Eastern Bolivian GuaranÌ
-				//    gun ñ Mby· GuaranÌ
-				//    gug ñ Paraguayan GuaranÌ
-				//    gnw ñ Western Bolivian GuaranÌ
+				//    nhd ‚Äì Chirip√°
+				//    gui ‚Äì Eastern Bolivian Guaran√≠
+				//    gun ‚Äì Mby√° Guaran√≠
+				//    gug ‚Äì Paraguayan Guaran√≠
+				//    gnw ‚Äì Western Bolivian Guaran√≠
 				case 'gn':
 					$lang_name = 'GUARANI';
 					$country_name = 'GUINEA';
 				break;
-				//NhandÈva is also known as Chirip·. 
+				//Nhand√©va is also known as Chirip√°. 
 				//The Spanish spelling, Nandeva, is used in the Paraguayan Chaco 
-				// to refer to the local variety of Eastern Bolivian, a subdialect of Av·.
+				// to refer to the local variety of Eastern Bolivian, a subdialect of Av√°.
 				case 'nhd':
 					$lang_name = 'Chiripa';
 					$country_name = 'PARAGUAY';
@@ -1698,11 +1678,11 @@ abstract class Item
 					$lang_name = 'HAUSA';
 				break;
 
-				//heb ñ Modern Hebrew
-				//hbo ñ Classical Hebrew (liturgical)
-				//smp ñ Samaritan Hebrew (liturgical)
-				//obm ñ Moabite (extinct)
-				//xdm ñ Edomite (extinct)
+				//heb ‚Äì Modern Hebrew
+				//hbo ‚Äì Classical Hebrew (liturgical)
+				//smp ‚Äì Samaritan Hebrew (liturgical)
+				//obm ‚Äì Moabite (extinct)
+				//xdm ‚Äì Edomite (extinct)
 				case 'he':
 				case 'heb':
 					$country_name = 'ISRAEL';
@@ -1820,7 +1800,7 @@ abstract class Item
 					$country_name = '';
 				break;
 				
-				//Mostly spoken on  OuvÈa Island or Uvea Island of the Loyalty Islands, New Caledonia. 
+				//Mostly spoken on  Ouv√©a Island or Uvea Island of the Loyalty Islands, New Caledonia. 
 				case 'iai':
 					$lang_name = 'IAAI';
 					$country_name = 'NEW_CALEDONIA';
@@ -1903,22 +1883,22 @@ abstract class Item
 				break;
 				
 				//Bantu languages 
-				//zdj ñ Ngazidja Comorian
+				//zdj ‚Äì Ngazidja Comorian
 				case 'zdj':
 					$lang_name = 'Ngazidja Comorian';
 					$country_name = 'COMOROS';
 				break;
-				//wni ñ Ndzwani  Comorian (Anjouani) dialect
+				//wni ‚Äì Ndzwani  Comorian (Anjouani) dialect
 				case 'wni':
 					$lang_name = 'Ndzwani Comorian';
 					$country_name = 'COMOROS';
 				break;
-				//swb ñ Maore Comorian dialect
+				//swb ‚Äì Maore Comorian dialect
 				case 'swb':
 					$lang_name = 'Maore Comorian';
 					$country_name = 'COMOROS';
 				break;
-				//wlc ñ Mwali Comorian dialect				
+				//wlc ‚Äì Mwali Comorian dialect				
 				case 'wlc':
 					$lang_name = 'Mwali Comorian';
 					$country_name = 'COMOROS';
@@ -1937,11 +1917,11 @@ abstract class Item
 				case 'ko':
 				case 'kp':
 					$lang_name = 'korean';
-					// kor ñ Modern Korean
-					// jje ñ Jeju
-					// okm ñ Middle Korean
-					// oko ñ Old Korean
-					// oko ñ Proto Korean
+					// kor ‚Äì Modern Korean
+					// jje ‚Äì Jeju
+					// okm ‚Äì Middle Korean
+					// oko ‚Äì Old Korean
+					// oko ‚Äì Proto Korean
 					// okm Middle Korean
 					 // oko Old Korean
 					$country_name = 'Korea North';
@@ -2166,7 +2146,7 @@ abstract class Item
 				break;
 				
 				case 'mq':
-					$lang_name = 'antillean-creole'; // Antillean Creole (CrÈole Martiniquais)
+					$lang_name = 'antillean-creole'; // Antillean Creole (Cr√©ole Martiniquais)
 					$country_name = 'MARTINIQUE';
 				break;
 				
@@ -2180,13 +2160,13 @@ abstract class Item
 					$country_name = 'NICARAGUA';
 				break;
 				
-				//Barber: TarguÌ, tuareg
+				//Barber: Targu√≠, tuareg
 				case 'ne':
 					$lang_name = 'Niger';
 					$country_name = 'NIGER';
 				break;
 				
-				//Mostly spoken on  MarÈ Island of the Loyalty Islands, New Caledonia. 
+				//Mostly spoken on  Mar√© Island of the Loyalty Islands, New Caledonia. 
 				case 'nen':
 					$lang_name = 'NENGONE';
 					$country_name = 'NEW_CALEDONIA';
@@ -2198,7 +2178,7 @@ abstract class Item
 				break;	
 				
 				case 'nc':
-					$lang_name = 'paicÓ'; //French, Nengone, PaicÓ, AjiÎ, Drehu
+					$lang_name = 'paic√Æ'; //French, Nengone, Paic√Æ, Aji√´, Drehu
 					$country_name = 'NEW_CALEDONIA';
 				break;
 				
@@ -2300,7 +2280,7 @@ abstract class Item
 				
 				case 'pf':
 					$country_name = 'French Polynesia';
-					$lang_name = 'tahitian'; //PolynÈsie franÁaise
+					$lang_name = 'tahitian'; //Polyn√©sie fran√ßaise
 				break;
 				
 				case 'pg':
@@ -2364,13 +2344,13 @@ abstract class Item
 					$country_name = 'QATAR';
 				break;
 				
-				//    rmn ñ Balkan Romani
-				//    rml ñ Baltic Romani
-				//    rmc ñ Carpathian Romani
-				//    rmf ñ Kalo Finnish Romani
-				//    rmo ñ Sinte Romani
-				//    rmy ñ Vlax Romani
-				//    rmw ñ Welsh Romani				
+				//    rmn ‚Äì Balkan Romani
+				//    rml ‚Äì Baltic Romani
+				//    rmc ‚Äì Carpathian Romani
+				//    rmf ‚Äì Kalo Finnish Romani
+				//    rmo ‚Äì Sinte Romani
+				//    rmy ‚Äì Vlax Romani
+				//    rmw ‚Äì Welsh Romani				
 				case 'ri':
 				case 'rom':
 					$country_name = 'EASTEN_EUROPE';
@@ -2442,7 +2422,7 @@ abstract class Item
 					$country_name = 'Scotland';
 				break;
 
-				//scf ñ San Miguel Creole French (Panama)		
+				//scf ‚Äì San Miguel Creole French (Panama)		
 				case 'scf':
 					$lang_name = 'SAN_MIGUEL_CREOLE_FRENCH';  
 					$country_name = 'SAN_MIGUEL';
@@ -2553,13 +2533,13 @@ abstract class Item
 				break;
 				
 				//ISO 639-2	swa
-				//ISO 639-3	swa ñ inclusive code
+				//ISO 639-3	swa ‚Äì inclusive code
 				
 				//Individual codes:
-				//swc ñ Congo Swahili
-				//swh ñ Coastal Swahili
-				//ymk ñ Makwe
-				//wmw ñ Mwani
+				//swc ‚Äì Congo Swahili
+				//swh ‚Äì Coastal Swahili
+				//ymk ‚Äì Makwe
+				//wmw ‚Äì Mwani
 				
 				//Person	Mswahili
 				//People	Waswahili
@@ -2572,25 +2552,25 @@ abstract class Item
 					$lang_name = 'SWAHILI';
 					$country_name = 'AFRICAN_GREAT_LAKES';
 				break;
-				//swa ñ inclusive code
+				//swa ‚Äì inclusive code
 				//
 				//Individual codes:
-				//swc ñ Congo Swahili
+				//swc ‚Äì Congo Swahili
 				case 'swc':
 					$lang_name = 'CONGO_SWAHILI';
 					$country_name = 'CONGO';
 				break;
-				//swh ñ Coastal Swahili
+				//swh ‚Äì Coastal Swahili
 				case 'swh':
 					$lang_name = 'COASTAL_SWAHILI';
 					$country_name = 'AFRIKA_EAST_COAST';
 				break;	
-				//ymk ñ Makwe
+				//ymk ‚Äì Makwe
 				case 'ymk':
 					$lang_name = 'MAKWE';
 					$country_name = 'CABO_DELGADO_PROVINCE_OF_MOZAMBIQUE';
 				break;
-				//wmw ñ Mwani
+				//wmw ‚Äì Mwani
 				case 'wmw':
 					$lang_name = 'MWANI';
 					$country_name = 'COAST_OF_CABO_DELGADO_PROVINCE_OF_MOZAMBIQUE';
@@ -2608,7 +2588,7 @@ abstract class Item
 				
 				case 'tf':
 					$lang_name = 'french '; //
-					$country_name = 'FRENCH_SOUTHERN_TERRITORIES'; //Terres australes franÁaises
+					$country_name = 'FRENCH_SOUTHERN_TERRITORIES'; //Terres australes fran√ßaises
 				break;
 				
 				case 'tj':
@@ -2752,7 +2732,7 @@ abstract class Item
 				case 'wf':
 					$country_name = 'TERRITORY_OF_THE_WALLIS_AND_FUTUNA_ISLANDS';
 					$lang_name = 'WF'; 
-					//Wallisian, or ëUvean 
+					//Wallisian, or ‚ÄòUvean 
 					//Futunan - Austronesian, Malayo-Polynesian
 				break;
 				
@@ -2768,7 +2748,7 @@ abstract class Item
 				
 				case 'yt':
 					$lang_name = 'Mayotte'; //Shimaore:
-					$country_name = 'DEPARTMENT_OF_MAYOTTE'; //DÈpartement de Mayotte
+					$country_name = 'DEPARTMENT_OF_MAYOTTE'; //D√©partement de Mayotte
 				break;
 				
 				case 'za':
