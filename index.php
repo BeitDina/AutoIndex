@@ -640,5 +640,4 @@ catch (Exception $e)
 {
 	echo simple_display($e -> getMessage());
 }
-
 ?>
