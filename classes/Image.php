@@ -233,6 +233,8 @@ class Image
 	{
 		$thumbnail_height = $this -> height;
 		$file = $this -> filename;
+		$file_icon = new Icon($file);
+		$this -> icon = $file_icon -> __toString();
 		if (!@is_file($file))
 		{
 			header('HTTP/1.0 404 Not Found');
@@ -292,9 +294,14 @@ class Image
 				break;
 			}
 			case 'avi' :
+			case 'mp4' :
+			case 'mpg' :
+			case 'mp3' :
+			case 'ogv' :
 			{
 				ini_set('memory_limit', '512M');
-				$src = function_exists('imagecreatefromavi') ? imagecreatefromavi($file) : imagecreatefromjpeg(str_replace('avi', 'jpg', $file));
+				$function = 'imagecreatefrom'.FileItem::ext($file);
+				$src = function_exists($function) ? $$function($file) : imagecreatefromjpeg(str_replace('avi', 'jpg', $file));
 				break;
 			}
 			case '3gp' :
