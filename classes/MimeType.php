@@ -117,7 +117,6 @@ class MimeType
 			'application/xml' => array('xml', 'xsl'),
 			'application/xml-dtd' => array('dtd'),
 			'application/zip' => array('zip'),
-			'application/7-Zip' => array('7z'),			
 			'audio/basic' => array('au', 'snd'),
 			'audio/midi' => array('mid', 'midi', 'kar'),
 			'audio/mpeg' => array('mpga', 'mp2', 'mp3'),
@@ -162,10 +161,10 @@ class MimeType
 			'text/vnd.wap.wml' => array('wml'),
 			'text/vnd.wap.wmlscript' => array('wmls'),
 			'text/x-setext' => array('etx'),
-			'video/mpeg' => array('mpeg', 'mpg', 'mpe'),
+			'video/mpeg' => array('mpg', 'mpeg', 'mpe'),
 			'video/quicktime' => array('qt', 'mov'), //QuickTime
 			'video/vnd.mpegurl' => array('mxu', 'm4u'),
-			'video/x-msvideo' => array('avi'), //A/V Interleave
+			'video/x-msvideo' => array('avi', 'mkv', 'xvid'), //A/V Interleave
 			'video/x-flv' => array('flv'), //Flash Video
 			'video/mp4' => array('mp4'), //MPEG-4
 			'application/x-mpegURL' => array('mpu'), //iPhone Index
