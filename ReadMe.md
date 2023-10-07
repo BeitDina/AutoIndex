@@ -1,14 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<!--?xml version="1.0" encoding="iso-8859-1"?-->
+
 <meta http-equiv="content-type" content="text/html" ;="" charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="blue">
 <link rel="stylesheet" type="text/css" href="stylesheet.css" />  
-<style type="text/css" title="AutoIndex Default">td, th { border: 1px solid; }</style>
+<style type="text/css" title="AutoIndex Default">
+  td, th { border: 1px solid; }
+</style>
+<!--? -->
 <title>AutoIndex PHP Script: Readme</title>
 </head>
 <body class="autoindex_div">
@@ -25,7 +28,9 @@ original by Justin Hagstrom, by Florin Ciprian Bodin</strong> <br>
 terms of the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU
 General Public License (GPL)</a>.</span>
 </p>
-<p> <a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a></p>
+<p> 
+  <a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a>
+</p>
 <p> <a href="http://github.com/BeitDina/AutoIndex/">http://github.com/BeitDina/AutoIndex/</a><br>
 Please write any questions or comments at
 orynider@users.sourceforge.net .
@@ -37,7 +42,7 @@ Then, point your browser to the index.php file in that folder. The
 first time you do this, it will take you to a configuration page. <br>
 To use all the default values, just click the button at the bottom, or
 customize it however you want. <br>
-  <p>Demo: <a class="default_a" href="http://beitdina.net/aleppo/">http://beitdina.net/aleppo/</a></p><br>
+  <p>Demo at: <a class="default_a" href="http://beitdina.net/aleppo/">http://beitdina.net/aleppo/</a></p><br>
 Information about the use of each variable is in this file.
 </p>
 <p> &nbsp;
