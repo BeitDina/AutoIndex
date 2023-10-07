@@ -32,11 +32,12 @@ orynider@users.sourceforge.net .
 </p>
 <p> To install and run the script, simply upload the
 contents of this directory to a server with PHP support (Works with all
-versions of PHP5 and PHP7.1). <br>
+versions of PHP5 and PHP7.1, PHP7.2, PHP7.3). <br>
 Then, point your browser to the index.php file in that folder. The
 first time you do this, it will take you to a configuration page. <br>
 To use all the default values, just click the button at the bottom, or
 customize it however you want. <br>
+  <p>Demo: <a class="default_a" href="http://beitdina.net/aleppo/">http://beitdina.net/aleppo/</a></p><br>
 Information about the use of each variable is in this file.
 </p>
 <p> &nbsp;
