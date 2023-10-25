@@ -24,13 +24,11 @@ original by Justin Hagstrom, by Florin Ciprian Bodin</strong> <br>
 terms of the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU
 General Public License (GPL)</a>.</span>
 </p>
-<p><a class="default_a" href="http://autoindex.sourceforge.net/">(http://autoindex.sourceforge.net/)</a></p>
+<p><a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a></p>
 <p><span class="small">AutoIndex DEMO: See PHP VERSION on Footer of the index page.</a></span></p>
-<p><a class="default_a" href="http://autoindex.sourceforge.net">(https://mxpcms.sourceforge.net/pub/)/</a></p>
+<p><a class="default_a" href="http://autoindex.sourceforge.net">https://mxpcms.sourceforge.net/pub/</a></p>
 <p> <a href="http://github.com/BeitDina/AutoIndex/">http://github.com/BeitDina/AutoIndex/</a><br>
-Please write any questions or comments at
-orynider@users.sourceforge.net .
-</p>
+Please write any questions or comments at orynider@users.sourceforge.net .</p>
 <p> To install and run the script, simply upload the
 contents of this directory to a server with PHP support (Works with all
 versions of PHP5 and PHP7.1, PHP7.2, PHP7.3). <br>
