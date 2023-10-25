@@ -584,12 +584,13 @@ class MobileDeviceDetect
 	
 	function getInfo()
 	{
-		return "<strong>Browser:</strong> {$this->getBrowser()}" .
+		return "<strong>Browsing with:</strong> {$this->getBrowser()}" .
 		"<strong> - </strong> {$this->getVersion()}" .
 		//"<strong>Browser User Agent String:</strong> {$this->getUserAgent()}<br/>\n" .
-		" :: <strong>Platform:</strong> {$this->getPlatform()}" .
-		"<strong>-</strong> {$this->mobile_device_detect()}<br/>";
+		" :: <strong>from OS:</strong> {$this->getPlatform()}" .
+		"<strong>-</strong> {$this->mobile_device_detect()}" . ", on a server with PHP ". PHP_VERSION ." & OS ". PHP_OS;
 	}
 }
 
 //end of class
+?>
