@@ -99,7 +99,7 @@ class Url
 		{
 			return '';
 		}
-		if ($d{0} == '/' && $new_dir{0} != '/')
+		if ($d[0] == '/' && $new_dir[0] != '/')
 		{
 			$new_dir = '/' . $new_dir;
 		}
@@ -108,9 +108,8 @@ class Url
 			$new_dir .= '/';
 		}
 		else if (DirectoryList::is_hidden(Item::get_basename($new_dir)))
-		//it's a file, so make sure the file itself is not hidden
 		{
-			return DirItem::get_parent_dir($new_dir);
+			return DirItem::get_parent_dir($new_dir); //it's a file, so make sure the file itself is not hidden
 		}
 		return $new_dir;
 	}
