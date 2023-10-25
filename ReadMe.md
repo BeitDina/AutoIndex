@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
-<link rel="stylesheet" type="text/css" href="stylesheet.css" />  
+<link rel="stylesheet" type="text/css" href="https://mxpcms.sourceforge.net/pub/templates/SwiftBlue/SwiftBlue.css" />  
 <title>AutoIndex PHP Script: Readme</title>
 </head>
 <body class="autoindex_div">
@@ -26,12 +26,12 @@ General Public License (GPL)</a>.</span>
 </p>
 <p><a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a></p>
 <p><span class="small">AutoIndex DEMO: See PHP VERSION on Footer of the index page.</a></span></p>
-<p><a class="default_a" href="http://autoindex.sourceforge.net">https://mxpcms.sourceforge.net/pub/</a></p>
+<p><a class="default_a" href="https://mxpcms.sourceforge.net/pub/">https://mxpcms.sourceforge.net/pub/</a></p>
 <p> <a href="http://github.com/BeitDina/AutoIndex/">http://github.com/BeitDina/AutoIndex/</a><br>
 Please write any questions or comments at orynider@users.sourceforge.net .</p>
 <p> To install and run the script, simply upload the
 contents of this directory to a server with PHP support (Works with all
-versions of PHP5 and PHP7.1, PHP7.2, PHP7.3). <br>
+versions of PHP5 and PHP7.1, PHP7.2, PHP7.3, PHP7.4). <br>
 Then, point your browser to the index.php file in that folder. The
 first time you do this, it will take you to a configuration page. <br>
 To use all the default values, just click the button at the bottom, or
