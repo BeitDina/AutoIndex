@@ -101,7 +101,7 @@ class Htaccess
 		$ln = strlen($hex);
 		for($i = 0; $i < $ln; $i += 2)
 		{
-			$bin .= chr(hexdec($hex{$i} . $hex{$i+1}));
+			$bin .= chr(hexdec($hex[$i] . $hex[$i + 1]));
 		}
 		return $bin;
 	}
@@ -314,7 +314,7 @@ class Htaccess
 			{
 				continue;
 			}
-			if ($line{0} == '<')
+			if ($line[0] == '<')
 			{
 				if (preg_match('#^</\s*directory.*?>#i', $line))
 				{
@@ -337,9 +337,9 @@ class Htaccess
 				{
 					$conditional_defined = $matches[1];
 				}
-				else if (isset($line{1}))
+				else if (isset($line[1]))
 				{
-					$other_conditional = ($line{1} != '/');
+					$other_conditional = ($line[1] != '/');
 				}
 				continue;
 			}
@@ -353,7 +353,7 @@ class Htaccess
 			//deal with <IfDefine>
 			{
 				$conditional_defined = strtoupper($conditional_defined);
-				if ($conditional_defined{0} === '!')
+				if ($conditional_defined[0] === '!')
 				{
 					$conditional_defined = substr($conditional_defined, 1);
 					if (defined($conditional_defined) && constant($conditional_defined))
