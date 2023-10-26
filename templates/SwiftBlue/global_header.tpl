@@ -19,6 +19,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="favicon.gif" type="image/gif" />
+	
 <link rel="top" href="http://mesianic.uv.ro/forum/index.php" title="Pagina de start a forumului mesianic.uv.ro" />
 <link rel="search" href="http://mesianic.uv.ro/forum/search.php" title="Căutare" />
 <link rel="help" href="http://mesianic.uv.ro/forum/faq.php" title="FAQ" />
