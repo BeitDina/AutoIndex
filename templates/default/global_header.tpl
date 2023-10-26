@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	
 	<meta name="title"       content="Directory Index" />
-	<meta name="author"      content="Beit Dina Bible Arheology and Translation Institute @ beitdina.net" />
+	<meta name="author"      content="BeitDina Biblical Archaeology and Translation Institute @ beitdina.net" />
 	<meta name="copyright"   content="default template © Beit Dina 2019 based on subSilver style © 2005 phpBB Group." />
 	<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 	<meta name="description" lang="{config:language}" content="Directory Index. This is the description search engines show when listing your site." />
@@ -50,21 +50,6 @@ function checkSearch()
 	if (document.search_block.search_engine.value == 'google')
 	{
 		window.open('http://www.google.com/search?q=' + document.search_block.search_keywords.value, '_google', '');
-		return false;
-	}
-	else if (document.search_block.search_engine.value == 'site')
-	{
-		window.open('http://beitdina.net/forum/index.php?page=5&mode=results&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
-		return false;
-	}
-	else if (document.search_block.search_engine.value == 'kb')
-	{
-		window.open('http://beitdina.net/forum/index.php?page=&mode=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
-		return false;
-	}
-	else if (document.search_block.search_engine.value == 'pafiledb')
-	{
-		window.open('http://beitdina.net/forum/index.php?page=&action=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
 		return false;
 	}
 	else
