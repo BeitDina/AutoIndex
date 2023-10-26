@@ -7,7 +7,7 @@
 	
 	<meta name="title"       content="Directory Index" />
 	<meta name="author"      content="Beit Dina Bible Arheology and Translation Institute @ beitdina.net" />
-	<meta name="copyright"   content="default template © Beit Dina 2019 based on subSilver style © 2005 phpBB Group." />
+	<meta name="copyright"   content="default template Â© Beit Dina 2019 based on subSilver style Â© 2005 phpBB Group." />
 	<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 	<meta name="description" lang="{config:language}" content="Directory Index. This is the description search engines show when listing your site." />
 	<meta name="category"    content="general" />
@@ -19,11 +19,15 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="blue" />
  	
-	<title>{words:index of} {info:dir} github.com/BeitDina/AutoIndex/</title>
+
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="icon" href="favicon.gif" type="image/gif" />
 	<link href="{config:template}default.css" rel="stylesheet" title="AutoIndex Default" type="text/css" />
 	<link href="{config:template}alternate.css" rel="alternate stylesheet" title="AutoIndex Alternate" type="text/css" />
 	
-<script language="javascript" type="text/javascript"><!--
+	<title>{words:index of} {info:dir} github.com/BeitDina/AutoIndex/</title>	
+
+	<script language="javascript" type="text/javascript"><!--
 
 function newImage(arg) {
 	if (document.images) {
