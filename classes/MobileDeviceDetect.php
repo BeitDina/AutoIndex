@@ -418,7 +418,7 @@ class MobileDeviceDetect
     'OmniWeb' => 'OmniWeb',
     'Konqueror' => 'Konqueror',
     'icab' => 'iCab',
-     'Lynx' => 'Lynx',
+    'Lynx' => 'Lynx',
     'Links' => 'Links',
     'hotjava' => 'HotJava',
     'amaya' => 'Amaya',
@@ -450,7 +450,7 @@ class MobileDeviceDetect
     'Chrome' => 'Google Chrome',
     'MSIE' => 'Internet Explorer',
     'Internet Explorer' => 'Internet Explorer',
-     'Safari' => 'Safari',
+    'Safari' => 'Safari',
     'Mozilla' => 'Mozilla'  
     );
 
@@ -522,7 +522,7 @@ class MobileDeviceDetect
 					}
 					else 
 					{
-						@$this->_version = $matches['version'][1];
+						@$this->_version = $matches['version'][1];	
 					}
 				}
 				else 
@@ -584,11 +584,30 @@ class MobileDeviceDetect
 	
 	function getInfo()
 	{
+		// see how many we have, i.e. Array ( [0] => 1 [1] => 'Desktop)
+		if (is_array($this->mobile_device_detect())) 
+		{
+			//we will have two since we are not using 'other' argument yet
+			$mobile = $this->mobile_device_detect();
+			//see if version is before or after the name
+			if (empty($mobile[1]))
+			{
+				$mobile_device = $mobile[0];
+			}
+			else 
+			{
+				$mobile_device = $mobile[1];	
+			}
+		}
+		else 
+		{
+			$mobile_device = $this->mobile_device_detect();
+		}
 		return "<strong>Browsing with:</strong> {$this->getBrowser()}" .
 		"<strong> - </strong> {$this->getVersion()}" .
 		//"<strong>Browser User Agent String:</strong> {$this->getUserAgent()}<br/>\n" .
 		" :: <strong>from OS:</strong> {$this->getPlatform()}" .
-		"<strong>-</strong> {$this->mobile_device_detect()}" . ", on a server with PHP ". PHP_VERSION ." & OS ". PHP_OS;
+		"<strong>-</strong>{$mobile_device}, on a server with PHP ". PHP_VERSION ." & OS ". PHP_OS;
 	}
 }
 
