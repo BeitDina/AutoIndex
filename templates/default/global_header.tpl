@@ -19,11 +19,14 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="blue" />
  	
-
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="icon" href="favicon.gif" type="image/gif" />
+	
 	<link href="{config:template}default.css" rel="stylesheet" title="AutoIndex Default" type="text/css" />
 	<link href="{config:template}alternate.css" rel="alternate stylesheet" title="AutoIndex Alternate" type="text/css" />
+	
+	<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
+	<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />	
 	
 	<title>{words:index of} {info:dir} github.com/BeitDina/AutoIndex/</title>	
 
