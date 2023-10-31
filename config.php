@@ -6,7 +6,7 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.4.5 (January 01, 2019)
+ * @version 2.4.5-pl7 (January 01, 2019 / 30, Octomber, 2013)
  *
  * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
@@ -35,7 +35,7 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 	die();
 }
 
-$strings = array('base_dir', 'icon_path', 'flag_path', 'language', 'template', 'log_file',
+$strings = array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file',
 	'description_file', 'user_list', 'download_count', 'hidden_files',
 	'banned_list');
 $checkboxes = array('show_dir_size', 'use_login_system', 'force_download',
@@ -46,7 +46,7 @@ $numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show',
 
 if (count($_POST) >= count($strings) + count($numbers))
 {
-	$directories = array('base_dir', 'icon_path', 'flag_path', 'template');
+	$directories = array('base_dir', 'icon_path', 'flag_path', 'assets_path', 'template');
 	$output = "<?php\n\n/* AutoIndex PHP Script config file\n\n";
 	foreach ($strings as $setting)
 	{
@@ -204,6 +204,7 @@ if (count($_POST) >= count($strings) + count($numbers))
 //list of default settings
 $settings = array(
 	'base_dir' => './',
+	'assets_path' => 'assets/',
 	'icon_path' => 'index_icons/winxp/',
 	'flag_path' => 'flags/language/',
 	'language' => 'en',
