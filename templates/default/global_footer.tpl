@@ -1,12 +1,8 @@
-
 <!--
-
 Powered by AutoIndex PHP Script (version {info:version})
 Copyright (C) 2002-2007 Justin Hagstrom, 2019-2023 Florin Ciprian Bodin
 http://autoindex.sourceforge.net
-
 Page generated in {info:page_time} milliseconds.
-
 -->
 <script type="text/javascript">window.jQuery || document.write('\x3Cscript src="{config:assets_path}/javascript/jquery.min.js?assets_version=75">\x3C/script>');</script>
 <script type="text/javascript" src="{config:assets_path}/javascript/core.js?assets_version=75"></script>
