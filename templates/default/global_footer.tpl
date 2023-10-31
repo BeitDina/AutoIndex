@@ -56,10 +56,10 @@ Page generated in {info:page_time} milliseconds.
 				},
 				"theme": "classic",
 				"content": {
-					"message": "{lang:cookie consent msg}",
-					"dismiss": "{lang:cookie consent OK}",
-					"link": "{lang:cookie consent info}",
-					"href": "{lang:privacy}"
+					"message": "{info:message}",
+					"dismiss": "{info:dismiss}",
+					"link": "{info:link}",
+					"href": "{info:href}"
 				}
 				});
 			});
@@ -72,6 +72,7 @@ Page generated in {info:page_time} milliseconds.
 <script language="javascript" type="text/javascript" src="{config:template}forum_fn.js?assets_version=75"></script>
 <script language="javascript" type="text/javascript" src="{config:template}collapsiblecategories.js?assets_version=75"></script>
 
+{info:statinfo}
 
 <script>$('.tables1 br').remove();</script>
 </body>
