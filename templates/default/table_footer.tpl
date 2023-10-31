@@ -1,4 +1,4 @@
- <tr>
+  <tr>
   <th class="autoindex_th stat-block online-list">
    <span class="autoindex_small">{info:total_files} {words:files} - {info:total_folders} {words:folders}</span>
   </th>
@@ -19,9 +19,10 @@
   </th>
   {end if:description_file}
  </tr>
+</thead>
 </table>
 <div class="autoindex_small stat-block online-list" style="text-align: right;">
-Powered by <a class="autoindex_a" href="http://autoindex.sourceforge.net/">Original AutoIndex PHP Script</a>
+{words:powered by} <a class="autoindex_a" href="http://autoindex.sourceforge.net/">Original AutoIndex PHP Script</a>
 and  <a class="autoindex_a" href="http://github.com/BeitDina/AutoIndex/">AutoIndex @ Beit Dina</a>
 </div>
 		/* We request that you do not remove the link to the AutoIndex website.
