@@ -1,24 +1,26 @@
 
 <a name="top"></a>
-<a href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a>
-<table width="100%" cellspacing="0" cellpadding="5" border="0" align="center" class="mx_main_table">
+<table id="pagetable" class="table3 stat-block online-list responsive-show nav-main linklist" width="100%" cellspacing="0" cellpadding="5" border="0" align="center">
 <thead>	
 	<tr>
 		<td class="bodyline">
-			<table width="100%" cellspacing="0" cellpadding="5" border="0" class="mx_header_table">
+			<table id="pageheader" class="mx_body_table autoindex_table" width="100%" cellspacing="0" cellpadding="5" border="0">
 				<tr>
-					<td class="row2" width="25%" align="left" valign="top">
-					<a href="http://beitdina.net/forum/index.php">
-					<img src="{config:template}images/logo_mxBB.gif" border="0" alt="beitdina.net" vspace="1" width="88" height="31" />
-					</a>
+					<td class="row2 autoindex_td_right responsive-hide" width="25%" align="left" valign="top">
+					<a class="plain_link" alt="{words:index of} ../" href="../"><img src="{config:template}images/logo_mxBB.gif" border="0" alt="beitdina.net" vspace="1" width="88" height="31" /></a>
 					</td>
-					<td class="row2" width="50%" align="center" valign="middle"><img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;
-					<span class="pagetitle">{words:index of} {info:dir} @ #Bibliuta</span><hr class="hrtop">
+					<td class="row2 autoindex_td_right responsive-show" width="50%" align="center" valign="middle">
+					<img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;
+					<span class="pagetitle">{words:index of} {info:dir} {words:folder}</span>
+					<hr class="hrtop" />
 					</td>
-					<td class="row2" width="25%" align="right" valign="top"><span class="sitetitle"><b>beitdina.net</b></span><br /><span class="sitetitle_desc">Portalul canalului #Bibliuta de pe Undernet&nbsp; </span></td>
+					<td class="row2 autoindex_td_right responsive-hide" width="25%" align="right" valign="top">
+					<span class="sitetitle"><b>beitdina.net</b></span><br />
+					<span class="sitetitle_desc">{words:folder}&nbsp;& {words:uploaded files}.</span>
+					</td>
 				</tr>
 				<tr>
-					<td class="row1" align="center" valign="middle" colspan="3">
+					<td class="row1 autoindex_td_right responsive-show" align="center" valign="middle" colspan="3">
 					<!--
 						<table cellspacing="6" cellpadding="2" border="0">
 							<tr>
@@ -61,30 +63,32 @@
 						<tbody class="table2 responsive-show navbar-top" role="navigation">
 						<tr>
 							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+
 							</td>
 						</tr>
 						</tbody>
 				</table>
 			
-			<table width="100%" cellspacing="0" cellpadding="2" border="0" align="center">
+			<table id="pageheader" class="tablebg2 autoindex_table" width="100%" cellspacing="0" cellpadding="2" border="0" align="center">
 				<tr>
 					<td valign="top" align="left" width="5" height="5" >&nbsp;</td>
 					<td valign="top" align="right" width="100%" height="5" >
 						<form name="search_block" method="post" action="http://beitdina.net/forum/search.php" onsubmit="return checkSearch()">
-							<a href="http://beitdina.net/forum/search.php"><span class="gen">Căutare</span></a>:
+							<a class="plain_link" href="{base_dir}/forum/search.php">
+							<i class="icon fa-search fa-fw" aria-hidden="true"></i>
+							<span class="gen">Căutare</span></a>:
 							<input class="post" type="text" name="search_keywords" size="15" value="...?"
 								onfocus="if(this.value=='...?'){this.value='';}"
-								onblur="if(this.value==''){this.value='...?';}">
+								onblur="if(this.value==''){this.value='...?';}" />
 							<select class="post" name="search_engine">
 								<option value="site">Site</option>
 								<option value="forum">Forum</option>
-								
-								
 								<option value="google">Google</option>
 							</select>
-							<input type="hidden" name="search_fields" value="all">
-							<input type="hidden" name="show_results" value="topics">
-							<input class="mainoption" type="submit" value="Search">
+							<input type="hidden" name="search_fields" value="all" />
+							<input type="hidden" name="show_results" value="topics" />
+							<input class="mainoption" type="submit" value="Search" />
+							
 						</form>
 					</td>
 					<td valign="top" align="left" width="5" height="5" >&nbsp;</td>
@@ -93,10 +97,10 @@
 		</td>
 	</tr>
 </thead>
-<tbody width="100%" cellspacing="0" cellpadding="5" border="0" class="mx_header_table">
+<tbody class="mx_header_table" width="100%" cellspacing="0" cellpadding="5" border="0">
 	<tr>
 		<td class="bodyline">
-		<table class="tablebg2" cellspacing="10" cellpadding="0" width="100%" class="mx_body_table">
+		<table class="mx_body_table tablebg2" cellspacing="10" cellpadding="0" width="100%">
 		<tr>
 		<th class="autoindex_th">{words:index of} {info:path_nav}</th> 
 		<table class="tablebg2 autoindex_table" cellspacing="1" width="100%">
