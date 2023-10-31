@@ -242,7 +242,7 @@ TIBETAN	Tibetan
 BRETON	Breton
 BHUTAN	Bhutan
 BOTSWANA	Botswana
-CAMEROONIAN_PIDGIN_ENGLISH		Cameroonian Pidgin English
+CAMEROONIAN_PIDGIN_ENGLISH	Cameroonian Pidgin English
 CAMEROONIAN	Cameroonian
 CATALAN	Catalan
 COA_A_COCOS	Coa a Cocos
@@ -338,6 +338,7 @@ ESPERANTO	Esperanto
 ERITREA	Eritrea
 SPANISH	Spanish
 SPANISH_MEXICO	Spanish Mexico
+CUBAN_SPANISH	Cuban Spanish
 SPANISH_UNITED_STATES	Spanish United States
 SPANISH_CARIBBEAN	Spanish Caribbean
 SPANISH_ARGENTINIAN	Spanish Argentinian
@@ -687,3 +688,16 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+
+//Other
+PRIVACY	Política de privacidad
+COOKIE_CONSENT_MSG	This website uses cookies to ensure you get the best experience on our website.
+COOKIE_CONSENT_OK	Got it!
+COOKIE_CONSENT_INFO	Learn more
+powered by	Powered by
+
+//Other files
+LICENSE	Licence
+CHANGE_LOG	Development Log
+e-sword 	e-Sword
+|autoindex_license	GNU GPL-2.0 License
