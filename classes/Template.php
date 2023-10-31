@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -144,5 +144,4 @@ class Template
 		return $this -> out;
 	}
 }
-
 ?>
