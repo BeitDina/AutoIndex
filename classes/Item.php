@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -257,9 +257,10 @@ abstract class Item
 				break;
 				
 				case 'aj':
+				case 'rup':
 					$lang_name = 'AROMANIAN';
-					$country_name = 'Aromaya';
-				break;
+					$country_name = 'BALCANS'; //$country_name = 'Aromaya';
+				break;	
 				
 				case 'ak':
 					$lang_name = 'AKAN';
@@ -298,6 +299,7 @@ abstract class Item
 					$lang_name = 'ARABIC';
 					$country_name = 'ARGENTINA';
 				break;
+							
 				
 				case 'arq':
 					$lang_name = 'ALGERIAN_ARABIC'; //known as Darja or Dziria in Algeria
@@ -622,7 +624,7 @@ abstract class Item
 				//Traditional Chinese:	?
 				//Literal meaning:	Min [River]	
 				
-				//???  
+				//??  
 				case 'cpx': 	//Chinese Pu-Xian Min, Sing-iú-ua / ???, (Xianyou dialect) http://www.putian.gov.cn/
 					$lang_name = 'CHINESE_PU-XIAN';
 					$country_name = 'CHINA';
@@ -632,7 +634,7 @@ abstract class Item
 					$lang_name = 'CHINESE_HUIZHOU';
 					$country_name = 'CHINA';
 				break;
-				// ???
+				// ??
 				case 'czo': 	//Chinese Min Zhong ??? |  ???  http://zx.cq.gov.cn/ | Zhong-Xian | Zhong  ??
 					$lang_name = 'CHINESE_ZHONG';
 					$country_name = 'CHINA';
@@ -687,7 +689,7 @@ abstract class Item
 					$lang_name = 'CORSICAN'; // Corsica
 					$country_name = 'COLUMBIA';
 				break;
-				//Eeyou Istchee ???? ???
+				//Eeyou Istchee ??
 				case 'cr':
 					$lang_name = 'CREE';
 					$country_name = 'COSTA_RICA';
@@ -759,7 +761,6 @@ abstract class Item
 					hrx – Riograndenser Hunsrückisch
 					yec – Yenish	*/
 
-				
 				//Germany 	84,900,000 	75,101,421 (91.8%) 	5,600,000 (6.9%) 	De facto sole nationwide official language
 				case 'de':
 				case 'de-DE':
@@ -1111,7 +1112,9 @@ abstract class Item
 					$country_name = 'CHILE';
 				break;
 				case 'es_CO':	
-				case 'es_co':	
+				case 'es_co':
+				case 'es-419':
+				case 'es_419':				
 				//	Spanish (Colombia) (es-CO)
 					$lang_name = 'SPANISH_COLOMBIAN';
 					$country_name = 'COLOMBIA';
@@ -1123,7 +1126,8 @@ abstract class Item
 				// as well as in Panama, Venezuela, 
 				// and the Caribbean coast of Colombia.
 				case 'es-CU':	
-				case 'es-cu':	
+				case 'es-cu':
+				case 'es_cu':				
 				//	Spanish (Cuba) (es-CU)
 					$lang_name = 'CUBAN_SPANISH';
 					$country_name = 'CUBA';
@@ -1582,6 +1586,8 @@ abstract class Item
 				break;
 				
 				case 'gr':
+				case 'el_gr':				
+				case 'el-gr':
 				case 'gre':
 					$lang_name = 'MODERN_GREEK'; 
 					$country_name = 'GREECE';
