@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florn C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -30,118 +30,213 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 }
 
 /**
- * Reads the file contents, then parses comments and translated words.
+ * In addition to everything TemplateInfo and template parse, this adds
+ * information about files/folders through the item class.
  *
- * First step in parsing a template file. Used on all templates:
- * - global header
- * - global footer
- * - table header
- * - table footer
+ * Third and final step for parsing templates. Only used for:
  * - each_file
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.0.3 (February 02, 2005)
+ * @version 1.0.1 (July 09, 2004)
  * @package AutoIndex
  */
-class TemplateIndexer
+class TemplateFiles extends TemplateInfo
 {
 	/**
-	 * @var string The final output
+	 * @var Item The file or folder we're currently processing
 	 */
-	protected $out;
+	private $temp_item;
+	
+	/**
+	 * @var bool Is the current user an admin
+	 */
+	private $is_admin;
+	
+	/**
+	 * @var bool Is the current user a moderator
+	 */
+	private $is_mod;
+	
+	/**
+	 * @var int The number of the file we're currently processing
+	 */
+	private $i;
+	
+	/**
+	 * @var int The total number of files to process
+	 */
+	private $length;
 	
 	/**
 	 * @param array $m The array given by preg_replace_callback()
-	 * @return string Looks up $m[1] in word list and returns match
+	 * @return string Property is gotten from temp_item
 	 */
-	private static function callback_words($m)
+	private function callback_file($m)
 	{
-		global $words;
-		return $words->__get(strtolower($m[1]));
+		global $words, $subdir;
+		switch (strtolower($m[1]))
+		{
+			case 'tr_class':
+			{
+				return (($this -> i % 2) ? 'dark_row' : 'light_row');
+			}
+			case 'filename':
+			{
+				return Url::html_output($this -> temp_item -> __get('filename'));
+			}
+			case 'file_ext':
+			{
+				return $this -> temp_item -> file_ext();
+			}
+			case 'size':
+			{
+				return $this -> temp_item -> __get('size') -> formatted();
+			}
+			case 'bytes':
+			{
+				return $this -> temp_item -> __get('size') -> __get('bytes');
+			}
+			case 'date':
+			case 'time':
+			case 'm_time':
+			{
+				return $this -> temp_item -> format_m_time();
+			}
+			case 'a_time':
+			{
+				return $this -> temp_item -> format_a_time();
+			}
+			case 'thumbnail':
+			{
+				return $this -> temp_item -> __get('thumb_link');
+			}
+			case 'num_subfiles':
+			{
+				return (($this -> temp_item instanceof DirItem 
+				&& !$this -> temp_item -> __get('is_parent_dir')) ? $this -> temp_item -> num_subfiles() : '');
+			}
+			case 'delete_link':
+			{
+				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=delete&amp;dir=' . rawurlencode($subdir)
+				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
+				. '" class="autoindex_small autoindex_a">' . $words -> __get('delete') . '</a>]' : '');
+			}
+			case 'rename_link':
+			{
+				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=rename&amp;dir=' . rawurlencode($subdir)
+				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
+				. '" class="autoindex_small autoindex_a">' . $words -> __get('rename') . '</a>]' : '');
+			}
+			case 'edit_description_link':
+			{
+				$slash = (($this -> temp_item instanceof DirItem) ? '/' : '');
+				return (($this -> is_mod && DESCRIPTION_FILE && !$this -> temp_item -> __get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_description&amp;dir='
+				. rawurlencode($subdir) . '&amp;filename='
+				. rawurlencode($this -> temp_item -> __get('filename')) . $slash
+				. '" class="autoindex_small autoindex_a">'
+				. $words -> __get('edit description') . '</a>]' : '');
+			}
+			case 'ftp_upload_link':
+			{
+				if (!$this -> is_mod || !$this -> temp_item instanceof FileItem || !isset($_SESSION['ftp']))
+				{
+					return '';
+				}
+				return ' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
+				. rawurlencode($subdir) . '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
+				. '" class="autoindex_small autoindex_a">' . $words->__get('upload to ftp') . '</a>]';
+			}
+			default:
+			{
+				return $this -> temp_item -> __get($m[1]);
+			}
+		}
 	}
 	
 	/**
-	 * @param array $m The array given by preg_replace_callback()
-	 * @return string The parsed template of filename $m[1]
-	 */
-	private static function callback_include($m)
-	{
-		$temp = new TemplateIndexer($m[1]);
-		return $temp->__toString();
-	}
-	
-	/**
-	 * @param array $m The array given by preg_replace_callback()
-	 * @return string The setting for the config value $m[1]
-	 */
-	private static function callback_config($m)
-	{
-		global $config;
-		return $config->__get(strtolower($m[1]));
-	}
-	
-	/**
-	 * Parses the text in $filename and sets the result to $out. We cannot
-	 * use ExceptionDisplay here if there is an error, since it uses the
-	 * template system.
+	 * Either the HTML text is returned, or an empty string is returned,
+	 * depending on if the if-statement passed.
 	 *
-	 * Steps to parse the template:
-	 * - remove comments
-	 * - replace {info} variables
-	 * - replace {words} strings
-	 * - replace {config} variables
-	 * - include other files when we see the {include} statement
+	 * @param array $m The array given by preg_replace_callback()
+	 * @return string The result to insert into the HTML
+	 */
+	private function callback_type($m)
+	{
+		switch (strtolower($m[1]))
+		{
+			case 'is_file': //file
+			{
+				return (($this -> temp_item instanceof FileItem) ? $m[2] : '');
+			}
+			case 'is_dir': //folder or link to parent directory
+			{
+				return (($this -> temp_item instanceof DirItem) ? $m[2] : '');
+			}
+			case 'is_real_dir': //folder
+			{
+				return (($this -> temp_item instanceof DirItem
+				&& !$this -> temp_item -> __get('is_parent_dir')) ? $m[2] : '');
+			}
+			case 'is_parent_dir': //link to parent directory
+			{
+				return (($this -> temp_item instanceof DirItem
+				&& $this -> temp_item -> __get('is_parent_dir')) ? $m[2] : '');
+			}
+			default:
+			{
+				throw new ExceptionDisplay('Invalid file:if statement in <em>'
+				. Url::html_output(EACH_FILE) . '</em>');
+			}
+		}
+	}
+	
+	/**
+	 * Either the HTML text is returned or an empty string is returned,
+	 * depending on if temp_item is the ith file parsed.
+	 *
+	 * @param array $m The array given by preg_replace_callback()
+	 * @return string The result to insert into the HTML output
+	 */
+	private function callback_do_every($m)
+	{
+		$num = $this -> i + 1;
+		return (($num % (int)$m[1] === 0 && $this -> length !== $num) ? $m[2] : '');
+	}
+	
+	
+	/**
+	 * Parses info for each file in the directory. Order of elements to
+	 * replace is:
+	 * - file:if
+	 * - do_every
+	 * - file
 	 *
 	 * @param string $filename The name of the file to parse
+	 * @param DirectoryListDetailed $list
 	 */
-	public function __construct($filename)
+	public function __construct($filename, DirectoryListDetailed $list)
 	{
-		global $config, $dir, $subdir, $words, $mobile_device_detect;
-		$full_filename = $config->__get('template') . $filename;
-		if (!is_file($full_filename))
+		parent::__construct($filename, $list);
+		global $you;
+		$this -> is_admin = ($you -> level >= ADMIN);
+		$this -> is_mod = ($you -> level >= MODERATOR);
+		$final_file_line = '';
+		$this -> length = (int)$list -> __get('list_count');
+		foreach ($list as $i => $item)
 		{
-			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> cannot be found.');
+			$this -> i = (int)$i;
+			$this -> temp_item = $item;
+			$temp_line = preg_replace_callback('/\{\s*file\s*:\s*if\s*:\s*(\w+)\s*\}(.*)\{\s*end\s*if\s*\}/Uis',
+				array($this, 'callback_type'), $this -> out);
+			$temp_line = preg_replace_callback('/\{\s*do_every\s*:\s*(\d+)\s*\}(.*)\{\s*end\s*do_every\s*\}/Uis',
+				array($this, 'callback_do_every'), $temp_line);
+			$final_file_line .= preg_replace_callback('/\{\s*file\s*:\s*(\w+)\s*\}/Ui',
+				array($this, 'callback_file'), $temp_line);
 		}
-		
-		//read raw file contents
-		$contents = file_get_contents($full_filename);
-		if ($contents === false)
-		{
-			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> could not be opened for reading.');
-		}
-		
-		//remove comments
-		$contents = preg_replace('#/\*.*?\*/#s', '', $contents);
-		
-		//replace info variables and word strings from language file
-		$tr = array(
-			'{info:dir}' => (isset($dir) ? Url::html_output($dir) : ''),
-			'{info:subdir}' => (isset($subdir) ? Url::html_output($subdir) : ''),
-			'{info:version}' => VERSION,
-			'{info:page_time}' => round((microtime(true) - START_TIME) * 1000, 1),
-			'{info:statinfo}' => $mobile_device_detect->detect()->getInfo(),
-			'{info:message}' => $words->__get('cookie consent msg'),			
-			'{info:dismiss}' => $words->__get('cookie consent OK'),
-			'{info:link}' => $words->__get('cookie consent info'),
-			'{info:href}' => $words->__get('privacy'));
-		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui',
-			array('self', 'callback_words'), strtr($contents, $tr));
-		
-		//replace {config} variables
-		$contents = preg_replace_callback('/\{\s*config\s*:\s*(.+)\s*\}/Ui',
-			array('self', 'callback_config'), $contents);
-
-		//parse includes
-		$this -> out = preg_replace_callback('/\{\s*include\s*:\s*(.+)\s*\}/Ui',
-			array('self', 'callback_include'), $contents);
-	}
-	
-	/**
-	 * @return string The HTML text of the parsed template
-	 */
-	public function __toString()
-	{
-		return $this->out;
+		$this -> out = $final_file_line;
 	}
 }
 
