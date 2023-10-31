@@ -687,3 +687,17 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+
+//Other
+privacy	Privacy policy
+cookie consent msg	This website uses cookies to ensure you get the best experience on our website.
+cookie consent OK	Got it!
+cookie consent info	Learn more
+powered by	Powered by
+
+//Other files
+LICENSE	Licence
+CHANGE_LOG	Development Log
+Powered by	Powered by
+e-sword 	e-Sword
+|autoindex_license	GNU GPL-2.0 License
