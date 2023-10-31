@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -47,11 +47,15 @@ class DirItem extends Item
 	 * @var DirectoryList The list of this directory's contents
 	 */
 	private $temp_list;
-	
+		
 	/**
 	 * @var string
 	 */
 	protected $description;
+	
+	protected $config;	
+	
+	protected $request;
 	
 	/**
 	 * @return string Always returns 'dir', since this is a directory, not a file
@@ -66,11 +70,11 @@ class DirItem extends Item
 	 */
 	private function dir_size()
 	{
-		if (!isset($this -> temp_list))
+		if (!isset($this->temp_list))
 		{
-			$this -> temp_list = new DirectoryList($this -> parent_dir . $this -> filename);
+			$this->temp_list = new DirectoryList($this->parent_dir . $this->filename);
 		}
-		return $this -> temp_list -> size_recursive();
+		return $this->temp_list -> size_recursive();
 	}
 	
 	/**
@@ -78,11 +82,11 @@ class DirItem extends Item
 	 */
 	public function num_subfiles()
 	{
-		if (!isset($this -> temp_list))
+		if (!isset($this->temp_list))
 		{
-			$this -> temp_list = new DirectoryList($this -> parent_dir . $this -> filename);
+			$this->temp_list = new DirectoryList($this->parent_dir . $this->filename);
 		}
-		return $this -> temp_list -> num_files();
+		return $this->temp_list -> num_files();
 	}
 	
 	/**
@@ -92,8 +96,7 @@ class DirItem extends Item
 	public static function get_parent_dir($path)
 	{
 		$path = str_replace('\\', '/', $path);
-		while (preg_match('#/$#', $path))
-		//remove all slashes from the end
+		while (preg_match('#/$#', $path)) 		//remove all slashes from the end
 		{
 			$path = substr($path, 0, -1);
 		}
@@ -114,35 +117,34 @@ class DirItem extends Item
 	{
 		$filename = self::make_sure_slash($filename);
 		parent::__construct($parent_dir, $filename);
-		global $config, $subdir;
-		$this -> downloads = '&nbsp;';
-		if ($filename == '../')
-		//link to parent directory
+		global $config, $subdir, $request;
+		$this->downloads = '&nbsp;';
+		$lang_arg = $request->is_request('lang', TYPE_NO_TAGS) ? '&lang=' . $request->request('lang') : '';
+		if ($filename == '../')		//link to parent directory
 		{
 			if ($subdir != '')
 			{
 				global $words;
-				$this -> is_parent_dir = true;
-				$this -> filename = $words -> __get('parent directory');
-				$this -> icon = (ICON_PATH ? $config -> __get('icon_path') . 'back.png' : '');
-				$this -> size = new Size(true);
-				$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(self::get_parent_dir($subdir));
-				$this -> parent_dir = $this -> new_icon = '';
-				$this -> a_time = $this -> m_time = false;
+				$this->is_parent_dir = true;
+				$this->filename = $words->__get('parent directory');
+				$this->icon = (ICON_PATH ? $config->__get('icon_path') . 'back.png' : '');
+				$this->size = new Size(true);
+				$this->link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(self::get_parent_dir($subdir)) . $lang_arg;
+				$this->parent_dir = $this->new_icon = '';
+				$this->a_time = $this->m_time = false;
 			}
 			else
 			{
-				$this -> is_parent_dir = $this -> filename = false;
+				$this->is_parent_dir = $this->filename = false;
 			}
 		}
 		else
 		{
 			//regular folder
-			$file = $this -> parent_dir . $filename;
-			
+			$file = $this->parent_dir . $filename;			
 			if (!is_dir($file))
 			{
-				throw new ExceptionDisplay('Directory <em>'	. Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
+				throw new ExceptionDisplay('Directory <em>'	. Url::html_output($this->parent_dir . $filename) . '</em> does not exist.');
 			}
 			if (!function_exists('mb_strlen'))
 			{
@@ -151,7 +153,7 @@ class DirItem extends Item
 					strlen($text);
 				}
 			}
-			$this -> filename = $filename = substr($filename, 0, -1); 
+			$this->filename = $filename = substr($filename, 0, -1); 
 			$mb_strlen = mb_strlen($filename);
 			
 			//Special common folders 
@@ -159,13 +161,14 @@ class DirItem extends Item
 			{
 				case 'apps':
 				case 'docs':
+				case 'Docs':
 				case 'Fonts':
 				case 'fonts':
-					$this -> icon = $config -> __get('icon_path') . $filename . '.png';
+					$this->icon = $config -> __get('icon_path') . $filename . '.png';
 				break;
 				
 				default:
-					$this -> icon = $config -> __get('icon_path') . 'dir.png';
+					$this->icon = $config -> __get('icon_path') . 'dir.png';
 				break;
 			}
 
@@ -176,7 +179,7 @@ class DirItem extends Item
 				//Language Folders and Dirs with ICON files
 				if (!empty($decoded_lang_name))
 				{
-					$this -> icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
+					$this->icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
 				}
 			}
 			
@@ -201,10 +204,9 @@ class DirItem extends Item
 					$description = ($words -> is_set($file_name) ? $words -> __get($file_name) : $file_name);
 				}
 				
-				$this -> description = ($words -> is_set($description) ? $words -> __get($description) : $description);
-			}
-			
-			$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename);
+				$this->description = ($words -> is_set($description) ? $words -> __get($description) : $description);
+			}	
+			$this->link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename) . $lang_arg;
 		
 		}
 	}
@@ -266,9 +268,10 @@ class DirItem extends Item
 				break;
 				
 				case 'aj':
+				case 'rup':
 					$lang_name = 'AROMANIAN';
-					$country_name = 'Aromaya';
-				break;
+					$country_name = 'BALCANS'; //$country_name = 'Aromaya';
+				break;					
 				
 				case 'ak':
 					$lang_name = 'AKAN';
@@ -307,6 +310,11 @@ class DirItem extends Item
 					$lang_name = 'ARABIC';
 					$country_name = 'ARGENTINA';
 				break;
+				
+				case 'aru':
+					$lang_name = 'AROMANIAN';
+					$country_name = 'BALCANS';
+				break;					
 				
 				case 'arq':
 					$lang_name = 'ALGERIAN_ARABIC'; //known as Darja or Dziria in Algeria
@@ -767,7 +775,6 @@ class DirItem extends Item
 					wep – Westphalian
 					hrx – Riograndenser Hunsrückisch
 					yec – Yenish	*/
-
 				
 				//Germany 	84,900,000 	75,101,421 (91.8%) 	5,600,000 (6.9%) 	De facto sole nationwide official language
 				case 'de':
@@ -1120,7 +1127,9 @@ class DirItem extends Item
 					$country_name = 'CHILE';
 				break;
 				case 'es_CO':	
-				case 'es_co':	
+				case 'es_co':
+				case 'es-419':	
+				case 'es_419':				
 				//	Spanish (Colombia) (es-CO)
 					$lang_name = 'SPANISH_COLOMBIAN';
 					$country_name = 'COLOMBIA';
@@ -1132,7 +1141,8 @@ class DirItem extends Item
 				// as well as in Panama, Venezuela, 
 				// and the Caribbean coast of Colombia.
 				case 'es-CU':	
-				case 'es-cu':	
+				case 'es-cu':
+				case 'es_cu':				
 				//	Spanish (Cuba) (es-CU)
 					$lang_name = 'CUBAN_SPANISH';
 					$country_name = 'CUBA';
@@ -1591,6 +1601,8 @@ class DirItem extends Item
 				break;
 				
 				case 'gr':
+				case 'el_gr':
+				case 'el-gr':
 				case 'gre':
 					$lang_name = 'MODERN_GREEK'; 
 					$country_name = 'GREECE';
