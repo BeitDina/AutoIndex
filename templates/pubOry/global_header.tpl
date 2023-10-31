@@ -19,14 +19,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="favicon.gif" type="image/gif" />
 <link rel="top" href="http://pubory.uv.ro/forum/index.php" title="Pagina de start a forumului pubory.uv.ro" />
 <link rel="search" href="http://pubory.uv.ro/forum/search.php" title="Căutare" />
 <link rel="help" href="http://pubory.uv.ro/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://pubory.uv.ro/forum/memberlist.php" title="Membri" />
 
-<title>{words:index of} {info:dir} @ Beit Dina Bible Arheology and Translation Institute</title>
+<title>{words:index of} {info:dir} @ PubOry</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
-<link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" >
+<link rel="stylesheet" href="{config:template}pubOry.css" type="text/css" >
 <!-- Then load addon template *.css definition for mx, located in the the portal template folder -->
 <link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" >
 
