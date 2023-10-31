@@ -5,10 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
-<meta name="title"  content="Directory Index" />
-<meta name="author"      content="mesianic dot uv dot ro" />
-<meta name="copyright"   content="(c) mesianic.uv.ro 2019" />
-<meta name="keywords"    content="Mesianic dot uv dot ro, documents" />
+<meta name="title"  content="Mesianic Directory Index" />
+<meta name="author"      content="Beit Dina Bible Arheology and Translation Institute" />
+<meta name="copyright"   content="(c) Beit Dina 2019" />
+<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 <meta name="description" lang="{config:language}" content="This is the description search engines show when listing your site." />
 <meta name="category"    content="general" />
 <meta name="robots"      content="index,follow" />
@@ -21,18 +21,18 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="favicon.gif" type="image/gif" />
-	
 <link rel="top" href="http://mesianic.uv.ro/forum/index.php" title="Pagina de start a forumului mesianic.uv.ro" />
 <link rel="search" href="http://mesianic.uv.ro/forum/search.php" title="Căutare" />
 <link rel="help" href="http://mesianic.uv.ro/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://mesianic.uv.ro/forum/memberlist.php" title="Membri" />
 
-<title>{words:index of} {info:dir} @ Beit Dina Bible Arheology and Translation Institute</title>
+<title>{words:index of} {info:dir} @ Mesianic</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
-<link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" >
+<link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" />
 <!-- Then load addon template *.css definition for mx, located in the the portal template folder -->
-<link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" >
-
+<link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" />
+<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
+<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />
 <!-- Optionally, redefine some defintions for gecko browsers -->
 <style type="text/css">
 <!--
