@@ -338,6 +338,7 @@ ESPERANTO	Esperanto
 ERITREA	Eritrea
 SPANISH	Spanish
 SPANISH_MEXICO	Spanish Mexico
+CUBAN_SPANISH	Cuban Spanish
 SPANISH_UNITED_STATES	Spanish United States
 SPANISH_CARIBBEAN	Spanish Caribbean
 SPANISH_ARGENTINIAN	Spanish Argentinian
@@ -686,3 +687,6 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+CHANGE_LOG	Development Log
+LICENSE	Licence
+|autoindex_license	GNU GPL-2.0 License
