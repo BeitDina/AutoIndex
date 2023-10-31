@@ -8,7 +8,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
+	<meta name="apple-mobile-web-app-status-bar-style" content="blue" />
+	
+	<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
+	<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />	
 	
 	<title>{words:index of} {info:dir}</title>
 	<link rel="shortcut icon" href="favicon.ico" />
@@ -17,4 +20,3 @@
 </head>
 
 <body class="autoindex_body">
-
