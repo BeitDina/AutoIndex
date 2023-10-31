@@ -1,12 +1,8 @@
-
 <!--
-
 Powered by AutoIndex PHP Script (version {info:version})
 Copyright (C) 2002-2007 Justin Hagstrom, 2019-2023 Florin Ciprian Bodin
 http://autoindex.sourceforge.net
-
 Page generated in {info:page_time} milliseconds.
-
 -->
 <script type="text/javascript">window.jQuery || document.write('\x3Cscript src="{config:assets_path}/javascript/jquery.min.js?assets_version=75">\x3C/script>');</script>
 <script type="text/javascript" src="{config:assets_path}/javascript/core.js?assets_version=75"></script>
@@ -58,10 +54,10 @@ Page generated in {info:page_time} milliseconds.
 				},
 				"theme": "classic",
 				"content": {
-					"message": "{lang:cookie consent msg}",
-					"dismiss": "{lang:cookie consent OK}",
-					"link": "{lang:cookie consent info}",
-					"href": "{lang:privacy}"
+					"message": "{info:message}",
+					"dismiss": "{info:dismiss}",
+					"link": "{info:link}",
+					"href": "{info:href}"
 				}
 				});
 			});
@@ -74,6 +70,7 @@ Page generated in {info:page_time} milliseconds.
 <script language="javascript" type="text/javascript" src="{config:template}forum_fn.js?assets_version=75"></script>
 <script language="javascript" type="text/javascript" src="{config:template}collapsiblecategories.js?assets_version=75"></script>
 
+{info:statinfo}
 
 <script>$('.tables1 br').remove();</script>
 </body>
