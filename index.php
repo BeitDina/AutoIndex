@@ -5,7 +5,7 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.4.5 (January 01, 2019)
+ * @version 2.2.6 (January 01, 2019 / 30, Octomber, 2013)
  *
  * @copyright Copyright (C) 2002-2007 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
@@ -111,7 +111,7 @@ define('ADMIN', 3);
 //define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.4.5-REV.2');
+define('VERSION', '2.2.6');
 
 /**
  * This must be set to true for other included files to run. Setting it to
@@ -152,6 +152,10 @@ function simple_display($text, $title = 'Error on Page')
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 	<title>' . $title . '</title>
 	<style type="text/css" title="AutoIndex Default">
 		html, body
@@ -169,7 +173,7 @@ function simple_display($text, $title = 'Error on Page')
 <!--
 
 Powered by AutoIndex PHP Script (version ' . VERSION . ')
-Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2021 FlorinCB
+Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
 http://autoindex.sourceforge.net/
 
 -->
@@ -216,7 +220,7 @@ if (!$super_globals_disabled)
 
 
 
-/*
+/* To do: Should be switched to i.e. $request->request('style', 1);
 */
 $_GET = array_change_key_case($_GET, CASE_LOWER);
 $_POST = array_change_key_case($_POST, CASE_LOWER);
@@ -256,8 +260,8 @@ try
 	}
 	
 	
-	//find and store the user's IP address and hostname:
-	$ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
+	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
+	$ip = htmlspecialchars_decode($request->server('REMOTE_ADDR', 'N/A'));
 	if (!empty($_SESSION['host']))
 	{
 		$host = $_SESSION['host'];
@@ -298,7 +302,7 @@ try
 	
 	
 	//make sure all required settings are set in the config file
-	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'template', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
+	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
 	{
 		if (!defined(strtoupper($set)))
 		{
