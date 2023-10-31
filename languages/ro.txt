@@ -687,9 +687,17 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+
+//Other
+PRIVACY	Politica de confidenţialitate
+COOKIE_CONSENT_MSG	Acest sit web foloseşte cookies să vă asigure luarea celei mai bune experienţă pe situl nostru web.
+COOKIE_CONSENT_OK	Am înţeles!
+COOKIE_CONSENT_INFO	Învaţă mai mult
+powered by	Sprijinită de
+
+//Other files
 CHANGE_LOG 	Log de Dezvoltare
 LICENSE	LICENȚĂ
 LICENSE 	LICENȚĂ
-Powered by	Sprijinită de
 e-sword 	e-Sword
 |autoindex_license	Licenţa GNU GPL-2.0
