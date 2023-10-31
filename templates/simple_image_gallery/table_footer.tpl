@@ -1,5 +1,26 @@
-</tr></table>
-<div class="autoindex_small" style="text-align: right;">Powered by <a class="autoindex_a" href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a></div>
+  <th class="autoindex_th stat-block online-list">
+   <span class="autoindex_small">{info:total_files} {words:files} - {info:total_folders} {words:folders}</span>
+  </th>
+  {if:download_count}
+  <th class="autoindex_th stat-block online-list">
+    <span class="autoindex_small">{words:total downloads}: {info:total_downloads}</span>
+  </th>
+  {end if:download_count}
+  <th class="autoindex_th stat-block online-list">
+    <span class="autoindex_small">{words:total size}: {info:total_size}</span>
+  </th>
+  <th class="autoindex_th stat-block online-list">
+   &nbsp;
+  </th>
+  {if:description_file}
+  <th class="autoindex_th stat-block online-list">
+   &nbsp;
+  </th>
+  {end if:description_file}
+  </tr>
+  </thead>
+</table>
+<div class="autoindex_small" style="text-align: right;">{words:powered by} <a class="autoindex_a" href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a></div>
 		/* We request that you do not remove the link to the AutoIndex website.
 		   This not only gives respect to the large amount of time given freely by the
 		   developer, but also helps build interest, traffic, and use of AutoIndex. */
