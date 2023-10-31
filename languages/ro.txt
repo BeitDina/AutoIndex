@@ -78,7 +78,7 @@ add a new hidden file	Adaugă un nou fişier ascuns
 
 edit ban list	Modifică lista de IP-uri de nume hostname blocate
 remove a ban	Ştergi un blocat
-add a new ban	Adaugă un nou blocat (indidă IP ori hostname, poţi utiliza chiar wildcards)
+add a new ban	Adaugă un nou blocat (indică IP ori hostname, poţi utiliza chiar wildcards)
 the administrator has blocked your ip address or hostname	Sorry, the administrator has blocked your IP address or hostname
 
 view entries from log file	Vezi intrările din fişierul de log
@@ -189,7 +189,7 @@ REV		APOCALIPSA
 
 
 AFAR	Afară
-AFRICAN-AMERICAN_ENGLISH	Enleză Afro-Americană
+AFRICAN-AMERICAN_ENGLISH	Engleză Afro-Americană
 UNITED_STATES		Statele Unite
 ABKHAZIAN	Abkhaziană
 AVESTAN	Avestană
@@ -242,7 +242,7 @@ TIBETAN	Tibetană
 BRETON	Breton
 BHUTAN	Bhutan
 BOTSWANA	Botswană
-CAMEROONIAN_PIDGIN_ENGLISH		Engleză Cameroniană Pidgin 
+CAMEROONIAN_PIDGIN_ENGLISH	Engleză Cameroniană Pidgin 
 CAMEROONIAN	Cameroniană
 CATALAN	Catalană
 COA_A_COCOS	Coa de Cocos
@@ -338,6 +338,7 @@ ESPERANTO	Esperanţo
 ERITREA	Eritrea
 SPANISH	Spaniolă
 SPANISH_MEXICO	Spaniolă Mexico
+CUBAN_SPANISH	Spanilolă Cubană
 SPANISH_UNITED_STATES	Spaniolă Statele Unite
 SPANISH_CARIBBEAN	Spaniolă Caribbeană
 SPANISH_ARGENTINIAN	Spaniolă Argentiniană
@@ -686,3 +687,9 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+CHANGE_LOG 	Log de Dezvoltare
+LICENSE	LICENȚĂ
+LICENSE 	LICENȚĂ
+Powered by	Sprijinită de
+e-sword 	e-Sword
+|autoindex_license	Licenţa GNU GPL-2.0
