@@ -3,10 +3,11 @@
 /* AutoIndex PHP Script config file
 
 base_dir	./
+assets_path	assets/
 icon_path	index_icons/winvista/
 flag_path	flags/language/
 language	en
-template	./templates/SwiftBlue/
+template	./templates/default/
 log_file	access.log
 description_file	description_file
 user_list	.htpasswd.autoindex
@@ -25,7 +26,7 @@ days_new	30
 thumbnail_height	150
 bandwidth_limit	0
 md5_show	10
-entries_per_page	200
+entries_per_page	300
 
 */
 
