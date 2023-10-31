@@ -1,4 +1,3 @@
-
 <a name="top"></a>
 <table id="pagetable" class="table3 stat-block online-list responsive-show nav-main linklist" width="100%" cellspacing="0" cellpadding="5" border="0" align="center">
 <thead>	
