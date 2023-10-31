@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -67,43 +67,43 @@ class FileItem extends Item
 		parent::__construct($parent_dir, $filename);
 		if (!is_file($this -> parent_dir . $filename))
 		{
-			throw new ExceptionDisplay('File <em>' . Url::html_output($this -> parent_dir . $filename) . '</em> does not exist.');
+			throw new ExceptionDisplay('File <em>' . Url::html_output($this->parent_dir . $filename) . '</em> does not exist.');
 		}
 		global $config, $words, $downloads;
-		$this -> filename = $filename;
-		$this -> size = new Size(filesize($this -> parent_dir . $filename));
+		$this->filename = $filename;
+		$this->size = new Size(filesize($this->parent_dir . $filename));
 		if (ICON_PATH)
 		{
 			$file_icon = new Icon($filename);
-			$this -> icon = $file_icon -> __toString();
+			$this -> icon = $file_icon->__toString();
 		}
-		$this -> downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
-		$this -> link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir')))) . '&amp;file=' . Url::translate_uri($filename);
+		$this->downloads = (DOWNLOAD_COUNT && $downloads -> is_set($parent_dir . $filename) ? (int)($downloads -> __get($parent_dir . $filename)) : 0);
+		$this->link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this->parent_dir, strlen($config->__get('base_dir')))) . '&amp;file=' . Url::translate_uri($filename);
 		
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('png', 'jpg', 'jpeg', 'jfif', 'gif', 'bmp')))
 		{
-			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
-			. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			$this->thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
 			. ' />';
-			$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
+			$this->thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
 			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
-			. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
+			. ' >' . $words -> __get('view') . ' ' . $words->__get('file') . '</a>';
 		}
 		elseif (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('thm', 'thm')))
 		{
-			$this -> thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
-			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+			$this->thumb_link = ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
+			. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
 			. ' />';
 			$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
 			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
-			. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
+			. ' >' . $words -> __get('view') . ' ' . $words->__get('file') . '</a>';
 		}
 		
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('avi', 'divx', 'mkv', 'asf', 'mov', 'wmv', '3gp', 'mp3', 'mp4', 'mpv', 'ogg', 'ogv','mpg', 'mpeg')))
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('avi', 'divx', 'xvid', 'mkv', 'asf', 'mov', 'wmv', '3gp', 'mp3', 'mp4', 'mpv', 'ogg', 'ogv','mpg', 'mpeg', 'flv', 'FLV', 'flvjs')))
 		{
 			$mime = new MimeType($filename);
 			$finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -113,36 +113,35 @@ class FileItem extends Item
 			$file_mime = function_exists('getvideosize') ? $file_size['mime'] : $mime -> __toString();
 			$this -> thumb_link = '';
 
-			if (function_exists('imagecreatefromavi') && in_array(self::ext($filename), array('avi', 'divx', 'mkv', 'asf', 'mov', 'wmv', '3gp', 'mp4', 'mpv', 'ogv','mpg', 'mpeg')))
+			if (function_exists('imagecreatefromavi') && in_array(self::ext($filename), array('avi', 'divx', 'xvid')))
 			{
-				$this -> thumb_link .= ' <video controls="play" src="' . Url::translate_uri($this -> parent_dir . $filename) . '"'  
+				$this->thumb_link .= ' <video controls="play" src="' . Url::translate_uri($this->parent_dir . $filename) . '"'  
 				. ' poster="' . Url::html_output($_SERVER['PHP_SELF'])  . '"' 
 				. ' type="' . $file_mime . ', ' . $mimetype . ', video/' . self::ext($filename) .'"' 
 				. ' />Your browser does not support the <code>video</code> element.'
 				. '<source src="' . Url::html_output($_SERVER['PHP_SELF']) . '" type="video/' . self::ext($filename) . '" />'
 				. '</video> ';
 				 
-				$this -> thumb_link .= '</br><img src="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
-				. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
+				$this->thumb_link .= '</br><img src="' . Url::html_output($_SERVER['PHP_SELF'])
+				. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '"' 
+				. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"' 
 				. ' />';
 				
 			}
-			elseif (in_array(self::ext($filename), array('avi', 'divx', 'mkv', 'asf', 'mov', 'wmv', '3gp', 'mp4', 'mpv', 'ogv', 'mpg', 'mpeg')))
+			elseif (in_array(self::ext($filename), array('avi', 'divx', 'xvid', 'mkv', 'asf', 'mov', 'wmv', '3gp', 'mp4', 'mpv', 'ogv', 'mpg', 'mpeg')))
 			{				
-				$video_href = Url::html_output($_SERVER['PHP_SELF']) . '?thm='. Url::translate_uri($this -> parent_dir . $filename);
-				$thumbnail = Url::html_output($_SERVER['PHP_SELF']) . '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename);
+				$video_href = Url::html_output($_SERVER['PHP_SELF']) . '?thm='. Url::translate_uri($this->parent_dir . $filename);
+				$thumbnail = Url::html_output($_SERVER['PHP_SELF']) . '?thumbnail='. Url::translate_uri($this->parent_dir . $filename);
 				
-				$this -> thumb_link .= ' <video id="'.$filename.'" controls />'
+				$this->thumb_link .= ' <video id="'.$filename.'" controls />'
 				. '<source src="' . $video_href . '" type="video/'. self::ext($filename) .'" />'
 				. '<p>Your user agent does not support the HTML5 Video element.</p></video>';
-				if (in_array(self::ext($filename), array('avi', 'divx')))
-				{				
-					$this -> thumb_link .='<button type="button" onclick="vid_play_pause()">Play/Pause</button>
+				// if (in_array(self::ext($filename), array('avi', 'divx', 'mp4', 'mpg'))) {				
+					$this->thumb_link .='<button type="button" onclick="vid_play_pause()">Play/Pause</button>
 					<script>
 					function vid_play_pause() 
 					{
-					  var myVideo = document.getElementById("'.$filename.'");
+					  var myVideo = document.getElementById('.$filename.');
 					  if (myVideo.paused) 
 					  {
 						myVideo.play();
@@ -153,24 +152,52 @@ class FileItem extends Item
 					  }
 					}
 					</script>';
-				}
+				//}
 				
 				$this -> thumb_link .= '</br><img src="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 				. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
 				. ' />';
 				
 				$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
+				. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"' 
+				. ' >' . $words->__get('view') . ' ' . $words->__get('file') . '</a>';
+				
+			}
+			elseif (in_array(self::ext($filename), array('flv', 'FLV', 'flvjs')))
+			{				
+				$video_href = Url::html_output($_SERVER['PHP_SELF']) . '?thm='. Url::translate_uri($this->parent_dir . $filename);
+				$thumbnail = Url::html_output($_SERVER['PHP_SELF']) . '?thumbnail='. Url::translate_uri($this->parent_dir . $filename);
+				
+				$this->thumb_link .= '<script src="'.$config->__get('assets_path').'/javascript/flv.min.js"></script>';
+				$this->thumb_link .='<VIDEO controls="play" type="video/flv" id="videoElement" src="'.$video_href.'" loop="false" allowfullscreen="true" quality="high" width="425" height="360" scale="noscale" salign="lt" name="flvPlayer" align="center" bgcolor="#E3F0FB">
+				<script>
+				if (flvjs.isSupported()) 
+				{
+					var videoElement = document.getElementById(videoElement);
+					var flvPlayer = flvjs.createPlayer({
+						type: flv,
+						url: '.$video_href.'
+					});
+					flvPlayer.attachMediaElement(videoElement);
+					flvPlayer.load();
+					flvPlayer.play();
+				}
+				</script>
+				<source src="' . $video_href . '" type="video/'. self::ext($filename) .'" />
+				</VIDEO>';						
+				$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
+				. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 				. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
-				. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
+				. ' >' . $words -> __get('view') . ' ' . $words->__get('file') . '</a>';
 				
 			}
 			elseif (in_array(self::ext($filename), array('MP3', 'mp3', 'ogg')))
 			{
 				//<!-- audio tag starts here -->	
 				$this -> thumb_link .= ' <audio controls="play" src="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 				. ' poster="' . Url::html_output($_SERVER['PHP_SELF'])  . '"' 
 				. ' type="' . $file_mime . ', ' . $mimetype . ', audio/' . self::ext($filename) .'"'
 				. ' />Your browser does not support the <code>audio</code> element.'
@@ -181,25 +208,25 @@ class FileItem extends Item
 			else
 			{
 				$this -> thumb_link .= ' <video controls="play" src="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 				. ' poster="' . Url::html_output($_SERVER['PHP_SELF'])  . '"' 
 				. ' type="' . $file_mime . ', ' . $mimetype . ', application/octet-stream"' 
 				. ' />Your browser does not support the <code>video</code> element.</video> ';
 				
 				$this -> thumb_link .= ' <a href="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '?thm='. Url::translate_uri($this -> parent_dir . $filename) . '"' 
+				. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
 				. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"' 
-				. ' >' . $words -> __get('view') . ' ' . $words -> __get('file') . '</a>';
+				. ' >' . $words->__get('view') . ' ' . $words->__get('file') . '</a>';
 				
 			}
 		}
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
 		{
-			$icon_svg = ICON_PATH ? Url::translate_uri($config -> __get('icon_path') . 'svg.png') : Url::translate_uri($this -> parent_dir . $filename);
+			$icon_svg = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'svg.png') : Url::translate_uri($this->parent_dir . $filename);
 			$heightwidth = in_array(self::ext($filename), array('svg', 'xml')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
 			$this -> thumb_link .= ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
 			. '?thumbnail='. Url::translate_uri($icon_svg) . '"' 
-			. ' alt="' . $words -> __get('thumbnail of') . ' ' . $filename . '"'
+			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
 			. ' />';
 			//. ' <img src="' . Url::html_output($_SERVER['PHP_SELF'])
 			//. '?thumbnail='. Url::translate_uri($this -> parent_dir . $filename) . '" srcset="' . Url::html_output($_SERVER['PHP_SELF'])
