@@ -190,47 +190,47 @@ REV	Apocalisse
 
 
 
-AFAR	Afar„
-AFRICAN-AMERICAN_ENGLISH	Enlez„ Afro-American„
+AFAR	Afar√£
+AFRICAN-AMERICAN_ENGLISH	Enlez√£ Afro-American√£
 UNITED_STATES		Statele Unite
-ABKHAZIAN	Abkhazian„
-AVESTAN	Avestan„
-AFRIKAANS	African„
-ENGLISH-CREOLE	Creol„ Englez„
-ANGUILLA	Anguillan„
-AROMANIAN	Arom‚n„
-AKAN	Akan„
-ALBANIAN	Albanian„
-AMHARIC	Amharic„
-ARMENIAN		Armenian„
-ARAGONESE	Aragones„
-ANGOLIAN		Angolian„
+ABKHAZIAN	Abkhazian√£
+AVESTAN	Avestan√£
+AFRIKAANS	African√£
+ENGLISH-CREOLE	Creol√£ Englez√£
+ANGUILLA	Anguillan√£
+AROMANIAN	Arom√¢n√£
+AKAN	Akan√£
+ALBANIAN	Albanian√£
+AMHARIC	Amharic√£
+ARMENIAN		Armenian√£
+ARAGONESE	Aragones√£
+ANGOLIAN		Angolian√£
 ANGIKA		Angika
-ARABIC	Arab„
-ARAMEIC		Arameic„
-ALGERIAN_ARABIC		Arab„ Algerian„
-MOROCCAN_ARABIC	Arab„ Marocan„
+ARABIC	Arab√£
+ARAMEIC		Arameic√£
+ALGERIAN_ARABIC		Arab√£ Algerian√£
+MOROCCAN_ARABIC	Arab√£ Marocan√£
 MOROCCO	Maroc
-JUDEO-ARABIC	Iudeo-Arab„ 
+JUDEO-ARABIC	Iudeo-Arab√£ 
 KABYLE	Kabile
-ALGERIA	Algerian„
-ASSAMESE		Assamez„
-GERMAN_AUSTRI	German„ Austriac„
-AVARIC	Avaric„
-AVARIAN_KHANATE	Daghestanez„
+ALGERIA	Algerian√£
+ASSAMESE		Assamez√£
+GERMAN_AUSTRI	German√£ Austriac√£
+AVARIC	Avaric√£
+AVARIAN_KHANATE	Daghestanez√£
 AYMARA	Aymara
 AUSTRALIA	Australia
-AZERBAIJANI	Azerbaijan„
-FINNISH	Finlandez„
-BASHKIR	Ba∫kir
-BOSNIAN	Bosnian„ 
-CROATIAN		Croat„ 
-SERBIAN	S‚rb„
-BAVARIAN	Bavarez„
+AZERBAIJANI	Azerbaijan√£
+FINNISH	Finlandez√£
+BASHKIR	Ba¬∫kir
+BOSNIAN	Bosnian√£ 
+CROATIAN		Croat√£ 
+SERBIAN	S√¢rb√£
+BAVARIAN	Bavarez√£
 BARBADOS	Barbados
-BELARUSIAN	Belarus„
-BULGARIAN	Bulgar„
-BIHARI	Bihar„
+BELARUSIAN	Belarus√£
+BULGARIAN	Bulgar√£
+BIHARI	Bihar√£
 BHOJPURI	Bhojpuri
 BAHRAIN	Bahrain
 BISLAMA	Bislama
@@ -240,340 +240,340 @@ BONAIRE	Bonaire
 BAMBARA	Bambara
 BENGALI	Bengali
 BRUNEI	Brunei
-TIBETAN	Tibetan„
+TIBETAN	Tibetan√£
 BRETON	Breton
 BHUTAN	Bhutan
-BOTSWANA	Botswan„
-CAMEROONIAN_PIDGIN_ENGLISH		Englez„ Cameronian„ Pidgin 
-CAMEROONIAN	Cameronian„
-CATALAN	Catalan„
+BOTSWANA	Botswan√£
+CAMEROONIAN_PIDGIN_ENGLISH		Englez√£ Cameronian√£ Pidgin 
+CAMEROONIAN	Cameronian√£
+CATALAN	Catalan√£
 COA_A_COCOS	Coa de Cocos
-CHECHEN	Cecen„
+CHECHEN	Cecen√£
 CHAMORRO	Chamoro
-CHINESE	Chinez„
-CHINESE_FUJIA	Chinez„ Fujian
-CHINESE_DONG	Chinez„ Dong 
-CHINA_JINYU		Chinez„ Jinyu
-CHINESE_MANDARIN	Chinez„ Mandarin„
-CHINESE_PU-XIAN		Chinez„ Pu-Xian
-CHINESE_HUIZHOU		Chinez„ Huizhou
-CHINESE_ZHONG	Chinez„ Zhong
-DING_CHINESE	Chinez„ Ding
-GAN_CHINESE	Chinez„ Gan
-CHINESE_HAKKA	Chinez„ Hakka
-XIANG_CHINESE		Chinez„ Xiang
-LITERARY_CHINESE	Chinez„ Literar„
-MIN_BEI_CHINESE	Chinez„ Min Bei
-MIN_NAN_CHINESE		Chinez„ Min Nan
-WU_CHINESE	Chinez„ Wu
-YUE_CHINESE	Chinez„ Yue
-CORSICAN		Corsican„
+CHINESE	Chinez√£
+CHINESE_FUJIA	Chinez√£ Fujian
+CHINESE_DONG	Chinez√£ Dong 
+CHINA_JINYU		Chinez√£ Jinyu
+CHINESE_MANDARIN	Chinez√£ Mandarin√£
+CHINESE_PU-XIAN		Chinez√£ Pu-Xian
+CHINESE_HUIZHOU		Chinez√£ Huizhou
+CHINESE_ZHONG	Chinez√£ Zhong
+DING_CHINESE	Chinez√£ Ding
+GAN_CHINESE	Chinez√£ Gan
+CHINESE_HAKKA	Chinez√£ Hakka
+XIANG_CHINESE		Chinez√£ Xiang
+LITERARY_CHINESE	Chinez√£ Literar√£
+MIN_BEI_CHINESE	Chinez√£ Min Bei
+MIN_NAN_CHINESE		Chinez√£ Min Nan
+WU_CHINESE	Chinez√£ Wu
+YUE_CHINESE	Chinez√£ Yue
+CORSICAN		Corsican√£
 CREE	Cree
-CZECH	Ceh„
-SLAVONIC	Slavon„
-CHUVASH	Chuva∫
+CZECH	Ceh√£
+SLAVONIC	Slavon√£
+CHUVASH	Chuva¬∫
 WELSH_CYMRAEG	Welsh Cymraeg
-MALAYSIAN_CHINESE	Chinez„ Malaysian„
+MALAYSIAN_CHINESE	Chinez√£ Malaysian√£
 PAPIAMENTU	Papiamentu
-CURA«AO	Cura∫ao
-DANISH	Danez„
-GERMAN	German„
-GERMAN_GERMANY	German„ Germania
+CURA√áAO	Cura¬∫ao
+DANISH	Danez√£
+GERMAN	German√£
+GERMAN_GERMANY	German√£ Germania
 DEUTSCH	Deutsch
-BELGIUM_GERMAN	German„ Belgian„
-AUSTRIAN_GERMAN	German„ Austriac„
-SWISS_GERMAN	German„ Swiss
-LUXEMBOURG_GERMAN	German„ Luxembourg
-LUXEMBOURGIAN	Luxembourgian„
-LIECHTENSTEIN_GERMAN	German„ Liechtenstein
-ALEMANNIC_GERMAN		German„ Alemannic
+BELGIUM_GERMAN	German√£ Belgian√£
+AUSTRIAN_GERMAN	German√£ Austriac√£
+SWISS_GERMAN	German√£ Swiss
+LUXEMBOURG_GERMAN	German√£ Luxembourg
+LUXEMBOURGIAN	Luxembourgian√£
+LIECHTENSTEIN_GERMAN	German√£ Liechtenstein
+ALEMANNIC_GERMAN		German√£ Alemannic
 DREHU	Drehu
-DOMINICAN_CREOLE_FRENCH	Francez„ Dominican„ Creol„
+DOMINICAN_CREOLE_FRENCH	Francez√£ Dominican√£ Creol√£
 ROSEAU	Roseau 
-DOMINICA_ENGLISH	Englez„ Dominican„
-SANTO_DOMINGO_SPANISH	Spaniol„ Santo Domingo
-SANTO_DOMINGO_ENGLISH	Englez„ Santo Domingo
+DOMINICA_ENGLISH	Englez√£ Dominican√£
+SANTO_DOMINGO_SPANISH	Spaniol√£ Santo Domingo
+SANTO_DOMINGO_ENGLISH	Englez√£ Santo Domingo
 DJIBOUTI	Djibouti
-AFAR_DJIBOUTI	Afar„ Djibouti
+AFAR_DJIBOUTI	Afar√£ Djibouti
 DIVEHI	Divehi
-MALDIVIAN	Maldivian„
-SHAWIYA_BERBER	™awiya Berber„
+MALDIVIAN	Maldivian√£
+SHAWIYA_BERBER	¬™awiya Berber√£
 DZONGKHA	Dzongkha
-COPTIC	Copt„
+COPTIC	Copt√£
 EWE	Ewe
-GREEK	Greac„
-CAPPADOCIAN_GREEK	Greac„ Capadochian„
-MYCENAEAN_GREEK	Greac„ Micenaean„
-PONTIC	Pontic„
-TSAKONIAN	ﬁakonian„
-YEVANIC	Ievanic„
-BRITISH_ENGLISH	Englez„ Britaic„
-BRITISH		Britaic„
-FIJIAN_ENGLISH	Englez„ Fijian
-GIBRALTARIAN	Gibraltarian„
-GIBRALTARIAN _ENGLISH	Englez„ Gibraltarian„
-ENGLISH	Englez„
-AMERICAN_ENGLISH	Englez„ American„
-HIBERNO_ENGLISH		Hiberno Englez„
-US_ENGLISH	Englez„ SUA
-ENGLISH_ISRAEL	Englez„ Israel
-ISRAELY_ENGLISH	Englez„ Israelian„ 
-HEBLISH	Hebli∫
+GREEK	Greac√£
+CAPPADOCIAN_GREEK	Greac√£ Capadochian√£
+MYCENAEAN_GREEK	Greac√£ Micenaean√£
+PONTIC	Pontic√£
+TSAKONIAN	√ûakonian√£
+YEVANIC	Ievanic√£
+BRITISH_ENGLISH	Englez√£ Britaic√£
+BRITISH		Britaic√£
+FIJIAN_ENGLISH	Englez√£ Fijian
+GIBRALTARIAN	Gibraltarian√£
+GIBRALTARIAN _ENGLISH	Englez√£ Gibraltarian√£
+ENGLISH	Englez√£
+AMERICAN_ENGLISH	Englez√£ American√£
+HIBERNO_ENGLISH		Hiberno Englez√£
+US_ENGLISH	Englez√£ SUA
+ENGLISH_ISRAEL	Englez√£ Israel
+ISRAELY_ENGLISH	Englez√£ Israelian√£ 
+HEBLISH	Hebli¬∫
 ENGBREW	Engbrew
-ENGLISH_CANADA	Englez„ Canada
-CANADIAN_ENGLISH	Englez„ Canadian„
-COOK_ISLANDS_ENGLISH	Englez„ Insulele Cook
-INDIAN_ENGLISH	Englez„ Indian
-ANGUILLAN_ENGLISH	Englez„ Anguillan„
-AUSTRALIAN_ENGLISH	Englez„ Australian„
-ENGLISH_NEW_ZEALAND	Englez„ Nou Zealandez„
-NEW_ZEALAND_ENGLISH	Englez„ NOUA Zoealand„ 
-NEW_ENGLAND_ENGLISH	Englez„ NOUA Anglie
-BERMUDIAN ENGLISH	Englez„ Bermudian„
-NIUEAN_ENGLISH	Englez„ Niuean„
-MONTSERRAT_ENGLISH	Englez„ Montserrat
-PITCAIRN_ISLAND_ENGLISH	Englez„ Insula Pitcairn
-ST_HELENA_ENGLISH	Englez„ ST Elena
-ENGLISH_TURKS_CAICOS	Englez„ Turks Caicos
-VIRGIN_ISLANDS_ENGLISH	Englez„ Insulele Virgine
-ESPERANTO	Esperan˛o
+ENGLISH_CANADA	Englez√£ Canada
+CANADIAN_ENGLISH	Englez√£ Canadian√£
+COOK_ISLANDS_ENGLISH	Englez√£ Insulele Cook
+INDIAN_ENGLISH	Englez√£ Indian
+ANGUILLAN_ENGLISH	Englez√£ Anguillan√£
+AUSTRALIAN_ENGLISH	Englez√£ Australian√£
+ENGLISH_NEW_ZEALAND	Englez√£ Nou Zealandez√£
+NEW_ZEALAND_ENGLISH	Englez√£ NOUA Zoealand√£ 
+NEW_ENGLAND_ENGLISH	Englez√£ NOUA Anglie
+BERMUDIAN ENGLISH	Englez√£ Bermudian√£
+NIUEAN_ENGLISH	Englez√£ Niuean√£
+MONTSERRAT_ENGLISH	Englez√£ Montserrat
+PITCAIRN_ISLAND_ENGLISH	Englez√£ Insula Pitcairn
+ST_HELENA_ENGLISH	Englez√£ ST Elena
+ENGLISH_TURKS_CAICOS	Englez√£ Turks Caicos
+VIRGIN_ISLANDS_ENGLISH	Englez√£ Insulele Virgine
+ESPERANTO	Esperan√æo
 ERITREA	Eritrea
-SPANISH	Spaniol„
-SPANISH_MEXICO	Spaniol„ Mexico
-SPANISH_UNITED_STATES	Spaniol„ Statele Unite
-SPANISH_CARIBBEAN	Spaniol„ Caribbean„
-SPANISH_ARGENTINIAN	Spaniol„ Argentinian„
-SPANISH_BOLIVIAN	Spaniol„ Bolivian„
-SPANISH_BRAZILIAN	Spaniol„ Brazilian„
-SPANISH_CHILEAN	Spaniol„ Chilean„
-SPANISH_COLOMBIAN	Spaniol„ Columbian„
-SPANISH_COSTA_RICA	Spaniol„ Costa Rica
-SPANISH_DOMINICAN_REPUBLIC	Spaniol„ Republica Dominican„
-SPANISH_ECUADOR	Spaniol„ Ecuador
-SPANISH_SPAIN		Spaniol„ Spania
-SPANISH_NL	Spaniol„ NL
-SPANISH_EUROPE	Spaniol„ Europa
-SPANISH_GUATEMALA	Spaniol„ Guatemala
-SPANISH_HONDURAS	Spaniol„ Honduras
-SPANISH_LAO	Spaniol„ Lao
-SPANISH_NICARAGUA	Spaniol„ Nicaragua
-SPANISH_PANAMIAN	Spaniol„ Panamian
-SPANISH_PERU	Spaniol„ Peru
-SPANISH_PUERTO_RICO	Spaniol„ Puerto Rico
-SPANISH_PARAGUAYS	Pani∫ Paraguay
-SPANISH_EL_SALVADOR	Spaniol„ EL Salvador
-SPANISH_URUGUAY	Spaniol„ Uruguay
-SPANISH_VENEZUELA	Spaniol„ Venezuela
-SPANISH_LATIN_AMERICA	Spaniol„ Latin American„
+SPANISH	Spaniol√£
+SPANISH_MEXICO	Spaniol√£ Mexico
+SPANISH_UNITED_STATES	Spaniol√£ Statele Unite
+SPANISH_CARIBBEAN	Spaniol√£ Caribbean√£
+SPANISH_ARGENTINIAN	Spaniol√£ Argentinian√£
+SPANISH_BOLIVIAN	Spaniol√£ Bolivian√£
+SPANISH_BRAZILIAN	Spaniol√£ Brazilian√£
+SPANISH_CHILEAN	Spaniol√£ Chilean√£
+SPANISH_COLOMBIAN	Spaniol√£ Columbian√£
+SPANISH_COSTA_RICA	Spaniol√£ Costa Rica
+SPANISH_DOMINICAN_REPUBLIC	Spaniol√£ Republica Dominican√£
+SPANISH_ECUADOR	Spaniol√£ Ecuador
+SPANISH_SPAIN		Spaniol√£ Spania
+SPANISH_NL	Spaniol√£ NL
+SPANISH_EUROPE	Spaniol√£ Europa
+SPANISH_GUATEMALA	Spaniol√£ Guatemala
+SPANISH_HONDURAS	Spaniol√£ Honduras
+SPANISH_LAO	Spaniol√£ Lao
+SPANISH_NICARAGUA	Spaniol√£ Nicaragua
+SPANISH_PANAMIAN	Spaniol√£ Panamian
+SPANISH_PERU	Spaniol√£ Peru
+SPANISH_PUERTO_RICO	Spaniol√£ Puerto Rico
+SPANISH_PARAGUAYS	Pani¬∫ Paraguay
+SPANISH_EL_SALVADOR	Spaniol√£ EL Salvador
+SPANISH_URUGUAY	Spaniol√£ Uruguay
+SPANISH_VENEZUELA	Spaniol√£ Venezuela
+SPANISH_LATIN_AMERICA	Spaniol√£ Latin American√£
 ESTONIAN	Estonian
-BASQUE	Basc„
-PERSIAN	Persian„
-ADAMAWA_FULFULDE	Adamawa Fulfuld„
-BAGIRMI_FULFULDE	Bagirmi Fulfuld„
-BORGU_FULFULDE	Borgu Fulfuld„
-NIGER_FULFULDE	Niger Fulfuld„
-MAASINA_FULFULDE	Maasina Fulfuld„
-NIGERIAN_FULFULDE	Nigerian„ Fulfuld„
-PULAAR	Pulaar„
-WESTERN_NIGER_FULFULDE	Fulfuld„ Vest Nigerian„ 
+BASQUE	Basc√£
+PERSIAN	Persian√£
+ADAMAWA_FULFULDE	Adamawa Fulfuld√£
+BAGIRMI_FULFULDE	Bagirmi Fulfuld√£
+BORGU_FULFULDE	Borgu Fulfuld√£
+NIGER_FULFULDE	Niger Fulfuld√£
+MAASINA_FULFULDE	Maasina Fulfuld√£
+NIGERIAN_FULFULDE	Nigerian√£ Fulfuld√£
+PULAAR	Pulaar√£
+WESTERN_NIGER_FULFULDE	Fulfuld√£ Vest Nigerian√£ 
 KVEN	Kven
-NORWEGIAN	Norwegian„
+NORWEGIAN	Norwegian√£
 FIJIAN	FIJian
 FALKLANDIAN	FalkLandian
 FAROESE	Faroese
-FRENCH	Francez„
-METROPOLITAN_FRENCH	Francez„ Metropolitan„
-ACADIAN_FRENCH	Francez„ Acadian„
-DOMINICA_FRENCH	Francez„ Dominican„
-ALGERIAN_FRENCH	Francez„ Algerian„
-AOSTAN_FRENCH	Francez„ Aostan„
-BELGIAN_FRENCH	Francez„ Belgian„
-CAMBODIAN_FRENCH	Francez„ Cambodian„
-CAJUN_FRENCH	Francez„ CAJUN
-CANADIAN_FRENCH	Francez„ Canadian„
-GUIANESE_FRENCH	Francez„ Guianes„
-FRENCH_GUIANA	Francez„ Guiana
-GUYANESE_CREOLE	Creol„ Guianes„
-ENGLISH_GUIANA	Englez„ Guianes„
-GUIANESE_ENGLISH	Guianes„ Englez„
+FRENCH	Francez√£
+METROPOLITAN_FRENCH	Francez√£ Metropolitan√£
+ACADIAN_FRENCH	Francez√£ Acadian√£
+DOMINICA_FRENCH	Francez√£ Dominican√£
+ALGERIAN_FRENCH	Francez√£ Algerian√£
+AOSTAN_FRENCH	Francez√£ Aostan√£
+BELGIAN_FRENCH	Francez√£ Belgian√£
+CAMBODIAN_FRENCH	Francez√£ Cambodian√£
+CAJUN_FRENCH	Francez√£ CAJUN
+CANADIAN_FRENCH	Francez√£ Canadian√£
+GUIANESE_FRENCH	Francez√£ Guianes√£
+FRENCH_GUIANA	Francez√£ Guiana
+GUYANESE_CREOLE	Creol√£ Guianes√£
+ENGLISH_GUIANA	Englez√£ Guianes√£
+GUIANESE_ENGLISH	Guianes√£ Englez√£
 HAITIAN_FRENCH	Haitian French
-HAITIAN_CREOLE	Creol„ Haitian„
-INDIAN_FRENCH		Francez„ Indian„
-ANGLO_NORMAN_FRENCH	Francez„ Anglo Norman„
-JERSEY_LEGAL_FRENCH	Francez„ Jersey Legal„
-LAO_FRENCH		Francez„ Lao
-FRENCH_CREOLE	Francez„ Creol„
-LOUISIANIAN_FRENCH	Francez„ Louisianian„
-LOUISIANA_CREOLE	Creol„ Louisiana
-MERIDIONAL_FRENCH		Francez„ Meridional„
-MISSOURI_FRENCH		Francez„ Missouri
-NEW_CALEDONIAN_FRENCH	Francez„ NOUA Caledonie
-NEWFOUNDLAND_FRENCH	Francez„ NEW Foundland
-NEW_ENGLAND_FRENCH	Francez„ NOUA Anglie
-QUEBEC_FRENCH	Francez„ Quebec
-SWISS_FRENCH	Francez„ Swiss
-VIETNAMESE_FRENCH	Francez„ Vietnamez„
-WEST_INDIAN_FRENCH	Francez„ Vest Indian„
-WALLISIAN_FRENCH	Francez„ Wallisian„
-WESTERN_FRISIAN	Frisian„ Vestic„
+HAITIAN_CREOLE	Creol√£ Haitian√£
+INDIAN_FRENCH		Francez√£ Indian√£
+ANGLO_NORMAN_FRENCH	Francez√£ Anglo Norman√£
+JERSEY_LEGAL_FRENCH	Francez√£ Jersey Legal√£
+LAO_FRENCH		Francez√£ Lao
+FRENCH_CREOLE	Francez√£ Creol√£
+LOUISIANIAN_FRENCH	Francez√£ Louisianian√£
+LOUISIANA_CREOLE	Creol√£ Louisiana
+MERIDIONAL_FRENCH		Francez√£ Meridional√£
+MISSOURI_FRENCH		Francez√£ Missouri
+NEW_CALEDONIAN_FRENCH	Francez√£ NOUA Caledonie
+NEWFOUNDLAND_FRENCH	Francez√£ NEW Foundland
+NEW_ENGLAND_FRENCH	Francez√£ NOUA Anglie
+QUEBEC_FRENCH	Francez√£ Quebec
+SWISS_FRENCH	Francez√£ Swiss
+VIETNAMESE_FRENCH	Francez√£ Vietnamez√£
+WEST_INDIAN_FRENCH	Francez√£ Vest Indian√£
+WALLISIAN_FRENCH	Francez√£ Wallisian√£
+WESTERN_FRISIAN	Frisian√£ Vestic√£
 FRYSK	Frisc
-IRISH_GABON	Irlandez„ Gabon„
-GENERAL_AMERICAN	General„ American„
-GUADELOUPEAN_CREOLE_FRENCH	Francez„ Guadeloupean„ Creol„
-SCOTTISH_GRENADA	Sco˛ian„ Grenada
-GEORGIAN		Georgian„
+IRISH_GABON	Irlandez√£ Gabon√£
+GENERAL_AMERICAN	General√£ American√£
+GUADELOUPEAN_CREOLE_FRENCH	Francez√£ Guadeloupean√£ Creol√£
+SCOTTISH_GRENADA	Sco√æian√£ Grenada
+GEORGIAN		Georgian√£
 LLANITO	Llanito
 GUERNESIAIS		Guernesiais
 GHANA	Ghana
-MODERN_GREEK	Greac„ Modern„
-ANCIENT_GREEK	Greac„ Antic„
-GALICIAN	Galician„
+MODERN_GREEK	Greac√£ Modern√£
+ANCIENT_GREEK	Greac√£ Antic√£
+GALICIAN	Galician√£
 GAMBIA		Gambia
 GUARANI	Guarani
 CHIRIPA	Chiripa
-EASTERN_BOLIVIAN_GUARAN	Guarani Est Bolivian„
+EASTERN_BOLIVIAN_GUARAN	Guarani Est Bolivian√£
 MBYA_GUARANI	Guarani Mbya
 PARAGUAYAN_GUARANI	Guarani Paraguaian
-WESTERN_BOLIVIAN_GUARANI	Guarani Vest Bolivian„
-SOUTH_GEORGIA_ENGLISH	Englez„ Sud Georgian„
+WESTERN_BOLIVIAN_GUARANI	Guarani Vest Bolivian√£
+SOUTH_GEORGIA_ENGLISH	Englez√£ Sud Georgian√£
 GUATEMALA	Guatemala
-EQUATORIAL_GUINEAN	Guinean„ Ecuatorial„
+EQUATORIAL_GUINEAN	Guinean√£ Ecuatorial√£
 GUJARATI	Gujarati
 MANX	Manx
 GUYAN	Aguiana
-HEBREW	Ebraic„
-MODERN_HEBREW	Ebraic„ Modern„
-CLASSICAL_HEBREW	Ebraic„ Clasic„
-SAMARITAN_ARAMEIC	Arameic„ Samaritean„
-SAMARITAN_HEBREW	Ebraic„ Samaritean„
-MOABITE_HEBREW	Ebraic„ Moabit„
-EDOMITE_HEBREW	Ebraic„ Edomit„
+HEBREW	Ebraic√£
+MODERN_HEBREW	Ebraic√£ Modern√£
+CLASSICAL_HEBREW	Ebraic√£ Clasic√£
+SAMARITAN_ARAMEIC	Arameic√£ Samaritean√£
+SAMARITAN_HEBREW	Ebraic√£ Samaritean√£
+MOABITE_HEBREW	Ebraic√£ Moabit√£
+EDOMITE_HEBREW	Ebraic√£ Edomit√£
 IBRIT		Ibrit
 HIRI_MOTU	Hiri Motu
-HAITIAN	Haitian„
-HUNGARIAN	Maghiar„
-ARMENIAN_ARTSAKH	Armenian„ Artsakh
+HAITIAN	Haitian√£
+HUNGARIAN	Maghiar√£
+ARMENIAN_ARTSAKH	Armenian√£ Artsakh
 HERERO	Herero
 INTERLINGUA	Interlingua
-INDONESIAN	Indonezian„
+INDONESIAN	Indonezian√£
 INTERLINGUE	Interlingue
-IRISH	Irlandez„
+IRISH	Irlandez√£
 IGBO	Igbo
 SICHUAN_YI	Sichuan YI
 INUPIAQ	Inupiaq
 IAAI	Iaai
-IRANIAN	Iranian„
+IRANIAN	Iranian√£
 IDO	Ido
-ICELANDIC	Icelandic„
-ITALIAN		Italian„
+ICELANDIC	Icelandic√£
+ITALIAN		Italian√£
 INUKTITUT	Inuktitut
-IRAQIAN	Irachian„
+IRAQIAN	Irachian√£
 JERRIAIS	Jerriais
-JORDAN	Iordanian„
-JAPANESE	Japonez„
-CAMBODIAN	Cambodian„
-KENYAN	Kenian„
+JORDAN	Iordanian√£
+JAPANESE	Japonez√£
+CAMBODIAN	Cambodian√£
+KENYAN	Kenian√£
 KIKUYU		Kikuyu
 KWANYAMA	Kwaniama
-KAZAKH	Cazac„
+KAZAKH	Cazac√£
 KALAALLISUT	Kalaallisut
-NGAZIDJA_COMORIAN	Comorian„ Ngazidja
-COMOROS	Comorian„
-NDZWANI_COMORIAN	Comorian„ Ndzwani
-MAORE_COMORIAN	Comorian„ Maore
-MWALI_COMORIAN	Comorian„ Mwali
+NGAZIDJA_COMORIAN	Comorian√£ Ngazidja
+COMOROS	Comorian√£
+NDZWANI_COMORIAN	Comorian√£ Ndzwani
+MAORE_COMORIAN	Comorian√£ Maore
+MWALI_COMORIAN	Comorian√£ Mwali
 KHMER	Khmer
 KANNADA	Cannada
-KOREAN	Corean„
+KOREAN	Corean√£
 KANURI	Canuri
 ST_KITTS_NEVIS	ST Kitts Nevis
-KASHMIRI	Ca∫miri
+KASHMIRI	Ca¬∫miri
 KAZAKHSTAN	Cazacstan
-CORNISH	Corni∫
+CORNISH	Corni¬∫
 KYRGYZSTAN	Chirghizstan
 SRI_LANKA	Sri Lanka
-LATVIAN	Latvian„
-LUXEMBOURGISH	Luxemborghian„
+LATVIAN	Latvian√£
+LUXEMBOURGISH	Luxemborghian√£
 LESOTHO	Lesoto
 LAO	LAO
 LIBERIA	Liberia
 LIBYA	Libia
-LIMBURGISH	Limburgi∫
+LIMBURGISH	Limburgi¬∫
 LINGALA	Lingala
-LITHUANIAN	Lituanian„
+LITHUANIAN	Lituanian√£
 LUBA_KATANGA	Luba Catanga
-MOLDOVIAN	Moldovian„
-MOLDAVIAN	Moldavian„
-MONTENEGRIN	Montenegrin„
-SAINT_MARTIN_FRENCH	Francez„ Sf‚nt Martin
+MOLDOVIAN	Moldovian√£
+MOLDAVIAN	Moldavian√£
+MONTENEGRIN	Montenegrin√£
+SAINT_MARTIN_FRENCH	Francez√£ Sf√¢nt Martin
 MALAGASY	Malagasia
-MARSHALLESE	Mar∫allese
+MARSHALLESE	Mar¬∫allese
 MAORI	Maori
 MIKMAQ	Micmac
-MACEDONIAN	Macedonian„
+MACEDONIAN	Macedonian√£
 MALAYALAM	Malaialam
-MAURITANIAN	Mauritanian„
+MAURITANIAN	Mauritanian√£
 MAURITIUS	Mauritiu
-MONGOLIAN	Mongolian„
-CAROLINIAN	Carolinian„
-MALTESE	Maltez„
-BURMESE	Burmez„
-ANTILLEAN-CREOL	Creol„ Antillean„
-NENGONE	Nengon„
-NEW_LANGUAGE	Limb„ Nou„
-DUTCH	Nederlandez„
+MONGOLIAN	Mongolian√£
+CAROLINIAN	Carolinian√£
+MALTESE	Maltez√£
+BURMESE	Burmez√£
+ANTILLEAN-CREOL	Creol√£ Antillean√£
+NENGONE	Nengon√£
+NEW_LANGUAGE	Limb√£ Nou√£
+DUTCH	Nederlandez√£
 PENNSYLVANIA_DUTCH	Dutch Pennsilvanian
-NORWAY	Norvegian„
+NORWAY	Norvegian√£
 NAURU	Nauru
-NIUEAN	Niuean„
-NU	Niuean„
+NIUEAN	Niuean√£
+NU	Niuean√£
 CHEWA	Eva
-OCCITAN	Occitan„
+OCCITAN	Occitan√£
 ORIYA	Oriya
-OSSETIAN	Ose˛ian„
-PUNJABI	Punjab„
-PANJABI	Panjab„
+OSSETIAN	Ose√æian√£
+PUNJABI	Punjab√£
+PANJABI	Panjab√£
 GURMIKI	Gurmiki
-PHILIPPINESE	Filipinez„
-TAHITIAN	Tahitian„
-PAPUA_GUINEA	Papua Guinez„
-POLISH	Polonez„
-PASHTO	Pa∫t„
-PORTUGUESE	Portughez„
-PORTUGUESE_BRASIL	Portughez„ Brazilian„
+PHILIPPINESE	Filipinez√£
+TAHITIAN	Tahitian√£
+PAPUA_GUINEA	Papua Guinez√£
+POLISH	Polonez√£
+PASHTO	Pa¬∫t√£
+PORTUGUESE	Portughez√£
+PORTUGUESE_BRASIL	Portughez√£ Brazilian√£
 QATAR	Qatar
 QUECHUA	Quechua
-ROMANSH	Roman∫
+ROMANSH	Roman¬∫
 ROMANI	Romani
 KIRUNDI	Chirundi
-ROMANIAN	Rom‚n„
-ROMANIAN_ANSI	Rom‚n„ ANSI
-ROMANIAN_NO_DIACRITIC	Rom‚n„ F„r„ Diacritice
-ROMANIAN_MOLDAVIA	Rom‚n„ Moldova
-ROMANIAN_ROMANIA	Rom‚n„ Romania
-RUSSIAN	Rus„
+ROMANIAN	Rom√¢n√£
+ROMANIAN_ANSI	Rom√¢n√£ ANSI
+ROMANIAN_NO_DIACRITIC	Rom√¢n√£ F√£r√£ Diacritice
+ROMANIAN_MOLDAVIA	Rom√¢n√£ Moldova
+ROMANIAN_ROMANIA	Rom√¢n√£ Romania
+RUSSIAN	Rus√£
 KINYARWANDA	Kinia Ruanda
-SANSKRIT	Sanscrit„
-SARDINIAN	Sardinian„
-SAN_MIGUEL_CREOLE_FRENCH	Creol„ Francez„ San Miguel 
+SANSKRIT	Sanscrit√£
+SARDINIAN	Sardinian√£
+SAN_MIGUEL_CREOLE_FRENCH	Creol√£ Francez√£ San Miguel 
 SINDHI	Sindhi
 SANGO	Sango
-SERBO_CROATIAN	S‚rbo-Croat„
+SERBO_CROATIAN	S√¢rbo-Croat√£
 SINHALA	Sinhala
-SLOVAK	Slovac„
-SLOVENIAN	Sloven„
+SLOVAK	Slovac√£
+SLOVENIAN	Sloven√£
 SAMOAN	Samoan
-SHONA	™ona
+SHONA	¬™ona
 SOMAL	Somalia
-SOMALI	Somalian„
+SOMALI	Somalian√£
 SURINAME	Suriname
 SWATI	Swati
-STANDARD_SCOTTISH_ENGLISH	Englez„ Standard Sco˛ian„
+STANDARD_SCOTTISH_ENGLISH	Englez√£ Standard Sco√æian√£
 SOTHO	Soto
-SUNDANESE	Sundanez„
+SUNDANESE	Sundanez√£
 SINT_MAARTEN_DUTCH	Dutch Sint Maarten 
-SWEDISH	Suedez„
-SYRIAC	Siriac„
+SWEDISH	Suedez√£
+SYRIAC	Siriac√£
 SWAHILI	Swahili
 TURKS_CAICO	Turci Caicos
 CHAD	Ciad
@@ -582,40 +582,40 @@ TELUGU	Telugu
 TAJIK	Tajik
 THAI	Thai
 TIGRINYA	Tigrinia
-TURKMEN	Turkmen„
+TURKMEN	Turkmen√£
 TOKELAUAN	Tokelauan
 TAGALOG	Tagalog
-TSWANA	ﬁvana
+TSWANA	√ûvana
 TONGA	Tonga
-TURKISH	Turc„
-TSONGA	ﬁonga
+TURKISH	Turc√£
+TSONGA	√ûonga
 TUVALU	Tuvalu
-TATAR	T„tar„
-TAIWANESE_HOKKIEN		Taivanez„ Hokkien
+TATAR	T√£tar√£
+TAIWANESE_HOKKIEN		Taivanez√£ Hokkien
 UIGHUR	Uigur
-UKRAINEAN	Ucrainean„
+UKRAINEAN	Ucrainean√£
 URDU	Urdu
-UZBEK	Uzbec„
-LATIN	Latin„
+UZBEK	Uzbec√£
+LATIN	Latin√£
 VENDA	Venda
-VINCENTIAN-CREO	Creol„ Vincen˛ian„
-VIETNAMESE	Vietnamez„
+VINCENTIAN-CREO	Creol√£ Vincen√æian√£
+VIETNAMESE	Vietnamez√£
 VOLAPUK	Volapuc
-FRENCH_VIETNAM	Francez„ Vietnam
-WALLISIAN	Valisian„
-MALAYO-POLYNESIAN	Malaio-Polinesian„
-SHIMAORE	™imaore
+FRENCH_VIETNAM	Francez√£ Vietnam
+WALLISIAN	Valisian√£
+MALAYO-POLYNESIAN	Malaio-Polinesian√£
+SHIMAORE	¬™imaore
 WALLOON	Valoon
 WOLOF	Volof
 XHOSA	Xhosa
-YIDDISH	Iidi∫
+YIDDISH	Iidi¬∫
 YORUBA	Ioruba
 ZHUANG	Zhuang
-CHINESE_SIMPLIFIED	Chinez„ Simplificat„
-CHINESE_HONG_KONG	Chinez„ Hong Kong
-CHINESE_TRADITIONAL	Chinez„ Traditional„
-CHINESE_TRADITIONAL_TAIWAN	Chinez„ Traditional„ Taiwan
-ZAMBIAN	Zambian„
+CHINESE_SIMPLIFIED	Chinez√£ Simplificat√£
+CHINESE_HONG_KONG	Chinez√£ Hong Kong
+CHINESE_TRADITIONAL	Chinez√£ Traditional√£
+CHINESE_TRADITIONAL_TAIWAN	Chinez√£ Traditional√£ Taiwan
+ZAMBIAN	Zambian√£
 ZIMBABWE	Zimbabve
 ZULU	Zulu
 
@@ -689,3 +689,17 @@ VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
+
+//Other
+privacy	Privacy policy
+cookie consent msg	This website uses cookies to ensure you get the best experience on our website.
+cookie consent OK	Got it!
+cookie consent info	Learn more
+powered by	Powered by
+
+//Other files
+LICENSE	Licence
+CHANGE_LOG	Development Log
+Powered by	Powered by
+e-sword 	e-Sword
+|autoindex_license	GNU GPL-2.0 License
