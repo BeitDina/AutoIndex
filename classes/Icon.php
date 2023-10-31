@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider at github.com
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -140,7 +140,7 @@ class Icon
 	public function __toString()
 	{
 		global $config;
-		return $config -> __get('icon_path')
+		return $config->__get('icon_path')
 		. $this -> image_name . '.png';
 	}
 }
