@@ -1,9 +1,8 @@
 <?php
-
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -58,7 +57,7 @@ class Template
 	private static function callback_words($m)
 	{
 		global $words;
-		return $words -> __get(strtolower($m[1]));
+		return $words->__get(strtolower($m[1]));
 	}
 	
 	/**
@@ -68,7 +67,7 @@ class Template
 	private static function callback_include($m)
 	{
 		$temp = new Template($m[1]);
-		return $temp -> __toString();
+		return $temp->__toString();
 	}
 	
 	/**
@@ -78,7 +77,7 @@ class Template
 	private static function callback_config($m)
 	{
 		global $config;
-		return $config -> __get(strtolower($m[1]));
+		return $config->__get(strtolower($m[1]));
 	}
 	
 	/**
@@ -97,8 +96,8 @@ class Template
 	 */
 	public function __construct($filename)
 	{
-		global $config, $dir, $subdir;
-		$full_filename = $config -> __get('template') . $filename;
+		global $config, $dir, $subdir, $words, $mobile_device_detect;
+		$full_filename = $config ->__get('template') . $filename;
 		if (!@is_file($full_filename))
 		{
 			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> cannot be found.');
@@ -119,7 +118,12 @@ class Template
 			'{info:dir}' => (isset($dir) ? Url::html_output($dir) : ''),
 			'{info:subdir}' => (isset($subdir) ? Url::html_output($subdir) : ''),
 			'{info:version}' => VERSION,
-			'{info:page_time}' => round((microtime(true) - START_TIME) * 1000, 1));
+			'{info:page_time}' => round((microtime(true) - START_TIME) * 1000, 1),
+			'{info:statinfo}' => $mobile_device_detect->detect()->getInfo(),
+			'{info:message}' => $words->__get('cookie consent msg'),			
+			'{info:dismiss}' => $words->__get('cookie consent OK'),
+			'{info:link}' => $words->__get('cookie consent info'),
+			'{info:href}' => $words->__get('privacy'));
 		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui',
 			array('self', 'callback_words'), strtr($contents, $tr));
 		
