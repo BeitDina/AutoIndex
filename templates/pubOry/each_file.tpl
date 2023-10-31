@@ -11,8 +11,8 @@
    <a class="autoindex_a" href="{file:link}">
    {end if}
     {if:icon_path}<img width="32" height="32" alt="[{file:file_ext}]" src="{file:icon}" />{end if:icon_path}
-    {file:filename} {file:thumbnail}
-   </a>{file:new_icon}{file:md5_link}{file:delete_link}{file:rename_link}{file:edit_description_link}{file:ftp_upload_link}
+    {file:filename}
+   </a> {file:thumbnail}{file:new_icon}{file:md5_link}{file:delete_link}{file:rename_link}{file:edit_description_link}{file:ftp_upload_link}
   </td>
   
   {if:download_count}
