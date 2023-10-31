@@ -2,7 +2,7 @@
 <a name="top"></a>
 	<table class="tablebg2 autoindex_table" cellspacing="1" width="100%">
 	<thead>
-	<tr>
+	<tr height="160">
 		  <th id="quick-links" class="autoindex_th stat-block online-list">
 		   <a class="plain_link" href="{sort:filename}" title="{words:sort by} {words:file}">{words:file}</a>
 		  </th>
