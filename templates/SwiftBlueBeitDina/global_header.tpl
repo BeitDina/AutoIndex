@@ -19,6 +19,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
 
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="favicon.gif" type="image/gif" />
 <link rel="top" href="http://beitdina.net/forum/index.php" title="Pagina de start a forumului beitdina.net" />
 <link rel="search" href="http://beitdina.net/forum/search.php" title="Căutare" />
 <link rel="help" href="http://beitdina.net/forum/faq.php" title="FAQ" />
@@ -26,10 +28,11 @@
 
 <title>{words:index of} {info:dir} @ Beit Dina Bible Arheology and Translation Institute</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
-<link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" >
+<link rel="stylesheet" href="{config:template}SwiftBlueBeitDina.css" type="text/css" />
 <!-- Then load addon template *.css definition for mx, located in the the portal template folder -->
-<link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" >
-
+<link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" />
+<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
+<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />
 <!-- Optionally, redefine some defintions for gecko browsers -->
 <style type="text/css">
 <!--
