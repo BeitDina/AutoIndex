@@ -26,6 +26,9 @@
 <link rel="help" href="http://pubory.uv.ro/forum/faq.php" title="FAQ" />
 <link rel="author" href="http://pubory.uv.ro/forum/memberlist.php" title="Membri" />
 
+<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
+<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />
+	
 <title>{words:index of} {info:dir} @ PubOry</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
 <link rel="stylesheet" href="{config:template}pubOry.css" type="text/css" >
