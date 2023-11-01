@@ -1,53 +1,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-
-<meta http-equiv="content-type" content="text/html" charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="blue" />
-<link rel="stylesheet" type="text/css" href="https://mxpcms.sourceforge.net/pub/templates/SwiftBlue/SwiftBlue.css" />  
-<title>AutoIndex PHP Script: Readme</title>
-</head>
-<body class="autoindex_div">
-<hr class="default_hr">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="English"><head>
+  <meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
+  <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="blue" />
+  <link rel="stylesheet" type="text/css" href="https://mxpcms.sourceforge.net/pub/templates/SwiftBlue/SwiftBlue.css" />
+  <title>AutoIndex PHP Script: Readme</title>
+  <meta content="FlorinCB" name="author" />
+  <meta content="AutoIndex PHP Script (version 2.2.6) - Tutorial File" name="description" />
+</head><body class="autoindex_div">
+<hr class="default_hr" />
 
 <table border="0" cellpadding="5" cellspacing="0" width="100%">
 <tbody>
 <tr class="paragraph">
 <td class="default_td">
-<p> <strong>AutoIndex PHP Script (version 2.2.6) -
-Help File <br>original by Justin Hagstrom, by Florin Ciprian Bodin</strong> <br>
-<span class="small">AutoIndex is provided under the terms of the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU
-General Public License (GPL)</a>.</span>
-</p>
-<p><a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a></p>
-<p><span class="small">AutoIndex DEMO: See PHP VERSION on Footer of the index page.</a></span></p>
+
+<b>AutoIndex PHP Script (version 2.2.6) - Tutorial File original by Justin Hagstrom, edited by Florin Ciprian Bodin</b> 
+<span class="small">Original AutoIndex is provided under the terms of the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU General Public License (GPL)</a> at </span><a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a>&nbsp; .</p>
+      <p><span class="small">This edition of </span><a href="https://github.com/BeitDina/AutoIndex/releases/tag/2.2.6" target="_blank" rel="noreferrer">AutoIndex lists the files in a directory tree and now is mobile screen reversible</a>&nbsp; .</p>
+      <p style="font-size: small;">Repository: <a href="https://github.com/BeitDina/AutoIndex" target="_blank" rel="noreferrer">BeitDina/AutoIndex</a> · Tag: <a href="https://github.com/BeitDina/AutoIndex/tree/2.2.6" target="_blank" rel="noreferrer">2.2.6</a> · Commit: <a href="https://github.com/BeitDina/AutoIndex/commit/c027530852064eb841ee60153231198863bc8b69" target="_blank" rel="noreferrer">c027530</a> · Released by: <a href="https://github.com/orynider" target="_blank" rel="noreferrer">orynider</a>
+      
+<b>AutoIndex</b> since 2001 is a standalone PHP script that makes table that lists the files in a directory, and lets users access the files and subdirectories. It includes searching, icons for each file type, an admin panel, uploads, access logging, file descriptions, and more. Now this version developed in collaboration with <strong>the Beit Dina IT Unit</strong> was tested with PHP 5.3, 5.4, 5.5, 5.6, 7.1, 7.2, 7.3, 7.4 and is released with 35 languages packs.</p>
+
+<b>Full Changelog</b>: <a class="v1commit-link" href="https://github.com/BeitDina/AutoIndex/compare/2.2.5...2.2.6" target="_blank" rel="noreferrer"><tt>2.2.5...2.2.6</tt></a></p>
+      
+<p>This release has 4 assets: Visit the <a href="https://github.com/BeitDina/AutoIndex/releases/tag/2.2.6" target="_blank" rel="noreferrer">release page</a> to download them.</p>
+      
+<p><span class="small"> DEMO: See PHP VERSION on Footer of the index page.</span></p>
+    
 <p><a class="default_a" href="https://mxpcms.sourceforge.net/pub/">https://mxpcms.sourceforge.net/pub/</a></p>
-<p> <a href="http://github.com/BeitDina/AutoIndex/">http://github.com/BeitDina/AutoIndex/</a><br>
-Please write any questions or comments at orynider@users.sourceforge.net .</p>
-<p> To install and run the script, simply upload the
-contents of this directory to a server with PHP support (Works with all
-versions of PHP5 and PHP7.1, PHP7.2, PHP7.3, PHP7.4). <br>
-Then, point your browser to the index.php file in that folder. The
-first time you do this, it will take you to a configuration page. <br>
-To use all the default values, just click the button at the bottom, or
-customize it however you want. <br>
-  <p>On a live site at: <a class="default_a" href="http://beitdina.net/aleppo/">http://beitdina.net/aleppo/</a></p><br>
-Information about the use of each variable is in this file.
-</p>
-<p> &nbsp;
-</p>
-<hr class="default_hr">
-<p> &nbsp;
-</p>
-<p> <strong>base_dir</strong> is the folder
-that will be the root of the directory listing. <br>
+<p> <a href="http://github.com/BeitDina/AutoIndex/">http://github.com/BeitDina/AutoIndex/</a><br />
+Please write any questions or comments at <a href="mailto:orynider@users.sourceforge.net">orynider@users.sourceforge.net</a> .</p>
+      <p> To install simply upload the contents of this directory archive to a server with PHP support. Works with all
+versions of PHP with no DataBase required. <br />
+Then, point your browser to the index.php file in that folder. The first time you do this, it will take you to a configuration page. <br />
+To use all the default values, just click the button at the bottom, or customize it however you want. <br />
+  </p>
+<p>On a live site at: <a class="default_a" href="http://beitdina.net/aleppo/">http://beitdina.net/aleppo/</a>&nbsp; .</p>Information about the use of each variable is in this file.
+
+<hr class="default_hr" />
+
+<p><strong>base_dir</strong> is the folder
+that will be the root of the directory listing. <br />
 This will be the starting point for the script. Nothing above this
-directory can be viewed, but its subfolders can. <br>
+directory can be viewed, but its subfolders can. <br />
 Make sure to use forward slashes, rather than backslashes. Also, try to
-use a relative path if possible. <br>
+use a relative path if possible. <br />
 Examples:
 </p>
 <table style="border: 1px solid rgb(17, 17, 17); border-collapse: collapse;" cellpadding="5" cellspacing="0">
@@ -71,11 +72,10 @@ folder/</span></td>
 force_download to TRUE (this is not recommended, though. It is better
 to use a path relative to the php script).
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>icon_path</strong> is the path to
-the icons. Don't put a slash at the end. <br>
-Leave this blank to not show icons to the left of files and folders. <br>
+the icons. Don't put a slash at the end. <br />
+Leave this blank to not show icons to the left of files and folders. <br />
 Examples:
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="5" cellspacing="0">
@@ -90,12 +90,11 @@ Examples:
 </tr>
 </tbody>
 </table>
-<p> &nbsp;
-</p>
+
 <p> <strong>stylesheet</strong> is the path
-and filename of your css stylesheet. <br>
+and filename of your css stylesheet. <br />
 Just modify the one that came with this, so it will match the rest of
-your site.<br>
+your site.<br />
 Examples:
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="5" cellspacing="0">
@@ -111,79 +110,73 @@ file)</td>
 </tr>
 </tbody>
 </table>
-<p> &nbsp;
-</p>
-<hr class="default_hr">
-<p> <strong>Optional Variables</strong> :
-</p>
-<p> &nbsp;
-</p>
-<p> If <strong>allow_uploads</strong> is set
+
+<hr class="default_hr" />
+
+
+<p> <strong>Optional Variables</strong> :<br />
+      <br />
+If <strong>allow_uploads</strong> is set
 to TRUE, people will be able to upload files to your website. <em>(Default:
-FALSE)</em> <br>
+FALSE)</em> <br />
 But if <strong>use_login_system</strong> is also set to
-TRUE, you must create an account for them before they can upload. <br>
+TRUE, you must create an account for them before they can upload. <br />
 The preset users are: </p>
-<p><span class="fixed_width"> username: admin <br>
-password: admin <br>
-&nbsp; <br>
-username: test or user<br>
-password: test or testtest </span></p>
-<p> <br>
+
+<p><span class="fixed_width"> username: admin <br />
+password: admin <br />
+&nbsp; <br />
+username: test or user<br />
+password: test or testtest</span><br />
+<br />
 If you plan to use the login system, change the passwords or create
-different accounts and delete these! <br>
+different accounts and delete these! <br />
 All registered users will be able to upload, but only admins can
-create/delete accounts. <br>
+create/delete accounts. <br />
 Also, if you want to allow uploads, make sure the folders you want to
 upload to are chmod'ed to allow PHP to write there.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>user_list</strong> contains the
 path to the text file where the usernames and encrypted passwords are
-stored. <br>
-Make sure the file is chmod'ed so PHP can read and write to it. <br>
+stored. <br />
+Make sure the file is chmod'ed so PHP can read and write to it. <br />
 (This is only needed if use_login_system is set to TRUE.)
 </p>
-<p> &nbsp;
-</p>
+
 <p> If <strong>allow_file_overwrites</strong>
 is set to TRUE, when uploading a file that already exists, the file
-will be replaced. <em>(Default: FALSE)</em> <br>
+will be replaced. <em>(Default: FALSE)</em> <br />
 In other words, this will allow people to overwrite existing files by
-uploading new ones. <br>
+uploading new ones. <br />
 This variable only matters when allow_uploads is set to TRUE.
 </p>
-<p> &nbsp;
-</p>
+
 <p> If <strong>must_login_to_download</strong>
 is set to TRUE, users must login before they will see the list of
-files. <em>(Default: FALSE)</em> <br>
+files. <em>(Default: FALSE)</em> <br />
 (They will not be able to download or browse through files without
-logging in first.) <br>
+logging in first.) <br />
 This variable only matters when use_login_system is set to TRUE.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>banned_list</strong> contains the
 path to the text file where blocked IP addresses and/or hostnames are
-stored. <br>
+stored. <br />
 This list can be edited by logging in as an administrator, or you can
 directly edit the text file and add IP addresses and/or hostnames, each
-on a new line. <br>
+on a new line. <br />
 You can use wildcards in the entries (*, ?, +).
 </p>
-<p> &nbsp;
-</p>
+
 <p> If <strong>sub_folder_access</strong> is
 set to FALSE, folders will not be shown. <em>(Default: TRUE)</em>
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>index: Leave this blank unless you use
-php includes on your webpage.</strong> <br>
+php includes on your webpage.</strong> <br />
 Make sure to put "ob_start();" and "session_start();" at the top of
-your index file. This will make sure headers are sent correctly. <br>
+your index file. This will make sure headers are sent correctly. <br />
 Examples:
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="5" cellspacing="0">
@@ -199,68 +192,61 @@ Examples:
 <p> The include in your index file should look something
 like this:
 </p>
-<pre>$valid = array('home', 'page1', 'page2');<br>if (isset($_REQUEST['id']) &amp;&amp; in_array($_REQUEST['id'], $valid))<br>//if the id parameter in the URL is set, and it is in the 'valid' list<br>{<br>	include($_REQUEST['id']); //include the file<br>}<br></pre>
-<p> &nbsp;
-</p>
+<pre>$valid = array('home', 'page1', 'page2');<br />if (isset($_REQUEST['id']) &amp;&amp; in_array($_REQUEST['id'], $valid))<br />//if the id parameter in the URL is set, and it is in the 'valid' list<br />{<br />	include($_REQUEST['id']); //include the file<br />}<br /></pre>
+
 <p> <strong>hidden_files</strong> contains an
-array of strings. <br>
-If a file or folder matches any of them, it will not be displayed. <br>
+array of strings. <br />
+If a file or folder matches any of them, it will not be displayed. <br />
 They may contain wildcards (*, +, ?). For example, to hide all php
 files, add '*.php' to the list, or if you want to hide all files that
 begin with a period, add '.*'
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>show_only_these_files</strong>
-contains an array of strings. <br>
+contains an array of strings. <br />
 If there are any items in the array, the hidden_files variable will be
-disabled, and only files that are listed here will be shown. <br>
+disabled, and only files that are listed here will be shown. <br />
 They may contain wildcards (*, +, ?). For example, to show only .txt
 files, add '*.txt' to the list.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>force_download</strong> should be
-set to TRUE or FALSE. <em>(Default: FALSE)</em> <br>
+set to TRUE or FALSE. <em>(Default: FALSE)</em> <br />
 If it is set to TRUE, the file will be automatically downloaded,
 instead of letting the person's browser decide.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>bandwidth_limit</strong> is set to
-the max download speed (per client) in KB/s. 0 will turn it off. <br>
-The number can contain a decimal if you want. <br>
+the max download speed (per client) in KB/s. 0 will turn it off. <br />
+The number can contain a decimal if you want. <br />
 <strong>NOTE</strong>: To use this feature,
 force_download must be set to TRUE.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>anti_leech</strong> should be set
-to TRUE or FALSE. <em>(Default: FALSE)</em> <br>
+to TRUE or FALSE. <em>(Default: FALSE)</em> <br />
 This will compare the referrer and the name of your site to make sure
-they clicked on a link to download a file. <br>
+they clicked on a link to download a file. <br />
 Setting this equal to TRUE will prevent "leeching" by making sure they
-download files directly from a link on your site. <br>
+download files directly from a link on your site. <br />
 Since some people turn off referrer sending in their browser, this
 option is not recommended.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>enable_searching</strong> should
-be set to TRUE or FALSE. <em>(Default: TRUE)</em> <br>
+be set to TRUE or FALSE. <em>(Default: TRUE)</em> <br />
 If it is TRUE, people will be able to search for a file or folder
-containing a string. <br>
-It will search the folder you are currently in, and all subfolders. <br>
+containing a string. <br />
+It will search the folder you are currently in, and all subfolders. <br />
 Searching is not case sensitive.
 </p>
-<p> &nbsp;
-</p>
+
 <p> The <strong>log_file</strong> contains the
-full path to the file to write the access log. <br>
-Leave it blank to turn off logging. <br>
-The log file can be a local file, or on an FTP server. <br>
+full path to the file to write the access log. <br />
+Leave it blank to turn off logging. <br />
+The log file can be a local file, or on an FTP server. <br />
 If it's a local file on non-windows systems, make sure the log file is
-chmod'ed to allow PHP to write to the file. <br>
+chmod'ed to allow PHP to write to the file. <br />
 Example:
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="5" cellspacing="0">
@@ -279,147 +265,138 @@ Example:
 </tr>
 </tbody>
 </table>
-<p> <strong>dont_log_these_ips</strong>
-contains an array of strings (which are IP addresses). <br>
+<p> <b>dont_log_these_ips</b>
+contains an array of strings (which are IP addresses). <br />
 Any access from an IP on this list will not be written to the log file.
-<br>
-You can also add hostnames to the list, and use wildcards (*, +, ?). <br>
+<br />
+You can also add hostnames to the list, and use wildcards (*, +, ?). <br />
 (i.e. put your own IP in here so you don't fill up the log file when
 you access your site)
 </p>
-<p> &nbsp;
-</p>
-<p> <strong>download_count</strong> contains a
+
+<p> <b>download_count</b> contains a
 string which is the filename of the file to keep track of how many
-times files have been downloaded. <br>
-The file must be chmod'ed to allow PHP to read AND write to the file. <br>
-Leave blank to disable this feature. <br>
+times files have been downloaded. <br />
+The file must be chmod'ed to allow PHP to read AND write to the file. <br />
+Leave blank to disable this feature. <br />
 <strong>NOTE</strong>: When downloading a file from
 an IP addresses in the dont_log_these_ips array, the count will NOT
 increase.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>links_file</strong> contains the
 path to a text file with the URL of files that you want to be listed as
-links. <br>
-Separate each entry with a new line. <br>
+links. <br />
+Separate each entry with a new line. <br />
 If you want, you can change how the links is displayed, by putting some
 text after a pipe ('|') </p>
-<p><span class="fixed_width">
-http://autoindex.sourceforge.net|Main Site <br>
-http://autoindex.sourceforge.net/forum/|Forum </span></p>
-<p> If no link description is present, the link itself will
-be displayed. <br>
+<p><span class="fixed_width"><a href="http://autoindex.sourceforge.net">
+http://autoindex.sourceforge.net</a> | Main Site <br /><a href="http://autoindex.sourceforge.net/forum/">
+http://autoindex.sourceforge.net/forum/</a> | Forum </span></p>
+      <p>To add issues about this mobile edition rewriten for the Institute IT Unit go to: <a href="https://github.com/BeitDina/AutoIndex/issues">https://github.com/BeitDina/AutoIndex/issues</a><br />
+      </p>
+      <p> If no link description is present, the link itself will
+be displayed. <br />
 <strong>NOTE</strong>: This isn't really meant to be
 done by hand - you can use the built-in editor when you log in as an
 admin.
-</p>
-<p> &nbsp;
-</p>
+      </p>
+
+
 <p> <strong>description_file</strong> contains
-the path to a text file with descriptions for files. <br>
+the path to a text file with descriptions for files. <br />
 The format is: [base_dir][full filename and path][a pipe,
-'|'][description for file] <br>
-Here's an example: ./sharefile.txt|This is a text file. <br>
-Separate each entry with a new line. <br>
+'|'][description for file] <br />
+Here's an example: ./sharefile.txt|This is a text file. <br />
+Separate each entry with a new line. <br />
 <strong>NOTE</strong>: This isn't really meant to be
 done by hand: you can login as an admin and click "edit description"
 next to any file.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>show_dir_size</strong> should be
-set to TRUE or FALSE. <em>(Default: TRUE)</em> <br>
+set to TRUE or FALSE. <em>(Default: TRUE)</em> <br />
 If it is set to TRUE, the total size of the folder will be shown under
-size. <br>
-If it is FALSE, it will display "[dir]" under size. <br>
+size. <br />
+If it is FALSE, it will display "[dir]" under size. <br />
 <strong>NOTE</strong>: If you are trying to index
 many files (meaning a few thousand), you will notice a speed
 improvement with this turned off.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>folder_expansion</strong> should
-be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br>
+be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br />
 If it is set to TRUE, when you click on the folder icon, it will expand
-the folder and list its contents. <br>
-Clicking on the folder name will take you into that folder. <br>
+the folder and list its contents. <br />
+Clicking on the folder name will take you into that folder. <br />
 If it is set to FALSE, both clicking on the icon and name will take you
 into the folder.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>show_folder_count</strong> should
-be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br>
+be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br />
 If it is TRUE, the total number of files in a folder will be shown next
-to that folder. <br>
+to that folder. <br />
 Files are counted recursively (files in subfolders are counted).
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>header</strong> and <strong>footer</strong>
-are the paths to 2 files. <br>
-The files must be text files (.html .txt .php , etc...) <br>
+are the paths to 2 files. <br />
+The files must be text files (.html .txt .php , etc...) <br />
 Header will be displayed at the top, and footer will be displayed at
-the bottom. <br>
+the bottom. <br />
 Leave blank to not include a file.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>header_per_folder</strong> and <strong>footer_per_folder</strong>
-should be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br>
+should be set to TRUE or FALSE. <em>(Default: FALSE)</em> <br />
 If they are FALSE, the header/footer will be taken from the absolute or
-relative path in the header/footer variable. <br>
+relative path in the header/footer variable. <br />
 If they are TRUE, the current directory will be added to the beginning
 of the file to be included. (don't add a path to the header/footer
 variables - just the filename)
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>days_new</strong> contains the
 number of days old a file can be and still have [New] written next to
-it. <em>(Default: 0)</em> <br>
-If it is set to 0, this feature will be disabled. <br>
+it. <em>(Default: 0)</em> <br />
+If it is set to 0, this feature will be disabled. <br />
 <strong>NOTE</strong>: this can contain any number,
 not just a 1 or 0 value, and it can contain a decimal if you want.
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>md5_show</strong> is a feature
 that will let users get the md5sum of a specific file. <em>(Default:
-0)</em> <br>
-If set to 0 it will be disabled. <br>
+0)</em> <br />
+If set to 0 it will be disabled. <br />
 Otherwise, the number will represent the maximum file size (in
 megabytes) to allow the md5sum to be calculated (I'd recommend
-something close to 10). <br>
-The number can contain a decimal if you want. <br>
-<strong>NOTE</strong>: PHP version 4.2.0 or higher is
-required for this feature to work.
+something close to 10). <br />
+The number can contain a decimal if you want. <br />
+<strong>NOTE</strong>: PHP version 4.2.0+ (or higher) was
+required for this feature to work and not is PHP 5.3+ (or higter).
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>thumbnail_height</strong> is a
 feature that will show thumbnails next to images. (NOTE: GDlib 2.0.1 or
-higher is required) <br>
+higher is required) <br />
 Setting it to 0 will disable this feature, and setting it to any other
-number will set the size of the thumbnail. <br>
+number will set the size of the thumbnail. <br />
 (100 is a good setting to start with.)
 </p>
-<p> &nbsp;
-</p>
+
 <p> <strong>show_type_column</strong>, <strong>show_size_column</strong>,
 and <strong>show_date_column</strong> are set to TRUE or
-FALSE. <br>
+FALSE. <br />
 Setting them to TRUE will show the column, and setting it to FALSE will
 not display the column.
 </p>
-<hr class="default_hr">
-<p> <strong>Language Settings</strong>:<br>
-<br>
+<hr class="default_hr" />
+<p> <strong>Language Settings</strong>:<br />
+<br />
 <strong>lang</strong> is the default language to
-display the script in. <br>
-The choices for language file names are listed below... <br>
+display the script in. <br />
+The choices for language file names are listed below... <br />
 <em>(Default: 'en')</em>
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="1" cellspacing="0">
@@ -578,25 +555,23 @@ The choices for language file names are listed below... <br>
 </tr>
 </tbody>
 </table>
-<p> &nbsp;
-</p>
+
 <p> <strong>path_to_language_files</strong> is
-the path where the *.php language files are located. <br>
+the path where the *.php language files are located. <br />
 <em>Default:</em> <span class="fixed_width">./languages/</span>
 </p>
-<p> &nbsp;
-</p>
+
 <p> If <strong>select_language</strong> is set
-to TRUE, there will be an option at the bottom of the script for <br>
+to TRUE, there will be an option at the bottom of the script for <br />
 the user to choose which language the script is displayed in. <em>(Default:
 FALSE)</em>
 </p>
-<hr class="default_hr">
-<p> <strong>Folder Flag Settings</strong>:<br>
-<br>
+<hr class="default_hr" />
+<p> <strong>Folder Flag Settings</strong>:<br />
+<br />
 <strong>flag</strong> is the default language flag to
-display the short iso code folder. <br>
-Some choices for iso folder are listed below... <br>
+display the short iso code folder. <br />
+Some choices for iso folder are listed below... <br />
 <em>(Default: 'en_us')</em>
 </p>
 <table style="border-color: rgb(17, 17, 17); border-collapse: collapse;" cellpadding="1" cellspacing="0">
@@ -755,20 +730,18 @@ Some choices for iso folder are listed below... <br>
 </tr>
 </tbody>
 </table>
-<p> &nbsp;
-</p>
+
 <p> <strong>path_to_flag_files</strong> is
-the path where the *.png language flag images are located. <br>
+the path where the *.png language flag images are located. <br />
 <em>Default:</em> <span class="fixed_width">./flags/language/</span>
 </p>
-<p> &nbsp;
-</p>
+
 <p> If <strong>select_language</strong> is set
-to TRUE, there will be an option at the bottom of the script for <br>
+to TRUE, there will be an option at the bottom of the script for <br />
 the user to choose which language the script is displayed in. <em>(Default:
 FALSE)</em>
 </p>
-<hr class="default_hr">
+<hr class="default_hr" />
 </td>
 </tr>
 </tbody>
