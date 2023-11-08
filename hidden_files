@@ -17,6 +17,8 @@ languages
 templates
 AutoIndex.conf.php
 config.php
+phpinfo.php
+phpwpinfo.php
 access.log
 meta.inc
 robots.txt
