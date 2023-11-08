@@ -5,7 +5,7 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.2.6 (January 01, 2019 / 30, Octomber, 2013)
+ * @version 2.2.6 (January 01, 2019 / 08, November, 2023)
  *
  * @copyright Copyright (C) 2002-2007 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
@@ -218,13 +218,10 @@ if (!$super_globals_disabled)
 	//$request->disable_super_globals();
 }
 
-
-
 /* To do: Should be switched to i.e. $request->request('style', 1);
 */
 $_GET = array_change_key_case($_GET, CASE_LOWER);
 $_POST = array_change_key_case($_POST, CASE_LOWER);
-
 
 /**
  * This is used to report a fatal error that we cannot display with the Display
@@ -235,8 +232,7 @@ $_POST = array_change_key_case($_POST, CASE_LOWER);
 class ExceptionFatal extends Exception {}
 try
 {
-	//now we need to include either the stored settings, or the config generator:
-	if (is_file(CONFIG_STORED))
+	if (is_file(CONFIG_STORED)) //now we need to include either the stored settings, or the config generator:
 	{
 		if (!is_readable(CONFIG_STORED))
 		{
@@ -257,20 +253,23 @@ try
 	else
 	{
 		throw new ExceptionFatal('Neither <em>' . Url::html_output(CONFIG_GENERATOR) . '</em> nor <em>' . Url::html_output(CONFIG_STORED) . '</em> could be found.');
-	}
-	
-	
+	}	
 	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
-	$ip = htmlspecialchars_decode($request->server('REMOTE_ADDR', 'N/A'));
+	$ip = htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR'));	 
+	//localhost.localdomain
 	if (!empty($_SESSION['host']))
 	{
-		$host = $_SESSION['host'];
+		$host = (function_exists('php_uname')) ? php_uname('n') : $_SESSION['host'];
 	}
 	else
 	{
-		$_SESSION['host'] = $host = gethostbyaddr($ip);
+		$_SESSION['host'] = $host = (function_exists('php_uname')) ? php_uname('n') : gethostbyaddr($ip);
 	}
-
+	
+	if (empty($_SERVER['SERVER_NAME']))
+	{
+		$_SERVER['SERVER_NAME'] = (function_exists('php_uname')) ? php_uname('n') : gethostbyaddr($ip);
+	}
 	
 	//Create a language object:
 	$words = new Language();
@@ -281,9 +280,9 @@ try
 	*/
 	$mobile_device_detect = new MobileDeviceDetect();
 	$status = $mobile_device_detect->mobile_device_detect();
-
+	
 	//Create a logging object:
-	$log = new Logging($config -> __get('log_file'));
+	$log = new Logging($config->__get('log_file'));
 	
 	/**
 	* Go through each config setting, and set a constant with each setting's
@@ -297,10 +296,9 @@ try
 		{
 			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($_SERVER['PHP_SELF'])) . '</em>, and should not be in the config file.');
 		}
-		define($key, ($item != 'false' && $item != '0'));
+		@define($key, ($item != 'false' && $item != '0'));
 	}
-	
-	
+		
 	//make sure all required settings are set in the config file
 	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
 	{
@@ -309,8 +307,7 @@ try
 			throw new ExceptionFatal('Required setting <em>' . $set . '</em> is not set in <em>' . Url::html_output(CONFIG_STORED) . '</em>');
 		}
 	}
-	
-	
+		
 	/**
 	* From this point on, we can // throw ExceptionDisplay rather than
 	 * Exception since all the configuration is done.
@@ -428,7 +425,7 @@ try
 	}
 	
 	//set the logged in user's home directory:
-	$dir = Item::make_sure_slash((($you -> home_dir == '') ? $config -> __get('base_dir') : $you -> home_dir));
+	$dir = Item::make_sure_slash((($you->home_dir == '') ? $config->__get('base_dir') : $you->home_dir));
 	$config -> set('base_dir', $dir);
 	$subdir = '';
 	
@@ -442,11 +439,10 @@ try
 			$_GET['dir'] = ''; //so the "continue" link will work
 			throw new ExceptionDisplay('The directory <em>' . Url::html_output($dir) . '</em> does not exist.');
 		}
-		$subdir = substr($dir, strlen($config -> __get('base_dir')));
+		$subdir = substr($dir, strlen($config->__get('base_dir')));
 		if (!empty($_GET['file']) && ($file = $_GET['file']))
 		{
-			while (preg_match('#\\\\|/$#', $file))
-			//remove all slashes from the end of the name
+			while (preg_match('#\\\\|/$#', $file)) //remove all slashes from the end of the name
 			{
 				$file = substr($file, 0, -1);
 			}
@@ -470,24 +466,19 @@ try
 			$url = new Url($dir . $file, true);
 			$url -> download();
 		}
-	}
-	
+	}	
 	if ($log_login)
 	{
 		$log -> add_entry('Successful login (Username: ' . $_SESSION['username'] . ')');
 	}
-	
 	if (DESCRIPTION_FILE)
 	{
 		$descriptions = new ConfigData((is_file($config -> __get('description_file')) ? $config -> __get('description_file') : false));
 	}
-	
-	if (PARSE_HTACCESS)
-	{
-		//parse .htaccess file(s)
+	if (PARSE_HTACCESS) //parse .htaccess file(s)
+	{	
 		new Htaccess($dir, '.htaccess');
 	}
-	
 	if (MD5_SHOW && !empty($_GET['md5']) && $_GET['md5'] != '')
 	{
 		$file = $dir . Url::clean_input($_GET['md5']);
@@ -502,8 +493,7 @@ try
 			throw new ExceptionDisplay('Empty file, or file too big to calculate the' . 'md5sum of (according to the $md5_show variable).');
 		}
 		die(simple_display(md5_file($file), 'md5sum of ' . Url::html_output($file)));
-	}
-	
+	}	
 	if (THUMBNAIL_HEIGHT && isset($_GET['thumbnail']))
 	{
 		$fn = Url::clean_input($_GET['thumbnail']);
@@ -512,8 +502,7 @@ try
 			die();
 		}
 		echo new Image($fn);
-	}
-	
+	}	
 	if (ARCHIVE && isset($_GET['archive']))
 	{
 		$log -> add_entry('Directory archived');
@@ -529,8 +518,7 @@ try
 		$list = new DirectoryList($dir);
 		$tar = new Tar($list, $outfile, strlen($dir));
 		die();
-	}
-	
+	}	
 	if (THUMBNAIL_HEIGHT && isset($_GET['thm']))
 	{
 		$fn = Url::clean_input($_GET['thm']);
@@ -539,8 +527,7 @@ try
 			die();
 		}
 		echo new Stream($fn);
-	}
-	
+	}	
 	//set the sorting mode:
 	if (!empty($_GET['sort']) && $_GET['sort'] != '')
 	{
@@ -549,8 +536,7 @@ try
 	else if (!!empty($_SESSION['sort']))
 	{
 		$_SESSION['sort'] = 'filename'; //default sort mode
-	}
-	
+	}	
 	//set the sorting order:
 	if (!empty($_GET['sort_mode']) && ($_GET['sort_mode'] == 'a' || $_GET['sort_mode'] == 'd'))
 	{
@@ -559,33 +545,28 @@ try
 	else if (!!empty($_SESSION['sort_mode']))
 	{
 		$_SESSION['sort_mode'] = 'a'; //default sort order
-	}
-	
-	if (count($_FILES) > 0)
-	//deal with any request to upload files:
+	}	
+	if (count($_FILES) > 0) //deal with any request to upload files:
 	{
 		$upload = new Upload($you); //the constructor checks if you have permission to upload
 		$upload -> do_upload();
-	}
-	
+	}	
 	if (USE_LOGIN_SYSTEM)
 	{
 		if (!empty($_GET['logout']) && $_GET['logout'] == 'true')
 		{
-			$you -> logout();
+			$you->logout();
 		}
 		else if (!empty($_GET['action']) && $_GET['action'] != '')
 		{
 			$admin = new Admin($you); //the constructor checks if you really are an admin
-			$admin -> action($_GET['action']);
+			$admin->action($_GET['action']);
 		}
-	}
-	
+	}	
 	if (ANTI_LEECH && !!empty($_SESSION['ref']))
 	{
 		$_SESSION['ref'] = true;
-	}
-	
+	}	
 	$search_log = '';
 	if (SEARCH_ENABLED && !empty($_GET['search']) && ($_GET['search'] != '') && ($_GET['search_mode'] != ''))
 	{
@@ -627,21 +608,23 @@ try
 	}
 	else
 	{
-		$page = ((ENTRIES_PER_PAGE && !empty($_GET['page'])) ? (int)$_GET['page'] : 1);
+		$page = ((ENTRIES_PER_PAGE && !empty($_GET['page'])) ? (int) $_GET['page'] : 1);
 		$dir_list = new DirectoryListDetailed($dir, $page);
-		$max_page = (ENTRIES_PER_PAGE ? (ceil($dir_list -> total_items() / $config -> __get('entries_per_page'))) : 1);
+		$max_page = (ENTRIES_PER_PAGE ? (ceil($dir_list->total_items() / $config->__get('entries_per_page'))) : 1);
 	}
 	$log -> add_entry($search_log);
-	$str = $dir_list -> __toString();
+	$str = $dir_list->__toString();
 	echo new Display($str);
 	//echo $mobile_device_detect->detect()->getInfo();
 }
+
 catch (ExceptionDisplay $e)
 {
 	echo $e;
 }
 catch (Exception $e)
 {
-	echo simple_display($e -> getMessage());
+	echo simple_display($e->getMessage());
 }
+
 ?>
