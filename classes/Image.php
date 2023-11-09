@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package AutoIndex
  *
@@ -14,12 +13,12 @@
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; either version 2 of the License, or
    (at your option) any later version.
-
+   
    AutoIndex PHP Script is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -27,121 +26,415 @@
 
 if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 {
-	die();
+	die('bad class init...');
 }
 
 /**
- * Given a filename, this will come up with an icon to represent the filetype.
+ * Generates a thumbnail of an image file.
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.0.2 (August 07, 2004)
+ * @version 1.0.0 (May 22, 2004)
  * @package AutoIndex
  */
-class Icon
+class Image
 {
 	/**
-	 * @var string Filename of the image file
+	 * @var string Name of the image file
 	 */
-	private $image_name;
+	private $filename;
 	
 	/**
-	 * Given a file extension, this will come up with the filename of the
-	 * icon to represent the filetype.
+	 * @var int The height of the thumbnail to create (width is automatically determined)
+	 */
+	private $height;
+	
+	/**
+	 * Massage the SVG image data for converters which don't understand some path data syntax.
 	 *
-	 * @param string $ext The file extension to find the icon for
-	 * @return string The appropriate icon depending on the extension
+	 * This is necessary for rsvg and ImageMagick when compiled with rsvg support.
+	 * Upstream bug is https://bugzilla.gnome.org/show_bug.cgi?id=620923, fixed 2014-11-10, so
+	 * this will be needed for a while. (T76852)
+	 *
+	 * @param string $svg SVG image data
+	 * @return string Massaged SVG image data
 	 */
-	private static function find_icon($ext)
+	protected function massageSvgPathdata($svg) 
 	{
-		if ($ext == '')
+		// load XML into simplexml
+		$xml = simplexml_load_file($svg);
+
+		// if the XML is valid
+		if ( $xml instanceof SimpleXMLElement ) 
 		{
-			return 'generic';
-		}
-		static $icon_types = array(
-		'binary' => array('bat', 'bin', 'com', 'dmg', 'dms', 'exe', 'msi',
-			'msp', 'pif', 'pyd', 'scr', 'so'),
-		'binhex' => array('hqx'),
-		'cd' => array('bwi', 'bws', 'bwt', 'ccd', 'cdi', 'cue', 'img',
-			'iso', 'mdf', 'mds', 'nrg', 'nri', 'sub', 'vcd'),
-		'comp' => array('cfg', 'conf', 'inf', 'ini', 'log', 'nfo', 'reg'),
-		'compressed' => array('7z', 'a', 'ace', 'ain', 'alz', 'amg', 'arc',
-			'ari', 'arj', 'bh', 'bz', 'bz2', 'cab', 'deb', 'dz', 'gz',
-			'io', 'ish', 'lha', 'lzh', 'lzs', 'lzw', 'lzx', 'msx', 'pak',
-			'rar', 'rpm', 'sar', 'sea', 'sit', 'taz', 'tbz', 'tbz2',
-			'tgz', 'tz', 'tzb', 'uc2', 'xxe', 'yz', 'z', 'zip', 'zoo'),
-		'dll' => array('386', 'db', 'dll', 'ocx', 'sdb', 'vxd'),
-		'doc' => array('abw', 'ans', 'chm', 'cwk', 'dif', 'doc', 'dot',
-			'mcw', 'msw', 'pdb', 'psw', 'rtf', 'rtx', 'sdw', 'stw', 'sxw',
-			'vor', 'wk4', 'wkb', 'wpd', 'wps', 'wpw', 'wri', 'wsd'),
-		'image' => array('adc', 'art', 'bmp', 'cgm', 'dib', 'gif', 'ico',
-			'ief', 'jfif', 'jif', 'jp2', 'jpc', 'jpe', 'jpeg', 'jpg', 'jpx',
-			'mng', 'pcx', 'png', 'psd', 'psp', 'swc', 'sxd', 'svg', 'tga',
-			'tif', 'tiff', 'wmf', 'wpg', 'xcf', 'xif', 'yuv'),
-		'java' => array('class', 'jar', 'jav', 'java', 'jtk'),
-		'js' => array('ebs', 'js', 'jse', 'vbe', 'vbs', 'wsc', 'wsf',
-			'wsh'),
-		'key' => array('aex', 'asc', 'gpg', 'key', 'pgp', 'ppk'),
-		'mov' => array('amc', 'dv', 'm4v', 'mac', 'mov',
-			'pct', 'pic', 'pict', 'pnt', 'pntg', 'qpx', 'qt', 'qti',
-			'qtif', 'qtl', 'qtp', 'qts', 'qtx'),
-		'movie' => array('asf', 'asx', 'avi', 'div', 'divx', 'dvi', 'm1v',
-			'm2v', 'mkv', 'movie', 'mp2v', 'mpa', 'mpe', 'mpeg', 'mpg', 'mp4v', 'mp4', 'mpg4',
-			'mps', 'mpv', 'mpv2', 'ogm', 'ram', 'rmvb', 'rnx', 'rp', 'rv',
-			'vivo', 'vob', 'wmv', 'xvid'),
-		'pdf' => array('edn', 'fdf', 'pdf', 'pdp', 'pdx'),
-		'php' => array('inc', 'php', 'php3', 'php4', 'php5', 'phps',
-			'phtml'),
-		'ppt' => array('emf', 'pot', 'ppa', 'pps', 'ppt', 'sda', 'sdd',
-			'shw', 'sti', 'sxi'),
-		'ps' => array('ai', 'eps', 'ps'),
-		'sound' => array('aac', 'ac3', 'aif', 'aifc', 'aiff', 'ape', 'apl',
-			'au', 'ay', 'bonk', 'cda', 'cdda', 'cpc', 'fla', 'flac',
-			'gbs', 'gym', 'hes', 'iff', 'it', 'itz', 'kar', 'kss', 'la',
-			'lpac', 'lqt', 'm4a', 'm4p', 'mdz', 'mid', 'midi', 'mka',
-			'mo3', 'mod', 'mp+', 'mp1', 'mp2', 'mp3', 'mp4', 'mpc',
-			'mpga', 'mpm', 'mpp', 'nsf', 'oda', 'ofr', 'ogg', 'pac', 'pce',
-			'pcm', 'psf', 'psf2', 'ra', 'rm', 'rmi', 'rmjb', 'rmm', 'sb',
-			'shn', 'sid', 'snd', 'spc', 'spx', 'svx', 'tfm', 'tfmx',
-			'voc', 'vox', 'vqf', 'wav', 'wave', 'wma', 'wv', 'wvx', 'xa',
-			'xm', 'xmz'),
-		'tar' => array('gtar', 'tar'),
-		'text' => array('asm', 'c', 'cc', 'cp', 'cpp', 'cxx', 'diff', 'h',
-			'hpp', 'hxx', 'm3u', 'md5', 'patch', 'pls', 'py', 'sfv', 'sh',
-			'txt'),
-		'uu' => array('uu', 'uud', 'uue'),
-		'web' => array('asa', 'asp', 'aspx', 'cfm', 'cgi', 'css', 'dhtml',
-			'dtd', 'grxml', 'htc', 'htm', 'html', 'htt', 'htx', 'jsp', 'lnk',
-			'mathml', 'mht', 'mhtml', 'perl', 'pl', 'plg', 'rss', 'shtm',
-			'shtml', 'stm', 'swf', 'tpl', 'wbxml', 'xht', 'xhtml', 'xml',
-			'xsl', 'xslt', 'xul'),
-		'xls' => array('csv', 'dbf', 'prn', 'pxl', 'sdc', 'slk', 'stc', 'sxc',
-			'xla', 'xlb', 'xlc', 'xld', 'xlr', 'xls', 'xlt', 'xlw'));
-		foreach ($icon_types as $png_name => $exts)
-		{
-			if (in_array($ext, $exts))
+			$dom = new DOMDocument( '1.0', 'utf-8' );
+			$dom->preserveWhiteSpace = false;
+			$dom->formatOutput = true;
+
+			// use it as a source
+			$dom->loadXML( $xml->asXML() );
+			
+			foreach ($dom->getElementsByTagName('path') as $node)
 			{
-				return $png_name;
+				$pathData = $node->getAttribute('d');
+				// Make sure there is at least one space between numbers, and that leading zero is not omitted.
+				// rsvg has issues with syntax like "M-1-2" and "M.445.483" and especially "M-.445-.483".
+				$pathData = preg_replace('/(-?)(\d*\.\d+|\d+)/', ' ${1}0$2 ', $pathData);
+				// Strip unnecessary leading zeroes for prettiness, not strictly necessary
+				$pathData = preg_replace('/([ -])0(\d)/', '$1$2', $pathData);
+				$node->setAttribute('d', $pathData);
 			}
+			return $dom->saveXML();
 		}
-		return 'unknown';
 	}
 	
 	/**
-	 * @param string $filename The filename to find the icon for
+	 * Convert passed image data, which is assumed to be SVG, to PNG.
+	 *
+	 * @param string $file SVG image data
+	 * @return string|bool PNG image data, or false on failure
 	 */
-	public function __construct($filename)
+	protected function imagecreatefromsvg($file) 
 	{
-		$this -> image_name = self::find_icon(FileItem::ext($filename));
+		/**
+		 * This code should be factored out to a separate method on SvgHandler, or perhaps a separate
+		 * class, with a separate set of configuration settings.
+		 *
+		 * This is a distinct use case from regular SVG rasterization:
+		 * * We can skip many sanity and security checks (as the images come from a trusted source,
+		 *   rather than from the user).
+		 * * We need to provide extra options to some converters to achieve acceptable quality for very
+		 *   small images, which might cause performance issues in the general case.
+		 * * We want to directly pass image data to the converter, rather than a file path.
+		 *
+		 * See https://phabricator.wikimedia.org/T76473#801446 for examples of what happens with the
+		 * default settings.
+		 *
+		 * For now, we special-case rsvg (used in WMF production) and do a messy workaround for other
+		 * converters.
+		 */
+		 
+		$src = file_get_contents($file);
+		$svg = $this->massageSvgPathdata($file);
+		
+		// Sometimes this might be 'rsvg-secure'. Long as it's rsvg.
+		if ( strpos( CACHE_STORAGE_DIR, 'rsvg' ) === 0 ) 
+		{
+			$command = 'rsvg-convert';
+			if ( CACHE_STORAGE_DIR )
+			{
+				$command = Shell::escape(CACHE_STORAGE_DIR) . $command;
+			}
+
+			$process = proc_open(
+				$command,
+				[ 0 => [ 'pipe', 'r' ], 1 => [ 'pipe', 'w' ] ],
+				$pipes
+			);
+
+			if ( is_resource( $process ) ) 
+			{
+				fwrite( $pipes[0], $svg );
+				fclose( $pipes[0] );
+				$png = stream_get_contents( $pipes[1] );
+				fclose( $pipes[1] );
+				proc_close( $process );
+
+				return $png ?: false;
+			}
+			return false;
+
+		} 
+		else 
+		{
+			
+			// Write input to and read output from a temporary file  
+			$tempFilenameSvg = CACHE_STORAGE_DIR . 'ResourceLoaderImage.svg';
+			$tempFilenamePng = CACHE_STORAGE_DIR . 'ResourceLoaderImage.png';
+			
+			@copy($file, $tempFilenameSvg);
+			@file_put_contents( $tempFilenameSvg, $src );
+			
+			$typeString = "image/png";
+			$command =  'cd ~' . CACHE_STORAGE_DIR . ' && java -jar batik-rasterizer.jar ' . $tempFilenameSvg . ' -m ' .$typeString;
+			//$command = "java -jar ". CACHE_STORAGE_DIR . "batik-rasterizer.jar -m " . $typeString ." -d ". $tempFilenamePng . " -q " . THUMBNAIL_HEIGHT . " " . $tempFilenameSvg . " 2>&1"; 
+			
+			$process = proc_open(
+				$command,
+				[ 0 => [ 'pipe', 'r' ], 1 => [ 'pipe', 'w' ] ],
+				$pipes
+			);
+			
+			if ( is_resource( $process ) ) 
+			{
+				proc_close( $process );
+			}
+			else
+			{
+				$output = shell_exec($command);
+				echo "Command: $command <br>";
+				echo "Output: $output";
+			}
+			//$svgReader = new SVGReader($file);
+			//$metadata = $svgReader->getMetadata();
+			//if ( !isset( $metadata['width'] ) || !isset( $metadata['height'] ) ) 
+			//{
+				$metadata['width'] = $metadata['height'] = THUMBNAIL_HEIGHT;
+			//}
+			
+			//loop to color each state as needed, something like
+			$idColorArray = array(
+				  "AL" => "339966",
+				  "AK" => "0099FF",
+				 "WI" => "FF4B00",
+				 "WY" => "A3609B"
+			);
+
+			foreach($idColorArray as $state => $color)
+			{
+				//Where $color is a RRGGBB hex value
+				$svg = preg_replace('/id="'.$state.'" style="fill: #([0-9a-f]{6})/', 
+					   'id="'.$state.'" style="fill: #'.$color, $svg
+				);
+			}
+			
+				$im = @ImageCreateFromPNG($svg);
+			
+				//$im->readImageBlob($svg);
+
+				// png settings
+				//$im->setImageFormat(function_exists('imagecreatefrompng') ? 'png24' : 'jpeg');
+				//$im->resizeImage($metadata['width'], $metadata['height'], (function_exists('imagecreatefrompng') ? imagick::FILTER_LANCZOS : ''), 1);  // Optional, if you need to resize
+
+				// jpeg
+				//$im->adaptiveResizeImage($metadata['width'], $metadata['height']); //Optional, if you need to resize
+
+				//$im->writeImage($tempFilenamePng); // (or .jpg)
+				
+				//unlink( $tempFilenameSvg );
+			
+			//$png = null;
+			//if ( $res === true ) 
+			//{
+			//	$png = file_get_contents( $tempFilenamePng );
+			//	unlink( $tempFilenamePng );
+			//}
+			//return $png ?: false;
+		}
+		die($svg);
 	}
 	
 	/**
-	 * @return string The full path to the icon file
+	 * Outputs the jpeg image along with the correct headers so the
+	 * browser will display it. The script is then exited.
 	 */
 	public function __toString()
 	{
+		$thumbnail_height = $this -> height;
+		$file = $this -> filename;
+		$file_icon = new Icon($file);
+		$this -> icon = $file_icon -> __toString();
+		if (!@is_file($file))
+		{
+			header('HTTP/1.0 404 Not Found');
+			throw new ExceptionDisplay('Image file not found: <em>' . Url::html_output($file) . '</em>');
+		}
+		switch (FileItem::ext($file))
+		{
+			case 'gif':
+			{
+				$src = @imagecreatefromgif($file);
+				break;
+			}
+			/*
+			case 'thm':
+			{
+				$src = @exif_thumbnail($file, THUMBNAIL_HEIGHT, THUMBNAIL_HEIGHT, 'image/jpg');
+				break;
+			}
+			*/
+			case 'jpeg':
+			case 'jpg':
+			case 'jpe':
+			case 'jfif' :
+			{
+				$src = @imagecreatefromjpeg($file);
+				break;
+			}
+			case 'svg' :
+			{
+				$src = $this->imagecreatefromsvg($file);
+				break;
+			}
+			case 'png':
+			{
+				$src = @imagecreatefrompng($file);
+				break;
+			}
+			case 'bmp' :
+			{
+				$src = imagecreatefrombmp($file);
+				break;
+			}
+			case 'xbm' :
+			{
+				$src= imagecreatefromxbm($file);
+				break;
+			}
+			case 'xpm' :
+			{
+				$src = imagecreatefromxpm($file);
+				break;
+			}
+			case 'wmv' :
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists('imagecreatefromwmv') ? imagecreatefromwmv($file) : imagecreatefromjpeg(str_replace('wmv', 'jpg', $file));
+				break;
+			}
+			case 'avi':
+			case 'divx':
+			case 'xvid':
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists($function) ? imagecreatefromavi($file) : imagecreatefromjpeg(str_replace(FileItem::ext($file), 'jpg', $file));
+				break;
+			}
+			case 'mp4':
+			case 'mpg':
+			case 'mp3':
+			case 'ogv':
+			case 'flv':
+			{
+				ini_set('memory_limit', '512M');
+				$function = 'imagecreatefrom'.FileItem::ext($file);
+				$src = function_exists($function) ? 'imagecreatefrom'.$$function.($file) : imagecreatefromjpeg(str_replace(FileItem::ext($file), 'jpg', $file));
+				break;
+			}
+			case '3gp':
+			{
+				ini_set('memory_limit', '512M');
+				$src = function_exists('imagecreatefrom3gp') ? imagecreatefrom3gp($file) : imagecreatefromjpeg(str_replace('3gp', 'jpg', $file));
+				break;
+			}
+			case 'php':
+			{
+				$src = str_replace('php', 'png', $file);
+				//JN (GPL)
+				$file_header = 'Content-type: image/png';
+
+				srand ((float) microtime() * 10000000);
+				$quote = rand(1, 6);
+
+				switch($quote)
+				{
+					case "1":
+						$rand_quote = "MXP-CMS Team, mxp.sf.net";
+					break;
+
+					case "2":
+						$rand_quote = "in between milestones edition ;)";
+					break;
+
+					case "3":
+						$rand_quote = "MX-Publisher, Fully Modular Portal & CMS for phpBB";
+					break;
+
+					case "4":
+						$rand_quote = "Portal & CMS Site Creation Tool";
+					break;
+
+					case "5":
+						$rand_quote = "...pafileDB, FAP, MX-Publisher, Translator";
+					break;
+
+					case "6":
+						$rand_quote = "...Calendar, Links & News...modules";
+					break;
+				}
+
+				$pic_title = $rand_quote;
+				$pic_title_reg = preg_replace("/[^A-Za-z0-9]/", "_", $pic_title);
+
+				$current_release = "3.0.0";
+
+				$im = @ImageCreateFromPNG($src);
+				$pic_size = @getimagesize($src);
+
+				$pic_width = $pic_size[0];
+				$pic_height = $pic_size[1];
+
+				$dimension_font = 1;
+				$dimension_filesize = filesize($src);
+				$dimension_string = intval($pic_width) . 'x' . intval($pic_height) . '(' . intval($dimension_filesize / 1024) . 'KB)';
+
+				$blue = ImageColorAllocate($im, 6, 108, 159);
+
+				$dimension_height = imagefontheight($dimension_font);
+				$dimension_width = imagefontwidth($dimension_font) * strlen($current_release);
+				$dimension_x = ($thumbnail_width - $dimension_width) / 2;
+				$dimension_y = $thumbnail_height + ((16 - $dimension_height) / 2);
+				//ImageString($im, 2, $dimension_x, $dimension_y, $current_release, $blue);
+				@ImageString($im, 2, 125, 2, $current_release, $blue);
+				@ImageString($im, 2, 20, 17, $rand_quote, $blue);
+
+				@Header($file_header);
+				Header("Expires: Mon, 1, 1999 05:00:00 GMT");
+				Header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+				Header("Cache-Control: no-store, no-cache, must-revalidate");
+				Header("Cache-Control: post-check=0, pre-check=0", false);
+				Header("Pragma: no-cache");
+				@ImagePNG($im);
+				exit;
+				break;
+			}
+			default:
+			{
+				$function = 'imagecreatefrom'.FileItem::ext($file);
+				$src = function_exists($function) ? 'imagecreatefrom'.$$function.($file) : imagecreatefromjpeg(str_replace(FileItem::ext($file), 'jpg', $file));
+				break;
+			}
+		}
+		if ($src === false)
+		{
+			throw new ExceptionDisplay('Unsupported image type.');
+		}
+		
+		header('Content-Type: image/jpeg');
+		header('Cache-Control: public, max-age=3600, must-revalidate');
+		header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
+		
+		$src_height = imagesy($src);
+		if ($src_height <= $thumbnail_height)
+		{
+			imagejpeg($src, '', 95);
+		}
+		else
+		{
+			$src_width = imagesx($src);
+			$thumb_width = $thumbnail_height * ($src_width / $src_height);
+			$thumb = imagecreatetruecolor($thumb_width, $thumbnail_height);
+			imagecopyresampled($thumb, $src, 0, 0, 0, 0, $thumb_width, $thumbnail_height, $src_width, $src_height);
+			imagejpeg($thumb);
+			imagedestroy($thumb);
+		}
+		imagedestroy($src);
+		die();
+	}
+	
+	/**
+	 * @param string $file The image file
+	 */
+	public function __construct($file)
+	{
+		if (!THUMBNAIL_HEIGHT)
+		{
+			throw new ExceptionDisplay('Image thumbnailing is turned off.');
+		}
 		global $config;
-		return $config->__get('icon_path')
-		. $this -> image_name . '.png';
+		$this -> height = (int)$config ->__get('thumbnail_height');
+		$this -> filename = $file;
+		//$this -> tn_path = $config -> __get('thumbnail_path');
+		//$this -> tn_quality = $config -> __get('thumbnail_quality');
 	}
 }
 
