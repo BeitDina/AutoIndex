@@ -27,7 +27,7 @@
 
 if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 {
-	die();
+	die('bad class init...');
 }
 
 /**
@@ -42,7 +42,7 @@ class Icon
 	/**
 	 * @var string Filename of the image file
 	 */
-	private $image_name;
+	private $icon_name;
 	
 	/**
 	 * Given a file extension, this will come up with the filename of the
@@ -51,18 +51,29 @@ class Icon
 	 * @param string $ext The file extension to find the icon for
 	 * @return string The appropriate icon depending on the extension
 	 */
-	private static function find_icon($ext)
+	private static function find_icon($ext, $name)
 	{
-		if ($ext == '')
+		if (($ext == '') || ($ext == 'md'))
 		{
-			return 'generic';
+			switch($name)
+			{
+				case 'SECURITY':
+				case 'README':
+				case 'ReadMe':
+				case 'CODE_OF_CONDUCT':
+					return 'doc';
+				break;
+
+				default:
+					return 'generic';
+				break;
+			}					
 		}
+		
 		static $icon_types = array(
-		'binary' => array('bat', 'bin', 'com', 'dmg', 'dms', 'exe', 'msi',
-			'msp', 'pif', 'pyd', 'scr', 'so'),
+		'binary' => array('bat', 'bin', 'com', 'dmg', 'dms', 'exe', 'msi', 'msp', 'pif', 'pyd', 'scr', 'so'),
 		'binhex' => array('hqx'),
-		'cd' => array('bwi', 'bws', 'bwt', 'ccd', 'cdi', 'cue', 'img',
-			'iso', 'mdf', 'mds', 'nrg', 'nri', 'sub', 'vcd'),
+		'cd' => array('bwi', 'bws', 'bwt', 'ccd', 'cdi', 'cue', 'img', 'iso', 'mdf', 'mds', 'nrg', 'nri', 'sub', 'vcd'),
 		'comp' => array('cfg', 'conf', 'inf', 'ini', 'log', 'nfo', 'reg'),
 		'compressed' => array('7z', 'a', 'ace', 'ain', 'alz', 'amg', 'arc',
 			'ari', 'arj', 'bh', 'bz', 'bz2', 'cab', 'deb', 'dz', 'gz',
@@ -71,28 +82,20 @@ class Icon
 			'tgz', 'tz', 'tzb', 'uc2', 'xxe', 'yz', 'z', 'zip', 'zoo'),
 		'dll' => array('386', 'db', 'dll', 'ocx', 'sdb', 'vxd'),
 		'doc' => array('abw', 'ans', 'chm', 'cwk', 'dif', 'doc', 'dot',
-			'mcw', 'msw', 'pdb', 'psw', 'rtf', 'rtx', 'sdw', 'stw', 'sxw',
+			'md', 'mcw', 'msw', 'pdb', 'psw', 'rtf', 'rtx', 'sdw', 'stw', 'sxw',
 			'vor', 'wk4', 'wkb', 'wpd', 'wps', 'wpw', 'wri', 'wsd'),
 		'image' => array('adc', 'art', 'bmp', 'cgm', 'dib', 'gif', 'ico',
 			'ief', 'jfif', 'jif', 'jp2', 'jpc', 'jpe', 'jpeg', 'jpg', 'jpx',
 			'mng', 'pcx', 'png', 'psd', 'psp', 'swc', 'sxd', 'svg', 'tga',
 			'tif', 'tiff', 'wmf', 'wpg', 'xcf', 'xif', 'yuv'),
 		'java' => array('class', 'jar', 'jav', 'java', 'jtk'),
-		'js' => array('ebs', 'js', 'jse', 'vbe', 'vbs', 'wsc', 'wsf',
-			'wsh'),
+		'js' => array('ebs', 'js', 'jse', 'vbe', 'vbs', 'wsc', 'wsf', 'wsh'),
 		'key' => array('aex', 'asc', 'gpg', 'key', 'pgp', 'ppk'),
-		'mov' => array('amc', 'dv', 'm4v', 'mac', 'mov',
-			'pct', 'pic', 'pict', 'pnt', 'pntg', 'qpx', 'qt', 'qti',
-			'qtif', 'qtl', 'qtp', 'qts', 'qtx'),
-		'movie' => array('asf', 'asx', 'avi', 'div', 'divx', 'dvi', 'm1v',
-			'm2v', 'mkv', 'movie', 'mp2v', 'mpa', 'mpe', 'mpeg', 'mpg', 'mp4v', 'mp4', 'mpg4',
-			'mps', 'mpv', 'mpv2', 'ogm', 'ram', 'rmvb', 'rnx', 'rp', 'rv',
-			'vivo', 'vob', 'wmv', 'xvid'),
+		'mov' => array('amc', 'dv', 'm4v', 'mac', 'mov', 'pct', 'pic', 'pict', 'pnt', 'pntg', 'qpx', 'qt', 'qti', 'qtif', 'qtl', 'qtp', 'qts', 'qtx'),
+		'movie' => array('asf', 'asx', 'avi', 'div', 'divx', 'dvi', 'm1v', 'm2v', 'mkv', 'movie', 'mp2v', 'mpa', 'mpe', 'mpeg', 'mpg', 'mp4v', 'mp4', 'mpg4', 'mps', 'mpv', 'mpv2', 'ogm', 'ram', 'rmvb', 'rnx', 'rp', 'rv', 'vivo', 'vob', 'wmv', 'xvid'),
 		'pdf' => array('edn', 'fdf', 'pdf', 'pdp', 'pdx'),
-		'php' => array('inc', 'php', 'php3', 'php4', 'php5', 'phps',
-			'phtml'),
-		'ppt' => array('emf', 'pot', 'ppa', 'pps', 'ppt', 'sda', 'sdd',
-			'shw', 'sti', 'sxi'),
+		'php' => array('inc', 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'php9', 'phps', 'phtml'),
+		'ppt' => array('emf', 'pot', 'ppa', 'pps', 'ppt', 'sda', 'sdd', 'shw', 'sti', 'sxi'),
 		'ps' => array('ai', 'eps', 'ps'),
 		'sound' => array('aac', 'ac3', 'aif', 'aifc', 'aiff', 'ape', 'apl',
 			'au', 'ay', 'bonk', 'cda', 'cdda', 'cpc', 'fla', 'flac',
@@ -105,17 +108,15 @@ class Icon
 			'voc', 'vox', 'vqf', 'wav', 'wave', 'wma', 'wv', 'wvx', 'xa',
 			'xm', 'xmz'),
 		'tar' => array('gtar', 'tar'),
-		'text' => array('asm', 'c', 'cc', 'cp', 'cpp', 'cxx', 'diff', 'h',
-			'hpp', 'hxx', 'm3u', 'md5', 'patch', 'pls', 'py', 'sfv', 'sh',
-			'txt'),
+		'text' => array('asm', 'c', 'cc', 'cp', 'cpp', 'cxx', 'diff', 'h', 'hpp', 'hxx', 'm3u', 'md5', 'patch', 'pls', 'py', 'sfv', 'sh', 'txt'),
 		'uu' => array('uu', 'uud', 'uue'),
 		'web' => array('asa', 'asp', 'aspx', 'cfm', 'cgi', 'css', 'dhtml',
 			'dtd', 'grxml', 'htc', 'htm', 'html', 'htt', 'htx', 'jsp', 'lnk',
 			'mathml', 'mht', 'mhtml', 'perl', 'pl', 'plg', 'rss', 'shtm',
 			'shtml', 'stm', 'swf', 'tpl', 'wbxml', 'xht', 'xhtml', 'xml',
 			'xsl', 'xslt', 'xul'),
-		'xls' => array('csv', 'dbf', 'prn', 'pxl', 'sdc', 'slk', 'stc', 'sxc',
-			'xla', 'xlb', 'xlc', 'xld', 'xlr', 'xls', 'xlt', 'xlw'));
+		'xls' => array('csv', 'dbf', 'prn', 'pxl', 'sdc', 'slk', 'stc', 'sxc', 'xla', 'xlb', 'xlc', 'xld', 'xlr', 'xls', 'xlt', 'xlw'));
+		
 		foreach ($icon_types as $png_name => $exts)
 		{
 			if (in_array($ext, $exts))
@@ -131,7 +132,7 @@ class Icon
 	 */
 	public function __construct($filename)
 	{
-		$this -> image_name = self::find_icon(FileItem::ext($filename));
+		$this->icon_name = self::find_icon(FileItem::ext($filename), FileItem::ext($filename, false));
 	}
 	
 	/**
@@ -141,7 +142,7 @@ class Icon
 	{
 		global $config;
 		return $config->__get('icon_path')
-		. $this -> image_name . '.png';
+		. $this->icon_name . '.png';
 	}
 }
 
