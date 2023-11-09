@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider at github.com
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -27,7 +27,7 @@
 
 if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 {
-	die();
+	die('bad class init...');
 }
 
 /**
@@ -43,10 +43,29 @@ class FileItem extends Item
 	 * @param string $fn The filename
 	 * @return string Everything after the list dot in the filename, not including the dot
 	 */
-	public static function ext($fn)
+	public static function ext($fn, $ext = true)
 	{
 		$fn = Item::get_basename($fn);
-		return (strpos($fn, '.') ? strtolower(substr(strrchr($fn, '.'), 1)) : '');
+		
+		switch($ext)
+		{
+			case false:
+				return $fn;
+			break;
+
+			default:
+				return (strpos($fn, '.') ? strtolower(substr(strrchr($fn, '.'), 1)) : '');
+			break;
+		}					
+	}
+	
+	/**
+	 * @return string Returns the name of the filename
+	 * @see FileItem::ext()
+	 */
+	public function file_name()
+	{
+		return self::ext($this->filename, false);
 	}
 	
 	/**
@@ -55,9 +74,8 @@ class FileItem extends Item
 	 */
 	public function file_ext()
 	{
-		return self::ext($this -> filename);
-	}
-	
+		return self::ext($this->filename);
+	}	
 	/**
 	 * @param string $parent_dir
 	 * @param string $filename
