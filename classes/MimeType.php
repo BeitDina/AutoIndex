@@ -1,25 +1,23 @@
 <?php
-
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider at github.com
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
  */
-
 /*
    AutoIndex PHP Script is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; either version 2 of the License, or
    (at your option) any later version.
-
+   
    AutoIndex PHP Script is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-
+   
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -27,7 +25,7 @@
 
 if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 {
-	die();
+	die('bad class init...');
 }
 
 /**
@@ -65,7 +63,11 @@ class MimeType
 			'application/mathml+xml' => array('mathml'),
 			'application/msword' => array('doc'),
 			'application/msoffice' => array('docx'),
-			'application/octet-stream' => array('bin', 'dms', 'lha', 'lzh', 'exe', 'class', 'so', 'dll', 'dmg'),
+			'application/octet-stream' => array('bin', 'dms', 'dmg', 'ocx', 'sys', 'drv', 'so'),
+			'application/windows-executable' => array('exe'),
+			'application/windows-dll' => array('dll', 'vxd'),
+			'application/system-class' => array('class'),
+			'application/archive-lzh' => array('lha', 'lzh'),
 			'application/oda' => array('oda'),
 			'application/ogg' => array('ogg'),
 			'application/pdf' => array('pdf'),
@@ -108,6 +110,7 @@ class MimeType
 			'application/x-texinfo' => array('texinfo', 'texi'),
 			'application/x-troff' => array('t', 'tr', 'roff'),
 			'application/x-troff-man' => array('man'),
+			'text/documentation' => array('md'),
 			'application/x-troff-me' => array('me'),
 			'application/x-troff-ms' => array('ms'),
 			'application/x-ustar' => array('ustar'),
