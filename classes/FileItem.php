@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package AutoIndex
  *
@@ -50,7 +49,7 @@ class FileItem extends Item
 		switch($ext)
 		{
 			case false:
-				return $fn;
+				return (strpos($fn, '.') ? substr($fn, 0, strrpos($fn, '.')) : $fn);
 			break;
 
 			default:
@@ -270,9 +269,9 @@ class FileItem extends Item
 	 */
 	public function __get($var = '')
 	{
-		if (isset($this -> $var))
+		if (isset($this->$var))
 		{
-			return $this -> $var;
+			return $this->$var;
 		}
 		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in FileItem class.');
 	}
