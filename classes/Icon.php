@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package AutoIndex
  *
@@ -47,52 +46,73 @@ class Icon
 	/**
 	 * Given a file extension, this will come up with the filename of the
 	 * icon to represent the filetype.
-	 *
+	 *ş
 	 * @param string $ext The file extension to find the icon for
 	 * @return string The appropriate icon depending on the extension
 	 */
 	private static function find_icon($ext, $name)
-	{
+	{			
 		if (($ext == '') || ($ext == 'md'))
 		{
 			switch($name)
 			{
-				case 'SECURITY':
 				case 'README':
 				case 'ReadMe':
-				case 'CODE_OF_CONDUCT':
-					return 'doc';
+					return 'readme';
 				break;
-
+				case 'CODE_OF_CONDUCT':
+					return 'conduct';
+				break;
+				case 'LICENSE':
+					return 'license';
+				break;
+				case 'SECURITY':
+					return 'security';
+				break;
 				default:
 					return 'generic';
-				break;
 			}					
-		}
-		
+		}		
 		static $icon_types = array(
-		'binary' => array('bat', 'bin', 'com', 'dmg', 'dms', 'exe', 'msi', 'msp', 'pif', 'pyd', 'scr', 'so'),
+		'binary' => array('patch', 'bin', 'dmg', 'dms', 'exe', 'msi', 'msp', 'pyd', 'scr', 'so'),
 		'binhex' => array('hqx'),
+		'conduct' => array('cnd'),
+		'readme' => array('wri', 'md'),
+		'license' => array('tql'),
+		'security' => array('sec', 'cer', 'der', 'crt', 'spc', 'p7b', 'p12', 'pfx'),
+		'key' => array('key', 'pem', 'pub', 'fin'),		
 		'cd' => array('bwi', 'bws', 'bwt', 'ccd', 'cdi', 'cue', 'img', 'iso', 'mdf', 'mds', 'nrg', 'nri', 'sub', 'vcd'),
-		'comp' => array('cfg', 'conf', 'inf', 'ini', 'log', 'nfo', 'reg'),
+		'command' => array('bat', 'cmd', 'com', 'lnk', 'pif'),
+		'comp' => array('cfg', 'conf', 'inf', 'ini', 'log', 'nfo', 'sys'),
+		'registry' => array('reg', 'hiv'),		
 		'compressed' => array('7z', 'a', 'ace', 'ain', 'alz', 'amg', 'arc',
 			'ari', 'arj', 'bh', 'bz', 'bz2', 'cab', 'deb', 'dz', 'gz',
 			'io', 'ish', 'lha', 'lzh', 'lzs', 'lzw', 'lzx', 'msx', 'pak',
 			'rar', 'rpm', 'sar', 'sea', 'sit', 'taz', 'tbz', 'tbz2',
 			'tgz', 'tz', 'tzb', 'uc2', 'xxe', 'yz', 'z', 'zip', 'zoo'),
-		'dll' => array('386', 'db', 'dll', 'ocx', 'sdb', 'vxd'),
+		'dll' => array('386', 'db', 'dll', 'ocx', 'sdb', 'vxd', 'drv'),		
 		'doc' => array('abw', 'ans', 'chm', 'cwk', 'dif', 'doc', 'dot',
-			'md', 'mcw', 'msw', 'pdb', 'psw', 'rtf', 'rtx', 'sdw', 'stw', 'sxw',
-			'vor', 'wk4', 'wkb', 'wpd', 'wps', 'wpw', 'wri', 'wsd'),
+			'mcw', 'msw', 'pdb', 'psw', 'rtf', 'rtx', 'sdw', 'stw', 'sxw',
+			'vor', 'wk4', 'wkb', 'wpd', 'wps', 'wpw', 'wsd'),
 		'image' => array('adc', 'art', 'bmp', 'cgm', 'dib', 'gif', 'ico',
 			'ief', 'jfif', 'jif', 'jp2', 'jpc', 'jpe', 'jpeg', 'jpg', 'jpx',
 			'mng', 'pcx', 'png', 'psd', 'psp', 'swc', 'sxd', 'svg', 'tga',
 			'tif', 'tiff', 'wmf', 'wpg', 'xcf', 'xif', 'yuv'),
+		'bible' => array('bbl', 'bblx', 'ot', 'nt', 'toc'),
 		'java' => array('class', 'jar', 'jav', 'java', 'jtk'),
 		'js' => array('ebs', 'js', 'jse', 'vbe', 'vbs', 'wsc', 'wsf', 'wsh'),
 		'key' => array('aex', 'asc', 'gpg', 'key', 'pgp', 'ppk'),
 		'mov' => array('amc', 'dv', 'm4v', 'mac', 'mov', 'pct', 'pic', 'pict', 'pnt', 'pntg', 'qpx', 'qt', 'qti', 'qtif', 'qtl', 'qtp', 'qts', 'qtx'),
 		'movie' => array('asf', 'asx', 'avi', 'div', 'divx', 'dvi', 'm1v', 'm2v', 'mkv', 'movie', 'mp2v', 'mpa', 'mpe', 'mpeg', 'mpg', 'mp4v', 'mp4', 'mpg4', 'mps', 'mpv', 'mpv2', 'ogm', 'ram', 'rmvb', 'rnx', 'rp', 'rv', 'vivo', 'vob', 'wmv', 'xvid'),
+		'fnt' => array('fnt', 'bdf'),
+		'fon' => array('fon'),
+		'ttf' => array('ttf'),
+		'otf' => array('otf'),
+		'sfd' => array('sfd'),
+		'afm' => array('afm'),
+		'eot' => array('eot'),
+		'woff' => array('woff'),
+		'woff2' => array('woff2'),
 		'pdf' => array('edn', 'fdf', 'pdf', 'pdp', 'pdx'),
 		'php' => array('inc', 'php', 'php3', 'php4', 'php5', 'php7', 'php8', 'php9', 'phps', 'phtml'),
 		'ppt' => array('emf', 'pot', 'ppa', 'pps', 'ppt', 'sda', 'sdd', 'shw', 'sti', 'sxi'),
@@ -108,13 +128,15 @@ class Icon
 			'voc', 'vox', 'vqf', 'wav', 'wave', 'wma', 'wv', 'wvx', 'xa',
 			'xm', 'xmz'),
 		'tar' => array('gtar', 'tar'),
-		'text' => array('asm', 'c', 'cc', 'cp', 'cpp', 'cxx', 'diff', 'h', 'hpp', 'hxx', 'm3u', 'md5', 'patch', 'pls', 'py', 'sfv', 'sh', 'txt'),
+		'csharp' => array('csproj', 'cs'),
+		'prog' => array('asm', 'c', 'cc', 'cp', 'cpp', 'cxx', 'diff', 'h', 'hpp', 'hxx', 'md5', 'patch', 'py', 'sfv', 'sh'),
+		'play' => array('m3u', 'pls'),
+		'text' => array('md5', 'txt'),
 		'uu' => array('uu', 'uud', 'uue'),
 		'web' => array('asa', 'asp', 'aspx', 'cfm', 'cgi', 'css', 'dhtml',
-			'dtd', 'grxml', 'htc', 'htm', 'html', 'htt', 'htx', 'jsp', 'lnk',
+			'dtd', 'grxml', 'htc', 'htm', 'html', 'htt', 'htx', 'jsp',
 			'mathml', 'mht', 'mhtml', 'perl', 'pl', 'plg', 'rss', 'shtm',
-			'shtml', 'stm', 'swf', 'tpl', 'wbxml', 'xht', 'xhtml', 'xml',
-			'xsl', 'xslt', 'xul'),
+			'shtml', 'stm', 'swf', 'tpl', 'wbxml', 'xht', 'xhtml', 'xml', 'xsl', 'xslt', 'xul'),
 		'xls' => array('csv', 'dbf', 'prn', 'pxl', 'sdc', 'slk', 'stc', 'sxc', 'xla', 'xlb', 'xlc', 'xld', 'xlr', 'xls', 'xlt', 'xlw'));
 		
 		foreach ($icon_types as $png_name => $exts)
@@ -124,7 +146,25 @@ class Icon
 				return $png_name;
 			}
 		}
-		return 'unknown';
+		
+		switch($name)
+		{
+			case 'README':
+			case 'ReadMe':
+				return 'readme';
+			break;
+			case 'CODE_OF_CONDUCT':
+				return 'conduct';
+			break;
+			case 'LICENSE':
+				return 'license';
+			break;
+			case 'SECURITY':
+				return 'security';
+			break;
+			default:
+				return 'unknown';
+		}	
 	}
 	
 	/**
@@ -141,6 +181,7 @@ class Icon
 	public function __toString()
 	{
 		global $config;
+		
 		return $config->__get('icon_path')
 		. $this->icon_name . '.png';
 	}
