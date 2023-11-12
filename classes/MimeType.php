@@ -7,17 +7,18 @@
  *
  * @link http://autoindex.sourceforge.net
  */
+
 /*
    AutoIndex PHP Script is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; either version 2 of the License, or
    (at your option) any later version.
-   
+
    AutoIndex PHP Script is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
-   
+
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -137,6 +138,15 @@ class MimeType
 			'image/jpeg' => array('jpeg', 'jpg', 'jpe'),
 			'image/png' => array('png'),
 			'image/svg+xml' => array('svg'),
+			'font/fnt' => array('fnt', 'bdf'),
+			'font/fon' => array('fon'),
+			'font/ttf' => array('ttf'),
+			'font/otf' => array('otf'),
+			'font/sfd' => array('sfd'),
+			'font/afm' => array('afm'),
+			'font/eot' => array('eot'),
+			'font/woff' => array('woff'),
+			'font/woff2' => array('woff2'),
 			'image/tiff' => array('tiff', 'tif'),
 			'image/vnd.djvu' => array('djvu', 'djv'),
 			'image/vnd.wap.wbmp' => array('wbmp'),
@@ -184,7 +194,7 @@ class MimeType
 				return $mime_type;
 			}
 		}
-		return $this -> default_type;
+		return $this->default_type;
 	}
 	
 	/**
@@ -193,8 +203,8 @@ class MimeType
 	 */
 	public function __construct($filename, $default_type = 'text/plain')
 	{
-		$this -> default_type = $default_type;
-		$this -> mime = $this -> find_mime_type(FileItem::ext($filename));
+		$this->default_type = $default_type;
+		$this->mime = $this->find_mime_type(FileItem::ext($filename));
 	}
 	
 	/**
@@ -202,7 +212,7 @@ class MimeType
 	 */
 	public function __toString()
 	{
-		return $this -> mime;
+		return $this->mime;
 	}
 }
 
