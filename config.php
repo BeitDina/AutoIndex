@@ -1,13 +1,14 @@
 <?php
+
 /**
  * When a file with the stored config data is not present, this file is
  * automatically included to create a new one.
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.2.7 (January 13, 2019 / November 13, 2023)
+ * @version 2.4.5-pl7 (January 01, 2019 / 30, Octomber, 2013)
  *
- * @copyright Copyright (C) 2002-2008 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -35,109 +36,116 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 }
 
 $strings = array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file',
-	'description_file', 'user_list', 'download_count', 'hidden_files',
-	'banned_list');
+	'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list');
 $checkboxes = array('show_dir_size', 'use_login_system', 'force_download',
-	'search_enabled', 'anti_leech', 'must_login_to_download', 'archive',
-	'parse_htaccess');
-$numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show',
-	'entries_per_page');
+	'search_enabled', 'anti_leech', 'must_login_to_download', 'archive', 'parse_htaccess');
+$numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'entries_per_page');
 
 if (count($_POST) >= count($strings) + count($numbers))
 {
-	
 	$directories = array('base_dir', 'icon_path', 'flag_path', 'assets_path', 'template');
 	$output = "<?php\n\n/* AutoIndex PHP Script config file\n\n";
-	$request_post_setting = '';
 	foreach ($strings as $setting)
 	{
-		if (!$request->is_post($setting))
+		if ($request->is_empty_post($setting))
 		{
 			die(simple_display('Required setting <em>' . htmlentities($setting) . '</em> not set.'));
 		}
-		if ($request->is_post($setting))
+		if ($_POST[$setting] == '')
 		{
 			$output .= "$setting\tfalse\n";
 			continue;
 		}
-		$request_post_setting = str_replace('\\', '/', $request->post($setting, TYPE_NO_TAGS)); //make sure there is a slash at the end of directories
-		if (in_array($setting, $directories) && !preg_match('#/$#', $request_post_setting))
+		$_POST[$setting] = str_replace('\\', '/', $_POST[$setting]);
+		if (in_array($setting, $directories) && !preg_match('#/$#', $_POST[$setting]))
+		//make sure there is a slash at the end of directories
 		{
-			$request_post_setting .= '/';
+			$_POST[$setting] .= '/';
 		}
-		$output .= "$setting\t{$request_post_setting}\n";
+		$output .= "$setting\t{$_POST[$setting]}\n";
 	}
 	foreach ($checkboxes as $setting)
 	{
-		$output .= "$setting\t" . ($request->is_post($setting) ? 'true' : 'false') . "\n";
+		$output .= "$setting\t" . (isset($_POST[$setting]) ? 'true' : 'false')
+		. "\n";
 	}
 	foreach ($numbers as $setting)
 	{
-		if (!$request->is_post($setting))
+		if (!isset($_POST[$setting]))
 		{
-			die(simple_display('Required setting <em>' . htmlentities($setting) . '</em> not set.'));
+			die(simple_display('Required setting <em>'
+			. htmlentities($setting) . '</em> not set.'));
 		}
-		if ($request->is_post($setting))
+		if ($_POST[$setting] == '')
 		{
 			$output .= "$setting\t0\n";
 			continue;
 		}
-		$request_post_setting = str_replace('\\', '/', $request->post($setting, TYPE_NO_TAGS)); 
-		if ($request_post_setting < 0)
+		if ($_POST[$setting] < 0)
 		{
-			die(simple_display('The setting <em>' . htmlentities($setting) . '</em> should not be a negitive number.'));
+			die(simple_display('The setting <em>'
+			. htmlentities($setting) . '</em> should not be a negitive number.'));
 		}
-		$request_post_setting = (string)((float)$request_post_setting);
-		$output .= "$setting\t{$request_post_setting}\n";
+		$_POST[$setting] = (string)((float)$_POST[$setting]);
+		$output .= "$setting\t{$_POST[$setting]}\n";
 	}
 	$output .= "\n*/\n\n?>";
 	
-	if (!$request->is_post('force_download'))
+	if (!isset($_POST['force_download']))
 	{
-		if (preg_match('#^(/|[a-z]\:)#i', $request->post('base_dir', TYPE_NO_TAGS)))
+		if (preg_match('#^(/|[a-z]\:)#i', $_POST['base_dir']))
 		{
-			die(simple_display('It seems you are using an absolute path for the Base Directory.' . '<br />This means you must check the "Pipe downloaded files though the PHP script" box.'));
+			die(simple_display('It seems you are using an absolute path for the Base Directory.'
+			. '<br />This means you must check the "Pipe downloaded files though the PHP script" box.'));
 		}
-		if ((int)$request->post('bandwidth_limit', TYPE_INT) !== 0)
+		if ((int)$_POST['bandwidth_limit'] !== 0)
 		{
 			die(simple_display('For the Bandwidth Limit feature to work, the "force download" feature needs to be on.'
 			. '<br />This means you must check the "Pipe downloaded files though the PHP script" box.'));
 		}
 	}
-	if ($request->is_post('must_login_to_download') && !$request->is_post('use_login_system'))
+	if (isset($_POST['must_login_to_download']) && !isset($_POST['use_login_system']))
 	{
-		die(simple_display('To enable <em>must_login_to_download</em>, the ' . '<em>use_login_system</em> option must also be turned on.'));
+		die(simple_display('To enable <em>must_login_to_download</em>, the '
+		. '<em>use_login_system</em> option must also be turned on.'));
 	}
 	foreach (array('base_dir', 'template') as $valid)
 	{
-		if (!@is_dir($request->post($valid, TYPE_NO_TAGS)))
+		if (!@is_dir($_POST[$valid]))
 		{
 			//die(simple_display(htmlentities($valid) . ' setting is not a valid directory.'));
 		}
 	}
-	if (@is_file(CONFIG_STORED)) //if the file already exists, back it up
+	
+	if (@is_file(CONFIG_STORED))
+	//if the file already exists, back it up
 	{
 		$temp_name = CONFIG_STORED . '.bak';
-		for ($i = 1; file_exists($temp_name); $i++)
+		for ($i = 1; @file_exists($temp_name); $i++)
 		{
 			$temp_name = CONFIG_STORED . '.bak' . (string)$i;
 		}
 		@copy(CONFIG_STORED, $temp_name);
-	}	
+	}
+	
 	$h = @fopen(CONFIG_STORED, 'wb');
-	if ($h === false) //the file could not be written to, so now it must be downloaded through the browser	
+	if ($h === false)
+	//the file could not be written to, so now it must be downloaded through the browser
 	{
 		header('Content-Type: text/plain; name="' . CONFIG_STORED . '"');
 		header('Content-Disposition: attachment; filename="' . CONFIG_STORED . '"');
 		die($output);
 	}
-	else	//the file was opened successfully, so write to it
+	else
+	//the file was opened successfully, so write to it
 	{
 		fwrite($h, $output);
-		fclose($h);	
+		fclose($h);
+		
 		//begin display of "configuration complete" page
-		echo '<?xml version="1.0" encoding="iso-8859-2" ?>';
+		echo '<?xml version="1.0" encoding="utf-8"?>';
 		?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -182,14 +190,14 @@ if (count($_POST) >= count($strings) + count($numbers))
 <table border="0" cellpadding="5" cellspacing="0">
 <tr><td>
 <p>Write successful!<br />AutoIndex configuration is finished.</p>
-<p><a href="<?php echo $request->server('PHP_SELF'); ?>">Continue.</a></p>
+<p><a href="<?php echo $_SERVER['PHP_SELF']; ?>">Continue.</a></p>
 </td></tr></table>
-</body>
-</html>
+</body></html>
 <?php
 		die();
 	}
 }
+
 //list of default settings
 $settings = array(
 	'base_dir' => './',
@@ -198,37 +206,41 @@ $settings = array(
 	'flag_path' => 'flags/language/',
 	'language' => 'en',
 	'template' => './templates/default/',
-	'log_file' => 'false',
-	'description_file' => 'false',
+	'log_file' => 'access.log',
+	'description_file' => 'description_file',
 	'user_list' => '.htpasswd.autoindex',
-	'download_count' => 'false',
+	'download_count' => 'download_count',
 	'hidden_files' => 'hidden_files',
-	'banned_list' => 'false',
+	'banned_list' => 'banned_users',
 	'show_dir_size' => 'true',
-	'use_login_system' => 'false',
+	'use_login_system' => 'true',
 	'force_download' => 'false',
 	'search_enabled' => 'true',
 	'anti_leech' => 'false',
 	'must_login_to_download' => 'false',
 	'archive' => 'false',
-	'days_new' => '2',
+	'days_new' => '7',
 	'entries_per_page' => '300',
 	'thumbnail_height' => '100',
 	'bandwidth_limit' => '0',
-	'md5_show' => '0',
+	'md5_show' => '20',
 	'parse_htaccess' => 'true'
 );
+
 global $config;
-if (isset($config)) //if we're reconfiguring the script, use the current settings
+if (isset($config))
+//if we're reconfiguring the script, use the current settings
 {
 	foreach ($settings as $key => $data)
 	{
-		$settings[$key] = $config->__get($key);
+		$settings[$key] = $config -> __get($key);
 	}
 }
+
 //begin display of main configuration page:
-echo '<?xml version="1.0" encoding="iso-8859-2" ?>';
+echo '<?xml version="1.0" encoding="utf-8"?>';
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -279,7 +291,8 @@ echo '<?xml version="1.0" encoding="iso-8859-2" ?>';
 </style>
 </head>
 <body>
-<form method="post" action="<?php echo $request->server('PHP_SELF'); ?>?action=config">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>?action=config">
+
 <h3>
 	<a href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a>
 	<br />Configuration
@@ -287,7 +300,9 @@ echo '<?xml version="1.0" encoding="iso-8859-2" ?>';
 <p>
 	The default options are currently selected, so just press the configure button at the bottom to use them.
 </p>
+
 <hr />
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 Base Directory: <input type="text" name="base_dir" value="<?php if ($settings['base_dir'] != 'false') echo $settings['base_dir']; ?>" />
@@ -296,8 +311,17 @@ Base Directory: <input type="text" name="base_dir" value="<?php if ($settings['b
 	<br />This will be the starting point for the script. Nothing above this directory can be viewed, but its subfolders can.
 	<br />Make sure to use a path relative to this index.php file if you can.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
+<p />
+<table width="650" cellpadding="8"><tr><td>
+Assets Path: <input type="text" name="assets_path" value="<?php if ($settings['assets_path'] != 'false') echo $settings['assets_path']; ?>" />
+<p class="small">
+	This is the path to the assets files (the path web browsers will access them from).
+	<br />The included assets are <em>cookie consent</em>, <em>ion icons</em>, <em>font awesome</em>, and <em>jquery</em>.
+</p>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 Icon Path: <input type="text" name="icon_path" value="<?php if ($settings['icon_path'] != 'false') echo $settings['icon_path']; ?>" />
@@ -306,8 +330,8 @@ Icon Path: <input type="text" name="icon_path" value="<?php if ($settings['icon_
 	<br />The included icon sets are <em>apache</em>, <em>kde</em>, <em>osx</em>, and <em>winxp</em>.
 	<br />You can leave it blank to not show icons.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 Flag Path: <input type="text" name="flag_path" value="<?php if ($settings['flag_path'] != 'false') echo $settings['flag_path']; ?>" />
@@ -316,8 +340,8 @@ Flag Path: <input type="text" name="flag_path" value="<?php if ($settings['flag_
 	<br />The included icon sets are <em>country</em>, <em>language</em>.
 	<br />You can leave it blank to not show icons.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 <input type="checkbox" name="show_dir_size" value="true"<?php if ($settings['show_dir_size'] != 'false') echo ' checked="checked"'; ?> /> Show Directory Size
@@ -326,8 +350,8 @@ Flag Path: <input type="text" name="flag_path" value="<?php if ($settings['flag_
 	<br />Otherwise, it will display "[dir]" under size.
 	<br />NOTE: If you are trying to index many files (meaning a few thousand), you will notice a speed improvement with this turned off.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 <input type="checkbox" name="search_enabled" value="true"<?php if ($settings['search_enabled'] != 'false') echo ' checked="checked"'; ?> /> Enable Searching
@@ -336,21 +360,21 @@ Flag Path: <input type="text" name="flag_path" value="<?php if ($settings['flag_
 	<br />It will search the folder you are currently in, and all subfolders.
 	<br />Searching is not case sensitive.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 Template Directory: <input type="text" name="template" value="<?php if ($settings['template'] != 'false') echo $settings['template']; ?>" />
 <p class="small">
 	This is the path where the *.tpl template files are located (relative to this index.php file).
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
-<input type="checkbox" name="use_login_system" value="true"<?php if ($settings['use_login_system'] != 'true') echo ' checked="checked"'; ?> /> Enable Login System
+<input type="checkbox" name="use_login_system" value="true"<?php if ($settings['use_login_system'] != 'false') echo ' checked="checked"'; ?> /> Enable Login System
 <br /><input type="checkbox" name="must_login_to_download" value="true"<?php if ($settings['must_login_to_download'] != 'false') echo ' checked="checked"'; ?> /> Users must login to view/download
-<br />User List: <input type="text" name="user_list" value="<?php if ($settings['user_list'] != 'true') echo $settings['user_list']; ?>" />
+<br />User List: <input type="text" name="user_list" value="<?php if ($settings['user_list'] != 'false') echo $settings['user_list']; ?>" />
 <p class="small">
 	User List contains the path to the text file where the usernames and encrypted passwords are stored.
 	<br />Make sure the file is chmod'ed so PHP can read and write to it.
@@ -454,34 +478,33 @@ Image Thumbnail Height: <input type="text" name="thumbnail_height" size="3" valu
 	The file to write IP addresses and hostnames that are blocked from accessing this script.
 	<br />The contents of the list are editable when you login as an admin.
 </span></p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 <input type="checkbox" name="archive" value="true"<?php if ($settings['archive'] != 'false') echo ' checked="checked"'; ?> /> Allow folder archive downloading
 <p class="small">
 	If this box is checked, users will be able to download the folder's contents as a tar archive file.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 <input type="checkbox" name="parse_htaccess" value="true"<?php if ($settings['parse_htaccess'] != 'false') echo ' checked="checked"'; ?> /> Parse .htaccess files
 <p class="small">
 	If this box is checked, .htaccess files will be parsed and used by AutoIndex.
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
-<table width="650" cellpadding="8">
-<tr><td>
+<table width="650" cellpadding="8"><tr><td>
 <p>MD5 calculation max size: <input type="text" name="md5_show" size="3" value="<?php if ($settings['md5_show'] != 'false') echo $settings['md5_show']; ?>" /> MB</p>
 <p class="small">
 	Setting this to 0 will disable this feature, and setting it to any other number will set the maximum size of a file to allow users to find the md5sum of (in megabytes).
 	<br />(10 is a good setting to start with.)
 </p>
-</td></tr>
-</table>
+</td></tr></table>
+
 <p />
 <table width="650" cellpadding="8"><tr><td>
 Default Language: <select name="language">
@@ -504,10 +527,10 @@ Default Language: <select name="language">
 	not available in AutoIndex. In that case, the language selected here is
 	used.
 </p>
-</td></tr>
-</table>
-<p /><hr />
-<p />
+</td></tr></table>
+
+<p /><hr /><p />
+
 <p>
 	<input type="submit" value="Configure" />
 </p>
@@ -517,11 +540,12 @@ Default Language: <select name="language">
 	<br />(It should be named <em><?php echo CONFIG_STORED; ?></em> and put in the same folder as <em>index.php</em>)
 </p>
 </form>
+
 <!--
 Powered by AutoIndex PHP Script (version <?php echo VERSION; ?>)
-Copyright (C) 2002-2008 Justin Hagstrom
+Copyright (C) 2002-2007 Justin Hagstrom
 http://autoindex.sourceforge.net
 Page generated in <?php echo round((microtime(true) - START_TIME) * 1000, 1); ?> milliseconds.
 -->
-</body>
-</html>
+
+</body></html>
