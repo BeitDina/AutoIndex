@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom, 2019-2023 Florin C Bodin
+ * @copyright Copyright (C) 2002-2008 Justin Hagstrom, 2019-2023 Florin C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -97,6 +97,7 @@ class Template
 	public function __construct($filename)
 	{
 		global $config, $dir, $subdir, $words, $mobile_device_detect;
+		
 		$full_filename = $config ->__get('template') . $filename;
 		if (!@is_file($full_filename))
 		{
@@ -120,10 +121,11 @@ class Template
 			'{info:version}' => VERSION,
 			'{info:page_time}' => round((microtime(true) - START_TIME) * 1000, 1),
 			'{info:statinfo}' => $mobile_device_detect->detect()->getInfo(),
-			'{info:message}' => $words->__get('cookie consent msg'),			
-			'{info:dismiss}' => $words->__get('cookie consent OK'),
-			'{info:link}' => $words->__get('cookie consent info'),
-			'{info:href}' => $words->__get('privacy'));
+			'{info:message}' => $words->__get('COOKIE_CONSENT_MSG'),			
+			'{info:dismiss}' => $words->__get('COOKIE_CONSENT_OK'),
+			'{info:link}' => $words->__get('COOKIE_CONSENT_INFO'),
+			'{info:href}' => $words->__get('PRIVACY')
+		);
 		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui',
 			array('self', 'callback_words'), strtr($contents, $tr));
 		
