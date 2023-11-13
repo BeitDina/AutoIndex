@@ -1,9 +1,8 @@
 <?php
-
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2008 Justin Hagstrom, 2019-2023 Florin C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -43,7 +42,7 @@ class Language
 	 * @var ConfigData Contains the translation data from the language file
 	 */
 	private $translation_data;
-	
+	private $lang_file;
 	/**
 	 * Returns a list of all files in $path that match the filename format
 	 * of language files.
@@ -123,7 +122,7 @@ class Language
 		}
 		//the browser has no preferences set, so use the config's default
 		global $config;
-		return $config -> __get('language');
+		return $config->__get('language');
 	}
 	
 	/**
@@ -132,13 +131,13 @@ class Language
 	 */
 	public function __construct()
 	{
-		$lang_file = PATH_TO_LANGUAGES . $this -> get_current_lang() . LANGUAGE_FILE_EXT;
-		if (!@is_readable($lang_file))
+		$this->lang_file = PATH_TO_LANGUAGES . $this->get_current_lang() . LANGUAGE_FILE_EXT;
+		if (!@is_readable($this->lang_file))
 		{
 			throw new ExceptionFatal('Cannot read from language file: <em>'  . Url::html_output($lang_file) . '</em>');
 		}
 		//load the file as a tab-separated object
-		$this -> translation_data = new ConfigData($lang_file);
+		$this->translation_data = new ConfigData($this->lang_file);
 	}
 	
 	/**
@@ -147,7 +146,7 @@ class Language
 	 */
 	public function is_set($name)
 	{
-		return $this -> translation_data -> is_set($name);
+		return $this->translation_data->is_set($name);
 	}
 	
 	/**
@@ -156,12 +155,12 @@ class Language
 	 */
 	public function __get($var)
 	{
-		if ($this -> translation_data -> is_set($var))
+		if ($this->translation_data->is_set($var))
 		{
-			return $this -> translation_data -> __get($var);
+			return $this->translation_data->__get($var);
 		}
-		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in Language file.');
+		print('Variable <em>' . Url::html_output($var) . '</em> not set in Language file'. $this->lang_file . '.');
+		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in Language file'. $this->lang_file . '.');
 	}
 }
-
 ?>
