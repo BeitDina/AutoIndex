@@ -18,16 +18,16 @@
 <tr class="paragraph">
 <td class="default_td">
 
-<b>AutoIndex PHP Script (version 2.2.6) - Tutorial File original by Justin Hagstrom, edited by Florin Ciprian Bodin</b> 
+<b>AutoIndex PHP Script (version 2.2.7) - Tutorial File original by Justin Hagstrom, edited by Florin Ciprian Bodin</b> 
 <span class="small">Original AutoIndex is provided under the terms of the <a class="default_a" href="http://autoindex.sourceforge.net/license.html">GNU General Public License (GPL)</a> at </span><a class="default_a" href="http://autoindex.sourceforge.net/">http://autoindex.sourceforge.net/</a>&nbsp; .</p>
-      <p><span class="small">This edition of </span><a href="https://github.com/BeitDina/AutoIndex/releases/tag/2.2.6" target="_blank" rel="noreferrer">AutoIndex lists the files in a directory tree and now is mobile screen reversible</a>&nbsp; .</p>
-      <p style="font-size: small;">Repository: <a href="https://github.com/BeitDina/AutoIndex" target="_blank" rel="noreferrer">BeitDina/AutoIndex</a> · Tag: <a href="https://github.com/BeitDina/AutoIndex/tree/2.2.6" target="_blank" rel="noreferrer">2.2.6</a> · Commit: <a href="https://github.com/BeitDina/AutoIndex/commit/c027530852064eb841ee60153231198863bc8b69" target="_blank" rel="noreferrer">c027530</a> · Released by: <a href="https://github.com/orynider" target="_blank" rel="noreferrer">orynider</a>
+      <p><span class="small">This edition of AutoIndex lists the files in a directory tree and now is mobile screen reversible</a>&nbsp; .</p>
+     
       
 <b>AutoIndex</b> since 2001 is a standalone PHP script that makes table that lists the files in a directory, and lets users access the files and subdirectories. It includes searching, icons for each file type, an admin panel, uploads, access logging, file descriptions, and more. Now this version developed in collaboration with <strong>the Beit Dina IT Unit</strong> was tested with PHP 5.3, 5.4, 5.5, 5.6, 7.1, 7.2, 7.3, 7.4 and is released with 35 languages packs.</p>
 
-<b>Full Changelog</b>: <a class="v1commit-link" href="https://github.com/BeitDina/AutoIndex/compare/2.2.5...2.2.6" target="_blank" rel="noreferrer"><tt>2.2.5...2.2.6</tt></a></p>
+<b>Full Changelog</b>: <a class="v1commit-link" href="https://github.com/BeitDina/AutoIndex/compare/2.2.6...2.2.7" target="_blank" rel="noreferrer"><tt>2.2.6...2.2.7</tt></a></p>
       
-<p>This release has 4 assets: Visit the <a href="https://github.com/BeitDina/AutoIndex/releases/tag/2.2.6" target="_blank" rel="noreferrer">release page</a> to download them.</p>
+<p>This release has 4 assets: Visit the <a href="https://github.com/BeitDina/AutoIndex/releases/tag/2.2.7" target="_blank" rel="noreferrer">release page</a> to download them.</p>
       
 <p><span class="small"> DEMO: See PHP VERSION on Footer of the index page.</span></p>
     
