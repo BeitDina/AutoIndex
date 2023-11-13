@@ -1,4 +1,4 @@
-// Romanian (Romania) language file by FlorinCB <orynider@users.sourceforge.net>
+// Romanian language file by FlorinCB <orynider@users.sourceforge.net>
 
 index of	Index la
 parent directory	Director Superior
@@ -242,7 +242,7 @@ TIBETAN	Tibetană
 BRETON	Breton
 BHUTAN	Bhutan
 BOTSWANA	Botswană
-CAMEROONIAN_PIDGIN_ENGLISH		Engleză Cameroniană Pidgin 
+CAMEROONIAN_PIDGIN_ENGLISH	Engleză Cameroniană Pidgin 
 CAMEROONIAN	Cameroniană
 CATALAN	Catalană
 COA_A_COCOS	Coa de Cocos
@@ -338,6 +338,7 @@ ESPERANTO	Esperanţo
 ERITREA	Eritrea
 SPANISH	Spaniolă
 SPANISH_MEXICO	Spaniolă Mexico
+CUBAN_SPANISH	Spanilolă Cubană
 SPANISH_UNITED_STATES	Spaniolă Statele Unite
 SPANISH_CARIBBEAN	Spaniolă Caribbeană
 SPANISH_ARGENTINIAN	Spaniolă Argentiniană
@@ -633,7 +634,6 @@ BBPP	BlackBerry Passport
 BBSTORM	BlackBerry Storm
 BBTOUCH	'BlackBerry Touch
 BLACKBERRY	BlackBerry
-DESKTOPPC	'Desktop
 HP8	HUAWEI P8
 HPL01	Huawei Honor 7
 HPL09	Huawei P9 EVA-L09
@@ -682,7 +682,7 @@ SXED	Sony Xperia E1 Dual
 SXM2	Sony XPERIA M2
 SXZ1	Sony Xperia Z1
 SXZ3	Sony Xperia Z3
-TKT	  Tianyu K-Touch
+TKT	Tianyu K-Touch
 VOYAGER	Voyager
 WSP	Windows Smartphone
 MOBILE_DEVICE	Mobile Device
