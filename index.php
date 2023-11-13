@@ -5,9 +5,9 @@
  *ş
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.2.6 (January 01, 2019 / 08, November, 2023)
+ * @version 2.2.7 (January 01, 2019 / 09, November, 2023)
  *
- * @copyright Copyright (C) 2002-2007 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2008 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -410,9 +410,9 @@ try
 	if (USE_LOGIN_SYSTEM && $request->is_set_post('username'))
 	{
 		$you = new UserLoggedIn($request->post('username'), sha1($request->post('password')));
-		$log_login = true;
+		$log_login = true; $password_var = 'password';
 		$_SESSION['password'] = sha1($request->post('password'));
-		$request->recursive_set_var('password', '', true); //unset($_POST['password']);
+		$request->recursive_set_var($password_var, null, true); //similar to unset($_POST['password']);
 		$_SESSION['username'] = $request->post('username');
 	}
 	else if (USE_LOGIN_SYSTEM && !empty($_SESSION['username']))
