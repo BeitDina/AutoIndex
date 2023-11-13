@@ -29,14 +29,19 @@
    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-@ini_set('display_errors', '1');
+ini_set('display_errors', '1');
 //@error_reporting(E_ALL & ~E_NOTICE); 
-@session_cache_expire (1440);
-@set_time_limit (1500);
+session_cache_expire (1440);
+set_time_limit (1500);
+define('ENVIRONMENT', 'production');
 
 /**
- * OPTIONAL SETTINGS:
+ * OPTIONAL SETTINGS: 'production' or 'development'
  */
+if (!defined('ENVIRONMENT'))
+{
+	@define('ENVIRONMENT', 'development');
+}
 
 //filenames and paths for configuration related files
 /*EDIT*/$CONFIG_PATH = './';
@@ -131,10 +136,12 @@ if (ini_get('zlib.output_compression') == '1')
  * users' browsers. If you do this, make sure any changes you make to the
  * template do not break XHTML 1.1 compliance.
  */
-/*if (!empty($_SERVER['HTTP_ACCEPT']) && preg_match('#application/(xhtml\+xml|\*)#i', $_SERVER['HTTP_ACCEPT']))
+/*
+if (!empty($_SERVER['HTTP_ACCEPT']) && preg_match('#application/(xhtml\+xml|\*)#i', $_SERVER['HTTP_ACCEPT']))
 {
 	header('Content-Type: application/xhtml+xml');
-}*/
+}
+*/
 
 session_name('AutoIndex2');
 session_start();
@@ -147,38 +154,48 @@ session_start();
  * @param string $title
  * @return string
  */
-function simple_display($text, $title = 'Error on Page')
-{
+function simple_display($text, $title = 'Error on Page', $notify = '', $return_index = "index.php") 
+{ 
 	return '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="blue" /> 
-	<title>' . $title . '</title>
-	<style type="text/css" title="AutoIndex Default">
-		html, body
-		{
-			font-family: verdana, lucidia, sans-serif;
-			font-size: 13px;
-			background-color: #F0F0F0;
-			color: #000000;
-		}
-	</style>
-</head>
-<body>
-<p>' . $text . '</p></body></html>
-
-<!--
-
-Powered by AutoIndex PHP Script (version ' . VERSION . ')
-Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
-http://autoindex.sourceforge.net/
-
--->
-';
+			<!DOCTYPE html>
+			<html dir="ltr">
+			<head><meta charset="UTF-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="apple-mobile-web-app-capable" content="yes" />
+			<meta name="apple-mobile-web-app-status-bar-style" content="blue" />' .
+			'<title>' . $title . '</title>' .
+			'<style type="text/css">{ margin: 0; padding: 0; } html { font-size: 100%; height: 100%; margin-bottom: 1px; background-color: #E4EDF0; } body { font-family: "Lucida Grande", "Segoe UI", Helvetica, Arial, sans-serif; color: #536482; background: #E4EDF0; font-size: 62.5%; margin: 0; } ' .
+			'a:link, a:active, a:visited { color: #006688; text-decoration: none; } a:hover { color: #DD6900; text-decoration: underline; } ' .
+			'#wrap { padding: 0 20px 15px 20px; min-width: 615px; } #page-header { text-align: right; height: 40px; } #page-footer { clear: both; font-size: 1em; text-align: center; } ' .
+			'.panel { margin: 4px 0; background-color: #FFFFFF; border: solid 1px  #A9B8C2; } ' .
+			'#errorpage #page-header a { font-weight: bold; line-height: 6em; } #errorpage #content { padding: 10px; } #errorpage #content h1 { line-height: 1.2em; margin-bottom: 0; color: #DF075C; } ' .
+			'#errorpage #content div { margin-top: 20px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC; padding-bottom: 5px; color: #333333; font: bold 1.2em "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif; text-decoration: none; line-height: 120%; text-align: left; } \n' .
+			'</style>' .
+			'</head>' .
+			'<body id="errorpage">' .
+			'<div id="wrap">' .
+			'	<div id="page-header">'.$return_index.'</div>' .	
+			'	<div id="page-body">' .
+			'	<div class="panel">' .
+			'		<div id="content">' .
+			'			<h1>' . $title . '</h1>' .
+			'			<div>' . $text . '</div>' .
+			 $notify .
+			'		</div>' .
+			'	</div>' .
+			'	</div>' .
+			'	<div id="page-footer">Edition by <a href="https://github.com/beitdina/">Beit Dina Institute</a>';
+			'	</div>' .
+			'</div>' .
+			'</body>' .
+			'</html>	
+			<!--
+			Powered by AutoIndex PHP Script (version ' . VERSION . ')
+			Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
+			http://autoindex.sourceforge.net/
+			-->
+			';
 }
 
 /**
@@ -256,7 +273,7 @@ try
 		throw new ExceptionFatal('Neither <em>' . Url::html_output(CONFIG_GENERATOR) . '</em> nor <em>' . Url::html_output(CONFIG_STORED) . '</em> could be found.');
 	}	
 	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
-	$ip = htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR'));	 
+	$ip = !empty($request->server('HTTP_X_FORWARDED_FOR')) ? htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR')) : $request->server('REMOTE_ADDR');	 
 	//localhost.localdomain
 	if (!empty($_SESSION['host']))
 	{
@@ -371,8 +388,7 @@ try
 			}
 		}
 	}
-	
-	
+		
 	//size of the "chunks" that are read at a time from the file (when $force_download is on)
 	$speed = (BANDWIDTH_LIMIT ? $config->__get('bandwidth_limit') : 8);
 	
@@ -389,16 +405,15 @@ try
 		}
 		$downloads = new ConfigData($config->__get('download_count'));
 	}
-	
 	//create a user object:
 	$log_login = false;
-	if (USE_LOGIN_SYSTEM && !empty($_POST['username']) && ($_POST['username'] != '') && ($_POST['password'] != ''))
+	if (USE_LOGIN_SYSTEM && $request->is_set_post('username'))
 	{
-		$you = new UserLoggedIn($_POST['username'], sha1($_POST['password']));
+		$you = new UserLoggedIn($request->post('username'), sha1($request->post('password')));
 		$log_login = true;
-		$_SESSION['password'] = sha1($_POST['password']);
-		unset($_POST['password']);
-		$_SESSION['username'] = $_POST['username'];
+		$_SESSION['password'] = sha1($request->post('password'));
+		$request->recursive_set_var('password', '', true); //unset($_POST['password']);
+		$_SESSION['username'] = $request->post('username');
 	}
 	else if (USE_LOGIN_SYSTEM && !empty($_SESSION['username']))
 	{
