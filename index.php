@@ -2,7 +2,7 @@
 /**
  * Handles all requests by the browser. This is the only file that can be
  * accessed directly.
- *
+ *ş
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
  * @version 2.2.6 (January 01, 2019 / 08, November, 2023)
@@ -69,7 +69,8 @@ define('ENABLE_CACHE', false);
  * in this directory. You can use an absolute path or a relative path, just
  * make sure there is a slash at the end.
  */
-/*EDIT*/define('CACHE_STORAGE_DIR', '../AutoIndex/cache/');
+/*EDIT*/
+define('CACHE_STORAGE_DIR', 'cache/');
 /**
  * Format to display dates in.
  * @see date()
@@ -111,7 +112,7 @@ define('ADMIN', 3);
 //define('LEVEL_TO_UPLOAD', USER);
 
 /** The version of AutoIndex PHP Script (the whole release, not based on individual files). */
-define('VERSION', '2.2.6');
+define('VERSION', '2.2.7');
 
 /**
  * This must be set to true for other included files to run. Setting it to
@@ -266,11 +267,6 @@ try
 		$_SESSION['host'] = $host = (function_exists('php_uname')) ? php_uname('n') : gethostbyaddr($ip);
 	}
 	
-	if (empty($_SERVER['SERVER_NAME']))
-	{
-		$_SERVER['SERVER_NAME'] = (function_exists('php_uname')) ? php_uname('n') : gethostbyaddr($ip);
-	}
-	
 	//Create a language object:
 	$words = new Language();
 	
@@ -309,15 +305,14 @@ try
 	}
 		
 	/**
-	* From this point on, we can // throw ExceptionDisplay rather than
+	* From this point on, we can throw ExceptionDisplay rather than
 	 * Exception since all the configuration is done.
 	 */
 	
 	$b_list = $only_these_ips = $banned_ips = array();
-	if (BANNED_LIST && is_file($config -> __get('banned_list')))
-	//make sure the user is not banned
+	if (BANNED_LIST && is_file($config->__get('banned_list'))) //make sure the user is not banned
 	{
-		$b_list = file($config -> __get('banned_list'));
+		$b_list = file($config->__get('banned_list'));
 		if ($b_list === false)
 		{
 			throw new ExceptionDisplay('Error reading from banned_list file.');
@@ -342,20 +337,19 @@ try
 		{
 			if (!(DirectoryList::match_in_array($ip, $only_these_ips) || DirectoryList::match_in_array($host, $only_these_ips)))
 			{
-				throw new ExceptionDisplay($words -> __get('the administrator has blocked your ip address or hostname') . '.');
+				throw new ExceptionDisplay($words->__get('the administrator has blocked your ip address or hostname') . '.');
 			}
 		}
 		else if (DirectoryList::match_in_array($ip, $banned_ips) || DirectoryList::match_in_array($host, $banned_ips))
 		{
-			throw new ExceptionDisplay($words -> __get('the administrator has blocked your ip address or hostname') . '.');
+			throw new ExceptionDisplay($words->__get('the administrator has blocked your ip address or hostname') . '.');
 		}
 	}
 	
 	$show_only_these_files = $hidden_files = array();
-	if (HIDDEN_FILES && is_file($config -> __get('hidden_files')))
-	//store the hidden file list in $hidden_list
+	if (HIDDEN_FILES && is_file($config->__get('hidden_files'))) //store the hidden file list in $hidden_list
 	{
-		$hidden_list = file($config -> __get('hidden_files'));
+		$hidden_list = file($config->__get('hidden_files'));
 		if ($hidden_list === false)
 		{
 			throw new ExceptionDisplay('Error reading from "hidden_files" file.');
@@ -380,20 +374,20 @@ try
 	
 	
 	//size of the "chunks" that are read at a time from the file (when $force_download is on)
-	$speed = (BANDWIDTH_LIMIT ? $config -> __get('bandwidth_limit') : 8);
+	$speed = (BANDWIDTH_LIMIT ? $config->__get('bandwidth_limit') : 8);
 	
 	if (DOWNLOAD_COUNT)
 	{
-		if (!is_file($config -> __get('download_count')))
+		if (!is_file($config->__get('download_count')))
 		{
-			$h = fopen($config -> __get('download_count'), 'wb');
+			$h = fopen($config->__get('download_count'), 'wb');
 			if ($h === false)
 			{
 				throw new ExceptionDisplay('Could not open download count file for writing.' 	. ' Make sure PHP has write permission to this file.');
 			}
 			fclose($h);
 		}
-		$downloads = new ConfigData($config -> __get('download_count'));
+		$downloads = new ConfigData($config->__get('download_count'));
 	}
 	
 	//create a user object:
@@ -426,21 +420,21 @@ try
 	
 	//set the logged in user's home directory:
 	$dir = Item::make_sure_slash((($you->home_dir == '') ? $config->__get('base_dir') : $you->home_dir));
-	$config -> set('base_dir', $dir);
+	$config->set('base_dir', $dir);
 	$subdir = '';
 	
-	if (!empty($_GET['dir']))
+	if ($request->is_get('dir'))
 	{
-		$dir .= Url::clean_input($_GET['dir']);
+		$dir .= Url::clean_input($request->get('dir'));
 		$dir = Item::make_sure_slash($dir);
 		if (!is_dir($dir))
 		{
 			header('HTTP/1.0 404 Not Found');
-			$_GET['dir'] = ''; //so the "continue" link will work
+			$request->recursive_set_var('dir', '', TYPE_GET_VARS); //so the "continue" link will work
 			throw new ExceptionDisplay('The directory <em>' . Url::html_output($dir) . '</em> does not exist.');
 		}
 		$subdir = substr($dir, strlen($config->__get('base_dir')));
-		if (!empty($_GET['file']) && ($file = $_GET['file']))
+		if ($request->is_set_get('file') && ($file = $request->get('file')))
 		{
 			while (preg_match('#\\\\|/$#', $file)) //remove all slashes from the end of the name
 			{
@@ -452,58 +446,58 @@ try
 				header('HTTP/1.0 404 Not Found');
 				throw new ExceptionDisplay('The file <em>' . Url::html_output($file) . '</em> does not exist.');
 			}
-			if (ANTI_LEECH && !!empty($_SESSION['ref']) && (!!empty($_SERVER['HTTP_REFERER']) || stripos($_SERVER['HTTP_REFERER'], $_SERVER['SERVER_NAME']) === false))
+			if (ANTI_LEECH && !!empty($_SESSION['ref']) && (!!empty($request->server('HTTP_REFERER')) || stripos($request->server('HTTP_REFERER'), $request->server('SERVER_NAME')) === false))
 			{
-				$log -> add_entry('Leech Attempt');
-				$self = $_SERVER['SERVER_NAME'] . Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri($subdir);
+				$log->add_entry('Leech Attempt');
+				$self = $request->server('SERVER_NAME') . Url::html_output($request->server('PHP_SELF')) . '?dir=' . Url::translate_uri($subdir);
 				throw new ExceptionDisplay('<h3>This PHP Script has an Anti-Leech feature turned on.</h3>' . ' <p>Make sure you are accessing this file directly from <a class="autoindex_a" href="http://' . $self . '">http://' . $self . '</a></p>');
 			}
-			$log -> add_entry($file);
+			$log->add_entry($file);
 			if (DOWNLOAD_COUNT)
 			{
-				$downloads -> add_one($dir . $file);
+				$downloads->add_one($dir . $file);
 			}
 			$url = new Url($dir . $file, true);
-			$url -> download();
+			$url->download();
 		}
 	}	
 	if ($log_login)
 	{
-		$log -> add_entry('Successful login (Username: ' . $_SESSION['username'] . ')');
+		$log->add_entry('Successful login (Username: ' . $_SESSION['username'] . ')');
 	}
 	if (DESCRIPTION_FILE)
 	{
-		$descriptions = new ConfigData((is_file($config -> __get('description_file')) ? $config -> __get('description_file') : false));
+		$descriptions = new ConfigData((is_file($config->__get('description_file')) ? $config->__get('description_file') : false));
 	}
 	if (PARSE_HTACCESS) //parse .htaccess file(s)
 	{	
 		new Htaccess($dir, '.htaccess');
 	}
-	if (MD5_SHOW && !empty($_GET['md5']) && $_GET['md5'] != '')
+	if (MD5_SHOW && $request->is_set_get('md5'))
 	{
-		$file = $dir . Url::clean_input($_GET['md5']);
+		$file = $dir . Url::clean_input($request->get('md5'));
 		if (!is_file($file))
 		{
 			header('HTTP/1.0 404 Not Found');
 			throw new ExceptionDisplay('Cannot calculate md5sum: the file <em>' . Url::html_output($file) . '</em> does not exist.');
 		}
 		$size = (int)filesize($file);
-		if ($size <= 0 || $size / 1048576 > $config -> __get('md5_show'))
+		if ($size <= 0 || $size / 1048576 > $config->__get('md5_show'))
 		{
 			throw new ExceptionDisplay('Empty file, or file too big to calculate the' . 'md5sum of (according to the $md5_show variable).');
 		}
 		die(simple_display(md5_file($file), 'md5sum of ' . Url::html_output($file)));
 	}	
-	if (THUMBNAIL_HEIGHT && isset($_GET['thumbnail']))
+	if (THUMBNAIL_HEIGHT && $request->is_set_get('thumbnail'))
 	{
-		$fn = Url::clean_input($_GET['thumbnail']);
+		$fn = Url::clean_input($request->get('thumbnail'));
 		if ($fn == '')
 		{
 			die();
 		}
 		echo new Image($fn);
 	}	
-	if (ARCHIVE && isset($_GET['archive']))
+	if (ARCHIVE && $request->is_set_get('archive'))
 	{
 		$log -> add_entry('Directory archived');
 		$outfile = Item::get_basename($subdir);
@@ -512,16 +506,16 @@ try
 			$outfile = 'base_dir';
 		}
 		$mime = new MimeType('.tar'); 
-		header('Content-Type: ' . $mime -> __toString());
+		header('Content-Type: ' . $mime->__toString());
 		header('Content-Disposition: attachment; filename="' . $outfile . '.tar"');
 		set_time_limit(0);
 		$list = new DirectoryList($dir);
 		$tar = new Tar($list, $outfile, strlen($dir));
 		die();
 	}	
-	if (THUMBNAIL_HEIGHT && isset($_GET['thm']))
+	if (THUMBNAIL_HEIGHT && $request->is_set_get('thm'))
 	{
-		$fn = Url::clean_input($_GET['thm']);
+		$fn = Url::clean_input($request->get('thm'));
 		if ($fn == '')
 		{
 			die();
@@ -529,18 +523,21 @@ try
 		echo new Stream($fn);
 	}	
 	//set the sorting mode:
-	if (!empty($_GET['sort']) && $_GET['sort'] != '')
+	if ($request->is_set_get('sort'))
 	{
-		$_SESSION['sort'] = $_GET['sort'];
+		$_SESSION['sort'] = $request->get('sort');
 	}
 	else if (!!empty($_SESSION['sort']))
 	{
 		$_SESSION['sort'] = 'filename'; //default sort mode
 	}	
 	//set the sorting order:
-	if (!empty($_GET['sort_mode']) && ($_GET['sort_mode'] == 'a' || $_GET['sort_mode'] == 'd'))
+	if ($request->is_set_get('sort_mode'))
 	{
-		$_SESSION['sort_mode'] = $_GET['sort_mode'];
+		if ($request->get('sort_mode') == 'a' || $request->get('sort_mode') == 'd')
+		{
+			$_SESSION['sort_mode'] = $request->get('sort_mode');
+		}
 	}
 	else if (!!empty($_SESSION['sort_mode']))
 	{
@@ -553,14 +550,14 @@ try
 	}	
 	if (USE_LOGIN_SYSTEM)
 	{
-		if (!empty($_GET['logout']) && $_GET['logout'] == 'true')
+		if ($request->is_set_get('logout'))
 		{
 			$you->logout();
 		}
-		else if (!empty($_GET['action']) && $_GET['action'] != '')
+		else if ($request->is_set_get('action'))
 		{
 			$admin = new Admin($you); //the constructor checks if you really are an admin
-			$admin->action($_GET['action']);
+			$admin->action($request->get('action'));
 		}
 	}	
 	if (ANTI_LEECH && !!empty($_SESSION['ref']))
@@ -568,10 +565,10 @@ try
 		$_SESSION['ref'] = true;
 	}	
 	$search_log = '';
-	if (SEARCH_ENABLED && !empty($_GET['search']) && ($_GET['search'] != '') && ($_GET['search_mode'] != ''))
+	if (SEARCH_ENABLED && $request->is_set_get('search'))
 	{
-		$s = Url::clean_input($_GET['search']);
-		$dir_list = new Search($s, $dir, $_GET['search_mode']);
+		$s = Url::clean_input($request->get('search'));
+		$dir_list = new Search($s, $dir, $request->get('search_mode'));
 		$search_log = "Search: $s";
 	}
 	else if (ENABLE_CACHE)
@@ -591,8 +588,7 @@ try
 			$dir_list = new DirectoryListDetailed($dir);
 			if (!is_dir(CACHE_STORAGE_DIR))
 			{
-				if (!Admin::mkdir_recursive(CACHE_STORAGE_DIR))
-				//Attempt to create the directory. If it fails, tell the user to manually make the folder.
+				if (!Admin::mkdir_recursive(CACHE_STORAGE_DIR)) //Attempt to create the directory. If it fails, tell the user to manually make the folder.
 				{
 					throw new ExceptionDisplay('Please create the directory <em>' . Url::html_output(CACHE_STORAGE_DIR) . '</em> so cache files can be written.');
 				}
@@ -608,7 +604,7 @@ try
 	}
 	else
 	{
-		$page = ((ENTRIES_PER_PAGE && !empty($_GET['page'])) ? (int) $_GET['page'] : 1);
+		$page = ((ENTRIES_PER_PAGE && $request->is_set_get('page')) ? (int) $request->get('page') : 1);
 		$dir_list = new DirectoryListDetailed($dir, $page);
 		$max_page = (ENTRIES_PER_PAGE ? (ceil($dir_list->total_items() / $config->__get('entries_per_page'))) : 1);
 	}
