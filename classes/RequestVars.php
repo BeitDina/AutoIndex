@@ -3,7 +3,7 @@
 /**
  * @package AutoIndex
  *
-* @copyright (c) 2002-2021 Markus Petrux, John Olson, FlorinCB aka orynider at github.com
+* @copyright (c) 2002-2023 Markus Petrux, John Olson, FlorinCB aka orynider at github.com
 * @license http://opensource.org/licenses/gpl-license.php GNU General Public License v2
 * @link http://mxpcms.sourceforge.net/
 * @link http://autoindex.sourceforge.net
@@ -1014,3 +1014,4 @@ class RequestVars
 		}
 	} 
 }	// class RequestVars
+?>
