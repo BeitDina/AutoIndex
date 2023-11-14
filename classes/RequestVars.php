@@ -1,10 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
 * @copyright (c) 2002-2023 Markus Petrux, John Olson, FlorinCB aka orynider at github.com
 * @license http://opensource.org/licenses/gpl-license.php GNU General Public License v2
+* @version $Id: RequestVars.php,v 0.92 2023/11/11 20:01:42 orynider Exp $
 * @link http://mxpcms.sourceforge.net/
 * @link http://autoindex.sourceforge.net
  */
@@ -97,16 +97,14 @@ class RequestVars
 		self::FILES 	=> '_FILES',
 	);
 	
-	var $post_array = 0;
-	
+	/**
+	* @vars	arrays	Stores count() of $GLOBALS arrays.
+	*/	
+	var $post_array = 0;	
 	var $get_array = 0;
-	
-	var $request_array = 0;
-	
-	var $cookie_array = 0;
-	
-	var $server_array = 0;
-	
+	var $request_array = 0;	
+	var $cookie_array = 0;	
+	var $server_array = 0;	
 	var $files_arrays = 0;
 	
 	/**
@@ -675,7 +673,21 @@ class RequestVars
 		//return (empty($_POST[$var]) && ( empty($_POST[$var.'_x']) || empty($_POST[$var.'_y']))) ? 1 : 0 ;
 		return ($this->is_empty($var, self::POST) && ($this->is_empty($var.'_x', self::POST) || $this->is_empty($var.'_y', self::POST))) ? 1 : 0;		
 	}
-	
+	/**
+	 * Is POST var not empty?
+	 *
+	 * Boolean method to check if POST variable is empty
+	 * as it might be set but still be empty.
+	 *
+	 * @access public
+	 * @param string $var
+	 * @return boolean
+	 */
+	public function is_not_empty_post($var)
+	{
+		//return (!empty($_POST[$var]) && ( !empty($_POST[$var.'_x']) || !empty($_POST[$var.'_y']))) ? 1 : 0 ;
+		return ($this->is_not_empty($var, self::POST) && ($this->is_not_empty($var.'_x', self::POST) || $this->is_not_empty($var.'_y', self::POST))) ? 1 : 0;		
+	}	
 	/**
 	 * Is GET var empty?
 	 *
@@ -691,7 +703,21 @@ class RequestVars
 		//return empty($_GET[$var]) ? 1 : 0;
 		return $this->is_empty($var, self::GET);
 	}
-
+	/**
+	 * Is GET var not empty?
+	 *
+	 * Boolean method to check if GET variable is empty
+	 * as it might be set but still be empty
+	 *
+	 * @access public
+	 * @param string $var
+	 * @return boolean
+	 */
+	public function is_not_empty_get($var)
+	{
+		//return !empty($_GET[$var]) ? 1 : 0;
+		return $this->is_not_empty($var, self::GET);
+	}
 	/**
 	 * Is REQUEST empty (GET and POST) var?
 	 *
@@ -705,7 +731,19 @@ class RequestVars
 	{
 		return ($this->is_empty_get($var) && $this->is_empty_post($var)) ? 1 : 0;
 	}
-	
+	/**
+	 * Is REQUEST not empty (GET and POST) var?
+	 *
+	 * Boolean method to check if REQUEST (both) variable is empty.
+	 *
+	 * @access public
+	 * @param string $var
+	 * @return boolean
+	 */
+	public function is_not_empty_request($var)
+	{
+		return ($this->is_not_empty_get($var) && $this->is_not_empty_post($var)) ? 1 : 0;
+	}	
 	/**
 	* Checks whether a certain variable was sent via POST.
 	* To make sure that a request was sent using POST you should call this function
@@ -720,8 +758,20 @@ class RequestVars
 	{
 		return $this->is_set($name, self::POST);
 	}
-
-	
+	/**
+	* Checks whether a certain variable was not sent via POST.
+	* To make sure that a request was not sent using POST you should call this function
+	* on at least one variable.
+	*
+	* @param	string	$name	The name of the form variable which should have a
+	*							_p suffix to indicate the check in the code that creates the form too.
+	*
+	* @return	bool			True if the variable was not set in a POST request, false otherwise.
+	*/
+	public function is_not_set_post($name)
+	{
+		return $this->is_not_set($name, self::POST);
+	}	
 	/**
 	* Checks whether a certain variable was sent via GET.
 	* To make sure that a request was sent using GET you should call this function
@@ -736,7 +786,20 @@ class RequestVars
 	{
 		return $this->is_set($name, self::GET);
 	}	
-
+	/**
+	* Checks whether a certain variable was not sent via GET.
+	* To make sure that a request was not sent using GET you should call this function
+	* on at least one variable.
+	*
+	* @param	string	$name	The name of the form variable which should have a
+	*							_p suffix to indicate the check in the code that creates the form too.
+	*
+	* @return	bool			True if the variable was not set in a GET request, false otherwise.
+	*/
+	public function is_not_set_get($name)
+	{
+		return $this->is_not_set($name, self::GET);
+	}
 	/*
 	*
 	*
@@ -800,7 +863,20 @@ class RequestVars
 	{
 		return empty($this->input[$super_global][$var]);
 	}	
-	
+	/**
+	* Checks whether a certain variable is not empty in one of the super global
+	* arrays.
+	*
+	* @param	string	$var	Name of the variable
+	* @param	mx_request_vars::POST|GET|REQUEST|COOKIE	$super_global
+	*							Specifies the super global which shall be checked
+	*
+	* @return	bool			True if the variable was sent as input
+	*/
+	public function is_not_empty($var, $super_global = self::REQUEST)
+	{
+		return !empty($this->input[$super_global][$var]);
+	}	
 	/**
 	* Checks whether a certain variable is set in one of the super global
 	* arrays.
@@ -815,7 +891,20 @@ class RequestVars
 	{
 		return isset($this->input[$super_global][$var]);
 	}
-	
+	/**
+	* Checks whether a certain variable is not set in one of the super global
+	* arrays.
+	*
+	* @param	string	$var	Name of the variable
+	* @param	mx_request_vars::POST|GET|REQUEST|COOKIE	$super_global
+	*							Specifies the super global which shall be checked
+	*
+	* @return	bool			True if the variable was sent as input
+	*/
+	public function is_not_set($var, $super_global = self::REQUEST)
+	{
+		return !isset($this->input[$super_global][$var]);
+	}	
 	/**
 	* Checks whether the current request is an AJAX request (XMLHttpRequest)
 	*
