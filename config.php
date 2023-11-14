@@ -6,9 +6,9 @@
  *
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.4.5-pl7 (January 01, 2019 / 30, Octomber, 2013)
+ * @version 2.2.6 (January 01, 2019 / 15, November, 2023)
  *
- * @copyright Copyright (C) 2002-2006 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2008 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -52,11 +52,11 @@ if ($request->post_array() >= count($strings) + count($numbers))
 	$output = "<?php\n\n/* AutoIndex PHP Script config file\n\n";
 	foreach ($strings as $setting)
 	{
-		if ($request->is_empty_post($setting))
+		if ($request->is_not_set_post($setting))
 		{
 			die(simple_display('Required setting <em>' . htmlentities($setting) . '</em> not set.'));
 		}
-		if ($_POST[$setting] == '')
+		if ($request->is_empty_post($setting))
 		{
 			$output .= "$setting\tfalse\n";
 			continue;
@@ -72,15 +72,13 @@ if ($request->post_array() >= count($strings) + count($numbers))
 	$_POST[$setting] = $request->post($setting);
 	foreach ($checkboxes as $setting)
 	{
-		$output .= "$setting\t" . (isset($_POST[$setting]) ? 'true' : 'false')
-		. "\n";
+		$output .= "$setting\t" . ($request->is_post($setting) ? 'true' : 'false') . "\n";
 	}
 	foreach ($numbers as $setting)
 	{
 		if (!isset($_POST[$setting]))
 		{
-			die(simple_display('Required setting <em>'
-			. htmlentities($setting) . '</em> not set.'));
+			die(simple_display('Required setting <em>' . htmlentities($setting) . '</em> not set.'));
 		}
 		if ($_POST[$setting] == '')
 		{
@@ -89,9 +87,9 @@ if ($request->post_array() >= count($strings) + count($numbers))
 		}
 		if ($_POST[$setting] < 0)
 		{
-			die(simple_display('The setting <em>'
-			. htmlentities($setting) . '</em> should not be a negitive number.'));
+			die(simple_display('The setting <em>' . htmlentities($setting) . '</em> should not be a negitive number.'));
 		}
+		//$request->recursive_set_var($setting, (string)((float)$request->post($setting)), false);
 		$_POST[$setting] = (string)((float)$_POST[$setting]);
 		$output .= "$setting\t{$_POST[$setting]}\n";
 	}
