@@ -35,13 +35,18 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 	die();
 }
 
+/**
+* Checking Request Class
+**/
+$request = is_object($request) ? $request : new RequestVars('', false);
+
 $strings = array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file',
 	'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list');
 $checkboxes = array('show_dir_size', 'use_login_system', 'force_download',
 	'search_enabled', 'anti_leech', 'must_login_to_download', 'archive', 'parse_htaccess');
 $numbers = array('days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'entries_per_page');
-
-if (count($_POST) >= count($strings) + count($numbers))
+//debug code here: print_r('post array: ' . $request->post_array() . ', strings: ' . count($strings) . ', numbers: ' . count($numbers));
+if ($request->post_array() >= count($strings) + count($numbers))
 {
 	$directories = array('base_dir', 'icon_path', 'flag_path', 'assets_path', 'template');
 	$output = "<?php\n\n/* AutoIndex PHP Script config file\n\n";
@@ -56,14 +61,15 @@ if (count($_POST) >= count($strings) + count($numbers))
 			$output .= "$setting\tfalse\n";
 			continue;
 		}
-		$_POST[$setting] = str_replace('\\', '/', $_POST[$setting]);
-		if (in_array($setting, $directories) && !preg_match('#/$#', $_POST[$setting]))
+		$request->recursive_set_var($setting, str_replace('\\', '/', $request->post($setting)), false);
+		if (in_array($setting, $directories) && !preg_match('#/$#', $request->post($setting)))
 		//make sure there is a slash at the end of directories
 		{
-			$_POST[$setting] .= '/';
+			$request->recursive_set_var($setting, $request->post($setting) . '/', false);		
 		}
-		$output .= "$setting\t{$_POST[$setting]}\n";
+		$output .= "$setting\t{$request->post($setting)}\n";
 	}
+	$_POST[$setting] = $request->post($setting);
 	foreach ($checkboxes as $setting)
 	{
 		$output .= "$setting\t" . (isset($_POST[$setting]) ? 'true' : 'false')
@@ -145,7 +151,6 @@ if (count($_POST) >= count($strings) + count($numbers))
 		//begin display of "configuration complete" page
 		echo '<?xml version="1.0" encoding="utf-8"?>';
 		?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -197,7 +202,6 @@ if (count($_POST) >= count($strings) + count($numbers))
 		die();
 	}
 }
-
 //list of default settings
 $settings = array(
 	'base_dir' => './',
@@ -226,21 +230,17 @@ $settings = array(
 	'md5_show' => '20',
 	'parse_htaccess' => 'true'
 );
-
 global $config;
-if (isset($config))
-//if we're reconfiguring the script, use the current settings
+if (isset($config)) //if we're reconfiguring the script, use the current settings
 {
 	foreach ($settings as $key => $data)
 	{
 		$settings[$key] = $config -> __get($key);
 	}
 }
-
 //begin display of main configuration page:
 echo '<?xml version="1.0" encoding="utf-8"?>';
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
