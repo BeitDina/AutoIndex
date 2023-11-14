@@ -97,31 +97,43 @@ class RequestVars
 		self::FILES 	=> '_FILES',
 	);
 	
+	var $post_array = 0;
+	
+	var $get_array = 0;
+	
+	var $request_array = 0;
+	
+	var $cookie_array = 0;
+	
+	var $server_array = 0;
+	
+	var $files_arrays = 0;
+	
 	/**
 	* @var	array	Stores original contents of $_REQUEST array.
 	*/
 	protected $original_request = null;
-
+	
 	/**
 	* @var
 	*/
 	protected $super_globals_disabled = false;
-
+	
 	/**
 	* @var	array	An associative array that has the value of super global constants as keys and holds their data as values.
 	*/
 	protected $input;
-
+	
 	/**
 	* @var	\phpbb\request\type_cast_helper_interface	An instance of a type cast helper providing convenience methods for type conversions.
-	* borrowed from github.com/phpbbb
+	* borrowed from github.comb
 	*/
-	protected $type_cast_helper;	
+	protected $type_cast_helper;		
 	
 	// ------------------------------
 	// Properties
 	//
-
+	
 	/* ------------------------------
 	* Constructor
 	* Initialises the request class, that means it stores all input data in {@link $input input}
@@ -133,32 +145,44 @@ class RequestVars
 		{
 			$this->input[$const] = isset($GLOBALS[$super_global]) ? $GLOBALS[$super_global] : array();
 		}
-
+		
 		// simulate request_order = GP
 		$this->original_request = $this->input[self::REQUEST];
 		$this->input[self::REQUEST] = $this->input[self::POST] + $this->input[self::GET];
-
+		
+		$this->post_array = isset($GLOBALS[_POST]) ? count($GLOBALS[_POST]) : 0;
+		
+		$this->get_array = isset($GLOBALS[_GET]) ? count($GLOBALS[_GET]) : 0;
+		
+		$this->request_array = isset($GLOBALS[_REQUEST]) ? count($GLOBALS[_REQUEST]) : 0;
+	
+		$this->cookie_array = isset($GLOBALS[_COOKIE]) ? count($GLOBALS[_COOKIE]) : 0;
+	
+		$this->server_array = isset($GLOBALS[_SERVER]) ? count($GLOBALS[_SERVER]) : 0;
+	
+		$this->files_arrays = isset($GLOBALS[_FILES]) ? count($GLOBALS[_FILES]) : 0;
+		
 		if ($disable_super_globals)
 		{
 			$this->disable_super_globals();
 		}
 	}
-
+	
 	/**
 	* Getter for $super_globals_disabled
 	*
 	* @return	bool	Whether super globals are disabled or not.
-	* borrowed from github.com/phpbbb
+	* borrowed from github.comb
 	*/
 	public function super_globals_disabled()
 	{
 		return $this->super_globals_disabled;
 	}
-
+	
 	/**
 	* Disables access of super globals specified in $super_globals.
 	* This is achieved by overwriting the super globals with instances of {@link \autoindex\request\deactivated_super_global \autoindex\request\deactivated_super_global}
-	* borrowed from github.com/phpbbb
+	* borrowed from github.comb
 	*/
 	public function disable_super_globals()
 	{
@@ -177,7 +201,7 @@ class RequestVars
 	/**
 	* Enables access of super globals specified in $super_globals if they were disabled by {@link disable_super_globals disable_super_globals}.
 	* This is achieved by making the super globals point to the data stored within this class in {@link $input input}.
-	* borrowed from github.com/phpbbb
+	* borrowed from github.comb
 	*/
 	public function enable_super_globals()
 	{
@@ -449,8 +473,8 @@ class RequestVars
 	* Also fall back to getenv(), some CGI setups may need it (probably not, but
 	* whatever).
 	*
-	* @param	string|array	$var_name		See \phpbb\request\request_interface::variable
-	* @param	mixed			$Default		See \phpbb\request\request_interface::variable
+	* @param	string|array	$var_name		See \request\request_interface::variable
+	* @param	mixed			$Default		See \request\request_interface::variable
 	*
 	* @return	mixed	The server variable value.
 	*/
@@ -474,7 +498,7 @@ class RequestVars
 	* Shortcut method to retrieve the value of client HTTP headers.
 	*
 	* @param	string|array	$header_name	The name of the header to retrieve.
-	* @param	mixed			$default		See \phpbb\request\request_interface::variable
+	* @param	mixed			$default		See \request\request_interface::variable
 	*
 	* @return	mixed	The header value.
 	*/
@@ -712,7 +736,56 @@ class RequestVars
 	{
 		return $this->is_set($name, self::GET);
 	}	
-	
+
+	/*
+	*
+	*
+	*/
+	public function post_array()
+	{
+		return ($this->post_array > 0) ? $this->post_array : 0;
+	}	
+	/*
+	*
+	*
+	*/
+	public function get_array()
+	{
+
+		return ($this->get_array > 0) ? $this->get_array : 0;
+	}
+	/*
+	*
+	*
+	*/
+	public function request_array()
+	{
+		return ($this->request_array > 0) ? $this->request_array : 0;
+	}		
+	/*
+	*
+	*
+	*/
+	public function cookie_array()
+	{
+		return ($this->cookie_array > 0) ? $this->cookie_array : 0;
+	}	
+	/*
+	*
+	*
+	*/
+	public function server_array()
+	{
+		return ($this->server_array > 0) ? $this->server_array : 0;
+	}	
+	/*
+	*
+	*
+	*/
+	public function files_array()
+	{
+		return ($this->files_array > 0) ? $this->files_array : 0;
+	}
 	/**
 	* Checks whether a certain variable is empty in one of the super global
 	* arrays.
