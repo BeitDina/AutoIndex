@@ -5,8 +5,8 @@
  *ş
  * @package AutoIndex
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>, FlorinCB <orynider@users.sourceforge.net>
- * @version 2.2.7 (January 01, 2019 / 09, November, 2023)
- *
+ * @version 2 (January 01, 2019 / 09, November, 2023)
+ * @version $Id: index.php, v 2.2.7 2023/11/15 08:08:08 orynider Exp $
  * @copyright Copyright (C) 2002-2008 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
@@ -32,7 +32,7 @@
 ini_set('display_errors', '1');
 //@error_reporting(E_ALL & ~E_NOTICE); 
 session_cache_expire (1440);
-set_time_limit (1500);
+@set_time_limit (1500);
 define('ENVIRONMENT', 'production');
 
 /**
@@ -273,7 +273,7 @@ try
 		throw new ExceptionFatal('Neither <em>' . Url::html_output(CONFIG_GENERATOR) . '</em> nor <em>' . Url::html_output(CONFIG_STORED) . '</em> could be found.');
 	}	
 	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
-	$ip = !empty($request->server('HTTP_X_FORWARDED_FOR')) ? htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR')) : $request->server('REMOTE_ADDR');	 
+	$ip = $request->server('HTTP_X_FORWARDED_FOR') ? htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR')) : $request->server('REMOTE_ADDR');	 
 	//localhost.localdomain
 	if (!empty($_SESSION['host']))
 	{
@@ -307,7 +307,7 @@ try
 		$key = strtoupper($key);
 		if (defined($key))
 		{
-			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($_SERVER['PHP_SELF'])) . '</em>, and should not be in the config file.');
+			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($request->server('PHP_SELF'))) . '</em>, and should not be in the config file.');
 		}
 		@define($key, ($item != 'false' && $item != '0'));
 	}
@@ -427,7 +427,7 @@ try
 			$str = '<p>You must login to view and download files.</p>'
 			. '<table border="0" cellpadding="8" cellspacing="0">'
 			. '<tr class="paragraph"><td class="autoindex_td">'
-			.  $you -> login_box() . '</td></tr></table>';
+			.  $you->login_box() . '</td></tr></table>';
 			echo new Display($str);
 			die();
 		}
@@ -461,7 +461,7 @@ try
 				header('HTTP/1.0 404 Not Found');
 				throw new ExceptionDisplay('The file <em>' . Url::html_output($file) . '</em> does not exist.');
 			}
-			if (ANTI_LEECH && !!empty($_SESSION['ref']) && (!!empty($request->server('HTTP_REFERER')) || stripos($request->server('HTTP_REFERER'), $request->server('SERVER_NAME')) === false))
+			if (ANTI_LEECH && !!empty($_SESSION['ref']) && (!!$request->server('HTTP_REFERER') || stripos($request->server('HTTP_REFERER'), $request->server('SERVER_NAME')) === false))
 			{
 				$log->add_entry('Leech Attempt');
 				$self = $request->server('SERVER_NAME') . Url::html_output($request->server('PHP_SELF')) . '?dir=' . Url::translate_uri($subdir);
@@ -514,7 +514,7 @@ try
 	}	
 	if (ARCHIVE && $request->is_set_get('archive'))
 	{
-		$log -> add_entry('Directory archived');
+		$log->add_entry('Directory archived');
 		$outfile = Item::get_basename($subdir);
 		if ($outfile == '' || $outfile == '.')
 		{
@@ -561,7 +561,7 @@ try
 	if (count($_FILES) > 0) //deal with any request to upload files:
 	{
 		$upload = new Upload($you); //the constructor checks if you have permission to upload
-		$upload -> do_upload();
+		$upload->do_upload();
 	}	
 	if (USE_LOGIN_SYSTEM)
 	{
@@ -623,7 +623,7 @@ try
 		$dir_list = new DirectoryListDetailed($dir, $page);
 		$max_page = (ENTRIES_PER_PAGE ? (ceil($dir_list->total_items() / $config->__get('entries_per_page'))) : 1);
 	}
-	$log -> add_entry($search_log);
+	$log->add_entry($search_log);
 	$str = $dir_list->__toString();
 	echo new Display($str);
 	//echo $mobile_device_detect->detect()->getInfo();
