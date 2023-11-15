@@ -1,11 +1,10 @@
 <?php
-// date_default_timezone_set('Europe/Bucharest'); 
 /** 
  * @package AutoIndex
- *
+ * we could use here // date_default_timezone_set('Europe/Bucharest'); 
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Logging.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -49,7 +48,7 @@ class Logging
 	 */
 	public function __construct($filename)
 	{
-		$this -> filename = $filename;
+		$this->filename = $filename;
 	}
 	
 	/**
@@ -61,13 +60,13 @@ class Logging
 	{
 		if (LOG_FILE)
 		{
-			$h = @fopen($this -> filename, 'ab');
+			$h = @fopen($this->filename, 'ab');
 			if ($h === false)
 			{
 				throw new ExceptionDisplay('Could not open log file for writing.' . ' Make sure PHP has write permission to this file.');
 			}
-			global $dir, $ip, $host;
-			$referrer = (!empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'N/A');
+			global $dir, $ip, $host, $request;
+			$referrer = (!$request->server('HTTP_REFERER') ? $request->server('HTTP_REFERER') : 'N/A');
 			fwrite($h, date(DATE_FORMAT) . "\t" . date('H:i:s') . "\t$ip\t$host\t$referrer\t$dir\t$extra\n");
 			fclose($h);
 		}
@@ -78,23 +77,27 @@ class Logging
 	 */
 	public function display($max_num_to_display)
 	{
-		if (!@is_file($this -> filename))
+		if (!@is_file($this->filename))
 		{
 			throw new ExceptionDisplay('There are no entries in the log file.');
 		}
-		$file_array = @file($this -> filename);
+		$file_array = @file($this->filename);
 		if ($file_array === false)
 		{
 			throw new ExceptionDisplay('Could not open log file for reading.');
 		}
 		$count_log = count($file_array);
 		$num = (($max_num_to_display == 0) ? $count_log : min($max_num_to_display, $count_log));
-		$out = "<p>Viewing $num (of $count_log) entries.</p>\n"
-		. '<table cellpadding="4"><tr class="autoindex_th">'
-		. '<th>#</th><th>Date</th><th>Time</th>'
-		. '<th>IP address</th><th>Hostname</th>'
-		. '<th>Referrer</th><th>Directory</th>'
-		. '<th>File downloaded or other info</th></tr>';
+		$out = "<p>Viewing $num (of $count_log) entries.</p>\n" . '
+		<table cellpadding="4">
+		<tr class="autoindex_th">' . '<th>#</th>
+			<th>Date</th><th>Time</th>' . '
+			<th>IP address</th>
+			<th>Hostname</th>' . '
+			<th>Referrer</th>
+			<th>Directory</th>'	. '
+			<th>File downloaded or other info</th>
+		</tr>';
 		for ($i = 0; $i < $num; $i++)
 		{
 			$class = (($i % 2) ? 'dark_row' : 'light_row');
@@ -112,18 +115,14 @@ class Logging
 				{
 					$cell = "<a class=\"autoindex_a\" href=\"$cell\">$cell</a>";
 				}
-				$out .= '<td style="border: 1px solid; border-color: #7F8FA9;" class="'
-				. $class . '">' . (($cell == '') ? '&nbsp;</td>' : "$cell</td>");
+				$out .= '<td style="border: 1px solid; border-color: #7F8FA9;" class="' . $class . '">' . (($cell == '') ? '&nbsp;</td>' : "$cell</td>");
 			}
 			$out .= "</tr>\n";
 		}
-		global $words;
-		$out .= '</table><p><a class="autoindex_a" href="'
-		. Url::html_output($_SERVER['PHP_SELF']) . '">' . $words -> __get('continue')
-		. '.</a></p>';
+		global $words, $request;
+		$out .= '</table><p><a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF')) . '">' . $words->__get('continue') . '.</a></p>';
 		echo new Display($out);
 		die();
 	}
 }
-
 ?>
