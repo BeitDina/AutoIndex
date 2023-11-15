@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: DirItem.php, v 2.2.7 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -74,7 +74,7 @@ class DirItem extends Item
 		{
 			$this->temp_list = new DirectoryList($this->parent_dir . $this->filename);
 		}
-		return $this->temp_list -> size_recursive();
+		return $this->temp_list->size_recursive();
 	}
 	
 	/**
@@ -86,7 +86,7 @@ class DirItem extends Item
 		{
 			$this->temp_list = new DirectoryList($this->parent_dir . $this->filename);
 		}
-		return $this->temp_list -> num_files();
+		return $this->temp_list->num_files();
 	}
 	
 	/**
@@ -127,9 +127,9 @@ class DirItem extends Item
 				global $words;
 				$this->is_parent_dir = true;
 				$this->filename = $words->__get('parent directory');
-				$this->icon = (ICON_PATH ? $config->__get('icon_path') . 'back.png' : '');
+				$this->icon = (ICON_PATH ? $config->__get('icon_path') . 'blank.png' : '');
 				$this->size = new Size(true);
-				$this->link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(self::get_parent_dir($subdir)) . $lang_arg;
+				$this->link = Url::html_output($request->server('PHP_SELF')) . '?dir=' . Url::translate_uri(self::get_parent_dir($subdir)) . $lang_arg;
 				$this->parent_dir = $this->new_icon = '';
 				$this->a_time = $this->m_time = false;
 			}
@@ -155,22 +155,6 @@ class DirItem extends Item
 			}
 			$this->filename = $filename = substr($filename, 0, -1); 
 			$mb_strlen = mb_strlen($filename);
-			
-			//Special common folders 
-			switch ($filename)
-			{
-				case 'apps':
-				case 'docs':
-				case 'Docs':
-				case 'Fonts':
-				case 'fonts':
-					$this->icon = $config -> __get('icon_path') . $filename . '.png';
-				break;
-				
-				default:
-					$this->icon = $config -> __get('icon_path') . 'dir.png';
-				break;
-			}
 
 			if (($mb_strlen > 1) && ($mb_strlen < 6)) 
 			{
@@ -179,34 +163,62 @@ class DirItem extends Item
 				//Language Folders and Dirs with ICON files
 				if (!empty($decoded_lang_name))
 				{
-					$this->icon = FLAG_PATH ? $config -> __get('flag_path') . $filename . '.png' : $config -> __get('icon_path') . $filename . '.png';
+					$this->icon = FLAG_PATH ? $config->__get('flag_path') . $filename . '.png' : $config->__get('icon_path') . $filename . '.png';
 				}
 			}
-			
+			//Special common folders 
+			switch ($filename)
+			{
+				case 'apps':
+				case 'docs':
+				case 'books':
+				case 'Docs':
+				case 'irc':
+				case 'patch':
+				case 'sega':
+				case 'sky':
+				case 'Fonts':
+				case 'fonts':
+					$this->icon = $config->__get('icon_path') . $filename . '.png';
+				break;
+				
+				case 'skin':				
+				case 'dev':				
+				case 'drv':
+				case 'lib':				
+				case 'inc':				
+				case 'hlt':				
+				case 'util':				
+				case 'src':				
+				case 'demo':								
+				default:
+					$this->icon = $config->__get('icon_path') . 'dir.png';
+				break;
+			}			
 			if (($mb_strlen > 1) && ($mb_strlen < 25)) 
 			{
 				$decoded_lang_name = self::decode_country_name($filename, 'language');
 			
 				$file_name = substr($filename, 0, strrpos($filename, '.'));
 				
-				global $descriptions, $words;
+				global $descriptions, $words, $request;
 				
-				if ($words -> is_set($file_name))
+				if ($words->is_set($file_name))
 				{
-					$description = ($words -> is_set($file_name) ? $words -> __get($file_name) : $file_name);
+					$description = ($words->is_set($file_name) ? $words->__get($file_name) : $file_name);
 				}
 				elseif (!empty($decoded_lang_name))
 				{
-					$description = ($words -> is_set($decoded_lang_name) ? $words -> __get($decoded_lang_name) : $decoded_lang_name);
+					$description = ($words->is_set($decoded_lang_name) ? $words->__get($decoded_lang_name) : $decoded_lang_name);
 				}
 				else
 				{
-					$description = ($words -> is_set($file_name) ? $words -> __get($file_name) : $file_name);
+					$description = ($words->is_set($file_name) ? $words->__get($file_name) : $file_name);
 				}
 				
-				$this->description = ($words -> is_set($description) ? $words -> __get($description) : $description);
+				$this->description = ($words->is_set($description) ? $words->__get($description) : $description);
 			}	
-			$this->link = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . Url::translate_uri(substr($this -> parent_dir, strlen($config -> __get('base_dir'))) . $filename) . $lang_arg;
+			$this->link = Url::html_output($request->server('PHP_SELF')) . '?dir=' . Url::translate_uri(substr($this->parent_dir, strlen($config->__get('base_dir'))) . $filename) . $lang_arg;
 		
 		}
 	}
@@ -2805,14 +2817,14 @@ class DirItem extends Item
 	 */
 	public function __get($var)
 	{
-		if (isset($this -> $var))
+		if (isset($this->$var))
 		{
-			return $this -> $var;
+			return $this->$var;
 		}
 		if ($var == 'size')
 		{
-			$this -> size = new Size(SHOW_DIR_SIZE ? $this -> dir_size() : false);
-			return $this -> size;
+			$this->size = new Size(SHOW_DIR_SIZE ? $this->dir_size() : false);
+			return $this->size;
 		}
 		throw new ExceptionDisplay('Variable <em>' . Url::html_output($var) . '</em> not set in DirItem class.');
 	}
