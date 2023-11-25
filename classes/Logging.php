@@ -4,7 +4,7 @@
  * we could use here // date_default_timezone_set('Europe/Bucharest'); 
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version $Id: Logging.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
+ * @version $Id: Logging.php, v 2.2.6 2023/11/25 23:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
