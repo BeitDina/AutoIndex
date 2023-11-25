@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: User.php, v 2.2.6 2023/11/25 23:18:58 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -69,7 +68,7 @@ class User
 	 */
 	public function equals(User $user)
 	{
-		return ((strcasecmp($this -> username, $user -> username) === 0) && (strcasecmp($this -> sha1_pass, $user -> sha1_pass) === 0));
+		return ((strcasecmp($this->username, $user->username) === 0) && (strcasecmp($this->sha1_pass, $user->sha1_pass) === 0));
 	}
 	
 	/**
@@ -92,21 +91,27 @@ class User
 		$str = '';
 		if (USE_LOGIN_SYSTEM)
 		{
-			global $words, $subdir;
-			$str .= '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir='
-			. (isset($subdir) ? rawurlencode($subdir) : '')
-			. '" method="post"><table><tr class="paragraph"><td>'
-			. $words -> __get('username') . ':</td><td><input type="text" name="username" />'
-			. '</td></tr><tr class="paragraph"><td>' . $words -> __get('password')
-			. ':</td><td><input type="password" name="password" /></td></tr></table>'
-			. '<p><input class="button" type="submit" value="'
-			. $words -> __get('login') . '" /></p></form>';
+			global $words, $subdir, $request;
+			$str .= '
+			<form action="' . Url::html_output($request->server('PHP_SELF')) . '?dir=' . (isset($subdir) ? rawurlencode($subdir) : '')
+			. '" method="post">
+			<table>
+			<tr class="paragraph">
+				<td>' . $words->__get('username') . ':</td>
+				<td><input type="text" name="username" />' . '</td>
+			</tr>
+			<tr class="paragraph">
+				<td>' . $words->__get('password') . ':</td>
+				<td><input type="password" name="password" /></td>
+			</tr>
+			</table>'
+			. '<p><input class="button" type="submit" value="' . $words->__get('login') . '" /></p></form>';
 		}
 		if (LEVEL_TO_UPLOAD === GUEST)
 		{
 			global $you;
 			$upload_panel = new Upload($you);
-			$str .= $upload_panel -> __toString();
+			$str .= $upload_panel->__toString();
 		}
 		return $str;
 	}
@@ -128,10 +133,10 @@ class User
 		{
 			throw new ExceptionDisplay('Error in user accounts file: Invalid password hash (for username "' . Url::html_output($username) . '").');
 		}
-		$this -> sha1_pass = $sha1_pass;
-		$this -> username = $username;
-		$this -> level = $level;
-		$this -> home_dir = $home_dir;
+		$this->sha1_pass = $sha1_pass;
+		$this->username = $username;
+		$this->level = $level;
+		$this->home_dir = $home_dir;
 	}
 	
 	/**
@@ -139,8 +144,7 @@ class User
 	 */
 	public function __toString()
 	{
-		return $this -> username . "\t" . $this -> sha1_pass . "\t"
-		. $this -> level . "\t" . $this -> home_dir . "\n";
+		return $this->username . "\t" . $this->sha1_pass . "\t" . $this->level . "\t" . $this->home_dir . "\n";
 	}
 }
 
