@@ -41,21 +41,35 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
  */
 class ExceptionDisplay extends ExceptionFatal
 {
+	protected $request;	
+	protected $language;	
 	/**
 	 * @return string The HTML text to display
 	 */
 	public function __toString()
 	{
-		global $words, $_SERVER, $_GET;
-		$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">' . $this -> message . '<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']);
-		if (!empty($_GET['dir']))
-		{
-			$str .= '?dir=' . Url::translate_uri($_GET['dir']);
-		}
-		$str .= '">' . (isset($words) ? $words -> __get('continue') : 'Continue')
-		. '.</a></p></td></tr></table>';
+		global $request, $words;
+
+		$this->language = $words;
+		$this->request = is_object($request) ? $request : new RequestVars('', false);
+		
+		$str = '
+		<table>
+		<tr class="paragraph">
+			<td class="autoindex_td" style="padding: 8px;">' . $this->message . '
+			<p>
+			<a class="autoindex_a" href="' . Url::html_output($this->request->server('PHP_SELF'));
+			if ($this->request->is_not_empty_get('dir'))
+			{
+				$str .= '?dir=' . Url::translate_uri($this->request->get('dir'));
+			}
+			$str .= '">' . (isset($this->language) ? $this->language->__get('continue') : 'Continue') . '.</a>
+			</p>
+			</td>
+		</tr>
+		</table>';
 		$temp = new Display($str);
-		return $temp -> __toString();
+		return $temp->__toString();
 	}
 }
 
