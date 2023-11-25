@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2005 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Search.php,v 2.2.6 2023/11/25 23:30:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -50,22 +49,31 @@ class Search extends DirectoryListDetailed
 	 */
 	public static function search_box()
 	{
-		global $words, $subdir;
-		$search = (isset($_GET['search']) ? Url::html_output($_GET['search']) : '');
-		$mode = (isset($_GET['search_mode']) ? self::clean_mode($_GET['search_mode']) : 'f');
+		global $words, $subdir, $request;
+		
+		$search = ($request->is_set_get('search') ? Url::html_output($request->get('search')) : '');
+		$mode = ($request->is_set_get('search_mode') ? self::clean_mode($request->is_set_get('search_mode')) : 'f');
 		$modes = array('files' => 'f', 'folders' => 'd', 'both' => 'fd');
-		$out = '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '" method="get">'
-		. '<p><input type="hidden" name="dir" value="' . $subdir . '" />'
-		. '<input type="text" name="search" value="' . $search
-		. '" /><br /><select name="search_mode">';
+		
+		$out = '
+		<form action="' . Url::html_output($request->server('PHP_SELF')) . '" method="get">' . '
+		<p>
+		<input type="hidden" name="dir" value="' . $subdir . '" />' . '
+		<input type="text" name="search" value="' . $search . '" /><br />
+		<select name="search_mode">';
+		
 		foreach ($modes as $word => $m)
 		{
 			$sel = (($m == $mode) ? ' selected="selected"' : '');
-			$out .= '<option value="' . $m . '"' . $sel . '>'
-			. $words -> __get($word) . '</option>';
+			$out .= '<option value="' . $m . '"' . $sel . '>' . $words->__get($word) . '</option>';
 		}
-		$out .= '</select><input type="submit" class="button" value="'
-		. $words -> __get('search') . '" /></p></form>';
+		
+		$out .= '
+		</select>
+		<input type="submit" class="button" value="' . $words->__get('search') . '" />
+		</p>
+		</form>';
+		
 		return $out;
 	}
 	
@@ -96,11 +104,11 @@ class Search extends DirectoryListDetailed
 	 */
 	private function merge(Search $obj)
 	{
-		$this -> total_folders += $obj -> __get('total_folders');
-		$this -> total_files += $obj -> __get('total_files');
-		$this -> total_downloads += $obj -> __get('total_downloads');
-		$this -> total_size -> add_size($obj -> __get('total_size'));
-		$this -> matches = array_merge($this -> matches, $obj -> __get('contents'));
+		$this->total_folders += $obj->__get('total_folders');
+		$this->total_files += $obj->__get('total_files');
+		$this->total_downloads += $obj->__get('total_downloads');
+		$this->total_size->add_size($obj->__get('total_size'));
+		$this->matches = array_merge($this->matches, $obj->__get('contents'));
 	}
 	
 	/**
@@ -142,9 +150,9 @@ class Search extends DirectoryListDetailed
 		$mode = self::clean_mode($mode);
 		$dir = Item::make_sure_slash($dir);
 		DirectoryList::__construct($dir);
-		$this -> matches = array();
-		$this -> total_size = new Size(0);
-		$this -> total_downloads = $this -> total_folders = $this -> total_files = 0;
+		$this->matches = array();
+		$this->total_size = new Size(0);
+		$this->total_downloads = $this->total_folders = $this->total_files = 0;
 		foreach ($this as $item)
 		{
 			if ($item == '..')
@@ -156,33 +164,33 @@ class Search extends DirectoryListDetailed
 				if (stripos($mode, 'd') !== false && self::match($item, $query))
 				{
 					$temp = new DirItem($dir, $item);
-					$this -> matches[] = $temp;
-					if ($temp -> __get('size') -> __get('bytes') !== false)
+					$this->matches[] = $temp;
+					if ($temp->__get('size')->__get('bytes') !== false)
 					{
-						$this -> total_size -> add_size($temp -> __get('size'));
+						$this->total_size->add_size($temp->__get('size'));
 					}
-					$this -> total_folders++;
+					$this->total_folders++;
 				}
 				$sub_search = new Search($query, $dir . $item, $mode);
-				$this -> merge($sub_search);
+				$this->merge($sub_search);
 			}
 			else if (stripos($mode, 'f') !== false && self::match($item, $query))
 			{
 				$temp = new FileItem($dir, $item);
-				$this -> matches[] = $temp;
-				$this -> total_size -> add_size($temp -> __get('size'));
-				$this -> total_downloads += $temp -> __get('downloads');
-				$this -> total_files++;
+				$this->matches[] = $temp;
+				$this->total_size->add_size($temp->__get('size'));
+				$this->total_downloads += $temp->__get('downloads');
+				$this->total_files++;
 			}
 		}
-		global $words, $config, $subdir;
-		$link = ' <a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
+		global $words, $config, $subdir, $request;
+		$link = ' <a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF'))
 		. '?dir=' . Url::translate_uri($subdir) . '">'
 		. Url::html_output($dir) . '</a> ';
-		$this -> path_nav = $words -> __get('search results for')
-		. $link . $words -> __get('and its subdirectories');
-		$this -> contents = $this -> matches;
-		unset($this -> matches);
+		$this->path_nav = $words->__get('search results for')
+		. $link . $words->__get('and its subdirectories');
+		$this->contents = $this->matches;
+		unset($this->matches);
 	}
 }
 
