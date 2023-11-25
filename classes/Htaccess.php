@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2007 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Htaccess.php, v 2.2.6 2023/11/25 22:58:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -200,62 +199,58 @@ class Htaccess
 	 */
 	private function check_auth()
 	{
-		if ($this -> auth_user_file == '')
+		global $request;
+		if ($this->auth_user_file == '')
 		{
 			return;
 		}
-		if ($this -> auth_name == '')
+		if ($this->auth_name == '')
 		{
-			$this -> auth_name = '"Directory access restricted by AutoIndex"';
+			$this->auth_name = '"Directory access restricted by AutoIndex"';
 		}
 		$validated = false;
-		if (isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']))
+		if ($request->server('PHP_AUTH_USER') && $request->server('PHP_AUTH_PW'))
 		{
-			$file = @file($this -> auth_user_file);
+			$file = @file($this->auth_user_file);
 			if ($file === false)
 			{
 				$_GET['dir'] = '';
-				throw new ExceptionDisplay('Cannot open .htpasswd file <br /><em>' . htmlentities($this -> auth_user_file) . '</em>');
+				throw new ExceptionDisplay('Cannot open .htpasswd file <br /><em>' . htmlentities($this->auth_user_file) . '</em>');
 			}
-			if ($this -> auth_required_users === array() || DirectoryList::match_in_array($_SERVER['PHP_AUTH_USER'], $this -> auth_required_users))
+			if ($this->auth_required_users === array() || DirectoryList::match_in_array($request->server('PHP_AUTH_USER'), $this->auth_required_users))
 			{
 				foreach ($file as $account)
 				{
 					$parts = explode(':', trim($account));
-					if (count($parts) < 2 || $_SERVER['PHP_AUTH_USER'] != $parts[0])
+					if (count($parts) < 2 || $request->server('PHP_AUTH_USER') != $parts[0])
 					{
 						continue;
 					}
-					if (isset($parts[2]))
-					//MD5 hash format with realm
+					if (isset($parts[2])) //MD5 hash format with realm
 					{
 						$parts[1] = $parts[2];
 					}
 					switch (strlen($parts[1]))
 					{
-						case 13:
-						//Crypt hash format
+						case 13: //Crypt hash format
 						{
-							$validated = (crypt($_SERVER['PHP_AUTH_PW'], substr($parts[1], 0, 2)) == $parts[1]);
+							$validated = (crypt($request->server('PHP_AUTH_PW'), substr($parts[1], 0, 2)) == $parts[1]);
 							break 2;
 						}
-						case 32:
-						//MD5 hash format
+						case 32: //MD5 hash format
 						{
-							$validated = (md5($_SERVER['PHP_AUTH_PW']) == $parts[1]);
+							$validated = (md5($request->server('PHP_AUTH_PW')) == $parts[1]);
 							break 2;
 						}
-						case 37:
-						//Apache's MD5 Crypt hash format
+						case 37: //Apache's MD5 Crypt hash format
 						{
 							$salt = explode('$', $parts[1]);
-							$validated = (self::md5_crypt($_SERVER['PHP_AUTH_PW'], $salt[2]) == $parts[1]);
+							$validated = (self::md5_crypt($request->server('PHP_AUTH_PW'), $salt[2]) == $parts[1]);
 							break 2;
 						}
-						case 40:
-						//SHA-1 hash format
+						case 40: //SHA-1 hash format
 						{
-							$validated = (sha1($_SERVER['PHP_AUTH_PW']) == $parts[1]);
+							$validated = (sha1($request->server('PHP_AUTH_PW')) == $parts[1]);
 							break 2;
 						}
 					}
@@ -265,7 +260,7 @@ class Htaccess
 		}
 		if (!$validated)
 		{
-			header('WWW-Authenticate: Basic realm=' . $this -> auth_name);
+			header('WWW-Authenticate: Basic realm=' . $this->auth_name);
 			header('HTTP/1.0 401 Authorization Required');
 			$_GET['dir'] = '';
 			throw new ExceptionDisplay('A username and password are required to access this directory.');
@@ -278,20 +273,20 @@ class Htaccess
 	private function check_deny()
 	{
 		global $ip, $host, $words;
-		if ($this -> order === 'allow,deny')
+		if ($this->order === 'allow, deny')
 		{
-			if (!DirectoryList::match_in_array($host, $this -> allow_list)
-				&& !DirectoryList::match_in_array($ip, $this -> allow_list))
+			if (!DirectoryList::match_in_array($host, $this->allow_list)
+				&& !DirectoryList::match_in_array($ip, $this->allow_list))
 			{
 				$_GET['dir'] = '';
-				throw new ExceptionDisplay($words -> __get('the administrator has blocked your ip address or hostname') . '.');
+				throw new ExceptionDisplay($words->__get('the administrator has blocked your ip address or hostname') . '.');
 			}
 		}
-		else if (DirectoryList::match_in_array($ip, $this -> deny_list)
-			|| DirectoryList::match_in_array($host, $this -> deny_list))
+		else if (DirectoryList::match_in_array($ip, $this->deny_list)
+			|| DirectoryList::match_in_array($host, $this->deny_list))
 		{
 			$_GET['dir'] = '';
-			throw new ExceptionDisplay($words -> __get('the administrator has blocked your ip address or hostname') . '.');
+			throw new ExceptionDisplay($words->__get('the administrator has blocked your ip address or hostname') . '.');
 		}
 	}
 	
@@ -305,7 +300,7 @@ class Htaccess
 		{
 			return;
 		}
-		$conditional_directory = '';
+		$conditional_defined = $conditional_directory = '';
 		$other_conditional = false;
 		foreach ($data as $line)
 		{
@@ -396,11 +391,11 @@ class Htaccess
 							{
 								if (strtolower($ip) === 'all')
 								{
-									$this -> allow_list = array('*');
+									$this->allow_list = array('*');
 								}
 								else
 								{
-									$this -> allow_list[] = $ip;
+									$this->allow_list[] = $ip;
 								}
 							}
 						}
@@ -417,11 +412,11 @@ class Htaccess
 							{
 								if (strtolower($ip) === 'all')
 								{
-									$this -> deny_list = array('*');
+									$this->deny_list = array('*');
 								}
 								else
 								{
-									$this -> deny_list[] = $ip;
+									$this->deny_list[] = $ip;
 								}
 							}
 						}
@@ -437,7 +432,7 @@ class Htaccess
 					}
 					for ($i = 1; isset($parts[$i], $parts[$i+1]); $i += 2)
 					{
-						$descriptions -> set($parts[$i], $parts[$i+1]);
+						$descriptions->set($parts[$i], $parts[$i+1]);
 					}
 					break;
 				}
@@ -445,7 +440,7 @@ class Htaccess
 				{
 					if (isset($parts[1]))
 					{
-						$this -> auth_user_file = str_replace('"', '', implode(' ', array_slice($parts, 1)));
+						$this->auth_user_file = str_replace('"', '', implode(' ', array_slice($parts, 1)));
 					}
 					break;
 				}
@@ -453,7 +448,7 @@ class Htaccess
 				{
 					if (isset($parts[1]))
 					{
-						$this -> auth_name = implode(' ', array_slice($parts, 1));
+						$this->auth_name = implode(' ', array_slice($parts, 1));
 					}
 					break;
 				}
@@ -461,7 +456,7 @@ class Htaccess
 				{
 					if (isset($parts[1]) && (strtolower($parts[1]) === 'allow,deny' || strtolower($parts[1]) === 'mutual-failure'))
 					{
-						$this -> order = 'allow,deny';
+						$this->order = 'allow,deny';
 					}
 				}
 				case 'require':
@@ -470,7 +465,7 @@ class Htaccess
 					{
 						for ($i = 2; $i < count($parts); $i++)
 						{
-							$this -> auth_required_users[] = $parts[$i];
+							$this->auth_required_users[] = $parts[$i];
 						}
 					}
 					break;
@@ -485,9 +480,9 @@ class Htaccess
 	 */
 	public function __construct($dir, $filename = '.htaccess')
 	{
-		$this -> auth_name = $this -> auth_user_file = '';
-		$this -> auth_required_users = $this -> allow_list = $this -> deny_list = array();
-		$this -> order = 'deny,allow';
+		$this->auth_name = $this->auth_user_file = '';
+		$this->auth_required_users = $this->allow_list = $this->deny_list = array();
+		$this->order = 'deny, allow';
 		if (DirItem::get_parent_dir($dir) != '')
 		//recurse into parent directories
 		{
@@ -497,9 +492,9 @@ class Htaccess
 		$file = $dir . $filename;
 		if (@is_file($file) && @is_readable($file))
 		{
-			$this -> parse($dir . $filename);
-			$this -> check_deny();
-			$this -> check_auth();
+			$this->parse($dir . $filename);
+			$this->check_deny();
+			$this->check_auth();
 		}
 	}
 }
