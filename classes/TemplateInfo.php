@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: TemplateInfo.php, v 2.2.6 2023/11/25 28:18:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -51,23 +50,24 @@ class TemplateInfo extends TemplateIndexer
 	 */
 	private $dir_list;
 	
+	protected $config;
+	protected $request;
+	
 	/**
 	 * @param array $m The array given by preg_replace_callback()
 	 * @return string Link to change the sort mode
 	 */
 	private static function callback_sort($m)
 	{
-		global $subdir;
-		$m = Url::html_output(strtolower($m[1]));
-		$temp = Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . $subdir
-		. '&amp;sort=' . $m . '&amp;sort_mode='
-		. (($_SESSION['sort'] == $m && $_SESSION['sort_mode'] == 'a') ? 'd' : 'a');
+		global $subdir, $request;
 		
-		if (isset($_GET['search'], $_GET['search_mode'])
-			&& $_GET['search'] != '' && $_GET['search_mode'] != '')
+		$m = Url::html_output(strtolower($m[1]));
+		$temp = Url::html_output($request->server('PHP_SELF')) . '?dir=' . $subdir . '&amp;sort=' . $m . '&amp;sort_mode=' . (($_SESSION['sort'] == $m && $_SESSION['sort_mode'] == 'a') ? 'd' : 'a');
+		
+		if ($request->is_set_get(array('search', 'search_mode')) && $request->is_not_empty_get('search') && $request->is_not_empty_get('search_mode'))
 		{
-			$temp .= '&amp;search=' . Url::html_output($_GET['search'])
-			. '&amp;search_mode=' . Url::html_output($_GET['search_mode']);
+			$temp .= '&amp;search=' . Url::html_output($request->get('search'))
+			. '&amp;search_mode=' . Url::html_output($request->get('search_mode'));
 		}
 		return $temp;
 	}
@@ -82,13 +82,12 @@ class TemplateInfo extends TemplateIndexer
 		{
 			case 'archive_link':
 			{
-				global $config;
-				return Url::html_output($_SERVER['PHP_SELF']) . '?archive=true&amp;dir='
-				. substr($this -> dir_list -> __get('dir_name'), strlen($config -> __get('base_dir')));
+				global $config, $request;
+				return Url::html_output($request->server('PHP_SELF')) . '?archive=true&amp;dir=' . substr($this->dir_list->__get('dir_name'), strlen($config->__get('base_dir')));
 			}
 			case 'total_size':
 			{
-				return $this -> dir_list -> __get('total_size') -> formatted();
+				return $this->dir_list->__get('total_size')->formatted();
 			}
 			case 'search_box':
 			{
@@ -97,7 +96,7 @@ class TemplateInfo extends TemplateIndexer
 			case 'login_box':
 			{
 				global $you;
-				return $you -> login_box();
+				return $you->login_box();
 			}
 			case 'current_page_number':
 			{
@@ -128,10 +127,7 @@ class TemplateInfo extends TemplateIndexer
 				{
 					return '&lt;&lt;';
 				}
-				return '<a class="autoindex_a" href="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '?page=' . ($page - 1)
-				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
-					strlen($config -> __get('base_dir'))) . '">&lt;&lt;</a>';
+				return '<a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF')) . '?page=' . ($page - 1) . '&amp;dir=' . substr($this->dir_list->__get('dir_name'), strlen($config->__get('base_dir'))) . '">&lt;&lt;</a>';
 			}
 			case 'next_page_link':
 			{
@@ -139,19 +135,16 @@ class TemplateInfo extends TemplateIndexer
 				{
 					return '';
 				}
-				global $config, $page, $max_page;
+				global $config, $page, $max_page, $request;
 				if ($page >= $max_page)
 				{
 					return '&gt;&gt;';
 				}
-				return '<a class="autoindex_a" href="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '?page=' . ($page + 1)
-				. '&amp;dir=' . substr($this -> dir_list -> __get('dir_name'),
-					strlen($config -> __get('base_dir'))) . '">&gt;&gt;</a>';
+				return '<a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF')) . '?page=' . ($page + 1) . '&amp;dir=' . substr($this->dir_list->__get('dir_name'), strlen($config->__get('base_dir'))) . '">&gt;&gt;</a>';
 			}
 			default:
 			{
-				return $this -> dir_list -> __get($m[1]);
+				return $this->dir_list->__get($m[1]);
 			}
 		}
 	}
@@ -180,23 +173,22 @@ class TemplateInfo extends TemplateIndexer
 	public function __construct($filename, DirectoryListDetailed $dir_list)
 	{
 		parent::__construct($filename);
-		$this -> dir_list = $dir_list;
+		$this->dir_list = $dir_list;
 		
 		//parse if-statements
 		$last_text = '';
 		$regex = '/\{\s*if\s*:\s*(\w+)\s*\}(.*)\{\s*end\s*if\s*:\s*\1\s*\}/Uis'; //match {if:foo} ... {end if:foo}
-		while ($last_text != ($this -> out = preg_replace_callback($regex, array('self', 'callback_if'), $this -> out)))
+		while ($last_text != ($this->out = preg_replace_callback($regex, array('self', 'callback_if'), $this->out)))
 		{
-			$last_text = $this -> out;
+			$last_text = $this->out;
 		} 
-		$this -> out = $last_text;
+		$this->out = $last_text;
 		
 		//parse sort modes
-		$this -> out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui', array('self', 'callback_sort'), $this -> out);
+		$this->out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui', array('self', 'callback_sort'), $this->out);
 			
 		//replace {info} variables
-		$this -> out = preg_replace_callback('/\{\s*info\s*:\s*(\w+)\s*\}/Ui', array($this, 'callback_info'), $this -> out);
+		$this->out = preg_replace_callback('/\{\s*info\s*:\s*(\w+)\s*\}/Ui', array($this, 'callback_info'), $this->out);
 	}
 }
-
 ?>
