@@ -4,7 +4,7 @@
  *
 * @copyright (c) 2002-2023 Markus Petrux, John Olson, FlorinCB aka orynider at github.com
 * @license http://opensource.org/licenses/gpl-license.php GNU General Public License v2
-* @version $Id: RequestVars.php,v 0.92 2023/11/11 20:01:42 orynider Exp $
+* @version $Id: RequestVars.php,v 0.92 2023/11/25 22:51:42 orynider Exp $
 * @link http://mxpcms.sourceforge.net/
 * @link http://autoindex.sourceforge.net
  */
@@ -72,6 +72,13 @@ class RequestVars
 	/**#@+
 	* Constant identifying the super global with the same name.
 	*/
+	const _POST = 0;
+	const _GET = 1;
+	const _REQUEST = 2;
+	const _COOKIE = 3;
+	const _SERVER = 4;
+	const _FILES = 5;
+		
 	const POST = 0;
 	const GET = 1;
 	const REQUEST = 2;
@@ -148,17 +155,12 @@ class RequestVars
 		$this->original_request = $this->input[self::REQUEST];
 		$this->input[self::REQUEST] = $this->input[self::POST] + $this->input[self::GET];
 		
-		$this->post_array = isset($GLOBALS[_POST]) ? count($GLOBALS[_POST]) : 0;
-		
-		$this->get_array = isset($GLOBALS[_GET]) ? count($GLOBALS[_GET]) : 0;
-		
-		$this->request_array = isset($GLOBALS[_REQUEST]) ? count($GLOBALS[_REQUEST]) : 0;
-	
-		$this->cookie_array = isset($GLOBALS[_COOKIE]) ? count($GLOBALS[_COOKIE]) : 0;
-	
-		$this->server_array = isset($GLOBALS[_SERVER]) ? count($GLOBALS[_SERVER]) : 0;
-	
-		$this->files_arrays = isset($GLOBALS[_FILES]) ? count($GLOBALS[_FILES]) : 0;
+		$this->post_array = isset($GLOBALS['_POST']) ? count($GLOBALS['_POST']) : 0;		
+		$this->get_array = isset($GLOBALS['_GET']) ? count($GLOBALS['_GET']) : 0;	
+		$this->request_array = isset($GLOBALS['_REQUEST']) ? count($GLOBALS['_REQUEST']) : 0;
+		$this->cookie_array = isset($GLOBALS['_COOKIE']) ? count($GLOBALS['_COOKIE']) : 0;
+		$this->server_array = isset($GLOBALS['_SERVER']) ? count($GLOBALS['_SERVER']) : 0;
+		$this->files_arrays = isset($GLOBALS['_FILES']) ? count($GLOBALS['_FILES']) : 0;
 		
 		if ($disable_super_globals)
 		{
@@ -543,7 +545,6 @@ class RequestVars
 			$default = $dflt;
 			return $this->_variable($var_name, $default, $multibyte, $super_global, true);
 		}
-	
 	}
 	
 	/** ** /
@@ -577,7 +578,6 @@ class RequestVars
 			$default = $dflt;
 			return $this->_variable($var_name, $default, $multibyte, $super_global, true);
 		}		
-
 	}
 	
 	/** ** /
@@ -754,9 +754,16 @@ class RequestVars
 	*
 	* @return	bool			True if the variable was set in a POST request, false otherwise.
 	*/
-	public function is_set_post($name)
-	{
-		return $this->is_set($name, self::POST);
+	public function is_set_post($var)
+	{		
+		if (is_array($var))
+		{
+			return $this->is_array_set($var, self::POST);
+		}
+		else
+		{
+			return $this->is_set($var, self::POST);
+		}
 	}
 	/**
 	* Checks whether a certain variable was not sent via POST.
@@ -782,9 +789,16 @@ class RequestVars
 	*
 	* @return	bool			True if the variable was set in a GET request, false otherwise.
 	*/
-	public function is_set_get($name)
+	public function is_set_get($var)
 	{
-		return $this->is_set($name, self::GET);
+		if (is_array($var))
+		{
+			return $this->is_array_set($var, self::GET);
+		}
+		else
+		{
+			return $this->is_set($var, self::GET);
+		}				
 	}	
 	/**
 	* Checks whether a certain variable was not sent via GET.
@@ -891,6 +905,47 @@ class RequestVars
 	{
 		return isset($this->input[$super_global][$var]);
 	}
+	/**
+	* Checks whether a certain array of variables are set in one of the super global
+	* arrays.
+	*
+	* @param	string	$var1	Name of the variable
+	* @param	string	$var2	Name of the variable	
+	* @param	mx_request_vars::POST|GET|REQUEST|COOKIE	$super_global
+	*		Specifies the super global which shall be checked
+	*
+	* @return	bool			True if the variable was sent as input
+	*/
+	public function is_array_set($arr, $super_global = self::REQUEST)
+	{
+		$n = count($arr);
+		$lim = 4;
+		
+		for ($i = 0; $i < $n; $i++)
+		{		
+			foreach($arr as $var)
+			{
+				$arr[$i] = isset($this->input[$super_global][$var][$i]) ? $this->input[$super_global][$var][$i] : $var;
+			}		
+			
+			if ($i < 3)
+			{	
+				return isset($this->input[$super_global][$var][0], $this->input[$super_global][$var][2]);
+			}
+			elseif ($i < 4)
+			{	
+				return isset($this->input[$super_global][$var][0], $this->input[$super_global][$var][2], $this->input[$super_global][$var][3]);
+			}
+			elseif ($i < 5)
+			{	
+				return isset($this->input[$super_global][$var][0], $this->input[$super_global][$var][2], $this->input[$super_global][$var][3], $this->input[$super_global][$var][4]);
+			}
+			elseif ($lim < $n)
+			{	
+				print('Warning: Request vars class only accepts a number of arguments in an array: ' . $lim . ', but now are: ' . $n . ' arguments.');
+			}
+		}
+	}	
 	/**
 	* Checks whether a certain variable is not set in one of the super global
 	* arrays.
