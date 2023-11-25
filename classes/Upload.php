@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package AutoIndex
  *
@@ -46,7 +45,7 @@ class Upload
 	public function do_upload()
 	{
 		$uploaded_files = $errors = '';
-		global $words, $log, $dir;
+		global $request, $words, $log, $dir;
 		foreach ($_FILES as $file_upload)
 		{
 			$filename = Item::get_basename($file_upload['name']);
@@ -56,9 +55,7 @@ class Upload
 			}
 			if (DirectoryList::is_hidden($filename))
 			{
-				$errors .= "<li>$filename ["
-				. $words -> __get('filename is listed as a hidden file')
-				. ']</li>';
+				$errors .= "<li>$filename [" . $words->__get('filename is listed as a hidden file') . ']</li>';
 				continue;
 			}
 			$filename = Url::clean_input($filename);
@@ -66,7 +63,7 @@ class Upload
 			if (@file_exists($fullpathname))
 			{
 				$errors .= "<li>$filename ["
-				. $words -> __get('file already exists') . ']</li>';
+				. $words->__get('file already exists') . ']</li>';
 			}
 			else if (@move_uploaded_file($file_upload['tmp_name'], $fullpathname))
 			{
@@ -81,22 +78,22 @@ class Upload
 		}
 		if ($errors == '')
 		{
-			$errors = '<br />[' . $words -> __get('none') . ']';
+			$errors = '<br />[' . $words->__get('none') . ']';
 		}
 		if ($uploaded_files == '')
 		{
-			$uploaded_files = '<br />[' . $words -> __get('none') . ']';
+			$uploaded_files = '<br />[' . $words->__get('none') . ']';
 		}
 		$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">'
-		. '<strong>' . $words -> __get('uploaded files')
+		. '<strong>' . $words->__get('uploaded files')
 		. "</strong>: $uploaded_files</p><p><strong>"
-		. $words -> __get('failed files') . "</strong>: $errors"
-		. '<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']);
-		if (isset($_GET['dir']))
+		. $words->__get('failed files') . "</strong>: $errors"
+		. '<p><a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF', ''));
+		if ($request->is_set_get('dir'))
 		{
-			$str .= '?dir=' . Url::translate_uri($_GET['dir']);
+			$str .= '?dir=' . Url::translate_uri($request->get('dir'));
 		}
-		$str .= '">' . $words -> __get('continue') . '.</a></p></td></tr></table>';
+		$str .= '">' . $words->__get('continue') . '.</a></p></td></tr></table>';
 		echo new Display($str);
 		die();
 	}
@@ -106,7 +103,7 @@ class Upload
 	 */
 	public function __construct(User $current_user)
 	{
-		if ($current_user -> level < LEVEL_TO_UPLOAD)
+		if ($current_user->level < LEVEL_TO_UPLOAD)
 		{
 			throw new ExceptionDisplay('Your user account does not have permission to upload files.');
 		}
@@ -117,37 +114,33 @@ class Upload
 	 */
 	public function __toString()
 	{
-		global $words, $subdir;
-		if (isset($_GET['num_uploads']) && (int)$_GET['num_uploads'] > 0)
+		global $request, $words, $subdir;
+		if ($request->is_set_get('num_uploads') && (int)$request->get('num_uploads') > 0)
 		{
 			$str = '<form enctype="multipart/form-data" action="'
-			. Url::html_output($_SERVER['PHP_SELF']) . '?dir=' . $subdir . '" method="post"><p>';
-			$num = min((int)$_GET['num_uploads'], 100);
+			. Url::html_output($request->server('PHP_SELF', '')) . '?dir=' . $subdir . '" method="post"><p>';
+			$num = min((int)$request->get('num_uploads'), 100);
 			for ($i = 0; $i < $num; $i++)
 			{
-				$str .= "\n\t" . $words -> __get('file')
-				. ' '. ($i + 1) . ' : <input name="' . $i
-				. '" type="file" /><br />';
+				$str .= "\n\t" . $words->__get('file') . ' '. ($i + 1) . ' : <input name="' . $i . '" type="file" /><br />';
 			}
-			$str .= '</p><p><input type="submit" value="'
-			. $words -> __get('upload') . '" /></p></form>';
-			$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">'
-			. $str . '<p><a class="autoindex_a" href="'
-			. Url::html_output($_SERVER['PHP_SELF']);
-			if (isset($_GET['dir']))
+			$str .= '</p><p><input type="submit" value="' . $words->__get('upload') . '" /></p></form>';
+			$str = '<table><tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">' . $str . '<p><a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF', ''));
+			
+			if ($request->is_set_get('dir'))
 			{
-				$str .= '?dir=' . Url::translate_uri($_GET['dir']);
+				$str .= '?dir=' . Url::translate_uri($request->get('dir'));
 			}
-			$str .= '">' . $words -> __get('continue') . '.</a></p></td></tr></table>';
+			
+			$str .= '">' . $words->__get('continue') . '.</a></p></td></tr></table>';
 			echo new Display($str);
 			die();
 		}
-		return '<form action="' . Url::html_output($_SERVER['PHP_SELF']) . '" method="get"><p>'
-		. $words -> __get('upload') . ' <input type="text" size="3" value="1" name="num_uploads" /> '
-		. $words -> __get('files to this folder') . '<input class="button" type="submit" value="'
-		. $words -> __get('upload') . '" /><input type="hidden" name="dir" value="'
+		return '<form action="' . Url::html_output($request->server('PHP_SELF', '')) . '" method="get"><p>'
+		. $words->__get('upload') . ' <input type="text" size="3" value="1" name="num_uploads" /> '
+		. $words->__get('files to this folder') . '<input class="button" type="submit" value="'
+		. $words->__get('upload') . '" /><input type="hidden" name="dir" value="'
 		. $subdir . '" /></p></form>';
 	}
 }
-
 ?>
