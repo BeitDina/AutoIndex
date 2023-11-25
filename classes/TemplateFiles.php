@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florn C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: TemplateFiles.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -73,85 +73,85 @@ class TemplateFiles extends TemplateInfo
 	 */
 	private function callback_file($m)
 	{
-		global $words, $subdir;
+		global $words, $subdir, $request;
 		switch (strtolower($m[1]))
 		{
 			case 'tr_class':
 			{
-				return (($this -> i % 2) ? 'dark_row' : 'light_row');
+				return (($this->i % 2) ? 'dark_row' : 'light_row');
 			}
 			case 'filename':
 			{
-				return Url::html_output($this -> temp_item -> __get('filename'));
+				return Url::html_output($this->temp_item->__get('filename'));
 			}
 			case 'file_ext':
 			{
-				return $this -> temp_item -> file_ext();
+				return $this->temp_item->file_ext();
 			}
 			case 'size':
 			{
-				return $this -> temp_item -> __get('size') -> formatted();
+				return $this->temp_item->__get('size')->formatted();
 			}
 			case 'bytes':
 			{
-				return $this -> temp_item -> __get('size') -> __get('bytes');
+				return $this->temp_item->__get('size')->__get('bytes');
 			}
 			case 'date':
 			case 'time':
 			case 'm_time':
 			{
-				return $this -> temp_item -> format_m_time();
+				return $this->temp_item->format_m_time();
 			}
 			case 'a_time':
 			{
-				return $this -> temp_item -> format_a_time();
+				return $this->temp_item->format_a_time();
 			}
 			case 'thumbnail':
 			{
-				return $this -> temp_item -> __get('thumb_link');
+				return $this->temp_item->__get('thumb_link');
 			}
 			case 'num_subfiles':
 			{
-				return (($this -> temp_item instanceof DirItem 
-				&& !$this -> temp_item -> __get('is_parent_dir')) ? $this -> temp_item -> num_subfiles() : '');
+				return (($this->temp_item instanceof DirItem 
+				&& !$this->temp_item->__get('is_parent_dir')) ? $this->temp_item->num_subfiles() : '');
 			}
 			case 'delete_link':
 			{
-				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=delete&amp;dir=' . rawurlencode($subdir)
-				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
-				. '" class="autoindex_small autoindex_a">' . $words -> __get('delete') . '</a>]' : '');
+				return (($this->is_admin && !$this->temp_item->__get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($request->server('PHP_SELF')) . '?action=delete&amp;dir=' . rawurlencode($subdir)
+				. '&amp;filename=' . rawurlencode($this->temp_item->__get('filename'))
+				. '" class="autoindex_small autoindex_a">' . $words->__get('delete') . '</a>]' : '');
 			}
 			case 'rename_link':
 			{
-				return (($this -> is_admin && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=rename&amp;dir=' . rawurlencode($subdir)
-				. '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
-				. '" class="autoindex_small autoindex_a">' . $words -> __get('rename') . '</a>]' : '');
+				return (($this->is_admin && !$this->temp_item->__get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($request->server('PHP_SELF')) . '?action=rename&amp;dir=' . rawurlencode($subdir)
+				. '&amp;filename=' . rawurlencode($this->temp_item->__get('filename'))
+				. '" class="autoindex_small autoindex_a">' . $words->__get('rename') . '</a>]' : '');
 			}
 			case 'edit_description_link':
 			{
-				$slash = (($this -> temp_item instanceof DirItem) ? '/' : '');
-				return (($this -> is_mod && DESCRIPTION_FILE && !$this -> temp_item -> __get('is_parent_dir')) ?
-				' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_description&amp;dir='
+				$slash = (($this->temp_item instanceof DirItem) ? '/' : '');
+				return (($this->is_mod && DESCRIPTION_FILE && !$this->temp_item->__get('is_parent_dir')) ?
+				' [<a href="' . Url::html_output($request->server('PHP_SELF')) . '?action=edit_description&amp;dir='
 				. rawurlencode($subdir) . '&amp;filename='
-				. rawurlencode($this -> temp_item -> __get('filename')) . $slash
+				. rawurlencode($this->temp_item->__get('filename')) . $slash
 				. '" class="autoindex_small autoindex_a">'
-				. $words -> __get('edit description') . '</a>]' : '');
+				. $words->__get('edit description') . '</a>]' : '');
 			}
 			case 'ftp_upload_link':
 			{
-				if (!$this -> is_mod || !$this -> temp_item instanceof FileItem || !isset($_SESSION['ftp']))
+				if (!$this->is_mod || !$this->temp_item instanceof FileItem || !isset($_SESSION['ftp']))
 				{
 					return '';
 				}
-				return ' [<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
-				. rawurlencode($subdir) . '&amp;filename=' . rawurlencode($this -> temp_item -> __get('filename'))
+				return ' [<a href="' . Url::html_output($request->server('PHP_SELF')) . '?action=ftp&amp;dir='
+				. rawurlencode($subdir) . '&amp;filename=' . rawurlencode($this->temp_item->__get('filename'))
 				. '" class="autoindex_small autoindex_a">' . $words->__get('upload to ftp') . '</a>]';
 			}
 			default:
 			{
-				return $this -> temp_item -> __get($m[1]);
+				return $this->temp_item->__get($m[1]);
 			}
 		}
 	}
@@ -169,21 +169,21 @@ class TemplateFiles extends TemplateInfo
 		{
 			case 'is_file': //file
 			{
-				return (($this -> temp_item instanceof FileItem) ? $m[2] : '');
+				return (($this->temp_item instanceof FileItem) ? $m[2] : '');
 			}
 			case 'is_dir': //folder or link to parent directory
 			{
-				return (($this -> temp_item instanceof DirItem) ? $m[2] : '');
+				return (($this->temp_item instanceof DirItem) ? $m[2] : '');
 			}
 			case 'is_real_dir': //folder
 			{
-				return (($this -> temp_item instanceof DirItem
-				&& !$this -> temp_item -> __get('is_parent_dir')) ? $m[2] : '');
+				return (($this->temp_item instanceof DirItem
+				&& !$this->temp_item->__get('is_parent_dir')) ? $m[2] : '');
 			}
 			case 'is_parent_dir': //link to parent directory
 			{
-				return (($this -> temp_item instanceof DirItem
-				&& $this -> temp_item -> __get('is_parent_dir')) ? $m[2] : '');
+				return (($this->temp_item instanceof DirItem
+				&& $this->temp_item->__get('is_parent_dir')) ? $m[2] : '');
 			}
 			default:
 			{
@@ -202,8 +202,8 @@ class TemplateFiles extends TemplateInfo
 	 */
 	private function callback_do_every($m)
 	{
-		$num = $this -> i + 1;
-		return (($num % (int)$m[1] === 0 && $this -> length !== $num) ? $m[2] : '');
+		$num = $this->i + 1;
+		return (($num % (int)$m[1] === 0 && $this->length !== $num) ? $m[2] : '');
 	}
 	
 	
@@ -221,22 +221,22 @@ class TemplateFiles extends TemplateInfo
 	{
 		parent::__construct($filename, $list);
 		global $you;
-		$this -> is_admin = ($you -> level >= ADMIN);
-		$this -> is_mod = ($you -> level >= MODERATOR);
+		$this->is_admin = ($you->level >= ADMIN);
+		$this->is_mod = ($you->level >= MODERATOR);
 		$final_file_line = '';
-		$this -> length = (int)$list -> __get('list_count');
+		$this->length = (int)$list->__get('list_count');
 		foreach ($list as $i => $item)
 		{
-			$this -> i = (int)$i;
-			$this -> temp_item = $item;
+			$this->i = (int)$i;
+			$this->temp_item = $item;
 			$temp_line = preg_replace_callback('/\{\s*file\s*:\s*if\s*:\s*(\w+)\s*\}(.*)\{\s*end\s*if\s*\}/Uis',
-				array($this, 'callback_type'), $this -> out);
+				array($this, 'callback_type'), $this->out);
 			$temp_line = preg_replace_callback('/\{\s*do_every\s*:\s*(\d+)\s*\}(.*)\{\s*end\s*do_every\s*\}/Uis',
 				array($this, 'callback_do_every'), $temp_line);
 			$final_file_line .= preg_replace_callback('/\{\s*file\s*:\s*(\w+)\s*\}/Ui',
 				array($this, 'callback_file'), $temp_line);
 		}
-		$this -> out = $final_file_line;
+		$this->out = $final_file_line;
 	}
 }
 
