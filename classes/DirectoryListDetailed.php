@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: DirectoryListDetailed.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -76,14 +75,17 @@ class DirectoryListDetailed extends DirectoryList
 	 */
 	private function set_path_nav()
 	{
-		global $config, $subdir;
+		global $config, $subdir, $request;
+		
 		$exploded = explode('/', $subdir);
+		
 		$c = count($exploded) - 1;
-		$temp = '<a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir=">'
-		. Url::html_output(substr(str_replace('/', ' / ', $config -> __get('base_dir')), 0, -2)) . '</a>/ ';
+		
+		$temp = '<a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF')) . '?dir=">' . Url::html_output(substr(str_replace('/', ' / ', $config->__get('base_dir')), 0, -2)) . '</a>/ ';
+		
 		for ($i = 0; $i < $c; $i++)
 		{
-			$temp .= '<a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
+			$temp .= '<a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF'))
 			. '?dir=';
 			for ($j = 0; $j <= $i; $j++)
 			{
@@ -91,6 +93,7 @@ class DirectoryListDetailed extends DirectoryList
 			}
 			$temp .= '">' . Url::html_output($exploded[$i]) . '</a> / ';
 		}
+		
 		return $temp;
 	}
 	
@@ -103,34 +106,33 @@ class DirectoryListDetailed extends DirectoryList
 	 */
 	private static function callback_sort(Item $a, Item $b)
 	{
-		if ($a -> __get('is_parent_dir'))
+		if ($a->__get('is_parent_dir'))
 		{
 			return -1;
 		}
-		if ($b -> __get('is_parent_dir'))
+		if ($b->__get('is_parent_dir'))
 		{
 			return 1;
 		}
 		$sort = strtolower($_SESSION['sort']);
 		if ($sort === 'size')
 		{
-			$val = (($a -> __get('size') -> __get('bytes') <
-				$b -> __get('size') -> __get('bytes')) ? -1 : 1);
+			$val = (($a->__get('size')->__get('bytes') < $b->__get('size')->__get('bytes')) ? -1 : 1);
 		}
 		else
 		{
-			if (!$a -> is_set($sort))
+			if (!$a->is_set($sort))
 			{
 				$_SESSION['sort'] = 'filename'; //so the "continue" link will work
 				throw new ExceptionDisplay('Invalid sort mode.');
 			}
-			if (is_string($a -> __get($sort)))
+			if (is_string($a->__get($sort)))
 			{
-				$val = strnatcasecmp($a -> __get($sort), $b -> __get($sort));
+				$val = strnatcasecmp($a->__get($sort), $b->__get($sort));
 			}
 			else
 			{
-				$val = (($a -> __get($sort) < $b -> __get($sort)) ? -1 : 1);
+				$val = (($a->__get($sort) < $b->__get($sort)) ? -1 : 1);
 			}
 		}
 		return ((strtolower($_SESSION['sort_mode']) === 'd') ? -$val : $val);
@@ -149,7 +151,7 @@ class DirectoryListDetailed extends DirectoryList
 	 */
 	public function total_items()
 	{
-		return $this -> raw_total_folders + $this -> total_files;
+		return $this->raw_total_folders + $this->total_files;
 	}
 	
 	/**
@@ -160,50 +162,53 @@ class DirectoryListDetailed extends DirectoryList
 	{
 		$path = Item::make_sure_slash($path);
 		parent::__construct($path);
+		
 		$subtract_parent = false;
-		$this -> total_downloads = $total_size = 0;
+		
+		$this->total_downloads = $total_size = 0;
 		$dirs = $files = array();
+		
 		foreach ($this as $t)
 		{
 			if (@is_dir($path . $t))
 			{
 				$temp = new DirItem($path, $t);
-				if ($temp -> __get('is_parent_dir'))
+				if ($temp->__get('is_parent_dir'))
 				{
 					$dirs[] = $temp;
 					$subtract_parent = true;
 				}
-				else if ($temp -> __get('filename') !== false)
+				else if ($temp->__get('filename') !== false)
 				{
 					$dirs[] = $temp;
-					if ($temp -> __get('size') -> __get('bytes') !== false)
+					if ($temp->__get('size')->__get('bytes') !== false)
 					{
-						$total_size += $temp -> __get('size') -> __get('bytes');
+						$total_size += $temp->__get('size')->__get('bytes');
 					}
 				}
 			}
 			else if (@is_file($path . $t))
 			{
 				$temp = new FileItem($path, $t);
-				if ($temp -> __get('filename') !== false)
+				if ($temp->__get('filename') !== false)
 				{
 					$files[] = $temp;
-					$this -> total_downloads += $temp -> __get('downloads');
-					$total_size += $temp -> __get('size') -> __get('bytes');
+					$this->total_downloads += $temp->__get('downloads');
+					$total_size += $temp->__get('size')->__get('bytes');
 				}
 			}
 		}
 		self::sort_list($dirs);
 		self::sort_list($files);
-		$this -> contents = array_merge($dirs, $files);
-		$this -> total_size = new Size($total_size);
-		$this -> total_files = count($files);
-		$this -> raw_total_folders = $this -> total_folders = count($dirs);
+		$this->contents = array_merge($dirs, $files);
+		$this->total_size = new Size($total_size);
+		$this->total_files = count($files);
+		$this->raw_total_folders = $this->total_folders = count($dirs);
 		if ($subtract_parent)
 		{
-			$this -> total_folders--;
+			$this->total_folders--;
 		}
-		$this -> path_nav = $this -> set_path_nav();
+		$this->path_nav = $this->set_path_nav();
 		
 		//Paginate the files
 		if (ENTRIES_PER_PAGE)
@@ -213,12 +218,12 @@ class DirectoryListDetailed extends DirectoryList
 				throw new ExceptionDisplay('Invalid page number.');
 			}
 			global $config;
-			$num_per_page = $config -> __get('entries_per_page');
-			if (($page - 1) * $num_per_page >= $this -> total_items())
+			$num_per_page = $config->__get('entries_per_page');
+			if (($page - 1) * $num_per_page >= $this->total_items())
 			{
 				throw new ExceptionDisplay('Invalid page number.');
 			}
-			$this -> contents = array_slice($this -> contents, ($page - 1) * $num_per_page, $num_per_page);
+			$this->contents = array_slice($this->contents, ($page - 1) * $num_per_page, $num_per_page);
 		}
 	}
 	
@@ -230,8 +235,7 @@ class DirectoryListDetailed extends DirectoryList
 		$head = new TemplateInfo(TABLE_HEADER, $this);
 		$main = new TemplateFiles(EACH_FILE, $this);
 		$foot = new TemplateInfo(TABLE_FOOTER, $this);
-		return $head -> __toString() . $main -> __toString() . $foot -> __toString();
+		return $head->__toString() . $main->__toString() . $foot->__toString();
 	}
 }
-
 ?>
