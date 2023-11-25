@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
  * @copyright Copyright (C) 2002-2004 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Display.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -55,10 +54,10 @@ class Display
 		{
 			$line = (isset($arr['line']) ? $arr['line'] : 'unknown');
 			$file = (isset($arr['file']) ? Item::get_basename($arr['file']) : 'unknown');
-			$type = (isset($arr['type']) ? $arr['type'] : '');
-			$class = (isset($arr['class']) ? $arr['class'] : '');
+			$type = (isset($arr['type']) ? $arr['type'] : 'Error');
+			$class = (isset($arr['class']) ? $arr['class'] : 'Display');
 			$function = (isset($arr['function']) ? $arr['function'] : 'unknown');
-			$list .= "\n<br /><em>$file</em> line $line <span class=\"autoindex_small\">($class$type$function)</span>";
+			$list .= '\n<br /><em>'.$file.'</em> line '.$line.' <span class="autoindex_small">'."($class$type$function)".'</span>';
 		}
 		return $list . '</p>';
 	}
@@ -68,7 +67,7 @@ class Display
 	 */
 	public function __construct(&$contents)
 	{
-		$this -> contents = $contents;
+		$this->contents = $contents;
 	}
 	
 	/**
@@ -78,13 +77,12 @@ class Display
 	{
 		$header = new TemplateIndexer(GLOBAL_HEADER);
 		$footer = new TemplateIndexer(GLOBAL_FOOTER);
-		$output = $header -> __toString() . $this -> contents;
+		$output = $header->__toString() . $this->contents;
 		if (DEBUG)
 		{
 			$output .= self::get_trace();
 		}
-		return $output . $footer -> __toString();
+		return $output . $footer->__toString();
 	}
 }
-
 ?>
