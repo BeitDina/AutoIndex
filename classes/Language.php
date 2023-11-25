@@ -2,9 +2,9 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2008 Justin Hagstrom, 2019-2023 Florin C Bodin
+ * @copyright Copyright (C) 2002-2006 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Language.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -88,12 +88,14 @@ class Language
 	 */
 	private function get_current_lang()
 	{
-		//try to detect the default language of the user's browser
-		if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
-		//e.g. "en-us,en;q=0.5"
+		global $request;
+		
+		//try to detect the default language of the user's browser 
+		if (null !== $request->server('HTTP_ACCEPT_LANGUAGE')) //e.g. "en-us,en;q=0.5"
+		//if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) //e.g. "en-us,en;q=0.5"
 		{
 			$available_langs = self::get_all_langs(PATH_TO_LANGUAGES);
-			$accept_lang_ary = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);	
+			$accept_lang_ary = explode(',', $request->server('HTTP_ACCEPT_LANGUAGE'));	
 			if ($available_langs !== false)
 			{
 				$pref = array(); //user's preferred languages
