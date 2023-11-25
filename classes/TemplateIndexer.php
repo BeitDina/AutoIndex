@@ -1,10 +1,10 @@
 <?php
 /**
  * @package AutoIndex
- *
+ *ş
  * @copyright Copyright (C) 2002-2008 Justin Hagstrom, 2019-2023 Florin C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *ş
+ * @version $Id: TemplateIndexer.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -135,7 +135,7 @@ class TemplateIndexer
 			array('self', 'callback_config'), $contents);
 
 		//parse includes
-		$this -> out = preg_replace_callback('/\{\s*include\s*:\s*(.+)\s*\}/Ui',
+		$this->out = preg_replace_callback('/\{\s*include\s*:\s*(.+)\s*\}/Ui',
 			array('self', 'callback_include'), $contents);
 	}
 	
