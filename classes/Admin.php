@@ -1,11 +1,10 @@
 <?php
-
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2005 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2008 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Admin.php, v 2.2.6 2023/11/25 23:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -191,16 +190,16 @@ class Admin
 	{
 		self::validate_new_password($new_pass1, $new_pass2);
 		$accounts = new Accounts();
-		if (!$accounts -> user_exists($username))
+		if (!$accounts->user_exists($username))
 		{
 			throw new ExceptionDisplay('Cannot change password: username does not exist.');
 		}
-		if (!$accounts -> is_valid_user(new User($username, sha1($old_pass))))
+		if (!$accounts->is_valid_user(new User($username, sha1($old_pass))))
 		{
 			throw new ExceptionDisplay('Incorrect old password.');
 		}
 		global $config;
-		$h = @fopen($config -> __get('user_list'), 'wb');
+		$h = @fopen($config->__get('user_list'), 'wb');
 		if ($h === false)
 		{
 			throw new ExceptionDisplay("Could not open file <em>$user_list</em> for writing."
@@ -208,11 +207,11 @@ class Admin
 		}
 		foreach ($accounts as $this_user)
 		{
-			if (strcasecmp($this_user -> username, $username) === 0)
+			if (strcasecmp($this_user->username, $username) === 0)
 			{
-				$this_user = new User($username, sha1($new_pass1), $this_user -> level, $this_user -> home_dir);
+				$this_user = new User($username, sha1($new_pass1), $this_user->level, $this_user->home_dir);
 			}
-			fwrite($h, $this_user -> __toString());
+			fwrite($h, $this_user->__toString());
 		}
 		fclose($h);
 		$_SESSION['password'] = sha1($new_pass1);
@@ -232,12 +231,12 @@ class Admin
 			throw new ExceptionDisplay('Invalid user level.');
 		}
 		$accounts = new Accounts();
-		if (!$accounts -> user_exists($username))
+		if (!$accounts->user_exists($username))
 		{
 			throw new ExceptionDisplay('Cannot change level: username does not exist.');
 		}
 		global $config;
-		$h = @fopen($config -> __get('user_list'), 'wb');
+		$h = @fopen($config->__get('user_list'), 'wb');
 		if ($h === false)
 		{
 			throw new ExceptionDisplay("Could not open file <em>$user_list</em> for writing."
@@ -245,11 +244,11 @@ class Admin
 		}
 		foreach ($accounts as $this_user)
 		{
-			if (strcasecmp($this_user -> username, $username) === 0)
+			if (strcasecmp($this_user->username, $username) === 0)
 			{
-				$this_user = new User($username, $this_user -> sha1_pass, $new_level, $this_user -> home_dir);
+				$this_user = new User($username, $this_user->sha1_pass, $new_level, $this_user->home_dir);
 			}
-			fwrite($h, $this_user -> __toString());
+			fwrite($h, $this_user->__toString());
 		}
 		fclose($h);
 		throw new ExceptionDisplay('User level successfully changed.');
@@ -281,18 +280,18 @@ class Admin
 			}
 		}
 		$list = new Accounts();
-		if ($list -> user_exists($username))
+		if ($list->user_exists($username))
 		{
 			throw new ExceptionDisplay('This username already exists.');
 		}
 		global $config;
-		$h = @fopen($config -> __get('user_list'), 'ab');
+		$h = @fopen($config->__get('user_list'), 'ab');
 		if ($h === false)
 		{
 			throw new ExceptionDisplay('User list file could not be opened for writing.');
 		}
 		$new_user = new User($username, sha1($pass1), $level, $home_dir);
-		fwrite($h, $new_user -> __toString());
+		fwrite($h, $new_user->__toString());
 		fclose($h);
 		throw new ExceptionDisplay('User successfully added.');
 	}
@@ -303,12 +302,12 @@ class Admin
 	private static function del_user($username)
 	{
 		$accounts = new Accounts();
-		if (!$accounts -> user_exists($username))
+		if (!$accounts->user_exists($username))
 		{
 			throw new ExceptionDisplay('Cannot delete user: username does not exist.');
 		}
 		global $config;
-		$h = @fopen($config -> __get('user_list'), 'wb');
+		$h = @fopen($config->__get('user_list'), 'wb');
 		if ($h === false)
 		{
 			throw new ExceptionDisplay("Could not open file <em>$user_list</em> for writing."
@@ -316,9 +315,9 @@ class Admin
 		}
 		foreach ($accounts as $this_user)
 		{
-			if (strcasecmp($this_user -> username, $username) !== 0)
+			if (strcasecmp($this_user->username, $username) !== 0)
 			{
-				fwrite($h, $this_user -> __toString());
+				fwrite($h, $this_user->__toString());
 			}
 		}
 		fclose($h);
@@ -334,8 +333,12 @@ class Admin
 		{
 			throw new ExceptionDisplay('You must be logged in to access this section.');
 		}
-		$this -> level = $current_user -> level;
-		$this -> username = $current_user -> username;
+		$this->level = $current_user->level;
+		$this->username = $current_user->username;
+		
+		global $request, $words;
+		$this->request = is_object($request) ? $request : new RequestVars('', false);
+		$this->language = $words;
 	}
 	
 	/**
@@ -348,12 +351,12 @@ class Admin
 		
 		if (in_array(strtolower($action), $mod_actions))
 		{
-			if ($this -> level < MODERATOR)
+			if ($this->level < MODERATOR)
 			{
 				throw new ExceptionDisplay('You must be a moderator to access this section.');
 			}
 		}
-		else if ($this -> level < ADMIN)
+		else if ($this->level < ADMIN)
 		{
 			throw new ExceptionDisplay('You must be an administrator to access this section.');
 		}
@@ -397,31 +400,29 @@ class Admin
 						global $config;
 						if (DOWNLOAD_COUNT)
 						{
-							self::update_file_info($config -> __get('download_count'), $old, $new);
+							self::update_file_info($config->__get('download_count'), $old, $new);
 						}
 						if (DESCRIPTION_FILE)
 						{
-							self::update_file_info($config -> __get('description_file'), $old, $new);
+							self::update_file_info($config->__get('description_file'), $old, $new);
 						}
 						throw new ExceptionDisplay('File renamed successfully.');
 					}
 					throw new ExceptionDisplay('Error renaming file.');
 				}
 				global $words, $subdir;
-				throw new ExceptionDisplay('<p>' . $words -> __get('renaming')
-				. ' <em>' . Url::html_output($_GET['filename'])
-				. '</em></p><p>' . $words -> __get('new filename')
-				. ':<br /><span class="autoindex_small">('
-				. $words -> __get('you can also move the file by specifying a path')
-				. ')</span></p><form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '"><p><input type="hidden" name="filename" value="'
-				. $_GET['filename'] . '" />'
-				. '<input type="hidden" name="dir" value="' . $subdir
-				. '" /><input type="hidden" name="action" value="rename" />'
-				. '<input type="text" name="new_name" size="40" value="'
-				. $_GET['filename'] . '" />'
-				. '<input type="submit" value="' . $words -> __get('rename')
-				. '" /></p></form>');
+				throw new ExceptionDisplay('<p>' . $words->__get('renaming') . ' <em>' . Url::html_output($_GET['filename']) . '</em></p>
+				<p>' . $words->__get('new filename') . ':<br />
+				<span class="autoindex_small">(' . $words->__get('you can also move the file by specifying a path')	. ')</span></p>
+				<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF'))	. '">
+				<p>
+					<input type="hidden" name="filename" value="' . $_GET['filename'] . '" />' . '
+					<input type="hidden" name="dir" value="' . $subdir . '" />
+					<input type="hidden" name="action" value="rename" />' . '
+					<input type="text" name="new_name" size="40" value="' . $_GET['filename'] . '" />' . '
+					<input type="submit" value="' . $words->__get('rename') . '" />
+				</p>
+				</form>');
 			}
 			case 'delete':
 			{
@@ -454,15 +455,10 @@ class Admin
 				}
 				global $words, $subdir;
 				throw new ExceptionDisplay('<p>'
-				. $words -> __get('are you sure you want to delete the file')
-				. ' <em>' . Url::html_output($_GET['filename']) . '</em>?</p>'
-				. '<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
-				. '"><p><input type="hidden" name="action" value="delete" />'
-				. '<input type="hidden" name="dir" value="' . $subdir
-				. '" /><input type="hidden" name="sure" value="true" />'
-				. '<input type="hidden" name="filename" value="'
-				. $_GET['filename'] . '" /><input type="submit" value="'
-				. $words -> __get('yes, delete') . '" /></p></form>');
+				. $words->__get('are you sure you want to delete the file')	. ' <em>' . Url::html_output($_GET['filename']) . '</em>?</p>'
+				. '<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF')) . '"><p><input type="hidden" name="action" value="delete" />'
+				. '<input type="hidden" name="dir" value="' . $subdir . '" /><input type="hidden" name="sure" value="true" />'
+				. '<input type="hidden" name="filename" value="' . $_GET['filename'] . '" /><input type="submit" value="' . $words->__get('yes, delete') . '" /></p></form>');
 			}
 			case 'add_user':
 			{
@@ -472,29 +468,29 @@ class Admin
 					$_POST['pass2'], (int)$_POST['level'], $_POST['home_dir']);
 				}
 				global $words;
-				throw new ExceptionDisplay($words -> __get('add user')
+				throw new ExceptionDisplay($words->__get('add user')
 				. ':<form method="post" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '?action=add_user"><p>'
-				. $words -> __get('username') . ': <input type="text" name="username" /><br />'
-				. $words -> __get('password') . ': <input type="password" name="pass1" /><br />'
-				. $words -> __get('password') . ': <input type="password" name="pass2" /><br />'
-				. $words -> __get('level') . ': <select name="level"><option value="' . GUEST . '">'
-				. $words -> __get('guest') . '</option><option selected="selected" value="' . USER . '">'
-				. $words -> __get('user') . '</option><option value="' . MODERATOR . '">'
-				. $words -> __get('mod') . '</option><option value="' . ADMIN . '">'
-				. $words -> __get('admin') . '</option></select></p><p>Home Directory: '
+				. Url::html_output($this->request->server('PHP_SELF')) . '?action=add_user"><p>'
+				. $words->__get('username') . ': <input type="text" name="username" /><br />'
+				. $words->__get('password') . ': <input type="password" name="pass1" /><br />'
+				. $words->__get('password') . ': <input type="password" name="pass2" /><br />'
+				. $words->__get('level') . ': <select name="level"><option value="' . GUEST . '">'
+				. $words->__get('guest') . '</option><option selected="selected" value="' . USER . '">'
+				. $words->__get('user') . '</option><option value="' . MODERATOR . '">'
+				. $words->__get('mod') . '</option><option value="' . ADMIN . '">'
+				. $words->__get('admin') . '</option></select></p><p>Home Directory: '
 				. '<input type="text" name="home_dir" /><br /><span class="autoindex_small">(leave blank to use the default base directory)</span></p><p><input type="submit" value="'
-				. $words -> __get('add user') . '" /></p></form>');
+				. $words->__get('add user') . '" /></p></form>');
 			}
 			case 'change_password':
 			{
 				if (isset($_POST['pass1'], $_POST['pass2'], $_POST['old_pass']))
 				{
-					self::change_password($this -> username, $_POST['old_pass'],
+					self::change_password($this->username, $_POST['old_pass'],
 						$_POST['pass1'], $_POST['pass2']);
 				}
 				throw new ExceptionDisplay('<form method="post" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '?action=change_password">
+				. Url::html_output($this->request->server('PHP_SELF')) . '?action=change_password">
 				<p>Old password: <input type="password" name="old_pass" />
 				<br />New password: <input type="password" name="pass1" />
 				<br />New password: <input type="password" name="pass2" /></p>
@@ -508,18 +504,18 @@ class Admin
 				}
 				$accounts = new Accounts();
 				$out = '<form method="post" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '?action=change_user_level">
+				. Url::html_output($this->request->server('PHP_SELF')) . '?action=change_user_level">
 				<p>Select user: <select name="username">';
 				foreach ($accounts as $this_user)
 				{
-					$out .= '<option>' . $this_user -> username . '</option>';
+					$out .= '<option>' . $this_user->username . '</option>';
 				}
 				global $words;
 				throw new ExceptionDisplay($out . '</select></p><p>Select new level: <select name="level"><option value="' . BANNED . '"> Banned</option><option value="' . GUEST . '">'
-				. $words -> __get('guest') . '</option><option selected="selected" value="' . USER . '">'
-				. $words -> __get('user') . '</option><option value="' . MODERATOR . '">'
-				. $words -> __get('mod') . '</option><option value="' . ADMIN . '">'
-				. $words -> __get('admin') . '</option></select></p> <p><input type="submit" value="Change user\'s level" /></p></form>');
+				. $words->__get('guest') . '</option><option selected="selected" value="' . USER . '">'
+				. $words->__get('user') . '</option><option value="' . MODERATOR . '">'
+				. $words->__get('mod') . '</option><option value="' . ADMIN . '">'
+				. $words->__get('admin') . '</option></select></p> <p><input type="submit" value="Change user\'s level" /></p></form>');
 			}
 			case 'del_user':
 			{
@@ -531,23 +527,23 @@ class Admin
 					}
 					global $words;
 					throw new ExceptionDisplay('<p>'
-					. $words -> __get('are you sure you want to remove the user')
+					. $words->__get('are you sure you want to remove the user')
 					. ' <em>'.$_POST['username'] . '</em>?</p>'
-					. '<form method="post" action="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=del_user">'
+					. '<form method="post" action="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=del_user">'
 					. '<p><input type="hidden" name="sure" value="true" /><input type="hidden" name="username" value="'
 					. $_POST['username'] . '" /><input type="submit" value="'
-					. $words -> __get('yes, delete') . '" /></p></form>');
+					. $words->__get('yes, delete') . '" /></p></form>');
 				}
 				global $words;
 				$accounts = new Accounts();
-				$out = '<p>' . $words -> __get('select user to remove')
-				. ':</p><form method="post" action="' . Url::html_output($_SERVER['PHP_SELF'])
+				$out = '<p>' . $words->__get('select user to remove')
+				. ':</p><form method="post" action="' . Url::html_output($this->request->server('PHP_SELF'))
 				. '?action=del_user"><p><select name="username">';
 				foreach ($accounts as $this_user)
 				{
-					$out .= '<option>' . $this_user -> username . '</option>';
+					$out .= '<option>' . $this_user->username . '</option>';
 				}
-				throw new ExceptionDisplay($out . '</select></p><p><input type="submit" value="' . $words -> __get('delete this user') . '" /></p></form>');
+				throw new ExceptionDisplay($out . '</select></p><p><input type="submit" value="' . $words->__get('delete this user') . '" /></p></form>');
 			}
 			case 'edit_description':
 			{
@@ -558,11 +554,11 @@ class Admin
 					if (isset($_GET['description']))
 					{
 						global $descriptions, $config;
-						if (DESCRIPTION_FILE && $descriptions -> is_set($filename))
+						if (DESCRIPTION_FILE && $descriptions->is_set($filename))
 						//if it's already set, update the old description
 						{
 							//update the new description on disk
-							$h = @fopen($config -> __get('description_file'), 'wb');
+							$h = @fopen($config->__get('description_file'), 'wb');
 							if ($h === false)
 							{
 								throw new ExceptionDisplay('Could not open description file for writing.' . ' Make sure PHP has write permission to this file.');
@@ -574,12 +570,12 @@ class Admin
 							fclose($h);
 							
 							//update the new description in memory
-							$descriptions -> set($filename, $_GET['description']);
+							$descriptions->set($filename, $_GET['description']);
 						}
 						else if ($_GET['description'] != '')
 						//if it's not set, add it to the end
 						{
-							$h = @fopen($config -> __get('description_file'), 'ab');
+							$h = @fopen($config->__get('description_file'), 'ab');
 							if ($h === false)
 							{
 								throw new ExceptionDisplay('Could not open description file for writing.' . ' Make sure PHP has write permission to this file.');
@@ -588,24 +584,24 @@ class Admin
 							fclose($h);
 							
 							//read the description file with the updated data
-							$descriptions = new ConfigData($config -> __get('description_file'));
+							$descriptions = new ConfigData($config->__get('description_file'));
 						}
 					}
 					else
 					{
 						global $words, $subdir, $descriptions;
-						$current_desc = (DESCRIPTION_FILE && $descriptions -> is_set($filename) ? $descriptions -> __get($filename) : '');
+						$current_desc = (DESCRIPTION_FILE && $descriptions->is_set($filename) ? $descriptions->__get($filename) : '');
 						throw new ExceptionDisplay('<p>'
-						. $words -> __get('enter the new description for the file')
+						. $words->__get('enter the new description for the file')
 						. ' <em>' . Url::html_output($_GET['filename'])
-						. '</em>:</p><form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
+						. '</em>:</p><form method="get" action="' . Url::html_output($this->request->server('PHP_SELF'))
 						. '"><p><input type="hidden" name="dir" value="'
 						. $subdir . '" /><input type="hidden" name="filename" value="'
 						. $_GET['filename'] . '" />'
 						. '<input type="hidden" name="action" value="edit_description" /></p><p><input type="text" name="description" size="50" value="'
 						. Url::html_output($current_desc)
 						. '" /></p><p><input class="button" type="submit" value="'
-						. $words -> __get('change') . '" /></p></form>');
+						. $words->__get('change') . '" /></p></form>');
 					}
 				}
 				else
@@ -624,7 +620,7 @@ class Admin
 				if (isset($_GET['add']) && $_GET['add'] != '')
 				{
 					global $config;
-					$h = @fopen($config -> __get('hidden_files'), 'ab');
+					$h = @fopen($config->__get('hidden_files'), 'ab');
 					if ($h === false)
 					{
 						throw new ExceptionDisplay('Unable to open hidden files list for writing.');
@@ -636,7 +632,7 @@ class Admin
 				if (isset($_GET['remove']))
 				{
 					global $config;
-					$h = @fopen($config -> __get('hidden_files'), 'wb');
+					$h = @fopen($config->__get('hidden_files'), 'wb');
 					if ($h === false)
 					{
 						throw new ExceptionDisplay('Unable to open hidden files list for writing.');
@@ -652,23 +648,23 @@ class Admin
 					throw new ExceptionDisplay('Hidden file removed.');
 				}
 				global $words;
-				$str = '<h4>' . $words -> __get('add a new hidden file') . ':</h4>'
+				$str = '<h4>' . $words->__get('add a new hidden file') . ':</h4>'
 				. '<p class="autoindex_small">You can also use wildcards (?, *, +) for each entry.<br />'
 				. 'If you want to do the opposite of "hidden files" - show only certain files - '
 				. 'put a colon in front of those entries.</p><form method="get" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="edit_hidden" />'
+				. Url::html_output($this->request->server('PHP_SELF')) . '"><p><input type="hidden" name="action" value="edit_hidden" />'
 				. '<input type="text" name="add" size="40" /> <input type="submit" value="'
-				. $words -> __get('add') . '" /></p></form>';
+				. $words->__get('add') . '" /></p></form>';
 				
-				$str .= '<hr class="autoindex_hr" /><h4>' . $words -> __get('remove a hidden file')
+				$str .= '<hr class="autoindex_hr" /><h4>' . $words->__get('remove a hidden file')
 				. ':</h4><form method="get" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><select name="remove">';
+				. Url::html_output($this->request->server('PHP_SELF')) . '"><p><select name="remove">';
 				foreach ($hidden_list as $hid)
 				{
 					$str .= '<option>' . Url::html_output($hid) . '</option>';
 				}
 				$str .= '</select><input type="hidden" name="action" value="edit_hidden" /> <input type="submit" value="'
-				. $words -> __get('remove') . '" /></p></form>';
+				. $words->__get('remove') . '" /></p></form>';
 				throw new ExceptionDisplay($str);
 			}
 			case 'edit_banned':
@@ -677,10 +673,11 @@ class Admin
 				{
 					throw new ExceptionDisplay('The banning system is not in use. To enable it, reconfigure the script.');
 				}
+				
 				if (isset($_GET['add']) && $_GET['add'] != '')
 				{
 					global $config;
-					$h = @fopen($config -> __get('banned_list'), 'ab');
+					$h = @fopen($config->__get('banned_list'), 'ab');
 					if ($h === false)
 					{
 						throw new ExceptionDisplay('Unable to open banned_list for writing.');
@@ -689,14 +686,18 @@ class Admin
 					fclose($h);
 					throw new ExceptionDisplay('Ban added.');
 				}
+				
 				if (isset($_GET['remove']))
 				{
 					global $b_list, $config;
-					$h = @fopen($config -> __get('banned_list'), 'wb');
+					
+					$h = @fopen($config->__get('banned_list'), 'wb');
+					
 					if ($h === false)
 					{
 						throw new ExceptionDisplay('Unable to open banned_list for writing.');
 					}
+					
 					foreach ($b_list as $ban)
 					{
 						if ($ban != $_GET['remove'])
@@ -707,21 +708,32 @@ class Admin
 					fclose($h);
 					throw new ExceptionDisplay('Ban removed.');
 				}
-				global $b_list, $words;
-				$str = '<h4>' . $words -> __get('add a new ban') . ':</h4><form method="get" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="edit_banned" />'
-				. '<input type="text" name="add" size="40" /> <input type="submit" value="'
-				. $words -> __get('add') . '" /></p></form>';
 				
-				$str .= '<hr class="autoindex_hr" /><h4>'
-				. $words -> __get('remove a ban') . ':</h4><form method="get" action="'
-				. Url::html_output($_SERVER['PHP_SELF']) . '"><p><select name="remove">';
+				global $b_list, $words, $request;
+				
+				$str = '<h4>' . $words->__get('add a new ban') . ':</h4>
+				<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF')) . '">
+				<p>
+					<input type="hidden" name="action" value="edit_banned" />' . '
+					<input type="text" name="add" size="40" /> 
+					<input type="submit" value="' . $words->__get('add') . '" />
+				</p>
+				</form>';
+				$str .= '<hr class="autoindex_hr" />
+				<h4>' . $words->__get('remove a ban') . ':</h4>
+				<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF')) . '">
+				<p>
+				<select name="remove">';
 				foreach ($b_list as $ban)
 				{
 					$str .= '<option>' . $ban . '</option>';
 				}
-				$str .= '</select><input type="hidden" name="action" value="edit_banned" /> <input type="submit" value="'
-				. $words -> __get('remove') . '" /></p></form>';
+				$str .= '
+				</select>
+				<input type="hidden" name="action" value="edit_banned" /> 
+				<input type="submit" value="' . $words->__get('remove') . '" />
+				</p>
+				</form>';
 				throw new ExceptionDisplay($str);
 			}
 			case 'stats':
@@ -731,7 +743,7 @@ class Admin
 					throw new ExceptionDisplay('The logging system has not been enabled.');
 				}
 				$stats = new Stats();
-				$stats -> display();
+				$stats->display();
 				break;
 			}
 			case 'view_log':
@@ -743,14 +755,14 @@ class Admin
 				global $log;
 				if (isset($_GET['num']))
 				{
-					$log -> display((int)$_GET['num']);
+					$log->display((int)$_GET['num']);
 				}
-				global $words;
-				throw new ExceptionDisplay($words -> __get('how many entries would you like to view')
-				. '?<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF'])
+				global $words, $request;
+				throw new ExceptionDisplay($words->__get('how many entries would you like to view')
+				. '?<form method="get" action="' . Url::html_output($request->server('PHP_SELF'))
 				. '"><input type="hidden" name="action" value="view_log" />'
 				. '<input name="num" size="3" type="text" /> <input type="submit" value="'
-				. $words -> __get('view') . '" /></form>');
+				. $words->__get('view') . '" /></form>');
 			}
 			case 'create_dir':
 			{
@@ -765,11 +777,11 @@ class Admin
 				else
 				{
 					global $words, $subdir;
-					throw new ExceptionDisplay('<p>' . $words -> __get('enter the new name')
+					throw new ExceptionDisplay('<p>' . $words->__get('enter the new name')
 					. ':</p><form method="get" action="'
-					. Url::html_output($_SERVER['PHP_SELF']) . '"><p><input type="hidden" name="action" value="create_dir" />'
+					. Url::html_output($this->request->server('PHP_SELF')) . '"><p><input type="hidden" name="action" value="create_dir" />'
 					. '<input name="name" size="25" type="text" /> <input type="submit" value="'
-					. $words -> __get('create') . '" /><input type="hidden" name="dir" value="'
+					. $words->__get('create') . '" /><input type="hidden" name="dir" value="'
 					. $subdir . '" /></p></form>');
 				}
 				break;
@@ -786,7 +798,7 @@ class Admin
 				<table border="0" cellpadding="8" cellspacing="0">
 				<tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">
 				<p>Enter the name of the remote file you would like to copy:</p>
-				<form method="get" action="' . Url::html_output($_SERVER['PHP_SELF']) . '">
+				<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF')) . '">
 				<p><input type="hidden" name="action" value="copy_url" />
 				<input type="hidden" name="dir" value="' . $dir . '" />
 				<input type="radio" name="protocol" value="http://" checked="checked" />http://
@@ -838,7 +850,7 @@ class Admin
 				{
 					unset($_SESSION['ftp']);
 					$text = '<p>Logout successful. <a class="autoindex_a" href="'
-					. Url::html_output($_SERVER['PHP_SELF']) . '?dir='
+					. Url::html_output($this->request->server('PHP_SELF')) . '?dir='
 					. rawurlencode($subdir) . '">Go back.</a></p>';
 				}
 				else if (isset($_SESSION['ftp']))
@@ -859,7 +871,7 @@ class Admin
 					{
 						global $dir;
 						$name = rawurldecode($_GET['filename']);
-						$ftp -> put_file($dir . $name, Item::get_basename($name));
+						$ftp->put_file($dir . $name, Item::get_basename($name));
 						throw new ExceptionDisplay('File successfully transferred to FTP server.');
 					}
 					if (isset($_GET['transfer']) && $_GET['transfer'] != '')
@@ -867,36 +879,36 @@ class Admin
 					{
 						global $dir;
 						$name = rawurldecode($_GET['transfer']);
-						$ftp -> get_file($dir . Item::get_basename($name), $name);
+						$ftp->get_file($dir . Item::get_basename($name), $name);
 						throw new ExceptionDisplay('File successfully transferred from FTP server.');
 					}
 					global $words;
-					$text = '<ul><li><a href="' . Url::html_output($_SERVER['PHP_SELF'])
+					$text = '<ul><li><a href="' . Url::html_output($this->request->server('PHP_SELF'))
 					. '?action=ftp&amp;dir=' . rawurlencode($subdir) . '&amp;set_dir='
 					. rawurlencode(DirItem::get_parent_dir($_SESSION['ftp']['directory']))
-					. '">../ (' . $words -> __get('parent directory') . ')</a></li>';
+					. '">../ (' . $words->__get('parent directory') . ')</a></li>';
 					$i = 0;
 					foreach ($ftp as $file)
 					{
-						$is_directory = $ftp -> is_directory($i++);
+						$is_directory = $ftp->is_directory($i++);
 						$command = ($is_directory ? 'set_dir' : 'transfer');
 						$slash = ($is_directory ? '/' : '');
 						$text .= '<li><a class="autoindex_a" href="'
-						. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;'
+						. Url::html_output($this->request->server('PHP_SELF')) . '?action=ftp&amp;'
 						. $command . '=' . rawurlencode($file)
 						. '&amp;dir=' . rawurlencode($subdir) . '">'
 						. $file . $slash . '</a></li>' . "\n";
 					}
 					$text .= '</ul><p><a class="autoindex_a" href="'
-					. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
+					. Url::html_output($this->request->server('PHP_SELF')) . '?action=ftp&amp;dir='
 					. rawurlencode($subdir) . '&amp;ftp_logout=true">Logout of FTP server</a>
-					<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?dir='
+					<br /><a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?dir='
 					. rawurlencode($subdir) . '">Back to index.</a></p>';
 				}
 				else
 				{
 					$text = '<form method="post" action="'
-					. Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir='
+					. Url::html_output($this->request->server('PHP_SELF')) . '?action=ftp&amp;dir='
 					. rawurlencode($subdir) . '"><table border="0" cellpadding="8" cellspacing="0">
 					<tr class="paragraph"><td class="autoindex_td" style="padding: 8px;">
 					<p>FTP server: <input type="text" name="host" />
@@ -907,7 +919,7 @@ class Admin
 					<span class="autoindex_small">(Leave these blank to login anonymously)</span>
 					</p><p>Directory: <input type="text" name="directory" value="./" />
 					</p><p><input type="submit" value="Connect" /></p></td></tr></table></form>
-					<p><a class="autoindex_a" href="' . Url::html_output($_SERVER['PHP_SELF'])
+					<p><a class="autoindex_a" href="' . Url::html_output($this->request->server('PHP_SELF'))
 					. '?dir=' . rawurlencode($subdir) . '">Back to index.</a></p>';
 				}
 				echo new Display($text);
@@ -925,49 +937,49 @@ class Admin
 	 */
 	public function __toString()
 	{
-		global $words, $subdir;
+		global $words, $subdir, $request;
 		$str = '';
 		
 		//only ADMIN accounts
-		if ($this -> level >= ADMIN) $str = '
+		if ($this->level >= ADMIN) $str = '
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=config" class="autoindex_a">'
-	. $words -> __get('reconfigure script') . '</a>
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=config" class="autoindex_a">'
+	. $words->__get('reconfigure script') . '</a>
 </p>
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_hidden" class="autoindex_a">'
-	. $words -> __get('edit list of hidden files') . '</a>
-	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=edit_banned" class="autoindex_a">'
-	. $words -> __get('edit ban list') . '</a>
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=edit_hidden" class="autoindex_a">'
+	. $words->__get('edit list of hidden files') . '</a>
+	<br /><a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=edit_banned" class="autoindex_a">'
+	. $words->__get('edit ban list') . '</a>
 </p>
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=create_dir&amp;dir=' . rawurlencode($subdir)
-	. '" class="autoindex_a">' . $words -> __get('create new directory in this folder')
-	. '</a><br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=copy_url&amp;dir='
-	. $subdir . '" class="autoindex_a">' . $words -> __get('copy url') . '</a>
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=create_dir&amp;dir=' . rawurlencode($subdir)
+	. '" class="autoindex_a">' . $words->__get('create new directory in this folder')
+	. '</a><br /><a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=copy_url&amp;dir='
+	. $subdir . '" class="autoindex_a">' . $words->__get('copy url') . '</a>
 </p>
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=view_log" class="autoindex_a">'
-	. $words -> __get('view entries from log file') . '</a>
-	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=stats" class="autoindex_a">'
-	. $words -> __get('view statistics from log file') . '</a>
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=view_log" class="autoindex_a">'
+	. $words->__get('view entries from log file') . '</a>
+	<br /><a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=stats" class="autoindex_a">'
+	. $words->__get('view statistics from log file') . '</a>
 </p>
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=add_user" class="autoindex_a">'
-	. $words -> __get('add new user') . '</a>
-	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=del_user" class="autoindex_a">'
-	. $words -> __get('delete user') . '</a>
-	<br /><a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=change_user_level" class="autoindex_a">
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=add_user" class="autoindex_a">'
+	. $words->__get('add new user') . '</a>
+	<br /><a href="' . Url::html_output($request->server('PHP_SELF')) . '?action=del_user" class="autoindex_a">'
+	. $words->__get('delete user') . '</a>
+	<br /><a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=change_user_level" class="autoindex_a">
 	Change a user\'s level</a>
 </p>';
 		//MODERATOR and ADMIN accounts
-		if ($this -> level >= MODERATOR) $str .= '
+		if ($this->level >= MODERATOR) $str .= '
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=change_password" class="autoindex_a">
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=change_password" class="autoindex_a">
 	Change your password</a>
 </p>
 <p>
-	<a href="' . Url::html_output($_SERVER['PHP_SELF']) . '?action=ftp&amp;dir=' . rawurlencode($subdir)
+	<a href="' . Url::html_output($this->request->server('PHP_SELF')) . '?action=ftp&amp;dir=' . rawurlencode($subdir)
 	. '" class="autoindex_a">FTP browser</a>
 </p>';
 		return $str;
