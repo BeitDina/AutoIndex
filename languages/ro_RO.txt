@@ -699,5 +699,6 @@ powered by	Sprijinită de
 CHANGE_LOG 	Log de Dezvoltare
 LICENSE	LICENȚĂ
 LICENSE 	LICENȚĂ
+CODE_OF_CONDUCT	Codul de conduită
 e-sword 	e-Sword
 |autoindex_license	Licenţa GNU GPL-2.0
