@@ -394,15 +394,19 @@ if ($dir = @opendir(PATH_TO_TEMPLATES))
 	}
 			
 	$style_select = '	Template Directory: <input type="text" name="template_path" value="' . PATH_TO_TEMPLATES . '" /> Style:	<select name="template">';
-	$selected1 = '';
+	$selected_id = $selected1 = '';
 	$style_select .= '\t\t<option value="-1"' . $selected1 . '>' . 'Select template style' . '</option>\n';
-			
-	for ($id = 0; $id < count($installable_themes); $id++)
+	$last_style = count($installable_themes);
+	
+	for ($style_id = 0; $style_id < $last_style; $style_id++)
 	{			
-		$selected = ($installable_themes[$id]['template'] == $current_template_name && !$selected1) ? ' selected="selected"' : '';
-		$style_select .= '\t\t<option value="' . $installable_themes[$id]['template'] . '"' . $selected . '>' . $installable_themes[$id]['template_name'] . '</option>\n';
+		$selected = ($installable_themes[$style_id]['template'] == $current_template_name && !$selected1) ? ' selected="selected"' : '';
+		$style_select .= '\t\t<option value="' . $installable_themes[$style_id]['template'] . '"' . $selected . '>' . $installable_themes[$style_id]['template_name'] . '</option>\n';
+		$selected_id .= ($installable_themes[$style_id]['template'] == $settings['template']) ? $style_id : '';
+		
 	}
-	$style_select .= '	</select>';	
+	$style_select .= '	</select>';
+	
 }
 else	
 {	
@@ -469,16 +473,28 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 	<body>';
 	$install_form = '
 	<form method="post" action="'. $request->server('PHP_SELF') . '?action=config">
-	<h3>
-		The <a href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a> special edition by <a href="http://github.com/BeitDina/AutoIndex">Beit Dina Institute</a>
-		<br />Configuration
-	</h3>
-	<p>
-		The default options are currently selected, so just press the configure button at the bottom to use them.
-	</p>
-	<hr />
-	<p />
-	<p>Return to the <a href="'. $CONFIG_PATH .'">Main Index</a>.</p>';
+	<table class="table1" border="0" cellspacing="50" cellpadding="0" width="100%" align="center">
+		<tr>
+		<td nowrap="nowrap">
+		<h3>
+			The <a href="http://autoindex.sourceforge.net/">AutoIndex PHP Script</a> special edition by <a href="http://github.com/BeitDina/AutoIndex">Beit Dina Institute</a>
+			<br />Configuration
+		</h3>
+		</td>
+		</tr>
+		<tr>
+		<td>
+			<span class="gensmall">The default options are currently selected, so just press the configure button at the bottom to use them.
+		</span>
+		</td>
+		</tr>
+		<hr />
+		<tr>
+		<td nowrap="nowrap">
+		Return to the <a href="'. $CONFIG_PATH .'?lang='.$settings['language'].'&style='.$selected_id.'">Main Index</a>.
+		</td>
+		</tr>
+	</table>';
 	$install_form .= '
 		<table class="table1" width="650" cellpadding="8">
 		<tr>
@@ -493,7 +509,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 		</table>
 	<p />';
-	$install_form .= '<table class="table2" width="650" cellpadding="8">
+	$install_form .= '
+	<table class="table2" width="650" cellpadding="8">
 		<tr>
 			<td>Assets Path: <input type="text" name="assets_path" value="'; if ($settings['assets_path'] != 'false') { $install_form .= $settings['assets_path']; } $install_form .= '" />';
 	$install_form .= '		<p class="small">
@@ -504,7 +521,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 	</table>
 	<p />';
-	$install_form .= '<table width="650" cellpadding="8">
+	$install_form .= '
+	<table width="650" cellpadding="8">
 		<tr>
 		<td>
 		Icon Path: <input type="text" name="icon_path" value="'; if ($settings['icon_path'] != 'false') { $install_form .= $settings['icon_path']; } $install_form .= '" />';
@@ -573,7 +591,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 	</table>
 	<p />';
-	$install_form .= '<table width="650" cellpadding="8">
+	$install_form .= '
+	<table width="650" cellpadding="8">
 		<tr>
 			<td>
 			<input type="checkbox" name="use_login_system" value="true"'; if ($settings['use_login_system'] != 'false') { $install_form .= ' checked="checked"'; } $install_form .= ' /> Enable Login System
@@ -597,7 +616,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 	</table>
 	<p />';
-	$install_form .= '<table width="650" cellpadding="8">
+	$install_form .= '
+	<table width="650" cellpadding="8">
 		<tr>
 			<td>
 			Age for "New" Icon: <input type="text" name="days_new" size="3" value="'; if ($settings['days_new'] != 'false') { $install_form .= $settings['days_new']; } $install_form .= '" /> days
@@ -609,7 +629,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 	</table>
 	<p />';
-	$install_form .= '<table width="650" cellpadding="8">
+	$install_form .= '
+	<table width="650" cellpadding="8">
 		<tr>
 			<td>
 			Number of file entires per page: <input type="text" name="entries_per_page" size="3" value="'; if ($settings['entries_per_page'] != 'false') { $install_form .= $settings['entries_per_page']; } $install_form .= '" />
@@ -623,7 +644,8 @@ $page_header = '<?xml version="1.0" encoding="utf-8"?>
 		</tr>
 	</table>
 	<p />';
-	$install_form .= '<table width="650" cellpadding="8">
+	$install_form .= '
+	<table width="650" cellpadding="8">
 		<tr>
 			<td>
 			Image Thumbnail Height: <input type="text" name="thumbnail_height" size="3" value="'; if ($settings['thumbnail_height'] != 'false') { $install_form .= $settings['thumbnail_height']; } $install_form .= '" /> pixels
