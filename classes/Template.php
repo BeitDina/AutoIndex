@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 2002-2008 Justin Hagstrom, 2019-2023 Florin C Bodin
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- *
+ * @version $Id: Template.php, v 2.2.6 2023/11/27 22:28:28 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -69,7 +69,45 @@ class Template
 		$temp = new Template($m[1]);
 		return $temp->__toString();
 	}
-	
+	/**
+	 * Returns a list of all files in $path that match the filename format
+	 * of themes files.
+	 *
+	 * There are two valid formats for the filename of a template folder..
+	 *
+	 * @param string $path The directory to read from
+	 * @return array The list of valid theme names (based on directory name)
+	 */
+	public static function get_all_styles($path = PATH_TO_TEMPLATES)
+	{
+		if (($hndl = @opendir($path)) === false)
+		{
+			echo 'Did try to open dir: ' . $path
+			return false;
+		}
+		$installable_themes = array();
+		while (($sub_dir = readdir($hndl)) !== false)
+		{
+			// get the sub-template path
+			if( !is_file(@realpath($path .$sub_dir)) && !is_link(@realpath($path .$sub_dir)) && $sub_dir != "." && $sub_dir != ".." && $sub_dir != "CVS" )
+			{
+				if( @file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
+				{
+					$installable_themes[] = array($installable_themes['template'][$style_id], $installable_themes['template_name'][$style_id]);
+					//echo 'Did try to open dir: ' . $path . $sub_dir;
+				}
+			}
+		}
+		closedir($hndl);
+		
+		$last_style = count($installable_themes);
+		for ($style_id = 0; $style_id < $last_style; $style_id++)
+		{
+			//remove the file extention from each language code
+			$installable_themes[$style_id] = substr($installable_themes['template'][$style_id], $installable_themes['template_name'][$style_id]);
+		}
+		return $installable_themes;
+	}	
 	/**
 	 * @param array $m The array given by preg_replace_callback()
 	 * @return string The setting for the config value $m[1]
@@ -96,9 +134,14 @@ class Template
 	 */
 	public function __construct($filename)
 	{
-		global $config, $dir, $subdir, $words, $mobile_device_detect;
+		global $config, $request, $dir, $subdir, $words, $mobile_device_detect;
 		
-		$full_filename = $config ->__get('template') . $filename;
+		$style = $request->is_set('style') ? $request->variable('style', '') : 0;				
+		$themes = $this->get_all_styles($config->__get('template_path'));
+		
+		$template_path = $request->is_set('style') ? $themes[$style]['template'] : $config->__get('template');
+		$full_filename = $template_path . $filename;
+		
 		if (!@is_file($full_filename))
 		{
 			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> cannot be found.');
@@ -121,10 +164,10 @@ class Template
 			'{info:version}' => VERSION,
 			'{info:page_time}' => round((microtime(true) - START_TIME) * 1000, 1),
 			'{info:statinfo}' => $mobile_device_detect->detect()->getInfo(),
-			'{info:message}' => $words->__get('COOKIE_CONSENT_MSG'),			
-			'{info:dismiss}' => $words->__get('COOKIE_CONSENT_OK'),
-			'{info:link}' => $words->__get('COOKIE_CONSENT_INFO'),
-			'{info:href}' => $words->__get('PRIVACY')
+			'{info:message}' => $words->__get('cookie consent msg'),			
+			'{info:dismiss}' => $words->__get('cookie consent OK'),
+			'{info:link}' => $words->__get('cookie consent info'),
+			'{info:href}' => $words->__get('privacy')
 		);
 		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui',
 			array('self', 'callback_words'), strtr($contents, $tr));
@@ -143,7 +186,7 @@ class Template
 	 */
 	public function __toString()
 	{
-		return $this -> out;
+		return $this->out;
 	}
 }
 ?>
