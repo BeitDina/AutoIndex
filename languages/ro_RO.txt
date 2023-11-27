@@ -689,10 +689,10 @@ MOBILE_DEVICE	Mobile Device
 DESKTOP	Desktop-PC
 
 //Other
-PRIVACY	Politica de confidenţialitate
-COOKIE_CONSENT_MSG	Acest sit web foloseşte cookies să vă asigure luarea celei mai bune experienţă pe situl nostru web.
-COOKIE_CONSENT_OK	Am înţeles!
-COOKIE_CONSENT_INFO	Învaţă mai mult
+privacy	Politica de confidenţialitate
+cookie consent msg	Acest sit web foloseşte cookies să vă asigure luarea celei mai bune experienţă pe situl nostru web.
+cookie consent OK	Am înţeles!
+cookie consent info	Învaţă mai mult
 powered by	Sprijinită de
 
 //Other files
