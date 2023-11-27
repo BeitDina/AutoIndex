@@ -6,6 +6,7 @@ base_dir	./
 assets_path	assets/
 icon_path	index_icons/winvista/
 flag_path	flags/language/
+template_path	./templates/
 language	en
 template	./templates/default/
 log_file	access.log
