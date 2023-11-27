@@ -43,23 +43,34 @@ if (!defined('ENVIRONMENT'))
 	@define('ENVIRONMENT', 'development');
 }
 
+$phpEx = substr(strrchr(__FILE__, '.'), true);
+
 //filenames and paths for configuration related files
 /*EDIT*/$CONFIG_PATH = './';
-/*EDIT*/define('CONFIG_STORED', $CONFIG_PATH . 'AutoIndex.conf.php');
-/*EDIT*/define('CONFIG_GENERATOR', $CONFIG_PATH . 'config.php');
+/*EDIT*/define('ROOT_PATH', $CONFIG_PATH);
+/*EDIT*/define('CONFIG_STORED', $CONFIG_PATH . 'AutoIndex.conf.'.$phpEx);
+/*EDIT*/define('CONFIG_GENERATOR', $CONFIG_PATH . 'config.'.$phpEx);
 
 
 //paths for files that will be included
 /*EDIT*/define('PATH_TO_CLASSES', $CONFIG_PATH . 'classes/');
 /*EDIT*/define('PATH_TO_LANGUAGES', $CONFIG_PATH . 'languages/');
+
+//paths for configurable directories we need at install
+/*EDIT* *FLAGS_PATH*/define('PATH_TO_FLAGS', $CONFIG_PATH . 'flags/');
+/*EDIT* *ICONS_PATH*/define('PATH_TO_ICONS', $CONFIG_PATH . 'index_icons/');
+/*EDIT* *ASSETS_PATH*/define('PATH_TO_ASSETS', $CONFIG_PATH . 'assets/');
+/*EDIT* *TEMPLATE_PATH*/define('PATH_TO_TEMPLATES', $CONFIG_PATH . 'templates/');
+
 define('LANGUAGE_FILE_EXT', '.txt');
+define('TEMPLATE_FILE_EXT', '.tpl');
 
 //filenames of template files
-define('GLOBAL_HEADER', 'global_header.tpl');
-define('GLOBAL_FOOTER', 'global_footer.tpl');
-define('TABLE_HEADER', 'table_header.tpl');
-define('TABLE_FOOTER', 'table_footer.tpl');
-define('EACH_FILE', 'each_file.tpl');
+define('GLOBAL_HEADER', 'global_header.'.TEMPLATE_FILE_EXT);
+define('GLOBAL_FOOTER', 'global_footer.'.TEMPLATE_FILE_EXT);
+define('TABLE_HEADER', 'table_header.'.TEMPLATE_FILE_EXT);
+define('TABLE_FOOTER', 'table_footer.'.TEMPLATE_FILE_EXT);
+define('EACH_FILE', 'each_file.'.TEMPLATE_FILE_EXT);
 
 /**
  * When ENABLE_CACHE is true, the indexes of directories will be stored in
@@ -272,8 +283,10 @@ try
 	{
 		throw new ExceptionFatal('Neither <em>' . Url::html_output(CONFIG_GENERATOR) . '</em> nor <em>' . Url::html_output(CONFIG_STORED) . '</em> could be found.');
 	}	
+	
 	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
 	$ip = $request->server('HTTP_X_FORWARDED_FOR') ? htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR')) : $request->server('REMOTE_ADDR');	 
+	
 	//localhost.localdomain
 	if (!empty($_SESSION['host']))
 	{
@@ -310,10 +323,10 @@ try
 			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($request->server('PHP_SELF'))) . '</em>, and should not be in the config file.');
 		}
 		@define($key, ($item != 'false' && $item != '0'));
-	}
-		
+	}	
+	
 	//make sure all required settings are set in the config file
-	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
+	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'template_path', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
 	{
 		if (!defined(strtoupper($set)))
 		{
@@ -324,8 +337,7 @@ try
 	/**
 	* From this point on, we can throw ExceptionDisplay rather than
 	 * Exception since all the configuration is done.
-	 */
-	
+	 */	
 	$b_list = $only_these_ips = $banned_ips = array();
 	if (BANNED_LIST && is_file($config->__get('banned_list'))) //make sure the user is not banned
 	{
@@ -442,13 +454,15 @@ try
 	{
 		$dir .= Url::clean_input($request->get('dir'));
 		$dir = Item::make_sure_slash($dir);
+		
 		if (!is_dir($dir))
 		{
 			header('HTTP/1.0 404 Not Found');
 			$request->recursive_set_var('dir', '', TYPE_GET_VARS); //so the "continue" link will work
 			throw new ExceptionDisplay('The directory <em>' . Url::html_output($dir) . '</em> does not exist.');
 		}
-		$subdir = substr($dir, strlen($config->__get('base_dir')));
+		
+		$subdir = substr($dir, strlen($config->__get('base_dir')));		
 		if ($request->is_set_get('file') && ($file = $request->get('file')))
 		{
 			while (preg_match('#\\\\|/$#', $file)) //remove all slashes from the end of the name
@@ -476,18 +490,22 @@ try
 			$url->download();
 		}
 	}	
+	
 	if ($log_login)
 	{
 		$log->add_entry('Successful login (Username: ' . $_SESSION['username'] . ')');
 	}
+	
 	if (DESCRIPTION_FILE)
 	{
 		$descriptions = new ConfigData((is_file($config->__get('description_file')) ? $config->__get('description_file') : false));
 	}
+	
 	if (PARSE_HTACCESS) //parse .htaccess file(s)
 	{	
 		new Htaccess($dir, '.htaccess');
 	}
+	
 	if (MD5_SHOW && $request->is_set_get('md5'))
 	{
 		$file = $dir . Url::clean_input($request->get('md5'));
@@ -503,6 +521,7 @@ try
 		}
 		die(simple_display(md5_file($file), 'md5sum of ' . Url::html_output($file)));
 	}	
+	
 	if (THUMBNAIL_HEIGHT && $request->is_set_get('thumbnail'))
 	{
 		$fn = Url::clean_input($request->get('thumbnail'));
@@ -512,6 +531,7 @@ try
 		}
 		echo new Image($fn);
 	}	
+	
 	if (ARCHIVE && $request->is_set_get('archive'))
 	{
 		$log->add_entry('Directory archived');
@@ -528,6 +548,7 @@ try
 		$tar = new Tar($list, $outfile, strlen($dir));
 		die();
 	}	
+	
 	if (THUMBNAIL_HEIGHT && $request->is_set_get('thm'))
 	{
 		$fn = Url::clean_input($request->get('thm'));
@@ -537,6 +558,7 @@ try
 		}
 		echo new Stream($fn);
 	}	
+	
 	//set the sorting mode:
 	if ($request->is_set_get('sort'))
 	{
@@ -546,6 +568,7 @@ try
 	{
 		$_SESSION['sort'] = 'filename'; //default sort mode
 	}	
+	
 	//set the sorting order:
 	if ($request->is_set_get('sort_mode'))
 	{
@@ -558,11 +581,13 @@ try
 	{
 		$_SESSION['sort_mode'] = 'a'; //default sort order
 	}	
+	
 	if (count($_FILES) > 0) //deal with any request to upload files:
 	{
 		$upload = new Upload($you); //the constructor checks if you have permission to upload
 		$upload->do_upload();
 	}	
+	
 	if (USE_LOGIN_SYSTEM)
 	{
 		if ($request->is_set_get('logout'))
@@ -572,13 +597,16 @@ try
 		else if ($request->is_set_get('action'))
 		{
 			$admin = new Admin($you); //the constructor checks if you really are an admin
+			
 			$admin->action($request->get('action'));
 		}
 	}	
+	
 	if (ANTI_LEECH && !!empty($_SESSION['ref']))
 	{
 		$_SESSION['ref'] = true;
 	}	
+	
 	$search_log = '';
 	if (SEARCH_ENABLED && $request->is_set_get('search'))
 	{
