@@ -77,6 +77,12 @@ class User
 	 */
 	public function logout()
 	{
+		global $request, $config;
+		$autoindex_u = empty($request->server('PHP_SELF')) ? $config->__get('base_dir') : $request->server('PHP_SELF');
+		$autoindex_a = str_replace(array('&logout=true', '&amp;logout=true'), array('', ''), $autoindex_u);
+		
+		$home = new Url(Url::html_output($autoindex_a), true);
+		$home->redirect();
 		throw new ExceptionDisplay('You are not logged in.');
 	}
 	
