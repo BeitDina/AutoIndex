@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 2002-2008 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version $Id: Admin.php, v 2.2.6 2023/11/25 23:08:08 orynider Exp $
+ * @version $Id: Admin.php, v 2.2.6 2023/11/29 10:28:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -426,39 +426,54 @@ class Admin
 			}
 			case 'delete':
 			{
-				if (!isset($_GET['filename']))
+				global $request, $config;
+				
+				$autoindex_u = empty($request->server('PHP_SELF')) ? $config->__get('base_dir') : $request->server('PHP_SELF');
+				$autoindex_a = str_replace(array('&logout=true', '&amp;logout=true'), array('', ''), $autoindex_u);
+				
+				if ($request->is_not_set_get('filename'))
 				{
-					throw new ExceptionDisplay('No filename specified.');
+					throw new ExceptionDisplay('No filename specified. Redirection header could not be sent.<br />'
+					. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 				}
-				if (isset($_GET['sure']))
+				
+				if ($request->is_set_get('sure'))
 				{
 					global $dir;
-					$to_delete = $dir . Url::clean_input($_GET['filename']);
+					$to_delete = $dir . Url::clean_input($request->get('filename'));
 					if (!file_exists($to_delete))
 					{
 						header('HTTP/1.0 404 Not Found');
-						throw new ExceptionDisplay('Specified file could not be found.');
+						throw new ExceptionDisplay('Specified file could not be found. Redirection header could not be sent.<br />'
+						. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 					}
 					if (is_dir($to_delete))
 					{
 						if (self::rmdir_recursive($to_delete))
 						{
-							throw new ExceptionDisplay('Folder successfully deleted.');
+							throw new ExceptionDisplay('Folder successfully deleted. Redirection header could not be sent.<br />'
+							. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 						}
-						throw new ExceptionDisplay('Error deleting folder.');
+						throw new ExceptionDisplay('Error deleting folder. Redirection header could not be sent.<br />'
+						. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 					}
 					if (unlink($to_delete))
 					{
-						throw new ExceptionDisplay('File successfully deleted.');
+						throw new ExceptionDisplay('File successfully deleted. Redirection header could not be sent.<br />'
+						. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 					}
-					throw new ExceptionDisplay('Error deleting file.');
+					header("Location: $autoindex_a"); 
+					throw new ExceptionDisplay('Error deleting file. Redirection header could not be sent.<br />'
+					. "Continue here: <a href=\"$autoindex_a\">Main Index</a>");
 				}
+				
 				global $words, $subdir;
-				throw new ExceptionDisplay('<p>'
-				. $words->__get('are you sure you want to delete the file')	. ' <em>' . Url::html_output($_GET['filename']) . '</em>?</p>'
-				. '<form method="get" action="' . Url::html_output($this->request->server('PHP_SELF')) . '"><p><input type="hidden" name="action" value="delete" />'
+				
+				throw new ExceptionDisplay('<p><table class="table1"><tr><td>'
+				. $words->__get('are you sure you want to delete the file')	. ' <em>' . Url::html_output($request->get('filename')) . '</em>?</p>'
+				. '<form method="get" action="' . Url::html_output($autoindex_a) . '"><p><input type="hidden" name="action" value="delete" />'
 				. '<input type="hidden" name="dir" value="' . $subdir . '" /><input type="hidden" name="sure" value="true" />'
-				. '<input type="hidden" name="filename" value="' . $_GET['filename'] . '" /><input type="submit" value="' . $words->__get('yes, delete') . '" /></p></form>');
+				. '<input type="hidden" name="filename" value="' . $request->get('filename') . '" /><input type="submit" value="' . $words->__get('yes, delete') . '" /></td></tr></table></p></form>');
 			}
 			case 'add_user':
 			{
