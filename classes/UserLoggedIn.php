@@ -46,9 +46,12 @@ class UserLoggedIn extends User
 	 */
 	public function login_box()
 	{
-		global $words, $request, $you, $subdir;
+		global $config, $words, $request, $you, $subdir;
 		
-		$txt = '<p><a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF', ''))
+		$autoindex_u = empty($request->server('PHP_SELF')) ? $config->__get('base_dir') : $request->server('PHP_SELF');
+		$autoindex_a = str_replace(array('&logout=true', '&amp;logout=true'), array('', ''), $autoindex_u);
+	
+		$txt = '<p><a class="autoindex_a" href="' . Url::html_output($autoindex_a)
 		. '?dir=' . (isset($subdir) ?  rawurlencode($subdir) : '')
 		. '&amp;logout=true">' . $words->__get('logout') 
 		. ' [ ' . Url::html_output($this->username) . ' ]</a></p>';
