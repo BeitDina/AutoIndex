@@ -142,7 +142,7 @@ class Template
 		$template_path = $request->is_set('style') ? $themes[$style]['template'] : $config->__get('template');
 		$full_filename = $template_path . $filename;
 		
-		if (!@is_file($full_filename))
+		if (!is_file($full_filename))
 		{
 			throw new ExceptionFatal('Template file <em>' . Url::html_output($full_filename) . '</em> cannot be found.');
 		}
