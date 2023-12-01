@@ -2,9 +2,9 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom
+ * @copyright Copyright (C) 2002-2005 Justin Hagstrom
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version $Id: Stats.php,v 2.2.6 2023/11/15 08:08:08 orynider Exp $
+ * @version $Id: Search.php,v 2.2.6 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -30,496 +30,167 @@ if (!defined('IN_AUTOINDEX') || !IN_AUTOINDEX)
 }
 
 /**
- * Creates and displays detailed statistics from the log file.
+ * Similar to DirectoryListDetailed, except this filters out certain
+ * entries based on filename.
  *
  * @author Justin Hagstrom <JustinHagstrom@yahoo.com>
- * @version 1.0.1 (July 12, 2004)
+ * @version 1.0.3 (July 06, 2005)
  * @package AutoIndex
  */
-class Stats
+class Search extends DirectoryListDetailed
 {
 	/**
-	 * @var array Stores number of downloads per file extension
+	 * @var array List of matched filenames
 	 */
-	private $extensions;
+	private $matches;
 	
 	/**
-	 * @var array Hits per day
+	 * @return string The HTML text that makes up the search box
 	 */
-	private $dates;
-	
-	/**
-	 * @var array Unique hits per day
-	 */
-	private $unique_hits;
-	
-	/**
-	 * @var array Keys are the country codes and values are the number of visits
-	 */
-	private $countries;
-	
-	/**
-	 * @var int Total views of the base_dir
-	 */
-	private $total_hits;
-	
-	/**
-	 * @var int The number of days that there is a log entry for
-	 */
-	private $num_days;
-	
-	/**
-	 * @var int Average hits per day ($total_hits / $num_days)
-	 */
-	private $avg;
-	
-	/**
-	 * Returns $num formatted with a color (green for positive numbers, red
-	 * for negative numbers, and black for 0).
-	 *
-	 * @param int $num
-	 * @return string
-	 */
-	private static function get_change_color($num)
+	public static function search_box()
 	{
-		if ($num > 0)
+		global $words, $subdir, $request;
+		
+		$search = ($request->is_set_get('search') ? Url::html_output($request->get('search')) : '');
+		$mode = ($request->is_set_get('search_mode') ? self::clean_mode($request->is_set_get('search_mode')) : 'f');
+		$modes = array('files' => 'f', 'folders' => 'd', 'both' => 'fd');
+		
+		$out = '
+		<form action="' . Url::html_output($request->server('PHP_SELF')) . '" method="get">' . '
+		<p>
+		<input type="hidden" name="dir" value="' . $subdir . '" />' . '
+		<input type="text" name="search" value="' . $search . '" /><br />
+		<select name="search_mode">';
+		
+		foreach ($modes as $word => $m)
 		{
-			return '<span style="color: #00FF00;">+';
+			$sel = (($m == $mode) ? ' selected="selected"' : '');
+			$out .= '<option value="' . $m . '"' . $sel . '>' . $words->__get($word) . '</option>';
 		}
-		if ($num < 0)
-		{
-			return '<span style="color: #FF0000;">';
-		}
-		return '<span style="color: #000000;">';
+		
+		$out .= '
+		</select>
+		<input type="submit" class="button" value="' . $words->__get('search') . '" />
+		</p>
+		</form>';
+		
+		return $out;
 	}
 	
 	/**
-	 * If $array[$num] is set, it will be incremented by 1, otherwise it will
-	 * be set to 1.
-	 *
-	 * @param int $num
-	 * @param array $array
+	 * @param string $filename
+	 * @param string $string
+	 * @return bool True if string matches filename
 	 */
-	private static function add_num_to_array($num, &$array)
+	private static function match(&$filename, &$string)
 	{
-		isset($array[$num]) ? $array[$num]++ : $array[$num] = 1;
-	}
-	
-	/**
-	 * Reads the log file, and sets the member variables after doing
-	 * calculations.
-	 */
-	public function __construct()
-	{
-		$extensions = $dates = $unique_hits = $countries = array();
-		$total_hits = 0;
-		global $config, $request;
-		$log_file = $config->__get('log_file');
-		$base_dir = $config->__get('base_dir');
-		$h = @fopen($log_file, 'rb');
-		if ($h === false)
+		if (preg_match_all('/(?<=")[^"]+(?=")|[^ "]+/', $string, $matches))
 		{
-			throw new ExceptionDisplay("Cannot open log file: <em>$log_file</em>");
-		}
-		while (!feof($h))
-		{
-			$entries = explode("\t", rtrim(fgets($h, 1024), "\r\n"));
-			if (count($entries) === 7)
+			foreach ($matches[0] as $w)
 			{
-				//find the number of unique visits
-				if ($entries[5] == $base_dir)
+				if (stripos($filename, $w) !== false)
 				{
-					$total_hits++;
-					if (!in_array($entries[3], $unique_hits))
-					{
-						$unique_hits[] = Url::html_output($entries[3]);
-					}
-	
-					//find country codes by hostnames
-					$cc = FileItem::ext($entries[3]);
-					if (preg_match('/^[a-z]+$/i', $cc))
-					{
-						self::add_num_to_array($cc, $countries);
-					}
-	
-					//find the dates of the visits
-					self::add_num_to_array($entries[0], $dates);
-				}
-	
-				//find file extensions
-				$ext = FileItem::ext($entries[6]);
-				if (preg_match('/^[\w-]+$/', $ext))
-				{
-					self::add_num_to_array($ext, $extensions);
+					return true;
 				}
 			}
 		}
-		fclose($h);
-		$this->num_days = count($dates);
-		$this->avg = round($total_hits / $this->num_days);
-		$this->extensions = $extensions;
-		$this->dates = $dates;
-		$this->unique_hits = $unique_hits;
-		$this->countries = $countries;
-		$this->total_hits = $total_hits;
+		return false;
 	}
 	
 	/**
-	 * Uses the display class to output results.
+	 * Merges $obj into $this.
+	 *
+	 * @param Search $obj
 	 */
-	public function display()
+	private function merge(Search $obj)
 	{
-		static $country_codes = array(
-			'af' => 'Afghanistan',
-			'al' => 'Albania',
-			'dz' => 'Algeria',
-			'as' => 'American Samoa',
-			'ad' => 'Andorra',
-			'ao' => 'Angola',
-			'ai' => 'Anguilla',
-			'aq' => 'Antarctica',
-			'ag' => 'Antigua and Barbuda',
-			'ar' => 'Argentina',
-			'am' => 'Armenia',
-			'aw' => 'Aruba',
-			'au' => 'Australia',
-			'at' => 'Austria',
-			'ax' => '&Aring;lang Islands',
-			'az' => 'Azerbaidjan',
-			'bs' => 'Bahamas',
-			'bh' => 'Bahrain',
-			'bd' => 'Banglades',
-			'bb' => 'Barbados',
-			'by' => 'Belarus',
-			'be' => 'Belgium',
-			'bz' => 'Belize',
-			'bj' => 'Benin',
-			'bm' => 'Bermuda',
-			'bo' => 'Bolivia',
-			'ba' => 'Bosnia-Herzegovina',
-			'bw' => 'Botswana',
-			'bv' => 'Bouvet Island',
-			'br' => 'Brazil',
-			'io' => 'British Indian O. Terr.',
-			'bn' => 'Brunei Darussalam',
-			'bg' => 'Bulgaria',
-			'bf' => 'Burkina Faso',
-			'bi' => 'Burundi',
-			'bt' => 'Buthan',
-			'kh' => 'Cambodia',
-			'cm' => 'Cameroon',
-			'ca' => 'Canada',
-			'cv' => 'Cape Verde',
-			'ky' => 'Cayman Islands',
-			'cf' => 'Central African Rep.',
-			'td' => 'Chad',
-			'cl' => 'Chile',
-			'cn' => 'China',
-			'cx' => 'Christmas Island',
-			'cc' => 'Cocos (Keeling) Isl.',
-			'co' => 'Colombia',
-			'km' => 'Comoros',
-			'cg' => 'Congo',
-			'ck' => 'Cook Islands',
-			'cr' => 'Costa Rica',
-			'hr' => 'Croatia',
-			'cu' => 'Cuba',
-			'cy' => 'Cyprus',
-			'cz' => 'Czech Republic',
-			'cs' => 'Czechoslovakia',
-			'dk' => 'Denmark',
-			'dj' => 'Djibouti',
-			'dm' => 'Dominica',
-			'do' => 'Dominican Republic',
-			'tp' => 'East Timor',
-			'ec' => 'Ecuador',
-			'eg' => 'Egypt',
-			'sv' => 'El Salvador',
-			'gq' => 'Equatorial Guinea',
-			'ee' => 'Estonia',
-			'et' => 'Ethiopia',
-			'fk' => 'Falkland Isl. (UK)',
-			'fo' => 'Faroe Islands',
-			'fj' => 'Fiji',
-			'fi' => 'Finland',
-			'fr' => 'France',
-			'fx' => 'France (European Terr.)',
-			'tf' => 'French Southern Terr.',
-			'ga' => 'Gabon',
-			'gm' => 'Gambia',
-			'ge' => 'Georgia',
-			'de' => 'Germany',
-			'gh' => 'Ghana',
-			'gi' => 'Gibraltar',
-			'gb' => 'Great Britain (UK)',
-			'gr' => 'Greece',
-			'gl' => 'Greenland',
-			'gd' => 'Grenada',
-			'gp' => 'Guadeloupe (Fr)',
-			'gu' => 'Guam (US)',
-			'gt' => 'Guatemala',
-			'gn' => 'Guinea',
-			'gw' => 'Guinea Bissau',
-			'gy' => 'Guyana',
-			'gf' => 'Guyana (Fr)',
-			'ht' => 'Haiti',
-			'hm' => 'Heard &amp; McDonald Isl.',
-			'hn' => 'Honduras',
-			'hk' => 'Hong Kong',
-			'hu' => 'Hungary',
-			'is' => 'Iceland',
-			'in' => 'India',
-			'id' => 'Indonesia',
-			'ir' => 'Iran',
-			'iq' => 'Iraq',
-			'ie' => 'Ireland',
-			'il' => 'Israel',
-			'it' => 'Italy',
-			'ci' => 'Ivory Coast',
-			'jm' => 'Jamaica',
-			'jp' => 'Japan',
-			'jo' => 'Jordan',
-			'kz' => 'Kazachstan',
-			'ke' => 'Kenya',
-			'kg' => 'Kirgistan',
-			'ki' => 'Kiribati',
-			'kp' => 'North Korea',
-			'kr' => 'South Korea',
-			'kw' => 'Kuwait',
-			'la' => 'Laos',
-			'lv' => 'Latvia',
-			'lb' => 'Lebanon',
-			'ls' => 'Lesotho',
-			'lr' => 'Liberia',
-			'ly' => 'Libya',
-			'li' => 'Liechtenstein',
-			'lt' => 'Lithuania',
-			'lu' => 'Luxembourg',
-			'mo' => 'Macau',
-			'mg' => 'Madagascar',
-			'mw' => 'Malawi',
-			'my' => 'Malaysia',
-			'mv' => 'Maldives',
-			'ml' => 'Mali',
-			'mt' => 'Malta',
-			'mh' => 'Marshall Islands',
-			'mk' => 'Macedonia',
-			'mq' => 'Martinique (Fr.)',
-			'mr' => 'Mauritania',
-			'mu' => 'Mauritius',
-			'mx' => 'Mexico',
-			'fm' => 'Micronesia',
-			'md' => 'Moldavia',
-			'mc' => 'Monaco',
-			'mn' => 'Mongolia',
-			'ms' => 'Montserrat',
-			'ma' => 'Morocco',
-			'mz' => 'Mozambique',
-			'mm' => 'Myanmar',
-			'na' => 'Namibia',
-			'nr' => 'Nauru',
-			'np' => 'Nepal',
-			'an' => 'Netherland Antilles',
-			'nl' => 'Netherlands',
-			'nt' => 'Neutral Zone',
-			'nc' => 'New Caledonia (Fr.)',
-			'nz' => 'New Zealand',
-			'ni' => 'Nicaragua',
-			'ne' => 'Niger',
-			'ng' => 'Nigeria',
-			'nu' => 'Niue',
-			'nf' => 'Norfolk Island',
-			'mp' => 'Northern Mariana Isl.',
-			'no' => 'Norway',
-			'om' => 'Oman',
-			'pk' => 'Pakistan',
-			'pw' => 'Palau',
-			'pa' => 'Panama',
-			'pg' => 'Papua New Guinea',
-			'py' => 'Paraguay',
-			'pe' => 'Peru',
-			'ph' => 'Philippines',
-			'pn' => 'Pitcairn',
-			'pl' => 'Poland',
-			'pf' => 'Polynesia (Fr.)',
-			'pt' => 'Portugal',
-			'pr' => 'Puerto Rico (US)',
-			'qa' => 'Qatar',
-			're' => 'R&eacute;union (Fr.)',
-			'ro' => 'Romania',
-			'ru' => 'Russian Federation',
-			'rw' => 'Rwanda',
-			'lc' => 'Saint Lucia',
-			'ws' => 'Samoa',
-			'sm' => 'San Marino',
-			'sa' => 'Saudi Arabia',
-			'sn' => 'Senegal',
-			'sc' => 'Seychelles',
-			'sl' => 'Sierra Leone',
-			'sg' => 'Singapore',
-			'sk' => 'Slovak Republic',
-			'si' => 'Slovenia',
-			'sb' => 'Solomon Islands',
-			'so' => 'Somalia',
-			'za' => 'South Africa',
-			'su' => 'Soviet Union',
-			'es' => 'Spain',
-			'lk' => 'Sri Lanka',
-			'sh' => 'St. Helena',
-			'pm' => 'St. Pierre &amp; Miquelon',
-			'st' => 'St. Tome and Principe',
-			'kn' => 'St. Kitts Nevis Anguilla',
-			'vc' => 'St. Vincent &amp; Grenadines',
-			'sd' => 'Sudan',
-			'sr' => 'Suriname',
-			'sj' => 'Svalbard &amp; Jan Mayen Isl.',
-			'sz' => 'Swaziland',
-			'se' => 'Sweden',
-			'ch' => 'Switzerland',
-			'sy' => 'Syria',
-			'tj' => 'Tadjikistan',
-			'tw' => 'Taiwan',
-			'tz' => 'Tanzania',
-			'th' => 'Thailand',
-			'tg' => 'Togo',
-			'tk' => 'Tokelau',
-			'to' => 'Tonga',
-			'tt' => 'Trinidad &amp; Tobago',
-			'tn' => 'Tunisia',
-			'tr' => 'Turkey',
-			'tm' => 'Turkmenistan',
-			'tc' => 'Turks &amp; Caicos Islands',
-			'tv' => 'Tuvalu',
-			'ug' => 'Uganda',
-			'ua' => 'Ukraine',
-			'ae' => 'United Arab Emirates',
-			'uk' => 'United Kingdom',
-			'us' => 'United States',
-			'uy' => 'Uruguay',
-			'um' => 'US Minor outlying Isl.',
-			'uz' => 'Uzbekistan',
-			'vu' => 'Vanuatu',
-			'va' => 'Vatican City State',
-			've' => 'Venezuela',
-			'vn' => 'Vietnam',
-			'vg' => 'Virgin Islands (British)',
-			'vi' => 'Virgin Islands (US)',
-			'wf' => 'Wallis &amp; Futuna Islands',
-			'wlk' => 'Wales',
-			'eh' => 'Western Sahara',
-			'ye' => 'Yemen',
-			'yu' => 'Yugoslavia',
-			'zr' => 'Zaire',
-			'zm' => 'Zambia',
-			'zw' => 'Zimbabwe',
-			'mil' => 'United States Military',
-			'gov' => 'United States Government',
-			'com' => 'Commercial',
-			'net' => 'Network',
-			'org' => 'Non-Profit Organization',
-			'edu' => 'Educational',
-			'int' => 'International',
-			'aero' => 'Air Transport Industry',
-			'biz' => 'Businesses',
-			'coop' => 'Non-profit cooperatives',
-			'arpa' => 'Arpanet',
-			'info' => 'Info',
-			'name' => 'Name',
-			'nato' => 'Nato',
-			'museum' => 'Museum',
-			'pro' => 'Pro'
-		);
-		
-		$str = '
-		<table width="40%">
-		<tr>
-			<th class="autoindex_th">&nbsp;</th>
-			<th class="autoindex_th">Total</th><th class="autoindex_th">Daily</th></tr>'. "
-			<tr class='light_row'>
-			<td class='autoindex_td'>Hits</td>
-			<td class='autoindex_td'>{$this->total_hits}</td>
-			<td class='autoindex_td'>{$this->avg}" . '</td>
-		</tr>
-		<tr class="light_row">
-			<td class="autoindex_td">Unique Hits</td>
-			<td class="autoindex_td">' . count($this->unique_hits) . '</td>
-			<td class="autoindex_td">' . round(count($this->unique_hits) / $this->num_days) . '</td>
-		</tr>
-		</table>
-		<p>Percent Unique: ' . number_format(count($this->unique_hits) / $this->total_hits * 100, 1) . '</p>';
-
-		arsort($this->extensions);
-		arsort($this->countries);
-
-		$date_nums = array_values($this->dates);
-		$str .= '
-		<table width="75%" border="0">
-		<tr>
-		<th class="autoindex_th">Date</th>
-		<th class="autoindex_th">Hits That Day</th>
-		<th class="autoindex_th">Change From Previous Day</th>
-		<th class="autoindex_th">Difference From Average (' . $this->avg . ')</th>
-		</tr>';
-		$i = 0;
-		foreach ($this->dates as $day => $num)
+		$this->total_folders += $obj->__get('total_folders');
+		$this->total_files += $obj->__get('total_files');
+		$this->total_downloads += $obj->__get('total_downloads');
+		$this->total_size->add_size($obj->__get('total_size'));
+		$this->matches = array_merge($this->matches, $obj->__get('contents'));
+	}
+	
+	/**
+	 * Returns a string with all characters except 'd' and 'f' stripped.
+	 * Either 'd' 'f' 'df' will be returned, defaults to 'f'
+	 *
+	 * @param string $mode
+	 * @return string
+	 */
+	private static function clean_mode($mode)
+	{
+		$str = '';
+		if (stripos($mode, 'f') !== false)
 		{
-			$diff = $num - $this->avg;
-			$change = (($i > 0) ? ($num - $date_nums[$i-1]) : 0);
-			$change_color = self::get_change_color($change);
-			$diff_color = self::get_change_color($diff);
-			$class = (($i++ % 2) ? 'dark_row' : 'light_row');
-			$str .= "
-			<tr class='$class'>
-				<td class='autoindex_td'>$day</td>
-				<td class='autoindex_td'>$num</td>
-				<td class='autoindex_td'>$change_color$change</span></td>
-				<td class='autoindex_td'>$diff_color$diff</span></td>
-			</tr>";
-		}		
-		$str .= '
-		</table>
-		<p />
-		<table width="75%" border="0">
-		<tr>
-			<th class="autoindex_th">Downloads based on file extensions</th>
-			<th class="autoindex_th">Total</th>
-			<th class="autoindex_th">Daily</th>
-		</tr>';
-		$i = 0;
-		foreach ($this->extensions as $ext => $num)
-		{
-			$class = (($i++ % 2) ? 'dark_row' : 'light_row');
-			$str .= "<tr class='$class'><td class='autoindex_td'>$ext</td>
-				<td class='autoindex_td'>$num</td>
-				<td class='autoindex_td'>" . number_format($num / $this->num_days, 1) . "</td>
-			</tr>";
+			$str .= 'f';
 		}
-		$str .= '
-		</table>
-		<p />
-		<table width="75%" border="0">
-		<tr>
-			<th class="autoindex_th">Hostname ISP extension</th>
-			<th class="autoindex_th">Total</th>
-			<th class="autoindex_th">Daily</th>
-		</tr>';
-		$i = 0;
-		foreach ($this->countries as $c => $num)
+		if (stripos($mode, 'd') !== false)
 		{
-			$c_code = (isset($country_codes[strtolower($c)]) ? ' <span class="autoindex_small">(' . $country_codes[strtolower($c)] . ')</span>' : '');
-			$class = (($i++ % 2) ? 'dark_row' : 'light_row');
-			$str .= "
-			<tr class='$class'>
-				<td class='autoindex_td'>$c{$c_code}</td>
-				<td class='autoindex_td'>$num</td>
-				<td class='autoindex_td'>" . number_format($num / $this->num_days, 1) . "</td>
-			</tr>\n";
+			$str .= 'd';
 		}
-		$str .= '
-		</table>
-		<p><a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF')) . '">Continue.</a></p>';
-		echo new Display($str);
-		die();
+		else if ($str == '')
+		{
+			$str = 'f';
+		}
+		return $str;
+	}
+	
+	/**
+	 * @param string $query String to search for
+	 * @param string $dir The folder to search (recursive)
+	 * @param string $mode Should be f (files), d (directories), or fd (both)
+	 */
+	public function __construct($query, $dir, $mode)
+	{
+		if (strlen($query) < 2 || strlen($query) > 20)
+		{
+			throw new ExceptionDisplay('Search query is either too long or too short.');
+		}
+		$mode = self::clean_mode($mode);
+		$dir = Item::make_sure_slash($dir);
+		DirectoryList::__construct($dir);
+		$this->matches = array();
+		$this->total_size = new Size(0);
+		$this->total_downloads = $this->total_folders = $this->total_files = 0;
+		foreach ($this as $item)
+		{
+			if ($item == '..')
+			{
+				continue;
+			}
+			if (@is_dir($dir . $item))
+			{
+				if (stripos($mode, 'd') !== false && self::match($item, $query))
+				{
+					$temp = new DirItem($dir, $item);
+					$this->matches[] = $temp;
+					if ($temp->__get('size')->__get('bytes') !== false)
+					{
+						$this->total_size->add_size($temp->__get('size'));
+					}
+					$this->total_folders++;
+				}
+				$sub_search = new Search($query, $dir . $item, $mode);
+				$this->merge($sub_search);
+			}
+			else if (stripos($mode, 'f') !== false && self::match($item, $query))
+			{
+				$temp = new FileItem($dir, $item);
+				$this->matches[] = $temp;
+				$this->total_size->add_size($temp->__get('size'));
+				$this->total_downloads += $temp->__get('downloads');
+				$this->total_files++;
+			}
+		}
+		global $words, $config, $subdir, $request;
+		$link = ' <a class="autoindex_a" href="' . Url::html_output($request->server('PHP_SELF'))
+		. '?dir=' . Url::translate_uri($subdir) . '">'
+		. Url::html_output($dir) . '</a> ';
+		$this->path_nav = $words->__get('search results for')
+		. $link . $words->__get('and its subdirectories');
+		$this->contents = $this->matches;
+		unset($this->matches);
 	}
 }
 
