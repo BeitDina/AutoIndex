@@ -95,28 +95,24 @@ class TemplateIndexer
 			echo 'Did try to open dir: ' . $path;
 			return false;
 		}
-		$installable_themes = array();
+		
+		$themes_array = $installable_themes = array();
+		
+		$style_id = 0;	
 		while (($sub_dir = readdir($hndl)) !== false)
 		{
 			// get the sub-template path
 			if( !is_file(@realpath($path . $sub_dir)) && !is_link(@realpath($path . $sub_dir)) && $sub_dir != "." && $sub_dir != ".." && $sub_dir != "CVS" )
 			{
-				if( @file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
+				if(@file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
 				{
-					$installable_themes[] = array('template' => $path . $sub_dir . '/', 'template_name' => $sub_dir);				
-					//echo 'Did try to open dir: ' . $path . $sub_dir;
+					$themes[] = array('template' => $path . $sub_dir . '/', 'template_name' => $sub_dir, 'style_id' => $style_id++);	
 				}
 			}
 		}
-		closedir($hndl);
+		closedir($hndl);		
 		
-		$last_style = count($installable_themes);		
-		for ($style_id = 0; $style_id < $last_style; $style_id++)
-		{
-			//remove the file extention from each language code
-			$installable_themes[] = array($installable_themes['template'][$style_id], $installable_themes['template_name'][$style_id]);
-		}
-		return $installable_themes;
+		return $themes;
 	}
 	/**
 	 * Parses the text in $filename and sets the result to $out. We cannot
@@ -139,7 +135,20 @@ class TemplateIndexer
 		$style = $request->is_set('style') ? $request->variable('style', '') : 0;				
 		$themes = $this->get_all_styles($config->__get('template_path'));
 		
+		/* Style ids are impare
+		default [style_id] => 0 
+		
+		pubOry [style_id] => 1		
+		
+		simple_image_gallery [style_id] => 2 
+		
+		SwiftBlue [style_id] => 3
+		
+		SwiftBlueBeitDina [style_id] => 4 
+		*/
+		
 		$template_path = $request->is_set('style') ? $themes[$style]['template'] : $config->__get('template');
+		
 		$full_filename = $template_path . $filename;
 		
 		if (!is_file($full_filename))
