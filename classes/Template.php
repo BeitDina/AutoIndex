@@ -82,31 +82,27 @@ class Template
 	{
 		if (($hndl = @opendir($path)) === false)
 		{
-			echo 'Did try to open dir: ' . $path
+			echo 'Did try to open dir: ' . $path;
 			return false;
 		}
-		$installable_themes = array();
+		
+		$themes_array = $installable_themes = array();
+		
+		$style_id = 0;	
 		while (($sub_dir = readdir($hndl)) !== false)
 		{
 			// get the sub-template path
-			if( !is_file(@realpath($path .$sub_dir)) && !is_link(@realpath($path .$sub_dir)) && $sub_dir != "." && $sub_dir != ".." && $sub_dir != "CVS" )
+			if( !is_file(@realpath($path . $sub_dir)) && !is_link(@realpath($path . $sub_dir)) && $sub_dir != "." && $sub_dir != ".." && $sub_dir != "CVS" )
 			{
-				if( @file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
+				if(@file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
 				{
-					$installable_themes[] = array($installable_themes['template'][$style_id], $installable_themes['template_name'][$style_id]);
-					//echo 'Did try to open dir: ' . $path . $sub_dir;
+					$themes[] = array('template' => $path . $sub_dir . '/', 'template_name' => $sub_dir, 'style_id' => $style_id++);	
 				}
 			}
 		}
-		closedir($hndl);
+		closedir($hndl);		
 		
-		$last_style = count($installable_themes);
-		for ($style_id = 0; $style_id < $last_style; $style_id++)
-		{
-			//remove the file extention from each language code
-			$installable_themes[$style_id] = substr($installable_themes['template'][$style_id], $installable_themes['template_name'][$style_id]);
-		}
-		return $installable_themes;
+		return $themes;
 	}	
 	/**
 	 * @param array $m The array given by preg_replace_callback()
