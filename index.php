@@ -63,14 +63,14 @@ $phpEx = substr(strrchr(__FILE__, '.'), true);
 /*EDIT* *TEMPLATE_PATH*/define('PATH_TO_TEMPLATES', $CONFIG_PATH . 'templates/');
 
 define('LANGUAGE_FILE_EXT', '.txt');
-define('TEMPLATE_FILE_EXT', '.tpl');
+define('TPL_EXT', 'tpl');
 
 //filenames of template files
-define('GLOBAL_HEADER', 'global_header.'.TEMPLATE_FILE_EXT);
-define('GLOBAL_FOOTER', 'global_footer.'.TEMPLATE_FILE_EXT);
-define('TABLE_HEADER', 'table_header.'.TEMPLATE_FILE_EXT);
-define('TABLE_FOOTER', 'table_footer.'.TEMPLATE_FILE_EXT);
-define('EACH_FILE', 'each_file.'.TEMPLATE_FILE_EXT);
+define('GLOBAL_HEADER', 'global_header.'.TPL_EXT);
+define('GLOBAL_FOOTER', 'global_footer.'.TPL_EXT);
+define('TABLE_HEADER', 'table_header.'.TPL_EXT);
+define('TABLE_FOOTER', 'table_footer.'.TPL_EXT);
+define('EACH_FILE', 'each_file.'.TPL_EXT);
 
 /**
  * When ENABLE_CACHE is true, the indexes of directories will be stored in
