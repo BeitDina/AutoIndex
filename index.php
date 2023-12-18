@@ -85,8 +85,7 @@ define('ENABLE_CACHE', false);
  * in this directory. You can use an absolute path or a relative path, just
  * make sure there is a slash at the end.
  */
-/*EDIT*/
-define('CACHE_STORAGE_DIR', 'cache/');
+/*EDIT*/define('CACHE_STORAGE_DIR', '../AutoIndex/cache/');
 /**
  * Format to display dates in.
  * @see date()
@@ -147,12 +146,10 @@ if (ini_get('zlib.output_compression') == '1')
  * users' browsers. If you do this, make sure any changes you make to the
  * template do not break XHTML 1.1 compliance.
  */
-/*
-if (!empty($_SERVER['HTTP_ACCEPT']) && preg_match('#application/(xhtml\+xml|\*)#i', $_SERVER['HTTP_ACCEPT']))
+/*if (!empty($_SERVER['HTTP_ACCEPT']) && preg_match('#application/(xhtml\+xml|\*)#i', $_SERVER['HTTP_ACCEPT']))
 {
 	header('Content-Type: application/xhtml+xml');
-}
-*/
+}*/
 
 session_name('AutoIndex2');
 session_start();
@@ -166,47 +163,48 @@ session_start();
  * @return string
  */
 function simple_display($text, $title = 'Error on Page', $notify = '', $return_index = "index.php") 
-{ 
+{
 	return '<?xml version="1.0" encoding="UTF-8"?>
-			<!DOCTYPE html>
-			<html dir="ltr">
-			<head><meta charset="UTF-8" />
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-			<meta name="apple-mobile-web-app-capable" content="yes" />
-			<meta name="apple-mobile-web-app-status-bar-style" content="blue" />' .
-			'<title>' . $title . '</title>' .
-			'<style type="text/css">{ margin: 0; padding: 0; } html { font-size: 100%; height: 100%; margin-bottom: 1px; background-color: #E4EDF0; } body { font-family: "Lucida Grande", "Segoe UI", Helvetica, Arial, sans-serif; color: #536482; background: #E4EDF0; font-size: 62.5%; margin: 0; } ' .
-			'a:link, a:active, a:visited { color: #006688; text-decoration: none; } a:hover { color: #DD6900; text-decoration: underline; } ' .
-			'#wrap { padding: 0 20px 15px 20px; min-width: 615px; } #page-header { text-align: right; height: 40px; } #page-footer { clear: both; font-size: 1em; text-align: center; } ' .
-			'.panel { margin: 4px 0; background-color: #FFFFFF; border: solid 1px  #A9B8C2; } ' .
-			'#errorpage #page-header a { font-weight: bold; line-height: 6em; } #errorpage #content { padding: 10px; } #errorpage #content h1 { line-height: 1.2em; margin-bottom: 0; color: #DF075C; } ' .
-			'#errorpage #content div { margin-top: 20px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC; padding-bottom: 5px; color: #333333; font: bold 1.2em "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif; text-decoration: none; line-height: 120%; text-align: left; } \n' .
-			'</style>' .
-			'</head>' .
-			'<body id="errorpage">' .
-			'<div id="wrap">' .
-			'	<div id="page-header">'.$return_index.'</div>' .	
-			'	<div id="page-body">' .
-			'	<div class="panel">' .
-			'		<div id="content">' .
-			'			<h1>' . $title . '</h1>' .
-			'			<div>' . $text . '</div>' .
-			 $notify .
-			'		</div>' .
-			'	</div>' .
-			'	</div>' .
-			'	<div id="page-footer">Edition by <a href="https://github.com/beitdina/">Beit Dina Institute</a>';
-			'	</div>' .
-			'</div>' .
-			'</body>' .
-			'</html>	
-			<!--
-			Powered by AutoIndex PHP Script (version ' . VERSION . ')
-			Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
-			http://autoindex.sourceforge.net/
-			-->
-			';
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>' . $title . '</title>
+<style type="text/css">
+/* Body */ .autoindex_body, html {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
+.html { font-size: 100%; height: 100%; margin-bottom: 1px; background-color: #E4EDF0; } 
+.body {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
+/* Images */ .autoindex_body img {	border: none; }
+/* Tables */ .autoindex_table.table2 { border: none; border-spacing: 0px; }
+.autoindex_table.table2 { padding: 2px; }
+.autoindex_table.table2 thead th { font-weight: normal; text-transform: uppercase; line-height: 1.3em; font-size: 1em; padding: 0 0 4px 3px; }
+.light_row { background-color: #F2F6FC; border: 0.1em solid #E3E3F04A; padding: 2px; }
+.dark_row { background-color: #BADBF5; border: 0.1em solid #E3E3F04A; padding: 2px; }
+.autoindex_td {	background-color: #E3F0FB; 	/* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #FFE3F04A; padding: 2px; }
+.autoindex_td_left { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: left; }
+.autoindex_td_right { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: right; }
+.autoindex_th {	font-weight: bold; background-color: #80BBEC; border: 0.28em solid #FF01033; padding: 2px; }
+/* Links */ .plain_link { background-color: #FFE3F052; }
+.autoindex_a:visited, .autoindex_a:active { text-decoration: none; background-color: #FFFFE324; }
+.autoindex_a:link {	background-color: #FFE3F04A; }
+.autoindex_a:hover { text-decoration: overline underline; }
+a:link, a:active, a:visited { color: #006688; text-decoration: none; } a:hover { color: #DD6900; text-decoration: underline; }
+#wrap { padding: 0 20px 15px 20px; min-width: 615px; } #page-header { text-align: right; height: 40px; } #page-footer { clear: both; font-size: 1em; text-align: center; }
+.panel { margin: 4px 0; background-color: #FFFFFF; border: solid 1px  #A9B8C2; } 
+#errorpage #page-header a { font-weight: bold; line-height: 6em; } #errorpage #content { padding: 10px; } #errorpage #content h1 { line-height: 1.2em; margin-bottom: 0; color: #DF075C; } 
+#errorpage #content div { margin-top: 20px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC; padding-bottom: 5px; color: #333333; font: bold 1.2em "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif; text-decoration: none; line-height: 120%; text-align: left; } \n
+/* Buttons */ .button {	color: #707070;	background-color : #F0F2F485; text-align: left;	vertical-align: middle;	font-weight: bold;	cursor: pointer;	border-color: #1C0046;	padding: 3px 10px 3px 10px; }
+</style>
+</head>
+<body>
+<p>' . $text . '</p>
+<!-- Powered by AutoIndex PHP Script (version ' . VERSION . ')
+Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
+http://autoindex.sourceforge.net/ -->
+
+</body></html>
+
+
+';
 }
 
 /**
@@ -247,10 +245,13 @@ if (!$super_globals_disabled)
 	//$request->disable_super_globals();
 }
 
+
+
 /* To do: Should be switched to i.e. $request->request('style', 1);
 */
 $_GET = array_change_key_case($_GET, CASE_LOWER);
 $_POST = array_change_key_case($_POST, CASE_LOWER);
+
 
 /**
  * This is used to report a fatal error that we cannot display with the Display
@@ -260,7 +261,7 @@ $_POST = array_change_key_case($_POST, CASE_LOWER);
  */
 class ExceptionFatal extends Exception {}
 try
-{
+{	
 	if (is_file(CONFIG_STORED)) //now we need to include either the stored settings, or the config generator:
 	{
 		if (!is_readable(CONFIG_STORED))
@@ -282,19 +283,17 @@ try
 	else
 	{
 		throw new ExceptionFatal('Neither <em>' . Url::html_output(CONFIG_GENERATOR) . '</em> nor <em>' . Url::html_output(CONFIG_STORED) . '</em> could be found.');
-	}	
+	}
 	
 	//find and store the user's IP address and hostname: $ip = (!empty($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 'N/A');
 	$ip = $request->server('HTTP_X_FORWARDED_FOR') ? htmlspecialchars_decode($request->server('HTTP_X_FORWARDED_FOR')) : $request->server('REMOTE_ADDR');	 
-	
-	//localhost.localdomain
 	if (!empty($_SESSION['host']))
 	{
-		$host = (function_exists('php_uname')) ? php_uname('n') : $_SESSION['host'];
+		$host = $_SESSION['host'];
 	}
 	else
 	{
-		$_SESSION['host'] = $host = (function_exists('php_uname')) ? php_uname('n') : gethostbyaddr($ip);
+		$_SESSION['host'] = $host = gethostbyaddr($ip);
 	}
 	
 	//Create a language object:
@@ -306,7 +305,7 @@ try
 	*/
 	$mobile_device_detect = new MobileDeviceDetect();
 	$status = $mobile_device_detect->mobile_device_detect();
-	
+
 	//Create a logging object:
 	$log = new Logging($config->__get('log_file'));
 	
@@ -320,26 +319,30 @@ try
 		$key = strtoupper($key);
 		if (defined($key))
 		{
-			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($request->server('PHP_SELF'))) . '</em>, and should not be in the config file.');
+			throw new ExceptionFatal(Url::html_output($key) . ' is already defined in <em>' . basename(Url::html_output($_SERVER['PHP_SELF'])) . '</em>, and should not be in the config file.');
 		}
-		@define($key, ($item != 'false' && $item != '0'));
-	}	
+		define($key, ($item != 'false' && $item != '0'));
+	}
+	
 	
 	//make sure all required settings are set in the config file
-	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'template_path', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
+	foreach (array('base_dir', 'icon_path', 'flag_path', 'language', 'assets_path', 'template', 'log_file', 'description_file', 'user_list', 'download_count', 'hidden_files', 'banned_list', 'show_dir_size', 'use_login_system', 'force_download', 'search_enabled', 'anti_leech', 'entries_per_page', 'must_login_to_download', 'archive', 'days_new', 'thumbnail_height', 'bandwidth_limit', 'md5_show', 'parse_htaccess') as $set)
 	{
 		if (!defined(strtoupper($set)))
 		{
 			throw new ExceptionFatal('Required setting <em>' . $set . '</em> is not set in <em>' . Url::html_output(CONFIG_STORED) . '</em>');
 		}
 	}
-		
+	
+	
 	/**
-	* From this point on, we can throw ExceptionDisplay rather than
+	* From this point on, we can // throw ExceptionDisplay rather than
 	 * Exception since all the configuration is done.
-	 */	
+	 */
+	
 	$b_list = $only_these_ips = $banned_ips = array();
-	if (BANNED_LIST && is_file($config->__get('banned_list'))) //make sure the user is not banned
+	if (BANNED_LIST && is_file($config->__get('banned_list')))
+	//make sure the user is not banned
 	{
 		$b_list = file($config->__get('banned_list'));
 		if ($b_list === false)
@@ -376,7 +379,8 @@ try
 	}
 	
 	$show_only_these_files = $hidden_files = array();
-	if (HIDDEN_FILES && is_file($config->__get('hidden_files'))) //store the hidden file list in $hidden_list
+	if (HIDDEN_FILES && is_file($config->__get('hidden_files')))
+	//store the hidden file list in $hidden_list
 	{
 		$hidden_list = file($config->__get('hidden_files'));
 		if ($hidden_list === false)
@@ -400,7 +404,8 @@ try
 			}
 		}
 	}
-		
+	
+	
 	//size of the "chunks" that are read at a time from the file (when $force_download is on)
 	$speed = (BANDWIDTH_LIMIT ? $config->__get('bandwidth_limit') : 8);
 	
@@ -417,15 +422,18 @@ try
 		}
 		$downloads = new ConfigData($config->__get('download_count'));
 	}
+	
 	//create a user object:
 	$log_login = false;
-	if (USE_LOGIN_SYSTEM && $request->is_set_post('username'))
+	$username = $request->is_set_post('username') ? $request->post('username') : '';
+	$password = $request->is_set_post('password') ? $request->post('password') : '';
+	if (USE_LOGIN_SYSTEM && !empty($username) && ($username != '') && ($password != ''))
 	{
-		$you = new UserLoggedIn($request->post('username'), sha1($request->post('password')));
-		$log_login = true; $password_var = 'password';
-		$_SESSION['password'] = sha1($request->post('password'));
-		$request->recursive_set_var($password_var, null, true); //similar to unset($_POST['password']);
-		$_SESSION['username'] = $request->post('username');
+		$you = new UserLoggedIn($_POST['username'], sha1($_POST['password']));
+		$log_login = true;
+		$_SESSION['password'] = sha1($_POST['password']);
+		unset($_POST['password']);
+		$_SESSION['username'] = $_POST['username'];
 	}
 	else if (USE_LOGIN_SYSTEM && !empty($_SESSION['username']))
 	{
@@ -436,10 +444,14 @@ try
 		$you = new User();
 		if (MUST_LOGIN_TO_DOWNLOAD && USE_LOGIN_SYSTEM)
 		{
-			$str = '<p>You must login to view and download files.</p>'
-			. '<table border="0" cellpadding="8" cellspacing="0">'
-			. '<tr class="paragraph"><td class="autoindex_td">'
-			.  $you->login_box() . '</td></tr></table>';
+			$str = '<p>You must login to view and download files.</p>
+			<table border="0" cellpadding="8" cellspacing="0">
+			<tr class="paragraph">
+			<td class="autoindex_td">
+			' . $you->login_box() . '
+			</td>
+			</tr>
+			</table>';
 			echo new Display($str);
 			die();
 		}
@@ -450,7 +462,7 @@ try
 	$config->set('base_dir', $dir);
 	$subdir = '';
 	
-	if ($request->is_get('dir'))
+	if ($request->is_not_empty_get('dir'))
 	{
 		$dir .= Url::clean_input($request->get('dir'));
 		$dir = Item::make_sure_slash($dir);
@@ -489,7 +501,7 @@ try
 			$url = new Url($dir . $file, true);
 			$url->download();
 		}
-	}	
+	}
 	
 	if ($log_login)
 	{
@@ -498,11 +510,12 @@ try
 	
 	if (DESCRIPTION_FILE)
 	{
-		$descriptions = new ConfigData((is_file($config->__get('description_file')) ? $config->__get('description_file') : false));
+		$descriptions = new ConfigData((is_file($config -> __get('description_file')) ? $config -> __get('description_file') : false));
 	}
 	
-	if (PARSE_HTACCESS) //parse .htaccess file(s)
-	{	
+	if (PARSE_HTACCESS)
+	{
+		//parse .htaccess file(s)
 		new Htaccess($dir, '.htaccess');
 	}
 	
@@ -530,7 +543,7 @@ try
 			die();
 		}
 		echo new Image($fn);
-	}	
+	}
 	
 	if (ARCHIVE && $request->is_set_get('archive'))
 	{
@@ -547,7 +560,7 @@ try
 		$list = new DirectoryList($dir);
 		$tar = new Tar($list, $outfile, strlen($dir));
 		die();
-	}	
+	}
 	
 	if (THUMBNAIL_HEIGHT && $request->is_set_get('thm'))
 	{
@@ -557,7 +570,7 @@ try
 			die();
 		}
 		echo new Stream($fn);
-	}	
+	}
 	
 	//set the sorting mode:
 	if ($request->is_set_get('sort'))
@@ -567,7 +580,7 @@ try
 	else if (!!empty($_SESSION['sort']))
 	{
 		$_SESSION['sort'] = 'filename'; //default sort mode
-	}	
+	}
 	
 	//set the sorting order:
 	if ($request->is_set_get('sort_mode'))
@@ -580,32 +593,34 @@ try
 	else if (!!empty($_SESSION['sort_mode']))
 	{
 		$_SESSION['sort_mode'] = 'a'; //default sort order
-	}	
+	}
 	
 	if (count($_FILES) > 0) //deal with any request to upload files:
 	{
 		$upload = new Upload($you); //the constructor checks if you have permission to upload
 		$upload->do_upload();
-	}	
+	}
 	
 	if (USE_LOGIN_SYSTEM)
 	{
-		if ($request->is_set_get('logout'))
+		$logout = $request->is_set_get('logout') ? $request->get('logout') : 'false';
+		$action = $request->is_set_get('action') ? $request->get('action') : '';
+		
+		if ($request->is_not_empty_get('logout') && $logout == 'true')
 		{
 			$you->logout();
 		}
-		else if ($request->is_set_get('action'))
+		else if ($request->is_not_empty_get('action') && $action != '')
 		{
-			$admin = new Admin($you); //the constructor checks if you really are an admin
-			
-			$admin->action($request->get('action'));
+			$admin = new Admin($you); //the constructor checks if you really are an admin			
+			$admin->action($action);
 		}
-	}	
+	}
 	
 	if (ANTI_LEECH && !!empty($_SESSION['ref']))
 	{
 		$_SESSION['ref'] = true;
-	}	
+	}
 	
 	$search_log = '';
 	if (SEARCH_ENABLED && $request->is_set_get('search'))
@@ -654,9 +669,8 @@ try
 	$log->add_entry($search_log);
 	$str = $dir_list->__toString();
 	echo new Display($str);
-	//echo $mobile_device_detect->detect()->getInfo();
+	echo $mobile_device_detect->detect()->getInfo();
 }
-
 catch (ExceptionDisplay $e)
 {
 	echo $e;
@@ -665,5 +679,4 @@ catch (Exception $e)
 {
 	echo simple_display($e->getMessage());
 }
-
 ?>
