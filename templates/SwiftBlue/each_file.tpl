@@ -1,8 +1,4 @@
-<thead> </thead>
-</tbody>
- <tbody class="forabg">
- <tr class="{file:tr_class}">
- 
+  <tr class="{file:tr_class}"> 
   <td class="row1 table1 autoindex_td">
    {file:if:is_file} /* if it is a file, make a direct link */
    <a class="autoindex_a" href="{file:parent_dir}{file:filename}">
@@ -36,4 +32,3 @@
   {end if:description_file}
  
 </tr>
-</tbody>
