@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html dir="ltr xmlns="http://www.w3.org/1999/xhtml" xml:lang="{config:language}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{config:language}" lang="{config:language}">
 <head>
-<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
-<meta name="title"  content="Mesianic Directory Index" />
+<meta name="title"  content="Beit Dina Directory Index" />
 <meta name="author"      content="Beit Dina Bible Arheology and Translation Institute" />
 <meta name="copyright"   content="(c) Beit Dina 2019" />
 <meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
 <meta name="description" lang="{config:language}" content="This is the description search engines show when listing your site." />
 <meta name="category"    content="general" />
 <meta name="robots"      content="index,follow" />
-<meta name="revisit-after" content="7 days" >
+<meta name="revisit-after" content="7 days" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,14 +21,14 @@
 
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="favicon.gif" type="image/gif" />
-<link rel="top" href="http://mesianic.uv.ro/forum/index.php" title="Pagina de start a forumului mesianic.uv.ro" />
-<link rel="search" href="http://mesianic.uv.ro/forum/search.php" title="Căutare" />
-<link rel="help" href="http://mesianic.uv.ro/forum/faq.php" title="FAQ" />
-<link rel="author" href="http://mesianic.uv.ro/forum/memberlist.php" title="Membri" />
+<link rel="top" href="http://beitdina.net/forum/index.php" title="Pagina de start a forumului beitdina.net" />
+<link rel="search" href="http://beitdina.net/forum/search.php" title="Căutare" />
+<link rel="help" href="http://beitdina.net/forum/faq.php" title="FAQ" />
+<link rel="author" href="http://beitdina.net/forum/memberlist.php" title="Membri" />
 
-<title>{words:index of} {info:dir} @ Mesianic</title>
+<title>{words:index of} {info:dir} @ Beit Dina Bible Arheology and Translation Institute</title>
 <!-- First load standard template *.css definition, located in the the phpbb template folder -->
-<link rel="stylesheet" href="{config:template}SwiftBlue.css" type="text/css" />
+<link rel="stylesheet" href="{config:template}SwiftBlueBeitDina.css" type="text/css" />
 <!-- Then load addon template *.css definition for mx, located in the the portal template folder -->
 <link rel="stylesheet" href="{config:template}mx_addon.css" type="text/css" />
 <link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
@@ -76,7 +76,7 @@ td.row2	{ background-color: #BADBF5; }
 td.row3	{ background-color: #80BBEC; }
 
 /*
-  This is for the table cell above the Topics, Post & Last posts on the http://mesianic.uv.ro/forum/index.php page
+  This is for the table cell above the Topics, Post & Last posts on the http://beitdina.net/forum/index.php page
   By default this is the fading out gradiated silver background.
   However, you could replace this with a bitmap specific for each forum
 */
@@ -147,7 +147,7 @@ a.mainmenu:hover{ text-decoration: underline; color : #041642; font-family: "Tre
 a.cattitle		{ text-decoration: none; color : #072978; }
 a.cattitle:hover{ text-decoration: underline; }
 
-/* Forum title: Text and link to the forums used in: http://mesianic.uv.ro/forum/index.php */
+/* Forum title: Text and link to the forums used in: http://beitdina.net/forum/index.php */
 .forumlink		{ font-weight: bold; font-size: 12px; color : #072978; }
 a.forumlink 	{ text-decoration: none; color : #072978; }
 a.forumlink:hover{ text-decoration: underline; color : #041642; }
@@ -241,7 +241,7 @@ input.liteoption {
 -->
 </style>
 
-<script language="javascript" type="text/javascript"><!--
+<script type="text/javascript"><!--
 
 function newImage(arg) {
 	if (document.images) {
@@ -268,17 +268,17 @@ function checkSearch()
 	}
 	else if (document.search_block.search_engine.value == 'site')
 	{
-		window.open('http://mesianic.uv.ro/forum/index.php?page=5&mode=results&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
+		window.open('http://beitdina.net/forum/index.php?page=5&mode=results&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
 		return false;
 	}
 	else if (document.search_block.search_engine.value == 'kb')
 	{
-		window.open('http://mesianic.uv.ro/forum/index.php?page=&mode=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
+		window.open('http://beitdina.net/forum/index.php?page=&mode=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
 		return false;
 	}
 	else if (document.search_block.search_engine.value == 'pafiledb')
 	{
-		window.open('http://mesianic.uv.ro/forum/index.php?page=&action=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
+		window.open('http://beitdina.net/forum/index.php?page=&action=search&search_terms=all&search_keywords=' + document.search_block.search_keywords.value, '_self', '');
 		return false;
 	}
 	else
@@ -294,10 +294,10 @@ function full_img(url) {
 }
 
 // --></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout_main.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}dynifs.js"></script>
+<script type="text/javascript" src="{config:template}rollout.js"></script>
+<script type="text/javascript" src="{config:template}rollout_main.js"></script>
+<script type="text/javascript" src="{config:template}dynifs.js"></script>
 
 </head>
 
-<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978">
+<body class="autoindex_body">
