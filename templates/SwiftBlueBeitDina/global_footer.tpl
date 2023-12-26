@@ -25,20 +25,9 @@ Page generated in {info:page_time} milliseconds.
             }
         });
 </script>
-<script type="text/javascript">
-		(function($){
-			var $fa_cdn = $('head').find('link[rel="stylesheet"]').first(),
-				$span = $('<span class="fa" style="display:none"></span>').appendTo('body');
-			if ($span.css('fontFamily') !== 'FontAwesome' ) {
-				$fa_cdn.after('<link href="{config:assets_path}/css/font-awesome.min.css" rel="stylesheet">');
-				$fa_cdn.remove();
-			}
-			$span.remove();
-		})(jQuery);
-</script>
 
-<script src="{config:assets_path}/cookieconsent/cookieconsent.min.js?assets_version=75"></script>
-<script>
+<script type="text/javascript" src="{config:assets_path}/cookieconsent/cookieconsent.min.js?assets_version=75"></script>
+<script type="text/javascript">
 		if (typeof window.cookieconsent === "object") {
 			window.addEventListener("load", function() {
 				window.cookieconsent.initialise({
@@ -62,14 +51,18 @@ Page generated in {info:page_time} milliseconds.
 		}
 </script>
 
-<script language="javascript" type="text/javascript" src="{config:template}jquery.min.js?assets_version=75"></script>
-<script language="javascript" type="text/javascript" src="{config:template}core.js?assets_version=75"></script>
-<script language="javascript" type="text/javascript" src="{config:template}ajax.js?assets_version=75"></script>
-<script language="javascript" type="text/javascript" src="{config:template}forum_fn.js?assets_version=75"></script>
-<script language="javascript" type="text/javascript" src="{config:template}collapsiblecategories.js?assets_version=75"></script>
-
-{info:statinfo}
-
-<script>$('.tables1 br').remove();</script>
+<script type="text/javascript" src="{config:template}jquery.min.js?assets_version=75"></script>
+<script type="text/javascript" src="{config:template}core.js?assets_version=75"></script>
+<script type="text/javascript" src="{config:template}ajax.js?assets_version=75"></script>
+<script type="text/javascript" src="{config:template}forum_fn.js?assets_version=75"></script>
+<script type="text/javascript" src="{config:template}collapsiblecategories.js?assets_version=75"></script>
+		
+<table class="autoindex_table table2" cellspacing="1" cellpadding="0" width="100%">
+<tr class="paragraph">
+<th class="autoindex_th stat-block" colspan="5" style="padding: 8px;">{info:statinfo}</th>
+</tr>	
+</table>
+<fieldset class="nav"><a href="#top"> Back to Top</a></fieldset>
+<script type="text/javascript">$('.tables1 br').remove();</script>
 </body>
 </html>
