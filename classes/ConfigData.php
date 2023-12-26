@@ -194,7 +194,41 @@ class ConfigData implements Iterator
 			return false;
 		}
 	}
-	
+	/**
+	 * Returns a list of all files in $path that match the filename format
+	 * of themes files.
+	 *
+	 * There are two valid formats for the filename of a template folder..
+	 *
+	 * @param string $path The directory to read from
+	 * @return array The list of valid theme names (based on directory name)
+	 */
+	public static function get_all_styles($path = PATH_TO_TEMPLATES)
+	{
+		if (($hndl = @opendir($path)) === false)
+		{
+			echo 'Did try to open dir: ' . $path;
+			return false;
+		}
+		
+		$themes_array = $installable_themes = array();
+		
+		$style_id = 0;	
+		while (($sub_dir = readdir($hndl)) !== false)
+		{
+			// get the sub-template path
+			if( !is_file(@realpath($path . $sub_dir)) && !is_link(@realpath($path . $sub_dir)) && $sub_dir != "." && $sub_dir != ".." && $sub_dir != "CVS" )
+			{
+				if(@file_exists(realpath($path . $sub_dir . "/$sub_dir.css")) || @file_exists(realpath($path . $sub_dir . "/default.css")) )
+				{
+					$themes[] = array('template' => $path . $sub_dir . '/', 'template_name' => $sub_dir, 'style_id' => $style_id++);	
+				}
+			}
+		}
+		closedir($hndl);		
+		
+		return $themes;
+	}	
 	/**
 	 * $config[$key] will be set to $info.
 	 *
