@@ -1,26 +1,26 @@
-<a name="top"></a>
-<a class="plain_link" href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a>
-<table id="pagetable" class="table3 responsive-show nav-main" width="100%" cellspacing="0" cellpadding="5" border="0" align="center">
-<thead>	
+<fieldset class="nav"><a title="top" class="plain_link" href="irc://irc.undernet.org/bibliuta">#Bibliuta @ Undernet</a></fieldset>
+<table id="pagetable" class="table3 responsive-show nav-main" width="100%" cellspacing="0" cellpadding="5" border="0">
+	
+<tr>
+	<td class="bodyline">
+	<table id="pageheader" class="mx_body_table autoindex_table" width="100%" cellspacing="0" cellpadding="5" border="0">
+	
 	<tr>
-		<td class="bodyline">
-			<table id="pageheader" class="mx_body_table autoindex_table" width="100%" cellspacing="0" cellpadding="5" border="0">
-				<tr>
-					<td class="row2 autoindex_td_right responsive-hide" width="25%" align="left" valign="top">
-					<a alt="{words:index of} ../" href="../"><img src="{config:template}images/logo_mxBB.gif" border="0" alt="beitdina.net" vspace="1" width="88" height="31" /></a>
-					</td>
-					<td class="row2 autoindex_td_right responsive-show" width="50%" align="center" valign="middle">
-					<img align="absmiddle" src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;
+		<td class="row2 autoindex_td_right responsive-hide" align="left" valign="top">
+					<a title="{words:index of} ../" href="../"><img src="{config:template}images/logo_mxBB.gif" alt="beitdina.net" width="88" height="31" /></a>
+		</td>
+		<td class="row2 autoindex_td_right responsive-show" align="center" valign="middle">
+					<img src="{config:template}images/page_icons/nav_info.gif" alt="" width="41" height="41" />&nbsp;
 					<span class="pagetitle">{words:index of} {info:dir} {words:folder}</span>
 					<hr class="hrtop" />
-					</td>
-					<td class="row2 autoindex_td_right responsive-hide" width="25%" align="right" valign="top">
+		</td>
+		<td class="row2 autoindex_td_right responsive-hide" align="right" valign="top">
 					<span class="sitetitle"><b>beitdina.net</b></span><br />
-					<span class="sitetitle_desc">{words:folder}&nbsp;& {words:uploaded files}.</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="row1 autoindex_td_right responsive-show" align="center" valign="middle" colspan="3">
+					<span class="sitetitle_desc">{words:folder} &nbsp; {words:uploaded files}.</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="row1 autoindex_td_right responsive-show" align="center" valign="middle" colspan="3">
 					<!--
 						<table cellspacing="6" cellpadding="2" border="0">
 							<tr>
@@ -59,55 +59,57 @@
 							</tr>
 						</table>
 						-->
-					<table id="nav-main" class="tablebg stat-block online-list responsive-show nav-main linklist" role="menubar" style="background-color: rgb(255, 204, 255); width: 90%; page-break-before: always;" border="1" bordercolor="#314004" cellspacing="6" cellpadding="2" border="0" rules="groups">
-						<tbody class="table2 responsive-show navbar-top" role="navigation">
-						<tr>
-							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
-									<a href="../leningrad/" role="menuitem">
-										<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:LENINGRAD}</span>
+			<table id="nav-main" class="tablebg stat-block online-list responsive-show nav-main linklist" style="background-color: #ffcc99; width: 90%; page-break-before: always;" border="1" cellspacing="6" cellpadding="2" rules="groups">
+						
+				<tr id="quick-links" class="table2 responsive-show navbar-top">
+							<td id="leningrad" class="quick-links responsive-hide responsive-menu" align="left" valign="top">
+									<a href="../leningrad/" style="role=menuitem">
+										<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:LENINGRAD}</span>
 									</a>
 							</td>
-							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+							<td id="aleppo" class="quick-links responsive-show responsive-menu" align="left" valign="top">
 											
-									<a href="../aleppo/" role="menuitem">
-										<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:ALEPPO}</span>
+									<a href="../aleppo/" style="role=menuitem">
+										<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:ALEPPO}</span>
 									</a>
 							</td>
-							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+							<td id="peshitta" class="quick-links responsive-show responsive-menu" align="left" valign="top">
 										
-										<a href="../peshitta/" rel=" co-worker neighbor" role="menuitem">
-											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:PESHITTA}</span>
+										<a href="../peshitta/" rel="co-worker neighbor" style="role=menuitem">
+											<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:PESHITTA}</span>
 										</a>
 							</td>
-							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+							<td id="khabouris" class="quick-links responsive-show responsive-menu" align="left" valign="top">
 										
-										<a href="../khabouris/" rel=" co-worker neighbor" role="menuitem">
-											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:KHABOURIS}</span>
+										<a href="../khabouris/" rel="co-worker neighbor" style="role=menuitem">
+											<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:KHABOURIS}</span>
 										</a>
 							</td>
-							<td id="quick-links" align="left" class="quick-links responsive-hide responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
+							<td id="sianiticus" class="quick-links responsive-hide responsive-menu" align="left" valign="top">
 												
-										<a href="../sianiticus/" rel=" co-worker neighbor" role="menuitem">
-											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:SINAITICUS}</span>
+										<a href="../sianiticus/" rel="co-worker neighbor" style="role=menuitem">
+											<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:SINAITICUS}</span>
 										</a>
 							</td>
-							<td id="quick-links" align="left" class="quick-links responsive-show responsive-menu" data-skip-responsive="true" role="menuitem" bgcolor="#ffcc99" height="15" align="center" valign="top">
-										<a href="../qumran/" role="menuitem">
-											<i class="icon fa-file-o fa-fw icon-gray" align="center"></i><span>{words:QUMRAN}</span>
+							<td id="qumran" class="quick-links responsive-show responsive-menu" align="left" valign="top">
+										<a href="../qumran/" style="role=menuitem">
+											<i style="background-color: rgb(255, 204, 255);" class="icon fa-file-o fa-fw icon-gray"></i><span>{words:QUMRAN}</span>
 										</a>
 							</td>
-						</tr>
-						</tbody>
-				</table>
+				</tr>
+			</table>
 			
-			<table id="pageheader" class="tablebg2 autoindex_table" width="100%" cellspacing="0" cellpadding="2" border="0" align="center">
+			<table id="search-box" class="tablebg2 search-box search_bar autoindex_table" width="100%" cellspacing="0" cellpadding="2" border="0">
 				<tr>
-					<td valign="top" align="left" width="5" height="5" >&nbsp;</td>
-					<td valign="top" align="right" width="100%" height="5" >
+					<td class="search-box search_bar" valign="top" align="left">&nbsp;</td>
+					<td class="search-box search_bar" valign="top" align="right">
+						
 						<form name="search_block" method="post" action="http://beitdina.net/forum/search.php" onsubmit="return checkSearch()">
-							<a class="plain_link" href="{base_dir}/forum/search.php">
-							<i class="icon fa-search fa-fw" aria-hidden="true"></i>
-							<span class="gen">Căutare</span></a>:
+							<fieldset class="nav">
+							<a class="plain_link" href="{config:base_dir}/forum/search.php">
+							<i class="icon fa-search fa-fw" style="aria-hidden=true"></i>
+							<span class="gen">Search:</span>
+							</a>
 							<input class="post" type="text" name="search_keywords" size="15" value="...?"
 								onfocus="if(this.value=='...?'){this.value='';}"
 								onblur="if(this.value==''){this.value='...?';}" />
@@ -119,47 +121,56 @@
 							<input type="hidden" name="search_fields" value="all" />
 							<input type="hidden" name="show_results" value="topics" />
 							<input class="mainoption" type="submit" value="Search" />
-							
+							</fieldset>							
 						</form>
+						
 					</td>
-					<td valign="top" align="left" width="5" height="5" >&nbsp;</td>
+					<td class="search-box search_bar" valign="top" align="left">&nbsp;</td>
 				</tr>
 			</table>
+			
 		</td>
 	</tr>
-</thead>
-<tbody class="mx_header_table" width="100%" cellspacing="0" cellpadding="5" border="0">
-	<tr>
-		<td class="bodyline">
-		<table class="mx_body_table tablebg2" cellspacing="10" cellpadding="0" width="100%">
+	</table>			
+	</td>
+</tr>	
+
+<tr>
+	<td class="bodyline">
+	<table class="autoindex_table table2" cellspacing="1" cellpadding="0" width="100%">
 		<tr>
-		<th class="autoindex_th">{words:index of} {info:path_nav}</th> 
-		<table class="tablebg2 autoindex_table" cellspacing="1" width="100%">
-		<thead>
+			<th class="autoindex_th" colspan="3">
+			{words:index of} {info:path_nav}
+			</th>
+			<th class="autoindex_th responsive-hide" colspan="2">
+			&nbsp;
+			</th>		
+		</tr>
 		<tr>
-		  <th class="autoindex_th">
-		   <a class="plain_link" href="{sort:filename}" title="{words:sort by} {words:file}">{words:file}</a>
+		  <th class="row2 table1 topicdetails autoindex_td_right">
+		   <a class="plain_link" href="{sort:filename}" title="{words:sort by} {words:file}">
+		   {words:file}
+		   </a>
 		  </th>
 		  
 		  {if:download_count}
-		  <th class="row2 table1 topicdetails autoindex_td_right  responsive-hide">
+		  <th class="row2 table1 topicdetails autoindex_td_right responsive-hide">
 		   <a class="plain_link" href="{sort:downloads}" title="{words:sort by} {words:downloads}">{words:downloads}</a>
 		  </th>
 		  {end if:download_count}
 		  
-		  <th class="row2 table1 topicdetails autoindex_td_right  responsive-hide">
+		  <th class="row2 table1 topicdetails autoindex_td_right responsive-hide">
 		   <a class="plain_link" href="{sort:size}" title="{words:sort by} {words:size}">{words:size}</a>
 		  </th>
 		  
-		  <th class="row2 table1 topicdetails autoindex_td_right responsive-show">
+		  <th class="row2 table1 topicdetails autoindex_td_right">
 		   <a class="plain_link" href="{sort:m_time}" title="{words:sort by} {words:date}">{words:date}</a>
 		  </th>
 		  
 		  {if:description_file}
-		  <th class="autoindex_th">
+		  <th class="row2 table1 topicdetails autoindex_td_right">
 		   <a class="plain_link" href="{sort:description}" title="{words:sort by} {words:description}">{words:description}</a>
 		  </th>
 		  {end if:description_file}
 		  
 		 </tr>
-		 </thead>
