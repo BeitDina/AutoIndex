@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html dir="ltr xmlns="http://www.w3.org/1999/xhtml" xml:lang="{config:language}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{config:language}" lang="{config:language}">
 <head>
-<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
 
 <meta name="title"  content="Beit Dina Directory Index" />
@@ -12,7 +12,7 @@
 <meta name="description" lang="{config:language}" content="This is the description search engines show when listing your site." />
 <meta name="category"    content="general" />
 <meta name="robots"      content="index,follow" />
-<meta name="revisit-after" content="7 days" >
+<meta name="revisit-after" content="7 days" />
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -241,7 +241,7 @@ input.liteoption {
 -->
 </style>
 
-<script language="javascript" type="text/javascript"><!--
+<script type="text/javascript"><!--
 
 function newImage(arg) {
 	if (document.images) {
@@ -294,10 +294,10 @@ function full_img(url) {
 }
 
 // --></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout_main.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}dynifs.js"></script>
+<script type="text/javascript" src="{config:template}rollout.js"></script>
+<script type="text/javascript" src="{config:template}rollout_main.js"></script>
+<script type="text/javascript" src="{config:template}dynifs.js"></script>
 
 </head>
 
-<body class="autoindex_body" bgcolor="#7EB5E8" text="#000000" link="#072978" vlink="#072978">
+<body class="autoindex_body">
