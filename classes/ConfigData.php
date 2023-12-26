@@ -287,10 +287,21 @@ class ConfigData implements Iterator
 	 */
 	public function __get($name)
 	{
+		global $request;
+		
+		if ($request->is_set_get('style') && $name == 'template')
+		{
+			$style = $request->is_set('style') ? $request->variable('style', '') : 0;				
+			$themes = $this->get_all_styles($this->config['template_path']);	
+			$template_path = $request->is_set('style') ? $themes[$style]['template'] : $this->config['template'];			
+			return $template_path;	
+		}	
+		
 		if (isset($this -> config[$name]))
 		{
 			return $this -> config[$name];
 		}
+		
 		throw new ExceptionFatal('Setting <em>' . Url::html_output($name) . '</em> is missing in file <em>' . Url::html_output($this -> filename) . '</em>.');
 	}
 }
