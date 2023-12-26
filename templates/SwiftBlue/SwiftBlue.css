@@ -1,6 +1,6 @@
 /*  phpBB3 Style Sheet
     --------------------------------------------------------------
-	Style name:		SwiftBlue
+	Style name:		SwiftBlue BeitDina.NET
 	Based on style:	SwiftBlue Theme for phpBB2 by BitByBit, 	http://www.bitbybit.f2s.com
 	Original author:	OryNider, using subsilver2 Theme as a base.	
 	This is an alternative subsilver2 style with purple-blue colors.
@@ -93,7 +93,7 @@ body {
 	border: 0;
 }
 
-.forumrules {
+.rules {
 	background-color: #F9CC79;
 	border-width: 1px;
 	border-style: solid;
@@ -101,10 +101,10 @@ body {
 	padding: 4px;
 	font-weight: normal;
 	font-size: 1.1em;
-	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
 }
 
-.forumrules h3 {
+.rules h3 {
 	color: red;
 }
 
@@ -121,14 +121,14 @@ body {
  --------------------- */
 h1 {
 	color: black;
-	font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
 	font-weight: bold;
 	font-size: 1.8em;
 	text-decoration: none;
 }
 
 h2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
 	font-weight: bold;
 	font-size: 1.5em;
 	text-decoration: none;
@@ -138,7 +138,7 @@ h2 {
 h3 {
 	font-size: 1.3em;
 	font-weight: bold;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
 	line-height: 120%;
 }
 
@@ -251,7 +251,7 @@ p.topicdetails {
 .postbody { 
 	font-size : 15px;
 	line-height: 14px;	
-	font-family: "Trebuchet MS", "Lucida Grande", Helvetica, Arial, Times, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
 }
 
 .postbody li, ol, ul {
@@ -547,6 +547,147 @@ a.header-avatar span:after {
 	padding-left: 6px;
 	padding-top: 2px;
 	vertical-align: top;
+}
+
+/**
+ * The default CSS stylesheet used for all templates.
+ * @package AutoIndex
+ * @link http://autoindex.sourceforge.net
+ */
+
+/* Body */
+.autoindex_body, html
+{
+	background-color: #E3F0FB;
+	scrollbar-face-color: #BADBF5;
+	scrollbar-highlight-color: #E3F0FB;
+	scrollbar-shadow-color: #BADBF5;
+	scrollbar-3dlight-color: #80BBEC;
+	scrollbar-arrow-color:  #072978;
+	scrollbar-track-color: #DAECFA;
+	scrollbar-darkshadow-color: #4B8DF1;
+	padding-right: 0px; 
+	padding-left: 0px; 
+	padding-bottom: 0px; 
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;  
+	padding-top: 0px;
+	font-size: 89.5%;
+}
+/* Images */
+.autoindex_body img
+{
+	border: none;
+}
+/* Tables */
+.autoindex_table.table2 {
+	border: none;
+	border-spacing: 0px;
+}
+
+.autoindex_table.table2 {
+	padding: 2px;
+}
+
+.autoindex_table.table2 thead th {
+	font-weight: normal;
+	text-transform: uppercase;
+	line-height: 1.3em;
+	font-size: 1em;
+	padding: 0 0 4px 3px;
+}
+
+.light_row
+{
+	background-color: #F2F6FC;
+	border: 0.1em solid #E3E3F04A;
+	padding: 2px;
+}
+
+.dark_row
+{
+	background-color: #BADBF5;
+	border: 0.1em solid #E3E3F04A;
+	padding: 2px;
+}
+
+.autoindex_td
+{
+	background-color: #E3F0FB;
+	/* font-family: verdana, lucidia, sans-serif; */
+	border: 0.1em solid #FFE3F04A;
+	padding: 2px;
+}
+
+.autoindex_td_left
+{
+	/* font-family: verdana, lucidia, sans-serif; */
+	border: 0.1em solid #E3E3F04A;
+	padding: 2px;
+	text-align: left;
+}
+
+.autoindex_td_right
+{
+	/* font-family: verdana, lucidia, sans-serif; */
+	border: 0.1em solid #E3E3F04A;
+	padding: 2px;
+	text-align: right;
+}
+
+.autoindex_th
+{
+	font-weight: bold;
+	background-color: #80BBEC;
+	border: 0.28em solid #FF01033;
+	padding: 2px;
+}
+
+/* Links */
+.plain_link
+{
+	background-color: #FFE3F052;
+}
+
+.autoindex_a:visited, .autoindex_a:active
+{
+	text-decoration: none;
+	background-color: #FFFFE324;
+}
+.autoindex_a:link
+{
+	background-color: #FFE3F04A;
+}
+.autoindex_a:hover
+{
+	text-decoration: overline underline;
+}
+
+/* Buttons */
+.button
+{	
+	color: #707070;
+	background-color : #F0F2F485;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+	cursor: pointer;
+	border-color: #1C0046;
+	padding: 3px 10px 3px 10px;
+}
+
+/* Misc. */
+.paragraph
+{
+	background: #006F2F6FC;
+}
+.autoindex_hr
+{
+	background-color: #006E3F020;
+	width: 75%;
+}
+.autoindex_small
+{
+	font-size: 9px;
 }
 
 /* -------------------------------------------------------------- /*
@@ -1000,7 +1141,7 @@ li.notification-reported strong, li.notification-disapproved strong {
 /* Tables
  ------------ */
 /* General font families for common tags */
-font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+font,th,td,p {	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif; }
 a:link,a:active,a:visited { color : #006699; }
 a:hover		{ text-decoration: underline; color : #DD6900; }
 hr	{ height: 0px; border: solid #80BBEC 0px; border-top-width: 1px;}
@@ -1158,13 +1299,13 @@ a:hover {
 a.forumlink {
 	color: #069;
 	font-weight: bold;
-	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-size: 13px;
 }
 
 a.topictitle {
 	margin: 1px 0;
-	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-weight: bold;
 	font-size: 13px;
 }
@@ -1176,7 +1317,7 @@ a.topictitle:visited {
 
 th a,
 th a:visited {
-	color: #FFA34F !important;
+	color: #EC9443CF !important;
 	text-decoration: none;
 }
 
@@ -1195,7 +1336,7 @@ form {
 
 input {
 	color: #333333;
-	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-size: 12px;
 	font-weight: normal;
 	padding: 1px;
@@ -1206,7 +1347,7 @@ input {
 textarea {
 	background-color: #FAFAFA;
 	color: #333333;
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-size: 14px; 
 	line-height: 15px;
 	font-weight: normal;
@@ -1217,7 +1358,7 @@ textarea {
 select {
 	color: #333333;
 	background-color: #FAFAFA;
-	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-size: 1.1em;
 	font-weight: normal;
 	border: 1px solid #A9B8C2;
@@ -1251,7 +1392,7 @@ input.radio {
 	color: #000000;
 	font-weight: normal;	
 	font-size: 0.8em;
-	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	background-color: #DAECFA;
 	border: 1px solid #666666;
 }
@@ -1315,7 +1456,7 @@ input.radio {
 	font-weight: normal;
 	font-size: 1em;
 	line-height: 1.4em;
-	font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	background-color: #FAFAFA;
 	color: #4B5C77;
 }
@@ -1332,7 +1473,7 @@ input.radio {
 	border-color: #A9B8C2;
 	color: #333333;
 	background-color: #A9B8C2;
-	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-family: Verdana, Geneva, 'Lucida Grande', Arial, Helvetica, sans-serif, droid-serif;  
 	font-size: 0.8em;
 }
 
@@ -1443,7 +1584,6 @@ pre {
 /* Form elements */
 input,textarea, select {
 	color : #000000;
-	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
 	border-color : #000000;
 }
 
@@ -1456,9 +1596,8 @@ input { text-indent : 2px; }
 
 /* The buttons used for bbCode styling in message post */
 input.button {
-	background-color : #DAECFA;
-	color : #000000;
-	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-color : #F0F2F485;
+	color : #000000 !important;
 }
 
 /* The main submit button option */
@@ -1528,267 +1667,214 @@ a.imageset {
 	padding-top: 25px;
 }
 .imageset.forum_read {
-	background-image: url("./images/forum_read.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.forum_read_locked {
-	background-image: url("./images/forum_read_locked.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.forum_read_subforum {
-	background-image: url("./images/forum_read_subforum.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.forum_unread {
-	background-image: url("./images/forum_unread.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.forum_unread_locked {
-	background-image: url("./images/forum_unread_locked.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.forum_unread_subforum {
-	background-image: url("./images/forum_unread_subforum.gif");
 	padding-left: 46px;
 	padding-top: 25px;
 }
 .imageset.topic_moved {
-	background-image: url("./images/topic_moved.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read {
-	background-image: url("./images/topic_read.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read_mine {
-	background-image: url("./images/topic_read_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read_hot {
-	background-image: url("./images/topic_read_hot.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read_hot_mine {
-	background-image: url("./images/topic_read_hot_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read_locked {
-	background-image: url("./images/topic_read_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_read_locked_mine {
-	background-image: url("./images/topic_read_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread {
-	background-image: url("./images/topic_unread.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread_mine {
-	background-image: url("./images/topic_unread_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread_hot {
-	background-image: url("./images/topic_unread_hot.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread_hot_mine {
-	background-image: url("./images/topic_unread_hot_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread_locked {
-	background-image: url("./images/topic_unread_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.topic_unread_locked_mine {
-	background-image: url("./images/topic_unread_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_read {
-	background-image: url("./images/sticky_read.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_read_mine {
-	background-image: url("./images/sticky_read_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_read_locked {
-	background-image: url("./images/sticky_read_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_read_locked_mine {
-	background-image: url("./images/sticky_read_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_unread {
-	background-image: url("./images/sticky_unread.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_unread_mine {
-	background-image: url("./images/sticky_unread_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_unread_locked {
-	background-image: url("./images/sticky_unread_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.sticky_unread_locked_mine {
-	background-image: url("./images/sticky_unread_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_read {
-	background-image: url("./images/announce_read.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_read_mine {
-	background-image: url("./images/announce_read_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_read_locked {
-	background-image: url("./images/announce_read_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_read_locked_mine {
-	background-image: url("./images/announce_read_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_unread {
-	background-image: url("./images/announce_unread.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_unread_mine {
-	background-image: url("./images/announce_unread_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_unread_locked {
-	background-image: url("./images/announce_unread_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.announce_unread_locked_mine {
-	background-image: url("./images/announce_unread_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_read {
-	background-image: url("./images/global_read.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_read_mine {
-	background-image: url("./images/global_read_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_read_locked {
-	background-image: url("./images/global_read_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_read_locked_mine {
-	background-image: url("./images/global_read_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
-.imageset.global_unread {
-	background-image: url("./images/global_unread.gif");
+.imageset.global_unread {;
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_unread_mine {
-	background-image: url("./images/global_unread_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_unread_locked {
-	background-image: url("./images/global_unread_locked.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.global_unread_locked_mine {
-	background-image: url("./images/global_unread_locked_mine.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.pm_read {
-	background-image: url("./images/topic_read.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.pm_unread {
-	background-image: url("./images/topic_unread.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.icon_post_target {
-	background-image: url("./images/icon_post_target.gif");
 	padding-left: 12px;
 	padding-top: 9px;
 }
 .imageset.icon_post_target_unread {
-	background-image: url("./images/icon_post_target_unread.gif");
 	padding-left: 12px;
 	padding-top: 9px;
 }
 .imageset.icon_topic_attach {
-	background-image: url("./images/icon_topic_attach.gif");
 	padding-left: 14px;
 	padding-top: 18px;
 }
 .imageset.icon_topic_latest {
-	background-image: url("./images/icon_topic_latest.gif");
 	padding-left: 18px;
 	padding-top: 9px;
 }
 .imageset.icon_topic_newest {
-	background-image: url("./images/icon_topic_newest.gif");
 	padding-left: 18px;
 	padding-top: 9px;
 }
 .imageset.icon_topic_reported {
-	background-image: url("./images/icon_topic_reported.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.icon_topic_unapproved {
-	background-image: url("./images/icon_topic_unapproved.gif");
 	padding-left: 19px;
 	padding-top: 18px;
 }
 .imageset.icon_topic_deleted {
-	background-image: url("./images/icon_topic_deleted.gif");
 	padding-left: 14px;
 	padding-top: 14px;
 }
@@ -1796,117 +1882,94 @@ a.imageset {
 
 /* English images for fallback */
 .imageset.phpbb_aol-icon, .imageset.icon_contact_aim {
-	background-image: url("./en/icon_contact_aim.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_contact_email {
-	background-image: url("./en/icon_contact_email.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.phpbb_icq-icon, .imageset.icon_contact_icq {
-	background-image: url("./en/icon_contact_icq.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_contact_jabber {
-	background-image: url("./en/icon_contact_jabber.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.phpbb_wlm-icon, .imageset.icon_contact_msnm {
-	background-image: url("./en/icon_contact_msnm.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_contact_pm {
-	background-image: url("./en/icon_contact_pm.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.phpbb_yahoo-icon, .imageset.icon_contact_yahoo {
-	background-image: url("./en/icon_contact_yahoo.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.phpbb_website-icon, .imageset.icon_contact_www {
-	background-image: url("./en/icon_contact_www.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_post_delete {
-	background-image: url("./en/icon_post_delete.gif");
 	padding-left: 20px;
 	padding-top: 20px;
 }
 .imageset.icon_post_edit {
-	background-image: url("./en/icon_post_edit.gif");
 	padding-left: 90px;
 	padding-top: 20px;
 }
 .imageset.icon_post_info {
-	background-image: url("./en/icon_post_info.gif");
 	padding-left: 20px;
 	padding-top: 20px;
 }
 .imageset.icon_post_quote {
-	background-image: url("./en/icon_post_quote.gif");
 	padding-left: 90px;
 	padding-top: 20px;
 }
 .imageset.icon_post_report {
-	background-image: url("./en/icon_post_report.gif");
 	padding-left: 20px;
 	padding-top: 20px;
 }
 .imageset.icon_user_online {
-	background-image: url("./en/icon_user_online.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_user_offline {
-	background-image: url("./en/icon_user_offline.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_user_profile {
-	background-image: url("./en/icon_user_profile.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_user_search {
-	background-image: url("./en/icon_user_search.gif");
 	padding-left: 72px;
 	padding-top: 20px;
 }
 .imageset.icon_user_warn {
-	background-image: url("./en/icon_user_warn.gif");
 	padding-left: 20px;
 	padding-top: 20px;
 }
 .imageset.button_pm_new {
-	background-image: url("./en/button_pm_new.gif");
 	padding-left: 97px;
 	padding-top: 27px;
 }
 .imageset.button_pm_reply {
-	background-image: url("./en/button_pm_reply.gif");
 	padding-left: 90px;
 	padding-top: 20px;
 }
 .imageset.button_topic_locked {
-	background-image: url("./en/button_topic_locked.gif");
 	padding-left: 97px;
 	padding-top: 27px;
 }
 .imageset.button_topic_new {
-	background-image: url("./en/button_topic_new.gif");
 	padding-left: 97px;
 	padding-top: 27px;
 }
 .imageset.button_topic_reply {
-	background-image: url("./en/button_topic_reply.gif");
 	padding-left: 97px;
 	padding-top: 27px;
 }
