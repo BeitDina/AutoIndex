@@ -164,47 +164,39 @@ session_start();
  */
 function simple_display($text, $title = 'Error on Page', $notify = '', $return_index = "index.php") 
 {
-	return '<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<title>' . $title . '</title>
-<style type="text/css">
-/* Body */ .autoindex_body, html {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
-.html { font-size: 100%; height: 100%; margin-bottom: 1px; background-color: #E4EDF0; } 
-.body {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
-/* Images */ .autoindex_body img {	border: none; }
-/* Tables */ .autoindex_table.table2 { border: none; border-spacing: 0px; }
-.autoindex_table.table2 { padding: 2px; }
-.autoindex_table.table2 thead th { font-weight: normal; text-transform: uppercase; line-height: 1.3em; font-size: 1em; padding: 0 0 4px 3px; }
-.light_row { background-color: #F2F6FC; border: 0.1em solid #E3E3F04A; padding: 2px; }
-.dark_row { background-color: #BADBF5; border: 0.1em solid #E3E3F04A; padding: 2px; }
-.autoindex_td {	background-color: #E3F0FB; 	/* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #FFE3F04A; padding: 2px; }
-.autoindex_td_left { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: left; }
-.autoindex_td_right { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: right; }
-.autoindex_th {	font-weight: bold; background-color: #80BBEC; border: 0.28em solid #FF01033; padding: 2px; }
-/* Links */ .plain_link { background-color: #FFE3F052; }
-.autoindex_a:visited, .autoindex_a:active { text-decoration: none; background-color: #FFFFE324; }
-.autoindex_a:link {	background-color: #FFE3F04A; }
-.autoindex_a:hover { text-decoration: overline underline; }
-a:link, a:active, a:visited { color: #006688; text-decoration: none; } a:hover { color: #DD6900; text-decoration: underline; }
-#wrap { padding: 0 20px 15px 20px; min-width: 615px; } #page-header { text-align: right; height: 40px; } #page-footer { clear: both; font-size: 1em; text-align: center; }
-.panel { margin: 4px 0; background-color: #FFFFFF; border: solid 1px  #A9B8C2; } 
-#errorpage #page-header a { font-weight: bold; line-height: 6em; } #errorpage #content { padding: 10px; } #errorpage #content h1 { line-height: 1.2em; margin-bottom: 0; color: #DF075C; } 
-#errorpage #content div { margin-top: 20px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC; padding-bottom: 5px; color: #333333; font: bold 1.2em "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif; text-decoration: none; line-height: 120%; text-align: left; } \n
-/* Buttons */ .button {	color: #707070;	background-color : #F0F2F485; text-align: left;	vertical-align: middle;	font-weight: bold;	cursor: pointer;	border-color: #1C0046;	padding: 3px 10px 3px 10px; }
-</style>
-</head>
-<body>
-<p>' . $text . '</p>
-<!-- Powered by AutoIndex PHP Script (version ' . VERSION . ')
-Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
-http://autoindex.sourceforge.net/ -->
-
-</body></html>
-
-
-';
+	return '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+			<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><title>' . $title . '</title>
+			<style type="text/css">/* Body */ .autoindex_body, html {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
+			.html { font-size: 100%; height: 100%; margin-bottom: 1px; background-color: #E4EDF0; } 
+			.body {	background-color: #E3F0FB; scrollbar-face-color: #BADBF5; scrollbar-highlight-color: #E3F0FB; scrollbar-shadow-color: #BADBF5; scrollbar-3dlight-color: #80BBEC; scrollbar-arrow-color:  #072978; scrollbar-track-color: #DAECFA; scrollbar-darkshadow-color: #4B8DF1; padding-right: 0px; padding-left: 0px; padding-bottom: 0px; font-family: -apple-system, BlinkMacSystemFont, Roboto, "Lucida Grande", "Segoe UI", Arial, Helvetica, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; padding-top: 0px; font-size: 89.5%; }
+			/* Images */ .autoindex_body img {	border: none; }
+			/* Tables */ .autoindex_table.table2 { border: none; border-spacing: 0px; }
+			.autoindex_table.table2 { padding: 2px; }
+			.autoindex_table.table2 thead th { font-weight: normal; text-transform: uppercase; line-height: 1.3em; font-size: 1em; padding: 0 0 4px 3px; }
+			.light_row { background-color: #F2F6FC; border: 0.1em solid #E3E3F04A; padding: 2px; }
+			.dark_row { background-color: #BADBF5; border: 0.1em solid #E3E3F04A; padding: 2px; }
+			.autoindex_td {	background-color: #E3F0FB; 	/* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #FFE3F04A; padding: 2px; }
+			.autoindex_td_left { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: left; }
+			.autoindex_td_right { /* font-family: verdana, lucidia, sans-serif; */ border: 0.1em solid #E3E3F04A; padding: 2px; text-align: right; }
+			.autoindex_th {	font-weight: bold; background-color: #80BBEC; border: 0.28em solid #FF01033; padding: 2px; }
+			/* Links */ .plain_link { background-color: #FFE3F052; }
+			.autoindex_a:visited, .autoindex_a:active { text-decoration: none; background-color: #FFFFE324; }
+			.autoindex_a:link {	background-color: #FFE3F04A; }
+			.autoindex_a:hover { text-decoration: overline underline; }
+			a:link, a:active, a:visited { color: #006688; text-decoration: none; } a:hover { color: #DD6900; text-decoration: underline; }
+			#wrap { padding: 0 20px 15px 20px; min-width: 615px; } #page-header { text-align: right; height: 40px; } #page-footer { clear: both; font-size: 1em; text-align: center; }
+			.panel { margin: 4px 0; background-color: #FFFFFF; border: solid 1px  #A9B8C2; } 
+			#errorpage #page-header a { font-weight: bold; line-height: 6em; } #errorpage #content { padding: 10px; } #errorpage #content h1 { line-height: 1.2em; margin-bottom: 0; color: #DF075C; } 
+			#errorpage #content div { margin-top: 20px; margin-bottom: 5px; border-bottom: 1px solid #CCCCCC; padding-bottom: 5px; color: #333333; font: bold 1.2em "Lucida Grande", "Segoe UI", Arial, Helvetica, sans-serif; text-decoration: none; line-height: 120%; text-align: left; } \n
+			/* Buttons */ .button {	color: #707070;	background-color : #F0F2F485; text-align: left;	vertical-align: middle;	font-weight: bold;	cursor: pointer;	border-color: #1C0046;	padding: 3px 10px 3px 10px; }
+			</style></head>
+			<body><p>' . $text . '</p>
+			<!-- Powered by AutoIndex PHP Script (version ' . VERSION . ')
+			Copyright (C) 2002-2007 Justin Hagstrom, (C) 2019-2023 FlorinCB
+			http://autoindex.sourceforge.net/ -->
+			</body>
+			</html>
+	';
 }
 
 /**
@@ -669,7 +661,7 @@ try
 	$log->add_entry($search_log);
 	$str = $dir_list->__toString();
 	echo new Display($str);
-	echo $mobile_device_detect->detect()->getInfo();
+	//echo $mobile_device_detect->detect()->getInfo();
 }
 catch (ExceptionDisplay $e)
 {
