@@ -2,13 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{config:language}">
 <head>
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	
 	<meta name="title"       content="Directory Index" />
-	<meta name="author"      content="BeitDina Biblical Archaeology and Translation Institute @ beitdina.net" />
-	<meta name="copyright"   content="default template © Beit Dina 2019 based on subSilver style © 2005 phpBB Group." />
-	<meta name="keywords"    content="Beit, Dina, Bible, Arheology" />
+	<meta name="author"      content="Justin Hagstrom <JustinHagstrom@yahoo.com>" />
+	<meta name="copyright"   content="Justin Hagstrom <JustinHagstrom@yahoo.com>" />
+	<meta name="keywords"    content="Directory, Index, PHP, Apache" />
 	<meta name="description" lang="{config:language}" content="Directory Index. This is the description search engines show when listing your site." />
 	<meta name="category"    content="general" />
 	<meta name="robots"      content="index,follow" />
@@ -28,7 +28,7 @@
 	<link href="{config:assets_path}css/font-awesome.min.css" rel="stylesheet" />
 	<link href="{config:assets_path}css/ionicons.min.css" rel="stylesheet" />	
 	
-	<title>{words:index of} {info:dir} github.com/BeitDina/AutoIndex/</title>	
+	<title>{words:index of} {info:dir}</title>	
 
 	<script language="javascript" type="text/javascript"><!--
 
@@ -67,9 +67,9 @@ function full_img(url) {
 	return;
 }
 // --></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}rollout_main.js"></script>
-<script language="javascript" type="text/javascript" src="{config:template}dynifs.js"></script>
+<script type="text/javascript" src="{config:template}rollout.js"></script>
+<script type="text/javascript" src="{config:template}rollout_main.js"></script>
+<script type="text/javascript" src="{config:template}dynifs.js"></script>
 </head>
 
 <body class="autoindex_body">
