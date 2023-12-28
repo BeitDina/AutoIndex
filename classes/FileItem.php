@@ -108,7 +108,43 @@ class FileItem extends Item
 			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"' 
 			. ' >' . $words->__get('view') . ' ' . $words->__get('file') . '</a>';
 		}
-		elseif (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('thm', 'thm')))
+		
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'SVG')))
+		{
+			$svgcontent = false;		
+			$svgcontent = file_get_contents(Url::translate_uri($this->parent_dir . $filename));
+			$width = $height = '32';
+			//<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="context-fill">
+			$contentsvg = explode('<svg', $svgcontent);
+			//xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+			$content = explode('=', $contentsvg[1]);
+			//[0] => xmlns [1] => "http://www.w3.org/2000/svg" width [2] => "32" height [3] => "32" viewBox [4] => "0 0 32 32">			
+			if(preg_match('/<svg\s[^>]*width=\"(.*)\"\/>/isU', '<svg '.$contentsvg[1], $width))
+			{
+				$width = explode('" ', $content[2]);
+				$width = !empty($width[0]) ? str_replace('"', '', $width[0]) : '32';
+
+			}
+			$svgcontent = ($width > '400') ? str_replace($width, $width/1.1, $svgcontent) : $svgcontent;			
+			$svgcontent = ($width < '24') ? str_replace($width, $width*1.5*2, $svgcontent) : $svgcontent;			
+			$svgcontent = ('edit.svg' === basename($filename)) ? str_replace($width, '200', $svgcontent) : $svgcontent;			
+			if(preg_match_all('/<svg\s[^>]*height=\"(.*)\"\/>/isU', '<svg '.$contentsvg[1], $height))
+			{
+				$height = explode('" ', $content[3]);
+				$height = !empty($height[0]) ? str_replace('"', '', $height[0]) : '32';
+			}
+			$svgcontent = ($width > '400') ? str_replace($height, $height/1.1, $svgcontent) : $svgcontent;			
+			$svgcontent = ($width < '24') ? str_replace($height, $height*1.5*2, $svgcontent) : $svgcontent;			
+			$svgcontent = ('<edit.svg>' === basename($filename)) ? str_replace($height, '200', $svgcontent) : $svgcontent;			
+			if(preg_match_all('/<svg\s[^>]*viewBox=\"(.*)\"\/>/isU', '<svg '.$contentsvg[1], $viewBox))
+			{
+				$viewBox = explode('" ', $content[4]);
+				$viewBox = str_replace('"', '', $viewBox[0]);
+			}			
+			$this->thumb_link = '<a title="'.trim(basename($filename)).'" href="'.Url::html_output($this->parent_dir . $filename).'">'.$svgcontent.'</a>';
+		}		
+		
+		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('thm', 'thm')))
 		{
 			$this->thumb_link = ' <img src="' . Url::html_output($request->server('PHP_SELF'))
 			. '?thm='. Url::translate_uri($this->parent_dir . $filename) . '"' 
@@ -237,6 +273,7 @@ class FileItem extends Item
 				
 			}
 		}
+		/*
 		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
 		{
 			$icon_svg = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'svg.png') : Url::translate_uri($this->parent_dir . $filename);
@@ -245,13 +282,8 @@ class FileItem extends Item
 			. '?thumbnail='. Url::translate_uri($icon_svg) . '"' 
 			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
 			. ' />';
-			//. ' <img src="' . Url::html_output($request->server('PHP_SELF'))
-			//. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '" srcset="' . Url::html_output($request->server('PHP_SELF'))
-			//. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '"'  
-			//. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
-			//. $heightwidth . ' />';
 		}
-		
+		*/
 		$size = $this->size->__get('bytes');
 		if (MD5_SHOW && $size > 0 && $size / 1048576 <= $config->__get('md5_show'))
 		{
