@@ -206,10 +206,10 @@ function simple_display($text, $title = 'Error on Page', $notify = '', $return_i
  * A file with the classname followed by .php is included to load the class.
  * The class should start with an upper-case letter with each new word also in
  * upper-case. The filename must match the class name (including case).
- *
+ * spl_autoload_register($class)
  * @param string $class The name of the undefined class
  */
-function __autoload($class)
+function AutoLoad($class)
 {
 	if ($class != 'self')
 	{
@@ -221,6 +221,35 @@ function __autoload($class)
 		}
 	}
 }
+/**
+ * (PHP 5 >= 5.1.0, PHP 7, PHP 8)
+ *
+ * A file with the classname followed by .php is included to load the class.
+ * The class should start with an upper-case letter with each new word also in
+ * upper-case. The filename must match the class name (including case).
+ * spl_autoload_register($class)
+ * @param string $class The name of the undefined class
+ */
+if (function_exists('spl_autoload_register') === true)
+{
+	spl_autoload_register('AutoLoad');
+}
+/*
+else
+{	
+	function __autoload($class)
+	{
+		if ($class != 'self')
+		{
+			$file = PATH_TO_CLASSES . $class . '.php';
+			if (!include_once($file))
+			{
+				die(simple_display('Error including file <em>' . htmlentities($file) . '</em> - cannot load class.'));
+			}
+		}
+	}
+}
+*/
 
 /*
 * Instantiate the mx_request_vars class
@@ -348,7 +377,7 @@ try
 			{
 				continue;
 			}
-			if ($b_list[$i]{0} === ':')
+			if ($b_list[$i][0] === ':')
 			{
 				$only_these_ips[] = substr($b_list[$i], 1);
 			}
@@ -386,7 +415,7 @@ try
 			{
 				continue;
 			}
-			if ($hidden_list[$i]{0} === ':')
+			if ($hidden_list[$i][0]=== ':')
 			{
 				$show_only_these_files[] = substr($hidden_list[$i], 1);
 			}
