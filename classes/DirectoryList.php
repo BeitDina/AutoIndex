@@ -63,7 +63,8 @@ class DirectoryList implements Iterator
 	
 	/**
 	 * @return string The element $i currently points to in the array
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function current()
 	{
 		if ($this -> i < count($this -> contents))
@@ -78,7 +79,8 @@ class DirectoryList implements Iterator
 	 * at that new position.
 	 *
 	 * @return string The current position of the pointer in the array
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function next()
 	{
 		$this -> i++;
@@ -87,7 +89,8 @@ class DirectoryList implements Iterator
 	
 	/**
 	 * Sets the internal array pointer to 0
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function rewind()
 	{
 		$this -> i = 0;
@@ -95,7 +98,8 @@ class DirectoryList implements Iterator
 	
 	/**
 	 * @return bool True if $i is a valid array index
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function valid()
 	{
 		return ($this -> i < count($this -> contents));
@@ -103,7 +107,8 @@ class DirectoryList implements Iterator
 	
 	/**
 	 * @return int Returns $i, the key of the array
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function key()
 	{
 		return $this -> i;
@@ -252,5 +257,4 @@ class DirectoryList implements Iterator
 		$this -> i = 0;
 	}
 }
-
 ?>
