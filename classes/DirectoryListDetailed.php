@@ -143,7 +143,7 @@ class DirectoryListDetailed extends DirectoryList
 	 */
 	protected static function sort_list(&$list)
 	{
-		usort($list, array('self', 'callback_sort'));
+		usort($list, array(self::class, 'callback_sort'));
 	}
 	
 	/**
