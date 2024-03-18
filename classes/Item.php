@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package AutoIndex
  *
@@ -42,37 +41,38 @@ abstract class Item
 {
 	/**
 	 * @var string
-	 */
+	*/
 	protected $filename;
 	
 	/**
 	 * @var Size
-	 */
+	*/
 	protected $size;
 	
 	/**
 	 * @var int Last modified time
 	 */
 	protected $m_time;
+	protected $last_write_time;
 	
 	/**
 	 * @var int Last accessed time
-	 */
+	*/
 	protected $a_time;
 	
 	/**
 	 * @var int
-	 */
+	*/
 	protected $downloads;
 	
 	/**
 	 * @var string
-	 */
+	*/
 	protected $description;
 	
 	/**
 	 * @var string The HTML text of the link to the type icon
-	 */
+	*/
 	protected $icon;
 	
 	/**
@@ -2805,5 +2805,4 @@ abstract class Item
 	 */
 	abstract public function file_ext();
 }
-
 ?>
