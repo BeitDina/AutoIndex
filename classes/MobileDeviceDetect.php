@@ -36,6 +36,7 @@ class MobileDeviceDetect
 	protected $cache;
 	protected $words;
 	protected $request;
+	protected $language;
 	
     private $_user_agent;
     private $_name;
@@ -46,15 +47,15 @@ class MobileDeviceDetect
 	 * Load sessions
 	 * @access public
 	 *
-	 */
+	*/
 	function __construct($ua = '')
 	{
 		global $cache;
 		global $request, $words;
 		
-		$this->cache	= $cache;
-		$this->request	= $request;
-		$this->language	= $words;
+		$this->cache = $cache;
+		$this->request = $request;
+		$this->language = $words;
 
         if(empty($ua)) 
 		{
@@ -607,9 +608,8 @@ class MobileDeviceDetect
 		"<strong> - </strong> {$this->getVersion()}" .
 		//"<strong>Browser User Agent String:</strong> {$this->getUserAgent()}<br/>\n" .
 		" :: <strong>from OS:</strong> {$this->getPlatform()}" .
-		"<strong>-</strong>{$mobile_device}, on a server with PHP ". PHP_VERSION ." & OS ". PHP_OS;
+		"<strong>-</strong>{$mobile_device}, on a server with PHP ". PHP_VERSION ." &amp; OS ". PHP_OS;
 	}
 }
-
 //end of class
 ?>
