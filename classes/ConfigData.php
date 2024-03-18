@@ -42,26 +42,27 @@ class ConfigData implements Iterator
 {
 	/**
 	 * @var array A list of all the settings
-	 */
+	*/
 	private $config;
 	
 	/**
 	 * @var string The name of the file to read the settings from
-	 */
+	*/
 	private $filename;
 	
 	//begin implementation of Iterator
 	/**
 	 * @var bool
-	 */
+	*/
 	private $valid;
 	
 	/**
 	 * @return string
-	 */
+	*/
+    #[\ReturnTypeWillChange] 
 	public function current()
 	{
-		return current($this -> config);
+		return current($this->config);
 	}
 	
 	/**
@@ -69,9 +70,10 @@ class ConfigData implements Iterator
 	 *
 	 * @return string
 	 */
+	 #[\ReturnTypeWillChange] 
 	public function next()
 	{
-		$t = next($this -> config);
+		$t = next($this->config);
 		if ($t === false)
 		{
 			$this -> valid = false;
@@ -81,26 +83,29 @@ class ConfigData implements Iterator
 	
 	/**
 	 * Sets the internal array pointer to the beginning.
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function rewind()
 	{
-		reset($this -> config);
+		reset($this->config);
 	}
 	
 	/**
 	 * @return bool
-	 */
+	*/
+	#[\ReturnTypeWillChange] 
 	public function valid()
 	{
-		return $this -> valid;
+		return $this->valid;
 	}
 	
 	/**
 	 * @return string
-	 */
+	*/
+	#[\ReturnTypeWillChange]
 	public function key()
 	{
-		return key($this -> config);
+		return key($this->config);
 	}
 	//end implementation of Iterator
 	
@@ -146,7 +151,7 @@ class ConfigData implements Iterator
 			{
 				throw new ExceptionFatal('Error in <em>' . Url::html_output($file) . '</em> on line ' . ($i + 1) . '.<br />' . Url::html_output($parts[0]) . ' is already defined.');
 			}
-			$this -> config[$parts[0]] = $parts[1];
+			$this->config[$parts[0]] = $parts[1];
 		}
 	}
 	
@@ -237,7 +242,7 @@ class ConfigData implements Iterator
 	 */
 	public function set($key, $info)
 	{
-		$this -> config[$key] = $info;
+		$this->config[$key] = $info;
 	}
 	
 	/**
@@ -248,12 +253,12 @@ class ConfigData implements Iterator
 	 */
 	public function add_one($item)
 	{
-		if ($this -> is_set($item))
+		if ($this->is_set($item))
 		{
-			$h = fopen($this -> filename, 'wb');
+			$h = fopen($this->filename, 'wb');
 			if ($h === false)
 			{
-				throw new ExceptionFatal('Could not open file <em>' . Url::html_output($this -> filename) . '</em> for writing. Make sure PHP has write permission to this file.');
+				throw new ExceptionFatal('Could not open file <em>' . Url::html_output($this->filename) . '</em> for writing. Make sure PHP has write permission to this file.');
 			}
 			foreach ($this as $current_item => $count)
 			{
@@ -262,10 +267,10 @@ class ConfigData implements Iterator
 		}
 		else
 		{
-			$h = fopen($this -> filename, 'ab');
+			$h = fopen($this->filename, 'ab');
 			if ($h === false)
 			{
-				throw new ExceptionFatal('Could not open file <em>' . $this -> filename . '</em> for writing.' . ' Make sure PHP has write permission to this file.');
+				throw new ExceptionFatal('Could not open file <em>' . $this->filename . '</em> for writing.' . ' Make sure PHP has write permission to this file.');
 			}
 			fwrite($h, "$item\t1\n");
 		}
@@ -278,7 +283,7 @@ class ConfigData implements Iterator
 	 */
 	public function is_set($name)
 	{
-		return isset($this -> config[$name]);
+		return isset($this->config[$name]);
 	}
 	
 	/**
@@ -297,9 +302,9 @@ class ConfigData implements Iterator
 			return $template_path;	
 		}	
 		
-		if (isset($this -> config[$name]))
+		if (isset($this->config[$name]))
 		{
-			return $this -> config[$name];
+			return $this->config[$name];
 		}
 		
 		throw new ExceptionFatal('Setting <em>' . Url::html_output($name) . '</em> is missing in file <em>' . Url::html_output($this -> filename) . '</em>.');
