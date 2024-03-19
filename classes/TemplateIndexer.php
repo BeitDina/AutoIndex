@@ -178,16 +178,15 @@ class TemplateIndexer
 			'{info:link}' => $words->__get('cookie consent info'),
 			'{info:href}' => $words->__get('privacy')
 		);
-		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui',
-			array(self::class, 'callback_words'), strtr($contents, $tr));
+		
+		$contents = preg_replace_callback('/\{\s*words?\s*:\s*(.+)\s*\}/Ui', array($this, 'callback_words'), strtr($contents, $tr));
 		
 		//replace {config} variables
-		$contents = preg_replace_callback('/\{\s*config\s*:\s*(.+)\s*\}/Ui',
-			array(self::class, 'callback_config'), $contents);
+		$contents = preg_replace_callback('/\{\s*config\s*:\s*(.+)\s*\}/Ui', array($this, 'callback_config'), $contents);
 
 		//parse includes
 		$this->out = preg_replace_callback('/\{\s*include\s*:\s*(.+)\s*\}/Ui',
-			array(self::class, 'callback_include'), $contents);
+			array($this, 'callback_include'), $contents);
 	}
 	
 	/**
