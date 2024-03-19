@@ -177,15 +177,16 @@ class TemplateInfo extends TemplateIndexer
 		
 		//parse if-statements
 		$last_text = '';
-		$regex = '/\{\s*if\s*:\s*(\w+)\s*\}(.*)\{\s*end\s*if\s*:\s*\1\s*\}/Uis'; //match {if:foo} ... {end if:foo}
-		while ($last_text != ($this->out = preg_replace_callback($regex, array(self::class, 'callback_if'), $this->out)))
+		$regex = '/\{\s*if\s*:\s*(\w+)\s*\}(.*)\{\s*end\s*if\s*:\s*\1\s*\}/Uis'; 
+		//match {if:foo} ... {end if:foo}
+		while ($last_text != ($this->out = preg_replace_callback($regex, array($this, 'callback_if'), $this->out)))
 		{
 			$last_text = $this->out;
 		} 
 		$this->out = $last_text;
 		
 		//parse sort modes
-		$this->out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui', array(self::class, 'callback_sort'), $this->out);
+		$this->out = preg_replace_callback('/\{\s*sort\s*:\s*(\w+)\s*\}/Ui', array($this, 'callback_sort'), $this->out);
 			
 		//replace {info} variables
 		$this->out = preg_replace_callback('/\{\s*info\s*:\s*(\w+)\s*\}/Ui', array($this, 'callback_info'), $this->out);
