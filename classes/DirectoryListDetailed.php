@@ -103,7 +103,7 @@ class DirectoryListDetailed extends DirectoryList
 	 * @param Item $a
 	 * @param Item $b
 	 * @return int
-	 */
+	*/
 	private static function callback_sort(Item $a, Item $b)
 	{
 		if ($a->__get('is_parent_dir'))
@@ -136,19 +136,11 @@ class DirectoryListDetailed extends DirectoryList
 			}
 		}
 		return ((strtolower($_SESSION['sort_mode']) === 'd') ? -$val : $val);
-	}
-	
-	/**
-	 * @param array $list The array to be sorted with the callback_sort function
-	 */
-	protected static function sort_list(&$list)
-	{
-		usort($list, array(self::class, 'callback_sort'));
-	}
+	}	
 	
 	/**
 	 * @return int The total number of files and folders (including the parent folder)
-	 */
+	*/
 	public function total_items()
 	{
 		return $this->raw_total_folders + $this->total_files;
@@ -157,12 +149,11 @@ class DirectoryListDetailed extends DirectoryList
 	/**
 	 * @param string $path The directory to read the files from
 	 * @param int $page The number of files to skip (used for pagination)
-	 */
+	*/
 	public function __construct($path, $page = 1)
 	{
 		$path = Item::make_sure_slash($path);
-		parent::__construct($path);
-		
+		parent::__construct($path);		
 		$subtract_parent = false;
 		
 		$this->total_downloads = $total_size = 0;
@@ -198,8 +189,31 @@ class DirectoryListDetailed extends DirectoryList
 				}
 			}
 		}
-		self::sort_list($dirs);
-		self::sort_list($files);
+		
+		$version_compare = explode(".", phpversion(), 3);
+		
+		if ($version_compare[0] == '' || $version_compare[1] == '')
+		{
+			$phpversion = '5.4';
+		}
+		else
+		{
+			$phpversion = $version_compare[0] . '.' . $version_compare[1];
+		}
+		
+		if (version_compare($phpversion, "5.5", ">")) 
+		{
+			//die("you're on ".$phpversion." or bellow".phpversion().' &'.print_R($version_compare, true));
+			usort($dirs, array($this, 'callback_sort'));
+			usort($files, array($this, 'callback_sort'));
+		}
+		else
+		{
+			//die("you're on ".$phpversion." or above: ".phpversion().' &'.print_R($version_compare, true));
+			usort($dirs, array($this, 'callback_sort'));
+			usort($files, array($this, 'callback_sort'));
+		}		
+		
 		$this->contents = array_merge($dirs, $files);
 		$this->total_size = new Size($total_size);
 		$this->total_files = count($files);
