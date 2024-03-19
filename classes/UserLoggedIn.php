@@ -48,7 +48,8 @@ class UserLoggedIn extends User
 	{
 		global $config, $words, $request, $you, $subdir;
 		
-		$autoindex_u = empty($request->server('PHP_SELF')) ? $config->__get('base_dir') : $request->server('PHP_SELF');
+		$PHP_SELF = $request->server('PHP_SELF');
+		$autoindex_u = empty($PHP_SELF) ? $config->__get('base_dir') : $PHP_SELF;
 		$autoindex_a = str_replace(array('&logout=true', '&amp;logout=true'), array('', ''), $autoindex_u);
 	
 		$txt = '<p><a class="autoindex_a" href="' . Url::html_output($autoindex_a)
