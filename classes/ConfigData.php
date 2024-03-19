@@ -280,7 +280,7 @@ class ConfigData implements Iterator
 	/**
 	 * @param string $name The key to look for
 	 * @return bool True if $name is set
-	 */
+	*/
 	public function is_set($name)
 	{
 		return isset($this->config[$name]);
