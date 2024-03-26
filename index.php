@@ -260,19 +260,16 @@ $request = new RequestVars('', false);
 // this is needed to prevent unicode normalization
 $super_globals_disabled = $request->super_globals_disabled();
 
-// enable super globals to get literal value
-if (!$super_globals_disabled)
-{
-	//$request->disable_super_globals();
-}
-
-
-
 /* To do: Should be switched to i.e. $request->request('style', 1);
 */
 $_GET = array_change_key_case($_GET, CASE_LOWER);
 $_POST = array_change_key_case($_POST, CASE_LOWER);
 
+// enable super globals to get literal value
+if (!$super_globals_disabled)
+{
+	//$request->disable_super_globals();
+}
 
 /**
  * This is used to report a fatal error that we cannot display with the Display
@@ -616,10 +613,28 @@ try
 		$_SESSION['sort_mode'] = 'a'; //default sort order
 	}
 	
+	// this is needed to prevent unicode normalization
+	$super_globals_disabled = $request->super_globals_disabled();	
+	
+	// enable super globals to get literal value
+	if ($super_globals_disabled)
+	{
+		$request->enable_super_globals();
+	}
+	
 	if (count($_FILES) > 0) //deal with any request to upload files:
 	{
 		$upload = new Upload($you); //the constructor checks if you have permission to upload
 		$upload->do_upload();
+	}
+	
+	// this is needed to prevent unicode normalization
+	$super_globals_disabled = $request->super_globals_disabled();	
+	
+	// enable super globals to get literal value
+	if (!$super_globals_disabled)
+	{
+		//$request->disable_super_globals();
 	}
 	
 	if (USE_LOGIN_SYSTEM)
