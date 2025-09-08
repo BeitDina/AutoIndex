@@ -2,9 +2,9 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider at github.com
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2025 Florin C Bodin aka orynider at github.com
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version $Id: FileItem.php, v 2.2.6 2023/11/15 08:08:08 orynider Exp $
+ * @version $Id: FileItem.php, v 2.2.6 2025/09/08 19:25:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
  */
 
@@ -87,6 +87,17 @@ class FileItem extends Item
 			throw new ExceptionDisplay('File <em>' . Url::html_output($this->parent_dir . $filename) . '</em> does not exist.');
 		}
 		global $config, $words, $downloads, $request;
+		
+		$version_compare = explode(".", phpversion(), 3);
+		if ($version_compare[0] == '' || $version_compare[1] == '')
+		{
+			$phpversion = '5.4';
+		}
+		else
+		{
+			$phpversion = $version_compare[0] . '.' . $version_compare[1];
+		}
+			
 		$this->filename = $filename;
 		$this->size = new Size(filesize($this->parent_dir . $filename));
 		if (ICON_PATH)
@@ -109,7 +120,7 @@ class FileItem extends Item
 			. ' >' . $words->__get('view') . ' ' . $words->__get('file') . '</a>';
 		}
 		
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'SVG')))
+		if (in_array(self::ext($filename), array('svg', 'SVG')))
 		{
 			$svgcontent = false;		
 			$svgcontent = file_get_contents(Url::translate_uri($this->parent_dir . $filename));
@@ -123,18 +134,51 @@ class FileItem extends Item
 			{
 				$width = explode('" ', $content[2]);
 				$width = !empty($width[0]) ? str_replace('"', '', $width[0]) : '32';
+				$width = ($width < '14') ? '32' : $width;
+				$width = ($width == '100%') ? '400' : $width;
 
 			}
-			$svgcontent = ($width > '400') ? str_replace($width, $width/1.1, $svgcontent) : $svgcontent;			
-			$svgcontent = ($width < '24') ? str_replace($width, $width*1.5*2, $svgcontent) : $svgcontent;			
+			else
+			{
+				$width = '200';
+				$height = '200';
+
+			}			
+			$svgcontent = str_replace('width="100%"', 'width="'.$width.'"', $svgcontent);
+			$svgcontent = str_replace('height="100%"', 'height="'.$height.'"', $svgcontent);
+			if (version_compare($phpversion, "6.0", ">")) 
+			{
+				//die("you're on ".$phpversion." or bellow".phpversion().' &'.print_R($version_compare, true));
+				$svgcontent = ($width > '400') ? str_replace($width, $width / 1.1, $svgcontent) : $svgcontent;			
+				$svgcontent = ($width < '24') ? str_replace($width, $width * 1.5 * 2, $svgcontent) : $svgcontent;			
+
+			}
+			else
+			{
+				//die("you're on ".$phpversion." or above: ".phpversion().' &'.print_R($version_compare, true));
+				$svgcontent = ($width > '400') ? str_replace($width, '200', $svgcontent) : $svgcontent;			
+				$svgcontent = ($width < '24') ? str_replace($width, '24', $svgcontent) : $svgcontent;				
+			}			
+			
 			$svgcontent = ('edit.svg' === basename($filename)) ? str_replace($width, '200', $svgcontent) : $svgcontent;			
 			if(preg_match_all('/<svg\s[^>]*height=\"(.*)\"\/>/isU', '<svg '.$contentsvg[1], $height))
 			{
 				$height = explode('" ', $content[3]);
 				$height = !empty($height[0]) ? str_replace('"', '', $height[0]) : '32';
+			}	
+			if (version_compare($phpversion, "6.0", ">")) 
+			{
+				//die("you're on ".$phpversion." or bellow".phpversion().' &'.print_R($version_compare, true));
+				$svgcontent = ($width > '400') ? str_replace($width, $width / 1.1, $svgcontent) : $svgcontent;			
+				$svgcontent = ($width < '24') ? str_replace($width, $width * 1.5 * 2, $svgcontent) : $svgcontent;			
+
 			}
-			$svgcontent = ($width > '400') ? str_replace($height, $height/1.1, $svgcontent) : $svgcontent;			
-			$svgcontent = ($width < '24') ? str_replace($height, $height*1.5*2, $svgcontent) : $svgcontent;			
+			else
+			{
+				//die("you're on ".$phpversion." or above: ".phpversion().' &'.print_R($version_compare, true));
+				$svgcontent = ($width > '400') ? str_replace($width, '200', $svgcontent) : $svgcontent;			
+				$svgcontent = ($width < '24') ? str_replace($width, '24', $svgcontent) : $svgcontent;			
+			}			
 			$svgcontent = ('<edit.svg>' === basename($filename)) ? str_replace($height, '200', $svgcontent) : $svgcontent;			
 			if(preg_match_all('/<svg\s[^>]*viewBox=\"(.*)\"\/>/isU', '<svg '.$contentsvg[1], $viewBox))
 			{
@@ -273,18 +317,29 @@ class FileItem extends Item
 				
 			}
 		}
-		/*
-		if (THUMBNAIL_HEIGHT && in_array(self::ext($filename), array('svg', 'xml')))
-		{
-			$icon_svg = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'svg.png') : Url::translate_uri($this->parent_dir . $filename);
-			$heightwidth = in_array(self::ext($filename), array('svg', 'xml')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
-			$this->thumb_link .= ' <img src="' . Url::html_output($request->server('PHP_SELF'))
-			. '?thumbnail='. Url::translate_uri($icon_svg) . '"' 
-			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
-			. ' />';
-		}
-		*/
 		$size = $this->size->__get('bytes');
+		/* */
+		if (($size < 1048576) && in_array(self::ext($filename), array('pdf', 'PDF')))
+		{
+			$icon_pdf = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'pdf.png') : Url::translate_uri($this->parent_dir . $filename);
+			$heightwidth = in_array(self::ext($filename), array('pdf', 'PDF')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
+			$this->thumb_link .= ' <img src="' . Url::html_output($request->server('PHP_SELF'))
+			. '?thumbnail='. Url::translate_uri($icon_pdf) . '"' 
+			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
+			. ' />';	
+			
+			$content = false;		
+			$pfdcontent = file_get_contents(Url::translate_uri($this->parent_dir . $filename));
+			
+			$contentpdf = explode('<XML', $pdfcontent);
+			$content = explode('=', $contentsvg[1]);
+			if(preg_match('/<XML\s[^>]*width=\"(.*)\"\/>/isU', '<XML '.$contentsvg[1], $width))
+			{
+				$width = explode('" ', $content[2]);
+				$width = !empty($width[0]) ? str_replace('"', '', $width[0]) : '32';
+			}
+		}
+		/* */
 		if (MD5_SHOW && $size > 0 && $size / 1048576 <= $config->__get('md5_show'))
 		{
 			$this->md5_link = '<span class="autoindex_small">[<a class="autoindex_a" href="'
