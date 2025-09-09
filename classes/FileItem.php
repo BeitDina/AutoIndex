@@ -319,24 +319,73 @@ class FileItem extends Item
 		}
 		$size = $this->size->__get('bytes');
 		/* */
-		if (($size < 1048576) && in_array(self::ext($filename), array('pdf', 'PDF')))
+		if (($size < 1048576000) && in_array(self::ext($filename), array('pdf', 'PDF')))
 		{
 			$icon_pdf = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'pdf.png') : Url::translate_uri($this->parent_dir . $filename);
 			$heightwidth = in_array(self::ext($filename), array('pdf', 'PDF')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
 			$this->thumb_link .= ' <img src="' . Url::html_output($request->server('PHP_SELF'))
 			. '?thumbnail='. Url::translate_uri($icon_pdf) . '"' 
 			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
-			. ' />';	
+			. ' />';			
 			
-			$content = false;		
+			$date = array();
+			$stringedPDF = $contentpdf = $creationdate = $str_time = $creation_time = $time = false;		
 			$pfdcontent = file_get_contents(Url::translate_uri($this->parent_dir . $filename));
-			
-			$contentpdf = explode('<XML', $pdfcontent);
-			$content = explode('=', $contentsvg[1]);
-			if(preg_match('/<XML\s[^>]*width=\"(.*)\"\/>/isU', '<XML '.$contentsvg[1], $width))
-			{
-				$width = explode('" ', $content[2]);
-				$width = !empty($width[0]) ? str_replace('"', '', $width[0]) : '32';
+			if (preg_match('/CreationDate\\s*\\(D:([0-9]{14})/', $pfdcontent, $date))
+			{			
+				$creation_time = $date[1]; //echo(' date: ' . $creation_time); //date format: YYYYMMDDHHMMSS 2025 03 30  -  09 44 53
+				$split = date_parse_from_format('Ymdhis', $creation_time);
+				
+				//echo(date ("F d Y H:i:s.", filemtime(Url::translate_uri($this->parent_dir . $filename))));
+				//echo(' ' . $split['year'] .' '. $split['month'] .' '. $split['day'] .' '. $split['hour'] .' '. $split['minute'] .' '. $split['second']);
+				
+				$str_time = $split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second'];
+				$time = strtotime($split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second']);
+				
+				if ($request->is_request('restorecdate', TYPE_NO_TAGS) && touch(Url::translate_uri($this->parent_dir . $filename), $time)) 
+				{
+					$creationdate = date("Y-m-d H:i:s", filemtime(Url::translate_uri($this->parent_dir . $filename)));
+				}
+				else
+				{
+					$creationdate = date("Y-m-d H:i:s", $time);
+				}
+			}
+			else if (preg_match('/ModDate\\s*\\(D:([0-9]{14})/', $pfdcontent, $date))
+			{			
+				$creation_time = $date[1]; 
+				$split = date_parse_from_format('Ymdhis', $creation_time);
+				
+				$str_time = $split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second'];
+				$time = strtotime($split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second']);
+				
+				if ($request->is_request('restorecdate', TYPE_NO_TAGS) && touch(Url::translate_uri($this->parent_dir . $filename), $time)) 
+				{
+					$creationdate = date("Y-m-d H:i:s", filemtime(Url::translate_uri($this->parent_dir . $filename)));
+				}
+				else
+				{
+					$creationdate = date("Y-m-d H:i:s", $time);
+				}				
+				//echo(' creation date: '.$creationdate);
+			}
+			else if (preg_match('/M\\s*\\(D:([0-9]{14})/', $pfdcontent, $date))
+			{			
+				$creation_time = $date[1]; 
+				$split = date_parse_from_format('Ymdhis', $creation_time);
+				
+				$str_time = $split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second'];
+				$time = strtotime($split['year']."-".$split['month']."-".$split['day']." ".$split['hour'].":".$split['minute'].":".$split['second']);
+				
+				if ($request->is_request('restorecdate', TYPE_NO_TAGS) && touch(Url::translate_uri($this->parent_dir . $filename), $time)) 
+				{
+					$creationdate = date("Y-m-d H:i:s", filemtime(Url::translate_uri($this->parent_dir . $filename)));
+				}
+				else
+				{
+					$creationdate = date("Y-m-d H:i:s", $time);
+				}				
+				//echo(' creation date: '.$creationdate);
 			}
 		}
 		/* */
