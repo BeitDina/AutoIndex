@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C Bodin aka orynider at github.com
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2008-2025 Florin C Bodin aka orynider at github.com
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  *
  * @link http://autoindex.sourceforge.net
@@ -88,6 +88,51 @@ class Image
 		}
 	}
 	
+	/**
+	 * Convert passed image data, which is assumed to be PDF, to JPG.
+	 *
+	 * @param string $file PDF image data
+	 * @return string|bool JPG image data, or false on failure
+	 */
+	protected function directcreatefrompdf($file) 
+	{
+		// Source - https://stackoverflow.com/a/27381357
+		// Posted by user4341845, modified by community. See post 'Timeline' for change history
+		// Retrieved 2025-12-01, License - CC BY-SA 3.0
+		$img = new imagick();
+		//this must be called before reading the image, otherwise has no effect
+		$img->setResolution(195, 195);
+		//read the pdf
+		$img->readImage("{$file}[0]");
+		$img->setImageFormat('jpg');
+		@header('Content-Type: image/jpeg');
+		//echo $img;
+		//exit;
+		die($img);		
+	}
+	
+	/**
+	 * Convert passed image data, which is assumed to be PDF, to JPG.
+	 * by carestad at github.com
+	 * @param string $file PDF image data
+	 * @return string|bool JPG image data, or false on failure
+	 */
+	protected function imagecreatefrompdf($file) 
+	{
+		$im = new \Imagick("{$file}[0]");
+		$im->setIteratorIndex(0); // just use first page
+		$im->setImageAlphaChannel(\Imagick::VIRTUALPIXELMETHOD_WHITE); // Other alpha options are available, see Imagick PHP documentation
+		$im->setImageColorspace(\Imagick::COLORSPACE_SRGB); // Other colorspaces are available, see Imagick PHP documentation
+		$im->setImageBackgroundColor('white'); // Set transparent background elements to this color
+		$im->setImageFormat('jpg');
+		$im->setFormat('JPG'); // Format, a wide variety is supported
+		$im->scaleImage(295, 295, true); // WxH + force aspect (true/false)		
+		@header('Content-Type: image/jpeg');
+		//echo $img;
+		//exit;
+		//file_put_contents(str_replace(FileItem::ext($file), 'jpg', $file), (string) $im);
+		die($im);		
+	}	
 	/**
 	 * Convert passed image data, which is assumed to be SVG, to PNG.
 	 *
@@ -234,6 +279,7 @@ class Image
 		$file = $this->filename;
 		$file_icon = new Icon($file);
 		$this->icon = $file_icon->__toString();
+		
 		if (!@is_file($file))
 		{
 			header('HTTP/1.0 404 Not Found');
@@ -288,16 +334,43 @@ class Image
 			}
 			case 'wmv' :
 			{
-				ini_set('memory_limit', '512M');
+				@ini_set('memory_limit', '512M');
 				$src = function_exists('imagecreatefromwmv') ? imagecreatefromwmv($file) : imagecreatefromjpeg(str_replace('wmv', 'jpg', $file));
 				break;
 			}
+			case 'pdf':
+			{ 
+				if (@extension_loaded('imagick') || @class_exists("Imagick") )
+				{ 
+					$src = $this->imagecreatefrompdf($file);
+				}
+				else
+				{
+					$file_icon = new Icon($filename);
+					$thumb = $file_icon->__toString();
+					$src = @imagecreatefromjpeg($thumb);
+				}		
+				break;
+			}			
 			case 'avi':
 			case 'divx':
 			case 'xvid':
 			{
-				ini_set('memory_limit', '512M');
-				$src = function_exists($function) ? imagecreatefromavi($file) : imagecreatefromjpeg(str_replace(FileItem::ext($file), 'jpg', $file));
+				@ini_set('memory_limit', '512M');
+				// Source - https://stackoverflow.com/a/34384876
+				// Posted by user5670408, modified by community. See post 'Timeline' for change history
+				// Retrieved 2025-12-01, License - CC BY-SA 3.0
+				$thumb = str_replace(FileItem::ext($file), 'jpg', $file);
+				if  (@is_file($thumb)) 
+				{
+					$src = @imagecreatefromjpeg($thumb);
+				}
+				else
+				{
+					$file_icon = new Icon($filename);
+					$thumb = $file_icon->__toString();
+					$src = @imagecreatefromjpeg($thumb);
+				}
 				break;
 			}
 			case 'mp4':
@@ -407,7 +480,7 @@ class Image
 		$src_height = imagesy($src);
 		if ($src_height <= $thumbnail_height)
 		{
-			imagejpeg($src, '', 95);
+			imagejpeg($src, $file, 95);
 		}
 		else
 		{
