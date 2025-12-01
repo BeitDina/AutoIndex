@@ -323,14 +323,14 @@ class FileItem extends Item
 		{
 			$icon_pdf = ICON_PATH ? Url::translate_uri($config->__get('icon_path') . 'pdf.png') : Url::translate_uri($this->parent_dir . $filename);
 			$heightwidth = in_array(self::ext($filename), array('pdf', 'PDF')) ?  ' height="' . '150'  . '" width="' . '150'  . '" ' : ' '; 
-			$this->thumb_link .= ' <img src="' . Url::html_output($request->server('PHP_SELF'))
-			. '?thumbnail='. Url::translate_uri($icon_pdf) . '"' 
-			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'
-			. ' />';			
+			
+			$this->thumb_link .= ' <img src="' . Url::html_output($request->server('PHP_SELF')) 
+			. '?thumbnail='. Url::translate_uri($this->parent_dir . $filename) . '"' 
+			. ' alt="' . $words->__get('thumbnail of') . ' ' . $filename . '"'	. ' />';
 			
 			$date = array();
 			$stringedPDF = $contentpdf = $creationdate = $str_time = $creation_time = $time = false;		
-			$pfdcontent = file_get_contents(Url::translate_uri($this->parent_dir . $filename));
+			$pfdcontent = file_get_contents(Url::html_output($this->parent_dir . $filename));
 			if (preg_match('/CreationDate\\s*\\(D:([0-9]{14})/', $pfdcontent, $date))
 			{			
 				$creation_time = $date[1]; //echo(' date: ' . $creation_time); //date format: YYYYMMDDHHMMSS 2025 03 30  -  09 44 53
