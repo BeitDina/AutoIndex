@@ -4,7 +4,7 @@
  *
 * @copyright (c) 2002-2021 Markus Petrux, John Olson, FlorinCB aka orynider at github.com
 * @license http://opensource.org/licenses/gpl-license.php GNU General Public License v2
-* @version $Id: MobileDeviceDetect.php, v 2.2.6 2023/11/25 23:08:08 orynider Exp $
+* @version $Id: MobileDeviceDetect.php, v 2.2.7 2025/11/29 23:08:08 orynider Exp $
 * @link http://mxpcms.sourceforge.net/
 * @link http://autoindex.sourceforge.net
  */
@@ -186,7 +186,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language->__get('SGS2');
 				}
-				else if (preg_match('/HONORPLK-L01/i',$user_agent))
+				else if (preg_match('/HONORPLK-L01/i',$this->_user_agent))
 				{
 					$status = $this->language->__get('HPL01');
 				}
@@ -226,7 +226,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language->__get('TKT');
 				}
-				else if (preg_match('/D2005|D2105/i',$user_agent))
+				else if (preg_match('/D2005|D2105/i',$this->_user_agent))
 				{
 					$status = $this->language->__get('SXED');
 				}
@@ -286,7 +286,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language->__get('N7');
 				}
-				else if (preg_match('/Nexus 9|LMY47X/i',$user_agent))
+				else if (preg_match('/Nexus 9|LMY47X/i',$this->_user_agent))
 				{
 					$status = $this->language->__get('N9');
 				}
@@ -337,7 +337,7 @@ class MobileDeviceDetect
 				{
 					$status = $this->language->__get('BBPP');
 				}
-				else if (preg_match('/BlackBerry Porsche/i',$user_agent))
+				else if (preg_match('/BlackBerry Porsche/i',$this->_user_agent))
 				{
 					$status = $this->language->__get('BBP');
 				}
@@ -611,5 +611,6 @@ class MobileDeviceDetect
 		"<strong>-</strong>{$mobile_device}, on a server with PHP ". PHP_VERSION ." &amp; OS ". PHP_OS;
 	}
 }
+
 //end of class
 ?>
