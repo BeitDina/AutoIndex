@@ -2,7 +2,7 @@
 /**
  * @package AutoIndex
  *
- * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2019-2023 Florin C. Bodin aka OryNider
+ * @copyright Copyright (C) 2002-2004 Justin Hagstrom, 2008-2025 Florin C. Bodin aka OryNider
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  * @version $Id: DirItem.php, v 2.2.7 2023/11/15 08:08:08 orynider Exp $
  * @link http://autoindex.sourceforge.net
@@ -127,7 +127,7 @@ class DirItem extends Item
 				global $words;
 				$this->is_parent_dir = true;
 				$this->filename = $words->__get('parent directory');
-				$this->icon = (ICON_PATH ? $config->__get('icon_path') . 'blank.png' : '');
+				$this->icon = (ICON_PATH ? $config->__get('icon_path') . 'back.png' : '');
 				$this->size = new Size(true);
 				$this->link = Url::html_output($request->server('PHP_SELF')) . '?dir=' . Url::translate_uri(self::get_parent_dir($subdir)) . $lang_arg;
 				$this->parent_dir = $this->new_icon = '';
